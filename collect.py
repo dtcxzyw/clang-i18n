@@ -50,35 +50,52 @@ for line in diagnostic_strings:
     strings.append(ast.literal_eval(line))
 
 custom_diagnostic_strings_count = 0
-for r, ds, fs in os.walk(os.path.join(llvm_src_path, "clang/lib")):
-    for f in fs:
-        if not f.endswith(".cpp") and not f.endswith(".h"):
-            continue
-        with open(os.path.join(r, f)) as src:
-            srcstr = src.read()
-        if ".getCustomDiagID(" not in srcstr:
-            continue
-        pos = 0
-        while True:
-            pos = srcstr.find(".getCustomDiagID(", pos + 1)
-            if pos == -1:
-                break
-            beg = srcstr.find('"', pos)
-            if beg == -1:
-                break
-            depth = 0
+
+
+def get_custom_diagnostic_messages(path, keyword):
+    global custom_diagnostic_strings_count
+    global strings
+
+    for r, ds, fs in os.walk(os.path.join(llvm_src_path, path)):
+        for f in fs:
+            if (
+                not f.endswith(".cpp")
+                and not f.endswith(".h")
+                and not f.startswith("__")
+            ):
+                continue
+            with open(os.path.join(r, f)) as src:
+                srcstr = src.read()
+            if keyword not in srcstr:
+                continue
+            pos = 0
             while True:
-                ch = srcstr[pos]
-                if ch == "(":
-                    depth += 1
-                elif ch == ")":
-                    depth -= 1
-                    if depth == 0:
-                        break
-                pos += 1
-            substr = ast.literal_eval(srcstr[beg:pos].replace("\n", ""))
-            strings.append(substr)
-            custom_diagnostic_strings_count += 1
+                pos = srcstr.find(keyword, pos + 1)
+                if pos == -1:
+                    break
+                beg = srcstr.find('"', pos)
+                if beg == -1:
+                    break
+                depth = 0
+                while True:
+                    ch = srcstr[pos]
+                    if ch == "(":
+                        depth += 1
+                    elif ch == ")":
+                        depth -= 1
+                        if depth == 0:
+                            break
+                    pos += 1
+                expr = srcstr[beg:pos].replace("\n", "")
+                if len(expr) == 0:
+                    continue
+                substr = ast.literal_eval(expr)
+                strings.append(substr)
+                custom_diagnostic_strings_count += 1
+
+
+get_custom_diagnostic_messages("clang/lib", ".getCustomDiagID(")
+get_custom_diagnostic_messages("libcxx/include", "_LIBCPP_DIAGNOSE_WARNING(")
 print("Custom Diagnostic:", custom_diagnostic_strings_count)
 
 strings = list(set(strings))

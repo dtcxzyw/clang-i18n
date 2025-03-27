@@ -8894,6 +8894,8 @@ H1BDBA1C8E5BA: '通过模糊名称查找找到的成员类型 %0'
 HFDD47D4DEC61: '使用非成员枚举项的成员使用声明与 C++20 之前的 C++ 标准不兼容'
 # "member using declaration naming non-class '%0' enumerator is incompatible with C++ standards before C++20"
 H3AC79AC99394: "命名非类类型 '%0' 枚举项的成员使用声明与 C++20 之前的 C++ 标准不兼容"
+# 'memory order argument to atomic operation is invalid'
+H10A1EB7E5921: '原子操作的内存顺序参数无效'
 # "memory order clause '%0' is specified here"
 HEB7229373BDB: "此处指定了内存顺序子句 '%0'"
 # 'messaging a Class with a method that is possibly direct'
@@ -11628,6 +11630,10 @@ HC3B7DF91CF84: '无法提取所选表达式'
 HEFB1186DBBA0: '所选表达式过于简单无法提取'
 # 'the semantics of this intrinsic changed with GCC version 4.4 - the newer semantics are provided here'
 H1D55F6813757: '该内在函数的语义在GCC版本4.4后有所变化 - 这里提供的是新版本的语义'
+# 'the specified comparator type does not provide a viable const call operator'
+H327A107A2A90: '指定的比较器类型未提供有效的const调用运算符'
+# 'the specified hash functor does not provide a viable const call operator'
+H7B4F603F77A3: '指定的哈希函数对象未提供有效的const调用运算符'
 # "the statement for '#pragma omp %0' must be a compound statement"
 H8597FC2B3D8A: "'#pragma omp %0' 的语句必须是复合语句"
 # "the statement for 'atomic capture' must be a compound statement of form '{v = x; x binop= expr;}', '{x binop= expr; v = x;}', '{v = x; x = x binop expr;}', '{v = x; x = expr binop x;}', '{x = x binop expr; v = x;}', '{x = expr binop x; v = x;}' or '{v = x; x = expr;}', '{v = x; x++;}', '{v = x; ++x;}', '{++x; v = x;}', '{x++; v = x;}', '{v = x; x--;}', '{v = x; --x;}', '{--x; v = x;}', '{x--; v = x;}' where x is an lvalue expression with scalar type"

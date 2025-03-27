@@ -4446,6 +4446,7 @@
 'member type %0 found by ambiguous name lookup'
 'member using declaration naming a non-member enumerator is incompatible with C++ standards before C++20'
 "member using declaration naming non-class '%0' enumerator is incompatible with C++ standards before C++20"
+'memory order argument to atomic operation is invalid'
 "memory order clause '%0' is specified here"
 'messaging a Class with a method that is possibly direct'
 'messaging super with a direct method'
@@ -5813,6 +5814,8 @@
 'the selected expression cannot be extracted'
 'the selected expression is too simple to extract'
 'the semantics of this intrinsic changed with GCC version 4.4 - the newer semantics are provided here'
+'the specified comparator type does not provide a viable const call operator'
+'the specified hash functor does not provide a viable const call operator'
 "the statement for '#pragma omp %0' must be a compound statement"
 "the statement for 'atomic capture' must be a compound statement of form '{v = x; x binop= expr;}', '{x binop= expr; v = x;}', '{v = x; x = x binop expr;}', '{v = x; x = expr binop x;}', '{x = x binop expr; v = x;}', '{x = expr binop x; v = x;}' or '{v = x; x = expr;}', '{v = x; x++;}', '{v = x; ++x;}', '{++x; v = x;}', '{x++; v = x;}', '{v = x; x--;}', '{v = x; --x;}', '{--x; v = x;}', '{x--; v = x;}' where x is an lvalue expression with scalar type"
 "the statement for 'atomic capture' must be an expression statement of form 'v = ++x;', 'v = --x;', 'v = x++;', 'v = x--;', 'v = x binop= expr;', 'v = x = x binop expr' or 'v = x = expr binop x', where x and v are both lvalue expressions with scalar type"
