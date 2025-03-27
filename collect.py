@@ -98,6 +98,46 @@ get_custom_diagnostic_messages("clang/lib", ".getCustomDiagID(")
 get_custom_diagnostic_messages("libcxx/include", "_LIBCPP_DIAGNOSE_WARNING(")
 print("Custom Diagnostic:", custom_diagnostic_strings_count)
 
+option_extractor = """
+#define OPTION(PREFIXES_OFFSET, PREFIXED_NAME_OFFSET, ID, KIND, GROUP, ALIAS, ALIASARGS, FLAGS, VISIBILITY, PARAM, HELPTEXT, HELPTEXTSFORVARIANTS, METAVAR, VALUES) HELPTEXT
+#include "clang/Driver/Options.inc"
+#undef OPTION
+#define OPTION(PREFIXES_OFFSET, PREFIXED_NAME_OFFSET, ID, KIND, GROUP, ALIAS, ALIASARGS, FLAGS, VISIBILITY, PARAM, HELPTEXT, HELPTEXTSFORVARIANTS, METAVAR, VALUES) HELPTEXTSFORVARIANTS
+#include "clang/Driver/Options.inc"
+"""
+option_strings = (
+    subprocess.check_output(
+        [
+            "cc",
+            "-E",
+            "-P",
+            "-I",
+            os.path.join(llvm_build_path, "tools/clang/include"),
+            "-",
+        ],
+        input=option_extractor.encode(),
+    )
+    .decode()
+    .splitlines()
+)
+print("Option:", len(option_strings))
+for line in option_strings:
+    if '"' in line:
+        res = None
+        try:
+            res = ast.literal_eval(line)
+
+        except Exception:
+            pass
+        if res is None:
+            pos1 = line.find('"')
+            pos2 = line.rfind('"')
+            if pos1 != -1 and pos2 != -1:
+                res = ast.literal_eval(line[pos1 : pos2 + 1])
+        if len(res) != 0:
+            strings.append(res)
+
+
 strings = list(set(strings))
 strings.sort()
 
