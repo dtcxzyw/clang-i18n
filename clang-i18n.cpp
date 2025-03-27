@@ -34,6 +34,32 @@ static StringRef getTranslationDir() {
 class TranslationTable {
   std::unordered_map<std::string, std::string> Table;
 
+  static void unescape(std::string &Str) {
+    uint32_t Pos = 0;
+    for (uint32_t I = 0; I != Str.size(); ++I) {
+      if (Str[I] == '\\' && I != Str.size() - 1) {
+        switch (Str[I + 1]) {
+        default:
+          llvm_unreachable("Unexpected escape character");
+        case 'n':
+          Str[Pos++] = '\n';
+          break;
+        case '"':
+          Str[Pos++] = '\"';
+          break;
+        case '\'':
+          Str[Pos++] = '\'';
+          break;
+        case '\\':
+          Str[Pos++] = '\\';
+          break;
+        }
+      } else {
+        Str[Pos++] = Str[I];
+      }
+    }
+  }
+
 public:
   static std::string Hash(StringRef Src) {
     llvm::SHA1 S;
@@ -61,7 +87,8 @@ public:
       if (!Line.starts_with('H'))
         continue;
       auto Key = Line.substr(1, 12);
-      auto Val = Line.substr(15);
+      auto Val = Line.substr(15).drop_front().drop_back().str();
+      unescape(Val);
       Table[Key.str()] = Val;
     }
   }
@@ -73,8 +100,6 @@ public:
 };
 
 static StringRef replace(StringRef Src) {
-  printf("hooked\n");
-  printf("%s\n", TranslationTable::Hash("hello").c_str());
   static TranslationTable Table;
   return Table.replace(Src);
 }
