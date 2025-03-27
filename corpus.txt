@@ -330,6 +330,7 @@
 "%0 variable cannot be in a %1 clause in '#pragma omp %2' directive"
 '%0 variable must be %1'
 "%0 was %select{disabled|enabled}1 in AST file '%3' but is currently %select{disabled|enabled}2"
+'%0 was deserialized'
 '%0 was marked unused but was used'
 '%0%select{ attribute|}1 cannot be applied to a base specifier'
 '%0%select{ attribute|}1 cannot be applied to a declaration'
@@ -1257,6 +1258,7 @@
 '-fsanitize-address-field-padding applied to %0'
 '-fsanitize-address-field-padding ignored for %0 because it %select{is not C++|is packed|is a union|is trivially copyable|has trivial destructor|is standard layout|is in a ignorelisted file|is ignorelisted}1'
 "-ftest-module-file-extension argument '%0' is not of the required form 'blockname:major:minor:hashed:user info'"
+'-ftrivial-auto-var-init-stop-after=%0 has been enabled to limit the number of times ftrivial-auto-var-init=%1 gets applied.'
 '-mcmse is not supported for %0'
 '-mharden-sls is only supported on armv7-a or later'
 '-mtocdata option is ignored for %0 because %1'
@@ -1266,6 +1268,7 @@
 '// comments are not allowed in this language'
 '/arm64EC has been overridden by specified target: %0; option ignored'
 '32-bit targets are not supported when building for Mac Catalyst'
+'?: operator with omitted middle operand cannot be mangled'
 '@%0 must be followed by a number to form an NSNumber object'
 "@catch parameter cannot have storage specifier '%0'"
 '@catch parameter declarator cannot be qualified'
@@ -1321,6 +1324,10 @@
 'CUDA version %0 is only partially supported'
 'CUDA version%0 is newer than the latest%select{| partially}1 supported version %2'
 "Clang permits use of type 'double' regardless pragma if 'cl_khr_fp64' is supported"
+'ClangIR code gen Not Yet Implemented: %0'
+'ClangIR code gen Not Yet Implemented: %0: %1'
+'Error collecting HIP undefined fatbin symbols: %0'
+'Error in reading profile %0: %1'
 'FIX-IT applied suggested code changes'
 'FIX-IT detected an error it cannot fix'
 'FIX-IT detected errors it could not fix; no output will be generated'
@@ -1379,8 +1386,10 @@
 'LMUL argument must be in the range [0,3] or [5,7]'
 'LTO requires -fuse-ld=lld'
 'MS-style inline assembly is not available: %0'
+'Mangling number exceeds limit (65535)'
 'NVPTX target requires CUDA 9.2 or above; CUDA %0 detected'
 'Neon vector size must be 64 or 128 bits'
+'No offloading entry generated while offloading is mandatory.'
 'OBJECT_MODE setting %0 is not recognized and is not a valid setting'
 'Objective-C GC does not allow weak variables on the stack'
 'Objective-C declarations may only appear in global scope'
@@ -1388,6 +1397,9 @@
 'Objective-C message has incomplete result type %0'
 'Objective-C methods as coroutines are not yet supported'
 'Objective-C object of type %0 is bridged to %1, which is not valid CF object'
+'Offloading entry for declare target variable %0 is incorrect: the address is invalid.'
+'Offloading entry for declare target variable is incorrect: the address is invalid.'
+'Offloading entry for target region in %0 is incorrect: either the address or the ID is invalid.'
 "OpenACC %select{clause '%1'|directive '%2'|sub-array bound}0 requires expression of integer type (%3 invalid)"
 "OpenACC '%0' clause cannot appear on the same '%2' construct as a '%1' clause %select{inside a compute construct with a|and a}3 'num_gangs' clause with more than one argument"
 "OpenACC '%0' clause on a 'declare' directive is not allowed at global or namespace scope"
@@ -1453,6 +1465,11 @@
 "SEH '__try' is not supported on this target"
 'SVE vector type %0 cannot be used in a non-streaming function'
 'SVE vector type %0 cannot be used in a target without sve'
+'SourceLocation in file %0 at offset %1 is invalid'
+'The clause simdlen must fit the %0-bit lanes in the architectural constraints for SVE (min is 128-bit, max is 2048-bit, by steps of 128-bit)'
+'The clause simdlen(1) has no effect when targeting aarch64.'
+'The value specified in simdlen must be a power of 2 when targeting Advanced SIMD.'
+'Unexpected vftable component type %0 for component number %1'
 'WebAssembly reference type not allowed in exception specification'
 'WebAssembly table cannot be declared within a function'
 'WebAssembly table must be static'
@@ -1889,6 +1906,7 @@
 'autosynthesized property %0 will use %select{|synthesized}1 instance variable %2, not existing instance variable %3'
 'availability does not match previous declaration'
 'available multilibs are:%0'
+"backend data layout '%0' does not match expected target description '%1'"
 'backslash and newline separated by space'
 'bad receiver type %0'
 "base %0 is marked '%select{final|sealed}1'"
@@ -2143,6 +2161,7 @@
 'cannot combine fixed-length and sizeless %select{SVE|RVV}0 vectors in expression, result is ambiguous (%1 and %2)'
 "cannot combine with previous '%0' declaration specifier"
 "cannot combine with previous '%0' declaration specifier. '__vector' must be first"
+'cannot compile this %0 yet'
 'cannot compress debug sections (%0 not enabled)'
 'cannot compute offset of bit-field %0'
 "cannot constant evaluate '%select{memcpy|memmove}0' between objects of incomplete type %1"
@@ -2248,6 +2267,7 @@
 'cannot initialize array %diff{of type $ with array of type $|with different type of array}0,1'
 'cannot initialize array %diff{of type $ with non-constant array of type $|with different type of array}0,1'
 'cannot initialize object parameter of type %0 with an expression of type %1'
+'cannot instantiate %0 yet'
 'cannot jump from switch statement to this case label'
 'cannot jump from this %select{indirect|asm}0 goto statement to one of its possible targets'
 'cannot jump from this continue statement to the loop increment; jump bypasses initialization of loop condition variable'
@@ -2255,6 +2275,14 @@
 'cannot jump from this goto statement to label %0 inside an inline assembly block'
 "cannot link module '%0': %1"
 'cannot locate code-completion file %0'
+'cannot mangle fixed point literals yet'
+'cannot mangle this %0 %1 yet'
+'cannot mangle this %0 yet'
+'cannot mangle this dependent fixed-length RVV vector type yet'
+'cannot mangle this dependent fixed-length SVE vector type yet'
+'cannot mangle this dependent neon vector type yet'
+'cannot mangle this requires-expression containing a substitution failure'
+'cannot mangle this unnamed union NTTP yet'
 'cannot mix packoffset elements with nonpackoffset elements in a cbuffer'
 'cannot mix positional and non-positional arguments in format string'
 'cannot mix vectors and extended vectors in a vector conditional'
@@ -2352,6 +2380,11 @@
 'cannot use variable %1 in collapsed imperfectly-nested loop %select{init|condition|increment}0 statement'
 'cannot use variable-length arrays in %select{__device__|__global__|__host__|__host__ __device__}0 functions'
 "cannot write file '%0': %1"
+'cannot yet @encode type %0'
+'cannot yet compile %0 in this ABI'
+'cannot yet mangle %0 expression'
+'cannot yet mangle OpenACC Asterisk Size expression'
+'cannot yet mangle expression type %0'
 'capture %0 by %select{value|reference}1'
 'capture default must be first'
 'capture host side class data member by this pointer in device or host device lambda function may result in invalid memory access if this pointer is not accessible on device side'
@@ -2409,6 +2442,8 @@
 "checker plugin '%0' is not compatible with this version of the analyzer"
 'chosen constructor is explicit in copy-initialization'
 'circular pointer delegation detected'
+'clang-rename could not find symbol %0'
+'clang-rename could not find symbol (offset %0)'
 'class %0 defined without specifying a base class'
 'class %0 has incompatible superclasses'
 'class %0 previously declared with type parameters'
@@ -2641,6 +2676,7 @@
 "converting the result of '<<' to a boolean always evaluates to %select{false|true}0"
 "converting the result of '<<' to a boolean; did you mean '(%0) != 0'?"
 "converting the result of '?:' with integer constants to a boolean always evaluates to 'true'"
+'converting to boxing syntax requires casting %0 to %1'
 'coprocessor %0 must be configured as %select{GCP|CDE}1'
 'copy %select{constructor|assignment operator}0 is implicitly deleted because %1 has a user-declared move %select{constructor|assignment operator}2'
 'copy constructor must pass its first argument by reference'
@@ -2654,6 +2690,7 @@
 "could not find ';' after @import"
 'could not find Objective-C class %0 to convert %1 to %2'
 'could not match %diff{$ against $|types}0,1'
+"could not open '%0' for embedding"
 "could not read %0 input list '%1': %2"
 "could not read directory '%0': %1"
 "could not remap file '%0' to the contents of file '%1'"
@@ -4030,6 +4067,7 @@
 "invalid RVV vector size '%0', expected size is '%1' based on LMUL of type and '-mrvv-vector-bits'"
 "invalid SVE vector size '%0', must match value set by '-msve-vector-bits' ('%1')"
 'invalid UTF-8 in comment'
+"invalid Xarch argument: '%0', not all driver options can be forwared via Xarch argument"
 "invalid Xarch argument: '%0', options requiring arguments are unsupported"
 'invalid __hlsl_resource_t type attributes'
 'invalid address discrimination mode %0'
@@ -4400,6 +4438,7 @@
 'member of anonymous %select{struct|union}0 redeclares %1'
 'member pointer has incomplete base type %0'
 'member pointer refers into non-class type %0'
+'member pointer representation requires a complete class type for %0 to perform this expression'
 'member reference base type %0 is not a structure or union'
 "member reference type %0 is %select{a|not a}1 pointer; did you mean to use '%select{->|.}1'?"
 'member reference type %0 is not a pointer'
@@ -5424,6 +5463,9 @@
 'returning reference to local temporary object'
 "returning the value that %1 points to by reference requires holding %0 %select{'%2'|'%2' exclusively}3"
 "returning variable %1 by reference requires holding %0 %select{'%2'|'%2' exclusively}3"
+"rewriter doesn't support user-specified control flow semantics for @try/@finally (code may not execute properly)"
+'rewriting block literal declared in global scope is not implemented'
+'rewriting sub-expression within a macro (may not be correct)'
 'right hand operand to %0 has non-pointer-to-member type %1'
 "right shifting a 'bool' implicitly converts it to 'int'"
 "runpath search paths do not match: '%0' (provided) vs '%1' (found)"
@@ -5750,6 +5792,7 @@
 "the name of the construct must be specified in presence of 'hint' clause"
 'the number of preprocessor source tokens (%0) exceeds this token limit (%1)'
 'the object size sanitizer has no effect at -O0, but is explicitly enabled: %0'
+"the option '-flto=thin' is a work in progress"
 "the other acquisition of %0 '%1' is here"
 'the parameter for an explicitly-defaulted %select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}0 may not be volatile'
 'the parameter for an explicitly-defaulted copy assignment operator must be an lvalue reference type'
@@ -5992,6 +6035,7 @@
 'unable to open file %0 for serializing diagnostics (%1)'
 "unable to open output file '%0': '%1'"
 "unable to open statistics output file '%0': '%1'"
+'unable to overwrite file %0: %1'
 'unable to protect inline asm that clobbers stack pointer against stack clash'
 "unable to read PCH file %0: '%1'"
 'unable to remove file: %0'
@@ -6138,6 +6182,9 @@
 'unsupported %0 gpu architecture: %1'
 "unsupported '%0' value '%1'; use 'ios-macabi' instead"
 'unsupported CUDA gpu architecture: %0'
+'unsupported MC/DC boolean expression; contains an operation with a nested boolean expression. Expression will not be covered'
+'unsupported MC/DC boolean expression; number of conditions (%0) exceeds max (%1). Expression will not be covered'
+'unsupported MC/DC boolean expression; number of test vectors (%0) exceeds max (%1). Expression will not be covered'
 'unsupported OpenCL extension %0 - ignoring'
 "unsupported architecture '%0' for MS-style inline assembly"
 "unsupported architecture '%0' for host compilation"

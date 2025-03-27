@@ -45,8 +45,41 @@ diagnostic_strings = (
     .decode()
     .splitlines()
 )
+print("Diagnostic:", len(diagnostic_strings))
 for line in diagnostic_strings:
     strings.append(ast.literal_eval(line))
+
+custom_diagnostic_strings_count = 0
+for r, ds, fs in os.walk(os.path.join(llvm_src_path, "clang/lib")):
+    for f in fs:
+        if not f.endswith(".cpp") and not f.endswith(".h"):
+            continue
+        with open(os.path.join(r, f)) as src:
+            srcstr = src.read()
+        if ".getCustomDiagID(" not in srcstr:
+            continue
+        pos = 0
+        while True:
+            pos = srcstr.find(".getCustomDiagID(", pos + 1)
+            if pos == -1:
+                break
+            beg = srcstr.find('"', pos)
+            if beg == -1:
+                break
+            depth = 0
+            while True:
+                ch = srcstr[pos]
+                if ch == "(":
+                    depth += 1
+                elif ch == ")":
+                    depth -= 1
+                    if depth == 0:
+                        break
+                pos += 1
+            substr = ast.literal_eval(srcstr[beg:pos].replace("\n", ""))
+            strings.append(substr)
+            custom_diagnostic_strings_count += 1
+print("Custom Diagnostic:", custom_diagnostic_strings_count)
 
 strings = list(set(strings))
 strings.sort()
