@@ -1,0 +1,860 @@
+# " '%0 %select{sink:|source:}1' must be with '%select{omp_cur_iteration - 1|omp_cur_iteration}1'"
+HCB22E641D2E6: "'%0 %select{sink:|source:}1' 必须与 '%select{omp_cur_iteration - 1|omp_cur_iteration}1' 一起使用"
+# " '%0' in a raw string literal delimiter is a C++2c extension"
+H03B242298EB9: "'%0' 在原始字符串字面量分隔符中是C++2c扩展"
+# " '%0' in a raw string literal delimiter is incompatible with standards before C++2c"
+HFCBE1727461C: "'%0' 在原始字符串字面量分隔符中与C++2c之前的版本标准不兼容"
+# '#else after #else'
+H73FE4A6784FB: '在#else之后出现#else'
+# '#else without #if'
+HF8F50363B288: '没有 #if 的 #else'
+# '#embed is a %select{C23|Clang}0 extension'
+H799E9AA4840E: '#embed 是 %select{C23|Clang}0 的扩展'
+# '#embed is incompatible with C standards before C23'
+H1AF95A3E3444: '#embed 与 C23 之前的 C 标准不兼容'
+# '#endif without #if'
+H56B14C401F16: '缺少 #if 的 #endif'
+# '#ident is a language extension'
+H45C329EC97BC: '#ident 是语言扩展'
+# '#import is a language extension'
+H8768B3DA6294: '#import 是语言扩展'
+# '#import of type library is an unsupported Microsoft feature'
+H1CFAB9C94AB6: '#import 类型库是微软不支持的功能'
+# '#include nested too deeply'
+H21908EF6D74E: '#include 嵌套过深'
+# "#include of '%0' not seen while attempting to %select{create|use}1 precompiled header"
+H05355AF7456A: "未找到 '%0' 的#include，因为在尝试%select{创建|使用}1预编译头时"
+# '#include resolved using non-portable Microsoft search rules as: %0'
+HE0D8871EA3B6: '#include 使用非移植的微软搜索规则解析为: %0'
+# '#include_next in file found relative to primary source file or found by absolute path; will search from start of include path'
+H92850FB4B236: '#include_next 在文件中相对于主源文件或通过绝对路径找到；将从包含路径的开头重新搜索'
+# '#include_next in primary source file; will search from start of include path'
+HA1F5AE68D4B4: '#include_next 在主源文件中使用；将从包含路径的开头开始搜索'
+# '#include_next is a language extension'
+H924C2DCE9AC7: '#include_next 是一种语言扩展'
+# '#line directive requires a positive integer argument'
+H2EB091899FF1: '#line 指令需要一个正整数参数'
+# '#line directive with zero argument is a GNU extension'
+H05235496C826: '使用零参数的 #line 指令是 GNU 扩展'
+# '#line number greater than 32767 is incompatible with C++98'
+HF9B195DC3866: '#line 的行号大于 32767 与 C++98 不兼容'
+# '#pragma %0(".drectve") has undefined behavior, use #pragma comment(linker, ...) instead'
+H6CC89C517043: '#pragma %0(".drectve") 行为未定义，建议使用 #pragma comment(linker, ...)'
+# '#pragma %0(pop, ...) failed: %1'
+H1F44FB9E690A: '#pragma %0(pop, ...) 失败：%1'
+# '#pragma align(packed) may not be compatible with objects generated with AIX XL C/C++'
+H19CC6269DA45: '#pragma align(packed) 可能与AIX XL C/C++生成的对象不兼容'
+# '#pragma entered here'
+H4EB06A1F820E: '#pragma 从此处开始生效'
+# "#pragma execution_character_set expected '%0'"
+H3700F774625D: "#pragma execution_character_set 预期的参数为 '%0'"
+# "#pragma execution_character_set expected 'push' or 'pop'"
+HF944C9D4F311: "#pragma execution_character_set 预期接 'push' 或 'pop'"
+# "#pragma execution_character_set invalid value '%0', only 'UTF-8' is supported"
+HF7B9B86DDFE7: "#pragma execution_character_set 无效值 '%0'，仅支持 'UTF-8'"
+# '#pragma hdrstop filename not supported, /Fp can be used to specify precompiled header filename'
+HB20EE88D126A: '#pragma hdrstop 不支持指定文件名，可通过 /Fp 指定预编译头文件名'
+# '#pragma hdrstop not seen while attempting to use precompiled header'
+H482D12372789: '使用预编译头时未检测到 #pragma hdrstop'
+# '#pragma once in main file'
+H9D36B8727C26: '主文件中包含 #pragma once'
+# '#pragma options align=reset failed: %0'
+H3024180A558C: '#pragma options align=reset 失败: %0'
+# '#pragma redefine_extname is applicable to external C declarations only; not applied to %select{function|variable}0 %1'
+HAF6CFAD80C5F: '#pragma redefine_extname仅适用于外部C声明；不应用于%select{函数|变量}0 %1'
+# '#pragma system_header ignored in main file'
+HE58DA574E5C2: '#pragma system_header 在主文件中被忽略'
+# '#pragma visibility pop with no matching #pragma visibility push'
+H3EDA32C5E985: '#pragma visibility pop 没有对应的 #pragma visibility push'
+# '#pragma visibility push with no matching #pragma visibility pop'
+HB15E579A68AB: '#pragma visibility push 没有对应的 #pragma visibility pop'
+# "#pragma warning expected '%0'"
+HE762E253E06E: "#pragma warning 预期 '%0'"
+# "#pragma warning expected 'push', 'pop', 'default', 'disable', 'error', 'once', 'suppress', 1, 2, 3, or 4"
+HBCB4550F177A: "#pragma warning 预期 'push', 'pop', 'default', 'disable', 'error', 'once', 'suppress', 1, 2, 3 或 4"
+# '#pragma warning expected a warning number'
+HB9A465F10016: '#pragma warning 预期一个警告编号'
+# '#pragma warning(push, level) requires a level between 0 and 4'
+H99A37FD4A6D8: '#pragma warning(push, level) 需要级别在0到4之间'
+# '#warning is a %select{C23|C++23}0 extension'
+H0F157EC51CD6: '#warning 是 %select{C23|C++23}0 的扩展'
+# '#warning is incompatible with C standards before C23'
+H447994BFEB83: '#warning 与 C23 之前的 C 标准不兼容'
+# '#warning is incompatible with C++ standards before C++23'
+H42FA898C6606: '#warning 与 C++23 之前的 C++ 标准不兼容'
+# '%0'
+HDEB42D2F46D5: '%0'
+# '%0 %select{parameter|return}1 type is unsupported; support for vector types for this target is introduced in %2'
+HDC6BFCFF388E: '%0 %select{参数|返回}1 类型不受支持；此目标的向量类型支持在 %2 中引入'
+# "%0 '%1' is acquired exclusively and shared in the same scope"
+H7390A9DF88C0: "%0 '%1' 在同一作用域中被独占获取和共享"
+# "%0 '%1' is not held on every path through here"
+H6674AA570899: "%0 '%1' 在所有路径上都未被持有"
+# "%0 '%1' is still held at the end of function"
+HC378A7D8C58E: "%0 '%1' 在函数结束时仍然被持有"
+# "%0 '%1' must be acquired before '%2'"
+H1AA537616F4E: "%0 '%2' 必须在 '%2' 之前被获取"
+# "%0 '%2' not managed by '%1'"
+H7EC62D1C1AF9: "%0 '%2' 未被 '%1' 管理"
+# "%0 (%1) exceeds limit (%2) in '%3'"
+HE73AA4C10244: "%0 (%1) 超过 '%3' 中的限制 (%2)"
+# '%0 acquired here'
+HEA3E3310E736: '%0 在此处获取'
+# '%0 additional files entered using a total of %1B (%human1B) of space'
+HBB08F5A2D9D4: '%0 使用总共 %1B (%human1B) 空间输入了附加文件'
+# '%0 and %1%select{ attributes|}2 are not compatible'
+H3E0737276230: '%0 和 %1%select{属性|}2 不兼容'
+# '%0 appears multiple times in clauses on the same declare target directive'
+H71D418F6E9B9: '%0 在同一 declare 目标指令的子句中多次出现'
+# '%0 applied to an expression is a GNU extension'
+HE4B8DDF4E86C: '%0 应用于表达式是一个 GNU 扩展'
+# '%0 argument must be a constant unsigned integer expression'
+HD9AE42B82C9D: '%0 参数必须是常量无符号整数表达式'
+# '%0 argument of MTE builtin function must be a null or a pointer (%1 invalid)'
+H1FAF65C9963B: '%0 参数必须是空指针或指针类型（%1 无效）'
+# '%0 argument of MTE builtin function must be a pointer (%1 invalid)'
+H0BF1182D2AC8: '%0 参数必须是指针类型（%1 无效）'
+# '%0 argument of MTE builtin function must be an integer type (%1 invalid)'
+H2B10B0C97CC4: '%0 参数必须是整数类型（%1 无效）'
+# '%0 argument to %1 must be of vector type'
+H61B90BC8950E: '%0 参数传递给 %1 时必须为向量类型'
+# '%0 attribute %plural{0:takes no arguments|1:takes one argument|:requires exactly %1 arguments}1'
+H8625FD5B48BC: '%0 属性 %plural{0:不需要参数|1:需要一个参数|:需要恰好%1个参数}1'
+# '%0 attribute applied to non-RVV type %1'
+H49243AEFBCDB: '%0 属性应用于非RVV类型%1'
+# '%0 attribute applied to non-SVE type %1'
+H7CA8225CCF33: '%0 属性应用于非SVE类型%1'
+# "%0 attribute applies to function parameters only if their type is a reference to a 'scoped_lockable'-annotated type"
+H8F04340A3021: "%0 属性仅适用于其类型是引用带有'scoped_lockable'注解类型的函数参数"
+# "%0 attribute argument '%1' not supported on a global variable"
+H12B4D27D7798: "%0 属性参数'%1'不支持全局变量"
+# '%0 attribute argument is invalid: %select{max must be 0 since min is 0|min must not be greater than max}1'
+HD3E478873102: '%0 属性参数无效：%select{max必须设为0，因为min已经是0|min不能大于max}1'
+# '%0 attribute argument may only refer to a function parameter of integer type'
+H05E563701DF2: '%0 属性参数只能引用整数类型的函数参数'
+# '%0 attribute argument must be a string literal specifying a Swift function name'
+H056A97564B83: '%0 属性参数必须是一个指定Swift函数名的字符串字面量'
+# '%0 attribute argument not supported: %1'
+HB519160711B1: '%0 属性参数不支持：%1'
+# "%0 attribute can only be applied in a context annotated with 'capability' attribute"
+H9411040D8420: "%0 属性只能应用于标注有'capability'属性的上下文中"
+# '%0 attribute can only be applied once per parameter'
+H3C2BAB720741: '%0 属性每个参数只能应用一次'
+# '%0 attribute can only be applied to a %select{function|method}1 with an error parameter'
+H5477D07BA320: '%0 属性只能应用于带有错误参数的%select{函数|方法}1'
+# '%0 attribute can only be applied to a ARM, HLSL or RISC-V builtin'
+H63E9059C2A3F: '%0 属性只能应用于ARM、HLSL或RISC-V内置函数'
+# '%0 attribute can only be applied to instance variables or properties'
+H30E90B5958C9: '%0 属性只能应用于实例变量或属性'
+# "%0 attribute cannot be applied to %select{a function parameter|a variable with 'register' storage class|a 'catch' variable|a bit-field|an enumeration}1"
+HD202D2E58321: "%0 属性不能应用于%select{函数参数|具有'register'存储类的变量|'catch'变量|位域|枚举}1"
+# '%0 attribute cannot be applied to %select{methods in protocols|dealloc}1'
+HC18046C82752: '%0 属性不能应用于%select{协议中的方法|dealloc}1'
+# '%0 attribute cannot be applied to a %select{function|method}1 with no parameters'
+H9F395B21D226: '%0 属性不能应用于没有参数的%select{函数|方法}1'
+# '%0 attribute cannot be applied to a module'
+H6CF918E64873: '%0 属性不能应用于模块'
+# '%0 attribute cannot be applied to a module import'
+H3AD0DE140148: '%0 属性不能应用于模块导入'
+# '%0 attribute cannot be applied to non-static member functions'
+HCA6FA0E6C0E4: '%0 属性不能应用于非静态成员函数'
+# '%0 attribute cannot be applied to sizeless type %1'
+H60D82BB85EBA: '%0 属性不能应用于大小未知类型%1'
+# '%0 attribute cannot be applied to this declaration'
+H1A106E97EE94: '%0 属性不能应用于此声明'
+# '%0 attribute cannot be repeated'
+H1FB2864F8926: '%0 属性不能重复使用'
+# '%0 attribute cannot be used from %select{a block|an Objective-C function|this context}1'
+HFCD2CCA9A22B: '%0 属性不能从%select{块|Objective-C函数|此上下文}1使用'
+# '%0 attribute cannot be used with pointers to members'
+H828AE7C76F14: '%0 属性不能用于成员指针'
+# "%0 attribute cannot specify more than one 'self:' parameter"
+HC2B60D257432: "%0 属性不能指定超过一个'self:'参数"
+# '%0 attribute does not appear on the first declaration'
+HE84901B6BFC0: '%0 属性未出现在首次声明中'
+# '%0 attribute expression never produces a constant expression'
+H6DB854C2324C: '%0 属性表达式无法生成常量表达式'
+# "%0 attribute for 'subscript' getter cannot have a 'newValue:' parameter"
+HEBB5613EEF15: "%0 属性的'subscript'获取器不能包含'newValue:'参数"
+# "%0 attribute for 'subscript' must %select{be a getter or setter|have at least one parameter|have a 'self:' parameter}1"
+H445CA4D5B31B: "%0 属性的'subscript'必须%select{是getter或setter|至少有一个参数|具有'self:'参数}1"
+# "%0 attribute for 'subscript' setter cannot have multiple 'newValue:' parameters"
+H2C95053B8BED: "%0 'subscript' setter 的属性不能有多个 'newValue:' 参数"
+# "%0 attribute for 'subscript' setter must have a 'newValue:' parameter"
+HD3A5819D09C5: "%0 'subscript' setter 的属性必须包含一个 'newValue:' 参数"
+# "%0 attribute for getter must not have any parameters besides 'self:'"
+HA628A2E87201: "%0 getter 属性除了 'self:' 之外不能有其他参数"
+# '%0 attribute for setter must have one parameter for new value'
+H349FB00769DE: '%0 setter 属性必须有一个新值参数'
+# '%0 attribute has invalid identifier for the %select{base|context|parameter}1 name'
+HC37D287D1C6D: '%0 属性为 %select{base|context|parameter}1 名称提供了无效的标识符'
+# '%0 attribute has no effect on defaulted or deleted functions'
+HDFBEF81FB2EF: '%0 属性对默认或已删除的函数无效'
+# '%0 attribute ignored'
+HCD3BE326728C: '%0 属性被忽略'
+# '%0 attribute ignored because Clang does not yet support this attribute signature'
+HB0B12C0AB26E: '因 Clang 尚不支持该属性签名，%0 属性被忽略'
+# '%0 attribute ignored for field of type %1'
+HBE46E60BBC6F: '类型 %1 的字段上，%0 属性被忽略'
+# '%0 attribute ignored on a non-definition declaration'
+H208A7E24C5FA: '在非定义声明上，%0 属性被忽略'
+# '%0 attribute ignored on inline function'
+H96102C6ED34D: '在内联函数上，%0 属性被忽略'
+# '%0 attribute ignored on local class%select{| member}1'
+HFF01D57072C2: '在局部类%select{| 成员}1 上，%0 属性被忽略'
+# '%0 attribute ignored when parsing type'
+HD37333D19CA5: '解析类型时，%0 属性被忽略'
+# '%0 attribute is deprecated and ignored in %1'
+HEFE3D7F726A1: '%0 属性在 %1 中已被弃用并忽略'
+# '%0 attribute is ignored because %1 is not a function pointer'
+H4475E1120012: '因 %1 不是函数指针，%0 属性被忽略'
+# '%0 attribute is ignored because there exists no call expression inside the statement'
+H7E65A2DFE3B4: '因语句内不存在调用表达式，%0 属性被忽略'
+# '%0 attribute is ignored in non-aggregate type %1'
+HDDFDF4BAA343: '在非聚合类型 %1 中，%0 属性被忽略'
+# '%0 attribute is invalid for the implicit this argument'
+H2D89A7CAF8E9: '%0 属性对隐式 this 参数无效'
+# '%0 attribute is missing parameter label clause'
+HD08320D115DE: '%0 属性缺少参数标签子句'
+# '%0 attribute is not supported in %select{C|C++|Objective-C}1'
+H40645DEA04DB: '%0 属性在 %select{C|C++|Objective-C}1 中不受支持'
+# "%0 attribute is not supported on '%1'"
+H46128D024C15: "%0 属性不受 '%1' 支持"
+# '%0 attribute is not supported on targets missing %1; specify an appropriate -march= or -mcpu='
+H8B26915B3400: '%0 属性在缺少 %1 的目标上不受支持；请指定适当的 -march= 或 -mcpu='
+# '%0 attribute is not yet supported on AIX'
+H09BE0575B2ED: '%0 属性在 AIX 上尚未支持'
+# '%0 attribute is only allowed on empty statements'
+H523B4DCA9F57: '%0 属性仅允许用于空语句'
+# '%0 attribute is permitted on definitions only'
+H7BE8228ED388: '%0 属性仅允许用于定义'
+# "%0 attribute isn't implemented by this Objective-C runtime"
+H4540FD7320B4: '%0 属性未在此 Objective-C 运行时中实现'
+# '%0 attribute may not be used with no-return-attribute functions'
+H9936965C5605: '%0 属性不可与带有 no-return-attribute 的函数一起使用'
+# '%0 attribute may not be used with variadic functions'
+HC4348E6FE2CB: '%0 属性不可与可变参数函数一起使用'
+# '%0 attribute minimum and maximum arguments are equal'
+HCEAC369F8447: '%0 属性的最小和最大参数值相等'
+# "%0 attribute must be applied to a %select{function|method}1 annotated with non-'none' attribute 'swift_async'"
+H1EED532B31A7: '%0 属性必须应用于带有非"none" "swift_async"属性的%select{函数|方法}1'
+# '%0 attribute must be greater than 0'
+H2544E0569FB3: '%0 属性必须大于 0'
+# '%0 attribute on entry function does not match the target profile'
+H789CC95F4AD2: '%0 属性在入口函数中与目标配置文件不匹配'
+# '%0 attribute only applies to %select{Objective-C object|pointer|pointer-to-CF-pointer|pointer/reference-to-OSObject-pointer}1 parameters'
+H5089073C0897: '%0 属性仅适用于%select{Objective-C 对象|指针|指向 CF 指针的指针|指向 OSObject 指针的指针/引用}1 参数'
+# '%0 attribute only applies to %select{Objective-C object|pointer|pointer-to-CF-pointer}1 parameters'
+HF1529765C253: '%0 属性仅适用于%select{Objective-C 对象|指针|指向 CF 指针的指针}1 参数'
+# '%0 attribute only applies to %select{functions|methods|properties}1 that return %select{an Objective-C object|a pointer|a non-retainable pointer}2'
+H0AEFAD59CD2C: '%0 属性仅适用于返回%select{Objective-C 对象|指针|不可保留指针}2的%select{函数|方法|属性}1'
+# '%0 attribute only applies to %select{pointer|integer}1 arguments'
+H3971FB6B9374: '%0 属性仅适用于%select{指针|整数}1参数'
+# '%0 attribute only applies to a pointer or reference (%1 is invalid)'
+HC8C4E00A6BE4: '%0 属性仅适用于指针或引用（%1 无效）'
+# '%0 attribute only applies to return values that are pointers'
+H83B4DE3C5663: '%0 属性仅适用于返回值为指针的情况'
+# '%0 attribute only applies to return values that are pointers or references'
+HA603B89762A9: '%0 属性仅适用于返回值为指针或引用的情况'
+# '%0 attribute only applies to%select{| constant}1 pointer arguments'
+H1E90BC4B3746: '%0 属性仅适用于%select{|常量}1指针参数'
+# '%0 attribute parameter %1 is negative and will be ignored'
+HB94334A9F06D: '%0 属性的参数 %1 为负数，将被忽略'
+# '%0 attribute parameter %1 is out of bounds'
+H9C7D1C19F9DB: '%0 属性的参数 %1 超出范围'
+# '%0 attribute parameter %1 is out of bounds: %plural{0:no parameters to index into|1:can only be 1, since there is one parameter|:must be between 1 and %2}2'
+HF05125794562: '%0 属性的参数 %1 超出范围：%plural{0:没有参数可供索引|1:只能是1，因为只有一个参数|:必须在1和%2之间}2'
+# '%0 attribute parameter types do not match: parameter %1 of function %2 has type %3, but parameter %4 of function %5 has type %6'
+H4FBE5E81E84C: '%0 属性的参数类型不匹配：函数 %2 的参数 %1 类型为 %3，而函数 %5 的参数 %4 类型为 %6'
+# '%0 attribute parameters do not match the previous declaration'
+HBB1E6D667EEA: '%0 属性的参数与之前的声明不匹配'
+# '%0 attribute references function %1, which %plural{0:takes no arguments|1:takes one argument|:takes exactly %2 arguments}2'
+HC6916839EF90: '%0 属性引用函数 %1，该函数%plural{0:没有参数|1:有一个参数|:恰好有%2个参数}2'
+# '%0 attribute references parameter %1, but the function %2 has only %3 parameters'
+H95C6EBBF3D05: '%0 属性引用参数 %1，但函数 %2 只有 %3 个参数'
+# '%0 attribute requires %select{int or bool|an integer constant|a string|an identifier}1'
+H4D660FD4970F: '%0 属性需要%select{int或bool类型|一个整型常量|一个字符串|一个标识符}1'
+# '%0 attribute requires a %select{positive|non-negative}1 integral compile time constant expression'
+H88B2A4A1C6F1: '%0 属性需要一个%select{正数|非负数}1 类型的整型编译时常量表达式'
+# '%0 attribute requires an integer argument which is a constant power of two between %1 and %2 inclusive; provided argument was %3'
+HBE3281153430: '%0 属性需要一个介于 %1 和 %2 之间的2的常量幂整数参数；提供的参数是 %3'
+# "%0 attribute requires arguments whose type is annotated with 'capability' attribute; type here is %1"
+H6A637254187D: '%0 属性需要参数类型带有"capability"属性；此处的类型是 %1'
+# '%0 attribute requires integer constant between %1 and %2 inclusive'
+HEAC447E72E0E: '%0 属性需要介于 %1 和 %2 之间的整型常量'
+# '%0 attribute requires parameter %1 to be %select{int or bool|an integer constant|a string|an identifier|a constant expression|a builtin function}2'
+H410FC41452B2: '%0 属性要求参数 %1 为%select{int或bool类型|一个整型常量|一个字符串|一个标识符|一个常量表达式|一个内置函数}2'
+# '%0 attribute requires that both caller and callee functions have a prototype'
+H16EEA1808E57: '%0 属性要求调用函数和被调用函数都具有原型声明'
+# '%0 attribute requires that the return value is the result of a function call'
+H374EE3F9FB1E: '%0 属性要求返回值必须是函数调用的结果'
+# '%0 attribute takes at least %1 argument%s1'
+HADEF6E200C29: '%0 属性至少需要 %1 个参数%s1'
+# '%0 attribute takes no more than %1 argument%s1'
+H19CAD7127F59: '%0 属性最多允许 %1 个参数%s1'
+# "%0 attribute with '%1' convention can only be applied to a %select{function|method}2 returning %select{an integral type|a pointer}3"
+HD834E8E626F3: '%0 属性使用"%1"约定时只能应用于返回%select{整型类型|指针}3的%select{函数|方法}2'
+# "%0 attribute with '%1' convention must have an integral-typed parameter in completion handler at index %2, type here is %3"
+HA510BC647385: '%0 属性使用"%1"约定时，完成处理程序在索引 %2 处必须具有整型参数，此处的类型为 %3'
+# "%0 attribute with 'nonnull_error' convention can only be applied to a %select{function|method}1 with a completion handler with an error parameter"
+HB02ECE112485: '%0 属性使用"nonnull_error"约定时只能应用于具有带有错误参数的完成处理程序的%select{函数|方法}1'
+# '%0 attribute without capability arguments can only be applied to non-static methods of a class'
+H1A6503974C19: '%0 属性在没有能力参数时只能应用于类的非静态方法'
+# "%0 attribute without capability arguments refers to 'this', but %1 isn't annotated with 'capability' or 'scoped_lockable' attribute"
+H4FEFB6A31DD8: "%0 属性引用了 'this'，但 %1 未标注 'capability' 或 'scoped_lockable' 属性"
+# "%0 availability is ignored without a valid 'SDKSettings.json' in the SDK"
+H44C1644AD110: '%0 可用性因 SDK 中缺少有效 "SDKSettings.json" 而被忽略'
+# '%0 begins here'
+H3AEE48765E33: '%0 开始于此处'
+# '%0 bridges to %1, not %2'
+HF3302ECAA235: '%0 桥接至 %1 而非 %2'
+# "%0 byte order mark detected in '%1', but encoding is not supported"
+H4406B8F3C975: "%0 在 '%1' 中检测到字节序标记，但当前编码不支持该标记"
+# '%0 calling convention is not supported %select{for this target|on variadic function|on constructor/destructor|on builtin function}1'
+HEDD5B64E1439: '%0 调用约定 %select{不适用于此目标|不适用于可变参数函数|不适用于构造函数/析构函数|不适用于内置函数}1'
+# '%0 can appear only once in a capture list'
+H17CCB4C13684: '捕获列表中 %0 只能出现一次'
+# "%0 cannot appear before '::' because it is not a class%select{ or namespace|, namespace, or enumeration}1; did you mean ':'?"
+H95866D5EB8E3: "%0 不能出现在 '::' 前，因为它不是类%select{或命名空间|、命名空间或枚举}1；是否应改为使用“:”？"
+# '%0 cannot appear here'
+H7B57CA319863: '%0 不能出现在此处'
+# '%0 cannot appear here, place it after "%select{class|struct|interface|union|enum}1" to apply it to the type declaration'
+H2B1210C2EB9F: '请将其放在“%select{类|结构体|接口|联合|枚举}1”之后以应用于类型声明'
+# '%0 cannot be a template'
+H09B919FC579B: '%0 不能是模板'
+# '%0 cannot be applied to a module'
+HED10CE4A1D68: '%0 不能应用于模块'
+# '%0 cannot be applied to a module import'
+HE5DD1D7C816C: '%0 不能应用于模块导入'
+# '%0 cannot be captured because it does not have automatic storage duration'
+HBA5ABB384993: '%0 无法被捕获，因为它没有自动存储期'
+# "%0 cannot be declared 'weak_import' because its definition has been provided"
+HE0A69210AAA7: "已提供 %0 的定义，因此其不能声明为 'weak_import'"
+# '%0 cannot be declared consteval'
+H16F780D20CBE: '%0 不能声明为 consteval'
+# '%0 cannot be declared inside a namespace'
+H52C308DDDEAD: '%0 不能声明在命名空间内'
+# '%0 cannot be declared static in global scope'
+HE95F0FB30315: '全局作用域中的 %0 不能声明为 static'
+# '%0 cannot be defined in a condition'
+H4D213A54365F: '%0 不能在条件中定义'
+# '%0 cannot be defined in a parameter type'
+H73A9723882B3: '%0 不能在参数类型中定义'
+# '%0 cannot be defined in a type alias template'
+H481A328DC270: '%0 不能在类型别名模板中定义'
+# '%0 cannot be defined in a type specifier'
+H66CFEB606651: '%0 不能在类型说明符中定义'
+# '%0 cannot be defined in an enumeration'
+H9015777D8EDA: '%0 不能在枚举中定义'
+# '%0 cannot be defined in the result type of a function'
+HBCF321DF1229: '%0 不能在函数的返回类型中定义'
+# '%0 cannot be specialized%select{|: %2}1'
+H2F24480223D6: '%0 不能被特化%select{|: %2}1'
+# '%0 cannot be the name of a parameter'
+H86909FCB5AFA: '%0 不能作为参数名'
+# '%0 cannot be the name of a variable or data member'
+H97536A002E4D: '%0 不能作为变量或数据成员的名称'
+# '%0 cannot be used as the type of a kernel parameter'
+H4649232301DD: '%0 不能用作内核参数的类型'
+# '%0 cannot bridge to %1'
+H223FE9046675: '%0 无法桥接到 %1'
+# '%0 cannot have a dependent return type; use %1 instead'
+H622C863D5758: '%0 不能具有依赖返回类型；请改用 %1'
+# '%0 cannot take a dependent type as first parameter; use %1 instead'
+HA474A1ABAD69: '%0 不能将依赖类型作为第一个参数；请改用 %1'
+# '%0 cannot take a dependent type as first parameter; use size_t (%1) instead'
+H54AA7CDA647F: '%0 不能将依赖类型作为第一个参数；请改用 size_t (%1)'
+# "%0 cannot use 'super' because it is a root class"
+HCB7FBC7D0FE7: "%0 不能使用 'super'，因为它是一个根类"
+# '%0 causes a section type conflict with %1'
+HC2A4EF19BEEF: '%0 与 %1 存在段类型冲突'
+# '%0 clause previously used here'
+HB8E770744C3C: '此处之前使用过 %0 子句'
+# '%0 clause should not be followed by arguments; tokens will be ignored'
+HC180595F601D: '%0 子句不应跟有参数；将忽略这些标记'
+# '%0 command failed due to signal (use -v to see invocation)'
+H6D5905ABD1C8: '%0 命令因信号而失败（使用 -v 查看调用信息）'
+# '%0 command failed with exit code %1 (use -v to see invocation)'
+H4949FF66B370: '%0 命令以退出码 %1 失败（使用 -v 查看调用信息）'
+# '%0 currently has no effect on a using declaration'
+HF72F1D74D1D1: '当前 %0 对 using 声明没有效果'
+# '%0 declared as a reference to a reference'
+H6B7D1478B098: '%0 被声明为引用的引用'
+# '%0 declared here'
+HF5B76F9106FA: '%0 在此处声明'
+# '%0 defined here'
+HAF9360C4877D: '%0 在此处定义'
+# "%0 differs in AST file '%1' vs. current file"
+H2B8E15EA63E3: "%0 在AST文件 '%1' 与当前文件中不一致"
+# '%0 dimension is outside the allowed range [1, %1]'
+H082ED204EAD0: '%0 维度超出允许的范围 [1, %1]'
+# '%0 does not have a member named %1'
+H9A87A68C56D5: '%0 没有名为 %1 的成员'
+# '%0 does not have a member named %1; did you mean %2?'
+HB35AA56437F0: '%0 没有名为 %1 的成员；您是指 %2 吗？'
+# '%0 does not identify a valid pointer authentication key for the current target'
+H788DB99BF41E: '%0 指定的指针认证密钥对当前目标无效'
+# '%0 does not name a template but is followed by template arguments'
+H33B12988518D: '%0 不是模板名称，但随后跟有模板参数'
+# '%0 does not name a template but is followed by template arguments; did you mean %1?'
+H4461F93F60D6: '%0 不是模板名称，但随后跟有模板参数；您是指 %1 吗？'
+# '%0 does not refer to a type name in pseudo-destructor expression; expected the name of type %1'
+H439E7BF75B12: '%0 在伪析构表达式中不指向类型名称；预期应为类型 %1 的名称'
+# '%0 does not refer to a value'
+H21D124F292F8: '%0 未引用有效值'
+# '%0 does not refer to the name of a parameter pack'
+H84CFFC360255: '%0 未引用参数包的名称'
+# '%0 does not refer to the name of a parameter pack; did you mean %1?'
+H833E3DFEF469: '%0 未引用参数包的名称；您是指 %1 吗？'
+# "%0 does not support the '%1' %select{type qualifier|storage class specifier}2"
+H0775C84F5711: "%0 不支持 '%1' %select{类型限定符|存储类说明符}2"
+# "%0 does not support the option '%1'"
+HCC61DEFC8375: "%0 不支持选项 '%1'"
+# '%0 has C-linkage specified, but returns incomplete type %1 which could be incompatible with C'
+H36CF04C5AD21: '%0 指定了C链接，但返回不完整类型 %1，这可能与C不兼容'
+# '%0 has C-linkage specified, but returns user-defined type %1 which is incompatible with C'
+H33D15C91E278: '%0 指定了C链接，但返回用户定义类型 %1，这与C不兼容'
+# '%0 has a non-throwing exception specification but can still throw'
+H115C08CCD253: '%0 声明了无抛出异常规范，但仍可能抛出异常'
+# '%0 has been explicitly marked %select{unavailable|deleted|deprecated}1 here'
+H8BC49D6916A0: '%0 已在此处显式标记为 %select{不可用|已删除|已弃用}1'
+# '%0 has been marked as being introduced in %1 %2 %select{|in %5 environment }4here, but the deployment target is %1 %3%select{| %6 environment }4'
+H0D47117119FF: '%0 被标记为在 %1 %2 %select{|%5 环境中}4 引入，但部署目标是 %1 %3%select{|%6 环境}4'
+# "%0 has different definitions in different modules; first difference is %select{definition in module '%2'|defined here}1 found %select{%select{no super class|super class with type %5}4|instance variable '%4' access control is %select{|@private|@protected|@public|@package}5}3"
+H8AC2F2F00B17: "%0 在不同模块中有不同定义；第一个差异是 %select{模块 '%2' 的定义|在这里定义}1 发现 %select{%select{没有基类|基类类型为 %5}4|实例变量 '%4' 的访问控制是 %select{|@private|@protected|@public|@package}5}3"
+# '%0 has lower precedence than %1; %1 will be evaluated first'
+HFFF20BD3A51A: '%0 的优先级比 %1 低；将先计算 %1'
+# '%0 has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit'
+HF80DD309C805: '%0 没有外部虚方法定义；它的虚表将在每个翻译单元中生成'
+# '%0 has unknown return type; cast the call to its declared return type'
+H98622C79AEFA: '%0 的返回类型未知；将其调用转换为声明的返回类型'
+# '%0 has unknown type, which is not supported for this kind of declaration'
+H62292154D971: '%0 的类型未知，这种类型的声明不受支持'
+# '%0 has unknown type; cast it to its declared type to use it'
+HB47BA1F1A811: '%0 的类型未知；将其转换为声明的类型后再使用'
+# '%0 has virtual functions but non-virtual destructor'
+HE7971ACC4D33: '%0 有虚函数但没有虚析构函数'
+# '%0 in capture list does not name a variable'
+HDBFB52EAD640: '%0 在捕获列表中未命名变量'
+# '%0 is a %select{struct|interface|union|class|enum}1 here'
+H03376E721EF2: '%0 这里是一个 %select{结构体|接口|联合体|类|枚举}1'
+# '%0 is a builtin with type %1'
+HF5D497B12074: '%0 是类型为 %1 的内置函数'
+# '%0 is a core feature in %select{OpenCL C|C++ for OpenCL}1 version %2 but not supported on this target'
+HB2B1D8E45B2F: '%0 是 %select{OpenCL C|OpenCL 的 C++}1 版本 %2 的核心特性，但此目标不支持'
+# '%0 is a large (%1 bytes) pass-by-value argument; pass it by reference instead ?'
+H3328D1D6C300: '%0 是一个大（%1 字节）的按值传递参数；建议改为引用传递？'
+# '%0 is a reserved attribute identifier'
+HA23BACAA2167: '%0 是保留的属性标识符'
+# '%0 is a reserved name for a module'
+H539795173149: '%0 是保留的模块名称'
+# '%0 is an %select{unsafe pointer used for buffer access|unsafe buffer that does not perform bounds checks}1'
+HD2DA3F5D5287: '%0 是 %select{用于缓冲区访问的不安全指针|不执行边界检查的不安全缓冲区}1'
+# '%0 is an immediate %select{function|constructor}5 because %select{its body|the%select{| default}7 initializer of %8}6 %select{evaluates the address of %select{an immediate|a consteval}2 function %1|contains a call to %select{an immediate|a consteval}2 %select{function|constructor}4 %1 and that call is not a constant expression}3'
+H2D11120EB0CD: '%0 是一个即时 %select{函数|构造函数}5，因为 %select{其函数体|的%select{|默认}7 初始化器 %8}6 %select{计算了即时函数 %1 的地址|包含对即时%select{函数|构造函数}4 %1 的调用，而该调用不是常量表达式}3'
+# '%0 is an implicit parameter'
+H18B31C3BE2ED: '%0 是一个隐式参数'
+# '%0 is an incomplete type'
+H23B2652D4493: '%0 是一个不完整类型'
+# '%0 is an invalid name for a module'
+H04BC4C58E825: '%0 是无效的模块名称'
+# "%0 is currently enabled, but was not in the AST file '%1'"
+H4A72404ECC3D: "%0 当前已启用，但在 AST 文件 '%1' 中并未启用"
+# '%0 is defined here; did you mean %1?'
+H3B788FE6A551: '%0 在此处定义；您是指 %1 吗？'
+# '%0 is deprecated'
+HFB3435CCEF09: '%0 已弃用'
+# '%0 is deprecated: %1'
+HBBBFE1910250: '%0 已弃用：%1'
+# '%0 is expected to be a non-type template, but instantiated to a %select{class|type alias}1 template'
+H0D2CA33F6096: '%0 应该是一个非类型模板，但实例化为一个 %select{类|类型别名}1 模板'
+# '%0 is incompatible with selectors that return a %select{struct|union|vector}1 type'
+HF29FF6DC9511: '%0 与返回 %select{结构体|联合|向量}1 类型的选择器不兼容'
+# '%0 is incomplete'
+HE1EB0B2A5FDF: '%0 是不完整的类型'
+# "%0 is missing exception specification '%1'"
+HFEFEB7B90D08: "%0 缺少异常说明 '%1'"
+# '%0 is no longer a pack expansion but a pack indexing type; add a name to specify a pack expansion'
+H52ECBB1B9A17: '%0 现在是打包索引类型而非打包扩展；请添加名称以指定打包扩展'
+# '%0 is not a class type'
+H5598919CD04A: '%0 不是类类型'
+# '%0 is not a class%select{ or namespace|, namespace, or enumeration}1'
+H6791F56D81BD: '%0 不是类%select{或命名空间|、命名空间或枚举类型}1'
+# '%0 is not a direct base of %1, cannot inherit constructors'
+H9090F9B02C3F: '%0 不是 %1 的直接基类，无法继承构造函数'
+# '%0 is not a global variable, static local variable or static data member'
+HC570BF566E38: '%0 不是全局变量、静态局部变量或静态数据成员'
+# '%0 is not a global variable, static local variable or static data member; did you mean %1'
+H32A3026BA924: '%0 不是全局变量、静态局部变量或静态数据成员；您是指 %1 吗？'
+# '%0 is not a recognized builtin%select{|; consider including <intrin.h> to access non-builtin intrinsics}1'
+HB8FF0E17F733: '%0 不是已识别的内置函数%select{|；请包含 <intrin.h> 以访问非内置本机函数}1'
+# '%0 is not a structural type because it has a %select{non-static data member|base class}1 of non-structural type %2'
+HF393BE38CC50: '%0 不是结构性类型，因为它具有非结构性类型 %2 的 %select{非静态数据成员|基类}1'
+# '%0 is not a structural type because it has a %select{non-static data member|base class}1 that is not public'
+H7772D2C2337B: '%0 不是结构性类型，因为它具有非公共的 %select{非静态数据成员|基类}1'
+# '%0 is not a structural type because it has a mutable non-static data member'
+HF8F430793986: '%0 不是结构性类型，因为它具有可变的非静态数据成员'
+# '%0 is not a structural type because it has a non-static data member of rvalue reference type'
+H3FC432618326: '%0 不是结构性类型，因为它具有右值引用类型的非静态数据成员'
+# '%0 is not a valid SYCL kernel name type; a non-union class type is required'
+H0BC00170201E: '%0 不是有效的 SYCL 内核名称类型；需要非联合类类型'
+# '%0 is not a valid literal type for NSNumber'
+H994AF662B0D5: '%0 不是NSNumber的有效文字类型'
+# '%0 is not a valid property name (accessing an object of type %1)'
+HA0D8AFF85380: '%0 不是有效的属性名称（访问类型为%1的对象）'
+# "%0 is not an availability stage; use 'introduced', 'deprecated', or 'obsoleted'"
+H5FED6488A0D9: "%0 不是可用性阶段；请使用'introduced'、'deprecated'或'obsoleted'"
+# '%0 is not an enumerated type'
+H7F1BAB170C64: '%0 不是枚举类型'
+# '%0 is not defined, but forward declared here; conversion would be valid if it was derived from %1'
+H176B6CEA9A74: '%0 未定义，但在此处有前置声明；如果其派生于%1类型则转换有效'
+# '%0 is not defined, evaluates to 0'
+HBDB44DE505CF: '%0 未定义，计算结果为0'
+# '%0 is not literal because it has a non-trivial destructor'
+HC9535B0A1692: '%0 不是文字类型，因为它具有非平凡的析构函数'
+# '%0 is not literal because it has a user-provided destructor'
+H35BFFB66B4EF: '%0 不是文字类型，因为它具有用户提供的析构函数'
+# '%0 is not literal because it has base class %1 of non-literal type'
+H41CFD9851FA8: '%0 不是文字类型，因为它具有基类%1属于非文字类型'
+# '%0 is not literal because it has data member %1 of %select{non-literal|volatile}3 type %2'
+H39754ECC239F: '%0 不是文字类型，因为它具有%select{非文字型|volatile}3类型%2的成员%1'
+# '%0 is not literal because it is not an aggregate and has no constexpr constructors other than copy or move constructors'
+HD7160BA9A570: '%0 不是文字类型，因为它不是聚合类型且除了拷贝或移动构造函数外没有constexpr构造函数'
+# '%0 is not literal because its destructor is not constexpr'
+HEAC0F5C26B7E: '%0 不是文字类型，因为它的析构函数不是constexpr'
+# '%0 is not polymorphic'
+H67C71DB95F18: '%0 不是多态类型'
+# '%0 is not supported on HVX %1'
+H7927AD732A30: '%0 不受HVX %1支持'
+# '%0 is not supported on this target'
+H331CCFBB5DA0: '%0 不受此目标平台支持'
+# '%0 is not supported with -fembed-bitcode'
+H580226EF44DA: '%0 不能与-fembed-bitcode选项同时使用'
+# '%0 is not virtual and cannot be declared pure'
+HFCE20933CC31: '%0 不是虚函数，不能声明为纯虚函数'
+# '%0 is only available %select{|in %4 environment }3on %1 %2 or newer'
+H1926B8ADA9BD: '%0 仅在%select{|%4环境 }3%1 %2或更高版本中可用'
+# '%0 is only supported when \'-mrvv-vector-bits=<bits>\' is specified with a value of "zvl" or a power 2 in the range [64,65536]'
+H714177E08C3D: '%0 仅在指定‘-mrvv-vector-bits=<bits>’参数为"zvl"或64到65536之间的2的幂时支持'
+# "%0 is only supported when '-msve-vector-bits=<bits>' is specified with a value of 128, 256, 512, 1024 or 2048"
+H5256E220BB0F: '在指定‘-msve-vector-bits=<bits>’参数值为128、256、512、1024或2048时支持%0'
+# "%0 is required to declare the member 'unhandled_exception()'"
+H72F7248FC774: "%0 必须声明成员 'unhandled_exception()'"
+# "%0 is required to declare the member 'unhandled_exception()' when exceptions are enabled"
+HA2F4C1A14DF7: "当启用异常时，%0 必须声明成员 'unhandled_exception()'"
+# "%0 is required to have a non-throwing noexcept specification when the promise type declares 'get_return_object_on_allocation_failure()'"
+H267685A6E8FC: "当 promise 类型声明 'get_return_object_on_allocation_failure()' 时，%0 必须具有不抛出异常的 noexcept 说明"
+# '%0 is unavailable'
+HD9DCE040D90B: '%0 不可用'
+# '%0 is unavailable in ARC'
+H5A0EF77D1311: '%0 在 ARC 中不可用'
+# '%0 is unavailable: %1'
+H3F1A4B4C46AF: '%0 不可用：%1'
+# '%0 is unsupported with LoongArch linker relaxation (-mrelax)'
+H711EE6DE37A1: '%0 不支持与 LoongArch 链接器放松 (-mrelax) 一起使用'
+# '%0 is unsupported with RISC-V linker relaxation (-mrelax)'
+H7184497D9FBD: '%0 不支持与 RISC-V 链接器放松 (-mrelax) 一起使用'
+# '%0 is used as a header guard here, followed by #define of a different macro'
+HD1F7F8F6EEEE: '%0 在此处用作头文件卫士，随后是不同宏的 #define'
+# "%0 layout not recognized. Must be a non-polymorphic class type with no bases and two fields: a 'const E *' and either another 'const E *' or a 'std::size_t'"
+HED28B381356F: "%0 布局未被识别。必须是一个无基类且非多态的类类型，并且包含两个字段：一个 'const E *' 和另一个 'const E *' 或 'std::size_t'"
+# '%0 macro redefined'
+H137240D8643E: '%0 宏被重新定义'
+# "%0 managed by '%1' is '%3' instead of '%2'"
+H2BF1BAAD2D9C: "由 '%1' 管理的 %0 是 '%3' 而不是 '%2'"
+# "%0 marked 'override' but does not override any member functions"
+H4E355023D40F: "%0 标记为 'override'，但未覆盖任何成员函数"
+# '%0 may be deprecated because the receiver type is unknown'
+H33FCAE6FB142: '%0 可能因接收器类型未知而被弃用'
+# '%0 may be duplicated when built into a shared library: it is mutable, has hidden visibility, and external linkage'
+H5AAA1A09F587: '当构建为共享库时，%0 可能会被重复：它是可变的，具有隐藏可见性且具有外部链接'
+# '%0 may be unavailable because the receiver type is unknown'
+H5F639AF749BC: '%0 可能因接收器类型未知而不可用'
+# '%0 may not be nested in a struct due to flexible array member'
+H56A636FEC1E0: '%0 可能因柔性数组成员而无法嵌套在结构体中'
+# '%0 may not be used as an array element due to flexible array member'
+H4CE3DAD3A8F2: '%0 可能因柔性数组成员而无法用作数组元素'
+# '%0 may not intend to support class template argument deduction'
+H3F1AA6022CE0: '%0 可能不打算支持类模板实参推导'
+# '%0 may not respond to %1'
+HE863B7C4E09E: '%0 可能无法响应 %1'
+# '%0 must be explicitly converted to %1; use %select{%objcclass2|%objcinstance2}3 method for this conversion'
+H7B5D141884DB: '%0 必须显式转换为%1；使用%select{%objcclass2|%objcinstance2}3方法进行此转换'
+# '%0 must be name of an Objective-C class to be able to convert %1 to %2'
+HF9706A398326: '%0 必须是Objective-C类的名称，以便将%1转换为%2'
+# '%0 must be specified on definition if it is specified on any declaration'
+H593384CDC4FD: '如果%0 在任何声明中被指定，则在定义中也必须指定该%0'
+# '%0 must be used within a preprocessing directive'
+HAA08D126AF16: '%0 必须在预处理指令中使用'
+# '%0 must have at least one parameter'
+H2488FE597801: '%0 必须至少有一个参数'
+# "%0 must not appear in both clauses 'to' and 'link'"
+HC3403F617C92: "%0 不得同时出现在' to '和' link '子句中"
+# '%0 must return type %1'
+H561F31EBFB23: '%0 必须返回类型%1'
+# '%0 needs target feature %1'
+H5236119E54CB: '%0 需要目标特性%1'
+# '%0 needs to be instantiated from a class template with proper template arguments'
+H6CDDF6DD374E: '%0 需要从具有适当模板参数的类模板实例化'
+# '%0 needs to have exactly %1 template parameters'
+HD0C675913338: '%0 必须恰好有%1个模板参数'
+# '%0 only allowed in __except block or filter expression'
+H5D665A901228: '%0 仅允许在__except块或过滤表达式中使用'
+# '%0 only allowed in __except filter expression'
+H6152837B25ED: '%0 仅允许在__except过滤表达式中使用'
+# '%0 only allowed in __finally block'
+H4B415A24C89A: '%0 仅允许在__finally块中使用'
+# '%0 only applies to pointer types; type here is %1'
+HAB4FE8662D8D: '%0 仅适用于指针类型；此处的类型是%1'
+# "%0 overrides a destructor but is not marked 'override'"
+HEE01F5122D86: "%0 覆盖了一个析构函数但未标记为'override'"
+# "%0 overrides a member function but is not marked 'override'"
+H7449F9821D96: "%0 覆盖了一个成员函数但未标记为'override'"
+# "%0 parameter marked 'called_once' is called twice"
+H9B0F1F204498: "%0 标记为'called_once'的参数被调用了两次"
+# "%0 parameter marked 'called_once' is never %select{used|called}1 when %select{taking true branch|taking false branch|handling this case|none of the cases applies|entering the loop|skipping the loop|taking one of the branches}2"
+HBB87206669E4: "%0 标记为'called_once'的参数在%select{取真分支|取假分支|处理这种情况|所有情况都不适用|进入循环时|跳过循环时|取其中一个分支}2时%select{未被使用|未被调用}1"
+# "%0 redeclared with '%1' access"
+H6D05457F8E04: '%0 重新声明为具有"%1"访问权限'
+# '%0 released here'
+H2E4FF4BE13D1: '%0 在此处释放'
+# "%0 requires %1 type support, but ABI '%2' does not support it"
+H03B0999A3C3B: "%0 需要 %1 类型支持，但 ABI '%2' 不支持该特性"
+# "%0 requires %select{|%2 bit size}1 %3 %select{|return }4type support, but target '%5' does not support it"
+HE937C1210F37: "%0 需要 %select{|%2 位大小}1 %3 %select{|返回}4 类型支持，但目标架构 '%5' 不支持该特性"
+# '%0 requires HVX, use -mhvx/-mhvx= to enable it'
+H9F7369C63134: '%0 需要 HVX 支持，请使用 -mhvx/-mhvx= 开启该功能'
+# "%0 requires debug info. Use %1 or debug options that enable debugger's stepping function; option ignored"
+H985F4F582A8C: '%0 需要调试信息。请使用 %1 或启用调试器单步执行功能的选项；当前选项被忽略'
+# '%0 requires more than 1 template argument; provide the remaining arguments explicitly to use it here'
+H33A930D763B0: '%0 需要超过 1 个模板参数；请显式提供剩余参数以在此处使用'
+# '%0 returns a reference'
+H81B0F21DCC91: '%0 返回引用'
+# '%0 should be declared prior to the call site%select{| or in %2| or in an associated namespace of one of its arguments}1'
+H80A1DB32BBA2: '%0 应在调用位置之前声明%select{|或在 %2 中|或在其实参关联命名空间之一中}1'
+# "%0 should not return a null pointer unless it is declared 'throw()'%select{| or 'noexcept'}1"
+HD6330A6C968B: "%0 除非被声明为 'throw()'%select{|或 'noexcept'}1，否则不应返回空指针"
+# '%0 size too large'
+HC155B92BBDDE: '%0 尺寸过大'
+# '%0 specified here'
+H2793186BA8E0: '%0 在此处指定'
+# '%0 takes type size_t (%1) as first parameter'
+H994A3A678C5B: '%0 第一个参数应为 type size_t (%1)'
+# '%0 template must have at least two parameters'
+HC33714C2985B: '%0 模板必须至少有两个参数'
+# '%0 type %1 not found; include the base header with -finclude-default-header'
+HB4775AA2AD70: '%0 类型 %1 未找到；请通过 -finclude-default-header 引入基础头文件'
+# '%0 type was not found; include <coroutine> before defining a coroutine'
+H89DE99125E80: '%0 类型未找到；在定义协程前请包含 <coroutine>'
+# '%0 used as the name of the previous parameter rather than as part of the selector'
+HAA86630AF908: '%0 被用作前一个参数的名称而非选择器的一部分'
+# '%0 used in array declarator outside of function prototype'
+H667299EFB745: '%0 在函数原型外的数组声明符中使用'
+# '%0 used in declare target directive is not a variable or a function name'
+H56AD7716F4DF: '%0 在声明目标指令中不是变量或函数名'
+# '%0 used in non-outermost array type derivation'
+H7D46A3E1139D: '%0 在非最外层数组类型推导中使用'
+# '%0 variable cannot be %1'
+H88684475A953: '%0 变量不能是 %1'
+# "%0 variable cannot be in a %1 clause in '#pragma omp %2' directive"
+HF56ADE356ADE: '%0 变量不能在 #pragma omp %2 指令的 %1 子句中使用'
+# '%0 variable must be %1'
+H2457271DFCB0: '%0 变量必须是 %1'
+# "%0 was %select{disabled|enabled}1 in AST file '%3' but is currently %select{disabled|enabled}2"
+HC0632CD5FF96: "%0 在AST文件 '%3' 中%select{禁用|启用}1，但当前是%select{禁用|启用}2"
+# '%0 was deserialized'
+H39D399F5AEF8: '%0 已反序列化'
+# '%0 was marked unused but was used'
+H40B831F8FB51: '%0 被标记为未使用，但实际被使用了'
+# '%0%select{ attribute|}1 cannot be applied to a base specifier'
+H11035A3B905C: '%0%select{属性|}1 不能应用于基类说明符'
+# '%0%select{ attribute|}1 cannot be applied to a declaration'
+H127063747A92: '%0%select{属性|}1 不能应用于声明'
+# '%0%select{ attribute|}1 cannot be applied to a statement'
+H1C3F2544F25A: '%0%select{属性|}1 不能应用于语句'
+# '%0%select{ attribute|}1 cannot be applied to types'
+H96D80DF95948: '%0%select{属性|}1 不能应用于类型'
+# '%0%select{ attribute|}1 only applies to %2'
+H45C12381C633: '%0%select{属性|}1 仅适用于 %2'
+# '%0%select{ attribute|}1 only applies to %select{functions|unions|variables and functions|functions and methods|functions, methods and blocks|functions, methods, and parameters|variables|variables and fields|variables, data members and tag types|types and namespaces|variables, functions and classes|kernel functions|non-K&R-style functions|for loop statements|virtual functions|parameters and implicit object parameters|non-member functions|functions, classes, or enumerations|classes|typedefs}2'
+H9D37840D3CB2: '%0%select{属性|}1 仅适用于 %select{函数|联合体|变量和函数|函数和方法|函数、方法和块|函数、方法和参数|变量|变量和字段|变量、数据成员和标量类型|类型和命名空间|变量、函数和类|内核函数|非K&R风格函数|for循环语句|虚函数|参数和隐式对象参数|非成员函数|函数、类或枚举|类|类型别名}2'
+# "%0%select{| following the 'template' keyword}1 cannot refer to a dependent template"
+HA18DA36B7236: "%0%select{|在'template'关键字后}1不能引用依赖模板"
+# "%0%select{| following the 'template' keyword}1 does not refer to a template"
+HCADF8F759262: "%0%select{|在'template'关键字后}1未引用模板"
+# "%0: '%1' input unused in cpp mode"
+HF14789F9D841: "%0: 'cpp模式中未使用 '%1' 输入"
+# "%0: '%1' input unused%select{ when '%3' is present|}2"
+HA6B5E8785AC8: "%0: '%1' 输入未使用%select{当存在 '%3' 时|}2"
+# "%0: 'get_return_object_on_allocation_failure()' must be a static member function"
+HB26892211ABD: "%0: 'get_return_object_on_allocation_failure()' 必须是一个静态成员函数"
+# "%0: previously preprocessed input%select{ unused when '%2' is present|}1"
+H1EB52EB9DA3B: "%0: 之前预处理的输入%select{当存在 '%2' 时未使用|}1"
+# "%0; allow reordering by specifying '#pragma clang loop vectorize(enable)' before the loop or by providing the compiler option '-ffast-math'"
+H50F1AE498158: "%0; 通过在循环前指定 '#pragma clang loop vectorize(enable)' 允许重新排序，或使用编译器选项 '-ffast-math'"
+# "%0; allow reordering by specifying '#pragma clang loop vectorize(enable)' before the loop; if the arrays will always be independent, specify '#pragma clang loop vectorize(assume_safety)' before the loop or provide the '__restrict__' qualifier with the independent array arguments -- erroneous results will occur if these options are incorrectly applied"
+H696063533F0E: "%0; 通过在循环前指定 '#pragma clang loop vectorize(enable)' 允许重新排序；如果数组总是独立的，可在循环前指定 '#pragma clang loop vectorize(assume_safety)'，或为独立数组参数添加 '__restrict__' 限定符 —— 错误结果将出现在错误应用这些选项时"
+# '%0B (%human0B) in local locations, %1B (%human1B) in locations loaded from AST files, for a total of %2B (%human2B) (%3%% of available space)'
+H9B3C5907D274: '%0B (%human0B) 在本地位置，%1B (%human1B) 在AST文件加载位置，总计 %2B (%human2B) (%3%% 的可用空间)'
+# '%1 %0 is hidden by a non-type declaration of %0 here'
+HC05432050C69: '%1 %0 被此处的非类型声明 %0 隐藏'
+# '%1 is a %select{private|protected}0 member of %3'
+H4162E2E8D4C1: '%1 是 %3 的 %select{私有|受保护}0 成员'
+# '%2 defined as %select{a struct|an interface|a class}0%select{| template}1 here but previously declared as %select{a struct|an interface|a class}3%select{| template}1; this is valid, but may result in linker errors under the Microsoft C++ ABI'
+H65DDB76661CA: '%2 被定义为 %select{一个结构体|一个接口|一个类}0%select{|模板}1 这里，但之前声明为 %select{一个结构体|一个接口|一个类}3%select{|模板}1；这是有效的，但可能导致在 Microsoft C++ ABI 下的链接器错误'
+# '%diff{$ and $ are not pointers to compatible types|pointers to incompatible types}0,1'
+HE4DF3395C0FE: '%diff{指针 $ 和 $ 指向不兼容类型|指向不兼容类型的指针}0,1'
+# '%diff{promoted type $ of K&R function parameter is not compatible with the parameter type $|promoted type of K&R function parameter is not compatible with parameter type}0,1 declared in a previous prototype'
+HBE91EA4F0CCD: '%diff{K&R 函数参数提升后的类型 $ 与之前原型中声明的参数类型 $ 不兼容|K&R 函数参数的提升类型与参数类型不兼容}0,1 在之前的原型中声明'
+# '%diff{return type $ must match previous return type $|return type must match previous return type}0,1 when %select{block literal|lambda expression}2 has unspecified explicit return type'
+H503B0717AF47: '%diff{当 %select{块字面量|lambda 表达式}2 的显式返回类型未指定时，返回类型 $ 必须与之前的返回类型 $ 匹配|返回类型必须与之前的返回类型匹配}0,1'
+# "%ordinal0 argument must be a %select{|scalar|vector|matrix|vector of|scalar or vector of}1%plural{[2,3]:%plural{0:|:%plural{0:|:,}2}3|:}1%plural{0:|: }1%select{|integer|signed integer|unsigned integer|'int'|pointer to a valid matrix element}2%plural{0:|: }2%plural{0:|:%plural{0:|:or }2}3%select{|floating-point}3%plural{0:|: }3%plural{[0,3]:type|:types}1 (was %4)"
+HEE73BAE75429: "%ordinal0 参数必须是 %select{|标量|向量|矩阵|向量的|标量或向量的}1%plural{[2,3]:%plural{0:|:%plural{0:|:,}2}3|:}1%plural{0:|: }1%select{|整数|有符号整数|无符号整数|'int'|合法矩阵元素的指针}2%plural{0:|: }2%plural{0:|:%plural{0:|:或 }2}3%select{|浮点数}3%plural{0:|: }3%plural{[0,3]:类型|:类型}1（实际为 %4）"
+# '%ordinal0 argument must be a WebAssembly table'
+HF0E3AF42C5DD: '%ordinal0 参数必须是 WebAssembly 表'
+# '%ordinal0 argument must be an integer'
+HB74677AB0CCF: '%ordinal0 参数必须是整数'
+# '%ordinal0 argument must match the element type of the WebAssembly table in the %ordinal1 argument'
+HCC6BF06B970F: '%ordinal0 参数必须与 %ordinal1 参数中 WebAssembly 表的元素类型一致'
+# '%plural{1:enumeration value %1 not explicitly handled in switch|2:enumeration values %1 and %2 not explicitly handled in switch|3:enumeration values %1, %2, and %3 not explicitly handled in switch|:%0 enumeration values not explicitly handled in switch: %1, %2, %3...}0'
+HE8DAC9A52D87: '%plural{1:枚举值 %1 在 switch 中未显式处理|2:枚举值 %1 和 %2 在 switch 中未显式处理|3:枚举值 %1、%2 和 %3 在 switch 中未显式处理|:%0 个枚举值在 switch 中未显式处理：%1、%2、%3...}0'
+# '%plural{1:enumeration value %1 not handled in switch|2:enumeration values %1 and %2 not handled in switch|3:enumeration values %1, %2, and %3 not handled in switch|:%0 enumeration values not handled in switch: %1, %2, %3...}0'
+H0E3F79F6C010: '%plural{1:枚举值 %1 在 switch 中未处理|2:枚举值 %1 和 %2 在 switch 中未处理|3:枚举值 %1、%2 和 %3 在 switch 中未处理|:%0 个枚举值在 switch 中未处理：%1、%2、%3...}0'
+# "%plural{2:'delete' used to delete pointer to object allocated with 'std::allocator<...>::allocate'|:%select{non-array delete|array delete|'std::allocator<...>::deallocate'}0 used to delete pointer to %select{array object of type %2|non-array object of type %2|object allocated with 'new'}0}1"
+H1294E54BD6EF: "%plural{2:'delete' 用于删除通过 'std::allocator<...>::allocate' 分配的指针|:%select{非数组 delete|数组 delete|'std::allocator<...>::deallocate'}0 用于删除 %select{类型 %2 的数组对象|类型 %2 的非数组对象|通过 'new' 分配的对象}0 的指针}1"
+# '%plural{[0,2]:must use a qualified name when declaring|3:cannot declare}0 a %select{constructor|destructor|conversion operator|deduction guide}0 as a friend'
+H180E877A4B1E: '%plural{[0,2]:声明时必须使用限定名|3:不能声明}0 %select{构造函数|析构函数|类型转换运算符|推导指引}0 作为友元'
+# "%q0 %select{with definition in module '%2'|defined here}1 has different definitions in different modules; first difference is this %select{||||static assert|field|method|type alias|typedef|data member|friend declaration|function template|method|instance variable|property|unexpected decl}3"
+HC2ECA20D4E80: "%q0 %select{在模块 '%2' 中有定义|在此处定义}1 在不同模块中有不同的定义；第一个差异是 %select{||||静态断言|字段|方法|类型别名|typedef|数据成员|友元声明|函数模板|方法|实例变量|属性|意外声明}3"
+# '%q0 cannot be thread local when declared %q1'
+H1F0205F4AD29: '%q0 在声明为 %q1 时不能是线程局部变量'
+# "%q0 from module '%1' is not present in definition of %q2%select{ in module '%4'| provided earlier}3"
+H9DF776E318FF: "%q0 在模块 '%1' 中不存在于 %q2%select{在模块 '%4' 的定义中|之前提供的定义中}3"
+# "%q0 has different definitions in different modules; %select{definition in module '%2' is here|defined here}1"
+HB3D6EB7685C3: "%q0 在不同模块中有不同的定义；%select{模块 '%2' 中的定义在此处|在此处定义}1"
+# "%q0 has different definitions in different modules; %select{definition in module '%2'|defined here}1 first difference is %select{enum that is %select{not scoped|scoped}4|enum scoped with keyword %select{struct|class}4|enum %select{without|with}4 specified type|enum with specified type %4|enum with %4 element%s4|%ordinal4 element has name %5|%ordinal4 element %5 %select{has|does not have}6 an initializer|%ordinal4 element %5 has an initializer|}3"
+H39CEC8B6DBEB: "%q0 在不同模块中有不同的定义；%select{模块 '%2' 中的定义|在此处定义}1 第一个差异是 %select{枚举类型 %select{非作用域|作用域}4|枚举使用 %select{struct|class}4 限定作用域|枚举 %select{无|有}4 指定类型|枚举的指定类型为 %4|枚举有 %4 个元素|%ordinal4 元素名称为 %5|%ordinal4 元素 %5 %select{有|没有}6 初始值|%ordinal4 元素 %5 有初始值|}3"
+# "%q0 has different definitions in different modules; %select{definition in module '%2'|defined here}1 first difference is %select{return type is %4|%ordinal4 parameter with name %5|%ordinal4 parameter with type %5%select{| decayed from %7}6|%ordinal4 parameter with%select{out|}5 a default argument|%ordinal4 parameter with a default argument|function body}3"
+H68AA8A549FAA: "%q0 在不同模块中有不同的定义；%select{模块 '%2' 中的定义|在此处定义}1 第一个差异是 %select{返回类型为 %4|%ordinal4 参数名称为 %5|%ordinal4 参数类型为 %5%select{| 衰减为 %7}6|%ordinal4 参数有默认参数|%ordinal4 参数有默认参数|函数体}3"
+# "%q0 has different definitions in different modules; first difference is %select{definition in module '%2'|defined here}1 found %select{%4 base %plural{1:class|:classes}4|%4 virtual base %plural{1:class|:classes}4|%ordinal4 base class with type %5|%ordinal4 %select{non-virtual|virtual}5 base class %6|%ordinal4 base class %5 with %select{public|protected|private|no}6 access specifier}3"
+HC4303FABC437: "%q0 在不同模块中有不同的定义；第一个差异是 %select{在模块 '%2' 的定义|在此处定义}1 发现 %select{有 %4 个基类%plural{1:类|:类}4|有 %4 个虚基类%plural{1:类|:类}4|%ordinal4 基类类型为 %5|%ordinal4 %select{非虚|虚}5 基类 %6|%ordinal4 基类 %5 的访问说明符为 %select{public|protected|private|无}6}3"
+# "%q0 has different definitions in different modules; first difference is %select{definition in module '%2'|defined here}1 found %select{%4 referenced %plural{1:protocol|:protocols}4|%ordinal4 referenced protocol with name %5}3"
+HC9695A16C965: "%q0 在不同模块中有不同的定义；第一个差异是 %select{模块 '%2'中的定义|在此处定义}1 发现 %select{引用了 %4 %plural{1:协议|:协议}4|%4 参考的第 %ordinal4 协议具有名称 %5}3"
+# "%q0 has different definitions in different modules; first difference is %select{definition in module '%2'|defined here}1 found %select{%select{method %5|constructor|destructor}4 that has %6 parameter%s6|%select{method %5|constructor|destructor}4 with %ordinal6 parameter of type %7%select{| decayed from %9}8|%select{method %5|constructor|destructor}4 with %ordinal6 parameter named %7}3"
+HA17814A91726: "%q0 在不同模块中有不同的定义；第一个差异是 %select{模块 '%2'中的定义|在此处定义}1 发现 %select{%select{方法 %5|构造函数|析构函数}4 具有 %6 参数%s6|%select{方法 %5|构造函数|析构函数}4 的第 %ordinal6 参数类型为 %7%select{| 衰减为 %9}8|%select{方法 %5|构造函数|析构函数}4 的第 %ordinal6 参数名为 %7}3"
+# "%q0 has different definitions in different modules; first difference is %select{definition in module '%2'|defined here}1 found %select{%select{typedef|type alias}4 name %5|%select{typedef|type alias}4 %5 with underlying type %6}3"
+H290AB6198D53: "%q0 在不同模块中有不同的定义；第一个差异是 %select{模块 '%2'中的定义|在此处定义}1 发现 %select{%select{typedef|类型别名}4 名称 %5|%select{typedef|类型别名}4 %5 其底层类型为 %6}3"
+# "%q0 has different definitions in different modules; first difference is %select{definition in module '%2'|defined here}1 found %select{data member with name %4|data member %4 with type %5|data member %4 with%select{out|}5 an initializer|data member %4 with an initializer|data member %4 %select{is constexpr|is not constexpr}5}3"
+H3C6A067820A4: "%q0 在不同模块中有不同的定义；第一个差异是 %select{模块 '%2'中的定义|在此处定义}1 发现 %select{具有名称 %4 的数据成员|数据成员 %4 的类型 %5|数据成员 %4%select{有|}5 初始值设定项|数据成员 %4 具有初始值设定项|数据成员 %4 %select{是constexpr|不是constexpr}5}3"
+# "%q0 has different definitions in different modules; first difference is %select{definition in module '%2'|defined here}1 found %select{end of class|public access specifier|private access specifier|protected access specifier|static assert|field|method|type alias|typedef|data member|friend declaration|function template|method|instance variable|property}3"
+HC7FCD2470FA2: "%q0 在不同模块中有不同的定义；第一个差异是 %select{模块 '%2'中的定义|在此处定义}1 发现 %select{类结尾|public访问说明符|private访问说明符|protected访问说明符|静态断言|字段|方法|类型别名|typedef|数据成员|朋友声明|函数模板|方法|实例变量|属性}3"
+# "%q0 has different definitions in different modules; first difference is %select{definition in module '%2'|defined here}1 found %select{field %4|field %4 with type %5|%select{non-|}5bit-field %4|bit-field %4 with one width expression|%select{non-|}5mutable field %4|field %4 with %select{no|an}5 initializer|field %4 with an initializer}3"
+H60D85DC0E685: "%q0 在不同模块中有不同的定义；第一个差异是 %select{模块 '%2'中的定义|在此处定义}1 发现 %select{字段 %4|字段 %4 的类型 %5|%select{非-|}5位字段 %4|位字段 %4 具有单个宽度表达式|%select{非-|}5可变字段 %4|字段 %4 具有%select{无|}5初始值设定项|字段 %4 具有初始值设定项}3"
+# "%q0 has different definitions in different modules; first difference is %select{definition in module '%2'|defined here}1 found %select{method %4 with return type %5|%select{class|instance}5 method %4|%select{no|'required'|'optional'}4 method control|method %4 with %select{no designated initializer|designated initializer}5|%select{regular|direct}5 method %4|method %4}3"
+H5AECB1226BDE: "%q0 在不同模块中有不同的定义；第一个差异是 %select{模块 '%2'中的定义|在此处定义}1 发现 %select{返回类型为 %5 的方法 %4|%select{类|实例}5 方法 %4|%select{无|'required'|'optional'}4 方法控制|方法 %4 具有%select{无指定初始化器|指定初始化器}5|%select{常规|直接}5 方法 %4|方法 %4}3"
+# "%q0 has different definitions in different modules; first difference is %select{definition in module '%2'|defined here}1 found %select{property %4|property %4 with type %5|%select{no|'required'|'optional'}4 property control|property %4 with %select{default |}6'%select{none|readonly|getter|assign|readwrite|retain|copy|nonatomic|setter|atomic|weak|strong|unsafe_unretained|nullability|null_resettable|class|direct}5' attribute}3"
+H47E62251068F: "%q0 在不同模块中有不同的定义；第一个差异是 %select{模块 '%2'中的定义|在此处定义}1 发现 %select{属性 %4|属性 %4 的类型 %5|%select{无|'required'|'optional'}4 属性控制|属性 %4 具有%select{默认 |}6'%select{none|readonly|getter|assign|readwrite|retain|copy|nonatomic|setter|atomic|weak|strong|unsafe_unretained|nullability|null_resettable|class|direct}5' 属性}3"
+# "%q0 has different definitions in different modules; first difference is %select{definition in module '%2'|defined here}1 found %select{static assert with condition|static assert with message|static assert with %select{|no }4message|%select{method %5|constructor|destructor}4|%select{method %5|constructor|destructor}4 is %select{not deleted|deleted}6|%select{method %5|constructor|destructor}4 is %select{not defaulted|defaulted}6|%select{method %5|constructor|destructor}4 is %select{|pure }6%select{not virtual|virtual}7|%select{method %5|constructor|destructor}4 is %select{not static|static}6|%select{method %5|constructor|destructor}4 is %select{not volatile|volatile}6|%select{method %5|constructor|destructor}4 is %select{not const|const}6|%select{method %5|constructor|destructor}4 is %select{not inline|inline}6|%select{method %5|constructor|destructor}4 with %ordinal6 parameter with%select{out|}7 a default argument|%select{method %5|constructor|destructor}4 with %ordinal6 parameter with a default argument|%select{method %5|constructor|destructor}4 with %select{no |}6template arguments|%select{method %5|constructor|destructor}4 with %6 template argument%s6|%select{method %5|constructor|destructor}4 with %6 for %ordinal7 template argument|%select{method %5|constructor|destructor}4 with %select{no body|body}6|%select{method %5|constructor|destructor}4 with body|friend %select{class|function}4|friend %4|friend function %4|function template %4 with %5 template parameter%s5|function template %4 with %ordinal5 template parameter being a %select{type|non-type|template}6 template parameter|function template %4 with %ordinal5 template parameter %select{with no name|named %7}6|function template %4 with %ordinal5 template parameter with %select{no |}6default argument|function template %4 with %ordinal5 template parameter with default argument %6|function template %4 with %ordinal5 template parameter with one type|function template %4 with %ordinal5 template parameter %select{not |}6being a template parameter pack|}3"
+HCEB41952ED68: "%q0 在不同模块中有不同的定义；第一个差异是 %select{模块 '%2'中的定义|在此处定义}1 发现 %select{具有条件的静态断言|具有消息的静态断言|静态断言具有%select{|无}4消息|%select{方法 %5|构造函数|析构函数}4|%select{方法 %5|构造函数|析构函数}4 %select{未被删除|被删除}6|%select{方法 %5|构造函数|析构函数}4 %select{未默认|已默认}6|%select{方法 %5|构造函数|析构函数}4 是%select{|纯}6%select{非虚拟|虚拟}7|%select{方法 %5|构造函数|析构函数}4 %select{非静态|静态}6|%select{方法 %5|构造函数|析构函数}4 %select{非易失性|易失性}6|%select{方法 %5|构造函数|析构函数}4 %select{非const|const}6|%select{方法 %5|构造函数|析构函数}4 %select{非内联|内联}6|%select{方法 %5|构造函数|析构函数}4 的第 %ordinal6 参数带有%select{out|}7 默认参数|%select{方法 %5|构造函数|析构函数}4 的第 %ordinal6 参数带有默认参数|%select{方法 %5|构造函数|析构函数}4 具有%select{无 |}6模板参数|%select{方法 %5|构造函数|析构函数}4 具有 %6 个模板参数%s6|%select{方法 %5|构造函数|析构函数}4 的第 %7 模板参数为 %6|%select{方法 %5|构造函数|析构函数}4 具有%select{无 |}6函数体|%select{方法 %5|构造函数|析构函数}4 具有函数体|朋友 %select{类|函数}4|朋友 %4|朋友函数 %4|函数模板 %4 具有 %5 个模板参数%s5|函数模板 %4 的第 %ordinal5 模板参数是%select{类型|非类型|模板}6 模板参数|函数模板 %4 的第 %ordinal5 模板参数%select{无名称|名为 %7}6|函数模板 %4 的第 %ordinal5 模板参数%select{无默认参数|有默认参数}6|函数模板 %4 的第 %ordinal5 模板参数默认参数为 %6|函数模板 %4 的第 %ordinal5 模板参数具有单一类型|函数模板 %4 的第 %ordinal5 模板参数%select{不是|}6模板参数包|}3"
+# "%q0 has different definitions in different modules; first difference is %select{definition in module '%2'|defined here}1 found %select{unnamed template parameter|template parameter %5|template parameter with %select{no |}4default argument|template parameter with default argument}3"
+HA9E92FE31082: "%q0 在不同模块中有不同的定义；第一个差异是 %select{模块 '%2'中的定义|在此处定义}1 发现 %select{未命名的模板参数|模板参数 %5|模板参数%select{无 |}4默认参数|模板参数具有默认参数}3"
+# '%q0 hides overloaded virtual %select{function|functions}1'
+H2FDDD909C4BF: '%q0 隐藏重载虚 %select{函数|函数}1'
+# '%q0 is not a member of class %1'
+H76BB7974AA85: '%q0 不是类 %1 的成员'
+# '%q0 must have external linkage when declared %q1'
+HEEACDE119817: '%q0 声明为 %q1 时必须具有外部链接性'
+# '%q0 redeclared inline; %1 attribute ignored'
+HE698B2D72430: '%q0 重复声明为内联；忽略 %1 属性'
+# '%q0 redeclared without %1 attribute: previous %1 ignored'
+HD8FE54A130EE: '%q0 未重复声明 %1 属性：忽略先前的 %1 属性'
+# "%q0 redeclared without 'dllimport' attribute: 'dllexport' attribute added"
+H6D76D4BE2232: "%q0 未重复声明'dllimport'属性：添加'dllexport'属性"
+# '%select{#elif|#elifdef|#elifndef}0 after #else'
+H66B8B159F15D: '%select{#elif|#elifdef|#elifndef}0 在#else之后'
+# '%select{#elif|#elifdef|#elifndef}0 without #if'
+HF4D335F3B905: '%select{#elif|#elifdef|#elifndef}0 未在#if之后'
+# '%select{#line|GNU line marker}0 directive interprets number as decimal, not octal'
+HDF9BCDB36B4E: '%select{#line|GNU行标记}0 指令将数字解释为十进制而非八进制'
+# '%select{#line|GNU line marker}0 directive requires a simple digit sequence'
+H065F2C4ACA47: '%select{#line|GNU行标记}0 指令需要简单的数字序列'
+# '%select{%1 and |}0%2 tokens %select{introducing statement expression|terminating statement expression|introducing attribute|terminating attribute|forming pointer to member type}3 appear in different macro expansion contexts'
+H64A1AC254D6A: '%select{%1 和 |}0%2 标记 %select{引入语句表达式|终止语句表达式|引入属性|终止属性|形成成员指针类型}3 出现在不同的宏展开上下文中'
+# '%select{%1 and |}0%2 tokens %select{introducing statement expression|terminating statement expression|introducing attribute|terminating attribute|forming pointer to member type}3 are separated by whitespace'
+H9C7F5E5CC536: '%select{%1 和 |}0%2 标记 %select{引入语句表达式|终止语句表达式|引入属性|终止属性|形成成员指针类型}3 被空白字符分隔'
+# '%select{%1 is a virtual base class of base class %2 declared here|virtual base class %1 declared here}0'
+H0907DB13630C: '%select{%2 的子对象是虚拟基类 %1 的声明位置|虚拟基类 %1 声明于此}0'
+# '%select{%2 has subobjects that are|%3 has type %2 that is}0 non-trivial to %select{default-initialize|destruct|copy}1'
+H48AF719C5841: '%select{%select{%2 拥有子对象是|%3 拥有类型 %2 是}0 非平凡的 %select{默认初始化|销毁|复制}1'
+# '%select{%diff{assigning $ to $|assigning to different types}1,0|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2 changes address space of nested pointer'
+H229282294F90: '%select{%diff{将 $ 赋值给 $|将不同类型赋值}1,0|%diff{将 $ 传递给类型为 $ 的参数|将不同类型传递给参数}0,1|%diff{从结果类型为 $ 的函数返回 $|从不同返回类型的函数返回}0,1|%diff{将 $ 转换为类型 $|在类型之间转换}0,1|%diff{用类型为 $ 的表达式初始化 $|用不同类型的表达式初始化}0,1|%diff{将 $ 发送到类型为 $ 的参数|将不同类型发送给参数}0,1|%diff{将 $ 铸为类型 $|在类型之间进行类型转换}0,1}2 改变了嵌套指针的地址空间'
+# '%select{%diff{assigning $ to $|assigning to different types}1,0|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2 changes address space of pointer'
+H34858D5559B9: '%select{%diff{将 $ 赋值给 $|将不同类型赋值}1,0|%diff{将 $ 传递给类型为 $ 的参数|将不同类型传递给参数}0,1|%diff{从结果类型为 $ 的函数返回 $|从不同返回类型的函数返回}0,1|%diff{将 $ 转换为类型 $|在类型之间转换}0,1|%diff{用类型为 $ 的表达式初始化 $|用不同类型的表达式初始化}0,1|%diff{将 $ 发送到类型为 $ 的参数|将不同类型发送给参数}0,1|%diff{将 $ 铸为类型 $|在类型之间进行类型转换}0,1}2 改变了指针的地址空间'
+# '%select{%diff{assigning $ to $|assigning to different types}1,0|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2 changes retain/release properties of pointer'
+HCD0B002FCAD8: '%select{%diff{将 $ 赋值给 $|将不同类型赋值}1,0|%diff{将 $ 传递给类型为 $ 的参数|将不同类型传递给参数}0,1|%diff{从结果类型为 $ 的函数返回 $|从不同返回类型的函数返回}0,1|%diff{将 $ 转换为类型 $|在类型之间转换}0,1|%diff{用类型为 $ 的表达式初始化 $|用不同类型的表达式初始化}0,1|%diff{将 $ 发送到类型为 $ 的参数|将不同类型发送给参数}0,1|%diff{将 $ 铸为类型 $|在类型之间进行类型转换}0,1}2 改变了指针的 retain/release 属性'
+# "%select{%diff{assigning to $ from $|assigning to different types}0,1|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2 converts between pointers to integer types %select{with different sign|where one is of the unique plain 'char' type and the other is not}3"
+H1F24CCDCD587: "%select{%diff{将 $ 赋值给 $|将不同类型赋值}0,1|%diff{将 $ 传递给类型为 $ 的参数|将不同类型传递给参数}0,1|%diff{从结果类型为 $ 的函数返回 $|从不同返回类型的函数返回}0,1|%diff{将 $ 转换为类型 $|在类型之间转换}0,1|%diff{用类型为 $ 的表达式初始化 $|用不同类型的表达式初始化}0,1|%diff{将 $ 发送到类型为 $ 的参数|将不同类型发送给参数}0,1|%diff{将 $ 铸为类型 $|在类型之间进行类型转换}0,1}2 在整数指针类型之间转换 %select{带有不同的符号|其中一个为普通 'char' 类型而另一个不是}3"
+# '%select{%diff{assigning to $ from $|assigning to different types}0,1|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2 converts between void pointer and function pointer'
+HA7C5AA745059: '%select{%diff{将 $ 赋值给 $|将不同类型赋值}0,1|%diff{将 $ 传递给类型为 $ 的参数|将不同类型传递给参数}0,1|%diff{从结果类型为 $ 的函数返回 $|从不同返回类型的函数返回}0,1|%diff{将 $ 转换为类型 $|在类型之间转换}0,1|%diff{用类型为 $ 的表达式初始化 $|用不同类型的表达式初始化}0,1|%diff{将 $ 发送到类型为 $ 的参数|将不同类型发送给参数}0,1|%diff{将 $ 铸为类型 $|在类型之间进行类型转换}0,1}2 在 void 指针和函数指针之间转换'
+# '%select{%diff{assigning to $ from $|assigning to different types}0,1|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2 discards qualifiers'
+H7F0C4095C720: '%select{%diff{将 $ 赋值给 $|将不同类型赋值}0,1|%diff{将 $ 传递给类型为 $ 的参数|将不同类型传递给参数}0,1|%diff{从结果类型为 $ 的函数返回 $|从不同返回类型的函数返回}0,1|%diff{将 $ 转换为类型 $|在类型之间转换}0,1|%diff{用类型为 $ 的表达式初始化 $|用不同类型的表达式初始化}0,1|%diff{将 $ 发送到类型为 $ 的参数|将不同类型发送给参数}0,1|%diff{将 $ 铸为类型 $|在类型之间进行类型转换}0,1}2 舍弃了指针类型中的限定符'
+# '%select{%diff{assigning to $ from $|assigning to different types}0,1|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2 discards qualifiers in nested pointer types'
+HA6738ACC7EBA: '%select{%diff{将 $ 赋值给 $|将不同类型赋值}0,1|%diff{将 $ 传递给类型为 $ 的参数|将不同类型传递给参数}0,1|%diff{从结果类型为 $ 的函数返回 $|从不同返回类型的函数返回}0,1|%diff{将 $ 转换为类型 $|在类型之间转换}0,1|%diff{用类型为 $ 的表达式初始化 $|用不同类型的表达式初始化}0,1|%diff{将 $ 发送到类型为 $ 的参数|将不同类型发送给参数}0,1|%diff{将 $ 铸为类型 $|在类型之间进行类型转换}0,1}2 舍弃了嵌套指针类型中的限定符'
+# '%select{%diff{assigning to $ from incompatible type $|assigning to type from incompatible type}0,1|%diff{passing $ to parameter of incompatible type $|passing type to parameter of incompatible type}0,1|%diff{returning $ from a function with incompatible result type $|returning type from a function with incompatible result type}0,1|%diff{converting $ to incompatible type $|converting type to incompatible type}0,1|%diff{initializing $ with an expression of incompatible type $|initializing type with an expression of incompatible type}0,1|%diff{sending $ to parameter of incompatible type $|sending type to parameter of incompatible type}0,1|%diff{casting $ to incompatible type $|casting type to incompatible type}0,1}2'
+HCAB9D3041C51: '%select{%diff{将类型 $ 赋值给类型不兼容的 $|将类型赋值给不兼容类型}0,1|%diff{将类型 $ 传递给类型不兼容的参数 $|将类型传递给不兼容参数类型}0,1|%diff{从结果类型不兼容的 $ 函数返回 $|从结果类型不兼容的函数返回类型}0,1|%diff{将类型 $ 转换为类型不兼容的 $|将类型转换为不兼容类型}0,1|%diff{用类型不兼容的 $ 表达式初始化 $|用类型不兼容的表达式初始化类型}0,1|%diff{将类型 $ 发送到类型不兼容的参数 $|将类型发送给不兼容参数类型}0,1|%diff{将类型 $ 铸为类型不兼容的 $|将类型铸为不兼容类型}0,1}2'
+# '%select{%diff{assigning to $ from incompatible type $|assigning to type from incompatible type}0,1|%diff{passing $ to parameter of incompatible type $|passing type to parameter of incompatible type}0,1|%diff{returning $ from a function with incompatible result type $|returning type from a function with incompatible result type}0,1|%diff{converting $ to incompatible type $|converting type to incompatible type}0,1|%diff{initializing $ with an expression of incompatible type $|initializing type with an expression of incompatible type}0,1|%diff{sending $ to parameter of incompatible type $|sending type to parameter of incompatible type}0,1|%diff{casting $ to incompatible type $|casting type to incompatible type}0,1}2%select{|; dereference with *|; take the address with &|; remove *|; remove &}3%select{|: different classes%diff{ ($ vs $)|}5,6|: different number of parameters (%5 vs %6)|: type mismatch at %ordinal5 parameter%diff{ ($ vs $)|}6,7|: different return type%diff{ ($ vs $)|}5,6|: different qualifiers (%5 vs %6)|: different exception specifications}4'
+H5631F8DA82CD: '%select{%diff{将类型 $ 赋值给类型不兼容的 $|将类型赋值给不兼容类型}0,1|%diff{将类型 $ 传递给类型不兼容的参数 $|将类型传递给不兼容参数类型}0,1|%diff{从结果类型不兼容的 $ 函数返回 $|从结果类型不兼容的函数返回类型}0,1|%diff{将类型 $ 转换为类型不兼容的 $|将类型转换为不兼容类型}0,1|%diff{用类型不兼容的 $ 表达式初始化 $|用类型不兼容的表达式初始化类型}0,1|%diff{将类型 $ 发送到类型不兼容的参数 $|将类型发送给不兼容参数类型}0,1|%diff{将类型 $ 铸为类型不兼容的 $|将类型铸为不兼容类型}0,1}2%select{|; 通过 * 解引用|; 通过 & 获取地址|; 移除 *|; 移除 &}3%select{|: 不同的类%diff{ ($ vs $)|}5,6|: 参数数量不同 (%5 vs %6)|: 第 %ordinal5 参数类型不匹配%diff{ ($ vs $)|}6,7|: 返回类型不同%diff{ ($ vs $)|}5,6|: 限定符不同 (%5 vs %6)|: 异常规范不同}4'
+# '%select{%select{increment|decrement}1 of readonly property|no setter method %2 for %select{increment|decrement}1 of property}0'
+HAF55C5B7D9CC: '%select{%select{只读属性的递增|只读属性的递减}|缺少 %select{递增|递减}1 属性的设置方法 %2}0'
+# "%select{%select{reference|'std::initializer_list'}0 member|member with %select{reference|'std::initializer_list'}0 subobject}1 declared here"
+H1B5CDFE7B6DA: "%select{引用成员|'std::initializer_list' 成员|包含引用子对象的成员|包含 'std::initializer_list' 子对象的成员}1 声明于此"
+# "%select{'#pragma clang fp eval_method'|option 'ffp-eval-method'}0 cannot be used with %select{option 'fapprox-func'|option 'mreassociate'|option 'freciprocal'|option 'ffp-eval-method'|'#pragma clang fp reassociate'|'#pragma clang fp reciprocal'}1"
+HD4A3AC42422A: "%select{'#pragma clang fp eval_method'|选项 '-ffp-eval-method'}0 不能与 %select{选项 '-fapprox-func'|选项 '-mreassociate'|选项 '-freciprocal'|选项 '-ffp-eval-method'|'#pragma clang fp reassociate'|'#pragma clang fp reciprocal'}1 一起使用"
+# "%select{'auto'|'decltype(auto)'|'__auto_type'|template arguments}0 deduced as %1 in declaration of %2 and deduced as %3 in declaration of %4"
+H11DB7A31A7DA: "%select{'auto'|'decltype(auto)'|'__auto_type'|模板参数}0 在 %2 的声明中推导为 %1，并在 %4 的声明中推导为 %3"
+# "%select{'auto'|'decltype(auto)'|'__auto_type'|use of %select{class template|function template|variable template|alias template|template template parameter|concept|template}2 %3 requires template arguments; argument deduction}0 not allowed %select{in function prototype|in non-static struct member|in struct member|in non-static union member|in union member|in non-static class member|in interface member|in exception declaration|in template parameter until C++17|in block literal|in template argument|in typedef|in type alias|in function return type|in conversion function type|here|in lambda parameter|in type allocated by 'new'|in K&R-style function parameter|in template parameter|in friend declaration|in function prototype that is not a function declaration|in requires expression parameter|in array declaration|in declaration of conversion function template|in lambda parameter before C++14}1"
+H7226E87E7B56: "%select{'auto'|'decltype(auto)'|'__auto_type'|使用 %select{类模板|函数模板|变量模板|别名模板|模板模板参数|概念|模板}2 %3 需要模板参数；不允许进行参数推导}0 在 %select{函数原型|非静态结构成员|结构成员|非静态联合成员|联合成员|非静态类成员|接口成员|异常声明|C++17 之前的模板参数|块字面量|模板参数|typedef|类型别名|函数返回类型|转换函数类型|此处|lambda 参数|new 分配的类型|K&R 样式函数参数|模板参数|友元声明|非函数声明的函数原型|requires 表达式参数|数组声明|转换函数模板声明|C++14 之前的 lambda 参数}1 进行参数推导"
+# "%select{'mutable'|'static'|'constexpr'|'consteval'}0 cannot appear multiple times in a lambda declarator"
+HA9F29290F39F: "%select{'mutable'|'static'|'constexpr'|'consteval'}0 不能在 lambda 声明符中重复出现"
+# "%select{'size' argument to memset is '0'|setting buffer to a 'sizeof' expression}0; did you mean to transpose the last two arguments?"
+HBE450D9F2F6C: "%select{memset 的 'size' 参数为 '0'|使用 'sizeof' 表达式设置缓冲区}0；是否想交换最后两个参数？"
+# '%select{<ERROR>|constexpr|consteval|constinit}0 can only be used in %select{|variable and function|function|variable}0 declarations'
+H8ABC77B14403: '%select{<错误>|constexpr|consteval|constinit}0 只能用于 %select{|变量和函数|函数|变量}0 声明'
+# '%select{<ERROR>|equality|three-way|equality|relational}0 comparison operator is not a friend of %select{|incomplete class }1%2'
+HFE0AE74FD7A7: '%select{<错误>|相等|三向|相等|关系}0 比较运算符不是 %select{|不完整类 }1%2 的友元'
+# '%select{<error>|function template|variable template|alias template|template template parameter|concept|template}0 %1 requires template arguments; argument deduction only allowed for class templates or alias templates'
+HDE23AA7C6E82: '%select{<错误>|函数模板|变量模板|别名模板|模板模板参数|概念|模板}0 %1 需要模板参数；仅类模板或别名模板允许参数推导'
+# '%select{@available|__builtin_available}0 does not guard availability here; use if (%select{@available|__builtin_available}0) instead'
+HBA44F219FD20: '%select{@available|__builtin_available}0 不在此处进行可用性检查；请改用 if (%select{@available|__builtin_available}0)'
+# "%select{AST file '%1' was|current translation unit is}0 compiled with the target feature '%2' but the %select{current translation unit is|AST file '%1' was}0 not"
+H5C12AF216CA3: "%select{AST文件 '%1' 被|当前翻译单元使用}0 目标特性 '%2' 编译，但 %select{当前翻译单元未使用该特性|AST文件 '%1' 未被}0 使用"
+# "%select{MIPS|MSP430|RISC-V|AVR}0 '%select{interrupt|signal}1' attribute only applies to functions that have %select{no parameters|a 'void' return type}2"
+HC530D462FB18: "%select{MIPS|MSP430|RISC-V|AVR}0 '%select{interrupt|signal}1' 属性仅适用于 %select{无参数|返回类型为 'void' 的}2 函数"
+# "%select{OpenACC '%3' construct|while loop|do loop}0 cannot appear in intervening code of a '%1' with a '%2' clause"
+HB2C5F39C46C3: "%select{OpenACC '%3' 构造|while 循环|do 循环}0 不能出现在带有 '%2' 子句的 '%1' 中间代码段"
+# "%select{OpenACC 'gang' clause with a 'dim' value greater than 1|OpenACC 'reduction' clause}0 cannot appear on the same '%1' construct as a %select{'reduction' clause|'gang' clause with a 'dim' value greater than 1}0"
+H3449F0200ABB: "%select{OpenACC 'gang' 子句（dim 值大于1）|OpenACC 'reduction' 子句}0 不能与同一 '%1' 构造中的 %select{'reduction' 子句|'gang' 子句（dim 值大于1）}0 同时存在"
+# '%select{OpenACC sub-array|OpenMP array section}0 is not allowed here'
+H8129F6E36883: '%select{OpenACC 子数组|OpenMP 数组区间}0 在此处无效'
+# '%select{PCH|current translation unit}0 has no VFS overlays'
+H1F8E7EA59762: '%select{预编译头|当前翻译单元}0 没有虚拟文件系统覆盖层'
+# '%select{PCH|current translation unit}0 has the following VFS overlays:\n%1'
+HF3357458F7A1: '%select{预编译头|当前翻译单元}0 的虚拟文件系统覆盖层如下：\n%1'
+# "%select{PCH|module|AST}0 file '%1' built from a different branch (%2) than the compiler (%3)"
+H47225B26A402: "%select{预编译头|模块|AST}0 文件 '%1' 来自不同分支 (%2)，而当前编译器来自 (%3)"
+# "%select{PCH|module|AST}0 file '%1' contains compiler errors"
+H70FD1E0F0771: "%select{预编译头|模块|AST}0 文件 '%1' 包含编译错误"
+# "%select{PCH|module|AST}0 file '%1' is out of date and needs to be rebuilt%select{|: %3}2"
+H1F11095B483F: "%select{预编译头|模块|AST}0 文件 '%1' 已过期需要重新生成%select{|： %3}2"
+# "%select{PCH|module|AST}0 file '%1' not found%select{|: %3}2"
+HA37A363A734E: "%select{预编译头|模块|AST}0 文件 '%1' 未找到%select{|： %3}2"
+# "%select{PCH|module|AST}0 file '%1' uses a newer format that cannot be read"
+H80665252BAE8: "%select{预编译头|模块|AST}0 文件 '%1' 使用无法读取的新格式"
+# "%select{PCH|module|AST}0 file '%1' uses an older format that is no longer supported"
+HB4B0734241D0: "%select{预编译头|模块|AST}0 文件 '%1' 使用已不再支持的旧格式"
+# '%select{__block variables|global variables|fields|instance variables}0 cannot have __autoreleasing ownership'
+H8459C5DA92C1: '%select{__block 变量|全局变量|字段|实例变量}0 不能使用 __autoreleasing 所有权'
+# '%select{__device__|__global__|__host__|__host__ __device__}0 function %1 cannot overload %select{__device__|__global__|__host__|__host__ __device__}2 function %3'
+HD56CBB05D1A2: '%select{__device__|__global__|__host__|__host__ __device__}0 函数 %1 不能与 %select{__device__|__global__|__host__|__host__ __device__}2 函数 %3 重载'
+# '%select{a reference type|an array type|a non-vector or non-vectorizable scalar type}0 is an invalid argument to attribute %1'
+H9A7D97DDD421: '%select{一个引用类型|一个数组类型|一个非向量或不可向量化标量类型}0 是属性 %1 的无效参数'

@@ -5,6 +5,7 @@
 
 #include <llvm/ADT/StringExtras.h>
 #include <llvm/ADT/StringRef.h>
+#include <llvm/Option/OptTable.h>
 #include <llvm/Support/Error.h>
 #include <llvm/Support/SHA1.h>
 #include <llvm/Support/YAMLParser.h>
@@ -13,10 +14,6 @@
 #include <dlfcn.h>
 #include <string>
 #include <unordered_map>
-
-#define private public
-#include <llvm/Option/OptTable.h>
-#undef private
 
 using clang::StringRef;
 
@@ -78,7 +75,8 @@ public:
           SmallVector<char> Storage;
           auto KeyHex = KeyStr->getValue(Storage);
           auto Content = ValueStr->getValue(Storage);
-          Table[KeyHex.str()] = Content;
+          if (KeyHex.starts_with('H'))
+            Table[KeyHex.substr(1).str()] = Content;
         }
       }
 
