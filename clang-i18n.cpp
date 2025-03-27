@@ -7,8 +7,8 @@
 #include <llvm/ADT/StringRef.h>
 #include <llvm/Option/OptTable.h>
 #include <llvm/Support/Error.h>
+#include <llvm/Support/MemoryBuffer.h>
 #include <llvm/Support/SHA1.h>
-#include <llvm/Support/YAMLParser.h>
 #include <clang/Basic/DiagnosticIDs.h>
 #include <cstdlib>
 #include <dlfcn.h>
@@ -54,34 +54,15 @@ public:
       fprintf(stderr, "Failed to open translation file: %s\n", Path.c_str());
       return;
     }
-    SourceMgr SM;
-    yaml::Stream YS((*MapFile)->getBuffer(), SM);
-    yaml::document_iterator Doc = YS.begin();
-    if (Doc == YS.end()) {
-      fprintf(stderr, "Failed to parse translation file: %s\n", Path.c_str());
-      return;
-    }
 
-    yaml::MappingNode *DocumentRoot =
-        dyn_cast_if_present<yaml::MappingNode>(Doc->getRoot());
-    if (!DocumentRoot) {
-      fprintf(stderr, "Failed to parse translation file: %s\n", Path.c_str());
-      return;
-    }
-
-    for (auto &Entry : *DocumentRoot) {
-      if (auto *KeyStr = dyn_cast<yaml::ScalarNode>(Entry.getKey())) {
-        if (auto *ValueStr = dyn_cast<yaml::ScalarNode>(Entry.getValue())) {
-          SmallVector<char> Storage;
-          auto KeyHex = KeyStr->getValue(Storage);
-          auto Content = ValueStr->getValue(Storage);
-          if (KeyHex.starts_with('H'))
-            Table[KeyHex.substr(1).str()] = Content;
-        }
-      }
-
-      fprintf(stderr, "Failed to parse translation file: %s\n", Path.c_str());
-      return;
+    SmallVector<StringRef, 0> Lines;
+    (*MapFile)->getBuffer().split(Lines, '\n');
+    for (auto Line : Lines) {
+      if (!Line.starts_with('H'))
+        continue;
+      auto Key = Line.substr(1, 12);
+      auto Val = Line.substr(15);
+      Table[Key.str()] = Val;
     }
   }
 

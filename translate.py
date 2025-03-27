@@ -35,10 +35,17 @@ def chat(prompt):
             timeout=300,
             stream=True,
         )
+        is_thinking = False
         for chunk in completion:
             delta = chunk.choices[0].delta
-            if delta.content is not None:
-                content += delta.content
+            if hasattr(delta, "reasoning_content") and delta.reasoning_content != None:
+                if not is_thinking:
+                    print("Thinking:")
+                    is_thinking = True
+                print(delta.reasoning_content, end="", flush=True)
+            else:
+                if delta.content is not None:
+                    content += delta.content
 
     except Exception as e:
         print(e)
@@ -84,7 +91,11 @@ while len(tasks) != 0:
     start = ret.find("\n", ret.find("```"))
     end = ret.find("```", start + 1)
     eval_code = ret[start + 1 : end]
-    res = expand(eval_code)
+    try:
+        res = expand(eval_code)
+    except Exception as e:
+        print(e)
+        continue
     for idx, key in enumerate(batch):
         var = f"message{idx}"
         if var in res:
