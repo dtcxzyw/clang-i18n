@@ -25,6 +25,43 @@ def compute_hash(str: str):
     return "H" + hashlib.sha1(str.encode("utf-8")).digest().hex()[:12].upper()
 
 
+keys = [
+    "%0",
+    "%1",
+    "%2",
+    "%3",
+    "%4",
+    "%5",
+    "%6",
+    "%7",
+    "%8",
+    "%9",
+    "%select{",
+    "%enum_select<",
+    "%plural{",
+    "%ordinal",
+    "%human",
+    "%objcclass",
+    "%objcinstance",
+    "%q",
+    "%diff{",
+    "%sub{",
+    "|",
+    "%",
+    "{",
+    "}",
+    "\\",
+    "\\n",
+]
+
+
+def validate(src, tgt):
+    for k in keys:
+        if src.count(k) != tgt.count(k):
+            return False
+    return True
+
+
 def chat(prompt):
     print(prompt)
     content = ""
@@ -55,18 +92,26 @@ def chat(prompt):
 
 
 tasks = dict()
+corpus_map = dict()
 for str in corpus:
-    tasks[compute_hash(ast.literal_eval(str))] = str
+    hash = compute_hash(ast.literal_eval(str))
+    corpus_map[hash] = ast.literal_eval(str)
+    tasks[hash] = str
 
 translation = dict()
 
 if os.path.exists(output):
     with open(output) as f:
         for line in f.readlines():
-            if line.startswith("#"):
+            if not line.startswith("H"):
                 continue
             key = line[:13]
             value = ast.literal_eval(line[15:])
+            if key not in corpus_map:
+                continue
+            src = corpus_map[key]
+            if not validate(src, value):
+                continue
             translation[key] = value
             tasks.pop(key)
 
@@ -75,6 +120,8 @@ def expand(code):
     exec(code)
     return copy.deepcopy(locals())
 
+
+print("Tasks", len(tasks))
 
 while len(tasks) != 0:
     batch = list(tasks.keys())[:batch_size]
@@ -99,7 +146,10 @@ while len(tasks) != 0:
     for idx, key in enumerate(batch):
         var = f"message{idx}"
         if var in res:
-            hash = compute_hash(ast.literal_eval(tasks[key]))
+            src = ast.literal_eval(tasks[key])
+            hash = compute_hash(src)
+            if not validate(src, res[var]):
+                continue
             translation[hash] = res[var]
             tasks.pop(hash)
 
