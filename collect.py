@@ -192,11 +192,13 @@ print("Old Passes:", old_passes_count)
 desc_count = get_custom_messages(".", "cl::ParseCommandLineOptions(", suffix=True)
 print("Program Desc:", desc_count)
 
+# TODO: cl::OptionCategory
+
 # Special strings
 strings.append("clang LLVM compiler")
 strings.append("OVERVIEW: ")
 strings.append("USAGE: ")
-strings.append("OPTIONS")
+strings.append("OPTIONS:\n")
 strings.append(
     "PLEASE submit a bug report to https://github.com/llvm/llvm-project/issues/ and include the crash backtrace, preprocessed source, and associated run script.\n"
 )

@@ -47,7 +47,11 @@ class TranslationTable {
       if (Str[I] == '\\' && I != Str.size() - 1) {
         switch (Str[I + 1]) {
         default:
+          fprintf(stderr, "Unexpected escape character: %c\n", Str[I + 1]);
           llvm_unreachable("Unexpected escape character");
+        case 't':
+          Str[Pos++] = '\t';
+          break;
         case 'n':
           Str[Pos++] = '\n';
           break;
@@ -168,6 +172,20 @@ public:
 
   uint64_t current_pos() const override { return OS.tell(); }
 };
+
+class ReplaceOutStream final : public raw_fd_ostream {
+public:
+  // Turn off buffering to avoid using the fast path.
+  explicit ReplaceOutStream()
+      : raw_fd_ostream(0, false, true, outs().get_kind()) {}
+
+  void write_impl(const char *Ptr, size_t Size) override {
+    auto Rep = ::replace(StringRef{Ptr, Size});
+    fwrite(Rep.data(), 1, Rep.size(), stdout);
+  }
+};
+static_assert(sizeof(ReplaceOutStream) == sizeof(raw_fd_ostream),
+              "Size mismatch");
 } // namespace llvm
 
 namespace clang {
@@ -218,18 +236,6 @@ void OptTable::printHelp(raw_ostream &OS, const char *Usage, const char *Title,
 
 } // namespace opt
 
-static std::atomic_uint32_t PendingParse;
-
-INTERCEPTOR_ATTRIBUTE __attribute__((no_sanitize("undefined"))) raw_fd_ostream &
-outs() {
-  static auto RealFunc = getRealFuncAddr(&outs);
-  if (PendingParse == 0)
-    return RealFunc();
-  static ReplaceStream Stream{RealFunc()};
-  // NOTE: This is UB.
-  return *reinterpret_cast<raw_fd_ostream *>(&Stream);
-}
-
 INTERCEPTOR_ATTRIBUTE void setBugReportMsg(const char *Msg) {
   static auto RealFunc = getRealFuncAddr(&setBugReportMsg);
   return RealFunc(::replace(Msg).data());
@@ -256,16 +262,19 @@ void EnablePrettyStackTrace() {
 }
 
 namespace cl {
-INTERCEPTOR_ATTRIBUTE
-bool ParseCommandLineOptions(int argc, const char *const *argv,
-                             StringRef Overview, raw_ostream *Errs,
-                             const char *EnvVar,
-                             bool LongOptionsUseDoubleDash) {
+INTERCEPTOR_ATTRIBUTE __attribute__((no_sanitize("undefined"))) bool
+ParseCommandLineOptions(int argc, const char *const *argv, StringRef Overview,
+                        raw_ostream *Errs, const char *EnvVar,
+                        bool LongOptionsUseDoubleDash) {
   static auto RealFunc = getRealFuncAddr(&ParseCommandLineOptions);
-  ++PendingParse;
-  auto Exit = make_scope_exit([&] { --PendingParse; });
-  return RealFunc(argc, argv, ::replace(Overview), Errs, EnvVar,
-                  LongOptionsUseDoubleDash);
+  char Buffer[sizeof(raw_fd_ostream)];
+  std::memcpy(Buffer, &outs(), sizeof(Buffer));
+  new (&outs()) ReplaceOutStream;
+  auto Exit = llvm::make_scope_exit([&] {
+    std::destroy_at(&outs());
+    std::memcpy(&outs(), Buffer, sizeof(Buffer));
+  });
+  return RealFunc(argc, argv, Overview, Errs, EnvVar, LongOptionsUseDoubleDash);
 }
 } // namespace cl
 

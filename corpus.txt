@@ -5484,7 +5484,7 @@
 'Number of uses of a base pointer to check before it is no longer considered for post-indexing.'
 'OBJECT_MODE setting %0 is not recognized and is not a valid setting'
 'ODS output filename'
-'OPTIONS'
+'OPTIONS:\n'
 'OVERVIEW: '
 'ObjC ARC contraction'
 'Object file format name.'
