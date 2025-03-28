@@ -11,6 +11,7 @@
 #include <llvm/Support/Error.h>
 #include <llvm/Support/MemoryBuffer.h>
 #include <llvm/Support/SHA1.h>
+#include <llvm/Support/raw_ostream.h>
 #include <clang/Basic/DiagnosticIDs.h>
 #include <cstdlib>
 #include <dlfcn.h>
@@ -145,6 +146,24 @@ static F T::*getRealFuncAddr(F T::*InterceptorFunc) {
 
 #define INTERCEPTOR_ATTRIBUTE __attribute__((visibility("default")))
 
+namespace llvm {
+class ReplaceStream final : public raw_ostream {
+  raw_ostream &OS;
+
+public:
+  // Turn off buffering to avoid using the fast path.
+  explicit ReplaceStream(raw_ostream &OS)
+      : raw_ostream(true, OS.get_kind()), OS(OS) {}
+
+  void write_impl(const char *Ptr, size_t Size) override {
+    auto Rep = ::replace(StringRef{Ptr, Size});
+    OS.write(Rep.data(), Rep.size());
+  }
+
+  uint64_t current_pos() const override { return OS.tell(); }
+};
+} // namespace llvm
+
 namespace clang {
 
 INTERCEPTOR_ATTRIBUTE
@@ -159,173 +178,13 @@ namespace llvm {
 
 namespace opt {
 
-namespace {
-struct OptionInfo {
-  std::string Name;
-  StringRef HelpText;
-};
-} // namespace
-
-static std::string getOptionHelpName(const OptTable &Opts, OptSpecifier Id) {
-  const Option O = Opts.getOption(Id);
-  std::string Name = O.getPrefixedName().str();
-
-  // Add metavar, if used.
-  switch (O.getKind()) {
-  case Option::GroupClass:
-  case Option::InputClass:
-  case Option::UnknownClass:
-    llvm_unreachable("Invalid option with help text.");
-
-  case Option::MultiArgClass:
-    if (const char *MetaVarName = Opts.getOptionMetaVar(Id)) {
-      // For MultiArgs, metavar is full list of all argument names.
-      Name += ' ';
-      Name += MetaVarName;
-    } else {
-      // For MultiArgs<N>, if metavar not supplied, print <value> N times.
-      for (unsigned i = 0, e = O.getNumArgs(); i < e; ++i) {
-        Name += " <value>";
-      }
-    }
-    break;
-
-  case Option::FlagClass:
-    break;
-
-  case Option::ValuesClass:
-    break;
-
-  case Option::SeparateClass:
-  case Option::JoinedOrSeparateClass:
-  case Option::RemainingArgsClass:
-  case Option::RemainingArgsJoinedClass:
-    Name += ' ';
-    [[fallthrough]];
-  case Option::JoinedClass:
-  case Option::CommaJoinedClass:
-  case Option::JoinedAndSeparateClass:
-    if (const char *MetaVarName = Opts.getOptionMetaVar(Id))
-      Name += MetaVarName;
-    else
-      Name += "<value>";
-    break;
-  }
-
-  return Name;
-}
-
-static void PrintHelpOptionList(raw_ostream &OS, StringRef Title,
-                                std::vector<OptionInfo> &OptionHelp) {
-  OS << ::replace(Title) << ":\n";
-
-  // Find the maximum option length.
-  unsigned OptionFieldWidth = 0;
-  for (const OptionInfo &Opt : OptionHelp) {
-    // Limit the amount of padding we are willing to give up for alignment.
-    unsigned Length = Opt.Name.size();
-    if (Length <= 23)
-      OptionFieldWidth = std::max(OptionFieldWidth, Length);
-  }
-
-  const unsigned InitialPad = 2;
-  for (const OptionInfo &Opt : OptionHelp) {
-    const std::string &Option = Opt.Name;
-    int Pad = OptionFieldWidth + InitialPad;
-    int FirstLinePad = OptionFieldWidth - int(Option.size());
-    OS.indent(InitialPad) << Option;
-
-    // Break on long option names.
-    if (FirstLinePad < 0) {
-      OS << "\n";
-      FirstLinePad = OptionFieldWidth + InitialPad;
-      Pad = FirstLinePad;
-    }
-
-    SmallVector<StringRef> Lines;
-    Opt.HelpText.split(Lines, '\n');
-    assert(Lines.size() && "Expected at least the first line in the help text");
-    auto *LinesIt = Lines.begin();
-    OS.indent(FirstLinePad + 1) << *LinesIt << '\n';
-    while (Lines.end() != ++LinesIt)
-      OS.indent(Pad + 1) << *LinesIt << '\n';
-  }
-}
-
-static StringRef getOptionHelpGroup(const OptTable &Opts, OptSpecifier Id) {
-  unsigned GroupID = Opts.getOptionGroupID(Id);
-
-  // If not in a group, return the default help group.
-  if (!GroupID)
-    return ::replace("OPTIONS");
-
-  // Abuse the help text of the option groups to store the "help group"
-  // name.
-  //
-  // FIXME: Split out option groups.
-  if (const char *GroupHelp = Opts.getOptionHelpText(GroupID))
-    return ::replace(GroupHelp);
-
-  // Otherwise keep looking.
-  return getOptionHelpGroup(Opts, GroupID);
-}
-
-INTERCEPTOR_ATTRIBUTE
-void OptTable::internalPrintHelp(
-    raw_ostream &OS, const char *Usage, const char *Title, bool ShowHidden,
-    bool ShowAllAliases, std::function<bool(const Info &)> ExcludeOption,
-    Visibility VisibilityMask) const {
-  OS << ::replace("OVERVIEW") << ": " << ::replace(Title) << "\n\n";
-  OS << ::replace("USAGE") << ": " << Usage << "\n\n";
-
-  // Render help text into a map of group-name to a list of (option, help)
-  // pairs.
-  std::map<std::string, std::vector<OptionInfo>> GroupedOptionHelp;
-
-  for (unsigned Id = 1, e = getNumOptions() + 1; Id != e; ++Id) {
-    // FIXME: Split out option groups.
-    if (getOptionKind(Id) == Option::GroupClass)
-      continue;
-
-    const Info &CandidateInfo = getInfo(Id);
-    if (!ShowHidden && (CandidateInfo.Flags & opt::HelpHidden))
-      continue;
-
-    if (ExcludeOption(CandidateInfo))
-      continue;
-
-    // If an alias doesn't have a help text, show a help text for the aliased
-    // option instead.
-    const char *HelpText = getOptionHelpText(Id, VisibilityMask);
-    if (!HelpText && ShowAllAliases) {
-      const Option Alias = getOption(Id).getAlias();
-      if (Alias.isValid())
-        HelpText = getOptionHelpText(Alias.getID(), VisibilityMask);
-    }
-
-    if (HelpText && (strlen(HelpText) != 0)) {
-      StringRef HelpGroup = getOptionHelpGroup(*this, Id);
-      const std::string &OptName = getOptionHelpName(*this, Id);
-      GroupedOptionHelp[HelpGroup.str()].push_back(
-          {OptName, ::replace(HelpText)});
-    }
-  }
-
-  for (auto &OptionGroup : GroupedOptionHelp) {
-    if (OptionGroup.first != GroupedOptionHelp.begin()->first)
-      OS << "\n";
-    PrintHelpOptionList(OS, OptionGroup.first, OptionGroup.second);
-  }
-
-  OS.flush();
-}
-
 INTERCEPTOR_ATTRIBUTE
 void OptTable::printHelp(raw_ostream &OS, const char *Usage, const char *Title,
                          bool ShowHidden, bool ShowAllAliases,
                          Visibility VisibilityMask) const {
+  ReplaceStream Wrapper{OS};
   return internalPrintHelp(
-      OS, Usage, Title, ShowHidden, ShowAllAliases,
+      Wrapper, Usage, Title, ShowHidden, ShowAllAliases,
       [VisibilityMask](const Info &CandidateInfo) -> bool {
         return (CandidateInfo.Visibility & VisibilityMask) == 0;
       },
@@ -336,10 +195,11 @@ INTERCEPTOR_ATTRIBUTE
 void OptTable::printHelp(raw_ostream &OS, const char *Usage, const char *Title,
                          unsigned FlagsToInclude, unsigned FlagsToExclude,
                          bool ShowAllAliases) const {
+  ReplaceStream Wrapper{OS};
   bool ShowHidden = !(FlagsToExclude & HelpHidden);
   FlagsToExclude &= ~HelpHidden;
   return internalPrintHelp(
-      OS, Usage, Title, ShowHidden, ShowAllAliases,
+      Wrapper, Usage, Title, ShowHidden, ShowAllAliases,
       [FlagsToInclude, FlagsToExclude](const Info &CandidateInfo) {
         if (FlagsToInclude && !(CandidateInfo.Flags & FlagsToInclude))
           return true;
