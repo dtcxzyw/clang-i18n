@@ -46,7 +46,6 @@
 '#warning is a %select{C23|C++23}0 extension'
 '#warning is incompatible with C standards before C23'
 '#warning is incompatible with C++ standards before C++23'
-'%0'
 '%0 %select{parameter|return}1 type is unsupported; support for vector types for this target is introduced in %2'
 "%0 '%1' is acquired exclusively and shared in the same scope"
 "%0 '%1' is not held on every path through here"
@@ -1276,7 +1275,6 @@
 '-mxcoff-roptr is not supported with -shared'
 '-mxcoff-roptr is supported only with -fdata-sections'
 '-verify prefixes must start with a letter and contain only alphanumeric characters, hyphens, and underscores'
-'...'
 '.dwo output filename'
 '// comments are not allowed in this language'
 '/arm64EC has been overridden by specified target: %0; option ignored'
@@ -14125,4 +14123,3 @@
 'zero size arrays are an extension'
 "zero-length array section is not allowed in 'depend' clause"
 'zero-length arrays are not permitted in %select{C++|SYCL device code|HIP device code}0'
-'{3}'

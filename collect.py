@@ -215,7 +215,7 @@ strings.append(
     "Preprocessed source(s) and associated run script(s) are located at:"
 )
 
-strings = list(set(strings))
+strings = list(set(filter(lambda x: x.lower() != x.upper(), strings)))
 strings.sort()
 
 with open(output_path, "w") as f:
