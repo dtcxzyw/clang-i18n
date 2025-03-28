@@ -49,11 +49,9 @@ print("Diagnostic:", len(diagnostic_strings))
 for line in diagnostic_strings:
     strings.append(ast.literal_eval(line))
 
-custom_diagnostic_strings_count = 0
 
-
-def get_custom_diagnostic_messages(path, keyword):
-    global custom_diagnostic_strings_count
+def get_custom_messages(path, keyword):
+    count = 0
     global strings
 
     for r, ds, fs in os.walk(os.path.join(llvm_src_path, path)):
@@ -61,8 +59,10 @@ def get_custom_diagnostic_messages(path, keyword):
             if (
                 not f.endswith(".cpp")
                 and not f.endswith(".h")
-                and not f.startswith("__")
+                and not (f.startswith("__") and "." not in f)
             ):
+                continue
+            if "test" in r:
                 continue
             with open(os.path.join(r, f)) as src:
                 srcstr = src.read()
@@ -86,16 +86,38 @@ def get_custom_diagnostic_messages(path, keyword):
                         if depth == 0:
                             break
                     pos += 1
-                expr = srcstr[beg:pos].replace("\n", "")
+                expr = srcstr[beg:pos]
+                if srcstr[beg - 1 : beg + 2] != 'R"(':
+                    expr = expr.replace("\n", "")
+                else:
+                    expr = '""' + expr + '""'
                 if len(expr) == 0:
                     continue
-                substr = ast.literal_eval(expr)
+                substr = None
+                try:
+                    substr = ast.literal_eval(expr)
+                except Exception:
+                    pass
+                if substr is None:
+                    for i in range(1, len(expr)):
+                        try:
+                            substr = ast.literal_eval(expr[:-i])
+                        except Exception:
+                            pass
+                if substr is None or len(substr) == 0:
+                    continue
+                while substr.startswith("(") and substr.endswith(")"):
+                    substr = substr[1:-1]
                 strings.append(substr)
-                custom_diagnostic_strings_count += 1
+                count += 1
+    return count
 
 
-get_custom_diagnostic_messages("clang/lib", ".getCustomDiagID(")
-get_custom_diagnostic_messages("libcxx/include", "_LIBCPP_DIAGNOSE_WARNING(")
+custom_diagnostic_strings_count = 0
+custom_diagnostic_strings_count += get_custom_messages("clang/lib", ".getCustomDiagID(")
+custom_diagnostic_strings_count += get_custom_messages(
+    "libcxx/include", "_LIBCPP_DIAGNOSE_WARNING("
+)
 print("Custom Diagnostic:", custom_diagnostic_strings_count)
 
 option_extractor = """
@@ -136,7 +158,16 @@ for line in option_strings:
                 res = ast.literal_eval(line[pos1 : pos2 + 1])
         if len(res) != 0:
             strings.append(res)
+inline_options_count = 0
+inline_options_count += get_custom_messages(".", "cl::desc(")
+# TODO: Handle clEnumValN
+print("Inline Option:", inline_options_count)
 
+# Special strings
+strings.append("clang LLVM compiler")
+strings.append("OVERVIEW: ")
+strings.append("USAGE: ")
+strings.append("OPTIONS")
 
 strings = list(set(strings))
 strings.sort()
