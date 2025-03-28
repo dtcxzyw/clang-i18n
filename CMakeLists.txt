@@ -27,5 +27,5 @@ set(LLVM_LINK_COMPONENTS clangFrontend)
 
 add_library(clang-i18n MODULE clang-i18n.cpp)
 target_link_libraries(clang-i18n PRIVATE dl)
-target_link_libraries(clang-i18n PRIVATE clangBasic LLVMSupport)
+target_link_libraries(clang-i18n PRIVATE clangBasic LLVMSupport LLVMOption)
 # target_link_libraries(clang-i18n PRIVATE clang-cpp LLVM)
