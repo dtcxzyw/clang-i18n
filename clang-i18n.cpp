@@ -12,6 +12,7 @@
 #include <llvm/Support/Error.h>
 #include <llvm/Support/FileSystem.h>
 #include <llvm/Support/MemoryBuffer.h>
+#include <llvm/Support/PrettyStackTrace.h>
 #include <llvm/Support/SHA1.h>
 #include <llvm/Support/raw_ostream.h>
 #include <clang/Basic/DiagnosticIDs.h>
@@ -227,6 +228,31 @@ outs() {
   static ReplaceStream Stream{RealFunc()};
   // NOTE: This is UB.
   return *reinterpret_cast<raw_fd_ostream *>(&Stream);
+}
+
+INTERCEPTOR_ATTRIBUTE void setBugReportMsg(const char *Msg) {
+  static auto RealFunc = getRealFuncAddr(&setBugReportMsg);
+  return RealFunc(::replace(Msg).data());
+}
+
+INTERCEPTOR_ATTRIBUTE
+bool CheckBitcodeOutputToConsole(raw_ostream &OS) {
+  if (OS.is_displayed()) {
+    errs() << ::replace(
+        "WARNING: You're attempting to print out a bitcode file.\n"
+        "This is inadvisable as it may cause display problems. If\n"
+        "you REALLY want to taste LLVM bitcode first-hand, you\n"
+        "can force output with the `-f' option.\n\n");
+    return true;
+  }
+  return false;
+}
+
+INTERCEPTOR_ATTRIBUTE
+void EnablePrettyStackTrace() {
+  static auto RealFunc = getRealFuncAddr(&EnablePrettyStackTrace);
+  setBugReportMsg(getBugReportMsg());
+  return RealFunc();
 }
 
 namespace cl {

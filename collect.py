@@ -197,6 +197,23 @@ strings.append("clang LLVM compiler")
 strings.append("OVERVIEW: ")
 strings.append("USAGE: ")
 strings.append("OPTIONS")
+strings.append(
+    "PLEASE submit a bug report to https://github.com/llvm/llvm-project/issues/ and include the crash backtrace, preprocessed source, and associated run script.\n"
+)
+strings.append(
+    "PLEASE submit a bug report to https://github.com/llvm/llvm-project/issues/ and include the crash backtrace.\n"
+)
+strings.append(
+    "WARNING: You're attempting to print out a bitcode file.\n"
+    "This is inadvisable as it may cause display problems. If\n"
+    "you REALLY want to taste LLVM bitcode first-hand, you\n"
+    "can force output with the `-f' option.\n\n"
+)
+strings.append(
+    "\n********************\n\n"
+    "PLEASE ATTACH THE FOLLOWING FILES TO THE BUG REPORT:\n"
+    "Preprocessed source(s) and associated run script(s) are located at:"
+)
 
 strings = list(set(strings))
 strings.sort()

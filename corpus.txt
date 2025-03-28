@@ -1,3 +1,4 @@
+'\n********************\n\nPLEASE ATTACH THE FOLLOWING FILES TO THE BUG REPORT:\nPreprocessed source(s) and associated run script(s) are located at:'
 '\nDirectory where processed files are stored.\nLinks to definition locations will only be\ngenerated if the file is in this dir.'
 '\nThe directory for merging symbols.'
 '\nThe output directory for saving the results.'
@@ -5776,6 +5777,8 @@
 'PCH was compiled with different VFS overlay files than are currently in use'
 'PDLL Frontend'
 'PDLL LSP Language Server'
+'PLEASE submit a bug report to https://github.com/llvm/llvm-project/issues/ and include the crash backtrace, preprocessed source, and associated run script.\n'
+'PLEASE submit a bug report to https://github.com/llvm/llvm-project/issues/ and include the crash backtrace.\n'
 'POSIX thread model'
 'Pack non-contiguous assummed shape arrays into contiguous memory'
 'Pad previous instructions to implement align directives'
@@ -8065,6 +8068,7 @@
 'Vreg distance cutoff for insert generation.'
 'Vreg# cutoff for insert generation.'
 'WARNING: This option will replace your input file with the reduced version!'
+"WARNING: You're attempting to print out a bitcode file.\nThis is inadvisable as it may cause display problems. If\nyou REALLY want to taste LLVM bitcode first-hand, you\ncan force output with the `-f' option.\n\n"
 'Wait for user input before entering JITed code'
 'Wait until all forks of instrumented process will finish (use with instrumentation-sleep-time option)'
 'Warn for mismatching a signed and unsigned value'
