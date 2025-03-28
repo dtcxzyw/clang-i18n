@@ -47,7 +47,6 @@ keys = [
     "%diff{",
     "%sub{",
     "|",
-    "%",
     "{",
     "}",
     "\\",
@@ -83,11 +82,12 @@ def chat(prompt):
             else:
                 if delta.content is not None:
                     content += delta.content
+                    print(delta.content, end="", flush=True)
 
     except Exception as e:
         print(e)
         return ""
-    print(content)
+    print("")
     return content
 
 
