@@ -12,8 +12,9 @@ import copy
 
 corpus = list(open(sys.argv[1]).read().splitlines())
 prompt = open(sys.argv[2]).read()
-output = sys.argv[3]
-batch_size = int(sys.argv[4])
+errata = open(sys.argv[3]).read().splitlines()
+output = sys.argv[4]
+batch_size = int(sys.argv[5])
 
 endpoint = os.environ["LLM_ENDPOINT"]
 model = os.environ["LLM_MODEL"]
@@ -24,6 +25,13 @@ client = OpenAI(api_key=token, base_url=endpoint)
 def compute_hash(str: str):
     return "H" + hashlib.sha1(str.encode("utf-8")).digest().hex()[:12].upper()
 
+
+errata_map = dict()
+for str in errata:
+    pos = str.find(" ")
+    if pos == -1:
+        continue
+    errata_map[str[:pos]] = str[pos + 1 :]
 
 keys = [
     "%0",
@@ -51,6 +59,52 @@ keys = [
     "}",
     "\\",
     "\\n",
+    "consteval",
+    "constexpr",
+    "constinit",
+    "const_cast",
+    "dynamic_cast",
+    "reinterpret_cast",
+    "static_cast",
+    "typeid",
+    "typename",
+    "typedef",
+    "co_await",
+    "co_return",
+    "co_yield",
+    "alignas",
+    "alignof",
+    "decltype",
+    "goto",
+    "noexcept",
+    "nullptr",
+    "static_assert",
+    "thread_local",
+    "pragma",
+    "X86",
+    "ARM",
+    "AArch64",
+    "RISCV",
+    "RISC-V",
+    "MIPS",
+    "SPARC",
+    "PowerPC",
+    "Alpha",
+    "AMDGPU",
+    "M68k",
+    "SystemZ",
+    "NVPTX",
+    "Hexagon",
+    "WebAssembly",
+    "wasm",
+    "WASM",
+    "JIT",
+    "MLIR",
+    "Clang",
+    "GCC",
+    "GNU",
+    "MSVC",
+    "Visual Studio",
 ]
 
 
@@ -58,6 +112,17 @@ def validate(src, tgt):
     for k in keys:
         if src.count(k) != tgt.count(k):
             return False
+    for k, v in errata_map.items():
+        should_contain = False
+        if k.startswith("!"):
+            should_contain = True
+            k = k[1:]
+        if k in src or k.capitalize() in src:
+            if should_contain:
+                if v not in tgt:
+                    return False
+            elif v in tgt:
+                return False
     return True
 
 
