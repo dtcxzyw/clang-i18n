@@ -3,19 +3,21 @@
 // This file is licensed under the MIT License.
 // See the LICENSE file for more information.
 
+#include <llvm/ADT/ScopeExit.h>
 #include <llvm/ADT/StringExtras.h>
 #include <llvm/ADT/StringRef.h>
 #include <llvm/Option/OptTable.h>
 #include <llvm/Option/Option.h>
 #include <llvm/Support/CommandLine.h>
 #include <llvm/Support/Error.h>
+#include <llvm/Support/FileSystem.h>
 #include <llvm/Support/MemoryBuffer.h>
 #include <llvm/Support/SHA1.h>
 #include <llvm/Support/raw_ostream.h>
 #include <clang/Basic/DiagnosticIDs.h>
+#include <atomic>
 #include <cstdlib>
 #include <dlfcn.h>
-#include <map>
 #include <string>
 #include <unordered_map>
 
@@ -211,4 +213,31 @@ void OptTable::printHelp(raw_ostream &OS, const char *Usage, const char *Title,
 }
 
 } // namespace opt
+
+static std::atomic_uint32_t PendingParse;
+
+INTERCEPTOR_ATTRIBUTE __attribute__((no_sanitize("undefined"))) raw_fd_ostream &
+outs() {
+  static auto RealFunc = getRealFuncAddr(&outs);
+  if (PendingParse == 0)
+    return RealFunc();
+  static ReplaceStream Stream{RealFunc()};
+  // NOTE: This is UB.
+  return *reinterpret_cast<raw_fd_ostream *>(&Stream);
+}
+
+namespace cl {
+INTERCEPTOR_ATTRIBUTE
+bool ParseCommandLineOptions(int argc, const char *const *argv,
+                             StringRef Overview, raw_ostream *Errs,
+                             const char *EnvVar,
+                             bool LongOptionsUseDoubleDash) {
+  static auto RealFunc = getRealFuncAddr(&ParseCommandLineOptions);
+  ++PendingParse;
+  auto Exit = make_scope_exit([&] { --PendingParse; });
+  return RealFunc(argc, argv, ::replace(Overview), Errs, EnvVar,
+                  LongOptionsUseDoubleDash);
+}
+} // namespace cl
+
 } // namespace llvm
