@@ -16,10 +16,6 @@ find_package(Clang REQUIRED CONFIG)
 message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
 message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
 
-if (NOT ${HAVE_CLANG_PLUGIN_SUPPORT})
-  message(FATAL_ERROR "This project requires Clang plugin support.")
-endif()
-
 include_directories(${LLVM_INCLUDE_DIRS})
 include_directories(${CLANG_INCLUDE_DIRS})
 

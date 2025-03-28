@@ -178,6 +178,7 @@ for line in option_strings:
 inline_options_count = 0
 inline_options_count += get_custom_messages(".", "cl::desc(")
 inline_options_count += get_custom_messages(".", "clEnumValN(", suffix=True)
+inline_options_count += get_custom_messages(".", "cl::OptionCategory")
 print("Inline Option:", inline_options_count)
 
 # Passes description using legacy pass manager
@@ -192,13 +193,21 @@ print("Old Passes:", old_passes_count)
 desc_count = get_custom_messages(".", "cl::ParseCommandLineOptions(", suffix=True)
 print("Program Desc:", desc_count)
 
-# TODO: cl::OptionCategory
-
 # Special strings
 strings.append("clang LLVM compiler")
 strings.append("OVERVIEW: ")
 strings.append("USAGE: ")
 strings.append("OPTIONS:\n")
+strings.append("SUBCOMMANDS:\n\n")
+strings.append('  Type "')
+strings.append(' <subcommand> --help" to get more help on a specific ' "subcommand")
+strings.append(" [options]")
+strings.append("SUBCOMMAND '")
+strings.append(" [subcommand]")
+strings.append("= *cannot print option value*\n")
+strings.append("*no default*")
+strings.append(" (default: ")
+strings.append("= *unknown option value*\n")
 strings.append(
     "PLEASE submit a bug report to https://github.com/llvm/llvm-project/issues/ and include the crash backtrace, preprocessed source, and associated run script.\n"
 )
