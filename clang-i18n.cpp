@@ -60,10 +60,13 @@ class TranslationTable {
           Str[Pos++] = '\\';
           break;
         }
+        ++I;
       } else {
         Str[Pos++] = Str[I];
       }
     }
+    Str[Pos] = '\0';
+    Str = Str.c_str();
   }
 
 public:

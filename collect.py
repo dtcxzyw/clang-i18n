@@ -50,7 +50,7 @@ for line in diagnostic_strings:
     strings.append(ast.literal_eval(line))
 
 
-def get_custom_messages(path, keyword, suffix=False):
+def get_custom_messages(path, keyword, suffix=False, trunc_for_suffix=False):
     count = 0
     global strings
 
@@ -93,6 +93,10 @@ def get_custom_messages(path, keyword, suffix=False):
                     expr = '""' + expr + '""'
                 if len(expr) == 0:
                     continue
+                if trunc_for_suffix:
+                    npos = expr.rfind('"')
+                    if npos != -1:
+                        expr = expr[: npos + 1]
                 substr = None
                 try:
                     substr = ast.literal_eval(expr)
@@ -114,11 +118,14 @@ def get_custom_messages(path, keyword, suffix=False):
                                 break
                         except Exception:
                             pass
-                if substr is None or len(substr) == 0:
+                if substr is None:
                     continue
                 while substr.startswith("(") and substr.endswith(")"):
                     substr = substr[1:-1]
-                strings.append(substr)
+                if len(substr) != 0 and not (
+                    ("-" in substr) and (" " not in substr) and ("<" not in substr)
+                ):
+                    strings.append(substr)
                 count += 1
     return count
 
@@ -172,6 +179,18 @@ inline_options_count = 0
 inline_options_count += get_custom_messages(".", "cl::desc(")
 inline_options_count += get_custom_messages(".", "clEnumValN(", suffix=True)
 print("Inline Option:", inline_options_count)
+
+# Passes description using legacy pass manager
+old_passes_count = 0
+old_passes_count += get_custom_messages(
+    ".", "INITIALIZE_PASS_BEGIN(", suffix=True, trunc_for_suffix=True
+)
+old_passes_count += get_custom_messages(
+    ".", "INITIALIZE_PASS(", suffix=True, trunc_for_suffix=True
+)
+print("Old Passes:", old_passes_count)
+desc_count = get_custom_messages(".", "cl::ParseCommandLineOptions(", suffix=True)
+print("Program Desc:", desc_count)
 
 # Special strings
 strings.append("clang LLVM compiler")

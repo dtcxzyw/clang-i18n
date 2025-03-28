@@ -100,6 +100,15 @@ for str in corpus:
 
 translation = dict()
 
+
+def dump():
+    with open(output, "w") as f:
+        for str in corpus:
+            hash = compute_hash(ast.literal_eval(str))
+            if hash in translation:
+                f.write(f"# {str}\n{hash}: {repr(translation[hash])}\n")
+
+
 if os.path.exists(output):
     with open(output) as f:
         for line in f.readlines():
@@ -114,6 +123,7 @@ if os.path.exists(output):
                 continue
             translation[key] = value
             tasks.pop(key)
+        dump()
 
 
 def expand(code):
@@ -153,8 +163,4 @@ while len(tasks) != 0:
             translation[hash] = res[var]
             tasks.pop(hash)
 
-    with open(output, "w") as f:
-        for str in corpus:
-            hash = compute_hash(ast.literal_eval(str))
-            if hash in translation:
-                f.write(f"# {str}\n{hash}: {repr(translation[hash])}\n")
+    dump()
