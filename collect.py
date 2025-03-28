@@ -50,7 +50,7 @@ for line in diagnostic_strings:
     strings.append(ast.literal_eval(line))
 
 
-def get_custom_messages(path, keyword):
+def get_custom_messages(path, keyword, suffix=False):
     count = 0
     global strings
 
@@ -98,10 +98,20 @@ def get_custom_messages(path, keyword):
                     substr = ast.literal_eval(expr)
                 except Exception:
                     pass
+                if not isinstance(substr, str):
+                    substr = None
                 if substr is None:
                     for i in range(1, len(expr)):
                         try:
-                            substr = ast.literal_eval(expr[:-i])
+                            if suffix:
+                                substr = ast.literal_eval(expr[i:].replace("\n", ""))
+                            else:
+                                substr = ast.literal_eval(expr[:-i].replace("\n", ""))
+                            if not isinstance(substr, str):
+                                substr = None
+                                continue
+                            if substr is not None:
+                                break
                         except Exception:
                             pass
                 if substr is None or len(substr) == 0:
@@ -160,7 +170,7 @@ for line in option_strings:
             strings.append(res)
 inline_options_count = 0
 inline_options_count += get_custom_messages(".", "cl::desc(")
-# TODO: Handle clEnumValN
+inline_options_count += get_custom_messages(".", "clEnumValN(", suffix=True)
 print("Inline Option:", inline_options_count)
 
 # Special strings
