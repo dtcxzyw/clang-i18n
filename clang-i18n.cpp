@@ -330,17 +330,18 @@ void EnablePrettyStackTrace() {
 }
 
 namespace cl {
-INTERCEPTOR_ATTRIBUTE __attribute__((no_sanitize("undefined"))) bool
+INTERCEPTOR_ATTRIBUTE bool
 ParseCommandLineOptions(int argc, const char *const *argv, StringRef Overview,
                         raw_ostream *Errs, const char *EnvVar,
                         bool LongOptionsUseDoubleDash) {
   static auto RealFunc = getRealFuncAddr(&ParseCommandLineOptions);
   char Buffer[sizeof(raw_fd_ostream)];
-  std::memcpy(Buffer, &outs(), sizeof(Buffer));
-  new (&outs()) ReplaceOutStream;
+  void *OS = &outs();
+  std::memcpy(Buffer, OS, sizeof(Buffer));
+  new (OS) ReplaceOutStream;
   auto Exit = llvm::make_scope_exit([&] {
     std::destroy_at(&outs());
-    std::memcpy(&outs(), Buffer, sizeof(Buffer));
+    std::memcpy(OS, Buffer, sizeof(Buffer));
   });
   return RealFunc(argc, argv, Overview, Errs, EnvVar, LongOptionsUseDoubleDash);
 }
