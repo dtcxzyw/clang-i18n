@@ -75,7 +75,7 @@ export LLM_TOKEN=<LLM API Key>
 python3 translate.py corpus.txt i18n/zh_CN.prompt i18n/zh_CN.errata i18n/zh_CN.yml <Batch Size>
 ```
 
-Batch size should not be too large, and it is recommended to set it to 20, otherwise the translation may be out of order.
+Batch size should not be too large, and it is recommended to set it to 20, otherwise the translation may be wrongly ordered.
 
 ## License
 

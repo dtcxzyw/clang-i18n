@@ -12,6 +12,8 @@
 ' BrainF compiler\n'
 ' [options]'
 ' [subcommand]'
+' positional argument'
+' positional arguments: See: '
 '#else after #else'
 '#else without #if'
 '#embed is a %select{C23|Clang}0 extension'
@@ -943,6 +945,7 @@
 "'-mbranch-protection=' option is incompatible with the '%0' architecture"
 "'-mindirect-jump=%0' is unsupported with the '%1' architecture"
 "'-x %0' after last input file has no effect"
+"'.  Try: '"
 "'...' as the only parameter of a function is incompatible with C standards before C23"
 "'...' in this location creates a C-style varargs function%select{, not a function parameter pack|}0"
 "'...' must %select{immediately precede declared identifier|be innermost component of anonymous pack declaration}0"
@@ -1287,6 +1290,11 @@
 '32-bit targets are not supported when building for Mac Catalyst'
 '90th percentile durations'
 '99th percentile durations'
+": Did you mean '"
+': Not enough positional command line arguments specified!\n'
+': See: '
+': Too many positional arguments specified!\n'
+': Unknown '
 '<INDEX FILE>'
 '<Line Number>'
 '<Line Number>.<Discriminator>'
@@ -2131,6 +2139,7 @@
 'Call site block.'
 'Call site parameter.'
 'CallGraph Construction'
+'Can specify at most '
 'Canonicalize Freeze Instructions in Loops'
 'Canonicalize natural loops'
 'Capture the number of times a stack was invoked. In flamegraph mode, this count also includes invocations of all callees.'
@@ -5542,6 +5551,7 @@
 'Multiply the `import-instr-limit` threshold for cold callsites'
 'Multiply the `import-instr-limit` threshold for critical callsites'
 'Multiply the `import-instr-limit` threshold for hot callsites'
+'Must specify at least '
 'My Pass Name'
 'N must be a power of two. Align loops to the boundary'
 'NVPTX Address space based Alias Analysis'
@@ -7814,6 +7824,7 @@
 'These control which sections are dumped. Where applicable these parameters take an optional =<offset> argument to dump only the entry at the specified offset.'
 'ThinLink: produces the index by linking only the summaries.'
 "This appends the content hash to the globally outlined function name. It's beneficial for enhancing the precision of the stable hash and for ordering the outlined functions."
+'This argument does not take a value.\n\tInstead, it consumes any positional arguments until the next recognized option.'
 'This checks if there is a fdo instr. profile hash mismatch for this function'
 'This compilation is part of building a PCH with corresponding object file.'
 'This flag controls the behaviour of fcmp equality comparisons.For equality comparisons such as `x == 0.0f`, we can perform the '
@@ -9623,6 +9634,7 @@
 'comma-separated list of OpenMP offloading triples'
 'comma-separated list of opcodes to measure, by name'
 'comma-separated list of target architecture features'
+'command line argument'
 'commas at the end of enumerator lists are a C++11 extension'
 'commas at the end of enumerator lists are a C99-specific feature'
 'commas at the end of enumerator lists are incompatible with C++98'
@@ -12146,6 +12158,7 @@
 'multiversioned function redeclarations require identical target attributes'
 'multiversioning attributes cannot be combined'
 "must be declared with 'noexcept'"
+'must be specified at least once!'
 'must explicitly describe intended ownership of an object array parameter'
 'must explicitly qualify name of member function when taking its address'
 "must handle potential future platforms with '*'"
@@ -13415,6 +13428,7 @@
 'structured binding packs are incompatible with C++ standards before C++2c'
 'structurize SPIRV'
 'style of printing regions'
+'subcommand'
 'subexpression not valid in a constant expression'
 'submodule %0.%1 not declared in module map'
 "submodule of top-level module '%0' implicitly imported here"
