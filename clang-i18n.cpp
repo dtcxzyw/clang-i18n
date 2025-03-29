@@ -16,14 +16,12 @@
 #include <llvm/Support/PrettyStackTrace.h>
 #include <llvm/Support/SHA1.h>
 #include <llvm/Support/raw_ostream.h>
-#include <clang/Basic/Diagnostic.h>
-#include <clang/Basic/DiagnosticIDs.h>
 #include <cstdlib>
 #include <dlfcn.h>
 #include <string>
 #include <unordered_map>
 
-using clang::StringRef;
+using llvm::StringRef;
 
 static StringRef getLang() {
   if (auto *Lang = std::getenv("CLANG_I18N_LANG"))
@@ -191,6 +189,10 @@ static_assert(sizeof(ReplaceOutStream) == sizeof(raw_fd_ostream),
               "Size mismatch");
 } // namespace llvm
 
+#ifdef CLANG_I18N_CLANG_SUPPORT
+#include <clang/Basic/Diagnostic.h>
+#include <clang/Basic/DiagnosticIDs.h>
+
 namespace clang {
 
 void Diagnostic::FormatDiagnostic(SmallVectorImpl<char> &OutStr) const {
@@ -262,6 +264,7 @@ DiagnosticsEngine::DiagnosticsEngine(
 #endif
 
 } // namespace clang
+#endif
 
 namespace llvm {
 

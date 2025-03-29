@@ -263,6 +263,24 @@ strings.append("Override the behaviour of expand-variadics")
 strings.append(
     "Options: <empty>|Legal|Discard|Convert. If non-empty, ignore TargetTransformInfo and always use this transformation for the %evl parameter (Used in testing)."
 )
+strings.append(": Unknown ")
+strings.append("command line argument")
+strings.append("subcommand")
+strings.append("'.  Try: '")
+strings.append(": Did you mean '")
+strings.append(
+    "This argument does not take a value.\n"
+    "\tInstead, it consumes any positional arguments until "
+    "the next recognized option."
+)
+strings.append(": Not enough positional command line arguments specified!\n")
+strings.append("Must specify at least ")
+strings.append(" positional argument")
+strings.append(": See: ")
+strings.append(": Too many positional arguments specified!\n")
+strings.append("Can specify at most ")
+strings.append(" positional arguments: See: ")
+strings.append("must be specified at least once!")
 
 strings = list(set(filter(lambda x: x.lower() != x.upper(), strings)))
 strings.remove("All")

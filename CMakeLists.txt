@@ -20,6 +20,9 @@ include_directories(${LLVM_INCLUDE_DIRS})
 include_directories(${CLANG_INCLUDE_DIRS})
 
 add_library(clang-i18n MODULE clang-i18n.cpp)
+target_compile_definitions(clang-i18n PRIVATE -DCLANG_I18N_CLANG_SUPPORT)
+add_library(llvm-i18n MODULE clang-i18n.cpp)
+
 target_link_libraries(clang-i18n PRIVATE dl)
 if (LLVM_LINK_LLVM_DYLIB)
   if (NOT CLANG_LINK_CLANG_DYLIB)
@@ -34,17 +37,24 @@ if (LLVM_LINK_LLVM_DYLIB)
   message(STATUS "LLVM_SHLIB_SYMBOL_VERSION: ${LLVM_SHLIB_SYMBOL_VERSION}")
   configure_file(simple_version_script.map.in simple_version_script.map)
   target_link_libraries(clang-i18n PRIVATE clang-cpp LLVM)
-  target_link_options(clang-i18n PRIVATE -Wl,--no-as-needed -Wl,--version-script,${CMAKE_CURRENT_BINARY_DIR}/simple_version_script.map)
+  target_link_options(clang-i18n PRIVATE -Wl,--version-script,${CMAKE_CURRENT_BINARY_DIR}/simple_version_script.map)
+  target_link_libraries(llvm-i18n PRIVATE LLVM)
+  target_link_options(llvm-i18n PRIVATE -Wl,--version-script,${CMAKE_CURRENT_BINARY_DIR}/simple_version_script.map)
 else()
   if (CLANG_LINK_CLANG_DYLIB)
     message(FATAL_ERROR "Cannot set CLANG_LINK_CLANG_DYLIB=ON when "
                         "LLVM_LINK_LLVM_DYLIB=OFF")
   endif()
   target_link_libraries(clang-i18n PRIVATE clangBasic LLVMSupport LLVMOption)
+  target_link_libraries(llvm-i18n PRIVATE LLVMSupport LLVMOption)
 endif()
 
 include(GNUInstallDirs)
 install(TARGETS clang-i18n
+  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  COMPONENT clang-i18n
+)
+install(TARGETS llvm-i18n
   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
   COMPONENT clang-i18n
 )
