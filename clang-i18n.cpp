@@ -11,10 +11,12 @@
 #include <llvm/Support/CommandLine.h>
 #include <llvm/Support/Error.h>
 #include <llvm/Support/FileSystem.h>
+#include <llvm/Support/Memory.h>
 #include <llvm/Support/MemoryBuffer.h>
 #include <llvm/Support/PrettyStackTrace.h>
 #include <llvm/Support/SHA1.h>
 #include <llvm/Support/raw_ostream.h>
+#include <clang/Basic/Diagnostic.h>
 #include <clang/Basic/DiagnosticIDs.h>
 #include <cstdlib>
 #include <dlfcn.h>
@@ -34,9 +36,10 @@ static StringRef getLang() {
 static StringRef getTranslationDir() {
   if (auto *Path = std::getenv("CLANG_I18N_TRANSLATION_DIR"))
     return Path;
-  return "/usr/share/clang-i18n";
+  return "/usr/local/share/clang-i18n/i18n/";
 }
 
+namespace {
 class TranslationTable {
   std::unordered_map<std::string, std::string> Table;
 
@@ -111,6 +114,7 @@ public:
     return It == Table.end() ? Src : It->second;
   }
 };
+} // namespace
 
 static StringRef replace(StringRef Src) {
   static TranslationTable Table;
@@ -189,11 +193,73 @@ static_assert(sizeof(ReplaceOutStream) == sizeof(raw_fd_ostream),
 
 namespace clang {
 
-INTERCEPTOR_ATTRIBUTE
-StringRef DiagnosticIDs::getDescription(unsigned DiagID) const {
-  static auto RealFunc = getRealFuncAddr(&DiagnosticIDs::getDescription);
-  return replace((this->*RealFunc)(DiagID));
+void Diagnostic::FormatDiagnostic(SmallVectorImpl<char> &OutStr) const {
+  if (StoredDiagMessage.has_value()) {
+    OutStr.append(StoredDiagMessage->begin(), StoredDiagMessage->end());
+    return;
+  }
+
+  StringRef Diag =
+      ::replace(getDiags()->getDiagnosticIDs()->getDescription(getID()));
+
+  FormatDiagnostic(Diag.begin(), Diag.end(), OutStr);
 }
+
+#ifdef CLANG_I18N_LINK_DYLIB
+
+namespace {
+struct PatchFormatDiagnostic {
+  PatchFormatDiagnostic() {
+    const auto *FuncName = "_ZNK5clang10Diagnostic16FormatDiagnosticE"
+                           "RN4llvm15SmallVectorImplIcEE";
+    auto MyFunc = dlsym(RTLD_DEFAULT, FuncName);
+    auto RealFunc = dlsym(RTLD_NEXT, FuncName);
+
+#ifdef __x86_64__
+    static_assert(sizeof(MyFunc) == 8);
+    uint8_t Patch[] = {// movabs rax, <MyFunc>
+                       0x48, 0xb8, 0, 0, 0, 0, 0, 0, 0, 0,
+                       // jmp rax
+                       0xff, 0xe0};
+    memcpy(Patch + 2, &MyFunc, sizeof(MyFunc));
+    using namespace llvm::sys;
+    MemoryBlock Mem(RealFunc, sizeof(Patch));
+    [[maybe_unused]] auto Ret1 =
+        Memory::protectMappedMemory(Mem, Memory::MF_RWE_MASK);
+    memcpy(Mem.base(), Patch, sizeof(Patch));
+    [[maybe_unused]] auto Ret2 =
+        Memory::protectMappedMemory(Mem, Memory::MF_READ | Memory::MF_EXEC);
+#else
+#error "Unsupported architecture"
+#endif
+  }
+};
+} // namespace
+
+static void
+DummyArgToStringFn(DiagnosticsEngine::ArgumentKind AK, intptr_t QT,
+                   StringRef Modifier, StringRef Argument,
+                   ArrayRef<DiagnosticsEngine::ArgumentValue> PrevArgs,
+                   SmallVectorImpl<char> &Output, void *Cookie,
+                   ArrayRef<intptr_t> QualTypeVals) {
+  StringRef Str = "<can't format argument>";
+  Output.append(Str.begin(), Str.end());
+}
+
+INTERCEPTOR_ATTRIBUTE
+DiagnosticsEngine::DiagnosticsEngine(
+    IntrusiveRefCntPtr<DiagnosticIDs> diags,
+    IntrusiveRefCntPtr<DiagnosticOptions> DiagOpts, DiagnosticConsumer *client,
+    bool ShouldOwnClient)
+    : Diags(std::move(diags)), DiagOpts(std::move(DiagOpts)) {
+  static PatchFormatDiagnostic Patcher;
+  setClient(client, ShouldOwnClient);
+  ArgToStringFn = DummyArgToStringFn;
+
+  Reset();
+}
+
+#endif
 
 } // namespace clang
 
