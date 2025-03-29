@@ -210,6 +210,7 @@
 '%0 does not identify a valid pointer authentication key for the current target'
 '%0 does not name a template but is followed by template arguments'
 '%0 does not name a template but is followed by template arguments; did you mean %1?'
+'%0 does not point into a class'
 '%0 does not refer to a type name in pseudo-destructor expression; expected the name of type %1'
 '%0 does not refer to a value'
 '%0 does not refer to the name of a parameter pack'
@@ -821,7 +822,6 @@
 "'%0' directive cannot follow %select{'%2' directive|other expected directives}1"
 "'%0' directive found here"
 "'%0' does not contain a GCC installation"
-"'%0' does not point into a class"
 "'%0' does not support '-%1'; flag ignored"
 "'%0' does not support '-moutline'; flag ignored"
 "'%0' evaluates to a null function pointer"
@@ -834,6 +834,7 @@
 "'%0' included multiple times, additional include site in header from module '%1'"
 "'%0' invalid for input of type %1"
 "'%0' is a C11 extension"
+"'%0' is a C2y extension"
 "'%0' is a C99 extension"
 "'%0' is a context %select{set|selector|property}1 not a context %select{set|selector|property}2"
 "'%0' is a keyword in C++11"
@@ -844,6 +845,7 @@
 "'%0' is ignored since it is only supported for HIP"
 "'%0' is incompatible with C standards before C11"
 "'%0' is incompatible with C standards before C23"
+"'%0' is incompatible with C standards before C2y"
 "'%0' is invalid in friend declarations"
 "'%0' is not a valid Unicode character name"
 "'%0' is not a valid builtin name for %1"
@@ -972,6 +974,7 @@
 "'_BitInt' suffix for literals is a Clang extension"
 "'_BitInt' suffix for literals is incompatible with C standards before C23"
 "'_Complex %0' is invalid"
+"'_Countof' requires an argument of array type; %0 invalid"
 "'_ExtInt' is deprecated; use '_BitInt' instead"
 "'_Noreturn' can only appear on functions"
 "'_Noreturn' keyword must precede function declarator"
@@ -1232,7 +1235,8 @@
 "'typeid' of variably modified type %0"
 "'typename' is redundant; base classes are implicitly types"
 "'typename' keyword used on a non-type"
-"'typename' occurs outside of a template"
+"'typename' outside of a template is a C++11 extension"
+"'typename' outside of a template is incompatible with C++98"
 "'unavailable' availability overrides all other availability information"
 "'using namespace' is not allowed in classes"
 "'using_if_exists' attribute cannot be applied to an inheriting constructor"
@@ -1716,6 +1720,7 @@
 'All outputs.'
 'All possible int comparisons in GPRs.'
 'All suitable variables will have the TOC data transformation applied'
+'All vtables have type infos'
 'All warnings.'
 'Allocate all arrays of unknown size and temporary arrays in stack memory'
 'Allocate array temporaries on the heap (default)'
@@ -1826,7 +1831,6 @@
 'Allows loops to be partially unrolled until -unroll-threshold loop size is reached.'
 'Allows loops to be peeled when the dynamic trip count is known to be low.'
 'Allows loops to be unroll-and-jammed.'
-'Allows only a single process to use the GPU at a time. Useful to suppress out-of-resource errors'
 'Allows to add additional results to private functions to return ownership of returned memrefs to callers. This can avoid spurious buffer clones in the callee.'
 'Allows using features specific to Hugo'
 'Also show functions without any scops'
@@ -1985,6 +1989,7 @@
 'BPF: Disable Avoiding Speculative Code Motion.'
 'BPF: Disable Serializing ICMP insns.'
 'Bail out on unprofitable SCoPs before rescheduling'
+'Base Directory for generated documentation.\nURLs will be rooted at this directory for HTML links.'
 'Base Type (int, bool, etc.).'
 'Base cost of vector insert/extract element'
 'Base file path for the interactive mode. The incoming filename should have the name <inliner-interactive-channel-base>.in, while the outgoing name should be <inliner-interactive-channel-base>.out'
@@ -3076,6 +3081,7 @@
 'Do not place constants in the .rodata section instead of the .sdata if they meet the -G <size> threshold (MIPS)'
 'Do not preserve comments in inline assembly'
 'Do not prevent DecoderTable duplications caused by HwModes'
+'Do not print instruction tables'
 'Do not print per-code histogram'
 'Do not print the name of each compiled file (default)'
 'Do not process trigraph sequences'
@@ -3127,6 +3133,7 @@
 'Do not use the -simplifycfg pass to reduce testcases'
 'Do not use the analyzed objects when unparsing'
 'Do not use the experimental C++ class ABI for classes with virtual tables'
+'Do not validate testcase is interesting after counting chunks (may speed up reduction)'
 'Do not verify input module'
 'Do not warn about individual formatting changes needed. Used only with --dry-run or -n'
 'Do not write current time into COFF output (breaks link.exe /incremental)'
@@ -3384,6 +3391,7 @@
 'Emit Apple-style NEON assembly'
 'Emit Clang AST files for source inputs'
 'Emit CodeGen Data into custom sections'
+'Emit GNU Assembly Syntax on z/OS.'
 'Emit GOTPCRELX/REX_GOTPCRELX/CODE_4_GOTPCRELX instead of GOTPCREL on x86-64 ELF'
 'Emit IR to support LTO unit features (CFI, whole program vtable opt)'
 'Emit Import Call sections on supported targets that can be used by the Windows kernel to enable import call optimization'
@@ -3431,6 +3439,7 @@
 'Emit compiler path and command line into CodeView debug information'
 'Emit complete descriptions of template parameters in forward declarations'
 'Emit data into separate sections'
+'Emit debug info that places array-bounds instrumentation in an inline function called __ubsan_check_array_bounds.'
 'Emit debug line info directives only'
 'Emit debug line number tables only'
 'Emit emitc.file ops with matching id'
@@ -3823,6 +3832,7 @@
 'Enable promotion of flat kernel pointer arguments to global'
 'Enable quadword atomics ABI on AIX (AIX PPC64 only). Uses lqarx/stqcx. instructions.'
 'Enable raw string literals'
+'Enable reassociation of accumulation chains'
 'Enable reciprocal sqrt optimization'
 'Enable recognition of non-constant strided pointer induction variables.'
 'Enable recovery for specified sanitizers'
@@ -4026,6 +4036,7 @@
 'Enable warnings for deprecated constructs and define __DEPRECATED'
 'Enable warnings for undefined macros with a prefix in the comma separated list <arg>'
 'Enable whole program visibility'
+'Enable whole program visibility during LTO'
 'Enable workarounds for GR712RC errata'
 'Enable workarounds for UT700 errata'
 'Enable/disable fusing matrix instructions.'
@@ -4705,8 +4716,9 @@
 'Hoist invariant loads'
 'Hoist invariant loads.'
 'Hoist invariant stores'
-'Hoist loads/stores if the target supports conditional faulting'
+'Hoist loads if the target supports conditional faulting'
 'Hoist loads/stores if the target supports conditional faulting (default = false)'
+'Hoist stores if the target supports conditional faulting'
 'Hoisting alloca instructions in non-entry blocks to the entry block'
 'Hot callsite threshold for proirity-based sample profile loader inlining.'
 'Hot percentile cutoff.'
@@ -5421,6 +5433,7 @@
 'Maximum number of ISL operations to invest for known analysis; 0=no limit'
 'Maximum number of base-updates to check generating postindex.'
 'Maximum number of basic blocks in a function to run ext-TSP block placement.'
+'Maximum number of branches in the accumulator tree'
 'Maximum number of call targets per call site to enable branch funnels'
 'Maximum number of comparisons done when trying to merge runtime memory checks. (default = 100)'
 'Maximum number of conditions in MC/DC coverage'
@@ -5515,6 +5528,7 @@
 'Minimum depth of loop nest considered for the transform'
 'Minimum distance between predicate definition and farther of the two predicated uses'
 'Minimum gain per loop (in cycles) threshold.'
+'Minimum length of accumulator chains required for the optimization to kick in'
 'Minimum number of extenders to trigger replacement'
 'Minimum number of similar functions with the same hash required for merging.'
 'Minimum number of times a block must be executed to be retained.'
@@ -5637,6 +5651,7 @@
 'Number of merge threads to use (default: autodetect)'
 'Number of metadatas above which we emit an index to enable lazy-loading'
 'Number of output files'
+'Number of partitions to use for parallel full LTO codegen, ld.lld only.'
 'Number of registers to limit to when printing regmask operands in IR dumps. unlimited = -1'
 'Number of seconds program is allowed to run before it is killed (default is 300s), 0 disables timeout'
 "Number of threads in the 'x' dimension"
@@ -5772,12 +5787,14 @@
 "OpenACC '%1' clause %select{|with more than 1 argument }0may not appear on a '%2' construct with a '%3' clause%select{ with more than 1 argument|}0"
 "OpenACC '%1' clause cannot appear more than once on a '%0' directive"
 "OpenACC '%1' clause is not valid on '%0' directive"
+"OpenACC 'bind' clause on a declaration must bind to the same name as previous bind clauses"
 "OpenACC 'collapse' clause loop count must be a %select{constant expression|positive integer value, evaluated to %1}0"
 "OpenACC 'gang' clause may have at most one %select{unnamed or 'num'|'dim'|'static'}0 argument"
 "OpenACC 'reduction' composite variable must not have non-scalar field"
 "OpenACC 'reduction' variable must be a composite of scalar types; %1 %select{is not a class or struct|is incomplete|is not an aggregate}0"
 "OpenACC 'reduction' variable must be of scalar type, sub-array, or a composite of scalar types;%select{| sub-array base}1 type is %0"
 "OpenACC 'reduction' variable must have the same operator in all nested constructs (%0 vs %1)"
+"OpenACC 'routine' directive with a name refers to a function with the same name as the function on the following line; this may be unintended"
 "OpenACC 'tile' clause size expression must be %select{an asterisk or a constant expression|positive integer value, evaluated to %1}0"
 "OpenACC 'update' construct may not appear in place of the statement following a%select{n if statement| while statement| do statement| switch statement| label statement}0"
 "OpenACC clause '%0' may not appear on the same construct as a '%1' clause on a '%2' construct"
@@ -6203,6 +6220,7 @@
 'Prefix filenames with the main file'
 'Prefix for feature names.'
 'Prefix for memory access callbacks'
+'Prefix of line code for repository.'
 "Prefix to use for outputs (default: 'bugpoint')"
 "Prefix to use from check file (defaults to 'CHECK')"
 "Prefixes for aliases that don't need to be renamed, separated by a comma"
@@ -6320,6 +6338,7 @@
 'Print information helpful in diagnosing internal FileCheck\nissues, or add it to the input dump if enabled.  Implies\n-v.\n'
 'Print instruction latencies as verbose asm comments'
 'Print instruction tables'
+'Print instruction tables with additional information: bypass latency, LLVM opcode, used resources'
 "Print instructions that the allocator wants to fuse, but the X86 backend currently can't"
 'Print internal analyzer statistics.'
 'Print legacy PassManager debugging information'
@@ -6427,11 +6446,14 @@
 'Prints the blame context (if possible) for ALL instructions. This specifies the number of lines of context for non-BAD instructions (see --blame-context). If --blame-context is unspecified, it prints this number of contextual lines for BAD instructions as well.'
 'Prints the combined library module before the output'
 'Prints the pass pipeline and returns.'
+'Prioritize increasing vectorization opportunity over cache cost when determining profitability'
 'Probability value in the range [0.0, 1.0] of unconditional pseudo-random checks.'
 'Probability value in the range [0.0, 1.0] to keep instrumentation of a function. Note: instrumentation can be skipped randomly OR because of the hot percentile cutoff, if both are supplied.'
 'Proceed with Loop Idiom Vectorize Pass, but do not convert byte-compare loop(s).'
 'Proceed with loop idiom recognize pass, but do not convert loop(s) to memcpy.'
 'Proceed with loop idiom recognize pass, but do not convert loop(s) to memset.'
+'Proceed with loop idiom recognize pass, but do not convert loop(s) to strlen.'
+'Proceed with loop idiom recognize pass, enable conversion of loop(s) to wcslen.'
 'Process Id for the profiled executable binary.'
 'Process Implicit Definitions'
 'Process functions in a top-down order defined by the profiled call graph when -sample-profile-top-down-load is on.'
@@ -6500,6 +6522,7 @@
 'RISC-V Insert VSETVLI pass'
 'RISC-V Insert Write VXRM Pass'
 'RISC-V Landing Pad Setup'
+'RISC-V Late Branch Optimisation Pass'
 'RISC-V Load / Store Optimizer'
 'RISC-V Make Compressible'
 'RISC-V Merge Base Offset'
@@ -7062,6 +7085,7 @@
 'Set the kind of module destructors emitted by AddressSanitizer instrumentation. These destructors are emitted to unregister instrumented global variables when code is unloaded (e.g. via `dlclose()`).'
 'Set the loop counter bitwidth'
 'Set the loop decrement value'
+'Set the lower bound of a trip count to decide on vectorization while tail-folding.'
 'Set the max unroll count for full unrolling, for testing purposes'
 'Set the max unroll count for partial and runtime unrolling, fortesting purposes'
 'Set the maximum bitwidth for _BitInt (this option is expected to be removed in the future)'
@@ -7303,7 +7327,7 @@
 "Specify an offloading device architecture for CUDA, HIP, or OpenMP. (e.g. sm_35). If 'native' is used the compiler will detect locally installed architectures. For HIP offloading, the device architecture can be followed by target ID features delimited by a colon (e.g. gfx908:xnack+:sramecc-). May be specified more than once."
 'Specify an output filename for an HTML report. This describes both recommendations and reasons for changes.'
 'Specify bit size of immediate TLS offsets (AArch64 ELF only): 12 (for 4KB) | 24 (for 16MB, default) | 32 (for 4GB) | 48 (for 256TB, needs -mcmodel=large)'
-'Specify code object ABI version. Defaults to 5. (AMDGPU only)'
+'Specify code object ABI version. Defaults to 6. (AMDGPU only)'
 'Specify comma-separated list of offloading target triples (CUDA and HIP only)'
 'Specify comma-separated list of triples OpenMP offloading targets to be supported'
 'Specify command to run'
@@ -7430,6 +7454,8 @@
 'Start the pipeline with collecting and end it with checking of debug info preservation.'
 'Start the pipeline with debugify and end it with check-debugify'
 'Statement-level analysis'
+'Static Data Annotator'
+'Static Data Profile Info'
 'Static analyzer report output format (html|plist|plist-multi-file|plist-html|sarif|sarif-html|text).'
 'Static scheduling'
 'Statically link the sanitizer runtime (Not supported for ASan, TSan or UBSan on darwin)'
@@ -8288,6 +8314,7 @@
 'VLIW scheduler'
 'Validate PCH input files based on content if mtime differs'
 'Validate PCM input files based on content if mtime differs'
+'Validate that all vtables have type infos in LTO'
 'Validate the system headers that a module depends on when loading the module'
 'Value for __PIC__'
 'Value to pass to hot/cold operator new for cold allocation'
@@ -8680,7 +8707,6 @@
 'address argument to load or store exclusive builtin must be a pointer to 1,2,4 or 8 byte type (%0 invalid)'
 'address argument to nontemporal builtin must be a pointer (%0 invalid)'
 'address argument to nontemporal builtin must be a pointer to integer, float, pointer, or a vector of such types (%0 invalid)'
-'address non-type template argument cannot be surrounded by parentheses'
 "address of %select{'%1'|function '%1'|array '%1'|lambda function pointer conversion operator}0 will always evaluate to 'true'"
 'address of %select{bit-field|vector element|property expression|register variable|matrix element}0 requested'
 "address of non-static constexpr variable %0 may differ on each invocation of the enclosing function; add 'static' to give it a constant address"
@@ -9621,7 +9647,6 @@
 'class with specified objc_requires_property_definitions attribute is declared here'
 'cmse is not compatible with %select{RWPI|ROPI}0'
 "code model '%0' is not supported on this target"
-'code object v6 is still in development and not ready for production use yet; use at your own risk'
 'code snippets to measure'
 'code will never be executed'
 'collect control flow for each function'
@@ -10023,8 +10048,9 @@
 'definition has no member %0'
 "definition in module '%0' is here"
 "definition of %0 is not complete until the closing '}'"
-'definition of a %select{static variable|thread_local variable|variable of non-literal type}1 in a constexpr %select{function|constructor}0 is incompatible with C++ standards before C++23'
 'definition of a %select{static|thread_local}1 variable in a constexpr %select{function|constructor}0 is a C++23 extension'
+'definition of a %select{static|thread_local}1 variable in a constexpr %select{function|constructor}0 is incompatible with C++ standards before C++23'
+'definition of a variable of non-literal type in a constexpr %select{function|constructor}0 is incompatible with C++ standards before C++23'
 'definition of builtin function %0'
 'definition of class %0 must be available to use Objective-C %select{array literals|dictionary literals|numeric literals|boxed expressions|string literals}1'
 'definition of dllimport data'
@@ -10607,6 +10633,7 @@
 'expected expression with a pointer to a complete type as a base of an array shaping operation'
 'expected external declaration'
 'expected function body after function declarator'
+"expected function or lambda declaration for 'routine' construct"
 "expected identifier in '#pragma %0' - ignored"
 'expected identifier in macro parameter list'
 "expected identifier or one of the following operators: '+', '-', '*', '&', '|', '^', '&&', or '||'"
@@ -10906,7 +10933,7 @@
 'for training'
 'for type %0'
 'force openmp unified shared memory mode'
-'force patching of original entry points'
+'force patching of original entry points to ensure execution follows only the new/optimized code.'
 'force relocations to data sections to always be processed'
 'force the body of a loop to execute at least once'
 'force_cuda_host_device end pragma without matching force_cuda_host_device begin'
@@ -11947,7 +11974,6 @@
 'member not initialized by constructor'
 'member of anonymous %select{struct|union}0 redeclares %1'
 'member pointer has incomplete base type %0'
-'member pointer refers into non-class type %0'
 'member pointer representation requires a complete class type for %0 to perform this expression'
 'member reference base type %0 is not a structure or union'
 "member reference type %0 is %select{a|not a}1 pointer; did you mean to use '%select{->|.}1'?"
@@ -12627,6 +12653,8 @@
 "parent umbrella missing from %0: '%1'"
 'parentheses are required around macro argument containing braced initializer list'
 'parentheses are required around this expression in a requires clause'
+'parentheses around address non-type template argument are a C++11 extension'
+'parentheses around address non-type template argument are incompatible with C++98'
 "parentheses must be omitted if %0 attribute's argument list is empty"
 'parentheses were disambiguated as a function declaration'
 'parentheses were disambiguated as redundant parentheses around declaration of variable named %0'
@@ -13050,7 +13078,6 @@
 "redundant 'sycl_kernel_entry_point' attribute"
 "redundant attribute subject matcher sub-rule '%0'; '%1' already matches those declarations"
 'redundant move in return statement'
-'redundant parentheses surrounding address non-type template argument are incompatible with C++98'
 'redundant parentheses surrounding declarator'
 "ref-qualifier '%select{&&|&}0' is not allowed on a constructor"
 "ref-qualifier '%select{&&|&}0' is not allowed on a destructor"
@@ -13422,7 +13449,7 @@
 'string literals that exceed this length will use a hash value as their symbol name'
 'string to set default kind values'
 "strip 'repz' prefix from 'repz retq' sequence (on by default)"
-'structured binding declaration in a condition is a C++2c extenstion'
+'structured binding declaration in a condition is a C++2c extension'
 'structured binding declaration in a condition is incompatible with C++ standards before C++2c'
 'structured binding packs are a C++2c extension '
 'structured binding packs are incompatible with C++ standards before C++2c'
@@ -14136,7 +14163,6 @@
 "use of 'operator->' on type %0 would invoke a sequence of more than %1 'operator->' calls"
 "use of 'static_assert' without inclusion of <assert.h> is a Microsoft extension"
 "use of 'template' keyword outside of a template is incompatible with C++98"
-"use of 'typename' outside of a template is incompatible with C++98"
 'use of @defs is not supported on this architecture and platform'
 'use of C-style parameters in Objective-C method declarations is deprecated'
 "use of GNU 'missing =' extension in designator"
@@ -14164,7 +14190,7 @@
 'use of enumeration in a nested name specifier is a C++11 extension'
 'use of function %0 is discouraged; there is no way to check for failure but failure may still occur, resulting in a possibly exploitable security vulnerability'
 'use of function template name with no prior declaration in function call with explicit template arguments is a C++20 extension'
-'use of function template name with no prior function template declaration in function call with explicit template arguments is incompatible with C++ standards before C++20'
+'use of function template name with no prior declaration in function call with explicit template arguments is incompatible with C++ standards before C++20'
 "use of implicit 'typename' is incompatible with C++ standards before C++20"
 "use of incomplete type %0 in a '_Generic' association is incompatible with C standards before C2y"
 "use of logical '%0' with constant operand"

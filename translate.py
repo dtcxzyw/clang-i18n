@@ -104,6 +104,9 @@ keys = [
     "GCC",
     "GNU",
     "MSVC",
+    "SPIRV",
+    "SPIR-V",
+    "DXIL",
     "Visual Studio",
 ]
 
