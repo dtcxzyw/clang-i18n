@@ -56,7 +56,7 @@ Hash: Translation
 
 ### Machine Translation with Large Language Models
 
-This project supports using large model services based on OpenAI API for translation, and the specific configuration method is as follows:
+This project supports using LLM with OpenAI-compatible APIs for translation, and the specific configuration method is as follows:
 
 ```bash
 # Install dependencies
