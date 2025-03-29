@@ -37,7 +37,7 @@ opt-i18n --help
 
 In addition, there are two optional environment variables that can control the behavior of clang-i18n:
 - `CLANG_I18N_LANG`: Set to the language code (e.g., zh_CN) to override the default language setting (default is `$LANG` on Linux).
-- `CLANG_I18N_TRANSLATION_DIR`: Set to the directory of translation files, default value on Linux is `/usr/local/share/clang-i18n/i18n`.
+- `CLANG_I18N_TRANSLATION_DIR`: Set to the directory of translation files, default value on Linux is `${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/clang-i18n/i18n`, i.e. `/usr/local/share/clang-i18n/i18n` when building with the default CMake configuration.
 
 ## Contributing New Translations
 
