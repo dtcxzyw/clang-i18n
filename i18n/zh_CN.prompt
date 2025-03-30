@@ -15,4 +15,8 @@
 + incomplete: 不完整
 + expand: 展开
 
+当%diff块内$指代的内容顺序发生变化时，请对应修改%diff块后索引的顺序。
+例如：%diff{returning $ from a function with result type $|returning from function with different return type}0,1
+应当翻译为%diff{从返回类型为$的函数返回$|从不同返回类型的函数返回}1,0
+
 输入以python代码的形式提供，请你将各个message变量的值替换为对应的中文。
