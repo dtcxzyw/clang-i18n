@@ -9,7 +9,7 @@ clang-i18n是一个Clang的国际化支持插件，旨在为Clang工具链的诊
 
 ## 安装方式
 
-目前该项目仅支持Linux x86_64、AArch64和loongarch64平台，欢迎移植到其他平台。
+目前该项目支持Linux x86_64、AArch64、loongarch64和riscv64平台，欢迎移植到其他平台。
 请确保Clang为动态链接构建（从Ubuntu apt安装的Clang/LLVM满足此要求）。
 
 ```bash
