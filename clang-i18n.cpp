@@ -219,13 +219,26 @@ struct PatchFormatDiagnostic {
     auto MyFunc = dlsym(RTLD_DEFAULT, FuncName);
     auto RealFunc = dlsym(RTLD_NEXT, FuncName);
 
-#ifdef __x86_64__
+#if defined(__x86_64__)
     static_assert(sizeof(MyFunc) == 8);
     uint8_t Patch[] = {// movabs rax, <MyFunc>
                        0x48, 0xb8, 0, 0, 0, 0, 0, 0, 0, 0,
                        // jmp rax
                        0xff, 0xe0};
     memcpy(Patch + 2, &MyFunc, sizeof(MyFunc));
+#elif defined(__aarch64__)
+    static_assert(sizeof(MyFunc) == 8);
+    uint8_t Patch[] = {// ldr x16, 0x8
+                       0x50, 0x00, 0x00, 0x58,
+                       // br x16
+                       0x00, 0x02, 0x1f, 0xd6,
+                       // .quad <MyFunc>
+                       0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+    static_assert(sizeof(Patch) == 16);
+    memcpy(Patch + 8, &MyFunc, sizeof(MyFunc));
+#else
+#error "Unsupported architecture"
+#endif
     using namespace llvm::sys;
     MemoryBlock Mem(RealFunc, sizeof(Patch));
     [[maybe_unused]] auto Ret1 =
@@ -233,9 +246,6 @@ struct PatchFormatDiagnostic {
     memcpy(Mem.base(), Patch, sizeof(Patch));
     [[maybe_unused]] auto Ret2 =
         Memory::protectMappedMemory(Mem, Memory::MF_READ | Memory::MF_EXEC);
-#else
-#error "Unsupported architecture"
-#endif
   }
 };
 } // namespace

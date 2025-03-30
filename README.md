@@ -10,7 +10,7 @@ This project does not require modifying the Clang source code and rebuilding it,
 
 ## Installation
 
-Currently, this project only supports Linux x86_64 platform, and contributions to port it to other platforms are welcome.
+Currently, this project supports Linux x86_64 and AArch64 platform, and contributions to port it to other platforms are welcome.
 Please ensure that Clang is built with dynamic linking (Clang/LLVM installed from Ubuntu apt meets this requirement).
 
 ```bash
