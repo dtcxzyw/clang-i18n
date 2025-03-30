@@ -248,6 +248,18 @@ struct PatchFormatDiagnostic {
                        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
     static_assert(sizeof(Patch) == 20);
     memcpy(Patch + 12, &MyFunc, sizeof(MyFunc));
+#elif defined(__riscv) && __riscv_xlen == 64
+    static_assert(sizeof(MyFunc) == 8);
+    uint8_t Patch[] = {// auipc t0, 0x0
+                       0x97, 0x02, 0x00, 0x00,
+                       // ld t0, 10(t0)
+                       0x83, 0xb2, 0xa2, 0x00,
+                       // c.jr t0
+                       0x82, 0x82,
+                       // .quad <MyFunc>
+                       0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+    static_assert(sizeof(Patch) == 18);
+    memcpy(Patch + 10, &MyFunc, sizeof(MyFunc));
 #else
 #error "Unsupported architecture"
 #endif
