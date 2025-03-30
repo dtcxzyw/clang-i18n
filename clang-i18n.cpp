@@ -21,6 +21,8 @@
 #include <string>
 #include <unordered_map>
 
+#include "config.h"
+
 using llvm::StringRef;
 
 static StringRef getLang() {
@@ -34,7 +36,7 @@ static StringRef getLang() {
 static StringRef getTranslationDir() {
   if (auto *Path = std::getenv("CLANG_I18N_TRANSLATION_DIR"))
     return Path;
-  return "/usr/local/share/clang-i18n/i18n/";
+  return CLANG_I18N_TRANSLATION_DIR;
 }
 
 namespace {

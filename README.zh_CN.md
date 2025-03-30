@@ -36,7 +36,7 @@ opt-i18n --help
 
 此外还有两个可选的环境变量可以控制clang-i18n的行为：
 - `CLANG_I18N_LANG`：设置为语言代码（例如zh_CN）以覆盖默认的语言设置（Linux平台下默认使用`$LANG`）。
-- `CLANG_I18N_TRANSLATION_DIR`：设置为翻译文件的目录，Linux下默认值为`/usr/local/share/clang-i18n/i18n`。
+- `CLANG_I18N_TRANSLATION_DIR`：设置为翻译文件的目录，Linux下默认值为`${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/clang-i18n/i18n`，使用 CMake 默认配置构建时即为 `/usr/local/share/clang-i18n/i18n`。
 
 ## 贡献新的翻译
 
