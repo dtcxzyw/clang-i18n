@@ -2,6 +2,8 @@
 Clang wrapper with i18n support
 
 [简体中文](README.zh_CN.md)
+[繁體中文](README.zh_TW.md)
+[日本語](README.jp_JP.md)
 
 ## Introduction
 

@@ -22,16 +22,16 @@ token = os.environ["LLM_TOKEN"]
 client = OpenAI(api_key=token, base_url=endpoint)
 
 
-def compute_hash(str: str):
-    return "H" + hashlib.sha1(str.encode("utf-8")).digest().hex()[:12].upper()
+def compute_hash(strval: str):
+    return "H" + hashlib.sha1(strval.encode("utf-8")).digest().hex()[:12].upper()
 
 
 errata_map = dict()
-for str in errata:
-    pos = str.find(" ")
+for strval in errata:
+    pos = strval.find(" ")
     if pos == -1:
         continue
-    errata_map[str[:pos]] = str[pos + 1 :]
+    errata_map[strval[:pos]] = strval[pos + 1 :]
 
 keys = [
     "%0",
@@ -112,6 +112,8 @@ keys = [
 
 
 def validate(src, tgt):
+    if not isinstance(tgt, str):
+        return False
     for k in keys:
         if src.count(k) != tgt.count(k):
             return False
@@ -161,20 +163,20 @@ def chat(prompt):
 
 tasks = dict()
 corpus_map = dict()
-for str in corpus:
-    hash = compute_hash(ast.literal_eval(str))
-    corpus_map[hash] = ast.literal_eval(str)
-    tasks[hash] = str
+for strval in corpus:
+    hash = compute_hash(ast.literal_eval(strval))
+    corpus_map[hash] = ast.literal_eval(strval)
+    tasks[hash] = strval
 
 translation = dict()
 
 
 def dump():
     with open(output, "w") as f:
-        for str in corpus:
-            hash = compute_hash(ast.literal_eval(str))
+        for strval in corpus:
+            hash = compute_hash(ast.literal_eval(strval))
             if hash in translation:
-                f.write(f"# {str}\n{hash}: {repr(translation[hash])}\n")
+                f.write(f"# {strval}\n{hash}: {repr(translation[hash])}\n")
 
 
 if os.path.exists(output):
