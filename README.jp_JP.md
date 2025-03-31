@@ -6,7 +6,7 @@ clang-i18n は、Clang の国際化をサポートするプラグインです。
 
 ## インストール方法
 
-現在は Linux x86_64 プラットフォームのみ対応しています。他のプラットフォームへの移植を歓迎します。  
+現在は Linux x86_64/aarch64/loongarch64/riscv64 プラットフォームのみ対応しています。他のプラットフォームへの移植を歓迎します。  
 Clang は動的リンク構築されている必要があります（Ubuntu の apt 経由でインストールした Clang/LLVM は条件を満たします）。
 
 ```bash
@@ -34,6 +34,26 @@ opt-i18n --help
 以下の 2 つのオプション環境変数で clang-i18n の動作を制御できます：
 - `CLANG_I18N_LANG`：デフォルトの言語設定（Linux では `$LANG` が使用されます）を上書きする言語コード（例: `ja_JP`）を指定します。
 - `CLANG_I18N_TRANSLATION_DIR`：翻訳ファイルのディレクトリを指定（Linux でのデフォルトは `/usr/local/share/clang-i18n/i18n`）。
+
+### VSCode の clangd 拡張機能に i18n サポートを追加
+`clangd-i18n` という名前のファイルを作成し、以下の内容を記述します：
+
+```bash
+#!/usr/bin/bash
+LANG=ja_JP LD_PRELOAD=/usr/local/lib/libclang-i18n.so /usr/bin/clangd $@
+```
+このファイルに +x 権限を付与してください：
+
+```bash
+chmod +x clangd-i18n
+```
+VSCode の設定で `clangd.path` をこのファイルのパスに設定します：
+
+```json
+{
+    "clangd.path": <clangd-i18n のパス>
+}
+```
 
 ## 翻訳の貢献
 

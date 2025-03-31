@@ -9,7 +9,7 @@ clang-i18n是一个Clang的国际化支持插件，旨在为Clang工具链的诊
 
 ## 安装方式
 
-目前该项目支持Linux x86_64、AArch64、loongarch64和riscv64平台，欢迎移植到其他平台。
+目前该项目支持Linux x86_64/aarch64/loongarch64/riscv64平台，欢迎移植到其他平台。
 请确保Clang为动态链接构建（从Ubuntu apt安装的Clang/LLVM满足此要求）。
 
 ```bash
@@ -37,6 +37,27 @@ opt-i18n --help
 此外还有两个可选的环境变量可以控制clang-i18n的行为：
 - `CLANG_I18N_LANG`：设置为语言代码（例如zh_CN）以覆盖默认的语言设置（Linux平台下默认使用`$LANG`）。
 - `CLANG_I18N_TRANSLATION_DIR`：设置为翻译文件的目录，Linux下默认值为`${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/clang-i18n/i18n`，使用 CMake 默认配置构建时即为 `/usr/local/share/clang-i18n/i18n`。
+
+### 在VSCode的clangd扩展中添加i18n支持
+创建一个名为`clangd-i18n`的文件，内容如下：
+
+```bash
+#!/usr/bin/bash
+
+LANG=zh_CN LD_PRELOAD=/usr/local/lib/libclang-i18n.so /usr/bin/clangd $@
+```
+请确保该文件具有+x权限：
+
+```bash
+chmod +x clangd-i18n
+```
+然后在VSCode设置中，将`clangd.path`设置为该文件的路径：
+
+```json
+{
+    "clangd.path": <path to clangd-i18n>
+}
+```
 
 ## 贡献新的翻译
 

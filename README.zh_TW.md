@@ -6,7 +6,7 @@ clang-i18n 是一個 Clang 的國際化支援插件，旨在為 Clang 工具鏈�
 
 ## 安裝方式
 
-目前此專案僅支援 Linux x86_64 平台，歡迎移植至其他平台。  
+目前此專案僅支援 Linux x86_64/aarch64/loongarch64/riscv64平台，歡迎移植至其他平台。  
 請確保 Clang 為動態連結建置（透過 Ubuntu apt 安裝的 Clang/LLVM 即符合此條件）。
 
 ```bash
@@ -34,6 +34,26 @@ opt-i18n --help
 此外還有兩個可選環境變數可控制 clang-i18n 的行為：
 - `CLANG_I18N_LANG`：設定語言代碼（例如 `zh_TW`）以覆蓋預設語言設定（Linux 平台預設使用 `$LANG`）。
 - `CLANG_I18N_TRANSLATION_DIR`：設定翻譯檔案目錄，Linux 預設值為 `/usr/local/share/clang-i18n/i18n`。
+
+### 在 VSCode 的 clangd 擴展中添加 i18n 支援
+建立一個名為 `clangd-i18n` 的檔案，內容如下：
+
+```bash
+#!/usr/bin/bash
+LANG=zh_TW LD_PRELOAD=/usr/local/lib/libclang-i18n.so /usr/bin/clangd $@
+```
+請確保該檔案具有 +x 權限：
+
+```bash
+chmod +x clangd-i18n
+```
+然後在 VSCode 設定中，將 `clangd.path` 設定為該檔案的路徑：
+
+```json
+{
+    "clangd.path": <path to clangd-i18n>
+}
+```
 
 ## 貢獻新翻譯
 
