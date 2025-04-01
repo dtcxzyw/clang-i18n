@@ -15,7 +15,7 @@ git clone https://github.com/dtcxzyw/clang-i18n.git
 cd clang-i18n
 mkdir -p build && cd build
 # 特定の Clang/LLVM バージョンを指定する場合はパスを追加します。例：
-# -DLLVM_DIR=/usr/lib/llvm-20/lib/cmake/llvm -DClang_DIR=/usr/lib/llvm-20/lib/cmake/clang
+# -DLLVM_DIR=/usr/lib/llvm-20/lib/cmake/llvm -DClang_DIR=/usr/lib/cmake/clang-20
 cmake .. -DCMAKE_BUILD_TYPE=Release
 cmake --build . -j
 sudo cmake --install .

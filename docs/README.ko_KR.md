@@ -15,7 +15,7 @@ git clone https://github.com/dtcxzyw/clang-i18n.git
 cd clang-i18n  
 mkdir -p build && cd build  
 # Clang/LLVM 버전을 지정하려면 CMake에 검색 경로를 추가합니다.  
-# 예: -DLLVM_DIR=/usr/lib/llvm-20/lib/cmake/llvm -DClang_DIR=/usr/lib/llvm-20/lib/cmake/clang  
+# 예: -DLLVM_DIR=/usr/lib/llvm-20/lib/cmake/llvm -DClang_DIR=/usr/lib/cmake/clang-20  
 cmake .. -DCMAKE_BUILD_TYPE=Release  
 cmake --build . -j  
 sudo cmake --install .  

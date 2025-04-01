@@ -15,7 +15,7 @@ git clone https://github.com/dtcxzyw/clang-i18n.git
 cd clang-i18n
 mkdir -p build && cd build
 # 如需指定 Clang/LLVM 版本，請新增搜尋路徑，例如：
-# -DLLVM_DIR=/usr/lib/llvm-20/lib/cmake/llvm -DClang_DIR=/usr/lib/llvm-20/lib/cmake/clang
+# -DLLVM_DIR=/usr/lib/llvm-20/lib/cmake/llvm -DClang_DIR=/usr/lib/cmake/clang-20
 cmake .. -DCMAKE_BUILD_TYPE=Release
 cmake --build . -j
 sudo cmake --install .

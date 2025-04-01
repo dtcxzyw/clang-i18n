@@ -17,7 +17,7 @@ git clone https://github.com/dtcxzyw/clang-i18n.git
 cd clang-i18n
 mkdir -p build && cd build
 # Si vous devez spécifier la version Clang/LLVM, ajoutez le chemin de recherche à CMake.
-# Exemple : -DLLVM_DIR=/usr/lib/llvm-20/lib/cmake/llvm -DClang_DIR=/usr/lib/llvm-20/lib/cmake/clang
+# Exemple : -DLLVM_DIR=/usr/lib/llvm-20/lib/cmake/llvm -DClang_DIR=/usr/lib/cmake/clang-20
 cmake .. -DCMAKE_BUILD_TYPE=Release
 cmake --build . -j
 sudo cmake --install .
