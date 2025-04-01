@@ -1,9 +1,9 @@
 # clang-i18n
 Clang wrapper with i18n support
 
-[简体中文](README.zh_CN.md)
-[繁體中文](README.zh_TW.md)
-[日本語](README.jp_JP.md)
+[简体中文](docs/README.zh_CN.md)
+[繁體中文](docs/README.zh_TW.md)
+[日本語](docs/README.jp_JP.md)
 
 ## Introduction
 
