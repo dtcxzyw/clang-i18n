@@ -14,10 +14,13 @@ project(clang-i18n)
 find_package(LLVM REQUIRED CONFIG)
 message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
 message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
-find_package(Clang REQUIRED CONFIG)
-
+message(STATUS "LLVM include dir: ${LLVM_INCLUDE_DIRS}")
 include_directories(${LLVM_INCLUDE_DIRS})
+
+find_package(Clang REQUIRED CONFIG)
 include_directories(${CLANG_INCLUDE_DIRS})
+message(STATUS "Clang include dir: ${CLANG_INCLUDE_DIRS}")
+
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(clang-i18n MODULE clang-i18n.cpp)
