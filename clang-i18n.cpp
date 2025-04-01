@@ -98,6 +98,8 @@ public:
       return;
     }
 
+    bool DebugMode = getenv("CLANG_I18N_DEBUG") != nullptr;
+
     SmallVector<StringRef, 0> Lines;
     (*MapFile)->getBuffer().split(Lines, '\n');
     for (auto Line : Lines) {
@@ -108,9 +110,13 @@ public:
 #endif
         continue;
       auto Key = Line.substr(1, 12);
-      auto Val = Line.substr(15).drop_front().drop_back().str();
-      unescape(Val);
-      Table[Key.str()] = Val;
+      if (DebugMode)
+        Table[Key.str()] = "H" + Key.str();
+      else {
+        auto Val = Line.substr(15).drop_front().drop_back().str();
+        unescape(Val);
+        Table[Key.str()] = Val;
+      }
     }
   }
 
