@@ -1,6 +1,8 @@
 # clang-i18n
 Clang wrapper with i18n support
 
+[![Build](https://github.com/dtcxzyw/clang-i18n/actions/workflows/build.yml/badge.svg)](https://github.com/dtcxzyw/clang-i18n/actions/workflows/build.yml)
+
 [简体中文](docs/README.zh_CN.md)
 [繁體中文](docs/README.zh_TW.md)
 [日本語](docs/README.jp_JP.md)
