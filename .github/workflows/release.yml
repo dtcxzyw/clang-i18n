@@ -18,7 +18,7 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         merge-multiple: true
-        pattern: artifacts-{{ github.run_id }}-*
+        pattern: artifacts-${{ github.run_id }}-*
         path: artifacts
 
     - name: Display structure of downloaded files
