@@ -88,7 +88,7 @@ public:
   TranslationTable() {
     using namespace llvm;
     auto Lang = getLang();
-    if (Lang.empty() || Lang == "en_US" || Lang == "en_UK")
+    if (Lang.empty() || Lang == "en_US" || Lang == "en_UK" || Lang == "C")
       return;
     auto TranslationDir = getTranslationDir();
     auto Path = TranslationDir.str() + "/" + Lang.str() + ".yml";
