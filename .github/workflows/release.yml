@@ -3,17 +3,17 @@ name: Release
 on:
   workflow_dispatch:
 
-permissions:
-  contents: write
-
 jobs:
   build:
+    uses: dtcxzyw/clang-i18n/.github/workflows/build.yml@main
+
+  release:
     runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      contents: write
 
     steps:
-    - name: Build clang-i18n
-      uses: dtcxzyw/clang-i18n/.github/workflows/build.yml@main
-
     - name: Download artifacts
       uses: actions/download-artifact@v4
       with:
