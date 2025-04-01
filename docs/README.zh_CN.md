@@ -24,6 +24,8 @@ cmake --build . -j
 sudo cmake --install .
 ```
 
+预构建二进制可在https://github.com/dtcxzyw/clang-i18n/releases/latest下载。
+
 ## 使用方式
 
 ```bash

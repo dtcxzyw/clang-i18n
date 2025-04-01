@@ -36,6 +36,8 @@ cmake --build . -j
 sudo cmake --install .
 ```
 
+Pre-built binaries are available at https://github.com/dtcxzyw/clang-i18n/releases/latest.
+
 ## Usage
 
 ```bash
