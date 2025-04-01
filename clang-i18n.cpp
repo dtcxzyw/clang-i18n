@@ -6,6 +6,7 @@
 #include <llvm/ADT/ScopeExit.h>
 #include <llvm/ADT/StringExtras.h>
 #include <llvm/ADT/StringRef.h>
+#include <llvm/Config/llvm-config.h>
 #include <llvm/Option/OptTable.h>
 #include <llvm/Option/Option.h>
 #include <llvm/Support/CommandLine.h>
@@ -100,7 +101,11 @@ public:
     SmallVector<StringRef, 0> Lines;
     (*MapFile)->getBuffer().split(Lines, '\n');
     for (auto Line : Lines) {
+#if LLVM_VERSION_MAJOR > 18
       if (!Line.starts_with('H'))
+#else
+      if (!Line.starts_with("H"))
+#endif
         continue;
       auto Key = Line.substr(1, 12);
       auto Val = Line.substr(15).drop_front().drop_back().str();
@@ -315,8 +320,12 @@ void OptTable::printHelp(raw_ostream &OS, const char *Usage, const char *Title,
       Wrapper, Usage, Title, ShowHidden, ShowAllAliases,
       [VisibilityMask](const Info &CandidateInfo) -> bool {
         return (CandidateInfo.Visibility & VisibilityMask) == 0;
-      },
-      VisibilityMask);
+      }
+#if LLVM_VERSION_MAJOR > 18
+      ,
+      VisibilityMask
+#endif
+  );
 }
 
 INTERCEPTOR_ATTRIBUTE
@@ -334,8 +343,12 @@ void OptTable::printHelp(raw_ostream &OS, const char *Usage, const char *Title,
         if (CandidateInfo.Flags & FlagsToExclude)
           return true;
         return false;
-      },
-      Visibility(0));
+      }
+#if LLVM_VERSION_MAJOR > 18
+      ,
+      Visibility(0)
+#endif
+  );
 }
 
 } // namespace opt
