@@ -12,9 +12,9 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 project(clang-i18n)
 
 find_package(LLVM REQUIRED CONFIG)
-find_package(Clang REQUIRED CONFIG)
 message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
 message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
+find_package(Clang REQUIRED CONFIG)
 
 include_directories(${LLVM_INCLUDE_DIRS})
 include_directories(${CLANG_INCLUDE_DIRS})
