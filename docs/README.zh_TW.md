@@ -75,16 +75,16 @@ Hash: 譯文
 # 安裝依賴套件
 pip install openai
 
-# 準備提示詞檔案 i18n/zh_CN.prompt
+# 準備提示詞檔案 i18n/zh_TW.prompt
 
-# 準備錯誤修正檔案 i18n/zh_CN.errata，格式如下
+# 準備錯誤修正檔案 i18n/zh_TW.errata，格式如下
 # 錯誤關鍵字 錯誤翻譯
 
 export LLM_ENDPOINT=<API位址>
 export LLM_MODEL=<模型名稱>
 export LLM_TOKEN=<API金鑰，以 sk- 開頭>
 
-python3 translate.py corpus.txt i18n/zh_CN.prompt i18n/zh_CN.errata i18n/zh_CN.yml <批次大小>
+python3 translate.py corpus.txt i18n/zh_TW.prompt i18n/zh_TW.errata i18n/zh_TW.yml <批次大小>
 ```
 
 批次大小不宜過大，建議設定為 20，否則可能導致翻譯順序混亂。
