@@ -11,34 +11,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Install dependencies (Linux)
-      run: |
-        sudo apt-get update
-        sudo apt-get install ninja-build clang llvm-dev libclang-dev
-
     - name: Build clang-i18n
-      run: |
-        mkdir build && cd build
-        cmake -G Ninja -DCMAKE_BUILD_TYPE=Release ..
-        cmake --build . -j
+      uses: dtcxzyw/clang-i18n/.github/workflows/build.yml@main
 
-    - name: Append clang version to clang-i18n artifacts
-      id: append_clang_version
-      run: |
-        cd build
-        clang_version=$(clang --version | grep -oP 'version \K[0-9.]+' --color=never | tr -d '\n')
-        echo "Clang version: $clang_version"
-        cp libclang-i18n.so libclang-i18n.so.$clang_version
-        cp libllvm-i18n.so libllvm-i18n.so.$clang_version
-        echo "clang_version=$clang_version" >> "$GITHUB_OUTPUT"
-
-    - name: Release
-      uses: softprops/action-gh-release@v2
-      if: startsWith(github.ref, 'refs/tags/')
+    - name: Download artifacts
+      uses: actions/download-artifact@v4
       with:
-        files: |
-          build/libclang-i18n.so.${{ steps.append_clang_version.outputs.clang_version }}
-          build/libllvm-i18n.so.${{ steps.append_clang_version.outputs.clang_version }}
+        merge-multiple: true
+        path: artifacts
+
+    - name: Display structure of downloaded files
+      run: ls -R artifacts
+
+    # - name: Release
+    #   uses: softprops/action-gh-release@v2
+    #   if: startsWith(github.ref, 'refs/tags/')
+    #   with:
+    #     files: |
+    #       build/libclang-i18n.so.${{ steps.append_clang_version.outputs.clang_version }}
+    #       build/libllvm-i18n.so.${{ steps.append_clang_version.outputs.clang_version }}

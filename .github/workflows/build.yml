@@ -2,6 +2,7 @@ name: Build
 
 on:
   workflow_dispatch:
+  workflow_call:
   push:
   pull_request:
 
@@ -34,3 +35,21 @@ jobs:
         mkdir build && cd build
         cmake -G Ninja -DCMAKE_BUILD_TYPE=Release .. -DLLVM_DIR=/usr/lib/llvm-${{ matrix.version }}/lib/cmake/llvm -DClang_DIR=/usr/lib/llvm-${{ matrix.version }}/lib/cmake/clang
         cmake --build . -j
+
+    - name: Append clang version to clang-i18n artifacts
+      id: append_clang_version
+      run: |
+        cd build
+        clang_version=$(clang-${{ matrix.version }} --version | grep -oP 'version \K[0-9.]+' --color=never | tr -d '\n')
+        echo "Clang version: $clang_version"
+        mkdir -p artifacts
+        cp libclang-i18n.so artifacts/libclang-i18n.so.$clang_version
+        cp libllvm-i18n.so artifacts/libllvm-i18n.so.$clang_version
+        echo "clang_version=$clang_version" >> "$GITHUB_OUTPUT"
+
+    - name: Upload artifacts
+      id: artifacts
+      uses: actions/upload-artifact@v4
+      with: 
+        path: build/artifacts
+        retention-days: 7
