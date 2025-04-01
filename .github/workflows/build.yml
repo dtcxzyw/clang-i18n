@@ -16,7 +16,7 @@ jobs:
     - name: Install dependencies (Linux)
       run: |
         sudo apt-get update
-        sudo apt-get install ninja-build clang-21 llvm-dev libclang-dev
+        sudo apt-get install ninja-build clang llvm-dev libclang-dev
 
     - name: Build clang-i18n
       run: |
