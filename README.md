@@ -14,6 +14,7 @@ This project does not require modifying the Clang source code and rebuilding it,
 
 Currently, this project supports Linux x86_64/aarch64/loongarch64/riscv64 platforms, and contributions to port it to other platforms are welcome.
 Please ensure that Clang is built with dynamic linking (Clang/LLVM installed from Ubuntu apt meets this requirement).
+If cmake cannot find the Clang/LLVM installation, please run `sudo apt install llvm-dev libclang-dev` to install the development files.
 
 ```bash
 git clone https://github.com/dtcxzyw/clang-i18n.git

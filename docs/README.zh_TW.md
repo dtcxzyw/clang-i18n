@@ -8,6 +8,7 @@ clang-i18n 是一個 Clang 的國際化支援插件，旨在為 Clang 工具鏈�
 
 目前此專案僅支援 Linux x86_64/aarch64/loongarch64/riscv64平台，歡迎移植至其他平台。  
 請確保 Clang 為動態連結建置（透過 Ubuntu apt 安裝的 Clang/LLVM 即符合此條件）。
+如果 cmake 無法找到 Clang/LLVM 的安裝，請執行 `sudo apt install llvm-dev libclang-dev` 安裝對應的開發檔案。
 
 ```bash
 git clone https://github.com/dtcxzyw/clang-i18n.git
