@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    matrix:
+      version: [18, 19, 20, 21]
 
     steps:
     - name: Checkout code
@@ -15,11 +17,12 @@ jobs:
 
     - name: Install dependencies (Linux)
       run: |
+        wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
         sudo apt-get update
-        sudo apt-get install ninja-build clang llvm-dev libclang-dev
+        sudo apt-get install ninja-build llvm-${{ matrix.version }}-dev libclang-${{ matrix.version }}-dev
 
     - name: Build clang-i18n
       run: |
         mkdir build && cd build
-        cmake -G Ninja -DCMAKE_BUILD_TYPE=Release ..
+        cmake -G Ninja -DCMAKE_BUILD_TYPE=Release .. -DLLVM_DIR=/usr/lib/llvm-${{ matrix.version }}/lib/cmake/llvm -DCLANG_DIR=/usr/lib/llvm-${{ matrix.version }}/lib/cmake/clang
         cmake --build . -j
