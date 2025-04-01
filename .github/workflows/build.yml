@@ -8,8 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    matrix:
-      version: [18, 19, 20, 21]
+    strategy:
+      matrix:
+        version: [18, 19, 20, 21]
 
     steps:
     - name: Checkout code
