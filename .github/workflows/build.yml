@@ -28,5 +28,5 @@ jobs:
     - name: Build clang-i18n
       run: |
         mkdir build && cd build
-        cmake -G Ninja -DCMAKE_BUILD_TYPE=Release .. -DLLVM_DIR=/usr/lib/llvm-${{ matrix.version }}/lib/cmake/llvm -DCLANG_DIR=/usr/lib/llvm-${{ matrix.version }}/lib/cmake/clang
+        cmake -G Ninja -DCMAKE_BUILD_TYPE=Release .. -DLLVM_DIR=/usr/lib/llvm-${{ matrix.version }}/lib/cmake/llvm -DClang_DIR=/usr/lib/llvm-${{ matrix.version }}/lib/cmake/clang
         cmake --build . -j

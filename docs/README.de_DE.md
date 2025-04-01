@@ -13,7 +13,7 @@ Aktuell werden Linux-Plattformen (x86_64/aarch64/loongarch64/riscv64) unterstüt
 git clone https://github.com/dtcxzyw/clang-i18n.git
 cd clang-i18n
 mkdir -p build && cd build
-# Optional: Spezifizieren Sie Suchpfade für LLVM/Clang-Versionen mit -DLLVM_DIR und -DCLANG_DIR
+# Optional: Spezifizieren Sie Suchpfade für LLVM/Clang-Versionen mit -DLLVM_DIR und -DClang_DIR
 cmake .. -DCMAKE_BUILD_TYPE=Release
 cmake --build . -j
 sudo cmake --install .
