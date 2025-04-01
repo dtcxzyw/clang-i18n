@@ -1,0 +1,25 @@
+name: Build
+
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install dependencies (Linux)
+      run: |
+        sudo apt-get update
+        sudo apt-get install ninja-build clang-21 llvm-dev libclang-dev
+
+    - name: Build clang-i18n
+      run: |
+        mkdir build && cd build
+        cmake -G Ninja -DCMAKE_BUILD_TYPE=Release ..
+        cmake --build . -j
