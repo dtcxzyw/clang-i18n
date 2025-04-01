@@ -8589,7 +8589,7 @@ HAD8E45F66910: 'Forcer l’autorisation des boucles matérielles imbriquées'
 # 'Force analysis to continue in the presence of unsupported instructions'
 H0386966E38DA: 'Forcer l’analyse à se poursuivre en présence d’instructions non prises en charge'
 # 'Force behavior as if the user specified pragma omp requires unified_shared_memory.'
-H0D0C1138BD58: 'Forcer le comportement comme si l’utilisateur avait spécifié la directive #pragma omp requires unified_shared_memory.'
+H0D0C1138BD58: 'Force le comportement comme si l’utilisateur avait spécifié pragma omp requires unified_shared_memory.'
 # 'Force bidirectional post reg-alloc list scheduling'
 H2AB733A479DE: 'Forcer l’ordonnancement bidirectionnel des listes post-affectation des registres'
 # 'Force bidirectional pre reg-alloc list scheduling'
@@ -21067,7 +21067,7 @@ H0EFFC0B249A7: "attendu '=' ou un autre désignateur"
 # "expected '==' operator for 'weak' clause"
 H3CB2580D57FE: "attendu l'opérateur '==' pour la clause 'weak'"
 # "expected 'ON' or 'OFF' or 'DEFAULT' in pragma"
-HE0167BADEC73: "attendu 'ON', 'OFF' ou 'DEFAULT' dans la directive #pragma"
+HE0167BADEC73: "Attendu 'ON' ou 'OFF' ou 'DEFAULT' dans la directive pragma"
 # "expected ']' to close attribute"
 H21FBE19AC5CE: "attendu ']' pour fermer l'attribut"
 # "expected '__except' or '__finally' block"

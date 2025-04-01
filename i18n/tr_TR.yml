@@ -8589,7 +8589,7 @@ HAD8E45F66910: 'Yapısal döngülerin iç içe geçmesine izin vermek için zorl
 # 'Force analysis to continue in the presence of unsupported instructions'
 H0386966E38DA: 'Desteklenmeyen yönergelerin varlığından bağımsız olarak analizi devam ettir'
 # 'Force behavior as if the user specified pragma omp requires unified_shared_memory.'
-H0D0C1138BD58: '#pragma omp requires unified_shared_memory kullanıcı tarafından belirtilmiş gibi davran'
+H0D0C1138BD58: "Kullanıcının 'pragma omp requires unified_shared_memory' belirttiğini varsayar gibi davranışı zorla uygula."
 # 'Force bidirectional post reg-alloc list scheduling'
 H2AB733A479DE: 'Kayıtallocator sonrası iki yönlü list scheduling zorla'
 # 'Force bidirectional pre reg-alloc list scheduling'
@@ -21067,7 +21067,7 @@ H0EFFC0B249A7: "'=' veya başka bir belirteç bekleniyor"
 # "expected '==' operator for 'weak' clause"
 H3CB2580D57FE: "'weak' klavz için '==' operatörü bekleniyor"
 # "expected 'ON' or 'OFF' or 'DEFAULT' in pragma"
-HE0167BADEC73: "'ON', 'OFF' veya 'DEFAULT' bekleniyor - #pragma içinde"
+HE0167BADEC73: "pragma içinde 'ON', 'OFF' veya 'DEFAULT' bekleniyor"
 # "expected ']' to close attribute"
 H21FBE19AC5CE: "özellik için kapanış ']' bekleniyor"
 # "expected '__except' or '__finally' block"
@@ -21253,7 +21253,7 @@ HB22F9750894D: '‘omp declare mapper’ yönergesinde bir bildirici (declarator
 # 'expected depobj expression'
 HE3D01E0D4DF5: 'depobj ifadesi bekleniyor'
 # 'expected end of directive in pragma'
-HCC93595992BD: '‘#pragma’ içinde yönerge sonu bekleniyor'
+HCC93595992BD: 'pragma içinde yönerge sonunu bekleniyor'
 # 'expected end of line in preprocessor expression'
 HD41DF7404CF0: 'Ön işlemci ifadesinde satır sonu bekleniyor'
 # 'expected excluded module name'

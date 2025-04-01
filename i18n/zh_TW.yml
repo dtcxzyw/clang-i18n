@@ -21253,7 +21253,7 @@ HB22F9750894D: "在 'omp declare mapper' 指令中期望宣告符"
 # 'expected depobj expression'
 HE3D01E0D4DF5: '期望depobj表示式'
 # 'expected end of directive in pragma'
-HCC93595992BD: '在 #pragma 中期望指令的結尾'
+HCC93595992BD: '在pragma中期望指令結尾'
 # 'expected end of line in preprocessor expression'
 HD41DF7404CF0: '在預處理表示式中期望行尾'
 # 'expected excluded module name'
@@ -28023,7 +28023,7 @@ HAEC8AEED3CAD: '可用性巨集中未知的環境 %0'
 # "unknown escape sequence '\\%0'"
 H4849F8435E28: "未知的轉義序列 '\\%0'"
 # 'unknown kind of pragma comment'
-HA06D4573713E: '未知的 #pragma comment 種類'
+HA06D4573713E: '未知類型的pragma comment'
 # 'unknown linkage language'
 H6501D0DE4EA8: '未知的連結語言'
 # "unknown module '%0'"
