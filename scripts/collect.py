@@ -281,6 +281,11 @@ strings.append(": Too many positional arguments specified!\n")
 strings.append("Can specify at most ")
 strings.append(" positional arguments: See: ")
 strings.append("must be specified at least once!")
+strings.append("invalid case style for %0 '%1'")
+strings.append(
+    "declaration uses identifier '%0', which is %select{a reserved "
+    "identifier|not a reserved identifier|reserved in the global namespace}1"
+)
 
 strings = list(set(filter(lambda x: x.lower() != x.upper(), strings)))
 strings.remove("All")

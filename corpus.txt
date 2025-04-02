@@ -1148,6 +1148,8 @@
 "'objc_externally_retained' can only be applied to local variables %select{of retainable type|with strong ownership}0"
 "'objc_independent_class' attribute may be put on Objective-C object pointer type only; attribute is ignored"
 "'objc_independent_class' attribute may be put on a typedef only; attribute is ignored"
+"'offsetof' on non-POD type %0"
+"'offsetof' on non-standard-layout type %0"
 "'omp_interop_t' must be defined when 'append_args' clause is used; include <omp.h>"
 "'ompx_attribute' clause only allows 'amdgpu_flat_work_group_size', 'amdgpu_waves_per_eu', and 'launch_bounds'; %0 is ignored"
 "'ompx_bare' clauses requires explicit grid size via 'num_teams' and 'thread_limit' clauses"
@@ -4246,7 +4248,6 @@
 'Fold memory accesses to model more possible delinearizations (does not scale well)'
 'Fold null checks into faulting memory operations'
 'Folder name for view splitting.'
-'Folds all regular instructions (including pre-outputs)'
 'Follow Fortran 2003 rules for (re)allocating the LHS of the intrinsic assignment'
 'Follow the AAPCS standard requirement stating that volatile bit-field width is dictated by the field container type. (ARM only).'
 'Follows the AAPCS standard that all volatile bit-field write generates at least one load. (ARM only).'
@@ -4430,6 +4431,7 @@
 'Generate Clang BasicWriter classes'
 'Generate Clang Static Analyzer checkers'
 'Generate Clang constexpr interpreter opcodes'
+'Generate Clang diagnostic compatibility ids'
 'Generate Clang diagnostic enums for selects'
 'Generate Clang diagnostic groups'
 'Generate Clang diagnostic name index'
@@ -4858,7 +4860,6 @@
 'In all cases'
 'In conjunection with -type-index and -id-index, dumps the entire dependency graph for the specified index instead of just the single record with the specified index'
 "In profiling mode like sampleFDO, if a function doesn't have profile, we cannot tell the function is cold for sure because it may be a function newly added without ever being sampled. With the flag enabled, compiler can put such profile unknown functions into a special section, so runtime system can choose to handle it in a different way than .text section, to save RAM for example. "
-'In the Lint pass, abort on errors.'
 'In the OpenMP data clauses treat `a(N)` as `a(N:N)`.'
 'In the dump requested by -dump-input, print <N> input lines\nbefore and <N> input lines after any lines specified by\n-dump-input-filter.  When there are multiple occurrences of\nthis option, the largest specified <N> has precedence.  The\ndefault is 5.\n'
 "In the dump requested by -dump-input, print only input lines of\nkind <value> plus any context specified by -dump-input-context.\nWhen there are multiple occurrences of this option, the <value>\nthat appears earliest in the list below has precedence.  The\ndefault is 'error' when -dump-input=fail, and it's 'all' when\n-dump-input=always.\n"
@@ -5149,6 +5150,7 @@
 'List of functions to print disassembly for. Accept demangled names only. Only work with show-disassembly-only'
 "List of key and value arguments. Required keywords are 'file' and 'triple'."
 'List of modes to link in by default into XRay instrumented binaries.'
+'List of profitability heuristics to be used. They are applied in the given order'
 'List of symbols to export from the resulting object file'
 'Live DEBUG_VALUE analysis'
 'Live Interval Analysis'
@@ -5161,7 +5163,6 @@
 'Load all members of static archives'
 'Load all members of static archives that implement Objective-C classes or categories, or Swift structs, classes or extensions'
 'Load and verify that a pre-compiled header file is not stale'
-'Load bitcode directly into the new debug info format (regardless of input format)'
 'Load dialects from plugin library'
 'Load module without materializing metadata, then materialize only the metadata'
 'Load pass plugin from a dynamic shared object file (only with new pass manager).'
@@ -6249,7 +6250,6 @@
 'Preserve the type for recovery expressions when possible'
 'Preserve use-list order when writing LLVM assembly.'
 'Preserve use-list order when writing LLVM bitcode.'
-'Preserves original instruction order'
 'Pretend that scalable vectors are supported, even if the target does not support them. This flag should only be used for testing.'
 'Pretty print debug locations of instructions when dumping'
 'Pretty print perf data (branch weights, etc) when dumping'
@@ -6446,7 +6446,9 @@
 'Prints the blame context (if possible) for ALL instructions. This specifies the number of lines of context for non-BAD instructions (see --blame-context). If --blame-context is unspecified, it prints this number of contextual lines for BAD instructions as well.'
 'Prints the combined library module before the output'
 'Prints the pass pipeline and returns.'
-'Prioritize increasing vectorization opportunity over cache cost when determining profitability'
+'Prioritize loop cache cost'
+'Prioritize the IVs order of each instruction'
+'Prioritize vectorization'
 'Probability value in the range [0.0, 1.0] of unconditional pseudo-random checks.'
 'Probability value in the range [0.0, 1.0] to keep instrumentation of a function. Note: instrumentation can be skipped randomly OR because of the hot percentile cutoff, if both are supplied.'
 'Proceed with Loop Idiom Vectorize Pass, but do not convert byte-compare loop(s).'
@@ -6635,7 +6637,6 @@
 'Rename Register Operands'
 'Rename Register Operands Canonically'
 'Rename counter variable of a comdat function based on cfg hash'
-'Renames all instructions (including user-named)'
 'Reorder instructions to use the WebAssembly value stack'
 'Reorders blocks in topological order'
 'Repack arrays that are non-contiguous in any dimension. If set to false, only the arrays non-contiguous in the leading dimension will be repacked'
@@ -7002,7 +7003,7 @@
 'Set Hexagon Vector Length'
 'Set LTO mode'
 'Set LTO mode for offload compilation'
-'Set OpenMP version (e.g. 45 for OpenMP 4.5, 51 for OpenMP 5.1). Default value is 11 for Flang'
+'Set OpenMP version (e.g. 45 for OpenMP 4.5, 51 for OpenMP 5.1). Default value is 31 for Flang'
 'Set OpenMP version (e.g. 45 for OpenMP 4.5, 51 for OpenMP 5.1). Default value is 51 for Clang'
 'Set ThinLTO cache entry expiration time.'
 'Set ThinLTO cache pruning directory maximum number of files.'
@@ -7284,7 +7285,6 @@
 'Sort symbols by name'
 'Sort symbols by size'
 'Sort the resources printed in the dump trace'
-'Sorts and reorders operands in commutative instructions'
 'Source Code Analysis - Dead Symbol Removal Frequency'
 'Source Code Analysis - Output Options'
 'Source Code Analysis - Symbolic Constraint Engines'
@@ -7507,6 +7507,7 @@
 'Suppress slot sharing during stack coloring'
 'Suppress type errors (Wasm)'
 'Suppress verbose debugify output'
+'Swap add and addi in cases where the add may be combined with a shift'
 'Swap target blocks of a conditional branch for MVE expander'
 'Switch to fast cluster algorithm with the lost of some fusion opportunities'
 'Symbol ID of the symbol being queried (hex).'
@@ -7956,6 +7957,7 @@
 'Try to construct schedules where the outer member of each band satisfies the coincidence constraints (yes/no)'
 'Try to delinearize array references.'
 'Try to evenly distribute flow when there are multiple equally likely options.'
+'Try to map `do concurrent` loops to OpenMP [none|host|device]'
 'Try to propagate nonnull argument attributes from callsites to caller functions.'
 'Try to simplify all loads.'
 'Try to vectorize with non-power-of-2 number of elements.'
@@ -8514,7 +8516,6 @@
 'Write a depfile containing user headers'
 'Write assembly to file for input to assemble jobs'
 'Write current time into COFF output (default)'
-'Write debug info in the new non-intrinsic format. Has no effect if --preserve-input-debuginfo-format=true.'
 'Write depfile output from -MMD, -MD, -MM, or -M to <file>'
 'Write extracted files to a static archive'
 'Write lazy-function executions to a CSV file as (JITDylib, function) pairs'
@@ -9944,6 +9945,7 @@
 'declaration shadows a %select{local variable|variable in %2|static data member of %2|field of %2|typedef in %2|type alias in %2|structured binding}1'
 'declaration uses __weak, but ARC is disabled'
 'declaration uses __weak, which the current deployment target does not support'
+"declaration uses identifier '%0', which is %select{a reserved identifier|not a reserved identifier|reserved in the global namespace}1"
 'declaration uses type that is ill-formed in ARC'
 'declarator requires an identifier'
 "declare 'static' if the %select{variable|function}0 is not intended to be used outside of this translation unit"
@@ -10475,6 +10477,7 @@
 'expected %0 at end of module'
 "expected %0 in OpenMP clause '%1'"
 'expected %0 or %1'
+'expected %0 to denote end of parameters, or, another valid parameter of %1'
 'expected %0; %1 is a keyword in Objective-C++'
 'expected %1 after %0'
 "expected %select{'enable', 'disable', 'begin' or 'end'|'disable'}0 - ignoring"
@@ -11559,6 +11562,7 @@
 'invalid branch into OpenACC Compute/Combined Construct'
 'invalid branch out of OpenACC Compute/Combined Construct'
 "invalid branch protection option '%0' in '%1'"
+"invalid case style for %0 '%1'"
 "invalid character '%0' in raw string delimiter; use PREFIX( )PREFIX to delimit raw string"
 "invalid comparison flag %0; use 'layout_compatible' or 'must_be_null'"
 "invalid component '%0' used; expected 'x', 'y', 'z', or 'w'"
@@ -12454,8 +12458,6 @@
 'octal integer literals are incompatible with standards before C2y'
 "octal literals without a '0o' prefix are deprecated"
 'offset of asan shadow mapping [EXPERIMENTAL]'
-'offset of on non-POD type %0'
-'offset of on non-standard-layout type %0'
 'offset-based plaintext format'
 'offsetof of incomplete type %0'
 'offsetof requires array type, %0 invalid'

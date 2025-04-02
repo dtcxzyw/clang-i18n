@@ -2298,6 +2298,10 @@ H863E7A12B731: "'objc_externally_retained' можно применять тол�
 H917C3A1684AC: "Атрибут 'objc_independent_class' можно применять только к указателю на объект Objective-C; атрибут будет проигнорирован"
 # "'objc_independent_class' attribute may be put on a typedef only; attribute is ignored"
 HCF5FB9401D67: "'objc_independent_class' атрибут может быть указан только для typedef; атрибут проигнорирован"
+# "'offsetof' on non-POD type %0"
+H2BFD47074829: "Использование 'offsetof' с типом, не являющимся POD %0"
+# "'offsetof' on non-standard-layout type %0"
+H0A19805CBC92: "Использование 'offsetof' с типом, не являющимся стандартным layout-типом %0"
 # "'omp_interop_t' must be defined when 'append_args' clause is used; include <omp.h>"
 H584E24086261: "'omp_interop_t' должен быть определён при использовании предложения 'append_args'; включите <omp.h>"
 # "'ompx_attribute' clause only allows 'amdgpu_flat_work_group_size', 'amdgpu_waves_per_eu', and 'launch_bounds'; %0 is ignored"
@@ -8494,8 +8498,6 @@ HC5006CA24C2C: 'Сворачивать обращения к памяти для
 HC5500C22FC68: 'Интегрировать проверки на null в операции памяти, вызывающие сбои'
 # 'Folder name for view splitting.'
 HE1AD57EFF1BD: 'Имя папки для разделения представления.'
-# 'Folds all regular instructions (including pre-outputs)'
-HB765A3FB1AB5: 'Сворачивает все обычные инструкции (включая pre-outputs)'
 # 'Follow Fortran 2003 rules for (re)allocating the LHS of the intrinsic assignment'
 H1CD29CD7E654: 'Следовать правилам Fortran 2003 для (пере)выделения левой части встроенной операции присваивания'
 # 'Follow the AAPCS standard requirement stating that volatile bit-field width is dictated by the field container type. (ARM only).'
@@ -8862,6 +8864,8 @@ H7777A854222B: 'Создать классы Clang BasicWriter'
 HAF44CF1570A7: 'Создать проверки статического анализатора Clang'
 # 'Generate Clang constexpr interpreter opcodes'
 HCE00FBA3D9DA: 'Создание команд опкодов интерпретатора Clang constexpr'
+# 'Generate Clang diagnostic compatibility ids'
+HB3B0D51C372C: 'Создать идентификаторы совместимости диагностики Clang'
 # 'Generate Clang diagnostic enums for selects'
 HFF484ABCD39B: 'Создать диагностические enum Clang для selects'
 # 'Generate Clang diagnostic groups'
@@ -9718,8 +9722,6 @@ HCC1A697CD02F: 'Во всех случаях'
 H835459E7E97D: 'В сочетании с -type-index и -id-index выводит весь граф зависимостей для указанного индекса вместо единственной записи с указанным индексом'
 # "In profiling mode like sampleFDO, if a function doesn't have profile, we cannot tell the function is cold for sure because it may be a function newly added without ever being sampled. With the flag enabled, compiler can put such profile unknown functions into a special section, so runtime system can choose to handle it in a different way than .text section, to save RAM for example. "
 H4571B587B651: 'В режиме профилирования, таком как sampleFDO, если у функции нет профиля, мы не можем определенно сказать, что функция холодная, так как это может быть новая функция, которая никогда не профилировалась. С активированным флагом компилятор может поместить такие функции с неизвестным профилем в специальную секцию, чтобы система выполнения могла выбрать обработку их иначе, чем секцию .text, например, для экономии RAM.'
-# 'In the Lint pass, abort on errors.'
-H4B98027DD134: 'В этапе Lint прерывать работу при ошибках.'
 # 'In the OpenMP data clauses treat `a(N)` as `a(N:N)`.'
 H1CA9E31B3F5D: 'В предложениях данных OpenMP обрабатывать `a(N)` как `a(N:N)`.'
 # 'In the dump requested by -dump-input, print <N> input lines\nbefore and <N> input lines after any lines specified by\n-dump-input-filter.  When there are multiple occurrences of\nthis option, the largest specified <N> has precedence.  The\ndefault is 5.\n'
@@ -10300,6 +10302,8 @@ H3054F37FF6EE: 'Список функций для вывода дизассем
 H45A6C5D3DB8C: "Список ключей и значений аргументов. Обязательные ключевые слова: 'file' и 'triple'."
 # 'List of modes to link in by default into XRay instrumented binaries.'
 HA0397880FB9D: 'Список режимов, включаемых по умолчанию в бинарники, инструментированные XRay.'
+# 'List of profitability heuristics to be used. They are applied in the given order'
+HA13A6720841E: 'Список эвристик эффективности, которые будут использоваться. Они применяются в указанном порядке'
 # 'List of symbols to export from the resulting object file'
 H1BA25E23CBFD: 'Список символов для экспорта из результирующего объектного файла'
 # 'Live DEBUG_VALUE analysis'
@@ -10324,8 +10328,6 @@ H37DC6D24F9AF: 'Загружать все элементы статически�
 HCC377DE628E7: 'Загружать все элементы статических архивов, реализующие Objective-C классы или категории, или Swift структуры, классы или расширения'
 # 'Load and verify that a pre-compiled header file is not stale'
 H71047E98C4FB: 'Загрузить и проверить, что предкомпилированный заголовочный файл не устарел'
-# 'Load bitcode directly into the new debug info format (regardless of input format)'
-H5768E297180F: 'Загружать биткод напрямую в новый формат отладочной информации (независимо от формата входных данных)'
 # 'Load dialects from plugin library'
 H4452CA7D250C: 'Загрузить диалекты из плагинной библиотеки'
 # 'Load module without materializing metadata, then materialize only the metadata'
@@ -12500,8 +12502,6 @@ HB104FC8C2A4B: 'Сохранять тип для recovery expressions при в�
 HA8838E5FAEE3: 'Сохранять порядок use-списка при записи LLVM-ассемблера.'
 # 'Preserve use-list order when writing LLVM bitcode.'
 HED82044E4F6B: 'Сохранять порядок списка использования при записи LLVM байткода.'
-# 'Preserves original instruction order'
-H08B5F35B74C3: 'Сохраняет исходный порядок инструкций'
 # 'Pretend that scalable vectors are supported, even if the target does not support them. This flag should only be used for testing.'
 HE0B0560A96EA: 'Предполагать, что масштабируемые векторы поддерживаются, даже если целевая платформа их не поддерживает. Эта опция предназначена только для тестирования.'
 # 'Pretty print debug locations of instructions when dumping'
@@ -12894,8 +12894,12 @@ H1C7BC51D6E48: 'Выводит контекст blame (если возможно
 HF27FB27BCDA7: 'Выводит объединенный модуль библиотеки до вывода'
 # 'Prints the pass pipeline and returns.'
 HB0A215EA899E: 'Выводит流水道 и возвращает.'
-# 'Prioritize increasing vectorization opportunity over cache cost when determining profitability'
-H3BBA969790D8: 'Приоритетно увеличивать возможности векторизации в ущерб расходам кэша при определении целесообразности'
+# 'Prioritize loop cache cost'
+H567449F48120: 'Приоритезировать стоимость кэша цикла'
+# 'Prioritize the IVs order of each instruction'
+HC3D79764BA67: 'Приоритезировать порядок IVs для каждой инструкции'
+# 'Prioritize vectorization'
+H12B49F99EBF6: 'Приоритезировать векторизацию'
 # 'Probability value in the range [0.0, 1.0] of unconditional pseudo-random checks.'
 HE60D8EB808AB: 'Значение вероятности в диапазоне [0.0, 1.0] безусловных псевдослучайных проверок.'
 # 'Probability value in the range [0.0, 1.0] to keep instrumentation of a function. Note: instrumentation can be skipped randomly OR because of the hot percentile cutoff, if both are supplied.'
@@ -13272,8 +13276,6 @@ H1AB17AA29EA4: 'Переименование операндов регистра
 H9BD8A9C1263B: 'Переименование операндов регистра в каноническом порядке'
 # 'Rename counter variable of a comdat function based on cfg hash'
 HB71CC1C2B75A: 'Переименовать переменную счётчика функции comdat на основе хеша CFG'
-# 'Renames all instructions (including user-named)'
-H357FB4296AFA: 'Переименовывает все инструкции (включая пользовательские)'
 # 'Reorder instructions to use the WebAssembly value stack'
 H6D195AC096F5: 'Переставьте инструкции для использования стека значений WebAssembly'
 # 'Reorders blocks in topological order'
@@ -14006,8 +14008,8 @@ H7AAC4AA29051: 'Установить длину вектора Hexagon'
 HC407FF843F6C: 'Установить режим LTO'
 # 'Set LTO mode for offload compilation'
 HAFC85CCA6F44: 'Установить режим LTO для offload-компиляции'
-# 'Set OpenMP version (e.g. 45 for OpenMP 4.5, 51 for OpenMP 5.1). Default value is 11 for Flang'
-HB4B241AD39C3: 'Установите версию OpenMP (например 45 для OpenMP 4.5, 51 для OpenMP 5.1). Значение по умолчанию — 11 для Flang'
+# 'Set OpenMP version (e.g. 45 for OpenMP 4.5, 51 for OpenMP 5.1). Default value is 31 for Flang'
+H4AABB415543E: 'Установить версию OpenMP (например, 45 для OpenMP 4.5, 51 для OpenMP 5.1). Значение по умолчанию — 31 для Flang'
 # 'Set OpenMP version (e.g. 45 for OpenMP 4.5, 51 for OpenMP 5.1). Default value is 51 for Clang'
 H81EB65FB7662: 'Установите версию OpenMP (например, 45 для OpenMP 4.5, 51 для OpenMP 5.1). Значение по умолчанию — 51 для Clang'
 # 'Set ThinLTO cache entry expiration time.'
@@ -14570,8 +14572,6 @@ HEF9C9A551533: 'Сортировать символы по имени'
 H194BBF71E1B6: 'Сортировать символы по размеру'
 # 'Sort the resources printed in the dump trace'
 H66B4BBE5718F: 'Сортировать ресурсы, выведенные в трассировке дампа'
-# 'Sorts and reorders operands in commutative instructions'
-H74BB35674C4A: 'Сортирует и переставляет операнды в коммутативных инструкциях'
 # 'Source Code Analysis - Dead Symbol Removal Frequency'
 H658C75F7C985: 'Анализ исходного кода — Частота удаления мертвых символов'
 # 'Source Code Analysis - Output Options'
@@ -15016,6 +15016,8 @@ H734CB119B295: 'Отключить разделение ячеек во врем
 H63BEE3B3DE32: 'Отключать ошибки типа (Wasm)'
 # 'Suppress verbose debugify output'
 H650FEBD3E6CA: 'Отключить подробный вывод debugify'
+# 'Swap add and addi in cases where the add may be combined with a shift'
+HB791E099C036: 'Менять местами add и addi в случаях, где add может быть объединён с сдвигом'
 # 'Swap target blocks of a conditional branch for MVE expander'
 H6042CB5BEBAE: 'Менять целевые блоки условного перехода для MVE expander'
 # 'Switch to fast cluster algorithm with the lost of some fusion opportunities'
@@ -15914,6 +15916,8 @@ H60DF39720CB5: 'Попытаться создать расписания, где
 H2EA0163561FB: 'Попробуйте делинеаризовать ссылки на массивы.'
 # 'Try to evenly distribute flow when there are multiple equally likely options.'
 HAEBC34FD2276: 'Попробуйте равномерно распределять поток, когда есть несколько одинаково вероятных вариантов.'
+# 'Try to map `do concurrent` loops to OpenMP [none|host|device]'
+H0998E6C983F8: 'Попытаться отобразить циклы `do concurrent` на OpenMP [none|host|device]'
 # 'Try to propagate nonnull argument attributes from callsites to caller functions.'
 H020E4D562B19: 'Попробовать распространить атрибуты аргументов nonnull от точек вызова к вызывающим функциям.'
 # 'Try to simplify all loads.'
@@ -17030,8 +17034,6 @@ H294C0D501665: 'Записать depfile, содержащий пользова�
 H7C079FE214C7: 'Записать ассемблерный код в файл для задач сборки'
 # 'Write current time into COFF output (default)'
 HF98DECE931FC: 'Записать текущее время в выходной файл COFF (по умолчанию)'
-# 'Write debug info in the new non-intrinsic format. Has no effect if --preserve-input-debuginfo-format=true.'
-H438D54E25242: 'Записывать отладочную информацию в новом неинтрасиковом формате. Не имеет эффекта, если --preserve-input-debuginfo-format=true.'
 # 'Write depfile output from -MMD, -MD, -MM, or -M to <file>'
 H7F1DEF2B183F: 'Записать вывод depfile из -MMD, -MD, -MM или -M в <file>'
 # 'Write extracted files to a static archive'
@@ -19890,6 +19892,8 @@ H68CDFAD663DD: 'объявление маскирует %select{локальну
 H1C8188316ADE: 'декларация использует __weak, но ARC отключен'
 # 'declaration uses __weak, which the current deployment target does not support'
 HEB22F5D20508: 'объявление использует __weak, который не поддерживается текущей целевой версией'
+# "declaration uses identifier '%0', which is %select{a reserved identifier|not a reserved identifier|reserved in the global namespace}1"
+HCBB59D1E323D: "объявление использует идентификатор '%0', который является %select{зарезервированным идентификатором|не зарезервированным идентификатором|зарезервированным в глобальном пространстве имен}1"
 # 'declaration uses type that is ill-formed in ARC'
 H522AD27CDFBF: 'объявление использует некорректный тип в ARC'
 # 'declarator requires an identifier'
@@ -20952,6 +20956,8 @@ H0F6B0905AE5F: 'ожидалось %0 в конце модуля'
 HC79E103ACDFE: "ожидалось %0 в OpenMP clause '%1'"
 # 'expected %0 or %1'
 HC08F459555DA: 'ожидалось %0 или %1'
+# 'expected %0 to denote end of parameters, or, another valid parameter of %1'
+H05DB43940E29: 'ожидалось, что %0 обозначает конец параметров или другой допустимый параметр %1'
 # 'expected %0; %1 is a keyword in Objective-C++'
 H62A445966708: 'ожидалось %0; %1 является ключевым словом в Objective-C++'
 # 'expected %1 after %0'
@@ -23120,6 +23126,8 @@ HC49FDF0B5C89: 'недопустимый переход в OpenACC Compute/Combi
 H921800904C81: 'недопустимый переход из OpenACC Compute/Combined Construct'
 # "invalid branch protection option '%0' in '%1'"
 H69A222420F22: "недопустимая опция защиты ветвления '%0' в '%1'"
+# "invalid case style for %0 '%1'"
+H3DD07CA4DE69: "недопустимый стиль case для %0 '%1'"
 # "invalid character '%0' in raw string delimiter; use PREFIX( )PREFIX to delimit raw string"
 H82170E32D0E4: "недопустимый символ '%0' в разделителе сырой строки; используйте PREFIX( )PREFIX для разделения сырой строки"
 # "invalid comparison flag %0; use 'layout_compatible' or 'must_be_null'"
@@ -24910,10 +24918,6 @@ HFF58B98B1092: 'литералы целых чисел в восьмерично
 H297C91C7799F: "восьмеричные литералы без префикса '0o' устарели"
 # 'offset of asan shadow mapping [EXPERIMENTAL]'
 HB87160E3C269: 'смещение тени ASan [EXPERIMENTAL]'
-# 'offset of on non-POD type %0'
-H3798D618C09F: 'смещение в не-POD типе %0'
-# 'offset of on non-standard-layout type %0'
-H1C1DF95C948D: 'смещение члена в типе с нестандартной компоновкой %0'
 # 'offset-based plaintext format'
 H4A173EEFA114: 'формат открытого текста на основе смещений'
 # 'offsetof of incomplete type %0'

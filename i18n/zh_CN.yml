@@ -2298,6 +2298,10 @@ H863E7A12B731: "'objc_externally_retained' 仅能用于 %select{可保留类型�
 H917C3A1684AC: "'objc_independent_class' 属性只能应用于 Objective-C 对象指针类型；该属性被忽略"
 # "'objc_independent_class' attribute may be put on a typedef only; attribute is ignored"
 HCF5FB9401D67: "'objc_independent_class' 属性只能应用于 typedef；该属性被忽略"
+# "'offsetof' on non-POD type %0"
+H2BFD47074829: "对非POD类型 %0 使用 'offsetof'"
+# "'offsetof' on non-standard-layout type %0"
+H0A19805CBC92: "对非标准布局类型 %0 使用 'offsetof'"
 # "'omp_interop_t' must be defined when 'append_args' clause is used; include <omp.h>"
 H584E24086261: "'omp_interop_t' 在使用 'append_args' 子句时必须被定义；请包含 <omp.h>"
 # "'ompx_attribute' clause only allows 'amdgpu_flat_work_group_size', 'amdgpu_waves_per_eu', and 'launch_bounds'; %0 is ignored"
@@ -4397,7 +4401,7 @@ HCA7AB9E73E1E: '选择底层JIT类型。'
 # 'Chunksize to use by the OpenMP runtime calls'
 H9BE7E3A1146E: 'OpenMP运行时调用使用的块大小'
 # "Clang permits use of type 'double' regardless pragma if 'cl_khr_fp64' is supported"
-H36E837B04A86: "如果支持'cl_khr_fp64'扩展，Clang将允许使用类型'double'而忽略pragma"
+H36E837B04A86: "如果支持 'cl_khr_fp64' 扩展，Clang将允许使用类型 'double' 而忽略pragma"
 # 'Clang-format options'
 H5807AFA36D8E: 'Clang格式化选项'
 # 'ClangIR code gen Not Yet Implemented: %0'
@@ -8494,8 +8498,6 @@ HC5006CA24C2C: '折叠内存访问以建模更多可能的非线性化（扩展�
 HC5500C22FC68: '将空指针检查合并到引发故障的内存操作中'
 # 'Folder name for view splitting.'
 HE1AD57EFF1BD: '视图拆分的文件夹名称。'
-# 'Folds all regular instructions (including pre-outputs)'
-HB765A3FB1AB5: '折叠所有常规指令（包括预输出指令）'
 # 'Follow Fortran 2003 rules for (re)allocating the LHS of the intrinsic assignment'
 H1CD29CD7E654: '遵循Fortran 2003 规则重新分配固有赋值的左操作数'
 # 'Follow the AAPCS standard requirement stating that volatile bit-field width is dictated by the field container type. (ARM only).'
@@ -8862,6 +8864,8 @@ H7777A854222B: '生成 Clang 基础写入器类（BasicWriter）'
 HAF44CF1570A7: '生成Clang静态分析器检查器'
 # 'Generate Clang constexpr interpreter opcodes'
 HCE00FBA3D9DA: '生成Clang constexpr解释器操作码'
+# 'Generate Clang diagnostic compatibility ids'
+HB3B0D51C372C: '生成Clang诊断兼容性标识符'
 # 'Generate Clang diagnostic enums for selects'
 HFF484ABCD39B: '为选择项生成Clang诊断枚举'
 # 'Generate Clang diagnostic groups'
@@ -9718,8 +9722,6 @@ HCC1A697CD02F: '在所有情况下'
 H835459E7E97D: '与-type-index和-id-index选项结合使用时，将转储指定索引的整个依赖关系图，而不仅仅是具有该索引的单个记录'
 # "In profiling mode like sampleFDO, if a function doesn't have profile, we cannot tell the function is cold for sure because it may be a function newly added without ever being sampled. With the flag enabled, compiler can put such profile unknown functions into a special section, so runtime system can choose to handle it in a different way than .text section, to save RAM for example. "
 H4571B587B651: '在类似sampleFDO的分析模式中，如果函数没有配置文件，我们无法确定该函数是否为冷函数，因为它可能是从未被采样的新添加的函数。启用该标志后，编译器可以将这些配置文件未知的函数放入特殊段，这样运行时系统可以选择以不同于.text段的方式处理它们，例如节省RAM。'
-# 'In the Lint pass, abort on errors.'
-H4B98027DD134: '在Lint pass中遇到错误时终止。'
 # 'In the OpenMP data clauses treat `a(N)` as `a(N:N)`.'
 H1CA9E31B3F5D: '在OpenMP数据子句中将`a(N)`视为`a(N:N)`。'
 # 'In the dump requested by -dump-input, print <N> input lines\nbefore and <N> input lines after any lines specified by\n-dump-input-filter.  When there are multiple occurrences of\nthis option, the largest specified <N> has precedence.  The\ndefault is 5.\n'
@@ -10300,6 +10302,8 @@ H3054F37FF6EE: '要反汇编的函数列表。仅接受展开的名称。仅与s
 H45A6C5D3DB8C: '键值参数列表。必需的关键词是 "file" 和 "triple"。'
 # 'List of modes to link in by default into XRay instrumented binaries.'
 HA0397880FB9D: '默认链接到XRay已插入二进制文件中的模式列表'
+# 'List of profitability heuristics to be used. They are applied in the given order'
+HA13A6720841E: '要使用的收益性启发式方法列表。它们按给定顺序应用'
 # 'List of symbols to export from the resulting object file'
 H1BA25E23CBFD: '要从生成的对象文件中导出的符号列表'
 # 'Live DEBUG_VALUE analysis'
@@ -10324,8 +10328,6 @@ H37DC6D24F9AF: '加载静态库中的所有成员'
 HCC377DE628E7: '加载静态库中实现Objective-C类或分类，或Swift结构体、类或扩展的成员'
 # 'Load and verify that a pre-compiled header file is not stale'
 H71047E98C4FB: '加载并验证预编译头文件未过时'
-# 'Load bitcode directly into the new debug info format (regardless of input format)'
-H5768E297180F: '直接将比特码加载到新的调试信息格式（无论输入格式如何）'
 # 'Load dialects from plugin library'
 H4452CA7D250C: '从插件库加载方言'
 # 'Load module without materializing metadata, then materialize only the metadata'
@@ -11641,7 +11643,7 @@ HA8B26141C7C6: 'OpenACC变量不是一个有效的变量名、子数组、数组
 # 'OpenCL extension %0 is core feature or supported optional core feature - ignoring'
 H1E2DAA7C8DD9: 'OpenCL扩展 %0 是核心特性或支持的可选核心特性 - 忽略'
 # 'OpenCL extension %0 unknown or does not require pragma - ignoring'
-HB7D9C7E097C0: 'OpenCL扩展%0未知或不需要pragma - 忽略'
+HB7D9C7E097C0: 'OpenCL扩展 %0 未知或不需要pragma - 忽略'
 # 'OpenCL language standard to compile for.'
 H165955277EF6: '要编译的OpenCL语言标准'
 # 'OpenCL only. Allow denormals to be flushed to zero.'
@@ -12500,8 +12502,6 @@ HB104FC8C2A4B: '尽可能保留恢复表达式类型'
 HA8838E5FAEE3: '在生成LLVM汇编时保留使用列表顺序'
 # 'Preserve use-list order when writing LLVM bitcode.'
 HED82044E4F6B: '在生成LLVM比特码时保留使用列表顺序'
-# 'Preserves original instruction order'
-H08B5F35B74C3: '保留原始指令顺序'
 # 'Pretend that scalable vectors are supported, even if the target does not support them. This flag should only be used for testing.'
 HE0B0560A96EA: '假设可扩展向量被支持，即使目标平台不支持。此标志仅用于测试目的。'
 # 'Pretty print debug locations of instructions when dumping'
@@ -12894,8 +12894,12 @@ H1C7BC51D6E48: '为所有指令打印责怪上下文（如果可能）。这指�
 HF27FB27BCDA7: '在输出前打印组合库模块'
 # 'Prints the pass pipeline and returns.'
 HB0A215EA899E: '打印pass管线并退出。'
-# 'Prioritize increasing vectorization opportunity over cache cost when determining profitability'
-H3BBA969790D8: '在确定利润时，优先考虑增加向量化机会而非缓存成本'
+# 'Prioritize loop cache cost'
+H567449F48120: '优先考虑循环缓存成本'
+# 'Prioritize the IVs order of each instruction'
+HC3D79764BA67: '优先考虑每个指令的IV顺序'
+# 'Prioritize vectorization'
+H12B49F99EBF6: '优先考虑向量化'
 # 'Probability value in the range [0.0, 1.0] of unconditional pseudo-random checks.'
 HE60D8EB808AB: '概率值范围在[0.0, 1.0]之间的无条件伪随机检查'
 # 'Probability value in the range [0.0, 1.0] to keep instrumentation of a function. Note: instrumentation can be skipped randomly OR because of the hot percentile cutoff, if both are supplied.'
@@ -13272,8 +13276,6 @@ H1AB17AA29EA4: '重命名寄存器操作数'
 H9BD8A9C1263B: '规范重命名寄存器操作数'
 # 'Rename counter variable of a comdat function based on cfg hash'
 HB71CC1C2B75A: '基于cfg哈希重命名comdat函数的计数器变量'
-# 'Renames all instructions (including user-named)'
-H357FB4296AFA: '重命名所有指令（包括用户命名的）'
 # 'Reorder instructions to use the WebAssembly value stack'
 H6D195AC096F5: '重新排序指令以使用WebAssembly值栈'
 # 'Reorders blocks in topological order'
@@ -14006,8 +14008,8 @@ H7AAC4AA29051: '设置Hexagon向量长度'
 HC407FF843F6C: '设置LTO模式'
 # 'Set LTO mode for offload compilation'
 HAFC85CCA6F44: '设置卸载编译的LTO模式'
-# 'Set OpenMP version (e.g. 45 for OpenMP 4.5, 51 for OpenMP 5.1). Default value is 11 for Flang'
-HB4B241AD39C3: '设置OpenMP版本（例如 45 对应OpenMP 4.5，51对应OpenMP 5.1）。默认值为Flang的 11'
+# 'Set OpenMP version (e.g. 45 for OpenMP 4.5, 51 for OpenMP 5.1). Default value is 31 for Flang'
+H4AABB415543E: '设置OpenMP版本（例如 4.5对应 45，5.1对应 51）。默认值为Flang的 31'
 # 'Set OpenMP version (e.g. 45 for OpenMP 4.5, 51 for OpenMP 5.1). Default value is 51 for Clang'
 H81EB65FB7662: '设置OpenMP版本（例如 45 对应OpenMP 4.5，51对应OpenMP 5.1）。默认值为Clang的 51'
 # 'Set ThinLTO cache entry expiration time.'
@@ -14570,8 +14572,6 @@ HEF9C9A551533: '按名称排序符号'
 H194BBF71E1B6: '按大小排序符号'
 # 'Sort the resources printed in the dump trace'
 H66B4BBE5718F: '对转储跟踪中打印的资源进行排序'
-# 'Sorts and reorders operands in commutative instructions'
-H74BB35674C4A: '对交换指令中的操作数进行排序和重新排列'
 # 'Source Code Analysis - Dead Symbol Removal Frequency'
 H658C75F7C985: '源代码分析 - 无效符号移除频率'
 # 'Source Code Analysis - Output Options'
@@ -15016,6 +15016,8 @@ H734CB119B295: '在栈着色期间抑制槽共享'
 H63BEE3B3DE32: '抑制类型错误（Wasm）'
 # 'Suppress verbose debugify output'
 H650FEBD3E6CA: '抑制详细的调试输出'
+# 'Swap add and addi in cases where the add may be combined with a shift'
+HB791E099C036: '在可以将加法与移位组合的情况下交换add和addi'
 # 'Swap target blocks of a conditional branch for MVE expander'
 H6042CB5BEBAE: '为MVE展开器交换条件分支的目标块'
 # 'Switch to fast cluster algorithm with the lost of some fusion opportunities'
@@ -15914,6 +15916,8 @@ H60DF39720CB5: '尝试构建每个带的外层成员满足重合约束的调度�
 H2EA0163561FB: '尝试解除数组引用的线性化'
 # 'Try to evenly distribute flow when there are multiple equally likely options.'
 HAEBC34FD2276: '当存在多个可能性相等的选项时，尝试均匀分配流程'
+# 'Try to map `do concurrent` loops to OpenMP [none|host|device]'
+H0998E6C983F8: '尝试将`do concurrent`循环映射到OpenMP [none|host|device]'
 # 'Try to propagate nonnull argument attributes from callsites to caller functions.'
 H020E4D562B19: '尝试将调用点的nonnull参数属性传播到被调函数'
 # 'Try to simplify all loads.'
@@ -17030,8 +17034,6 @@ H294C0D501665: '生成包含用户头文件的依赖文件'
 H7C079FE214C7: '将汇编代码写入文件以供汇编任务输入'
 # 'Write current time into COFF output (default)'
 HF98DECE931FC: '将当前时间写入COFF输出（默认）'
-# 'Write debug info in the new non-intrinsic format. Has no effect if --preserve-input-debuginfo-format=true.'
-H438D54E25242: '以新的非内禀格式生成调试信息。若--preserve-input-debuginfo-format=true时无效。'
 # 'Write depfile output from -MMD, -MD, -MM, or -M to <file>'
 H7F1DEF2B183F: '将来自-MMD、-MD、-MM或-M的依赖文件输出写入 <file>'
 # 'Write extracted files to a static archive'
@@ -19890,6 +19892,8 @@ H68CDFAD663DD: '该声明遮蔽了 %select{局部变量|%2 中的变量|%2 的�
 H1C8188316ADE: '该声明使用了 __weak，但 ARC 已禁用'
 # 'declaration uses __weak, which the current deployment target does not support'
 HEB22F5D20508: '该声明使用了 __weak，而当前部署目标不支持'
+# "declaration uses identifier '%0', which is %select{a reserved identifier|not a reserved identifier|reserved in the global namespace}1"
+HCBB59D1E323D: "该声明使用标识符 '%0'，该标识符%select{是保留标识符|不是保留标识符|在全局命名空间中保留}1"
 # 'declaration uses type that is ill-formed in ARC'
 H522AD27CDFBF: '该声明使用了在 ARC 中格式错误的类型'
 # 'declarator requires an identifier'
@@ -20799,7 +20803,7 @@ HFB264777D8F6: "未求值的字符串字面量上的编码前缀 '%0' 没有效�
 # 'end tag'
 HE76165194C35: '结束标签'
 # "entering module '%0' due to this pragma"
-H00CF7F723C1C: "由于此pragma进入模块'%0'"
+H00CF7F723C1C: "由于此pragma进入模块 '%0'"
 # 'enum %0 was explicitly specialized here'
 H888313DD02EB: '枚举 %0 在这里被显式特化'
 # 'enumeration %0 is incomplete'
@@ -20952,6 +20956,8 @@ H0F6B0905AE5F: '模块末尾期望 %0'
 HC79E103ACDFE: "在OpenMP子句 '%1' 中期望 %0"
 # 'expected %0 or %1'
 HC08F459555DA: '期望 %0 或 %1'
+# 'expected %0 to denote end of parameters, or, another valid parameter of %1'
+H05DB43940E29: '期望 %0 表示参数结束，或 %1 的另一个有效参数'
 # 'expected %0; %1 is a keyword in Objective-C++'
 H62A445966708: '期望 %0; %1 是Objective-C++中的关键字'
 # 'expected %1 after %0'
@@ -21067,7 +21073,7 @@ H0EFFC0B249A7: "期望 '=' 或另一个说明符"
 # "expected '==' operator for 'weak' clause"
 H3CB2580D57FE: "'weak' 子句期望 '==' 操作符"
 # "expected 'ON' or 'OFF' or 'DEFAULT' in pragma"
-HE0167BADEC73: '在pragma中期望"ON"、"OFF"或"DEFAULT"'
+HE0167BADEC73: '在pragma中期望 "ON"、"OFF" 或 "DEFAULT"'
 # "expected ']' to close attribute"
 H21FBE19AC5CE: "期望 ']' 来关闭属性"
 # "expected '__except' or '__finally' block"
@@ -23120,6 +23126,8 @@ HC49FDF0B5C89: '无效的进入OpenACC Compute/Combined Construct的分支'
 H921800904C81: '无效的退出OpenACC Compute/Combined Construct的分支'
 # "invalid branch protection option '%0' in '%1'"
 H69A222420F22: "在 '%1' 中的分支保护选项 '%0' 无效"
+# "invalid case style for %0 '%1'"
+H3DD07CA4DE69: "%0 '%1' 大小写风格错误"
 # "invalid character '%0' in raw string delimiter; use PREFIX( )PREFIX to delimit raw string"
 H82170E32D0E4: "原始字符串分隔符中的无效字符 '%0'；使用PREFIX( )PREFIX来分隔原始字符串"
 # "invalid comparison flag %0; use 'layout_compatible' or 'must_be_null'"
@@ -24910,10 +24918,6 @@ HFF58B98B1092: '八进制整数字面量与C2y之前的语言标准不兼容'
 H297C91C7799F: "未带 '0o' 前缀的八进制字面量已被弃用"
 # 'offset of asan shadow mapping [EXPERIMENTAL]'
 HB87160E3C269: 'asan shadow映射的偏移量[实验性]'
-# 'offset of on non-POD type %0'
-H3798D618C09F: '非POD类型 %0 的结构体成员偏移量'
-# 'offset of on non-standard-layout type %0'
-H1C1DF95C948D: '非标准布局类型 %0 的结构体成员偏移量'
 # 'offset-based plaintext format'
 H4A173EEFA114: '基于偏移的明文格式'
 # 'offsetof of incomplete type %0'
@@ -27425,7 +27429,7 @@ HB435423839CE: '这通常是由多个路径下找到同名模块所导致的'
 # 'this placement new expression is not supported in constant expressions %select{|before C++2c}0'
 HFED2CB8F9A5D: '在常量表达式中不支持此placement new表达式 %select{|在C++2c之前}0'
 # 'this pragma cannot appear in %0 declaration'
-HCE58A657A4E9: '此pragma不能出现在%0声明中'
+HCE58A657A4E9: '此pragma不能出现在 %0 声明中'
 # 'this style of line directive is a GNU extension'
 H0B9D785486F6: '这种形式的行指令是GNU扩展'
 # 'this target does not support pointer authentication'

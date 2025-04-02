@@ -2298,6 +2298,10 @@ H863E7A12B731: "'objc_externally_retained' ne peut être appliqué qu'à des var
 H917C3A1684AC: "L'attribut 'objc_independent_class' ne peut être appliqué qu'à un type de pointeur Objective-C ; l'attribut est ignoré"
 # "'objc_independent_class' attribute may be put on a typedef only; attribute is ignored"
 HCF5FB9401D67: "L'attribut 'objc_independent_class' ne peut être appliqué qu'à un typedef ; l'attribut est ignoré"
+# "'offsetof' on non-POD type %0"
+H2BFD47074829: "'offsetof' sur un type non-POD %0"
+# "'offsetof' on non-standard-layout type %0"
+H0A19805CBC92: "'offsetof' sur un type non-standard-layout %0"
 # "'omp_interop_t' must be defined when 'append_args' clause is used; include <omp.h>"
 H584E24086261: "'omp_interop_t' doit être défini lorsque la clause 'append_args' est utilisée ; incluez <omp.h>"
 # "'ompx_attribute' clause only allows 'amdgpu_flat_work_group_size', 'amdgpu_waves_per_eu', and 'launch_bounds'; %0 is ignored"
@@ -8494,8 +8498,6 @@ HC5006CA24C2C: 'Grouper les accès mémoire pour modéliser plus de délinéaris
 HC5500C22FC68: 'Intégrer les vérifications de null dans les opérations mémoire avec erreur'
 # 'Folder name for view splitting.'
 HE1AD57EFF1BD: 'Nom du dossier pour le fractionnement des vues.'
-# 'Folds all regular instructions (including pre-outputs)'
-HB765A3FB1AB5: 'Grouper toutes les instructions régulières (y compris les pré-sorties)'
 # 'Follow Fortran 2003 rules for (re)allocating the LHS of the intrinsic assignment'
 H1CD29CD7E654: "Suivre les règles Fortran 2003 pour (ré)allouer la partie gauche de l'affectation intrinsèque"
 # 'Follow the AAPCS standard requirement stating that volatile bit-field width is dictated by the field container type. (ARM only).'
@@ -8862,6 +8864,8 @@ H7777A854222B: 'Générer les classes BasicWriter de Clang'
 HAF44CF1570A7: 'Générer les vérificateurs de l’analyseur statique de Clang'
 # 'Generate Clang constexpr interpreter opcodes'
 HCE00FBA3D9DA: 'Générer les opcodes de l’interpréteur constexpr de Clang'
+# 'Generate Clang diagnostic compatibility ids'
+HB3B0D51C372C: 'Générer les identifiants de compatibilité des diagnostics Clang'
 # 'Generate Clang diagnostic enums for selects'
 HFF484ABCD39B: 'Générer les énumérations de diagnostics pour les « selects » de Clang'
 # 'Generate Clang diagnostic groups'
@@ -9718,8 +9722,6 @@ HCC1A697CD02F: 'Dans tous les cas'
 H835459E7E97D: 'En combinaison avec -type-index et -id-index, affiche le graphe de dépendances complet pour l’index spécifié au lieu d’afficher uniquement l’enregistrement correspondant à l’index spécifié'
 # "In profiling mode like sampleFDO, if a function doesn't have profile, we cannot tell the function is cold for sure because it may be a function newly added without ever being sampled. With the flag enabled, compiler can put such profile unknown functions into a special section, so runtime system can choose to handle it in a different way than .text section, to save RAM for example. "
 H4571B587B651: 'En mode profilage comme sampleFDO, si une fonction n’a pas de profil, on ne peut pas affirmer qu’elle est froide avec certitude car elle pourrait être une fonction nouvellement ajoutée sans avoir jamais été échantillonnée. Avec ce drapeau activé, le compilateur peut placer de telles fonctions sans profil dans une section spéciale, permettant au système d’exécution de les traiter différemment de la section .text, par exemple pour économiser de la mémoire (RAM).'
-# 'In the Lint pass, abort on errors.'
-H4B98027DD134: 'Dans le passage Lint, arrêter en cas d’erreurs.'
 # 'In the OpenMP data clauses treat `a(N)` as `a(N:N)`.'
 H1CA9E31B3F5D: 'Dans les clauses de données OpenMP, traiter `a(N)` comme `a(N:N)`.'
 # 'In the dump requested by -dump-input, print <N> input lines\nbefore and <N> input lines after any lines specified by\n-dump-input-filter.  When there are multiple occurrences of\nthis option, the largest specified <N> has precedence.  The\ndefault is 5.\n'
@@ -10300,6 +10302,8 @@ H3054F37FF6EE: 'Liste des fonctions pour lesquelles afficher l’assembly. Accep
 H45A6C5D3DB8C: "Liste des arguments clé-valeur. Les mots-clés obligatoires sont 'file' et 'triple'."
 # 'List of modes to link in by default into XRay instrumented binaries.'
 HA0397880FB9D: 'Liste des modes à lier par défaut dans les binaires instrumentés XRay.'
+# 'List of profitability heuristics to be used. They are applied in the given order'
+HA13A6720841E: "Liste des heuristiques de rentabilité à utiliser. Elles sont appliquées dans l'ordre donné"
 # 'List of symbols to export from the resulting object file'
 H1BA25E23CBFD: 'Liste des symboles à exporter du fichier objet résultant'
 # 'Live DEBUG_VALUE analysis'
@@ -10324,8 +10328,6 @@ H37DC6D24F9AF: 'Charge tous les membres des archives statiques'
 HCC377DE628E7: 'Charge tous les membres des archives statiques implémentant des classes ou catégories Objective-C, ou des structures, classes ou extensions Swift'
 # 'Load and verify that a pre-compiled header file is not stale'
 H71047E98C4FB: 'Charge et vérifie qu’un fichier d’en-tête précompilé n’est pas obsolète'
-# 'Load bitcode directly into the new debug info format (regardless of input format)'
-H5768E297180F: 'Charge le bitcode directement dans le nouveau format d’informations de débogage (quelles que soient le format d’entrée)'
 # 'Load dialects from plugin library'
 H4452CA7D250C: 'Charge les dialectes à partir de la bibliothèque de plug-in'
 # 'Load module without materializing metadata, then materialize only the metadata'
@@ -12500,8 +12502,6 @@ HB104FC8C2A4B: 'Conserver le type pour les expressions de récupération lorsque
 HA8838E5FAEE3: 'Conserver l’ordre des listes d’utilisation lors de l’écriture de l’assembly LLVM'
 # 'Preserve use-list order when writing LLVM bitcode.'
 HED82044E4F6B: 'Conserver l’ordre des listes d’utilisation lors de l’écriture du bitcode LLVM'
-# 'Preserves original instruction order'
-H08B5F35B74C3: 'Conserve l’ordre des instructions d’origine'
 # 'Pretend that scalable vectors are supported, even if the target does not support them. This flag should only be used for testing.'
 HE0B0560A96EA: 'Prétendre que les vecteurs scalables sont pris en charge, même si la cible ne les supporte pas. Ce drapeau ne doit être utilisé que pour les tests.'
 # 'Pretty print debug locations of instructions when dumping'
@@ -12894,8 +12894,12 @@ H1C7BC51D6E48: "Affiche le contexte de blâme (si possible) pour TOUTES les inst
 HF27FB27BCDA7: 'Affiche le module de bibliothèque combiné avant la sortie'
 # 'Prints the pass pipeline and returns.'
 HB0A215EA899E: 'Affiche la pipeline des passes et retourne.'
-# 'Prioritize increasing vectorization opportunity over cache cost when determining profitability'
-H3BBA969790D8: "Priorise l'augmentation des possibilités de vectorisation plutôt que le coût du cache lors de l'évaluation de la rentabilité"
+# 'Prioritize loop cache cost'
+H567449F48120: 'Prioriser le coût du cache des boucles'
+# 'Prioritize the IVs order of each instruction'
+HC3D79764BA67: "Prioriser l'ordre des IVs de chaque instruction"
+# 'Prioritize vectorization'
+H12B49F99EBF6: 'Prioriser la vectorisation'
 # 'Probability value in the range [0.0, 1.0] of unconditional pseudo-random checks.'
 HE60D8EB808AB: "Valeur de probabilité dans l'intervalle [0.0, 1.0] pour les vérifications pseudo-aléatoires non conditionnelles."
 # 'Probability value in the range [0.0, 1.0] to keep instrumentation of a function. Note: instrumentation can be skipped randomly OR because of the hot percentile cutoff, if both are supplied.'
@@ -13272,8 +13276,6 @@ H1AB17AA29EA4: 'Renommer les opérandes de registre'
 H9BD8A9C1263B: 'Renommer canoniquement les opérandes de registre'
 # 'Rename counter variable of a comdat function based on cfg hash'
 HB71CC1C2B75A: 'Renommer la variable compteur d’une fonction comdat en fonction de l’empreinte de cfg'
-# 'Renames all instructions (including user-named)'
-H357FB4296AFA: 'Renommer toutes les instructions (y compris celles nommées par l’utilisateur)'
 # 'Reorder instructions to use the WebAssembly value stack'
 H6D195AC096F5: 'Réorganiser les instructions pour utiliser la pile de valeurs WebAssembly'
 # 'Reorders blocks in topological order'
@@ -14006,8 +14008,8 @@ H7AAC4AA29051: 'Définir la longueur du vecteur Hexagon'
 HC407FF843F6C: 'Définir le mode LTO'
 # 'Set LTO mode for offload compilation'
 HAFC85CCA6F44: 'Définir le mode LTO pour la compilation déportée'
-# 'Set OpenMP version (e.g. 45 for OpenMP 4.5, 51 for OpenMP 5.1). Default value is 11 for Flang'
-HB4B241AD39C3: 'Définir la version OpenMP (ex. 45 pour OpenMP 4.5, 51 pour OpenMP 5.1). Valeur par défaut est 11 pour Flang'
+# 'Set OpenMP version (e.g. 45 for OpenMP 4.5, 51 for OpenMP 5.1). Default value is 31 for Flang'
+H4AABB415543E: 'Définir la version OpenMP (ex. 45 pour OpenMP 4.5, 51 pour OpenMP 5.1). La valeur par défaut est 31 pour Flang'
 # 'Set OpenMP version (e.g. 45 for OpenMP 4.5, 51 for OpenMP 5.1). Default value is 51 for Clang'
 H81EB65FB7662: 'Définir la version OpenMP (ex. 45 pour OpenMP 4.5, 51 pour OpenMP 5.1). Valeur par défaut est 51 pour Clang'
 # 'Set ThinLTO cache entry expiration time.'
@@ -14570,8 +14572,6 @@ HEF9C9A551533: 'Trier les symboles par nom'
 H194BBF71E1B6: 'Trier les symboles par taille'
 # 'Sort the resources printed in the dump trace'
 H66B4BBE5718F: 'Trier les ressources imprimées dans la trace de débogage'
-# 'Sorts and reorders operands in commutative instructions'
-H74BB35674C4A: 'Trie et réorganise les opérandes dans les instructions commutatives'
 # 'Source Code Analysis - Dead Symbol Removal Frequency'
 H658C75F7C985: 'Analyse du code source - Fréquence d’élimination des symboles inutilisés'
 # 'Source Code Analysis - Output Options'
@@ -15016,6 +15016,8 @@ H734CB119B295: 'Désactiver le partage de slots lors du coloriage de la pile'
 H63BEE3B3DE32: 'Supprimer les erreurs de type (Wasm)'
 # 'Suppress verbose debugify output'
 H650FEBD3E6CA: 'Désactiver la sortie verbeuse de debugify'
+# 'Swap add and addi in cases where the add may be combined with a shift'
+HB791E099C036: "Échanger add et addi dans les cas où l'add peut être combiné avec un décalage"
 # 'Swap target blocks of a conditional branch for MVE expander'
 H6042CB5BEBAE: "Échanger les blocs cibles d'une branche conditionnelle pour l'expander MVE"
 # 'Switch to fast cluster algorithm with the lost of some fusion opportunities'
@@ -15914,6 +15916,8 @@ H60DF39720CB5: 'Tenter de construire des horaires où le membre externe de chaqu
 H2EA0163561FB: 'Tenter de déslineariser les références d’arrays'
 # 'Try to evenly distribute flow when there are multiple equally likely options.'
 HAEBC34FD2276: 'Tenter de répartir uniformément le flux lorsque plusieurs options aussi probables existent'
+# 'Try to map `do concurrent` loops to OpenMP [none|host|device]'
+H0998E6C983F8: 'Tenter de mapper les boucles `do concurrent` vers OpenMP [none|host|device]'
 # 'Try to propagate nonnull argument attributes from callsites to caller functions.'
 H020E4D562B19: 'Tenter de propager les attributs d’arguments non null des appels vers les fonctions appelantes'
 # 'Try to simplify all loads.'
@@ -17030,8 +17034,6 @@ H294C0D501665: 'Écrire un fichier .dep contenant les en-têtes utilisateur'
 H7C079FE214C7: "Écrire l'assembly dans un fichier pour les tâches d'assemblage"
 # 'Write current time into COFF output (default)'
 HF98DECE931FC: "Écrire l'heure actuelle dans la sortie COFF (par défaut)"
-# 'Write debug info in the new non-intrinsic format. Has no effect if --preserve-input-debuginfo-format=true.'
-H438D54E25242: "Écrire les informations de débogage au format nouveau non intrinsèque. N'a aucun effet si --preserve-input-debuginfo-format=true."
 # 'Write depfile output from -MMD, -MD, -MM, or -M to <file>'
 H7F1DEF2B183F: 'Écrire la sortie du fichier .dep de -MMD, -MD, -MM ou -M vers <file>'
 # 'Write extracted files to a static archive'
@@ -19890,6 +19892,8 @@ H68CDFAD663DD: 'cette déclaration masque un(e) %select{variable locale|variable
 H1C8188316ADE: "cette déclaration utilise __weak, mais l'ARC est désactivé"
 # 'declaration uses __weak, which the current deployment target does not support'
 HEB22F5D20508: 'cette déclaration utilise __weak, que la cible de déploiement actuelle ne prend pas en charge'
+# "declaration uses identifier '%0', which is %select{a reserved identifier|not a reserved identifier|reserved in the global namespace}1"
+HCBB59D1E323D: "la déclaration utilise l'identificateur '%0', qui est %select{un identificateur réservé|pas un identificateur réservé|réservé dans l'espace de noms global}1"
 # 'declaration uses type that is ill-formed in ARC'
 H522AD27CDFBF: 'Cette déclaration utilise un type mal formé dans ARC'
 # 'declarator requires an identifier'
@@ -20952,6 +20956,8 @@ H0F6B0905AE5F: 'Attendu %0 à la fin du module'
 HC79E103ACDFE: 'Attendu %0 dans la clause OpenMP «%1»'
 # 'expected %0 or %1'
 HC08F459555DA: 'Attendu %0 ou %1'
+# 'expected %0 to denote end of parameters, or, another valid parameter of %1'
+H05DB43940E29: 'attendu %0 pour désigner la fin des paramètres, ou un autre paramètre valide de %1'
 # 'expected %0; %1 is a keyword in Objective-C++'
 H62A445966708: 'Attendu %0 ; %1 est un mot-clé en Objective-C++'
 # 'expected %1 after %0'
@@ -23120,6 +23126,8 @@ HC49FDF0B5C89: 'branche invalide vers une construction OpenACC Compute/Combined'
 H921800904C81: "branche invalide hors d'une construction OpenACC Compute/Combined"
 # "invalid branch protection option '%0' in '%1'"
 H69A222420F22: "option de protection de branche invalide '%0' dans '%1'"
+# "invalid case style for %0 '%1'"
+H3DD07CA4DE69: "style invalide pour %0 '%1'"
 # "invalid character '%0' in raw string delimiter; use PREFIX( )PREFIX to delimit raw string"
 H82170E32D0E4: "caractère invalide '%0' dans le délimiteur de chaîne brute ; utilisez PREFIX( )PREFIX pour délimiter la chaîne brute"
 # "invalid comparison flag %0; use 'layout_compatible' or 'must_be_null'"
@@ -24910,10 +24918,6 @@ HFF58B98B1092: 'Les littéraux entiers octaux ne sont pas compatibles avec les n
 H297C91C7799F: "Les littéraux octaux sans le préfixe '0o' sont déconseillés"
 # 'offset of asan shadow mapping [EXPERIMENTAL]'
 HB87160E3C269: "Décalage de l'assemblage d'ombre ASAN [EXPERIMENTAL]"
-# 'offset of on non-POD type %0'
-H3798D618C09F: 'Décalage sur un type non-POD %0'
-# 'offset of on non-standard-layout type %0'
-H1C1DF95C948D: 'Décalage sur un type non-layout-standard %0'
 # 'offset-based plaintext format'
 H4A173EEFA114: 'Format de texte brut basé sur un décalage'
 # 'offsetof of incomplete type %0'
