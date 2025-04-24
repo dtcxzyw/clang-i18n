@@ -384,10 +384,6 @@ H4649232301DD: '%0는 커널 매개변수의 유형으로 사용할 수 없습�
 H223FE9046675: '인수 %0는 %1로 변환할 수 없습니다'
 # '%0 cannot have a dependent return type; use %1 instead'
 H622C863D5758: '%0는 반환 타입이 의존 타입일 수 없습니다; %1을 대신 사용하세요'
-# '%0 cannot take a dependent type as first parameter; use %1 instead'
-HA474A1ABAD69: '%0는 첫 번째 매개변수로 종속된 형식을 사용할 수 없습니다; 대신 %1을 사용해야 합니다'
-# '%0 cannot take a dependent type as first parameter; use size_t (%1) instead'
-H54AA7CDA647F: '%0는 첫 번째 매개변수로 의존적 타입을 사용할 수 없습니다; 대신 size_t(%1)를 사용해야 합니다'
 # "%0 cannot use 'super' because it is a root class"
 HCB7FBC7D0FE7: "%0는 root 클래스이기 때문에 'super'를 사용할 수 없습니다"
 # '%0 causes a section type conflict with %1'
@@ -436,6 +432,8 @@ H833E3DFEF469: '%0는 매개변수 팩의 이름을 참조하지 않습니다; %
 H0775C84F5711: "%0는 '%1' %select{형식 자격어|저장 클래스 지정자}2를 지원하지 않습니다"
 # "%0 does not support the option '%1'"
 HCC61DEFC8375: "%0는 '%1' 옵션을 지원하지 않습니다"
+# '%0 evaluates to a null function pointer'
+H8F92FCB5C04A: '%0는 null 함수 포인터로 평가됩니다'
 # '%0 has C-linkage specified, but returns incomplete type %1 which could be incompatible with C'
 H36CF04C5AD21: '%0는 C 린크지지를 지정했지만, C와 호환되지 않을 수 있는 미완결 형식 %1을 반환합니다'
 # '%0 has C-linkage specified, but returns user-defined type %1 which is incompatible with C'
@@ -612,8 +610,6 @@ HF9706A398326: '%0는 Objective-C 클래스 이름이어야 %1을 %2로 변환�
 H593384CDC4FD: '%0는 어떠한 선언에서도 지정된 경우, 정의 시에도 반드시 지정되어야 합니다'
 # '%0 must be used within a preprocessing directive'
 HAA08D126AF16: '%0는 프리프로세서 지시문 내에서 사용되어야 합니다'
-# '%0 must have at least one parameter'
-H2488FE597801: '%0는 최소 하나의 매개변수가 있어야 합니다'
 # "%0 must not appear in both clauses 'to' and 'link'"
 HC3403F617C92: "%0는 'to'와 'link' 두 절 모두에서 등장해서는 안 됩니다."
 # '%0 must return type %1'
@@ -664,8 +660,6 @@ HD6330A6C968B: "'throw()'%select{| 또는 'noexcept'}1로 선언되지 않았다
 HC155B92BBDDE: '%0 크기가 너무 큽니다'
 # '%0 specified here'
 H2793186BA8E0: '%0가 여기서 지정되었습니다'
-# '%0 takes type size_t (%1) as first parameter'
-H994A3A678C5B: '%0는 첫 번째 매개변수로 size_t 형식 (%1)을 받아야 합니다'
 # '%0 template must have at least two parameters'
 HC33714C2985B: '%0 템플릿은 최소 두 개의 매개변수가 필요합니다'
 # '%0 type %1 not found; include the base header with -finclude-default-header'
@@ -692,6 +686,8 @@ HC0632CD5FF96: "%0는 AST 파일 '%3'에서 %select{비활성화|활성화}1 되
 H39D399F5AEF8: '%0는 역직렬화되었습니다'
 # '%0 was marked unused but was used'
 H40B831F8FB51: '%0는 사용되지 않음으로 표시되었지만 사용되었습니다'
+# '%0 will return the size of the pointer, not the array itself'
+H8CFDDD42E21F: '%0는 포인터의 크기를 반환할 것입니다. 배열 자체의 크기는 아닙니다'
 # '%0%select{ attribute|}1 cannot be applied to a base specifier'
 H11035A3B905C: '%0%select{ 속성|}1은 기본 지정자에 적용될 수 없습니다'
 # '%0%select{ attribute|}1 cannot be applied to a declaration'
@@ -742,6 +738,8 @@ HF0E3AF42C5DD: '%ordinal0 번째 인수는 WebAssembly 테이블이어야 합니
 HB74677AB0CCF: '%ordinal0 인수는 정수여야 합니다'
 # '%ordinal0 argument must match the element type of the WebAssembly table in the %ordinal1 argument'
 HCC6BF06B970F: '%ordinal0번째 인수는 %ordinal1번째 인수의 WebAssembly 테이블의 요소 유형과 일치해야 합니다'
+# '%ordinal3 parameter of%select{| type aware}0%select{| destroying}1 %2 must have type %4'
+H2E6F520064CE: '%select{|type aware}0 %select{|destorying}1 %2의 %ordinal3 매개변수는 %4 형식이어야 합니다'
 # '%plural{1:enumeration value %1 not explicitly handled in switch|2:enumeration values %1 and %2 not explicitly handled in switch|3:enumeration values %1, %2, and %3 not explicitly handled in switch|:%0 enumeration values not explicitly handled in switch: %1, %2, %3...}0'
 HE8DAC9A52D87: '%plural{1:열거형 값 %1이 switch문에서 명시적으로 처리되지 않았습니다|2:열거형 값 %1 및 %2가 switch문에서 명시적으로 처리되지 않았습니다|3:열거형 값 %1, %2, 및 %3이 switch문에서 명시적으로 처리되지 않았습니다|:%0 열거형 값이 switch문에서 명시적으로 처리되지 않았습니다: %1, %2, %3...}0'
 # '%plural{1:enumeration value %1 not handled in switch|2:enumeration values %1 and %2 not handled in switch|3:enumeration values %1, %2, and %3 not handled in switch|:%0 enumeration values not handled in switch: %1, %2, %3...}0'
@@ -816,6 +814,8 @@ H48AF719C5841: '%select{%2의 서브 오브젝트가|%3의 유형 %2가}0 %selec
 H229282294F90: '%select{%diff{첫 번째 $를 두 번째 $에 할당|다른 형식으로 할당}1,0|%diff{첫 번째 $를 형식 두 번째 $의 매개변수에 전달|다른 형식의 매개변수에 전달}0,1|%diff{함수의 결과 형식 두 번째 $에서 첫 번째 $를 반환|다른 반환 형식의 함수에서 반환}0,1|%diff{첫 번째 $를 두 번째 $ 형식으로 변환|형식 간 변환}0,1|%diff{두 번째 $ 형식의 표현식으로 첫 번째 $를 초기화|다른 형식의 표현식으로 초기화}0,1|%diff{첫 번째 $를 형식 두 번째 $의 매개변수에 전송|다른 형식의 매개변수에 전송}0,1|%diff{첫 번째 $를 두 번째 $ 형식으로 캐스팅|형식 간 캐스팅}0,1}2 중첩 포인터의 주소 공간을 변경합니다'
 # '%select{%diff{assigning $ to $|assigning to different types}1,0|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2 changes address space of pointer'
 H34858D5559B9: '%select{%diff{첫 번째 $를 두 번째 $에 할당|不同类型 간 할당}1,0|%diff{$를 $ 형식의 매개변수에 전달|다른 형식 매개변수로 전달}0,1|%diff{결과 형식 $인 함수에서 $ 반환|반환 형식이 다른 함수에서 반환}0,1|%diff{$를 $ 형식으로 변환|형식 간 변환}0,1|%diff{$ 형식의 표현식으로 $ 초기화|다른 형식 표현식으로 초기화}0,1|%diff{매개변수 $에 $ 전송|다른 형식 매개변수로 전송}0,1|%diff{$를 $ 형식으로 캐스팅|형식 간 캐스팅}0,1}2 포인터의 주소 공간이 변경됩니다'
+# '%select{%diff{assigning $ to $|assigning to different types}1,0|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2 changes pointer authentication of pointee type'
+H8986390D3B16: '%select{%diff{첫 번째 매개변수 $와 두 번째 매개변수 $ 간 할당|不同类型 간 할당}1,0|%diff{두 번째 매개변수 $를 첫 번째 매개변수 형식 $에 전달|parameter of different type}0,1|%diff{함수 결과 타입 $에서 $를 반환|returning from function with different return type}0,1|%diff{$를 $ 형식으로 변환|casting between types}0,1|%diff{두 번째 매개변수 $를 첫 번째 매개변수 $로 초기화|initializing with expression of different type}0,1|%diff{두 번째 매개변수 $를 첫 번째 매개변수 $에 전송|sending to parameter of different type}0,1|%diff{$를 $ 형식으로 캐스팅|casting between types}0,1}2 포인터 인증의 pointee 형식이 변경됩니다'
 # '%select{%diff{assigning $ to $|assigning to different types}1,0|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2 changes retain/release properties of pointer'
 HCD0B002FCAD8: '%select{%diff{할당 $를 $에|다른 타입에 할당}1,0|%diff{전달 $를 타입 $인 파라미터에|다른 타입 파라미터에 전달}0,1|%diff{반환 $를 타입 $인 함수에서|다른 반환 타입인 함수에서 반환}0,1|%diff{변환 $를 타입 $로|타입 간 변환}0,1|%diff{초기화 $를 타입 $ 표현식으로|다른 타입 표현식으로 초기화}0,1|%diff{전송 $를 타입 $ 파라미터에|다른 타입 파라미터에 전송}0,1|%diff{캐스팅 $를 타입 $로|타입 간 캐스팅}0,1}2 포인터의 retain/release 속성을 변경합니다'
 # "%select{%diff{assigning to $ from $|assigning to different types}0,1|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2 converts between pointers to integer types %select{with different sign|where one is of the unique plain 'char' type and the other is not}3"
@@ -910,24 +910,24 @@ HE09C48EB126A: '%select{모든|두 번째 및 세 번째}0 인수는 %1의 스�
 H561F9F6DB91B: '%select{속성 지정자 시퀀스|%0}1 이 위치에 C++23 확장 기능입니다'
 # '%select{an attribute specifier sequence|%1}0 in this position is incompatible with C++ standards before C++23'
 HEF130F97BB12: '%select{속성 지정자 시퀀스|%1}0는 C++23 이전 표준과 이 위치에서 호환되지 않습니다'
+# '%select{and|because}0 %1 (%2 %3 %4) evaluated to false'
+H66E1D07D582D: '%select{그리고|왜냐하면}0 %1 (%2 %3 %4)가 거짓으로 평가되었습니다'
 # '%select{and|because}0 %1 does not satisfy %2'
 H1152B396A251: '%select{그리고|왜냐하면}0 %1는 %2를 충족하지 않습니다'
 # '%select{and|because}0 %1 does not satisfy %2:'
 H7FDA8323151A: '%select{그리고|왜냐하면}0 %1은 %2를 만족하지 않습니다:'
-# "%select{and|because}0 '%1' (%2 %3 %4) evaluated to false"
-H5A2EAB383E7A: "%select{와|왜냐하면}0 '%1' (%2 %3 %4) 가 거짓으로 평가됨"
-# "%select{and|because}0 '%1' evaluated to false"
-HD9EC26C0E6B0: '%select{그리고|때문에}0 ‘%1’이(가) false로 평가되었습니다'
-# "%select{and|because}0 '%1' may throw an exception"
-HA87D7335D9EB: "%select{그리고|왜냐하면}0 '%1'은 예외를 발생시킬 수 있습니다"
+# '%select{and|because}0 %1 evaluated to false'
+H26D0E6409D84: '%select{그리고|왜냐하면}0 %1가 거짓으로 평가되었습니다'
+# '%select{and|because}0 %1 may throw an exception'
+H22182AFC34C5: '%select{그리고|왜냐하면}0 %1은 예외를 발생시킬 수 있습니다'
 # "%select{and|because}0 '%1' would be invalid"
 HAD3CC48247E5: "%select{그리고|때문에}0 '%1'은(는) 유효하지 않습니다"
 # "%select{and|because}0 '%1' would be invalid%2"
 HEF46AC24BE27: '%select{그리고|왜냐하면}0 ‘%1’은 유효하지 않을 것입니다%2'
 # "%select{and|because}0 '%1' would be invalid: %2"
 HD3831227C190: "%select{그리고|왜냐하면}0 '%1'은 잘못되었습니다: %2"
-# "%select{and|because}0 type constraint '%1' was not satisfied:"
-HD561B1DB876A: "%select{그리고|왜냐하면}0 유형 제약 '%1'이 충족되지 않았습니다:"
+# '%select{and|because}0 type constraint %1 was not satisfied:'
+H0831E4850047: '%select{그리고|왜냐하면}0 형식 제약 %1이 충족되지 않았습니다:'
 # '%select{anonymous struct|union}0 member %1 has a non-trivial %select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}2'
 H443C398B6494: '%select{익명 구조体型|유니온}0 멤버 %1은 비트리비얼한 %select{디폴트 생성자|복사 생성자|이동 생성자|복사 대입 연산자|이동 대입 연산자|소멸자}2를 가지고 있습니다.'
 # '%select{anonymous struct|union}0 member %1 with a non-trivial %select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}2 is incompatible with C++98'
@@ -1058,8 +1058,8 @@ H3C92D92BB26F: '%select{람다의 디폴트 생성|할당}0는 C++20 이전 표�
 HF80E1E94C448: '%select{기본 생성자의|상속받은 생성자의}0 %1의 기본 생성자가 암묵적으로 삭제되었습니다. 모든 %select{데이터 멤버|익명 유니온 멤버의 데이터 멤버}2가 const 자격이 있음'
 # '%select{default constructor of|constructor inherited by}0 %1 is implicitly deleted because field %2 of %select{reference|const-qualified}4 type %3 would not be initialized'
 H3F45472DFCD6: '%select{기본 생성자의|상속받은 생성자의}0 %1의 기본 생성자가 암묵적으로 삭제되었습니다. %2의 %select{참조|const 자격이 있는}4 타입 %3는 초기화되지 않음'
-# '%select{default constructor of|copy constructor of|move constructor of|copy assignment operator of|move assignment operator of|destructor of|constructor inherited by}0 %1 is implicitly deleted because %select{base class %3|%select{||||variant }4field %3}2 %select{has %select{no|a deleted|multiple|an inaccessible|a non-trivial}4 %select{%select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor|%select{default|corresponding|default|default|default}4 constructor}0|destructor}5%select{||s||}4|is an ObjC pointer}6'
-H1BB10C6BA0EA: '%select{기본 생성자 of|복사 생성자 of|이동 생성자 of|복사 대입 연산자 of|이동 대입 연산자 of|소멸자 of|상속받은 생성자 of}0 %1은(는) %select{기반 클래스 %3|%select{||||variant }4필드 %3}2 %select{가 %select{없거나|삭제된|여러|접근 불가능한|비삼칙형인}4 %select{%select{기본 생성자|복사 생성자|이동 생성자|복사 대입 연산자|이동 대입 연산자|소멸자|%select{기본|대응하는|기본|기본|기본}4 생성자}0|소멸자}5%select{||s||}4|ObjC 포인터입니다}6 때문에 암시적으로 삭제되었습니다.'
+# "%select{default constructor of|copy constructor of|move constructor of|copy assignment operator of|move assignment operator of|destructor of|constructor inherited by}0 %1 is implicitly deleted because %select{base class %3|%select{||||variant }4field %3}2 %select{has %select{no|a deleted|multiple|an inaccessible|a non-trivial}4 %select{%select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor|%select{default|corresponding|default|default|default}4 constructor}0|destructor}5%select{||s||}4|is an ObjC pointer|has an address-discriminated '__ptrauth' qualifier}6"
+H8B06D5202BF4: "%select{디폴트 생성자 of|복사 생성자 of|이동 생성자 of|복사 할당 연산자 of|이동 할당 연산자 of|소멸자 of|기반 클래스에 상속된 생성자 of}0 %1은 %select{기반 클래스 %3|%select{||||variant }4필드 %3}2 %select{이 %select{없는|삭제된|복수의|접근 불가능한|비平凡}4 %select{%select{디폴트 생성자|복사 생성자|이동 생성자|복사 할당 연산자|이동 할당 연산자|소멸자|%select{디폴트|대응하는|디폴트|디폴트|디폴트}4 생성자}0|소멸자}5%select{||s||}4|ObjC 포인터임|주소 구분 '__ptrauth' 자격 증명을 가짐}6 때문에 암묵적으로 삭제되었습니다"
 # "%select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}0 cannot be 'constexpr' in a class with virtual base class"
 HAA0AD1F4C5AC: "%select{기본 생성자|복사 생성자|이동 생성자|복사 대입 연산자|이동 대입 연산자|소멸자}0는 가상 기반 클래스를 갖는 클래스에서 'constexpr'일 수 없습니다"
 # '%select{defaulted|deleted}0 function definitions are a C++11 extension'
@@ -1248,6 +1248,8 @@ HA353FC8D883A: "%select{구조体型이 아닌|클래스 형이 아닌|유니온
 H7895E4BCBED9: '%select{비가상|virtual}0 파생이 여기서 필요합니다'
 # "%select{non-|function }0pointer argument to '__builtin_is_within_lifetime' is not allowed"
 HEC6E2A0FBA29: "%select{비-|함수 }0포인터 인수는 '__builtin_is_within_lifetime'에 허용되지 않습니다"
+# '%select{non-|}0type aware %1 declared here in %2'
+HC09774CA5903: '%select{non-|}0type aware %1은 %2에 여기 선언되었습니다'
 # "%select{no|too many}0 integer expression arguments provided to OpenACC 'num_gangs' %select{|clause: '%1' directive expects maximum of %2, %3 were provided}0"
 HDF54FE517944: "%select{없음|너무 많음}0 정수 표현 인수가 OpenACC 'num_gangs' %select{|절: '%1' 지시문은 최대 %2개를 요구하지만 %3개가 제공되었습니다}0에 제공되었습니다"
 # "%select{orphaned 'omp section' directives are prohibited, it|'omp section' directive}0 must be closely nested to a sections region%select{|, not a %1 region}0"
@@ -1340,6 +1342,8 @@ HDAB148B74E30: '%select{reinterpret_cast|C-style cast}0에서 %1에서 %2로의 
 H1688ED0E5178: '%select{reinterpret_cast|dynamic_cast|%select{이 변환|reinterpret_cast 변환을 수행하는 캐스트}|%1 형식의 캐스트}0은 상수 표현식에서 허용되지 않습니다%select{| C++20 이전 표준에서는||}0'
 # '%select{remainder|division}0 by zero is undefined'
 HDDF6DBF3AFB2: '%select{나머지|나눗셈}0은 0으로 나누면 정의되지 않습니다'
+# "%select{return type|parameter type|property}1 may not be qualified with '__ptrauth'; type is %0"
+H89CAD73DCBC0: "%select{반환 형식|매개변수 형식|속성}1은 '__ptrauth' 자격 증명으로 지정할 수 없습니다. 형식은 %0입니다"
 # '%select{returning|passing}0 a VL-dependent argument %select{from|to}0 a function with a different streaming-mode is undefined behaviour when the streaming and non-streaming vector lengths are different at runtime'
 HD835E99E7B94: '%select{반환하는|전달하는}0 VL 의존 인수 %select{에서|로}0 스트리밍 모드가 다른 함수는 streaming 및 non-streaming 벡터 길이가 실행 시 다른 경우 정의되지 않은 동작입니다'
 # '%select{returning|passing}0 a VL-dependent argument %select{from|to}0 a locally streaming function is undefined behaviour when the streaming and non-streaming vector lengths are different at runtime'
@@ -1414,6 +1418,8 @@ H7C0418F179E9: '%select{형식 태그|인자}0 인덱스 %1은 지정된 인자�
 H7F72DD3ED811: '%select{typedef|유형 별칭|유형 별칭 템플릿}0 다른 유형으로 재정의%diff{ ($ 대 $)|}1,2'
 # '%select{uninitialized use occurs|variable is captured by block}0 here'
 H80571A54148A: '%select{초기화되지 않은 사용이 발생합니다|변수가 블록에 포착됩니다}0 여기서'
+# "%select{unknown|duplicate}0 modifier %1 in OpenACC modifier-list on '%2' clause"
+H8603FBD5B2C6: "OpenACC modifier-list의 '%2' 절에서 %select{알 수 없는|중복된}0 수정자 %1이 발견되었습니다"
 # '%select{unknown|unsupported}0 machine mode %1'
 HB579643BB1CB: '%select{알 수 없는|지원하지 않는}0 머신 모드 %1'
 # '%select{unsafe pointer operation|unsafe pointer arithmetic|unsafe buffer access|function introduces unsafe buffer manipulation|unsafe invocation of %1|field %1 prone to unsafe buffer manipulation}0'
@@ -1492,6 +1498,14 @@ H00E98F1D44F7: '%select{|두 번째 }0%1 토큰이 여기 있습니다'
 HD806C936F5D9: '%select{|static_cast|reinterpret_cast|dynamic_cast|C-style cast|functional-style cast|}0에서 %1에서 %2로 변환하는 %select{|: %4}3 삭제된 함수를 사용합니다'
 # '%select{|success |failure }0memory order argument to atomic operation is invalid'
 HFAC869D2863E: '%select{|성공 |실패 }0원자 연산의 메모리 순서 인수는 유효하지 않음'
+# '%select{|type aware }0%select{|destroying }1%2 cannot take a dependent type as its %ordinal3 parameter; use %4 instead'
+H965362A13DF2: '%select{|type aware }0%select{|destorying }1%2의 %ordinal3 매개변수는 종속 형식을 취할 수 없습니다. %4를 사용하세요'
+# '%select{|type aware }0%select{|destroying }1%2 cannot take a dependent type as its %ordinal3 parameter; use %5 (%4) instead'
+H8DC61B9CED29: '%select{|type aware }0%select{|destorying }1%2의 %ordinal3 매개변수는 종속 형식을 취할 수 없습니다. %5 (%4)를 사용하세요'
+# '%select{|type aware }0%select{|destroying }1%2 must have at least %select{|one|two|three|four|five}3 parameter%s3'
+HDBF7BEA2895C: '%select{|type aware }0%select{|destorying }1%2는 최소 %select{|1개|2개|3개|4개|5개}3 매개변수가 필요합니다'
+# '%select{|type aware }0%select{|destroying }1%2 takes type %5 (%4) as %ordinal3 parameter'
+HCA17F3BCF987: '%select{|type aware }0%select{|destorying }1%2는 %ordinal3 매개변수로 %5 (%4) 형식을 취합니다'
 # "%select{|umbrella }0header '%1' not found"
 H3FDB64D57A92: "%select{|umbrella }0헤더 '%1'을 찾을 수 없음"
 # '%select{|unsafe_unretained|strong|weak}1 property %0 may not also be declared %select{|__unsafe_unretained|__strong|__weak|__autoreleasing}2'
@@ -1650,8 +1664,6 @@ H5EA2B901E3DD: "'%0'에 GCC 설치본이 포함되어 있지 않습니다"
 H5F193B6442A3: "‘%0’은 '-%1'을 지원하지 않습니다; 플래그가 무시되었습니다."
 # "'%0' does not support '-moutline'; flag ignored"
 H8FCF49E8EFFE: "'%0'는 '-moutline'을 지원하지 않습니다; 플래그 무시됨"
-# "'%0' evaluates to a null function pointer"
-HC166C9B46BC9: '‘%0’은 null 함수 포인터로 평가됩니다'
 # "'%0' file not found"
 HE40852833202: "'%0' 파일을 찾을 수 없습니다"
 # '\'%0\' file not found with <angled> %select{include|import}1; use "quotes" instead'
@@ -1790,8 +1802,6 @@ H6C8DA523F6B3: "'%0'은 항상 넘침이 발생할 것입니다; 목적지 버�
 H6A8E065AE173: "'%0'은 항상 오버플로우가 발생합니다; 목적지 버퍼의 크기는 %1이지만, 크기 인수는 %2입니다"
 # "'%0' will always overflow; destination buffer has size %1, but the source string has length %2 (including NUL byte)"
 H4E1F13141ECB: '‘%0’는 항상 오버플로우가 발생합니다. 목적지 버퍼의 크기는 %1이지만, 소스 문자열의 길이는 %2(NUL 바이트 포함)입니다'
-# "'%0' will return the size of the pointer, not the array itself"
-H10D34141626D: "'%0'는 배열 자체가 아닌 포인터의 크기를 반환합니다"
 # "'%0' within '%1'"
 HFD060F45F3E4: '‘%0’은 ‘%1’ 내부에 있습니다'
 # "'%0': selected processor lacks floating point registers"
@@ -2002,6 +2012,12 @@ HA19FB1CE432F: "'__leave' 문이 __try 블록 내부에 있지 않습니다"
 H0B1BBFD1CDEA: "'__local' 변수에는 초기화자를 가질 수 없습니다"
 # "'__pixel' must be preceded by '__vector'.  '%0' declaration specifier not allowed here"
 H88B3B9C40157: "'__pixel'은 '__vector' 앞에 위치해야 합니다. '%0' 선언 지정자는 여기서 허용되지 않습니다"
+# "'__ptrauth' qualification mismatch%diff{ ($ and $)|}0,1"
+H6E0E8F990A99: "'__ptrauth' 자격 증명 불일치%diff{ ($와 $)|}0,1"
+# "'__ptrauth' qualifier must take between 1 and 3 arguments"
+HD53DD31D4F33: "'__ptrauth' 자격 증명은 1~3개의 인수만 허용됩니다"
+# "'__ptrauth' qualifier only applies to pointer types; %0 is invalid"
+H7B0BBE1DC52F: "'__ptrauth' 자격 증명은 포인터 형식에만 적용됩니다. %0는 유효하지 않습니다"
 # "'__super' cannot be used with a using declaration"
 HE7865E9E15F7: "'__super'는 using 선언에서 사용할 수 없습니다."
 # "'__thread' before '%0'"
@@ -2064,6 +2080,8 @@ H5112D2E8FE1B: "'callback' 속성 인수 %0는 알려진 함수 매개변수가 
 H11C2E7DC48A0: "'callback' 속성의 callee가 함수 형식을 갖지 않습니다"
 # "'callback' attribute callee may not be variadic"
 H5339D3799089: "'callback' 특성 callee는 가변 인수를 가질 수 없습니다"
+# "'callback' attribute references function of type %0 which expects %1 %plural{1:argument|:arguments}1 but attribute specifies %2 parameter index %plural{1:argument|:arguments}2"
+HE68D93E84E5E: "'callback' 속성은 %0 형식의 함수를 참조하는데, 이 함수는 %1 %plural{1:인수|:인수}1를 기대하지만 속성은 %2 매개변수 인덱스 %plural{1:인수|:인수}2를 지정했습니다"
 # "'callback' attribute specifies invalid callback callee"
 HAE51B1A6C397: "'callback' 속성은 유효하지 않은 콜백 호출 대상을 지정했습니다"
 # "'callback' attribute specifies no callback callee"
@@ -2276,6 +2294,8 @@ H60F2BCD19874: "'nonmonotonic' 수정자는 'dynamic' 또는 'guided' 스케줄 
 H0D4CBB499E30: "'nonnull' 속성이 포인터 인자가 없는 함수에 적용됨"
 # "'nonnull' attribute when used on parameters takes no arguments"
 H8544A5398585: "'nonnull' 속성은 매개변수에 사용될 때 인수를 받지 않습니다."
+# "'not_tail_called' attribute prevents being called as a tail call"
+HD566EBB2A50E: "'not_tail_called' 속성이 꼬리 호출로 호출되는 것을 방지합니다"
 # "'nothrow' attribute conflicts with exception specification; attribute ignored"
 HA43C7748DBD1: "'nothrow' 특성은 예외 사양과 충돌하므로 무시됩니다"
 # "'nowait' clause is here"
@@ -2460,8 +2480,8 @@ HE4633A40CE28: "'this' 포인터는 정의된 C++ 코드에서 NULL일 수 없�
 H95FED6FF2C73: "'this' 포인터 참조는 naked 함수에서 허용되지 않습니다."
 # "'trivial_abi' cannot be applied to %0"
 H39CEA0BB8E5A: "'trivial_abi'는 %0에 적용할 수 없습니다"
-# "'trivial_abi' is disallowed on %0 because %select{its copy constructors and move constructors are all deleted|it is polymorphic|it has a base of a non-trivial class type|it has a virtual base|it has a __weak field|it has a field of a non-trivial class type}1"
-HD222FF73C208: "'trivial_abi'는 %0에 적용될 수 없습니다. %select{복사 생성자와 이동 생성자가 모두 삭제되었습니다|다형적 클래스이기 때문입니다|기반 클래스가 비자명 클래스 타입을 가지기 때문입니다|가상 기반 클래스가 있기 때문입니다|약한 필드(__weak field)가 있기 때문입니다|비자명 클래스 타입의 필드가 있기 때문입니다}1"
+# "'trivial_abi' is disallowed on %0 because %select{its copy constructors and move constructors are all deleted|it is polymorphic|it has a base of a non-trivial class type|it has a virtual base|it has a __weak field|it has a field of a non-trivial class type|it has an address-discriminated '__ptrauth' field}1"
+HF2341EAAEAEC: "'trivial_abi'는 %0에서 금지되었습니다. %select{복사 생성자와 이동 생성자가 모두 삭제됨|폴리모픽 클래스임|비平凡 클래스 형식의 기반 클래스를 가짐|가상 기반 클래스를 가짐|__weak 필드를 가짐|비平凡 클래스 형식의 필드를 가짐|주소 구분 '__ptrauth' 필드를 가짐}1"
 # "'true' is not defined, evaluates to 0"
 HEC6C8880A6A3: "'true'가 정의되지 않았습니다. 0으로 평가됩니다"
 # "'type_tag_for_datatype' attribute requires the initializer to be an %select{integer|integral}0 constant expression"
@@ -2836,6 +2856,8 @@ H652DA545BF0D: '함수의 총 표본 수가 지정된 백분위를 초과하면,
 H3FD0C1E415AD: '전역으로 가정되는 함수 이름으로, 흥미로운 그래프의 루트로 처리되어 다른 유사한 그래프와 독립적으로 프로파일링됩니다.'
 # 'A huge scheduling region will have maps reduced by this many nodes at a time. Defaults to HugeRegion / 2.'
 HAEEA6B54FAD5: '대규모 스케줄링 영역의 맵은 한 번에 이렇게 많은 노드 수만큼 감소합니다. 기본값은 HugeRegion / 2입니다.'
+# 'A key=value pair. Replace __nvvm_reflect(name) with value.'
+H3D02297FABD7: '키=값 쌍입니다. __nvvm_reflect(name)을 값으로 대체합니다.'
 # 'A lexical block (Function, Class, etc.).'
 HC41EB530ACBA: 'лекс(лекс) 블록(함수, 클래스 등).'
 # "A list of mangled vtable type info names. Classes specified by the type info names and their derived ones will not be vtable-ICP'ed. Useful when the profiled types and actual types in the optimized binary could be different due to profiling limitations. Type info names are those string literals used in LLVM type metadata"
@@ -2896,10 +2918,8 @@ H104573A3D1B6: '각 루프 차원에 대한 타일 크기, --polly-default-tile-
 H8DEB87E7711B: '각 루프 차원별 타일 크기, --polly-register-tile-size로 채워집니다'
 # 'A tool to bundle several input files of the specified type <type> \nreferring to the same source file but different targets into a single \none. The resulting file can also be unbundled into different files by \nthis tool if -unbundle is provided.\n'
 HD409DEDBF7C5: '지정된 유형 <type>의 동일한 소스 파일을 가리키지만 다른 타겟을 위한 여러 입력 파일을 하나로 묶는 도구입니다.\n-umundle 옵션이 제공되면 이 도구로 결과 파일을 다시 분리할 수 있습니다.\n'
-# 'A tool to detect the presence of AMDGPU devices on the system. \n\nThe tool will output each detected GPU architecture separated by a\nnewline character. If multiple GPUs of the same architecture are found\na string will be printed for each\n'
-H8EA7CFE7591E: '시스템에 AMDGPU 디바이스가 존재하는지 감지하는 도구입니다.\n\n이 도구는 각각 감지된 GPU 아키텍처를 줄바꿈 문자로 구분하여 출력합니다. \n동일한 아키텍처의 GPU가 여러 개 발견되면 각각에 대해 문자열이 출력됩니다.'
-# 'A tool to detect the presence of NVIDIA devices on the system. \n\nThe tool will output each detected GPU architecture separated by a\nnewline character. If multiple GPUs of the same architecture are found\na string will be printed for each\n'
-H813C62D59D1D: '시스템에 NVIDIA 장치가 존재하는지 감지하는 도구입니다.\n\n이 도구는 각각 감지된 GPU 아키텍처를 줄바꿈 문자로 구분하여 출력합니다. 동일한 아키텍처의 GPU가 여러 개 발견되면 각각에 대해 문자열이 출력됩니다'
+# 'A tool to detect the presence of offloading devices on the system. \n\nThe tool will output each detected GPU architecture separated by a\nnewline character. If multiple GPUs of the same architecture are found\na string will be printed for each\n'
+H1DF8966C5917: '시스템에 존재하는 오프로딩 디바이스를 탐지하는 도구입니다.\n\n이 도구는 탐지된 각 GPU 아키텍처를 개행 문자로 구분하여 출력합니다. 동일한 아키텍처의 GPU가 여러 개 발견되면 각각에 대해 문자열을 출력합니다.'
 # 'A tool to format C/C++/Java/JavaScript/JSON/Objective-C/Protobuf/C# code.\n\nIf no arguments are specified, it formats the code from standard input\nand writes the result to the standard output.\nIf <file>s are given, it reformats the files. If -i is specified\ntogether with <file>s, the files are edited in-place. Otherwise, the\nresult is written to the standard output.\n'
 HBD33E3D62435: 'C/C++/Java/JavaScript/JSON/Objective-C/Protobuf/C# 코드를 포맷팅하는 도구입니다.\n\n인수가 지정되지 않으면 표준 입력에서 코드를 읽어 포맷팅하고 표준 출력에 결과를 작성합니다.\n<file>이 주어지면 해당 파일을 재포맷팅합니다. -i 옵션과 함께 <file>이 주어지면 파일을 직접 수정합니다. 그렇지 않으면\n결과를 표준 출력에 작성합니다.\n'
 # 'A tool to generate an optimization report from YAML optimization record files.\n'
@@ -3138,8 +3158,6 @@ HD58C1F70322E: '어셈블리 파일에 .note.gnu.property와 BTI를 추가합니
 H497BB320D249: '어셈블리 파일에 .note.gnu.property를 BTI와 함께 추가합니다 (AArch64 전용)'
 # 'Add <dir> to system include search path, as if in %INCLUDE%'
 H8CB70533A0CD: '시스템 include 검색 경로에 <dir>을 추가합니다. %INCLUDE%에 있는 것처럼'
-# 'Add AMDGPU function attributes'
-H4A9EBA76009C: 'AMDGPU 함수 속성 추가'
 # 'Add AMDGPU uniform metadata'
 HE950C74F7CBF: 'AMDGPU uniform metadata를 추가합니다'
 # 'Add C++ implicit destructors to CFGs for all analyses'
@@ -3336,6 +3354,8 @@ H2B37E4881B6D: '옵션 --threads-x의 별칭'
 HAAA114F8EC1E: '--unsymbolized-profile의 별칭'
 # 'Alias for -Xclang'
 HCD7F2ECE0041: '옵션 -Xclang의 별칭'
+# 'Alias for -Xclangas'
+H132AA9B77570: '-Xclangas의 별칭'
 # 'Alias for -all-stacks'
 HBF7B049FB306: '모든 스택을 출력하는 옵션의 별칭'
 # 'Alias for -check-prefix permitting multiple comma separated values'
@@ -3418,6 +3438,8 @@ H4F2747860017: '선택된 명령어를 정렬하여 Intel의 에러타 skx102를
 H93CADD3D554F: '정렬된 할당/해제 함수는 사용할 수 없습니다'
 # 'Alignment of bundle for binary files'
 H746C20CFEB90: '바이너리 파일용 번들 정렬'
+# 'All Pointer Authentication scanners'
+HE5781D397620: '모든 포인터 인증 스캐너'
 # "All compile commands come from LSP and 'compile_commands.json' files are ignored"
 H35E96D7E99B1: "모든 컴파일 명령은 LSP에서 생성되며 'compile_commands.json' 파일은 무시됩니다"
 # "All compile commands come from the 'compile_commands.json' files"
@@ -3432,6 +3454,8 @@ H8494FD0B179D: '재생에 포함되지 않은 모든 결정을 원래 권고자�
 HA0232E12FF85: '모든 엣지.'
 # 'All elements.'
 HD1FF88F0C212: '모든 요소'
+# 'All implemented scanners'
+HC6B3DAC5AC10: '구현된 모든 스캐너'
 # 'All input lines'
 HAA2659CBF3BE: '모든 입력 라인'
 # 'All known subsections'
@@ -3450,14 +3474,16 @@ H5309722D6033: '적합한 모든 변수에는 TOC 데이터 변환이 적용됩�
 H69D2DF6DECC5: '모든 vtables에는 타입 정보가 있습니다.'
 # 'All warnings.'
 H294EA62DA621: '모든 경고.'
-# 'Allocate all arrays of unknown size and temporary arrays in stack memory'
-H3AE89D60479D: '알ЛО우 크기의 배열과 임시 배열을 스택 메모리에 할당합니다'
+# 'Allocate -frepack-arrays temporaries on the heap (default)'
+H23DD0FDC2602: '-frepack-arrays 임시 변수를 힙에 할당 (기본)'
 # 'Allocate array temporaries on the heap (default)'
 HF192F6B25D6C: '힙에 배열 일시 객체 할당 (기본값)'
 # 'Allocate from a slab of the given size (allowable suffixes: Kb, Mb, Gb. default = Kb)'
 H8D1230E33C0D: '지정된 크기의 슬래브에서 할당 (허용되는 접미사: Kb, Mb, Gb. 기본값은 Kb입니다)'
 # 'Allocate memory upfront rather than on-demand'
 H067B160BE7A4: '필요에 따라 메모리를 할당하는 대신 미리 메모리를 할당합니다'
+# 'Allocate temporary arrays for -frepack-arrays in stack memory'
+H60EEEE1BB97A: '-frepack-arrays에 의해 생성된 임시 배열을 스택 메모리에 할당합니다'
 # 'Allocate to an enum type only as many bytes as it needs for the declared range of possible values'
 H5482421F99A5: 'enum 형식에 할당할 때는 선언된 가능한 값 범위에 필요한 바이트 수만 할당해야 합니다'
 # "Allow '$' in identifiers"
@@ -3616,6 +3642,8 @@ HB6DC09C0C648: 'Attributor가 정확하지 않은 정의에 대해 얕은 래퍼
 H2595BA1E26D0: 'Attributor가 콜 사이트별 특정 분석을 수행할 수 있도록 허용'
 # 'Allow the Attributor to use IP information derived from non-exact functions via cloning'
 H0E8CFBCDE797: 'Attributor가 복제를 통해 정확하지 않은 함수에서 유래된 IP 정보를 사용할 수 있도록 허용'
+# 'Allow the compiler to assume that each translation unit has a unique source file name at link time'
+H43C1574D99AB: '링크 시 각 번역 단위가 고유의 소스 파일 이름을 가정하도록 허용합니다'
 # 'Allow the detection of full functions'
 H6DD82ED565A3: '전체 함수 감지 허용'
 # 'Allow the formation of VW_W operations (e.g., VWADD_W) with splat constants'
@@ -3870,6 +3898,8 @@ H40EE5717199D: '분산 루프가 참여하는 팀보다 더 많은 반복을 가
 H63C989F614F3: '세분화된 메모리에 대한 원자 연산이 없다고 가정합니다'
 # 'Assume no atomic operations on remote memory'
 H0DEE4D7E8196: '원격 메모리에서 원자 연산이 없다고 가정합니다'
+# 'Assume that UAVs/SRVs may alias'
+HCF25B628FDEC: 'UAV/SRV가 별칭을 가질 수 있다고 가정합니다'
 # "Assume that exception objects' destructors are non-throwing"
 HA13DECB16694: '예외 객체의 소멸자가 던지지 않는다고 가정합니다'
 # 'Assume that execution stops at trap instruction'
@@ -3916,6 +3946,8 @@ H08A666FD7289: '함수에 디버그 정보를 첨부합니다'
 HED658EC60D0F: '디버그 정보를 모든 항목에 연결합니다'
 # 'Attempt coalescing during PBQP register allocation.'
 H7648F369F9C7: 'PBQP 레지스터 할당 중 결합을 시도합니다.'
+# 'Attempt to allocate array temporaries created under -frepack-arrays on the stack'
+HB0B7FBFAAEA5: '-frepack-arrays에서 생성된 배열 임시 변수를 스택에 할당을 시도합니다'
 # 'Attempt to allocate array temporaries on the stack, no matter their size'
 H1898E5AD9AA7: '배열 일시 객체를 스택에 할당하려고 시도함, 크기에 관계없이'
 # 'Attempt to drop solution if it is less profitable'
@@ -4322,6 +4354,8 @@ H8D990FD681E2: '탐욕스러운 레지스터 할당기의 라이브 레인지 �
 HD4EADD7ABB24: '가변 인자 호출 규칙 변경'
 # 'Check CFA info and insert CFI instructions if needed'
 HB1FAB917FF49: 'CFA 정보를 확인하고 필요한 경우 CFI 지시문을 삽입합니다'
+# 'Check all diagnostics (expected, unexpected, near-misses)'
+HDD500F45AE52: '모든 진단을 확인 (예상, 예상되지 않음, 근접 미스)'
 # 'Check debug info from -debugify'
 H8AF6D59AB27A: '-debugify에서 디버그 정보 확인'
 # 'Check debug info from -debugify-function'
@@ -4344,6 +4378,8 @@ H105B69431A40: '알려지지 않은 블록에 대한 블록 빈도 조회 여부
 HA0A80D536062: '입력된 이질적인 아카이브가 TargetID 규칙에 따라 유효한지 확인합니다.\n'
 # 'Check module hash using the argument as a string table'
 H43F3CCEA9F64: '인수를 문자열 테이블로 사용하여 모듈 해시 확인'
+# 'Check only expected diagnostics'
+H1D795C0D9F5F: '예상 진단만 확인'
 # 'Check pointer authentication auth/resign failures'
 HBEEB7E32E077: '포인터 인증 인증/재서명 실패 확인'
 # 'Check stack-use-after-scope'
@@ -4878,6 +4914,8 @@ H6E851EAFE0D8: 'DWO 출력 파일 이름'
 H7800E8E1E097: 'DXContainer 전역 에미터'
 # 'DXIL Array Flattener'
 H8F82D482C158: 'DXIL 배열 평탄화기'
+# 'DXIL CBuffer Access'
+HD94C3B98AA6B: 'DXIL CBuffer 접근'
 # 'DXIL Data Scalarization'
 H8CA416EED877: 'DXIL 데이터 스칼라화'
 # 'DXIL Finalize Linkage'
@@ -5622,8 +5660,6 @@ HB0977BC6B970: 'sext.w 제거를 비활성화합니다'
 H484EAB4F216F: '부호 확장 명령어 제거를 비활성화'
 # 'Disable replace with vector math call pass'
 HC8A504A99877: '벡터 수학 호출로 변환하는 패스를 비활성화합니다'
-# "Disable retain SubstTemplateTypeParmType nodes in the AST's representation of alias template specializations"
-H7BAFBB14B677: '_ALIAS 템플릿 특수화의 AST 표현에서 SubstTemplateTypeParmType 노드 유지 기능을 비활성화합니다'
 # 'Disable sanitizer coverage instrumentation for modules and functions that match the provided special case list, even the allowed ones'
 H8AE573AF38D9: '제공된 특수 사례 목록과 일치하는 모듈과 함수의 샌타이저 커버리지 인스트루먼테이션을 비활성화합니다. 허용된 항목들도 포함됩니다'
 # 'Disable sanitizer metadata for modules and functions that match the provided special case list'
@@ -5850,8 +5886,6 @@ H1C82DB59E408: 'movt/movw 쌍의 사용을 금지합니다 (ARM 전용)'
 H613CDE699EC0: '16진수 바이트 문자열 분해'
 # 'Disassembler Options'
 H4DCD7C09D805: '디스어셈블러 옵션'
-# 'Disassembler options'
-H44D3EF88EF05: '디어셈블러 옵션'
 # 'Discard names from Value (other than GlobalValue).'
 H742AC63D224D: 'Value(전역 값이 아닌 경우)에서 이름을 제거합니다.'
 # 'Discard value names in LLVM IR'
@@ -6016,6 +6050,8 @@ H80E0CE8F43D2: 'LR 레지스터는 일반적인 용도로 사용하지 말고, �
 HC4FB93EDAFBC: '어떤 산타이저에 대한 핸들러를 컴파일러가 병합하도록 허용하지 마십시오'
 # 'Do not allow compiler to merge handlers for specified sanitizers'
 H14D0727FA9D4: '지정된 산타이저 핸들러를 병합하도록 컴파일러를 허용하지 마십시오'
+# 'Do not allow the compiler to assume that each translation unit has a unique source file name at link time'
+H4A0AFFA269DA: '링크 시 각 번역 단위가 고유의 소스 파일 이름을 가정하지 않도록 합니다'
 # 'Do not assume C++ operator new may not return NULL'
 H1F6F59A37FC5: 'C++ operator new가 NULL을 반환하지 않을 수 있다는 가정을 하지 마십시오'
 # 'Do not assume that any loop is finite.'
@@ -6162,6 +6198,8 @@ HDB8A084545A8: '고장난 생명 주기 구역을 최적화하지 마세요'
 H5B1E0C37199B: 'gcov 파일을 출력하지 않습니다'
 # 'Do not override toolchain to compile HIP source to relocatable'
 H67099DA33091: '도구체인을 재정의하여 HIP 소스를 재배치 가능 파일로 컴파일하지 마세요'
+# 'Do not pack non-contiguous assumed shape dummy arrays into contiguous memory'
+HCB4D2BF8E235: '연속되지 않은 가정된 형태의 가짜 배열을 연속 메모리로 패킹하지 않습니다'
 # 'Do not place constants in the .rodata section instead of the .sdata if they meet the -G <size> threshold (MIPS)'
 H21A91E9ACB5C: '상수를 -G <size> 임계값을 충족할 경우 .sdata 섹션 대신 .rodata 섹션에 배치하지 마세요 (MIPS)'
 # 'Do not preserve comments in inline assembly'
@@ -6334,6 +6372,8 @@ H618F1A05266D: '함수 이름을 덤블하지 않음'
 HD22256B8D923: '블록 서명 문자열을 비활성화하지 마세요)'
 # "Don't disable features used for crash debugging (crash reports, llvm-symbolizer and core dumps)"
 HA02320B35AF6: 'crash 디버깅에 사용되는 기능( crash 리포트, llvm-symbolizer 및 코어 덤프)을 비활성화하지 마세요.'
+# "Don't disable freeing of memory on exit"
+HE9E8ABFA5D70: '종료 시 메모리 해제를 비활성화하지 않습니다'
 # "Don't discard temporary labels"
 H59AD35796471: '임시 라벨들을 버리지 마세요'
 # "Don't display class definitions"
@@ -6596,6 +6636,8 @@ H5DEA08F3B824: '모듈을 현재 작업 디렉토리에 덤프합니다. (경고
 H0F661C11A2F3: '지정된 경우 YAML 형식으로 새 파일 내용을 덤프합니다.'
 # 'Dump provenance'
 H0B7FC19C4E7C: '증분 추적 정보를 출력합니다'
+# 'Dump ranges of deserialized declarations to use as bug minimization hints'
+HABFDC2505B83: '버그 최소화 힌트로 사용되는 역.Deserialize된 선언 범위를 출력합니다'
 # 'Dump record layout information'
 H1A9181305386: '레이아웃 정보를 출력합니다'
 # 'Dump record layout information for all complete types'
@@ -6982,6 +7024,8 @@ HD6132B919401: '지정된 조합기를 발생시킵니다.'
 HE5D98DDE9AE9: '타입 레코드 해시를 .debug$H 섹션에 기록합니다'
 # "Emit verbose output about the analyzer's progress"
 HF03ADA31D285: '분석기의 진행 상황에 대한 상세한 출력을 생성합니다'
+# 'Emit x8 as fp instead of s0'
+H88FD472C55F8: 'x8를 fp로 내보내고 s0 대신 사용'
 # 'Emit xray_fn_idx section'
 HCE1B25AEB13C: 'xray_fn_idx 섹션 생성'
 # 'Emits more virtual tables to improve devirtualization'
@@ -7324,8 +7368,6 @@ H2602C065FC54: '진단 메시지의 색상 표시 활성화'
 H0FC588FEB00A: '명령 줄 인수 원본 그대로 전달을 활성화합니다.'
 # 'Enable commoning of GEP instructions'
 H21E18391E092: 'GEP 명령문의 공통화를 활성화합니다'
-# 'Enable communicating debuginfo positions through iterators, eliminating intrinsics. Has no effect if --preserve-input-debuginfo-format=true.'
-H99F0E8039EFB: '디버그 정보 위치를 반복자를 통해 전달하며 인트린식을 제거합니다. --preserve-input-debuginfo-format=true가 설정된 경우 이 옵션은 영향을 미치지 않습니다.'
 # 'Enable conflict detection in loop-access analysis'
 H9866609C7AAA: '루프 액세스 분석에서 충돌 감지를 활성화합니다'
 # 'Enable consecutive memop optimization in AArch64PostLegalizerCombiner'
@@ -7694,8 +7736,6 @@ H1C98545F997D: '런타임 시 카운터 재배치를 활성화합니다.'
 HA60D39957FD6: '타겟 GPU에서 지원하지 않는 기능을 사용할 때 함수 제거를 활성화합니다'
 # 'Enable required s_wait_alu on SGPR hazards'
 H5931DB0CC40E: 'SGPR hazards 시 필요한 s_wait_alu 활성화'
-# "Enable retain SubstTemplateTypeParmType nodes in the AST's representation of alias template specializations"
-HB02FA0B87AE4: 'AST의 별칭 템플릿 특수화 표현에서 SubstTemplateTypeParmType 노드를 유지하도록 활성화'
 # 'Enable rewrite partial reg uses pass'
 HC2E09FB1800A: '부분 등록 사용 재작성 패스 활성화'
 # 'Enable runtime checks for stack overflow.'
@@ -8870,6 +8910,8 @@ HB3B0D51C372C: 'Clang 진단 호환성 ID 생성'
 HFF484ABCD39B: '선택을 위한 Clang 진단 열거형 생성'
 # 'Generate Clang diagnostic groups'
 HD491E8E3F838: 'Clang 진단 그룹 생성'
+# 'Generate Clang diagnostic interface headers'
+HC78769A357D2: 'Clang 진단 인터페이스 헤더 생성'
 # 'Generate Clang diagnostic name index'
 H26D83AD60FA3: 'clang 진단 이름 색인 생성'
 # 'Generate Clang diagnostics definitions'
@@ -8890,8 +8932,8 @@ H93E694C37FB8: '인터페이스 스텁 파일 생성합니다.'
 H63A1CBFF2B95: 'perf itrace 인수를 사용하여 LBR 정보 생성'
 # 'Generate M NOPs before function entry'
 H411052747AED: '함수 시작 전에 M NOP를 생성합니다'
-# 'Generate M NOPs before function entry and N-M NOPs after function entry'
-HCAAC0B0CBF62: '함수 진입 전 M NOP 생성 및 함수 진입 후 N-M NOP 생성'
+# 'Generate M NOPs before function entry and N-M NOPs after function entry. If section is specified, use it instead of __patchable_function_entries.'
+H4A7E3BFEB46A: '함수 진입 전 M NOP 생성하고 함수 진입 후 N-M NOP 생성. 섹션이 지정되면 __patchable_function_entries 대신 사용'
 # 'Generate Metal library'
 H30181B8F806A: '메탈 라이브러리 생성'
 # 'Generate Offload API header contents'
@@ -9822,6 +9864,8 @@ H843E2B29FDA6: 'Inline 적용 가능한 모든 함수를 장치에서 inline 처
 HBFFBF85B1F6E: '모든 함수를 조기 인라인'
 # "Inline cold call sites in profile loader if it's beneficial for code size."
 H86BDD048441C: '코드 크기에 유리할 경우 프로필 로더에서 cold 호출 사이트를 inline 처리합니다.'
+# 'Inline expressions that are used only once rather than generating a let-binding'
+HBC10ADACCD0B: '단 한 번만 사용되는 표현식을 let-바인딩 생성 대신 인라인 처리'
 # 'Inline functions as deemed beneficial by the compiler'
 H648E731FB641: '컴파일러가 유리하다고 판단되는 Inline 함수로'
 # 'Inline functions which are (explicitly or implicitly) marked inline'
@@ -9908,6 +9952,8 @@ H071F81C54D78: 'guard:ehcont 옵션에 적합한 위치에 심볼을 삽입하�
 H893CAC606686: '실험적인 `assertalign` 노드를 삽입합니다.'
 # 'Insert vsetvlis before vmvNr.vs to ensure vtype is valid and vill is cleared'
 H0091B7D0D6C7: 'vmvNr.vs 앞에 vsetvlis를 삽입하여 vtype이 유효하고 vill이 초기화되도록 하십시오'
+# 'InstPrinter options'
+HFBC5B2731840: 'InstPrinter 옵션'
 # 'Instantiate templates already while building a PCH'
 H9EE0E3239942: 'PCH를 생성하는 동안 템플릿을 미리 인스턴스화합니다'
 # 'Instead of emitting the pipelined code, annotate instructions with the generated schedule for feeding into the -modulo-schedule-test pass'
@@ -10104,8 +10150,8 @@ H1B7F78E6F996: 'LLVM IR 유사성 시각화 도구\n'
 H6A5AC73C091C: 'LLVM OpenMP'
 # 'LLVM PDB Dumper\n'
 HD0867800CD16: 'LLVM PDB 덤피어\n'
-# 'LLVM automatic testcase reducer.\n'
-HF2C9C9289AA4: 'LLVM 자동 테스트 케이스 감소기.\n'
+# 'LLVM automatic testcase reducer.\nSee https://llvm.org/docs/CommandGuide/llvm-reduce.html for more information.\n'
+HD6FE445BE8E3: 'LLVM 자동 테스트 케이스 축소기.\n자세한 내용은 https://llvm.org/docs/CommandGuide/llvm-reduce.html을 참고하시오.\n'
 # 'LLVM automatic testcase reducer. See\nhttp://llvm.org/cmds/bugpoint.html for more information.\n'
 H28E8E607A645: 'LLVM 자동 테스트 케이스 감소기입니다. 참조: http://llvm.org/cmds/bugpoint.html 자세한 내용은\n'
 # 'LLVM code coverage tool\n'
@@ -10278,6 +10324,10 @@ H7CCE9D08A2A1: '필요한 심볼만 연결합니다'
 H0C4B76743142: 'System Z에서 backchain을 통해 스택 프레임을 연결합니다'
 # 'Link the LLVM C Library for GPUs'
 HD105C9964C21: 'GPU용 LLVM C 라이브러리를 링크합니다'
+# 'Link the flang-rt shared library'
+H92B8D27A2242: 'flang-rt 공유 라이브러리 연결'
+# 'Link the flang-rt static library'
+H31D4E54E52D3: 'flang-rt 정적 라이브러리 연결'
 # 'Link the following file lazily'
 HB68406E1D5AC: '다음 파일을 지연 로딩으로 연결하십시오'
 # 'Link the given bitcode file before performing optimizations.'
@@ -10996,6 +11046,8 @@ H4E1E23E6B24B: '동일한 문에서 액세스된 참조를 구분하는 메모�
 H6449013A03CB: '사용 여부를 확인하지 않고 모든 const 글로벌 변수를 통합합니다'
 # 'Merge and hoist M0 initializations'
 H2D268DBDEF86: 'M0 초기화 통합 및 상향'
+# 'Merge clones before assigning functions'
+H18C7B017FA56: '함수 할당 전 클론 병합'
 # 'Merge context profiles before calculating thresholds.'
 H1C9DF3097EF8: '컨텍스트 프로파일을 계산하기 전에 병합해야 합니다.'
 # 'Merge context sample profiles whose count is below cold threshold'
@@ -11120,6 +11172,10 @@ H9F5185006F74: '모듈로 스케줄링 테스트 패스'
 HC40B97D6B9FA: 'Modulo 소프트웨어 파이프라인'
 # 'Move ARGUMENT instructions for WebAssembly'
 H688758DE208F: 'WebAssembly용 ARGUMENT 명령어 이동'
+# 'Move contextual profiling roots and the graphs under them in their own module.'
+HC78C448BC37B: '컨텍스트 프로파일 루트와 그 아래의 그래프를 해당 모듈로 이동'
+# 'Move the symbols with the given name. This will delete these symbols wherever they are originally defined, and make sure their linkage is External where they are imported. It is meant to be used with the name of contextual profiling roots.'
+H50A29B7AC907: '지정된 이름의 심볼을 이동합니다. 이는 원래 정의된 모든 위치에서 해당 심볼을 삭제하고, 가져온 곳에서 외부 연결(External)이 되도록 합니다. 컨텍스트 프로파일 루트 이름과 함께 사용해야 합니다.'
 # 'Move/duplicate certain instructions close to their use'
 HD38286726698: '특정 명령문들을 그 사용 위치 근처로 이동/복제합니다'
 # 'Multiplier to apply to threshold when determining whether or not to fold branch to common destination when vector operations are present'
@@ -11488,8 +11544,12 @@ H83B563F0FFD8: '지정된 접두사와 일치하는 명령문만 찾음'
 HC54ECBB9C757: '최대 카운트 값이 컷오프 값보다 작은 함수의 이름만 출력합니다'
 # 'Only precompile the input'
 H8B49F001F9E2: '입력만 사전 컴파일합니다'
+# 'Only print AMD GPUs'
+HAEAFB4C4A2F4: 'AMD GPU만 표시'
 # 'Only print IR for functions whose name match this for all print-[before|after][-all] options'
 HBF4D64D1868D: '모든 print-[before|after][-all] 옵션에 대해 이 이름과 일치하는 함수에 대해서만 IR을 출력합니다'
+# 'Only print NVIDIA GPUs'
+HA8E45EB5D306: 'NVIDIA GPU만 표시'
 # 'Only print to a depth of N elements.'
 HFC218BA7E9C0: '깊이 N 요소까지만 출력합니다.'
 # 'Only process files that match this filter. This flag only applies to all-TUs.'
@@ -11558,6 +11618,8 @@ H89C2A6721B4D: '변경된 경우에만 출력을 작성합니다'
 H82DD0380BC4C: '파일이 변경된 경우에만 아웃풋 파일에 씁니다'
 # "OpenACC %select{clause '%1'|directive '%2'|sub-array bound}0 requires expression of integer type (%3 invalid)"
 H24F0AB7B1FF3: "OpenACC %select{절 '%1'|지시문 '%2'|sub-array bound}0는 정수 형식의 표현식이 필요합니다 (%3 유효하지 않음)"
+# "OpenACC '%0' clause cannot appear more than once%select{| in a 'device_type' region}2 on a '%1' directive"
+H5BA479702441: "OpenACC '%0' 절은 '%1' 지시문에서%select{| device_type 영역 내에서}2 1회 이상 사용할 수 없습니다."
 # "OpenACC '%0' clause cannot appear on the same '%2' construct as a '%1' clause %select{inside a compute construct with a|and a}3 'num_gangs' clause with more than one argument"
 H86F6667DC7E5: "OpenACC '%0' 절은 '%2' 구조체에서 '%1' 절과 함께 사용될 수 없습니다 %select{compute 구조체 내의 a|and a}3 'num_gangs' 절에 한 개 이상의 인수가 있는 경우"
 # "OpenACC '%0' clause on a 'declare' directive is not allowed at global or namespace scope"
@@ -11570,6 +11632,8 @@ HA5F584B3696E: "OpenACC '%0' 구조는 종료 조건을 반드시 지정해야 �
 H5108FA0063F8: "OpenACC '%0' 구문은 최소 하나의 %1 절을 포함해야 합니다"
 # "OpenACC '%0' construct must have initialization clause in canonical form ('var = init' or 'T var = init')"
 HB6396996D535: "OpenACC '%0' 구문은 초기화 절을 표준 형식('var = init' 또는 'T var = init')로 포함해야 합니다"
+# "OpenACC '%0' modifier not valid on '%1' clause"
+H3160CD5E4802: "OpenACC '%0' 수정자는 '%1' 절에서 유효하지 않습니다."
 # "OpenACC '%0' variable must monotonically increase or decrease ('++', '--', or compound assignment)"
 H4842B31AA1BD: "OpenACC '%0' 변수는 단조 증가 또는 감소해야 합니다('++', '--', 또는 복합 할당)"
 # "OpenACC '%1' clause %select{|with more than 1 argument }0may not appear on a '%2' construct with a '%3' clause%select{ with more than 1 argument|}0"
@@ -11582,6 +11646,8 @@ H226495157F78: "OpenACC '%1' 절은 '%0' 지시문에 적용할 수 없습니다
 H9E597FA760BB: "OpenACC 'bind' 절을 선언에 적용할 때는 이전 bind 절과 동일한 이름을 지정해야 합니다"
 # "OpenACC 'collapse' clause loop count must be a %select{constant expression|positive integer value, evaluated to %1}0"
 HF187F732137C: "OpenACC 'collapse' 절의 루프 카운트는 %select{상수 표현식|양의 정수 값, %1로 평가됨}0이어야 합니다"
+# "OpenACC 'device_type' clause on a 'set' construct only permits one architecture"
+HB63E35D8A787: "OpenACC 'set' 구조체에서 'device_type' 절은 단일 아키텍처만 허용합니다."
 # "OpenACC 'gang' clause may have at most one %select{unnamed or 'num'|'dim'|'static'}0 argument"
 HC064C4557CFE: "OpenACC 'gang' 절은 최대 한 개의 %select{미지정 또는 'num'|'dim'|'static'}0 인수를 가질 수 있습니다."
 # "OpenACC 'reduction' composite variable must not have non-scalar field"
@@ -11592,18 +11658,22 @@ HD35F9CAD567D: "OpenACC 'reduction' 변수는 스칼라 타입의 복합체여�
 HEC7D1B479B8F: "OpenACC 'reduction' 변수는 스칼라 형식, 서브 어레이, 또는 스칼라 형식의 복합체여야 합니다;%select{| 서브 어레이 베이스}1 형식은 %0입니다"
 # "OpenACC 'reduction' variable must have the same operator in all nested constructs (%0 vs %1)"
 H28C388119D4E: "OpenACC 'reduction' 변수는 중첩된 모든 구조体内에서 동일한 연산자를 가져야 합니다 (%0 vs %1)"
+# "OpenACC 'routine' construct must have at least one 'gang', 'seq', 'vector', or 'worker' clause that applies to each 'device_type'"
+H32818FCDE6B7: "OpenACC 'routine' 구조체는 각 'device_type'에 적용되는 'gang', 'seq', 'vector', 또는 'worker' 절 중 적어도 하나가 있어야 합니다."
 # "OpenACC 'routine' directive with a name refers to a function with the same name as the function on the following line; this may be unintended"
 H18CDEE7EFD75: "OpenACC 'routine' 디렉티브의 이름이 다음 줄에 있는 함수와 동일한 이름을 가진 함수를 참조하고 있습니다; 이는 의도하지 않은 상황일 수 있습니다"
 # "OpenACC 'tile' clause size expression must be %select{an asterisk or a constant expression|positive integer value, evaluated to %1}0"
 HA638C30812B2: "OpenACC 'tile' 절 크기 표현식은 반드시 %select{별표(*) 또는 상수 표현식|양의 정수 값으로 %1로 평가되어야 합니다}0"
 # "OpenACC 'update' construct may not appear in place of the statement following a%select{n if statement| while statement| do statement| switch statement| label statement}0"
 H3E931AFE1E4E: "OpenACC 'update' 구문은 %select{n if 문| while 문| do 문| switch 문| label 문}0 다음 문장 위치에 등장할 수 없습니다"
+# "OpenACC clause '%0' after 'device_type' clause on a 'routine' conflicts with the '%1' clause before the first 'device_type'"
+HA93644C02FFF: "OpenACC 'routine'에서 'device_type' 절 다음에 온 '%0' 절은 첫 번째 'device_type' 이전의 '%1' 절과 충돌합니다."
 # "OpenACC clause '%0' may not appear on the same construct as a '%1' clause on a '%2' construct"
 HFD5E5BF152EC: "OpenACC clause '%0'는 '%2' construct의 '%1' clause와 같은 construct에 등장할 수 없습니다"
 # "OpenACC clause '%0' may not follow a '%1' clause in a '%2' construct"
 H3810BDC5F66B: "OpenACC 절 '%0'은 '%2' 구문 안에서 '%1' 절 뒤에 오면 안 됩니다"
-# "OpenACC clause '%0' on '%1' construct conflicts with previous data dependence clause"
-HD0EC8D82D89C: "OpenACC 절 '%0'이 '%1' 구문의 이전 데이터 종속성 절과 충돌합니다"
+# "OpenACC clause '%0' on a 'routine' directive conflicts with the '%1' clause applying to the same 'device_type'"
+H672EE4A10B1D: "OpenACC 'routine' 지시문에서 '%0' 절은 동일한 'device_type'에 적용되는 '%1' 절과 충돌합니다."
 # "OpenACC clause name '%0' is a deprecated clause name and is now an alias for '%1'"
 H0277741A1F9D: "OpenACC 절 이름 '%0'는 비추천된 절 이름으로, 이제 '%1'의 별칭이 되었습니다"
 # "OpenACC construct '%0' cannot be used here; it can only be used in a statement context"
@@ -11612,14 +11682,16 @@ HCF6F4162FC42: "오픈액스 구조 '%0'는 여기서 사용할 수 없습니다
 H861502AB5841: "OpenACC 'routine' 구조체에 암시적 함수가 포함된 경우 아직 구현되지 않았습니다. pragma가 무시됩니다."
 # "OpenACC construct 'self' has no effect when an 'if' clause evaluates to true"
 H4B8F857AB30C: "OpenACC의 'self' 구문 요소는 'if' 절이 true로 평가될 때 효과가 없습니다"
+# 'OpenACC directives will result in no runtime behavior; use -fclangir to enable runtime effect'
+H106A424B384D: 'OpenACC 지시문은 실행 시 동작이 없습니다; 실행 효과를 활성화하려면 -fclangir를 사용하세요.'
 # 'OpenACC integer expression has incomplete class type %0'
 H5F66C1830606: 'OpenACC 정수 표현식은 미완성 클래스 형식 %0를 가집니다'
 # 'OpenACC integer expression requires explicit conversion from %0 to %1'
 H20507033806F: 'OpenACC integer 표현은 %0에서 %1로의 명시적 변환을 필요로 합니다'
-# "OpenACC routine name '%0' does not name a function"
-H5802CAE72248: "OpenACC 루틴 이름 '%0'은 함수를 지정하지 않았습니다"
-# "OpenACC routine name '%0' names a set of overloads"
-HEC7D774C632B: "OpenACC 루틴 이름 '%0'은 여러 오버로드 집합을 나타냅니다"
+# 'OpenACC routine name %0 does not name a function'
+H38F10B674F17: 'OpenACC 루틴 이름 %0는 함수를 지정하지 않습니다'
+# 'OpenACC routine name %0 names a set of overloads'
+H417FD900A33B: 'OpenACC 루틴 이름 %0는 오버로드된 함수 집합을 지정합니다'
 # 'OpenACC sub-array %select{lower bound|length}0 evaluated to a value (%1) that would be out of the range of the subscripted array size of %2'
 HD993EBC2FF56: 'OpenACC 부분 배열 %select{하단 경계|길이}0에서 계산된 값(%1)이 서브스크립트된 배열 크기(%2)의 범위를 벗어납니다'
 # 'OpenACC sub-array %select{lower bound|length}0 evaluated to negative value %1'
@@ -11990,6 +12062,8 @@ H3E1C9F287454: '바랍니다 버그 보고서를 https://github.com/llvm/llvm-pr
 H0DE59CCB7CD2: 'BUG 보고서를 https://github.com/llvm/llvm-project/issues/에 제출해 주시고, crash backtrace를 포함해 주세요.\n'
 # 'POSIX thread model'
 HAAFA3F8D71A1: 'POSIX 쓰레드 모델'
+# 'Pack non-contiguous assumed shape dummy arrays into contiguous memory'
+H921464C334CB: '비연속 가정 형상 가짜 배열을 연속 메모리에 패킹합니다'
 # 'Pack non-contiguous assummed shape arrays into contiguous memory'
 H3E0440CD78CB: '비연속 가정된 형상 배열을 연속 메모리에 압축합니다'
 # 'Pad previous instructions to implement align directives'
@@ -12022,6 +12096,8 @@ HC027AB59908D: 'AIX의 링커에 -b <arg>를 전달하십시오'
 HC96FADA8EF05: '링커에 -z <arg> 옵션을 전달하십시오.'
 # 'Pass <arg> to clang -cc1'
 H7056B37839B2: 'clang -cc1에 <arg>를 전달하십시오'
+# 'Pass <arg> to clang -cc1as'
+HB0D05A4A9173: 'clang -cc1as에 <arg>를 전달합니다'
 # 'Pass <arg> to fatbinary invocation'
 HE6E06CC967E5: 'fatbinary 호출에 <arg>를 전달'
 # 'Pass <arg> to plugin <name>'
@@ -12488,6 +12564,8 @@ H9226DB4F030F: '정규적인 루프 구조를 유지합니다 (기본값 = true)
 HC15D6215FF01: 'mergefunc 변환이 이루어질 때 thunk 내의 디버그 정보를 보존합니다.'
 # 'Preserve expressions in AST rather than dropping them when encountering semantic errors'
 H606CF076FD66: 'AST에서 표현식을 유지하고 의미적 오류 발생 시 삭제하지 않음'
+# 'Preserve line and column number when merging locations.'
+H6B50620B43DC: '위치 병합 시 줄 및 열 번호를 유지합니다'
 # 'Preserve line numbers'
 HF7C338130FB4: '줄 번호 유지'
 # 'Preserve order of LLVM use-lists when serializing'
@@ -12576,6 +12654,8 @@ H3475474B9AF0: '진단 메시지에 절대 경로 출력'
 H3F08CE170EBB: 'Dump 시 MachineInstrs의 주소를 출력합니다'
 # 'Print addresses of instructions when dumping'
 HF2156C7D4A91: 'Dump할 때 명령문의 주소를 출력합니다'
+# 'Print all GPUs (default)'
+HBE69208AFD33: '모든 GPU 출력 (기본값)'
 # 'Print all cost kinds'
 HCAA4E47DE719: '모든 비용 종류 출력'
 # 'Print all hardware statistics'
@@ -13546,6 +13626,8 @@ H915A155B8538: 'statepoint 오퍼랜드에 대한 remat 제한'
 HF665154F84D1: '샌타이저 커버리지 인스트루먼테이션을 차단된 항목을 제외하고 제공된 특수 사례 목록과 일치하는 모듈과 함수에 한정합니다'
 # 'Restrict specifier.'
 H0429709567D5: 'restrict 지정자.'
+# 'Restrict to vendor:'
+H32644C5851E5: '제한할 벤더:'
 # 'Resume compilation after a specific pass'
 H0C491338806A: '특정 패스 후 컴파일을 재개합니다'
 # 'Resume compilation before a specific pass'
@@ -14056,8 +14138,8 @@ H949A45EF9093: '프리픽스를 사용하여 헤더 파일 검색 경로에 디�
 H5882EA320C88: '비포맷 파일에 대한 데이터의 엔디언 변환을 설정합니다'
 # 'Set exception handling model'
 HBE5ECEAC70BC: '예외 처리 모델을 설정합니다'
-# 'Set filename used to determine the language and to find\n.clang-format file.\nOnly used when reading from stdin.\nIf this is not passed, the .clang-format file is searched\nrelative to the current working directory when reading stdin.\nUnrecognized filenames are treated as C++.\nsupported:\n  CSharp: .cs\n  Java: .java\n  JavaScript: .js .mjs .cjs .ts\n  Json: .json\n  Objective-C: .m .mm\n  Proto: .proto .protodevel\n  TableGen: .td\n  TextProto: .txtpb .textpb .pb.txt .textproto .asciipb\n  Verilog: .sv .svh .v .vh'
-H76F2B4A51C95: '언어를 결정하고 .clang-format 파일을 찾기 위해 사용할 파일 이름을 설정합니다.\nclang-format 파일입니다.\n표준 입력을 읽을 때만 사용됩니다.\n이 옵션이 지정되지 않으면, 표준 입력을 읽을 때 clang-format 파일을 현재 작업 디렉토리 기준으로 검색합니다.\n인식되지 않는 파일 이름은 C++로 처리됩니다.\n지원되는 언어:\nC# : .cs\n자바 : .java\n자바스크립트 : .js .mjs .cjs .ts\nJSON : .json\nObjective-C : .m .mm\nProto : .proto .protodevel\nTableGen : .td\nTextProto : .txtpb .textpb .pb.txt .textproto .asciipb\nVerilog : .sv .svh .v .vh'
+# 'Set filename used to determine the language and to find\n.clang-format file.\nOnly used when reading from stdin.\nIf this is not passed, the .clang-format file is searched\nrelative to the current working directory when reading stdin.\nUnrecognized filenames are treated as C++.\nsupported:\n  CSharp: .cs\n  Java: .java\n  JavaScript: .js .mjs .cjs .ts\n  Json: .json .ipynb\n  Objective-C: .m .mm\n  Proto: .proto .protodevel\n  TableGen: .td\n  TextProto: .txtpb .textpb .pb.txt .textproto .asciipb\n  Verilog: .sv .svh .v .vh'
+H13B2BD633E05: '표준 입력을 읽을 때 언어를 결정하고 .clang-format 파일을 찾는 데 사용되는 파일명을 지정합니다.\n만약 이 옵션이 전달되지 않으면 .clang-format 파일은 현재 작업 디렉토리에 상대적으로 검색됩니다.\n알 수 없는 파일명은 C++로 처리됩니다.\n지원되는 확장자:\n  CSharp: .cs\n  Java: .java\n  JavaScript: .js .mjs .cjs .ts\n  Json: .json .ipynb\n  Objective-C: .m .mm\n  Proto: .proto .protodevel\n  TableGen: .td\n  TextProto: .txtpb .textpb .pb.txt .textproto .asciipb\n  Verilog: .sv .svh .v .vh'
 # 'Set hexagon hvx loop upper bound align limit'
 HE4A380690C61: 'hexagon hvx 루프 상한 정렬 제한을 설정합니다'
 # 'Set hexagon loop align bundle limit'
@@ -14774,6 +14856,8 @@ HFD25A07F8173: 'DWARF 출력에 인코딩할 .dwo 파일의 이름을 지정해 
 HC274D886E608: '빌드할 모듈의 이름을 지정하세요'
 # 'Specify the name of the root module.'
 H385C12B5E6FA: '루트 모듈의 이름을 지정하십시오.'
+# 'Specify the number of threads to use for device offloading tasks during compilation.'
+H1A088440B2D0: '구성 시 디바이스 오프로딩 작업에 사용할 스레드 수를 지정합니다'
 # "Specify the output file type ('asm', 'null', or 'obj')"
 H908E78C67406: "출력 파일 유형을 지정합니다('asm', 'null' 또는 'obj')"
 # 'Specify the output file. default: reduced.ll|.bc|.mir'
@@ -15890,6 +15974,8 @@ H1D5DFE08E7A8: '스택 생명주기를 START 마커가 아닌 첫 사용 시 시
 H79E1F4486D77: '문자열 리터럴을 const로 간주합니다'
 # 'Treat subsequent input files as having type <language>'
 HC2DB15026570: '이후 입력 파일을 <language> 유형으로 처리합니다'
+# 'Treat the given module as-if it were containing the post-thinlink module containing the root'
+H678738B3F81B: '지정된 모듈을 루트를 포함하는 post-thinlink 모듈을 포함하는 것으로 처리합니다'
 # 'Treat usage of null pointers as undefined behavior (default)'
 HEF76E5F5F913: '널 포인터 사용을 정의되지 않은 동작으로 처리(기본값)'
 # 'Treat warnings as errors'
@@ -16164,6 +16250,8 @@ HF73D39350799: 'SEH 스타일의 예외를 사용하십시오.'
 H18018B318301: '디버그 정보에서 파일 체크섬에 SHA1을 사용합니다'
 # 'Use SHA256 for file checksums in debug info'
 HF98F43EAE9BB: '디버그 정보에서 파일 체크섬에 SHA256을 사용하십시오'
+# 'Use Section instead of __patchable_function_entries'
+H2F6710F2BEEF: '__patchable_function_entries 대신 Section을 사용합니다'
 # 'Use SjLj style exceptions'
 H44AA3EF8F7F8: 'SjLj 스타일 예외를 사용하세요'
 # 'Use Stable Hashing for MIR VReg Renaming'
@@ -16356,6 +16444,8 @@ H479023987FBB: '프로파일링을 통해 PGO를 유도하기 위해 인스트�
 H45C76DB103C3: '내부 머신 오브젝트 코드 엠프터를 사용합니다.'
 # 'Use jump tables for lowering switches'
 HFFDBCF7C79DB: '점프 테이블을 사용하여 스위치를 최적화합니다'
+# 'Use large decoder table format. This uses 24 bits for offset\nin the table instead of the default 16 bits.'
+H7EEE365A819D: '대형 디코더 테이블 형식을 사용합니다. 기본값 16비트 대신 테이블 오프셋에 24비트를 사용합니다'
 # 'Use large-integer access for consecutive bitfield runs.'
 HAFC147F2F63A: '연속된 비트필드 실행에 대해 큰 정수 접근을 사용하십시오.'
 # 'Use linker features to support dead code stripping of globals'
@@ -16860,6 +16950,8 @@ H7F1CA4DE1A48: '부정 하강의 유효성을 확인하려고 시도할 때 최�
 H3DED4F5FCF91: '정점 레이블을 잘라내는 길이는 얼마인가? '
 # 'What to do with the summary when running this pass'
 H42E595F78536: '이 패스를 실행할 때 요약 정보를 어떻게 처리할지'
+# "When -frepack-arrays is in effect, 'whole' enables repacking for arrays that are non-contiguous in any dimension, 'innermost' enables repacking for arrays that are non-contiguous in the innermost dimension (the default)"
+H20A445368AD8: "'whole'는 모든 차원이 비연속인 배열에 대한 재패킹을 활성화하며, 'innermost'는 가장 내부 차원이 비연속인 배열에 대한 재패킹을 활성화합니다 (기본값)"
 # 'When -fvisibility-inlines-hidden is enabled, static variables in inline C++ member functions will also be given hidden visibility by default'
 HC9E644F8BF87: '-fvisibility-inlines-hidden 옵션이 활성화되면, 인라인 C++ 멤버 함수 내의 정적 변수들도 기본적으로 숨겨진 가시성을 부여받습니다'
 # 'When a diagnostic is emitted on an operation, also print the operation as an attached note'
@@ -16908,8 +17000,6 @@ H0B8C96DE116C: '패스 실행 후 IR을 출력할 때는 IR이 변경된 경우�
 H42128FB51A38: '패스 후 IR을 출력할 때는 패스가 실패했을 경우에만 출력합니다'
 # 'When printing the IR before/after a pass, print file tree rooted at this directory. Use in conjunction with mlir-print-ir-* flags'
 HC069026BC657: '패스 전후에 IR을 출력할 때, 이 디렉토리를 루트로 하는 파일 트리를 출력합니다. mlir-print-ir-* 플래그와 함께 사용하십시오.'
-# 'When set to true, IR files will be processed and printed in their current debug info format, regardless of default behaviour or other flags passed. Has no effect if input IR does not contain debug records or intrinsics. Ignored in llvm-link, llvm-lto, and llvm-lto2.'
-H75C824D62FD2: '이 옵션을 true로 설정하면, IR 파일은 기본 동작 또는 전달된 다른 플래그와 관계없이 현재 디버그 정보 형식으로 처리되고 출력됩니다. 입력 IR에 디버그 레코드나 intrinsic이 포함되어 있지 않으면 효과가 없습니다. llvm-link, llvm-lto, llvm-lto2에서는 무시됩니다.'
 # 'When set to true, const objects with relocatable address values are put into the RO data section.'
 H66324957E3F0: 'true로 설정되면, 재배치 가능한 주소 값을 가지는 const 객체는 RO 데이터 섹션에 배치됩니다.'
 # 'When stubbing functions, replace all uses will null'
@@ -16966,6 +17056,8 @@ HB249A06C5F2F: '루프 벡터라이저에 의해 if-convertible이 될 수 없�
 HDDECD32989A5: 'DWARF EH 프레임 항목을 생성할지 여부'
 # 'Whether to generate default bounds for arrays.'
 HA8699205DACC: '배열에 대한 기본 경계를 생성할지 여부.'
+# 'Whether to include the lower dimensions extents in the stride.'
+H4245438632CE: 'stride에 하위 차원의 범위를 포함할지 여부'
 # 'Whether to minimize added include paths'
 HC7C82427C36C: '추가된 include 경로를 최소화할지 여부'
 # 'Whether to perform binary concatenation'
@@ -17170,6 +17262,8 @@ H323CC2CB8E5D: '_Atomic은 %select{불완전한 |배열 |함수 |참조 |원자�
 HE310DB69A9CE: '_GLOBAL_OFFSET_TABLE_'
 # '_Pragma takes a parenthesized string literal'
 HC3D115F3D6CB: '_Pragma는 괄호로 감싸진 문자열 리터럴을 취합니다'
+# '__CUDA_ARCH'
+H640861EF7CBB: '__CUDA_ARCH'
 # '__DATA'
 H6F22B9326AE7: '__DATA'
 # '__LINKEDIT'
@@ -17238,6 +17332,8 @@ HAD92983EAEB2: '__weak 어트리뷰트는 필드 선언에 지정할 수 없습�
 HC15AE9021482: '__weak 속성은 ARC가 활성화되어 있지 않을 때 자동 변수에 지정할 수 없습니다'
 # '`#pragma const_seg` for section %1 will not apply to %0 due to the presence of a %select{mutable field||non-trivial constructor|non-trivial destructor}2'
 H8811D5F6122A: '`#pragma const_seg` 섹션 %1에 대한 %0에는 적용되지 않습니다.这是因为 %select{가변 필드||비자명 생성자|비자명 소멸자}2가 존재하기 때문입니다.'
+# '`interrupt_save_fp` only applies to targets that have a VFP unit enabled for this compilation; this will be treated as a regular `interrupt` attribute'
+HB2C8A1373FD2: '`interrupt_save_fp`는 해당 컴파일에 VFP 유닛이 활성화된 타겟에만 적용되며, 이는 일반 `interrupt` 속성으로 처리됩니다'
 # 'a %select{function|block}0 declaration without a prototype is deprecated %select{in all versions of C|}0'
 HA427D7F1B8D9: '%select{함수|블록}0의 프로토타입이 없는 선언은 %select{C의 모든 버전에서|}0 비추천 됩니다'
 # "a %select{pack indexing|'decltype'}0 specifier cannot be used in a declarative nested name specifier"
@@ -17386,6 +17482,8 @@ H98175222693E: '문자열에 %0을 추가하면 문자열에 연결되지 않습
 HE53429791B46: '문자열 포인터에 %0을 더하더라도 문자열에 추가하지 않습니다'
 # 'addition of default argument on redeclaration makes this constructor a %select{default|copy|move}0 constructor'
 H540EC7EBFA01: '재선언에서 기본 인수를 추가하면 이 생성자가 %select{기본|복사|이동}0 생성자가 됩니다.'
+# 'address argument to %select{atomic|__sync}0 operation must be a pointer to a non address discriminated type (%1 invalid)'
+H2613F565B379: '%select{atomic|__sync}0 연산의 address 인수는 주소 구분 유형이 아닌 포인터여야 합니다 (%1이 유효하지 않음)'
 # 'address argument to atomic builtin cannot be const-qualified (%0 invalid)'
 H05DD72B70C0D: '원자적 내장 함수의 주소 인수는 const-qualified로 지정될 수 없습니다 (%0 유효하지 않음)'
 # 'address argument to atomic builtin must be a pointer %select{|to a non-zero-sized object }1(%0 invalid)'
@@ -17614,8 +17712,6 @@ HBD26597B24D2: "플레이스홀더 '_'가 여러 번 정의되어 애매한 참�
 HE31133550012: '내부 링크지 선언 %0가 여러 모듈에서 정의되어 모호하게 사용되었습니다.'
 # 'ambiguous vftable component for %0 introduced via covariant thunks; this is an inherent limitation of the ABI'
 HB0361B37BEF3: 'covariant thunks를 통해 도입된 %0에 대한 불명확한 vftable 성분; 이는 ABI의 고유한 한계입니다'
-# 'amdgpu-arch options'
-HA34A9F0AE01E: 'amdgpu-arch 옵션'
 # 'an array type is not allowed here'
 HCA0201F3FA96: '여기에는 배열 형식이 허용되지 않습니다'
 # 'an attribute list cannot appear here'
@@ -17788,6 +17884,8 @@ HBE77A0717D85: "CUDA C/C++에서 '#pragma unroll'의 인수는 괄호 안에 넣
 H93740956E9C9: "클라우스 '%0'에 대한 인수는 %select{음수가 아닌|정확히 양수}1 정수 값이어야 합니다"
 # "argument to '%0' is missing (expected %1 value%s1)"
 HEA17C0D34C2C: "인수 '%0'에 대한 인자가 누락됨 (예상 %1 값%s1이 필요함)"
+# "argument to '__ptrauth' must be an integer constant expression"
+H06E460DF36C3: '__ptrauth의 인수는 정수 상수 표현식이어야 합니다'
 # "argument to 'gang' clause dimension must be %select{a constant expression|1, 2, or 3: evaluated to %1}0"
 H970EFD35B5B1: 'gang 절 차원의 인수는 %select{상수 표현식|1, 2 또는 3: %1로 평가됨}0이어야 합니다'
 # "argument to 'operator<=>' %select{cannot be narrowed from type %1 to %2|evaluates to %1, which cannot be narrowed to type %2}0"
@@ -17942,6 +18040,8 @@ H250CD1E6F903: '리텐드 객체를 %select{weak|unsafe_unretained}0 %select{pro
 H8135CA913359: '안전하지 않은 프로퍼티에 보유된 객체를 할당; 할당 후 객체가 해제될 것입니다'
 # "assigning to 'readonly' return result of an Objective-C message not allowed"
 H87457323E0B9: "'readonly' 반환 결과에 Objective-C 메시지의 반환 값을 할당하는 것은 허용되지 않습니다"
+# 'assigning value of preferred signed enum type %1 to unsigned bit-field %0; negative enumerators of enum %1 will be converted to positive values'
+H20F4D35FCD03: '선호되는 부호付き enum 유형 %1의 값이 부호 없는 비트 필드 %0에 할당됨; enum %1의 음수 열거자는 양수 값으로 변환됩니다'
 # 'assigning value of signed enum type %1 to unsigned bit-field %0; negative enumerators of enum %1 will be converted to positive values'
 H03B45829D6A4: '부호 있는 열거형 타입 %1의 값을 부호 없는 비트 필드 %0에 대입; enum %1의 음수 열거자들은 양수 값으로 변환될 것입니다'
 # 'assignment of a weak-unavailable object to a __weak object'
@@ -18210,6 +18310,8 @@ HA6B3D52AF212: '비트 필드 %0의 너비가 음수입니다 (%1)'
 H1F66B27F57D3: '비트 필드 %0는 정수형이 아닌 형식 %1를 가집니다'
 # 'bit-field %0 is not wide enough to store all enumerators of %1'
 H1E7885609E9C: '비트 필드 %0는 %1의 모든 열거자를 저장하기에 충분히 넓지 않습니다'
+# 'bit-field %0 is not wide enough to store all enumerators of preferred type %1'
+H0D56F6137EF8: '비트 필드 %0는 선호되는 유형 %1의 모든 열거자를 저장하기에 충분한 너비가 없습니다'
 # 'bit-field is declared here'
 HE5CFF566169E: '비트 필드가 여기에서 선언되었습니다'
 # 'bit-fields are not supported in OpenCL'
@@ -18438,6 +18540,8 @@ H5F81F51806D8: '후보 %select{생성자|템플릿}0 무시됨: 인스턴스화 
 HDF3920A3A1F2: "후보 %select{함수|함수|매개변수 순서가 반전된 함수|생성자|생성자 (암시적 기본 생성자)|생성자 (암시적 복사 생성자)|생성자 (암시적 이동 생성자)|함수 (암시적 복사 대입 연산자)|함수 (암시적 이동 대입 연산자)|함수 (이 'operator<=>'를 위한 암시적 'operator==')|상속된 생성자}0%select{ | 템플릿| %2}1는 %select{명시적으로 사용 불가능 처리됨|명시적으로 삭제됨|암시적으로 삭제됨}3"
 # "candidate %select{function|function|function (with reversed parameter order)|constructor|constructor (the implicit default constructor)|constructor (the implicit copy constructor)|constructor (the implicit move constructor)|function (the implicit copy assignment operator)|function (the implicit move assignment operator)|function (the implicit 'operator==' for this 'operator<=>)'|inherited constructor}0%select{| template| %2}1 not viable: %ordinal5 argument (%3) would lose %select{const|restrict|const and restrict|volatile|const and volatile|volatile and restrict|const, volatile, and restrict}4 qualifier%select{||s||s|s|s}4"
 H95E4AEB3B23E: "%select{함수|함수|매개변수 순서 반전된 함수|생성자|기본 생성자(암시적)|복사 생성자(암시적)|이동 생성자(암시적)|복사 할당 연산자(암시적)|이동 할당 연산자(암시적)|'operator<=>'에 대한 'operator=='(암시적)|상속 생성자}0%select{| 템플릿| %2}1는 적용할 수 없음: %ordinal5 매개변수(%3)가 %select{const|restrict|const 및 restrict|volatile|const 및 volatile|volatile 및 restrict|const, volatile, restrict}4 자격 증명%select{||s||s|s|s}4를 잃게 됩니다"
+# "candidate %select{function|function|function (with reversed parameter order)|constructor|constructor (the implicit default constructor)|constructor (the implicit copy constructor)|constructor (the implicit move constructor)|function (the implicit copy assignment operator)|function (the implicit move assignment operator)|function (the implicit 'operator==' for this 'operator<=>)'|inherited constructor}0%select{| template| %2}1 not viable: %ordinal8 argument (%3) has %select{no '__ptrauth'|%5}4 qualifier, but parameter has %select{no '__ptrauth'|%7}6 qualifier"
+HD856C23A94D5: "후보 %select{함수|함수|파라미터 순서가 반전된 함수|생성자|암시적 기본 생성자|암시적 복사 생성자|암시적 이동 생성자|암시적 복사 할당 연산자|암시적 이동 할당 연산자|operator<=>를 사용한 'operator=='의 암시적 함수|상속된 생성자}0%select{| 템플릿| %2}1 적합하지 않음: %ordinal8 번째 인수 (%3)는 %select{__ptrauth 없음|%5}4 자격을 갖추지 않았지만, 매개변수는 %select{__ptrauth 없음|%7}6 자격을 갖추고 있습니다"
 # "candidate %select{function|function|function (with reversed parameter order)|constructor|constructor (the implicit default constructor)|constructor (the implicit copy constructor)|constructor (the implicit move constructor)|function (the implicit copy assignment operator)|function (the implicit move assignment operator)|function (the implicit 'operator==' for this 'operator<=>)'|inherited constructor}0%select{| template| %2}1 not viable: %select{%ordinal7|'this'}6 argument (%3) has %select{no|__unsafe_unretained|__strong|__weak|__autoreleasing}4 ownership, but parameter has %select{no|__unsafe_unretained|__strong|__weak|__autoreleasing}5 ownership"
 H8D414CDC2F4E: "후보 %select{함수|함수|파라미터 순서가 반전된 함수|생성자|암시적 기본 생성자|암시적 복사 생성자|암시적 이동 생성자|암시적 복사 대입 연산자 함수|암시적 이동 대입 연산자 함수|'operator<=>'에 대한 암시적 'operator==' 함수|상속된 생성자}0%select{| 템플릿| %2}1 적합하지 않음: %select{%ordinal7|'이'/'该项'}6 인수 (%3)는 %select{없음|__unsafe_unretained|__strong|__weak|__autoreleasing}4 소유권을 가지고 있지만, 파라미터는 %select{없음|__unsafe_unretained|__strong|__weak|__autoreleasing}5 소유권을 가집니다"
 # "candidate %select{function|function|function (with reversed parameter order)|constructor|constructor (the implicit default constructor)|constructor (the implicit copy constructor)|constructor (the implicit move constructor)|function (the implicit copy assignment operator)|function (the implicit move assignment operator)|function (the implicit 'operator==' for this 'operator<=>)'|inherited constructor}0%select{| template| %2}1 not viable: %select{%ordinal7|'this'}6 argument (%3) has %select{no|__weak|__strong}4 ownership, but parameter has %select{no|__weak|__strong}5 ownership"
@@ -18528,6 +18632,8 @@ H5A02E21DB221: " '#pragma clang assume_nonnull' 내부에서 %select{#include �
 HBEBB0813D273: '객체의 끝을 넘어가는 포인터에 %select{기반 클래스의|파생 클래스의|필드의|배열 요소의|ERROR|실수 성분의|허수 성분의}0 접근할 수 없습니다'
 # 'cannot %select{access base class of|access derived class of|access field of|access array element of|perform pointer arithmetic on|access real component of|access imaginary component of}0 null pointer'
 H2E784B2C1B28: '널 포인터의 %select{기반 클래스를 액세스|파생 클래스를 액세스|필드를 액세스|배열 요소를 액세스|포인터 산술을 수행|실수 성분을 액세스|허수 성분을 액세스}0할 수 없습니다.'
+# "cannot %select{assign to %select{object|'%1'}2 with|pass argument to %select{parameter|parameter '%1'}2 with|return|convert to|%select{|implicitly }3initialize %select{object|'%1'}2 with|pass argument to parameter with|cast to|pass argument to parameter with}0 '%5' attributed type %4 because the pointee type %6 is incomplete"
+H1CA72EC4A20B: "특성 유형 %4인 '%5'로 %select{ %select{객체|'%1'}2에 할당하여 | %select{매개변수|매개변수 '%1'}2에 인수 전달하여 | 반환하여 | 변환하여 | %select{|암시적으로 }3%select{객체|'%1'}2 초기화하여 | 매개변수에 인수 전달하여 | 형 변환하여 | 매개변수에 인수 전달하여 }0 할 수 없습니다. 포인티 타입 %6은 완전하지 않기 때문입니다."
 # 'cannot %select{assign|return|throw|subscript}0 a WebAssembly table'
 H1D574B1BA9C6: 'WebAssembly 테이블에 %select{할당|반환|던지|인덱싱}0할 수 없습니다.'
 # 'cannot %select{capture|take address of}0 WebAssembly reference'
@@ -18536,10 +18642,10 @@ H1706BDA5F276: 'WebAssembly 참조를 %select{포획할 수 없습니다|주소�
 H9709AF91935B: 'enum 형식 %1의 식을 %select{감소|증가}0할 수 없습니다.'
 # 'cannot %select{decrement|increment}1 value of type %0'
 H7C6ED23E2E9F: '형식 %0의 값을 %select{감소|증가}1할 수 없습니다.'
-# 'cannot %select{form pointer to|form reference to|form array of|form function returning|use parentheses when declaring variable with}0 deduced class template specialization type'
-HAF4CF818160D: '%select{포인터를 형성할 수 없습니다|참조를 형성할 수 없습니다|배열을 형성할 수 없습니다|함수 반환 형식을 형성할 수 없습니다|변수를 선언할 때 괄호를 사용해야 합니다}0 추론된 클래스 템플릿 특수화 유형'
 # 'cannot %select{throw|catch}0 a WebAssembly reference type'
 H3CB66A7D1B81: 'WebAssembly 참조 형식을 %select{throw|catch}0할 수 없습니다.'
+# "cannot %select{use '%1' with '%4' attributed|call '%1' with '%4' attributed return}0 type %2 because the pointee type %3 is incomplete"
+HF83C2ECBEF93: "완전하지 않은 포인티 타입 %3 때문에 %select{'%1'에 '%4' 속성을 가진|'%1'에 '%4' 속성을 가진 반환값 호출}0 타입 %2를 사용할 수 없습니다"
 # "cannot %select{use builtin operator '<=>'|default 'operator<=>'}1 because type '%0' was not found; include <compare>"
 H40A5A6DFAC87: "타입 '%0'이 발견되지 않아 %select{builtin 연산자 '<=>'을 사용할 수 없음|기본 'operator<=>'을 사용할 수 없음}1입니다; <compare> 헤더를 포함하세요"
 # 'cannot %select{use type %1 for a function/method parameter|use type %1 for function/method return|default-initialize an object of type %1|declare an automatic variable of type %1|copy-initialize an object of type %1|assign to a variable of type %1|construct an automatic compound literal of type %1|capture a variable of type %1|cannot use volatile type %1 where it causes an lvalue-to-rvalue conversion}3 since it %select{contains|is}2 a union that is non-trivial to %select{default-initialize|destruct|copy}0'
@@ -18618,6 +18724,8 @@ H1C20AF9781FF: '형 %1을(를) 포인터 형 %2로 캐스팅할 수 없습니다
 HB63F6FC3F823: "0이 아닌 값 '%0'을 'event_t'로 캐스팅할 수 없습니다"
 # 'cannot cast object of dynamic type %0 to type %1'
 H29A99B2195B9: '동적 타입 %0인 객체를 타입 %1로 형변환이 불가능합니다'
+# "cannot cast to '__ptrauth'-qualified type %0"
+H6496D0FA4BB0: "'__ptrauth'-qualifier가 있는 타입 %0로 캐스팅할 수 없습니다"
 # 'cannot catch %select{|reference to }0sizeless type %1'
 HFDB51E9BFE05: '크기 없는 타입 %1을 %select{참조 |}0로 잡을 수 없습니다'
 # 'cannot catch an Objective-C object by value'
@@ -18788,8 +18896,8 @@ H20ABDE201926: "HIP 표준 병렬 가속화 라이브러리를 찾을 수 없습
 H74B6BE24033A: "HIP 디바이스 라이브러리를 찾을 수 없습니다%select{| %1에 대해}0; 경로를 '--hip-path' 또는 '--hip-device-lib-path'를 통해 제공하거나, '-nogpulib'를 전달하여 HIP 디바이스 라이브러리를 사용하지 않고 빌드할 수 있습니다"
 # "cannot find HIP runtime; provide its path via '--rocm-path', or pass '-nogpuinc' to build without HIP runtime"
 H11EBFA045BE3: "HIP 런타임을 찾을 수 없습니다; '--rocm-path'를 통해 경로를 제공하거나 '-nogpuinc'를 전달하여 HIP 런타임 없이 빌드할 수 있습니다."
-# "cannot find ROCm device library%select{| for %1| for ABI version %1}0; provide its path via '--rocm-path' or '--rocm-device-lib-path', or pass '-nogpulib' to build without ROCm device library"
-H7B7F4A357272: "ROCM 장치 라이브러리를 찾을 수 없습니다%select{|%1용|ABI 버전 %1용}0; '--rocm-path' 또는 '--rocm-device-lib-path'를 사용하여 경로를 제공하거나, '-nogpulib'를 전달하여 ROCm 장치 라이브러리를 사용하지 않고 빌드할 수 있습니다"
+# "cannot find ROCm device library%select{| for %1| for ABI version %1%select{|, which requires ROCm %3 or higher}2}0; provide its path via '--rocm-path' or '--rocm-device-lib-path', or pass '-nogpulib' to build without ROCm device library"
+H66C4B1DCC978: "ROCM 장치 라이브러리%select{| %1에 대한| ABI 버전 %1%select{|, %3 이상의 ROCm 버전이 필요합니다}2}0을 찾을 수 없음: '--rocm-path' 또는 '--rocm-device-lib-path'를 통해 경로를 제공하거나 '-nogpulib'를 전달하여 ROCm 장치 라이브러리 없이 빌드하세요"
 # 'cannot find a valid user-defined mapper for type %0 with name %1'
 H0907A5973C27: '형 %0에 이름 %1이 있는 유효한 사용자 정의 매퍼를 찾을 수 없습니다'
 # "cannot find end ('%1') of expected %0"
@@ -18822,6 +18930,8 @@ H727EB43115FC: "예상된 %0의 시작('{{')을 찾을 수 없습니다"
 HD5BDA70A3617: "정규식('{{')의 시작을 %0에서 찾을 수 없습니다."
 # 'cannot find suitable %select{getter|setter}0 for property %1'
 H0F811370E791: '프로퍼티 %1에 대한 적절한 %select{getter|setter}0를 찾을 수 없습니다'
+# 'cannot form %select{pointer to|reference to|array of|function returning}0 deduced class template specialization type'
+H0C20361BB556: '연결된 클래스 템플릿 특수화 유형에 대한 %select{포인터|참조|array|함수 리턴}0을 만들 수 없습니다'
 # "cannot form %select{pointer to|reference to|array of}0 'decltype(auto)'"
 H7F41F0A9CCC7: 'decltype(auto)의 %select{포인터|참조|array}0을 형성할 수 없습니다'
 # 'cannot form a %select{pointer|reference}0 to a WebAssembly table'
@@ -19284,6 +19394,8 @@ H67A993394D9A: '클래스 템플릿 %0가 여기서 인스턴스화되었습니�
 H2F3153B3F0E2: '클래스 템플릿 인수 추론이 %0에서 삭제된 생성자를 선택했습니다'
 # 'class template argument deduction for %0 selected an explicit %select{constructor|deduction guide}1 for copy-list-initialization'
 HC409A532BB3A: '클래스 템플릿 인수 추론은 %0 복사-리스트 초기화를 위해 명시적인 %select{생성자|추론 가이드}1을 선택했습니다'
+# 'class template argument deduction for alias templates is a C++20 extension'
+HDC66CA6F51E2: '.alias 템플릿에 대한 클래스 템플릿 인수 추론은 C++20 확장 기능입니다'
 # 'class template argument deduction for alias templates is incompatible with C++ standards before C++20'
 H0A109AC10809: '별칭 템플릿에 대한 클래스 템플릿 인수 추론은 C++20 이전의 C++ 표준과 호환되지 않습니다.'
 # 'class template argument deduction is incompatible with C++ standards before C++17%select{|; for compatibility, use explicit type name %1}0'
@@ -19392,6 +19504,8 @@ HA0D702990A9A: '호환되는 타입 %0가 여기에 지정되었습니다'
 H55D78247B7D8: "컴파일 데이터베이스 '%0'를 열 수 없습니다: %1"
 # 'compile time floating point arithmetic suppressed in strict evaluation modes'
 H1CBDE348A919: '엄격한 평가 모드에서 컴파일 타임 플로팅 포인트 산술 연산이 억제되었습니다'
+# "compiled from '%0' and '%1'"
+H27BB14892FCB: "'%0'와 '%1'에서 컴파일됨"
 # 'compiler has implicitly changed method %0 return type'
 HA0BE2730FEEE: '컴파일러가 암시적으로 %0 메소드의 반환 형식을 변경했습니다'
 # 'completion handler is called twice'
@@ -19518,6 +19632,10 @@ HCE15ED850DE4: "헤더 검색 경로에 '%0'을 추가하는 것을 고려해 �
 H6A4F6FD30F2D: "%0를 '%1' 호출 규약으로 정의하는 것을 고려해 보십시오"
 # 'consider making the bit-field type %select{unsigned|signed}0'
 HDAE81431A685: '비트 필드 유형을 %select{unsigned|signed}0로 변경하는 것을 고려해 보세요.'
+# 'consider providing a complete definition for %0'
+H2F6F79E2A183: '%0에 대한 완전한 정의를 제공하는 것을 고려하세요'
+# "consider using '__sized_by%select{|_or_null}0' instead of '__counted_by%select{|_or_null}0'"
+H40017362835A: "'__counted_by%select{|_or_null}0' 대신 '__sized_by%select{|_or_null}0'을 사용하는 것을 고려하세요"
 # "consider using __builtin_trap() or qualifying pointer with 'volatile'"
 H002E765592F2: '__builtin_trap()를 사용하거나 포인터를 volatile로 지정하도록 고려해 보세요'
 # 'consider using vld1_%0%1() to initialize a vector from memory, or vcreate_%0%1() to initialize from an integer constant'
@@ -19718,8 +19836,8 @@ HFA594BB552D0: 'delete 표현식을 %0 형식에서 %1 형식으로 변환하면
 HC26D67935F61: 'enum 상수를 불리언으로 변환 중입니다'
 # "converting the result of '<<' to a boolean always evaluates to %select{false|true}0"
 H66F90B0804A0: "연산자 '<<'의 결과를 불리언으로 변환하면 항상 %select{false|true}0으로 평가됩니다"
-# "converting the result of '<<' to a boolean; did you mean '(%0) != 0'?"
-HB5F0E9F35B11: '"<<" 연산자의 결과를 불리언으로 변환; "%(%0) != 0" 의 뜻이었나요?'
+# "converting the result of '<<' to a boolean; did you mean to compare with '0'?"
+H2022F6B0CFBA: "'<<' 결과를 불리언으로 변환하고 있습니다; '0'과 비교하려는 것이었나요?"
 # "converting the result of '?:' with integer constants to a boolean always evaluates to 'true'"
 H0B52D2457927: "정수 상수와 함께 '?:'의 결과를 불리언으로 변환하면 항상 'true'로 평가됩니다"
 # 'converting to boxing syntax requires casting %0 to %1'
@@ -19878,6 +19996,8 @@ H82E18D14C9A2: "비로컬 변수의 선언이 'for' 루프에서 C23 확장입�
 H1C8715C3541C: 'for 반복문 내의 비로컬 변수 선언은 C23 이전의 C 표준과 호환되지 않습니다'
 # 'declaration of reference variable %0 requires an initializer'
 H8635EDA9A8C6: '참조 변수 %0을 선언하려면 초기화자를 지정해야 합니다'
+# 'declaration of type aware %0 in %1 must have matching type aware %2'
+HC35A59FCABD4: '%1 내 %0의 형식 인식 선언은 일치하는 형식 인식 %2를 가져야 합니다'
 # 'declaration of variable %0 with deduced type %1 requires an initializer'
 H737154EADE2A: '변수 %0를 추론된 형식 %1로 선언하려면 초기화자를 지정해야 합니다'
 # 'declaration requires a global constructor'
@@ -20226,6 +20346,8 @@ HB212F1F17A19: '지정 초기자자는 C++20 이전의 C++ 표준과 호환되�
 HDC0C952FB90A: '초기화자 내의 %select{스칼라|분할 불가능한 크기 없는}0 유형 %1에 대한 지정자'
 # 'designator into flexible array member subobject'
 H596716C96072: '유연한 배열 멤버 부 객체에 디자이네이터 사용'
+# 'destroying delete is not permitted to be type aware'
+HBF72010CD873: '형식 인식 삭제 연산자는 허용되지 않습니다'
 # "destroying object '%0' whose lifetime has already ended"
 H480FFC7A6CDF: "생명 주기가 이미 종료된 객체 '%0'를 소멸시키는 중입니다"
 # 'destroying operator delete can have only an optional size and optional alignment parameter'
@@ -20276,6 +20398,8 @@ H55938C1F7AEA: '입력 로그에서 함수 ID를 심볼화할 때 함수 이름�
 HF854EBCB0FF7: '입력 로그 레코드를 타임스탐프로 정렬할지 여부를 결정합니다'
 # "device clause with ancestor device-modifier used without specifying 'requires reverse_offload'"
 H7C03F0398F87: "조상 디바이스 수정자를 사용한 디바이스 절은 'requires reverse_offload'를 지정하지 않았습니다"
+# "device files are not yet supported by '#embed' directive"
+H3E3F85E899CB: '#embed 지시문은 장치 파일을 지원하지 않습니다'
 # 'diagnostic formatting in SARIF mode is currently unstable'
 HADEECC0D1814: 'SARIF 모드에서의 진단 형식화는 현재 불안정합니다'
 # 'diagnostic msg: %0'
@@ -21814,8 +21938,6 @@ HF416CD096831: '__builtin_convertvector의 첫 번째 인수는 벡터 타입이
 HCF8EE366AB6A: '명명된 유니온의 첫 번째 필드는 %select{부동소수점|벡터}0 타입 %1을 가질 수 없습니다; transparent_union 속성이 무시되었습니다'
 # 'first non-designated initializer is here'
 H3AA2DBB89701: '첫 번째 비지정 초기화자는 여기에 있습니다'
-# 'first parameter of %0 must have type %1'
-HE845E4B59857: '첫 번째 매개변수 %0는 %1 형식을 가져야 합니다'
 # 'first two arguments to __builtin_convertvector must have the same number of elements'
 HF134017C1A48: "함수 '__builtin_convertvector'의 첫 번째 두 인수는 동일한 요소 수를 가져야 합니다"
 # "flag '%0' is ignored when flag '%1' is present"
@@ -22346,6 +22468,8 @@ H9AA979884A67: '비추천된 %select{method|class|category}0을 구현 중입니
 H0D7D4644123A: '사용할 수 없는 메서드를 구현 중입니다.'
 # 'implicit %select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}0 inferred target collision: call to both %select{__device__|__global__|__host__|__host__ __device__}1 and %select{__device__|__global__|__host__|__host__ __device__}2 members'
 HDD95624FC57A: '암시적 %select{기본 생성자|복사 생성자|이동 생성자|복사 대입 연산자|이동 대입 연산자|소멸자}0 추론된 타겟 충돌: %select{__device__|__global__|__host__|__host__ __device__}1 및 %select{__device__|__global__|__host__|__host__ __device__}2 멤버 둘 다 호출'
+# "implicit '0' return value from 'main' is a C99 extension"
+HDE00C37DFBCC: "'main'에서의 암시적 '0' 반환 값은 C99 확장 기능입니다"
 # 'implicit boolean conversion of Objective-C object literal always evaluates to true'
 HFAC6148E9355: 'Objective-C 객체 리터럴의 암시적 불리언 형변환은 항상 true로 평가됩니다'
 # "implicit capture of 'this' with a capture default of '=' is deprecated"
@@ -22794,8 +22918,8 @@ H17CD335B9F9F: 'char 배열의 초기화 문자열이 너무 깁니다. 배열 �
 H822723DC0E42: '초기화자 목록이 비어 있는 것으로 %0을 초기화하는 것은 C++98과 호환되지 않습니다'
 # "initializing 'char8_t' array with plain string literal"
 H1EA4AB240813: "일반 문자열 리터럴로 'char8_t' 배열 초기화"
-# "initializing an array from a '%0' predefined identifier is a Microsoft extension"
-H8573434E16CF: "배열을 '%0' 예정의 식별자에서 초기화하는 것은 Microsoft 확장 기능입니다"
+# 'initializing an array from a %0 predefined identifier is a Microsoft extension'
+HF1EC87683FC5: '마이크로소프트 확장 기능을 사용하여 %0 예정된 식별자를 통해 배열 초기화'
 # 'initializing char array with wide string literal'
 H698D73717CFB: 'char 배열을 와이드 문자열 리터럴로 초기화 중'
 # 'initializing field %0 with default member initializer'
@@ -22996,8 +23120,8 @@ H6D1E048E9343: '인터옵 변수 %0가 여러 개의 작업 절에서 사용되�
 H4EE913CC5003: "interop 변수는 'omp_interop_t' 형식이어야 합니다"
 # 'interrupt service routine cannot be called directly'
 H0EEEBB03E095: '인터럽트 서비스 루틴은 직접 호출할 수 없습니다'
-# "interrupt service routine with vfp enabled may clobber the interruptee's vfp state"
-H55034798B0BD: 'VFP가 활성화된 인터럽트 서비스 루틴은 인터럽트를 받은 쪽의 VFP 상태를 손상시킬 수 있습니다.'
+# "interrupt service routine with vfp enabled may clobber the interruptee's vfp state; consider using the `interrupt_save_fp` attribute to prevent this behavior"
+HBC940BDF20A5: 'vfp 활성화된 인터럽트 서비스 루틴은 인터럽티의 vfp 상태를 손상시킬 수 있습니다; 이 동작을 방지하기 위해 `interrupt_save_fp` 속성을 사용하십시오'
 # 'interval between profile writes (default: 0 = write only at program end).  This is useful for service workloads when you want to dump profile every X minutes or if you are killing the program and the profile is not being dumped at the end.'
 H3081FD16F975: '프로파일 작성 간격 (기본값: 0 = 프로그램 종료 시만 작성). 이 옵션은 서비스 워크로드에서 X 분마다 프로파일을 덤프하고 싶을 때, 또는 프로그램을 강제 종료하여 프로파일이 종료 시 덤프되지 않을 경우 유용합니다.'
 # 'intrinsic module directory'
@@ -23032,6 +23156,8 @@ H8F1C2E5DB890: "잘못된 C++ ABI 이름 '%0'"
 H91493C3284DF: "올바르지 않은 CoreFoundation 런타임 ABI '%0'; 다음 중 하나여야 합니다: 'objc', 'standalone', 'swift', 'swift-5.0', 'swift-4.2', 'swift-4.1'"
 # 'invalid Darwin version number: %0'
 HA0C57A49CA76: '올바르지 않은 Darwin 버전 번호: %0'
+# 'invalid LLVM IR input: %0'
+H196A3B80B48D: '잘못된 LLVM IR 입력: %0'
 # "invalid OS value '%0' in '%1'"
 H00BD3F016742: "무효한 OS 값 '%0'은 '%1'에서 지정되었습니다"
 # 'invalid OpenACC clause %0'
@@ -23052,6 +23178,8 @@ HA12658A01ACA: "잘못된 Xarch 인수: '%0', 모든 드라이버 옵션이 Xarc
 H7917BEC4B42C: "잘못된 Xarch 인수: '%0', 인수를 요구하는 옵션들은 지원되지 않습니다"
 # 'invalid __hlsl_resource_t type attributes'
 H9A97FF7B54BE: '유효하지 않은 __hlsl_resource_t 형식 특성'
+# "invalid address discrimination flag '%0'; '__ptrauth' requires '0' or '1'"
+H3802C33B9837: "__ptrauth 주소 판별 플래그 '%0'가 유효하지 않음; '__ptrauth'는 '0' 또는 '1'이 필요합니다"
 # 'invalid address discrimination mode %0'
 H1D217687F248: '잘못된 주소 구분 모드 %0'
 # "invalid alignment option in '#pragma %select{align|options align}0' - ignored"
@@ -23176,6 +23304,8 @@ H98E01B807F8E: '유효하지 않은 명시적 객체 매개변수 유형 %0가 �
 H607716F86E02: '유효하지 않은 명시적 객체 매개변수 유형 %0이(가) 캡처를 가진 람다에서 발견됨; 해당 유형은 람다로부터 공개적으로 파생되어야 합니다'
 # 'invalid extra discrimination selection %0'
 HAC5AAEAB2B1D: '잘못된 추가 선택 구분 %0'
+# "invalid extra discriminator flag '%0'; '__ptrauth' requires a value between '0' and '%1'"
+HBC87DBE11994: "__ptrauth 추가 판별 플래그 '%0'가 유효하지 않음; '__ptrauth'는 '0'과 '%1' 사이의 값을 필요로 합니다"
 # 'invalid feature combination: %0'
 H53E34DDB7754: '잘못된 기능 조합: %0'
 # 'invalid field is here'
@@ -23360,6 +23490,8 @@ H4B1AA82F67A0: '유효하지 않은 검증기 버전 : %0; 검증기 버전 형�
 HD365448B0579: '무효한 검증기 버전: %0; 메이저 버전이 0인 경우, 마이너 버전도 0이어야 합니다'
 # 'invalid validator version : %0; validator version must be less than or equal to current internal version'
 HED613B352B91: '잘못된 검증기 버전: %0; 검증기 버전은 현재 내부 버전보다 작거나 같아야 합니다.'
+# "invalid value %0 in '%1' clause; valid values are %2"
+H70463648CF58: "'%1' 절의 값 %0은(는) 유효하지 않습니다; 유효한 값은 %2입니다"
 # "invalid value '%1' in '%0'"
 H7E000E39503F: " '%0'에서 '%1'은 유효하지 않은 값입니다"
 # "invalid value '%1' in '%0', expected one of: %2"
@@ -23606,8 +23738,8 @@ HCE669C9CA888: 'lcov 추적 파일 출력'
 H00D9FE7F4F87: '복합 할당의 왼쪽 피연산자 타입 %0는 오른쪽 피연산자 타입 %1과 함께 사용될 때 잘림을 허용할 수 없습니다'
 # 'left hand operand to %0 must be a %select{|pointer to }1class compatible with the right hand operand, but is %2'
 HE8A81161D486: '왼쪽 피연산자 %0는 오른쪽 피연산자와 호환되는 %select{포인터|}1class여야 하지만, %2입니다'
-# "left hand side of assignment operation('%0') must match one side of the sub-operation on the right hand side('%1' and '%2')"
-HA99FEEFA45D5: "할당 연산의 좌측('%0')은 우측의 부분 연산('%1' 및 '%2')의 한쪽과 일치해야 합니다"
+# 'left hand side of assignment operation(%0) must match one side of the sub-operation on the right hand side(%1 and %2)'
+HEDD23F979FED: '할당 연산의 좌측(%0)은 우측 하위 연산의 한쪽(%1과 %2)과 일치해야 합니다'
 # 'left operand of comma operator has no effect'
 H1D36CC5E4D5A: '콤마 연산자의 왼쪽 피연산자의 결과가 사용되지 않습니다'
 # 'left shift of negative value %0'
@@ -24876,8 +25008,6 @@ HE591548912FE: '쓰레드 개수'
 H6D6640DAD12D: '사용자 정의 접미사를 가진 수치 리터럴은 여기서 사용할 수 없습니다'
 # "nvcc does not allow '__%0__' to appear after the parameter list in lambdas"
 H052A23E5C9DE: "nvcc는 람다의 매개변수 목록 후에 '__%0__'가 나타나는 것을 허용하지 않습니다"
-# 'nvptx-arch options'
-H195E97C080C6: 'nvptx-arch 옵션'
 # 'obj2yaml Options'
 HDEB46CD09A6E: 'obj2yaml 옵션'
 # 'objc_precise_lifetime is not meaningful for %select{__unsafe_unretained|__autoreleasing}0 objects'
@@ -24904,8 +25034,8 @@ H4465935A9154: '%0 형 객체는 %1이(가) 암시적으로 삭제되어 비교�
 HD27A532EA3C9: '%0 유형의 객체는 읽기 전용 메모리에 배치될 수 없습니다'
 # 'object of type %0 is not compatible with %select{array element type|dictionary key type|dictionary value type}1 %2'
 HBDF524B06F4F: '%0 유형의 객체는 %select{배열 요소 유형|사전 키 유형|사전 값 유형}1 %2와 호환되지 않습니다'
-# "object whose reference is captured by '%0' will be destroyed at the end of the full-expression"
-H1329A74CEAA1: '‘%0’에 의해 참조된 객체는 전체 표현의 끝에서 소멸됩니다'
+# 'object whose reference is captured by %0 will be destroyed at the end of the full-expression'
+H79F166A683BE: '%0에 의해 참조가 캡처된 객체는 전체 표현식의 끝에서 파괴됩니다'
 # 'object whose reference is captured will be destroyed at the end of the full-expression'
 H04404B93E557: '참조가 캡처된 객체는 전체 표현식의 끝에서 파괴될 것입니다'
 # 'octal integer literals are a C2y extension'
@@ -24916,6 +25046,8 @@ H0A7A0AD8FA23: '8진 정수 리터럴은 Clang의 확장 기능입니다'
 HFF58B98B1092: '8진 정수 리터럴은 C2y 이전의 표준과 호환되지 않습니다'
 # "octal literals without a '0o' prefix are deprecated"
 H297C91C7799F: '0o 접두사가 없는 8진 리터럴은 사용 중지되었습니다'
+# 'offload-arch options'
+H7186B8C146CF: '오프로드 아키텍처 옵션'
 # 'offset of asan shadow mapping [EXPERIMENTAL]'
 HB87160E3C269: 'asan 샤도우 매핑의 오프셋 [실험적]'
 # 'offset-based plaintext format'
@@ -25204,6 +25336,8 @@ H7A3B62788722: '%0로 모듈 타겟 triple을 재정의합니다'
 HD38E3F8D7591: '가상 함수를 재정의하는 함수는 재정의되는 함수와 동일한 코드 세그먼트를 지정해야 합니다'
 # 'p'
 H516B9783FCA5: 'p'
+# 'pac-ret: return address protection (subset of "pauth")'
+H35B2314AE83E: 'pac-ret: 리턴 주소 보호 (pauth의 하위 집합)'
 # 'pack declaration outside of template'
 HDF7BB0B67932: '템플릿 외부에서 패킹 선언'
 # 'pack expansion contains parameter pack %0 that has a different length (%1 vs. %select{|at least }2%3) from outer parameter packs'
@@ -25448,8 +25582,8 @@ H1E67C0E84EC2: '동적 크기의 모든 배열 할당을 힙에 배치하십시�
 H1021BF49A48F: '비교 표현식 주위에 괄호를 넣어 먼저 계산하십시오'
 # 'place parentheses around the %0 expression to evaluate it first'
 HD79F2195D659: '괄호를 %0 표현식 주위에 둘러서 먼저 평가하세요'
-# "place parentheses around the '%0' expression to silence this warning"
-H7195F835EC30: "표현식 '%0' 주위에 괄호를 추가하여 이 경고를 제거하세요"
+# 'place parentheses around the %quoted0 expression to silence this warning'
+HFD7FB705EA72: '%quoted0 표현식에 괄호를 추가하여 이 경고를 무시할 수 있습니다'
 # "place parentheses around the '?:' expression to evaluate it first"
 H9605DB1A560A: "': 연산자를 괄호로 감싸 먼저 평가하세요"
 # 'place parentheses around the assignment to silence this warning'
@@ -25572,6 +25706,8 @@ HD0E4E0A8CB08: '테일 폴딩을 선호하며, 테일 폴딩이 실패할 경우
 HEA9A1D5F496C: 'ds 형식이 또한 갱신 형식인 경우 갱신 형식을 선호하라'
 # 'prefer_list item must be a string literal or constant integral expression'
 HCAFE9C287B6C: 'prefer_list 항목은 문자열 리터럴 또는 상수 정수 표현식이어야 합니다'
+# 'preferred type for bit-field %0 specified here'
+H89CF4480AE9D: '비트 필드 %0에 대한 선호 유형이 여기에서 지정되었습니다'
 # "prefers tail-folding, don't attempt vectorization if tail-folding fails."
 H12E0DCDDA093: '꼬리 접기를 선호하며, 꼬리 접기가 실패하면 벡터화를 시도하지 않습니다.'
 # 'prefix attribute must be followed by an interface, protocol, or implementation'
@@ -26368,6 +26504,8 @@ HBB5542941955: "예약된 지정자 'omp_all_memory'는 한 번 이상 지정할
 H98614BF4F5B5: "예약된 위치 지정자 'omp_all_memory'는 'out' 또는 'inout' 의존성 유형이 필요합니다"
 # 'resolve all otherwise unresolved externals to null'
 H0D8FB57C5D95: '다른 방법으로 해결되지 않은 모든 외부 심볼을 null로 해결합니다'
+# 'resource has implicit register binding'
+H2038E0629D14: '리소스가 암시적 레지스터 결합을 가집니다'
 # 'respect alignment requirements provided by input IR'
 H3C9B5ECCDE76: '입력 IR에 의해 제공되는 정렬 요구사항을 준수하십시오.'
 # 'restrict requires a pointer or reference'
@@ -26508,8 +26646,8 @@ HB7C873D08ECC: 'sampler_t 초기화에는 32비트 정수가 필요하며, %0는
 H54F7785F9F3D: 'sampler_t 변수가 필요합니다 - %0가 제공됨'
 # 'sanstats Options'
 H8526EFD0A943: 'sanstats 옵션'
-# "satisfaction of constraint '%0' depends on itself"
-H3716B39C40C1: "제약 조건 '%0'의 만족 여부가 자기 자신에게 의존합니다"
+# 'satisfaction of constraint %0 depends on itself'
+H172A48B0FE13: '제약 조건 %0의 충족 여부가 자신에게 의존합니다'
 # 'save recorded profile to a file'
 H0DD7B7A894BB: '기록된 프로필을 파일에 저장합니다'
 # 'scalar initialized from empty initializer list is incompatible with C++98'
@@ -26558,6 +26696,8 @@ HF3ADBC91450B: '두 번째 인수는 __builtin_alloca_with_align의 비트 단�
 HB28F8D41E677: '두 번째 인수는 너비 없는 문자열 상수여야 합니다'
 # 'second argument to __builtin_call_with_static_chain must be of pointer type'
 H9D3B291ADD1F: '__builtin_call_with_static_chain의 두 번째 인수는 포인터 타입이어야 합니다'
+# "section argument to 'patchable_function_entry' attribute is not valid for this target: %0"
+HBEBC9A622C36: "'patchable_function_entry' 속성의 섹션 인수는 이 타겟에 유효하지 않습니다: %0"
 # 'section attribute is specified on redeclared variable'
 H4BE9B9505588: 'section attribute가 재선언된 변수에 지정되었습니다.'
 # 'section length is evaluated to a negative value %0'
@@ -26632,6 +26772,8 @@ HA588BE6E194B: '프로파일 밀도 세부 사항을 표시합니다'
 HF6C65D702470: '수정이 적용된 후의 섹션 내용을 표시'
 # 'signed bit-field %0 needs an extra bit to represent the largest positive enumerators of %1'
 HE118008121A9: '부호 있는 비트 필드 %0는 %1의 가장 큰 양의 열거자를 표현하기 위해 추가 비트가 필요합니다'
+# 'signed bit-field %0 needs an extra bit to represent the largest positive enumerators of preferred type %1'
+H16B76E9FE00B: '선호 유형 %1의 가장 큰 양수 열거자를 표현하기 위해 부호 있는 비트 필드 %0는 추가 비트가 필요합니다'
 # 'signed left shift discards bits'
 HD469BF80AF3C: '부호 있는 왼쪽 시프트 연산이 비트를 무시합니다'
 # 'signed shift result (%0) requires %1 bits to represent, but %2 only has %3 bits'
@@ -26854,14 +26996,14 @@ HF2CC0A1A3C82: '정적 멤버는 이름 없는 %select{구조체|유니온}0에 
 H1CCD7A0167D8: '정적 변수 %0는 자신의 초기화 과정에서 의심스럽게 사용되고 있습니다'
 # 'static_cast between pointer-to-function and pointer-to-object is a Microsoft extension'
 H747267A37B70: 'static_cast을 함수 포인터와 객체 포인터 사이에서 사용하는 것은 Microsoft의 확장 기능입니다'
+# 'std::%0 must be a class template with a single type parameter'
+HAA8558BD9D00: 'std::%0는 단일 유형 매개변수를 갖는 클래스 템플릿이어야 합니다'
 # "std::coroutine_handle isn't a class template"
 H20FD07579F32: 'std::coroutine_handle은 클래스 템플릿이 아닙니다'
 # "std::coroutine_handle must have a member named '%0'"
 HC01B7EC5D8D7: "std::coroutine_handle는 '%0'이라는 이름의 멤버를 가져야 합니다"
 # "std::coroutine_traits isn't a class template"
 H3D3F8F520E5F: 'std::coroutine_traits는 클래스 템플릿이 아닙니다'
-# 'std::initializer_list must be a class template with a single type parameter'
-H57E56532E11C: 'std::initializer_list는 단일 타입 매개변수가 있는 클래스 템플릿이어야 합니다'
 # 'std::nothrow must be a valid variable declaration'
 H81985EEDEA6B: 'std::nothrow는 유효한 변수 선언이어야 합니다'
 # 'std::nothrow was not found; include <new> before defining a coroutine which uses get_return_object_on_allocation_failure()'
@@ -27174,8 +27316,8 @@ HA776568AF253: '형 %0의 임시 객체가 %select{private|protected}1 소멸자
 H1578DBDB8944: '잠정 배열 정의가 1개 요소를 가진 것으로 가정됩니다'
 # 'tentative definition has type %0 that is never completed'
 H2533423DBC92: '임시 정의는 완료되지 않은 %0 타입을 가집니다'
-# 'tentative definition of variable with internal linkage has incomplete non-array type %0'
-H137EE1AFC5D6: '내부 링크지 변수의 미확정 정의는 완전하지 않은 배열이 아닌 형식 %0를 가집니다'
+# 'tentative definition of variable with internal linkage has incomplete %select{non-array|array}0 type %1'
+H23883C0A0522: '내부 링크를 갖는 변수의 임시 정의는 완성되지 않은 %select{배열이 아닌|array}0 유형 %1을 가집니다'
 # 'tenths of percents of main entry frequency to use as a threshold when evaluating whether a basic block is cold (0 means it is only considered cold if the block has zero samples). Default: 0 '
 HB4A505AFFDA6: '메인 엔트리 빈도의 퍼센트의 10분의 1을 임계값으로 사용할 때 기본 블록이 희소한지 평가하는 데 사용합니다. (0은 블록이 0 샘플을 가질 경우에만 희소하다고 간주함) 기본값: 0'
 # "test module file extension '%0' has different version (%1.%2) than expected (%3.%4)"
@@ -27238,8 +27380,8 @@ H88A5B848CED9: "컨텍스트 속성 '%0'은 컨텍스트 선택기 '%1' 및 컨�
 HDD6FFFA1FE6E: "맥락 선택기 '%0'는 맥락 세트 '%1' 안에 중첩될 수 있습니다; 다음과 같이 시도해 보세요: 'match(%1={%0%select{|(property)}2})'"
 # "the context selector '%0' in context set '%1' requires a context property defined in parentheses; selector ignored"
 H4359A48C4F70: "컨텍스트 세트 '%1' 내의 컨텍스트 선택기 '%0'은 괄호 안에 정의된 컨텍스트 속성이 필요합니다; 선택기를 무시합니다"
-# "the context selector '%0' in the context set '%1' cannot have a score ('%2'); score ignored"
-H98F3D66A37F6: "컨텍스트 세트 '%1' 내의 컨텍스트 선택기 '%0'는 점수 '%2'를 가질 수 없습니다; 점수가 무시되었습니다"
+# "the context selector '%0' in the context set '%1' cannot have a score (%quoted2); score ignored"
+H3FAFFF7C5EF8: "맥락 집합 '%1'의 맥락 선택자 '%0'는 점수(%quoted2)를 가질 수 없습니다; 점수 무시됨"
 # "the context selector '%0' is not valid for the context set '%1'; selector ignored"
 HDF7A50F1E9D4: "컨텍스트 선택기 '%0'은 컨텍스트 세트 '%1'에 유효하지 않으므로 선택기가 무시됩니다"
 # "the coroutine promise type %0 declares both 'return_value' and 'return_void'"
@@ -27424,8 +27566,6 @@ HF896DD5CD9DB: '이 함수는 코루틴일 수 없습니다: %0은(는) 클래�
 HAD42B5488901: "이 함수는 코루틴일 수 없습니다: '%q0'에는 'promise_type'이라는 멤버가 없습니다"
 # 'this function cannot be a coroutine: missing definition of specialization %0'
 HFC5D41C5C0FA: '이 함수는 코루틴으로 될 수 없습니다: 전문화 %0의 정의가 누락되었습니다'
-# 'this is generally caused by modules with the same name found in multiple paths'
-HB435423839CE: '이것은 일반적으로 동일한 이름을 가진 모듈이 여러 경로에서 발견되기 때문입니다'
 # 'this placement new expression is not supported in constant expressions %select{|before C++2c}0'
 HFED2CB8F9A5D: '이 placement new 표현식은 상수 표현식에서 %select{|C++2c 이전에}0 지원되지 않습니다'
 # 'this pragma cannot appear in %0 declaration'
@@ -27622,6 +27762,8 @@ H1178A958ED5C: '제네릭 연관에서 %0 형식은 이전에 지정된 %1 형�
 HCA8F3A82743E: '제네릭 결합에서의 유형 %0는 가변적으로 수정된 유형입니다'
 # 'type %0 in generic association not an object type'
 H9CBDAFFFD0D2: '제네릭 연관에서의 유형 %0은 객체 유형이 아닙니다'
+# 'type %0 is already %1-qualified'
+HEAFB5CEE4F59: '유형 %0는 이미 %1- 자격을 갖추었습니다'
 # 'type %0 is incomplete'
 H68C687943CFB: '타입 %0는 완성되지 않았습니다'
 # 'type %0 is not a direct or virtual base of %1'
@@ -27654,6 +27796,14 @@ H67EB09767F26: '형식 인수는 이미 특수화된 class 형식 %0에 적용�
 H41CCF55FF38B: '타입 인수는 non-class type %0에 적용될 수 없습니다'
 # 'type arguments cannot be applied to non-parameterized class %0'
 HC40C2F44A862: '형식 인수는 매개변수화되지 않은 클래스 %0에 적용할 수 없습니다'
+# 'type aware %0 requires a matching type aware %select{|placement }1%2 to be declared in the same scope'
+H9C477E0B6856: '유형 인식 %0는 같은 범위에서 선언된 일치하는 유형 인식 %select{|배치 }1%2가 필요합니다'
+# 'type aware %0 will not be used for coroutine allocation'
+H5B38A9DE0EAE: '유형 인식 %0는 코루틴 할당에 사용되지 않습니다'
+# 'type aware allocators are a C++2c extension'
+H55565F6468B1: '유형 인식 할당자는 C++2c 확장 기능입니다'
+# 'type aware allocators are incompatible with C++ standards before C++2c'
+H25EF1B0FAFC1: 'C++2c 이전 표준과는 타입 인식 할당자를 호환할 수 없습니다.'
 # 'type bound %0 for type parameter %1 conflicts with %select{implicit|previous}2 bound %3%select{for type parameter %5|}4'
 H7F10FC1165B9: '타입 매개변수 %1에 대한 타입 경계 %0이 %select{암시적|이전}2 경계 %3%select{타입 매개변수 %5에 대한|}4와 충돌합니다'
 # 'type bound %0 for type parameter %1 is not an Objective-C pointer type'
@@ -28076,6 +28226,8 @@ H8B8A3DBA2D6F: "알 수 없는 경고 그룹 '%0'"
 H9E42BAF52A2D: "알려지지 않은 경고 그룹 '%0', 무시됨"
 # "unknown%select{ | embed}0 preprocessor parameter '%1'"
 HD697EE356FF3: "알 수 없는%select{ | embed}0 프리프로세서 매개변수 '%1'"
+# 'unmatched type aware %0 declared here'
+HD5E243D80237: '일치하지 않는 타입 인식 %0이(가) 여기서 선언되었습니다.'
 # 'unnamed enumeration must be a definition'
 H4B9605BBAC49: '이름이 지정되지 않은 열거형은 정의여야 합니다'
 # 'unnamed type as template argument is incompatible with C++98'
@@ -28258,6 +28410,8 @@ H25381B224554: 'C 스타일 캐스트와 함께 __bridge를 사용하여 직접 
 H89038B186CBF: '__bridge_retained와 C 스타일 캐스트를 함께 사용하여 ARC 객체를 +1 %0로 사용 가능하게 하려면 __bridge_retained를 사용하십시오'
 # 'use __bridge_transfer with C-style cast to transfer ownership of a +1 %0 into ARC'
 H0BF38DCCAF48: 'C 스타일 캐스트와 __bridge_transfer를 사용하여 +1 %0의 소유권을 ARC로 이전하려면'
+# "use a custom address at which new code will be put, bypassing BOLT's logic to detect where to put code"
+H8BE27E21C6B2: '새 코드를 배치할 사용자 정의 주소를 사용하여 BOLT의 코드 배치 위치 탐지 로직을 우회합니다.'
 # "use a function's hot size when doing clustering"
 H10032CBF870F: '클러스터링을 수행할 때 함수의 핫 사이즈를 사용합니다'
 # 'use a lock file so only one process in the system can run this pass at once. useful to avoid mangled debug output in multithreaded environments.'
@@ -28652,8 +28806,8 @@ HEE231707A80F: '%0 변수는 유연한 배열 멤버를 가지므로 람다 표�
 HECE6754B3154: '변수 %0의 유형 %1은 초기화자 유형 %2와 호환되지 않습니다.'
 # 'variable %0 with unknown type cannot be given a function type'
 HBD6B0E34602F: '알 수 없는 형식을 가진 변수 %0에는 함수 형식을 지정할 수 없습니다'
-# "variable %select{|in unary expression|on right hand side of assignment|on left hand side of assignment|on left hand side of compound assignment|on left hand side of assignment}2('%3') must match variable used %select{|in unary expression|on right hand side of assignment|<not possible>|on left hand side of compound assignment|on left hand side of assignment}0('%1') from the first statement"
-H68D8E5C8B649: "변수 %select{|단항 표현식에서|할당의 오른쪽 표현식에서|할당의 왼쪽 표현식에서|복합 할당의 왼쪽 표현식에서|할당의 왼쪽 표현식에서}2('%3')은 첫 번째 문에서 사용된 변수 %select{|단항 표현식에서|할당의 오른쪽 표현식에서|<not possible>|복합 할당의 왼쪽 표현식에서|할당의 왼쪽 표현식에서}0('%1')과 일치해야 합니다"
+# 'variable %select{|in unary expression|on right hand side of assignment|on left hand side of assignment|on left hand side of compound assignment|on left hand side of assignment}2(%3) must match variable used %select{|in unary expression|on right hand side of assignment|<not possible>|on left hand side of compound assignment|on left hand side of assignment}0(%1) from the first statement'
+HA70BF8F524C0: '변수 %3 (%select{|단항 표현식 내|할당 오른쪽 표현식|할당 왼쪽 표현식|복합 할당 왼쪽 표현식|할당 왼쪽 표현식}2)은 첫 번째 문에서 사용된 변수 %1 (%select{|단항 표현식 내|할당 오른쪽 표현식|<불가능>|복합 할당 왼쪽 표현식|할당 왼쪽 표현식}0)과 일치해야 합니다'
 # 'variable already marked as mapped in current construct'
 HA15930719644: '변수는 이미 현재 구조에서 매핑 되어 있음'
 # "variable appearing in '%0' clause of OpenACC 'declare' directive must be in the same scope as the directive"

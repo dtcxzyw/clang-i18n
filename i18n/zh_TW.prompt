@@ -14,6 +14,7 @@
 + virtual: 在C++類的多態語境下翻譯為虛函數、虛基類，而不是虛擬
 + incomplete: 不完整
 + expand: 展開
++ evaluate: 求值
 
 當%diff塊內$指代的內容順序發生變化時，請對應修改%diff塊後索引的順序。
 例如：%diff{returning $ from a function with result type $|returning from function with different return type}0,1

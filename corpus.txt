@@ -191,8 +191,6 @@
 '%0 cannot be used as the type of a kernel parameter'
 '%0 cannot bridge to %1'
 '%0 cannot have a dependent return type; use %1 instead'
-'%0 cannot take a dependent type as first parameter; use %1 instead'
-'%0 cannot take a dependent type as first parameter; use size_t (%1) instead'
 "%0 cannot use 'super' because it is a root class"
 '%0 causes a section type conflict with %1'
 '%0 clause previously used here'
@@ -217,6 +215,7 @@
 '%0 does not refer to the name of a parameter pack; did you mean %1?'
 "%0 does not support the '%1' %select{type qualifier|storage class specifier}2"
 "%0 does not support the option '%1'"
+'%0 evaluates to a null function pointer'
 '%0 has C-linkage specified, but returns incomplete type %1 which could be incompatible with C'
 '%0 has C-linkage specified, but returns user-defined type %1 which is incompatible with C'
 '%0 has a non-throwing exception specification but can still throw'
@@ -305,7 +304,6 @@
 '%0 must be name of an Objective-C class to be able to convert %1 to %2'
 '%0 must be specified on definition if it is specified on any declaration'
 '%0 must be used within a preprocessing directive'
-'%0 must have at least one parameter'
 "%0 must not appear in both clauses 'to' and 'link'"
 '%0 must return type %1'
 '%0 needs target feature %1'
@@ -331,7 +329,6 @@
 "%0 should not return a null pointer unless it is declared 'throw()'%select{| or 'noexcept'}1"
 '%0 size too large'
 '%0 specified here'
-'%0 takes type size_t (%1) as first parameter'
 '%0 template must have at least two parameters'
 '%0 type %1 not found; include the base header with -finclude-default-header'
 '%0 type was not found; include <coroutine> before defining a coroutine'
@@ -345,6 +342,7 @@
 "%0 was %select{disabled|enabled}1 in AST file '%3' but is currently %select{disabled|enabled}2"
 '%0 was deserialized'
 '%0 was marked unused but was used'
+'%0 will return the size of the pointer, not the array itself'
 '%0%select{ attribute|}1 cannot be applied to a base specifier'
 '%0%select{ attribute|}1 cannot be applied to a declaration'
 '%0%select{ attribute|}1 cannot be applied to a statement'
@@ -370,6 +368,7 @@
 '%ordinal0 argument must be a WebAssembly table'
 '%ordinal0 argument must be an integer'
 '%ordinal0 argument must match the element type of the WebAssembly table in the %ordinal1 argument'
+'%ordinal3 parameter of%select{| type aware}0%select{| destroying}1 %2 must have type %4'
 '%plural{1:enumeration value %1 not explicitly handled in switch|2:enumeration values %1 and %2 not explicitly handled in switch|3:enumeration values %1, %2, and %3 not explicitly handled in switch|:%0 enumeration values not explicitly handled in switch: %1, %2, %3...}0'
 '%plural{1:enumeration value %1 not handled in switch|2:enumeration values %1 and %2 not handled in switch|3:enumeration values %1, %2, and %3 not handled in switch|:%0 enumeration values not handled in switch: %1, %2, %3...}0'
 "%plural{2:'delete' used to delete pointer to object allocated with 'std::allocator<...>::allocate'|:%select{non-array delete|array delete|'std::allocator<...>::deallocate'}0 used to delete pointer to %select{array object of type %2|non-array object of type %2|object allocated with 'new'}0}1"
@@ -407,6 +406,7 @@
 '%select{%2 has subobjects that are|%3 has type %2 that is}0 non-trivial to %select{default-initialize|destruct|copy}1'
 '%select{%diff{assigning $ to $|assigning to different types}1,0|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2 changes address space of nested pointer'
 '%select{%diff{assigning $ to $|assigning to different types}1,0|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2 changes address space of pointer'
+'%select{%diff{assigning $ to $|assigning to different types}1,0|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2 changes pointer authentication of pointee type'
 '%select{%diff{assigning $ to $|assigning to different types}1,0|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2 changes retain/release properties of pointer'
 "%select{%diff{assigning to $ from $|assigning to different types}0,1|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2 converts between pointers to integer types %select{with different sign|where one is of the unique plain 'char' type and the other is not}3"
 '%select{%diff{assigning to $ from $|assigning to different types}0,1|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2 converts between void pointer and function pointer'
@@ -454,15 +454,15 @@
 '%select{all|second and third}0 arguments to %1 must be of scalar or vector type with matching scalar element type%diff{: $ vs $|}2,3'
 '%select{an attribute specifier sequence|%0}1 in this position is a C++23 extension'
 '%select{an attribute specifier sequence|%1}0 in this position is incompatible with C++ standards before C++23'
+'%select{and|because}0 %1 (%2 %3 %4) evaluated to false'
 '%select{and|because}0 %1 does not satisfy %2'
 '%select{and|because}0 %1 does not satisfy %2:'
-"%select{and|because}0 '%1' (%2 %3 %4) evaluated to false"
-"%select{and|because}0 '%1' evaluated to false"
-"%select{and|because}0 '%1' may throw an exception"
+'%select{and|because}0 %1 evaluated to false'
+'%select{and|because}0 %1 may throw an exception'
 "%select{and|because}0 '%1' would be invalid"
 "%select{and|because}0 '%1' would be invalid%2"
 "%select{and|because}0 '%1' would be invalid: %2"
-"%select{and|because}0 type constraint '%1' was not satisfied:"
+'%select{and|because}0 type constraint %1 was not satisfied:'
 '%select{anonymous struct|union}0 member %1 has a non-trivial %select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}2'
 '%select{anonymous struct|union}0 member %1 with a non-trivial %select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}2 is incompatible with C++98'
 '%select{arithmetic between|bitwise operation between|comparison of|conditional expression between|compound assignment of}0 %select{floating-point|enumeration}1 type %2 %plural{2:with|4:from|:and}0 %select{enumeration|floating-point}1 type %3'
@@ -528,7 +528,7 @@
 '%select{default construction|assignment}0 of lambda is incompatible with C++ standards before C++20'
 '%select{default constructor of|constructor inherited by}0 %1 is implicitly deleted because all %select{data members|data members of an anonymous union member}2 are const-qualified'
 '%select{default constructor of|constructor inherited by}0 %1 is implicitly deleted because field %2 of %select{reference|const-qualified}4 type %3 would not be initialized'
-'%select{default constructor of|copy constructor of|move constructor of|copy assignment operator of|move assignment operator of|destructor of|constructor inherited by}0 %1 is implicitly deleted because %select{base class %3|%select{||||variant }4field %3}2 %select{has %select{no|a deleted|multiple|an inaccessible|a non-trivial}4 %select{%select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor|%select{default|corresponding|default|default|default}4 constructor}0|destructor}5%select{||s||}4|is an ObjC pointer}6'
+"%select{default constructor of|copy constructor of|move constructor of|copy assignment operator of|move assignment operator of|destructor of|constructor inherited by}0 %1 is implicitly deleted because %select{base class %3|%select{||||variant }4field %3}2 %select{has %select{no|a deleted|multiple|an inaccessible|a non-trivial}4 %select{%select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor|%select{default|corresponding|default|default|default}4 constructor}0|destructor}5%select{||s||}4|is an ObjC pointer|has an address-discriminated '__ptrauth' qualifier}6"
 "%select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}0 cannot be 'constexpr' in a class with virtual base class"
 '%select{defaulted|deleted}0 function definitions are a C++11 extension'
 '%select{defaulted|deleted}0 function definitions are incompatible with C++98'
@@ -623,6 +623,7 @@
 "%select{non-struct type|non-class type|non-union type|non-enum type|typedef|type alias|template|alias template|template template argument}1 %0 cannot be referenced with the '%select{struct|interface|union|class|enum}2' specifier"
 '%select{non-virtual|virtual}0 derivation here'
 "%select{non-|function }0pointer argument to '__builtin_is_within_lifetime' is not allowed"
+'%select{non-|}0type aware %1 declared here in %2'
 "%select{no|too many}0 integer expression arguments provided to OpenACC 'num_gangs' %select{|clause: '%1' directive expects maximum of %2, %3 were provided}0"
 "%select{orphaned 'omp section' directives are prohibited, it|'omp section' directive}0 must be closely nested to a sections region%select{|, not a %1 region}0"
 "%select{overridden|current}0 method is explicitly declared 'instancetype'%select{| and is expected to return an instance of its class type}0"
@@ -669,6 +670,7 @@
 '%select{reinterpret_cast|C-style cast}0 from %1 to %2 changes address space of nested pointers'
 '%select{reinterpret_cast|dynamic_cast|%select{this conversion|cast that performs the conversions of a reinterpret_cast}1|cast from %1}0 is not allowed in a constant expression%select{| in C++ standards before C++20||}0'
 '%select{remainder|division}0 by zero is undefined'
+"%select{return type|parameter type|property}1 may not be qualified with '__ptrauth'; type is %0"
 '%select{returning|passing}0 a VL-dependent argument %select{from|to}0 a function with a different streaming-mode is undefined behaviour when the streaming and non-streaming vector lengths are different at runtime'
 '%select{returning|passing}0 a VL-dependent argument %select{from|to}0 a locally streaming function is undefined behaviour when the streaming and non-streaming vector lengths are different at runtime'
 '%select{return|parameter|variable|field|instance variable|synthesized instance variable}0 type %1 is an abstract class'
@@ -706,6 +708,7 @@
 '%select{type tag|argument}0 index %1 is greater than the number of arguments specified'
 '%select{typedef|type alias|type alias template}0 redefinition with different types%diff{ ($ vs $)|}1,2'
 '%select{uninitialized use occurs|variable is captured by block}0 here'
+"%select{unknown|duplicate}0 modifier %1 in OpenACC modifier-list on '%2' clause"
 '%select{unknown|unsupported}0 machine mode %1'
 '%select{unsafe pointer operation|unsafe pointer arithmetic|unsafe buffer access|function introduces unsafe buffer manipulation|unsafe invocation of %1|field %1 prone to unsafe buffer manipulation}0'
 "%select{unsupported|duplicate|unknown}0%select{| CPU| tune CPU}1 '%2' in the '%select{target|target_clones|target_version}3' attribute string;"
@@ -745,6 +748,10 @@
 '%select{|second }0%1 token is here'
 '%select{|static_cast|reinterpret_cast|dynamic_cast|C-style cast|functional-style cast|}0 from %1 to %2 uses deleted function%select{|: %4}3'
 '%select{|success |failure }0memory order argument to atomic operation is invalid'
+'%select{|type aware }0%select{|destroying }1%2 cannot take a dependent type as its %ordinal3 parameter; use %4 instead'
+'%select{|type aware }0%select{|destroying }1%2 cannot take a dependent type as its %ordinal3 parameter; use %5 (%4) instead'
+'%select{|type aware }0%select{|destroying }1%2 must have at least %select{|one|two|three|four|five}3 parameter%s3'
+'%select{|type aware }0%select{|destroying }1%2 takes type %5 (%4) as %ordinal3 parameter'
 "%select{|umbrella }0header '%1' not found"
 '%select{|unsafe_unretained|strong|weak}1 property %0 may not also be declared %select{|__unsafe_unretained|__strong|__weak|__autoreleasing}2'
 '%select{||reinterpret_cast||C-style cast||}0 from scalar %1 to vector %2 of different size'
@@ -824,7 +831,6 @@
 "'%0' does not contain a GCC installation"
 "'%0' does not support '-%1'; flag ignored"
 "'%0' does not support '-moutline'; flag ignored"
-"'%0' evaluates to a null function pointer"
 "'%0' file not found"
 '\'%0\' file not found with <angled> %select{include|import}1; use "quotes" instead'
 "'%0' file not found, did you mean '%1'?"
@@ -894,7 +900,6 @@
 "'%0' will always overflow; destination buffer has size %1, but format string expands to at least %2"
 "'%0' will always overflow; destination buffer has size %1, but size argument is %2"
 "'%0' will always overflow; destination buffer has size %1, but the source string has length %2 (including NUL byte)"
-"'%0' will return the size of the pointer, not the array itself"
 "'%0' within '%1'"
 "'%0': selected processor lacks floating point registers"
 "'%0': unable to pass LLVM bit-code files to linker"
@@ -1000,6 +1005,9 @@
 "'__leave' statement not in __try block"
 "'__local' variable cannot have an initializer"
 "'__pixel' must be preceded by '__vector'.  '%0' declaration specifier not allowed here"
+"'__ptrauth' qualification mismatch%diff{ ($ and $)|}0,1"
+"'__ptrauth' qualifier must take between 1 and 3 arguments"
+"'__ptrauth' qualifier only applies to pointer types; %0 is invalid"
 "'__super' cannot be used with a using declaration"
 "'__thread' before '%0'"
 "'abi_tag' %0 missing in original declaration"
@@ -1031,6 +1039,7 @@
 "'callback' attribute argument %0 is not a known function parameter"
 "'callback' attribute callee does not have function type"
 "'callback' attribute callee may not be variadic"
+"'callback' attribute references function of type %0 which expects %1 %plural{1:argument|:arguments}1 but attribute specifies %2 parameter index %plural{1:argument|:arguments}2"
 "'callback' attribute specifies invalid callback callee"
 "'callback' attribute specifies no callback callee"
 "'called_once' attribute only applies to function-like parameters"
@@ -1137,6 +1146,7 @@
 "'nonmonotonic' modifier can only be specified with 'dynamic' or 'guided' schedule kind"
 "'nonnull' attribute applied to function with no pointer arguments"
 "'nonnull' attribute when used on parameters takes no arguments"
+"'not_tail_called' attribute prevents being called as a tail call"
 "'nothrow' attribute conflicts with exception specification; attribute ignored"
 "'nowait' clause is here"
 "'nullptr' is a C23 extension"
@@ -1229,7 +1239,7 @@
 "'this' pointer cannot be null in well-defined C++ code; pointer may be assumed to always convert to true"
 "'this' pointer references not allowed in naked functions"
 "'trivial_abi' cannot be applied to %0"
-"'trivial_abi' is disallowed on %0 because %select{its copy constructors and move constructors are all deleted|it is polymorphic|it has a base of a non-trivial class type|it has a virtual base|it has a __weak field|it has a field of a non-trivial class type}1"
+"'trivial_abi' is disallowed on %0 because %select{its copy constructors and move constructors are all deleted|it is polymorphic|it has a base of a non-trivial class type|it has a virtual base|it has a __weak field|it has a field of a non-trivial class type|it has an address-discriminated '__ptrauth' field}1"
 "'true' is not defined, evaluates to 0"
 "'type_tag_for_datatype' attribute requires the initializer to be an %select{integer|integral}0 constant expression"
 "'type_tag_for_datatype' attribute requires the initializer to be an %select{integer|integral}0 constant expression that can be represented by a 64 bit integer"
@@ -1417,6 +1427,7 @@
 'A function is considered hot for staleness error check if its total sample count is above the specified percentile'
 'A function name, assumed to be global, which will be treated as the root of an interesting graph, which will be profiled independently from other similar graphs.'
 'A huge scheduling region will have maps reduced by this many nodes at a time. Defaults to HugeRegion / 2.'
+'A key=value pair. Replace __nvvm_reflect(name) with value.'
 'A lexical block (Function, Class, etc.).'
 "A list of mangled vtable type info names. Classes specified by the type info names and their derived ones will not be vtable-ICP'ed. Useful when the profiled types and actual types in the optimized binary could be different due to profiling limitations. Type info names are those string literals used in LLVM type metadata"
 'A list of symbol names to preserve'
@@ -1447,8 +1458,7 @@
 'A tile size for each loop dimension, filled with --polly-default-tile-size'
 'A tile size for each loop dimension, filled with --polly-register-tile-size'
 'A tool to bundle several input files of the specified type <type> \nreferring to the same source file but different targets into a single \none. The resulting file can also be unbundled into different files by \nthis tool if -unbundle is provided.\n'
-'A tool to detect the presence of AMDGPU devices on the system. \n\nThe tool will output each detected GPU architecture separated by a\nnewline character. If multiple GPUs of the same architecture are found\na string will be printed for each\n'
-'A tool to detect the presence of NVIDIA devices on the system. \n\nThe tool will output each detected GPU architecture separated by a\nnewline character. If multiple GPUs of the same architecture are found\na string will be printed for each\n'
+'A tool to detect the presence of offloading devices on the system. \n\nThe tool will output each detected GPU architecture separated by a\nnewline character. If multiple GPUs of the same architecture are found\na string will be printed for each\n'
 'A tool to format C/C++/Java/JavaScript/JSON/Objective-C/Protobuf/C# code.\n\nIf no arguments are specified, it formats the code from standard input\nand writes the result to the standard output.\nIf <file>s are given, it reformats the files. If -i is specified\ntogether with <file>s, the files are edited in-place. Otherwise, the\nresult is written to the standard output.\n'
 'A tool to generate an optimization report from YAML optimization record files.\n'
 'A utility for bundling several object files into a single binary.\nThe output binary can then be embedded into the host section table\nto create a fatbinary containing offloading code.\n'
@@ -1568,7 +1578,6 @@
 'Add .note.gnu.property with BTI to assembly files'
 'Add .note.gnu.property with BTI to assembly files (AArch64 only)'
 'Add <dir> to system include search path, as if in %INCLUDE%'
-'Add AMDGPU function attributes'
 'Add AMDGPU uniform metadata'
 'Add C++ implicit destructors to CFGs for all analyses'
 'Add Contextual/Debug comments to all C++ predicates'
@@ -1667,6 +1676,7 @@
 'Alias for --threads-x'
 'Alias for --unsymbolized-profile'
 'Alias for -Xclang'
+'Alias for -Xclangas'
 'Alias for -all-stacks'
 'Alias for -check-prefix permitting multiple comma separated values'
 'Alias for -color-edges'
@@ -1708,6 +1718,7 @@
 "Align selected instructions to mitigate negative performance impact of Intel's micro code update for errata skx102.  May break assumptions about labels corresponding to particular instructions, and should be used with caution."
 'Aligned allocation/deallocation functions are unavailable'
 'Alignment of bundle for binary files'
+'All Pointer Authentication scanners'
 "All compile commands come from LSP and 'compile_commands.json' files are ignored"
 "All compile commands come from the 'compile_commands.json' files"
 'All decisions not in replay are inlined'
@@ -1715,6 +1726,7 @@
 'All decisions not in replay send to original advisor (default)'
 'All edges.'
 'All elements.'
+'All implemented scanners'
 'All input lines'
 'All known subsections'
 'All non-critical edges.'
@@ -1724,10 +1736,11 @@
 'All suitable variables will have the TOC data transformation applied'
 'All vtables have type infos'
 'All warnings.'
-'Allocate all arrays of unknown size and temporary arrays in stack memory'
+'Allocate -frepack-arrays temporaries on the heap (default)'
 'Allocate array temporaries on the heap (default)'
 'Allocate from a slab of the given size (allowable suffixes: Kb, Mb, Gb. default = Kb)'
 'Allocate memory upfront rather than on-demand'
+'Allocate temporary arrays for -frepack-arrays in stack memory'
 'Allocate to an enum type only as many bytes as it needs for the declared range of possible values'
 "Allow '$' in identifiers"
 'Allow (may be subject to certain conditions) conversion of memcpy to TP loop.'
@@ -1807,6 +1820,7 @@
 'Allow the Attributor to create shallow wrappers for non-exact definitions.'
 'Allow the Attributor to do call site specific analysis'
 'Allow the Attributor to use IP information derived from non-exact functions via cloning'
+'Allow the compiler to assume that each translation unit has a unique source file name at link time'
 'Allow the detection of full functions'
 'Allow the formation of VW_W operations (e.g., VWADD_W) with splat constants'
 'Allow the input file to be empty. This is useful when making\nchecks that some error message does not occur, for example.'
@@ -1934,6 +1948,7 @@
 'Assume distributed loops do not have more iterations than participating teams.'
 'Assume no atomic operations on fine-grained memory'
 'Assume no atomic operations on remote memory'
+'Assume that UAVs/SRVs may alias'
 "Assume that exception objects' destructors are non-throwing"
 'Assume that execution stops at trap instruction'
 'Assume that externally defined data is in the small data if it meets the -G <size> threshold (MIPS)'
@@ -1957,6 +1972,7 @@
 'Attach debug info to a function'
 'Attach debug info to everything'
 'Attempt coalescing during PBQP register allocation.'
+'Attempt to allocate array temporaries created under -frepack-arrays on the stack'
 'Attempt to allocate array temporaries on the stack, no matter their size'
 'Attempt to drop solution if it is less profitable'
 'Attempt to match the ABI of Clang <version>'
@@ -2160,6 +2176,7 @@
 "Change the greedy register allocator's live range priority calculation to make the AllocationPriority of the register class more important then whether the range is global"
 'Change variadic calling convention'
 'Check CFA info and insert CFI instructions if needed'
+'Check all diagnostics (expected, unexpected, near-misses)'
 'Check debug info from -debugify'
 'Check debug info from -debugify-function'
 'Check elements integrity.'
@@ -2171,6 +2188,7 @@
 'Check if block frequency is queried for an unknown block for debugging missed BFI updates'
 'Check if input heterogeneous archive is valid in terms of TargetID rules.\n'
 'Check module hash using the argument as a string table'
+'Check only expected diagnostics'
 'Check pointer authentication auth/resign failures'
 'Check stack-use-after-scope'
 'Check that emitted diagnostics match expected-* lines on the corresponding line'
@@ -2438,6 +2456,7 @@
 'DWO output filename'
 'DXContainer Global Emitter'
 'DXIL Array Flattener'
+'DXIL CBuffer Access'
 'DXIL Data Scalarization'
 'DXIL Finalize Linkage'
 'DXIL Intrinsic Expansion'
@@ -2810,7 +2829,6 @@
 'Disable removal of sext.w'
 'Disable removal of sign-extend insn'
 'Disable replace with vector math call pass'
-"Disable retain SubstTemplateTypeParmType nodes in the AST's representation of alias template specializations"
 'Disable sanitizer coverage instrumentation for modules and functions that match the provided special case list, even the allowed ones'
 'Disable sanitizer metadata for modules and functions that match the provided special case list'
 'Disable sanitizer statistics gathering.'
@@ -2924,7 +2942,6 @@
 'Disallow use of movt/movw pairs (ARM only)'
 'Disassemble strings of hex bytes'
 'Disassembler Options'
-'Disassembler options'
 'Discard names from Value (other than GlobalValue).'
 'Discard value names in LLVM IR'
 'Discarded elements by the linker.'
@@ -3007,6 +3024,7 @@
 'Do not allocate the LR register for general purpose usage, only for calls. (AArch64 only)'
 'Do not allow compiler to merge handlers for any sanitizers'
 'Do not allow compiler to merge handlers for specified sanitizers'
+'Do not allow the compiler to assume that each translation unit has a unique source file name at link time'
 'Do not assume C++ operator new may not return NULL'
 'Do not assume that any loop is finite.'
 'Do not assume that externally defined data is in the small data if it meets the -G <size> threshold (MIPS)'
@@ -3080,6 +3098,7 @@
 'Do not optimize lifetime zones that are broken'
 'Do not output any .gcov files'
 'Do not override toolchain to compile HIP source to relocatable'
+'Do not pack non-contiguous assumed shape dummy arrays into contiguous memory'
 'Do not place constants in the .rodata section instead of the .sdata if they meet the -G <size> threshold (MIPS)'
 'Do not preserve comments in inline assembly'
 'Do not prevent DecoderTable duplications caused by HwModes'
@@ -3166,6 +3185,7 @@
 "Don't demangle function names"
 "Don't disable block signature string)"
 "Don't disable features used for crash debugging (crash reports, llvm-symbolizer and core dumps)"
+"Don't disable freeing of memory on exit"
 "Don't discard temporary labels"
 "Don't display class definitions"
 "Don't display full enum definitions"
@@ -3297,6 +3317,7 @@
 'Dump modules to the current working directory. (WARNING: will overwrite existing files).'
 'Dump new file contents in YAML, if specified.'
 'Dump provenance'
+'Dump ranges of deserialized declarations to use as bug minimization hints'
 'Dump record layout information'
 'Dump record layout information for all complete types'
 'Dump record layout information in a simple form used for testing'
@@ -3490,6 +3511,7 @@
 'Emit the specified combiners'
 'Emit type record hashes in a .debug$H section'
 "Emit verbose output about the analyzer's progress"
+'Emit x8 as fp instead of s0'
 'Emit xray_fn_idx section'
 'Emits more virtual tables to improve devirtualization'
 'Emulate weak link against library X. Must resolve to a TextAPI file, and all symbols in the interface will resolve to null.'
@@ -3661,7 +3683,6 @@
 'Enable colors in diagnostics'
 'Enable command line arguments round-trip.'
 'Enable commoning of GEP instructions'
-'Enable communicating debuginfo positions through iterators, eliminating intrinsics. Has no effect if --preserve-input-debuginfo-format=true.'
 'Enable conflict detection in loop-access analysis'
 'Enable consecutive memop optimization in AArch64PostLegalizerCombiner'
 'Enable continuous instrumentation profiling mode'
@@ -3846,7 +3867,6 @@
 'Enable relocating counters at runtime.'
 'Enable removal of functions when theyuse features not supported by the target GPU'
 'Enable required s_wait_alu on SGPR hazards'
-"Enable retain SubstTemplateTypeParmType nodes in the AST's representation of alias template specializations"
 'Enable rewrite partial reg uses pass'
 'Enable runtime checks for stack overflow.'
 'Enable runtime interleaving until load/store ports are saturated'
@@ -4434,6 +4454,7 @@
 'Generate Clang diagnostic compatibility ids'
 'Generate Clang diagnostic enums for selects'
 'Generate Clang diagnostic groups'
+'Generate Clang diagnostic interface headers'
 'Generate Clang diagnostic name index'
 'Generate Clang diagnostics definitions'
 'Generate CodeView debug information'
@@ -4444,7 +4465,7 @@
 'Generate Interface Stub Files.'
 'Generate LBR info with perf itrace argument'
 'Generate M NOPs before function entry'
-'Generate M NOPs before function entry and N-M NOPs after function entry'
+'Generate M NOPs before function entry and N-M NOPs after function entry. If section is specified, use it instead of __patchable_function_entries.'
 'Generate Metal library'
 'Generate Offload API header contents'
 'Generate Offload API print header'
@@ -4910,6 +4931,7 @@
 'Inline all applicable functions on the device.'
 'Inline all functions early'
 "Inline cold call sites in profile loader if it's beneficial for code size."
+'Inline expressions that are used only once rather than generating a let-binding'
 'Inline functions as deemed beneficial by the compiler'
 'Inline functions which are (explicitly or implicitly) marked inline'
 'Inline shadow poisoning for blocks up to the given size in bytes.'
@@ -4953,6 +4975,7 @@
 'Insert symbols at valid targets for /guard:ehcont'
 'Insert the experimental `assertalign` node.'
 'Insert vsetvlis before vmvNr.vs to ensure vtype is valid and vill is cleared'
+'InstPrinter options'
 'Instantiate templates already while building a PCH'
 'Instead of emitting the pipelined code, annotate instructions with the generated schedule for feeding into the -modulo-schedule-test pass'
 'Instead of expanding system headers when emitting preprocessor output, preserve the #include directive. Useful when producing preprocessed output for test case reduction. May produce incorrect output if preprocessor symbols that control the included content (e.g. _XOPEN_SOURCE) are defined in the including source file. The portability of the resulting source to other compilation environments is not guaranteed.\n\nOnly valid with -E.'
@@ -5051,7 +5074,7 @@
 'LLVM IR Similarity Visualizer\n'
 'LLVM OpenMP'
 'LLVM PDB Dumper\n'
-'LLVM automatic testcase reducer.\n'
+'LLVM automatic testcase reducer.\nSee https://llvm.org/docs/CommandGuide/llvm-reduce.html for more information.\n'
 'LLVM automatic testcase reducer. See\nhttp://llvm.org/cmds/bugpoint.html for more information.\n'
 'LLVM code coverage tool\n'
 'LLVM module splitter\n'
@@ -5138,6 +5161,8 @@
 'Link only needed symbols'
 'Link stack frames through backchain on System Z'
 'Link the LLVM C Library for GPUs'
+'Link the flang-rt shared library'
+'Link the flang-rt static library'
 'Link the following file lazily'
 'Link the given bitcode file before performing optimizations.'
 'Link two nested MLIR modules into a single LLVM IR module. Useful if both the host and device code can be run on the same CPU, as in SPIR-V CPU Runner tests.'
@@ -5497,6 +5522,7 @@
 'Memory reference level analysis that distinguish accessed references in the same statement'
 'Merge all const globals without looking at uses'
 'Merge and hoist M0 initializations'
+'Merge clones before assigning functions'
 'Merge context profiles before calculating thresholds.'
 'Merge context sample profiles whose count is below cold threshold'
 'Merge contiguous icmps into a memcmp'
@@ -5559,6 +5585,8 @@
 'Modulo Schedule test pass'
 'Modulo Software Pipelining'
 'Move ARGUMENT instructions for WebAssembly'
+'Move contextual profiling roots and the graphs under them in their own module.'
+'Move the symbols with the given name. This will delete these symbols wherever they are originally defined, and make sure their linkage is External where they are imported. It is meant to be used with the name of contextual profiling roots.'
 'Move/duplicate certain instructions close to their use'
 'Multiplier to apply to threshold when determining whether or not to fold branch to common destination when vector operations are present'
 'Multiplier to bump up callsite threshold for previous inlining.'
@@ -5743,7 +5771,9 @@
 'Only match instructions with the given prefix'
 'Only output names of functions whose max count values are below the cutoff value'
 'Only precompile the input'
+'Only print AMD GPUs'
 'Only print IR for functions whose name match this for all print-[before|after][-all] options'
+'Only print NVIDIA GPUs'
 'Only print to a depth of N elements.'
 'Only process files that match this filter. This flag only applies to all-TUs.'
 'Only read thinlto index and print the index as LLVM assembly.'
@@ -5778,37 +5808,43 @@
 'Only write output if it changed'
 'Only write to the output file if it changed'
 "OpenACC %select{clause '%1'|directive '%2'|sub-array bound}0 requires expression of integer type (%3 invalid)"
+"OpenACC '%0' clause cannot appear more than once%select{| in a 'device_type' region}2 on a '%1' directive"
 "OpenACC '%0' clause cannot appear on the same '%2' construct as a '%1' clause %select{inside a compute construct with a|and a}3 'num_gangs' clause with more than one argument"
 "OpenACC '%0' clause on a 'declare' directive is not allowed at global or namespace scope"
 "OpenACC '%0' construct can only be applied to a 'for' loop"
 "OpenACC '%0' construct must have a terminating condition"
 "OpenACC '%0' construct must have at least one %1 clause"
 "OpenACC '%0' construct must have initialization clause in canonical form ('var = init' or 'T var = init')"
+"OpenACC '%0' modifier not valid on '%1' clause"
 "OpenACC '%0' variable must monotonically increase or decrease ('++', '--', or compound assignment)"
 "OpenACC '%1' clause %select{|with more than 1 argument }0may not appear on a '%2' construct with a '%3' clause%select{ with more than 1 argument|}0"
 "OpenACC '%1' clause cannot appear more than once on a '%0' directive"
 "OpenACC '%1' clause is not valid on '%0' directive"
 "OpenACC 'bind' clause on a declaration must bind to the same name as previous bind clauses"
 "OpenACC 'collapse' clause loop count must be a %select{constant expression|positive integer value, evaluated to %1}0"
+"OpenACC 'device_type' clause on a 'set' construct only permits one architecture"
 "OpenACC 'gang' clause may have at most one %select{unnamed or 'num'|'dim'|'static'}0 argument"
 "OpenACC 'reduction' composite variable must not have non-scalar field"
 "OpenACC 'reduction' variable must be a composite of scalar types; %1 %select{is not a class or struct|is incomplete|is not an aggregate}0"
 "OpenACC 'reduction' variable must be of scalar type, sub-array, or a composite of scalar types;%select{| sub-array base}1 type is %0"
 "OpenACC 'reduction' variable must have the same operator in all nested constructs (%0 vs %1)"
+"OpenACC 'routine' construct must have at least one 'gang', 'seq', 'vector', or 'worker' clause that applies to each 'device_type'"
 "OpenACC 'routine' directive with a name refers to a function with the same name as the function on the following line; this may be unintended"
 "OpenACC 'tile' clause size expression must be %select{an asterisk or a constant expression|positive integer value, evaluated to %1}0"
 "OpenACC 'update' construct may not appear in place of the statement following a%select{n if statement| while statement| do statement| switch statement| label statement}0"
+"OpenACC clause '%0' after 'device_type' clause on a 'routine' conflicts with the '%1' clause before the first 'device_type'"
 "OpenACC clause '%0' may not appear on the same construct as a '%1' clause on a '%2' construct"
 "OpenACC clause '%0' may not follow a '%1' clause in a '%2' construct"
-"OpenACC clause '%0' on '%1' construct conflicts with previous data dependence clause"
+"OpenACC clause '%0' on a 'routine' directive conflicts with the '%1' clause applying to the same 'device_type'"
 "OpenACC clause name '%0' is a deprecated clause name and is now an alias for '%1'"
 "OpenACC construct '%0' cannot be used here; it can only be used in a statement context"
 "OpenACC construct 'routine' with implicit function not yet implemented, pragma ignored"
 "OpenACC construct 'self' has no effect when an 'if' clause evaluates to true"
+'OpenACC directives will result in no runtime behavior; use -fclangir to enable runtime effect'
 'OpenACC integer expression has incomplete class type %0'
 'OpenACC integer expression requires explicit conversion from %0 to %1'
-"OpenACC routine name '%0' does not name a function"
-"OpenACC routine name '%0' names a set of overloads"
+'OpenACC routine name %0 does not name a function'
+'OpenACC routine name %0 names a set of overloads'
 'OpenACC sub-array %select{lower bound|length}0 evaluated to a value (%1) that would be out of the range of the subscripted array size of %2'
 'OpenACC sub-array %select{lower bound|length}0 evaluated to negative value %1'
 'OpenACC sub-array base is of incomplete type %0'
@@ -5994,6 +6030,7 @@
 'PLEASE submit a bug report to https://github.com/llvm/llvm-project/issues/ and include the crash backtrace, preprocessed source, and associated run script.\n'
 'PLEASE submit a bug report to https://github.com/llvm/llvm-project/issues/ and include the crash backtrace.\n'
 'POSIX thread model'
+'Pack non-contiguous assumed shape dummy arrays into contiguous memory'
 'Pack non-contiguous assummed shape arrays into contiguous memory'
 'Pad previous instructions to implement align directives'
 'Pad previous instructions to implement branch alignment'
@@ -6010,6 +6047,7 @@
 'Pass -b <arg> to the linker on AIX'
 'Pass -z <arg> to the linker'
 'Pass <arg> to clang -cc1'
+'Pass <arg> to clang -cc1as'
 'Pass <arg> to fatbinary invocation'
 'Pass <arg> to plugin <name>'
 'Pass <arg> to the CUDA/HIP device compilation'
@@ -6243,6 +6281,7 @@
 'Preserve canonical loop structure (default = true)'
 'Preserve debug info in thunk when mergefunc transformations are made.'
 'Preserve expressions in AST rather than dropping them when encountering semantic errors'
+'Preserve line and column number when merging locations.'
 'Preserve line numbers'
 'Preserve order of LLVM use-lists when serializing'
 'Preserve path components'
@@ -6287,6 +6326,7 @@
 'Print absolute paths in diagnostics'
 'Print addresses of MachineInstrs when dumping'
 'Print addresses of instructions when dumping'
+'Print all GPUs (default)'
 'Print all cost kinds'
 'Print all hardware statistics'
 "Print all of Clang's warning options"
@@ -6772,6 +6812,7 @@
 'Restrict remat for statepoint operands'
 'Restrict sanitizer coverage instrumentation exclusively to modules and functions that match the provided special case list, except the blocked ones'
 'Restrict specifier.'
+'Restrict to vendor:'
 'Resume compilation after a specific pass'
 'Resume compilation before a specific pass'
 'Retain macro definitions in /E mode'
@@ -7027,7 +7068,7 @@
 'Set directory to include search path with prefix'
 'Set endian conversion of data for unformatted files'
 'Set exception handling model'
-'Set filename used to determine the language and to find\n.clang-format file.\nOnly used when reading from stdin.\nIf this is not passed, the .clang-format file is searched\nrelative to the current working directory when reading stdin.\nUnrecognized filenames are treated as C++.\nsupported:\n  CSharp: .cs\n  Java: .java\n  JavaScript: .js .mjs .cjs .ts\n  Json: .json\n  Objective-C: .m .mm\n  Proto: .proto .protodevel\n  TableGen: .td\n  TextProto: .txtpb .textpb .pb.txt .textproto .asciipb\n  Verilog: .sv .svh .v .vh'
+'Set filename used to determine the language and to find\n.clang-format file.\nOnly used when reading from stdin.\nIf this is not passed, the .clang-format file is searched\nrelative to the current working directory when reading stdin.\nUnrecognized filenames are treated as C++.\nsupported:\n  CSharp: .cs\n  Java: .java\n  JavaScript: .js .mjs .cjs .ts\n  Json: .json .ipynb\n  Objective-C: .m .mm\n  Proto: .proto .protodevel\n  TableGen: .td\n  TextProto: .txtpb .textpb .pb.txt .textproto .asciipb\n  Verilog: .sv .svh .v .vh'
 'Set hexagon hvx loop upper bound align limit'
 'Set hexagon loop align bundle limit'
 'Set hexagon loop align edge threshold'
@@ -7386,6 +7427,7 @@
 'Specify the name of the .dwo file to encode in the DWARF output'
 'Specify the name of the module to build'
 'Specify the name of the root module.'
+'Specify the number of threads to use for device offloading tasks during compilation.'
 "Specify the output file type ('asm', 'null', or 'obj')"
 'Specify the output file. default: reduced.ll|.bc|.mir'
 'Specify the output filename'
@@ -7944,6 +7986,7 @@
 'Treat stack lifetimes as starting on first use, not on START marker.'
 'Treat string literals as const'
 'Treat subsequent input files as having type <language>'
+'Treat the given module as-if it were containing the post-thinlink module containing the root'
 'Treat usage of null pointers as undefined behavior (default)'
 'Treat warnings as errors'
 'Trim cold functions until profile size is below specified limit in bytes. This uses a heursitic and functions may be excessively trimmed'
@@ -8081,6 +8124,7 @@
 'Use SEH style exceptions'
 'Use SHA1 for file checksums in debug info'
 'Use SHA256 for file checksums in debug info'
+'Use Section instead of __patchable_function_entries'
 'Use SjLj style exceptions'
 'Use Stable Hashing for MIR VReg Renaming'
 'Use Stack Safety analysis results'
@@ -8177,6 +8221,7 @@
 'Use instrumented profile to guide PGO.'
 'Use internal machine object code emitter.'
 'Use jump tables for lowering switches'
+'Use large decoder table format. This uses 24 bits for offset\nin the table instead of the default 16 bits.'
 'Use large-integer access for consecutive bitfield runs.'
 'Use linker features to support dead code stripping of globals'
 'Use loop idiom recognition code size heuristics when compiling with -Os/-Oz'
@@ -8429,6 +8474,7 @@
 'What is the maximal lookup depth when trying to check for viability of negation sinking.'
 'What length to truncate vertex labels to '
 'What to do with the summary when running this pass'
+"When -frepack-arrays is in effect, 'whole' enables repacking for arrays that are non-contiguous in any dimension, 'innermost' enables repacking for arrays that are non-contiguous in the innermost dimension (the default)"
 'When -fvisibility-inlines-hidden is enabled, static variables in inline C++ member functions will also be given hidden visibility by default'
 'When a diagnostic is emitted on an operation, also print the operation as an attached note'
 'When a diagnostic is emitted, also print the stack trace as an attached note'
@@ -8453,7 +8499,6 @@
 'When printing the IR after a pass, only print if the IR changed'
 'When printing the IR after a pass, only print if the pass failed'
 'When printing the IR before/after a pass, print file tree rooted at this directory. Use in conjunction with mlir-print-ir-* flags'
-'When set to true, IR files will be processed and printed in their current debug info format, regardless of default behaviour or other flags passed. Has no effect if input IR does not contain debug records or intrinsics. Ignored in llvm-link, llvm-lto, and llvm-lto2.'
 'When set to true, const objects with relocatable address values are put into the RO data section.'
 'When stubbing functions, replace all uses will null'
 'When the basic block contains not more than this number of PHI nodes, perform a (faster!) exhaustive search instead of set-driven one.'
@@ -8482,6 +8527,7 @@
 'Whether to distribute into a loop that may not be if-convertible by the loop vectorizer'
 'Whether to emit DWARF EH frame entries.'
 'Whether to generate default bounds for arrays.'
+'Whether to include the lower dimensions extents in the stride.'
 'Whether to minimize added include paths'
 'Whether to perform binary concatenation'
 'Whether to perform binary extraction'
@@ -8584,6 +8630,7 @@
 '_Atomic cannot be applied to %select{incomplete |array |function |reference |atomic |qualified |sizeless ||integer |}0type %1 %select{|||||||which is not trivially copyable||in C23}0'
 '_GLOBAL_OFFSET_TABLE_'
 '_Pragma takes a parenthesized string literal'
+'__CUDA_ARCH'
 '__DATA'
 '__LINKEDIT'
 '__VA_ARGS__ can only appear in the expansion of a C99 variadic macro'
@@ -8618,6 +8665,7 @@
 '__weak attribute cannot be specified on a field declaration'
 '__weak attribute cannot be specified on an automatic variable when ARC is not enabled'
 '`#pragma const_seg` for section %1 will not apply to %0 due to the presence of a %select{mutable field||non-trivial constructor|non-trivial destructor}2'
+'`interrupt_save_fp` only applies to targets that have a VFP unit enabled for this compilation; this will be treated as a regular `interrupt` attribute'
 'a %select{function|block}0 declaration without a prototype is deprecated %select{in all versions of C|}0'
 "a %select{pack indexing|'decltype'}0 specifier cannot be used in a declarative nested name specifier"
 'a concept definition cannot refer to itself'
@@ -8692,6 +8740,7 @@
 'adding %0 to a string does not append to the string'
 'adding %0 to a string pointer does not append to the string'
 'addition of default argument on redeclaration makes this constructor a %select{default|copy|move}0 constructor'
+'address argument to %select{atomic|__sync}0 operation must be a pointer to a non address discriminated type (%1 invalid)'
 'address argument to atomic builtin cannot be const-qualified (%0 invalid)'
 'address argument to atomic builtin must be a pointer %select{|to a non-zero-sized object }1(%0 invalid)'
 'address argument to atomic builtin must be a pointer to 1,2,4,8 or 16 byte type (%0 invalid)'
@@ -8806,7 +8855,6 @@
 "ambiguous reference to placeholder '_', which is defined multiple times"
 'ambiguous use of internal linkage declaration %0 defined in multiple modules'
 'ambiguous vftable component for %0 introduced via covariant thunks; this is an inherent limitation of the ABI'
-'amdgpu-arch options'
 'an array type is not allowed here'
 'an attribute list cannot appear here'
 'an attribute specifier sequence attached to a structured binding declaration is a C++2c extension'
@@ -8893,6 +8941,7 @@
 "argument to '#pragma unroll' should not be in parentheses in CUDA C/C++"
 "argument to '%0' clause must be a %select{non-negative|strictly positive}1 integer value"
 "argument to '%0' is missing (expected %1 value%s1)"
+"argument to '__ptrauth' must be an integer constant expression"
 "argument to 'gang' clause dimension must be %select{a constant expression|1, 2, or 3: evaluated to %1}0"
 "argument to 'operator<=>' %select{cannot be narrowed from type %1 to %2|evaluates to %1, which cannot be narrowed to type %2}0"
 "argument to 'sizeof' in %0 call is the same pointer type %1 as the %select{destination|source}2; expected %3 or an explicit length"
@@ -8970,6 +9019,7 @@
 'assigning retained object to %select{weak|unsafe_unretained}0 %select{property|variable}1; object will be released after assignment'
 'assigning retained object to unsafe property; object will be released after assignment'
 "assigning to 'readonly' return result of an Objective-C message not allowed"
+'assigning value of preferred signed enum type %1 to unsigned bit-field %0; negative enumerators of enum %1 will be converted to positive values'
 'assigning value of signed enum type %1 to unsigned bit-field %0; negative enumerators of enum %1 will be converted to positive values'
 'assignment of a weak-unavailable object to a __weak object'
 "assignment to Objective-C's isa is deprecated in favor of object_setClass()"
@@ -9104,6 +9154,7 @@
 'bit-field %0 has negative width (%1)'
 'bit-field %0 has non-integral type %1'
 'bit-field %0 is not wide enough to store all enumerators of %1'
+'bit-field %0 is not wide enough to store all enumerators of preferred type %1'
 'bit-field is declared here'
 'bit-fields are not supported in OpenCL'
 'bit_cast %select{from|to}0 a %select{|type with a }1%select{union|pointer|member pointer|volatile|reference}2 %select{type|member}1 is not allowed in a constant expression'
@@ -9218,6 +9269,7 @@
 'candidate %select{constructor|template}0 ignored: instantiation %select{takes|would take}0 its own class type by value'
 "candidate %select{function|function|function (with reversed parameter order)|constructor|constructor (the implicit default constructor)|constructor (the implicit copy constructor)|constructor (the implicit move constructor)|function (the implicit copy assignment operator)|function (the implicit move assignment operator)|function (the implicit 'operator==' for this 'operator<=>)'|inherited constructor}0%select{| template| %2}1 has been %select{explicitly made unavailable|explicitly deleted|implicitly deleted}3"
 "candidate %select{function|function|function (with reversed parameter order)|constructor|constructor (the implicit default constructor)|constructor (the implicit copy constructor)|constructor (the implicit move constructor)|function (the implicit copy assignment operator)|function (the implicit move assignment operator)|function (the implicit 'operator==' for this 'operator<=>)'|inherited constructor}0%select{| template| %2}1 not viable: %ordinal5 argument (%3) would lose %select{const|restrict|const and restrict|volatile|const and volatile|volatile and restrict|const, volatile, and restrict}4 qualifier%select{||s||s|s|s}4"
+"candidate %select{function|function|function (with reversed parameter order)|constructor|constructor (the implicit default constructor)|constructor (the implicit copy constructor)|constructor (the implicit move constructor)|function (the implicit copy assignment operator)|function (the implicit move assignment operator)|function (the implicit 'operator==' for this 'operator<=>)'|inherited constructor}0%select{| template| %2}1 not viable: %ordinal8 argument (%3) has %select{no '__ptrauth'|%5}4 qualifier, but parameter has %select{no '__ptrauth'|%7}6 qualifier"
 "candidate %select{function|function|function (with reversed parameter order)|constructor|constructor (the implicit default constructor)|constructor (the implicit copy constructor)|constructor (the implicit move constructor)|function (the implicit copy assignment operator)|function (the implicit move assignment operator)|function (the implicit 'operator==' for this 'operator<=>)'|inherited constructor}0%select{| template| %2}1 not viable: %select{%ordinal7|'this'}6 argument (%3) has %select{no|__unsafe_unretained|__strong|__weak|__autoreleasing}4 ownership, but parameter has %select{no|__unsafe_unretained|__strong|__weak|__autoreleasing}5 ownership"
 "candidate %select{function|function|function (with reversed parameter order)|constructor|constructor (the implicit default constructor)|constructor (the implicit copy constructor)|constructor (the implicit move constructor)|function (the implicit copy assignment operator)|function (the implicit move assignment operator)|function (the implicit 'operator==' for this 'operator<=>)'|inherited constructor}0%select{| template| %2}1 not viable: %select{%ordinal7|'this'}6 argument (%3) has %select{no|__weak|__strong}4 ownership, but parameter has %select{no|__weak|__strong}5 ownership"
 "candidate %select{function|function|function (with reversed parameter order)|constructor|constructor (the implicit default constructor)|constructor (the implicit copy constructor)|constructor (the implicit move constructor)|function (the implicit copy assignment operator)|function (the implicit move assignment operator)|function (the implicit 'operator==' for this 'operator<=>)'|inherited constructor}0%select{| template| %2}1 not viable: %select{cannot convert initializer list|too few initializers in list|too many initializers in list}7 argument to %4"
@@ -9263,12 +9315,13 @@
 "cannot %select{#include files|import headers}0 inside '#pragma clang assume_nonnull'"
 'cannot %select{access base class of|access derived class of|access field of|access array element of|ERROR|access real component of|access imaginary component of}0 pointer past the end of object'
 'cannot %select{access base class of|access derived class of|access field of|access array element of|perform pointer arithmetic on|access real component of|access imaginary component of}0 null pointer'
+"cannot %select{assign to %select{object|'%1'}2 with|pass argument to %select{parameter|parameter '%1'}2 with|return|convert to|%select{|implicitly }3initialize %select{object|'%1'}2 with|pass argument to parameter with|cast to|pass argument to parameter with}0 '%5' attributed type %4 because the pointee type %6 is incomplete"
 'cannot %select{assign|return|throw|subscript}0 a WebAssembly table'
 'cannot %select{capture|take address of}0 WebAssembly reference'
 'cannot %select{decrement|increment}0 expression of enum type %1'
 'cannot %select{decrement|increment}1 value of type %0'
-'cannot %select{form pointer to|form reference to|form array of|form function returning|use parentheses when declaring variable with}0 deduced class template specialization type'
 'cannot %select{throw|catch}0 a WebAssembly reference type'
+"cannot %select{use '%1' with '%4' attributed|call '%1' with '%4' attributed return}0 type %2 because the pointee type %3 is incomplete"
 "cannot %select{use builtin operator '<=>'|default 'operator<=>'}1 because type '%0' was not found; include <compare>"
 'cannot %select{use type %1 for a function/method parameter|use type %1 for function/method return|default-initialize an object of type %1|declare an automatic variable of type %1|copy-initialize an object of type %1|assign to a variable of type %1|construct an automatic compound literal of type %1|capture a variable of type %1|cannot use volatile type %1 where it causes an lvalue-to-rvalue conversion}3 since it %select{contains|is}2 a union that is non-trivial to %select{default-initialize|destruct|copy}0'
 'cannot %select{||reinterpret_cast||C-style cast||}0 from member pointer type %1 to member pointer type %2 of different size'
@@ -9308,6 +9361,7 @@
 'cannot cast from type %1 to pointer type %2'
 "cannot cast non-zero value '%0' to 'event_t'"
 'cannot cast object of dynamic type %0 to type %1'
+"cannot cast to '__ptrauth'-qualified type %0"
 'cannot catch %select{|reference to }0sizeless type %1'
 'cannot catch an Objective-C object by value'
 'cannot catch an exception thrown with @throw in C++ in the non-unified exception model'
@@ -9393,7 +9447,7 @@
 "cannot find HIP Standard Parallelism Acceleration library; provide it via '--hipstdpar-path'"
 "cannot find HIP device library%select{| for %1}0; provide its path via '--hip-path' or '--hip-device-lib-path', or pass '-nogpulib' to build without HIP device library"
 "cannot find HIP runtime; provide its path via '--rocm-path', or pass '-nogpuinc' to build without HIP runtime"
-"cannot find ROCm device library%select{| for %1| for ABI version %1}0; provide its path via '--rocm-path' or '--rocm-device-lib-path', or pass '-nogpulib' to build without ROCm device library"
+"cannot find ROCm device library%select{| for %1| for ABI version %1%select{|, which requires ROCm %3 or higher}2}0; provide its path via '--rocm-path' or '--rocm-device-lib-path', or pass '-nogpulib' to build without ROCm device library"
 'cannot find a valid user-defined mapper for type %0 with name %1'
 "cannot find end ('%1') of expected %0"
 'cannot find interface declaration for %0'
@@ -9410,6 +9464,7 @@
 "cannot find start ('{{') of expected %0"
 "cannot find start of regex ('{{') in %0"
 'cannot find suitable %select{getter|setter}0 for property %1'
+'cannot form %select{pointer to|reference to|array of|function returning}0 deduced class template specialization type'
 "cannot form %select{pointer to|reference to|array of}0 'decltype(auto)'"
 'cannot form a %select{pointer|reference}0 to a WebAssembly table'
 'cannot form a pointer-to-member to member %0 of reference type %1'
@@ -9641,6 +9696,7 @@
 'class template %0 was instantiated here'
 'class template argument deduction for %0 selected a deleted constructor'
 'class template argument deduction for %0 selected an explicit %select{constructor|deduction guide}1 for copy-list-initialization'
+'class template argument deduction for alias templates is a C++20 extension'
 'class template argument deduction for alias templates is incompatible with C++ standards before C++20'
 'class template argument deduction is incompatible with C++ standards before C++17%select{|; for compatibility, use explicit type name %1}0'
 'class template partial specialization %0 cannot be redeclared'
@@ -9695,6 +9751,7 @@
 'compatible type %0 specified here'
 "compilation database '%0' could not be opened: %1"
 'compile time floating point arithmetic suppressed in strict evaluation modes'
+"compiled from '%0' and '%1'"
 'compiler has implicitly changed method %0 return type'
 'completion handler is called twice'
 'completion handler is never %select{used|called}1 when %select{taking true branch|taking false branch|handling this case|none of the cases applies|entering the loop|skipping the loop|taking one of the branches}2'
@@ -9758,6 +9815,8 @@
 "consider adding '%0' to the header search path"
 "consider defining %0 with the '%1' calling convention"
 'consider making the bit-field type %select{unsigned|signed}0'
+'consider providing a complete definition for %0'
+"consider using '__sized_by%select{|_or_null}0' instead of '__counted_by%select{|_or_null}0'"
 "consider using __builtin_trap() or qualifying pointer with 'volatile'"
 'consider using vld1_%0%1() to initialize a vector from memory, or vcreate_%0%1() to initialize from an integer constant'
 'consider using vld1q_%0%1() to initialize a vector from memory, or vcombine_%0%1(vcreate_%0%1(), vcreate_%0%1()) to initialize from integer constants'
@@ -9858,7 +9917,7 @@
 'converting delete expression from type %0 to type %1 invokes an explicit conversion function'
 'converting the enum constant to a boolean'
 "converting the result of '<<' to a boolean always evaluates to %select{false|true}0"
-"converting the result of '<<' to a boolean; did you mean '(%0) != 0'?"
+"converting the result of '<<' to a boolean; did you mean to compare with '0'?"
 "converting the result of '?:' with integer constants to a boolean always evaluates to 'true'"
 'converting to boxing syntax requires casting %0 to %1'
 'coprocessor %0 must be configured as %select{GCP|CDE}1'
@@ -9938,6 +9997,7 @@
 "declaration of non-local variable in 'for' loop is a C23 extension"
 "declaration of non-local variable in 'for' loop is incompatible with C standards before C23"
 'declaration of reference variable %0 requires an initializer'
+'declaration of type aware %0 in %1 must have matching type aware %2'
 'declaration of variable %0 with deduced type %1 requires an initializer'
 'declaration requires a global constructor'
 'declaration requires a global destructor'
@@ -10112,6 +10172,7 @@
 'designated initializers are incompatible with C++ standards before C++20'
 'designator in initializer for %select{scalar|indivisible sizeless}0 type %1'
 'designator into flexible array member subobject'
+'destroying delete is not permitted to be type aware'
 "destroying object '%0' whose lifetime has already ended"
 'destroying operator delete can have only an optional size and optional alignment parameter'
 'destruction of individual component of complex number is not yet supported in constant expressions'
@@ -10137,6 +10198,7 @@
 'determines whether to demangle function name when symbolizing function ids from the input log'
 'determines whether to sort input log records by timestamp'
 "device clause with ancestor device-modifier used without specifying 'requires reverse_offload'"
+"device files are not yet supported by '#embed' directive"
 'diagnostic formatting in SARIF mode is currently unstable'
 'diagnostic msg: %0'
 'diagtool find-diagnostic-id options'
@@ -10906,7 +10968,6 @@
 'first argument to __builtin_convertvector must be a vector'
 'first field of a transparent union cannot have %select{floating point|vector}0 type %1; transparent_union attribute ignored'
 'first non-designated initializer is here'
-'first parameter of %0 must have type %1'
 'first two arguments to __builtin_convertvector must have the same number of elements'
 "flag '%0' is ignored when flag '%1' is present"
 "flag '%0' results in undefined behavior with '%1' conversion specifier"
@@ -11172,6 +11233,7 @@
 'implementing deprecated %select{method|class|category}0'
 'implementing unavailable method'
 'implicit %select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}0 inferred target collision: call to both %select{__device__|__global__|__host__|__host__ __device__}1 and %select{__device__|__global__|__host__|__host__ __device__}2 members'
+"implicit '0' return value from 'main' is a C99 extension"
 'implicit boolean conversion of Objective-C object literal always evaluates to true'
 "implicit capture of 'this' with a capture default of '=' is deprecated"
 'implicit capture of lambda object due to conversion to block pointer here'
@@ -11396,7 +11458,7 @@
 'initializer-string for char array is too long, array size is %0 but initializer has size %1 (including the null terminating character)'
 'initializing %0 from an empty initializer list is incompatible with C++98'
 "initializing 'char8_t' array with plain string literal"
-"initializing an array from a '%0' predefined identifier is a Microsoft extension"
+'initializing an array from a %0 predefined identifier is a Microsoft extension'
 'initializing char array with wide string literal'
 'initializing field %0 with default member initializer'
 'initializing multiple members of union'
@@ -11497,7 +11559,7 @@
 'interop variable %0 used in multiple action clauses'
 "interop variable must be of type 'omp_interop_t'"
 'interrupt service routine cannot be called directly'
-"interrupt service routine with vfp enabled may clobber the interruptee's vfp state"
+"interrupt service routine with vfp enabled may clobber the interruptee's vfp state; consider using the `interrupt_save_fp` attribute to prevent this behavior"
 'interval between profile writes (default: 0 = write only at program end).  This is useful for service workloads when you want to dump profile every X minutes or if you are killing the program and the profile is not being dumped at the end.'
 'intrinsic module directory'
 'intrinsic module search paths'
@@ -11515,6 +11577,7 @@
 "invalid C++ ABI name '%0'"
 "invalid CoreFoundation Runtime ABI '%0'; must be one of 'objc', 'standalone', 'swift', 'swift-5.0', 'swift-4.2', 'swift-4.1'"
 'invalid Darwin version number: %0'
+'invalid LLVM IR input: %0'
 "invalid OS value '%0' in '%1'"
 'invalid OpenACC clause %0'
 "invalid OpenACC directive %select{%1|'%1 %2'}0"
@@ -11525,6 +11588,7 @@
 "invalid Xarch argument: '%0', not all driver options can be forwared via Xarch argument"
 "invalid Xarch argument: '%0', options requiring arguments are unsupported"
 'invalid __hlsl_resource_t type attributes'
+"invalid address discrimination flag '%0'; '__ptrauth' requires '0' or '1'"
 'invalid address discrimination mode %0'
 "invalid alignment option in '#pragma %select{align|options align}0' - ignored"
 "invalid application of '%0' to %select{an incomplete|sizeless}1 type %2"
@@ -11587,6 +11651,7 @@
 'invalid explicit object parameter type %0 in lambda with capture; the type must be the same as, or derived from, the lambda'
 'invalid explicit object parameter type %0 in lambda with capture; the type must derive publicly from the lambda'
 'invalid extra discrimination selection %0'
+"invalid extra discriminator flag '%0'; '__ptrauth' requires a value between '0' and '%1'"
 'invalid feature combination: %0'
 'invalid field is here'
 'invalid filename for #line directive'
@@ -11679,6 +11744,7 @@
 'invalid validator version : %0; format of validator version is "<major>.<minor>" (ex:"1.4")'
 'invalid validator version : %0; if validator major version is 0, minor version must also be 0'
 'invalid validator version : %0; validator version must be less than or equal to current internal version'
+"invalid value %0 in '%1' clause; valid values are %2"
 "invalid value '%1' in '%0'"
 "invalid value '%1' in '%0', expected one of: %2"
 "invalid value '%1' in '%0', value must be '%2' or greater"
@@ -11802,7 +11868,7 @@
 'lcov tracefile output'
 'left hand operand of type %0 to compound assignment cannot be truncated when used with right hand operand of type %1'
 'left hand operand to %0 must be a %select{|pointer to }1class compatible with the right hand operand, but is %2'
-"left hand side of assignment operation('%0') must match one side of the sub-operation on the right hand side('%1' and '%2')"
+'left hand side of assignment operation(%0) must match one side of the sub-operation on the right hand side(%1 and %2)'
 'left operand of comma operator has no effect'
 'left shift of negative value %0'
 "length modifier '%0' results in undefined behavior or no effect with '%1' conversion specifier"
@@ -12437,7 +12503,6 @@
 'number of threads'
 'numeric literal with user-defined suffix cannot be used here'
 "nvcc does not allow '__%0__' to appear after the parameter list in lambdas"
-'nvptx-arch options'
 'obj2yaml Options'
 'objc_precise_lifetime is not meaningful for %select{__unsafe_unretained|__autoreleasing}0 objects'
 'objc_precise_lifetime only applies to retainable types; type here is %0'
@@ -12451,12 +12516,13 @@
 'object of type %0 cannot be compared because its %1 is implicitly deleted'
 'object of type %0 cannot be placed in read-only memory'
 'object of type %0 is not compatible with %select{array element type|dictionary key type|dictionary value type}1 %2'
-"object whose reference is captured by '%0' will be destroyed at the end of the full-expression"
+'object whose reference is captured by %0 will be destroyed at the end of the full-expression'
 'object whose reference is captured will be destroyed at the end of the full-expression'
 'octal integer literals are a C2y extension'
 'octal integer literals are a Clang extension'
 'octal integer literals are incompatible with standards before C2y'
 "octal literals without a '0o' prefix are deprecated"
+'offload-arch options'
 'offset of asan shadow mapping [EXPERIMENTAL]'
 'offset-based plaintext format'
 'offsetof of incomplete type %0'
@@ -12601,6 +12667,7 @@
 'overriding the module target triple with %0'
 'overriding virtual function must specify the same code segment as its overridden function'
 'p'
+'pac-ret: return address protection (subset of "pauth")'
 'pack declaration outside of template'
 'pack expansion contains parameter pack %0 that has a different length (%1 vs. %select{|at least }2%3) from outer parameter packs'
 'pack expansion contains parameter pack %0 that has a different length (at least %1 vs. %2) from outer parameter packs'
@@ -12723,7 +12790,7 @@
 'place all array allocations of dynamic size on the heap'
 'place parentheses around comparison expression to evaluate it first'
 'place parentheses around the %0 expression to evaluate it first'
-"place parentheses around the '%0' expression to silence this warning"
+'place parentheses around the %quoted0 expression to silence this warning'
 "place parentheses around the '?:' expression to evaluate it first"
 'place parentheses around the assignment to silence this warning'
 'place parentheses around the string literal to silence warning'
@@ -12785,6 +12852,7 @@
 'prefer tail-folding, create scalar epilogue if tail folding fails.'
 'prefer update form when ds form is also a update form'
 'prefer_list item must be a string literal or constant integral expression'
+'preferred type for bit-field %0 specified here'
 "prefers tail-folding, don't attempt vectorization if tail-folding fails."
 'prefix attribute must be followed by an interface, protocol, or implementation'
 'prefix with the address-of operator to silence this warning'
@@ -13183,6 +13251,7 @@
 "reserved locator 'omp_all_memory' cannot be specified more than once"
 "reserved locator 'omp_all_memory' requires 'out' or 'inout' dependency types"
 'resolve all otherwise unresolved externals to null'
+'resource has implicit register binding'
 'respect alignment requirements provided by input IR'
 'restrict requires a pointer or reference'
 'restrict requires a pointer or reference (%0 is invalid)'
@@ -13253,7 +13322,7 @@
 'sampler_t initialization requires 32-bit integer, not %0'
 'sampler_t variable required - got %0'
 'sanstats Options'
-"satisfaction of constraint '%0' depends on itself"
+'satisfaction of constraint %0 depends on itself'
 'save recorded profile to a file'
 'scalar initialized from empty initializer list is incompatible with C++98'
 'scalar initializer cannot be empty'
@@ -13278,6 +13347,7 @@
 'second argument to __builtin_alloca_with_align is supposed to be in bits'
 'second argument to __builtin_annotation must be a non-wide string constant'
 'second argument to __builtin_call_with_static_chain must be of pointer type'
+"section argument to 'patchable_function_entry' attribute is not valid for this target: %0"
 'section attribute is specified on redeclared variable'
 'section length is evaluated to a negative value %0'
 'section length is unspecified and cannot be inferred because subscripted value is %select{not an array|an array of unknown bound}0'
@@ -13315,6 +13385,7 @@
 'show profile density details'
 'show section contents after fixups have been applied'
 'signed bit-field %0 needs an extra bit to represent the largest positive enumerators of %1'
+'signed bit-field %0 needs an extra bit to represent the largest positive enumerators of preferred type %1'
 'signed left shift discards bits'
 'signed shift result (%0) requires %1 bits to represent, but %2 only has %3 bits'
 "signed shift result (%0) sets the sign bit of the shift expression's type (%1) and becomes negative"
@@ -13426,10 +13497,10 @@
 'static members cannot be declared in an anonymous %select{struct|union}0'
 'static variable %0 is suspiciously used within its own initialization'
 'static_cast between pointer-to-function and pointer-to-object is a Microsoft extension'
+'std::%0 must be a class template with a single type parameter'
 "std::coroutine_handle isn't a class template"
 "std::coroutine_handle must have a member named '%0'"
 "std::coroutine_traits isn't a class template"
-'std::initializer_list must be a class template with a single type parameter'
 'std::nothrow must be a valid variable declaration'
 'std::nothrow was not found; include <new> before defining a coroutine which uses get_return_object_on_allocation_failure()'
 "step simple modifier is exclusive and cannot be use with 'val', 'uval' or 'ref' modifier"
@@ -13586,7 +13657,7 @@
 'temporary of type %0 has %select{private|protected}1 destructor'
 'tentative array definition assumed to have one element'
 'tentative definition has type %0 that is never completed'
-'tentative definition of variable with internal linkage has incomplete non-array type %0'
+'tentative definition of variable with internal linkage has incomplete %select{non-array|array}0 type %1'
 'tenths of percents of main entry frequency to use as a threshold when evaluating whether a basic block is cold (0 means it is only considered cold if the block has zero samples). Default: 0 '
 "test module file extension '%0' has different version (%1.%2) than expected (%3.%4)"
 'the #__include_macros directive is only for internal use by -imacros'
@@ -13618,7 +13689,7 @@
 "the context property '%0' is not valid for the context selector '%1' and the context set '%2'; property ignored"
 "the context selector '%0' can be nested in the context set '%1'; try 'match(%1={%0%select{|(property)}2})'"
 "the context selector '%0' in context set '%1' requires a context property defined in parentheses; selector ignored"
-"the context selector '%0' in the context set '%1' cannot have a score ('%2'); score ignored"
+"the context selector '%0' in the context set '%1' cannot have a score (%quoted2); score ignored"
 "the context selector '%0' is not valid for the context set '%1'; selector ignored"
 "the coroutine promise type %0 declares both 'return_value' and 'return_void'"
 'the current #pragma pack alignment value is modified in the included file'
@@ -13711,7 +13782,6 @@
 'this function cannot be a coroutine: %0 is not a class'
 "this function cannot be a coroutine: %q0 has no member named 'promise_type'"
 'this function cannot be a coroutine: missing definition of specialization %0'
-'this is generally caused by modules with the same name found in multiple paths'
 'this placement new expression is not supported in constant expressions %select{|before C++2c}0'
 'this pragma cannot appear in %0 declaration'
 'this style of line directive is a GNU extension'
@@ -13810,6 +13880,7 @@
 'type %0 in generic association compatible with previously specified type %1'
 'type %0 in generic association is a variably modified type'
 'type %0 in generic association not an object type'
+'type %0 is already %1-qualified'
 'type %0 is incomplete'
 'type %0 is not a direct or virtual base of %1'
 'type %0 is not trivially copyable and not guaranteed to be mapped correctly'
@@ -13826,6 +13897,10 @@
 'type arguments cannot be applied to already-specialized class type %0'
 'type arguments cannot be applied to non-class type %0'
 'type arguments cannot be applied to non-parameterized class %0'
+'type aware %0 requires a matching type aware %select{|placement }1%2 to be declared in the same scope'
+'type aware %0 will not be used for coroutine allocation'
+'type aware allocators are a C++2c extension'
+'type aware allocators are incompatible with C++ standards before C++2c'
 'type bound %0 for type parameter %1 conflicts with %select{implicit|previous}2 bound %3%select{for type parameter %5|}4'
 'type bound %0 for type parameter %1 is not an Objective-C pointer type'
 "type bound %1 for type parameter %0 cannot be qualified with '%2'"
@@ -14037,6 +14112,7 @@
 "unknown warning group '%0'"
 "unknown warning group '%0', ignored"
 "unknown%select{ | embed}0 preprocessor parameter '%1'"
+'unmatched type aware %0 declared here'
 'unnamed enumeration must be a definition'
 'unnamed type as template argument is incompatible with C++98'
 'unnamed type used in template argument was declared here'
@@ -14128,6 +14204,7 @@
 'use __bridge with C-style cast to convert directly (no change in ownership)'
 'use __bridge_retained with C-style cast to make an ARC object available as a +1 %0'
 'use __bridge_transfer with C-style cast to transfer ownership of a +1 %0 into ARC'
+"use a custom address at which new code will be put, bypassing BOLT's logic to detect where to put code"
 "use a function's hot size when doing clustering"
 'use a lock file so only one process in the system can run this pass at once. useful to avoid mangled debug output in multithreaded environments.'
 'use a modified clustering algorithm geared towards minimizing branches'
@@ -14325,7 +14402,7 @@
 'variable %0 with flexible array member cannot be captured in a lambda expression'
 'variable %0 with type %1 has incompatible initializer of type %2'
 'variable %0 with unknown type cannot be given a function type'
-"variable %select{|in unary expression|on right hand side of assignment|on left hand side of assignment|on left hand side of compound assignment|on left hand side of assignment}2('%3') must match variable used %select{|in unary expression|on right hand side of assignment|<not possible>|on left hand side of compound assignment|on left hand side of assignment}0('%1') from the first statement"
+'variable %select{|in unary expression|on right hand side of assignment|on left hand side of assignment|on left hand side of compound assignment|on left hand side of assignment}2(%3) must match variable used %select{|in unary expression|on right hand side of assignment|<not possible>|on left hand side of compound assignment|on left hand side of assignment}0(%1) from the first statement'
 'variable already marked as mapped in current construct'
 "variable appearing in '%0' clause of OpenACC 'declare' directive must be in the same scope as the directive"
 "variable can appear only once in OpenMP '%0' clause"

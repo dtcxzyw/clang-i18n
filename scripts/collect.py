@@ -288,18 +288,20 @@ strings.append(
 )
 
 strings = list(set(filter(lambda x: x.lower() != x.upper(), strings)))
-strings.remove("All")
-strings.remove("all")
-strings.remove("never")
-strings.remove("Enabled")
-strings.remove("Disabled")
-strings.remove("Default")
-strings.remove("directory")
-strings.remove("filename")
-strings.remove(" position!")
-strings.remove(" version ")
-strings.remove("' attribute: ")
-strings.sort()
+block_words = [
+    "All",
+    "all",
+    "never",
+    "Enabled",
+    "Disabled",
+    "Default",
+    "directory",
+    "filename",
+    " position!",
+    " version ",
+    "' attribute: ",
+]
+strings = sorted(filter(lambda x: x not in block_words, strings))
 
 with open(output_path, "w") as f:
     for line in strings:

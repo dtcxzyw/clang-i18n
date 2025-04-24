@@ -384,10 +384,6 @@ H4649232301DD: '%0 不可用作核心參數的類型'
 H223FE9046675: '%0 無法轉換至 %1'
 # '%0 cannot have a dependent return type; use %1 instead'
 H622C863D5758: '%0 不可具有依賴傳回類型；請改用 %1'
-# '%0 cannot take a dependent type as first parameter; use %1 instead'
-HA474A1ABAD69: '%0 不可將依賴類型作為第一個參數；請改用 %1'
-# '%0 cannot take a dependent type as first parameter; use size_t (%1) instead'
-H54AA7CDA647F: '%0 不可將依賴類型作為第一個參數；請改用 size_t (%1)'
 # "%0 cannot use 'super' because it is a root class"
 HCB7FBC7D0FE7: "%0 無法使用 'super'，因其是根類別"
 # '%0 causes a section type conflict with %1'
@@ -436,6 +432,8 @@ H833E3DFEF469: '%0 未指定參數包的名稱；您是否指的是 %1？'
 H0775C84F5711: "%0 不支援 '%1' %select{類型修飾詞|存儲類別指定符}2"
 # "%0 does not support the option '%1'"
 HCC61DEFC8375: "%0 不支援選項 '%1'"
+# '%0 evaluates to a null function pointer'
+H8F92FCB5C04A: '%0 求值為空函數指標'
 # '%0 has C-linkage specified, but returns incomplete type %1 which could be incompatible with C'
 H36CF04C5AD21: '%0 指定了 C 連結規格，但返回不完整類型 %1，這可能與 C 不兼容'
 # '%0 has C-linkage specified, but returns user-defined type %1 which is incompatible with C'
@@ -449,7 +447,7 @@ H0D47117119FF: '%0 已被標記為在 %1 %2 %select{|%5 環境中 }4 引入，�
 # "%0 has different definitions in different modules; first difference is %select{definition in module '%2'|defined here}1 found %select{%select{no super class|super class with type %5}4|instance variable '%4' access control is %select{|@private|@protected|@public|@package}5}3"
 H8AC2F2F00B17: "%0 在不同模組中具有不同定義；第一個差異是 %select{模組 '%2' 中的定義|在此處定義}1 發現 %select{%select{無超類|超類具有類型 %5}4|實例變數 '%4' 的存取控制為 %select{|@private|@protected|@public|@package}5}3"
 # '%0 has lower precedence than %1; %1 will be evaluated first'
-HFFF20BD3A51A: '%0 的優先順序低於 %1；%1 將會先被評估'
+HFFF20BD3A51A: '%0 的優先順序低於 %1；%1 將會先被求值'
 # '%0 has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit'
 HF80DD309C805: '%0 沒有外部虛函數定義；其 vtable 將會在每個翻譯單位中被發射'
 # '%0 has unknown return type; cast the call to its declared return type'
@@ -477,7 +475,7 @@ H539795173149: '%0 是模組的保留名稱'
 # '%0 is an %select{unsafe pointer used for buffer access|unsafe buffer that does not perform bounds checks}1'
 HD2DA3F5D5287: '%0 是 %select{用於緩衝區存取的不安全指標|未執行界限檢查的不安全緩衝區}1'
 # '%0 is an immediate %select{function|constructor}5 because %select{its body|the%select{| default}7 initializer of %8}6 %select{evaluates the address of %select{an immediate|a consteval}2 function %1|contains a call to %select{an immediate|a consteval}2 %select{function|constructor}4 %1 and that call is not a constant expression}3'
-H2D11120EB0CD: '%0 是立即 %select{函式|建構函式}5，因為 %select{其本體|the%select{| 預設}7 初始化器 of %8}6 %select{評估 %select{立即|consteval}2 函式 %1 的地址|包含對 %select{立即|consteval}2 %select{函式|建構函式}4 %1 的呼叫，而該呼叫並非常數運算式}3'
+H2D11120EB0CD: '%0 是立即 %select{函式|建構函式}5，因為 %select{其本體|the%select{| 預設}7 初始化器 of %8}6 %select{求值 %select{立即|consteval}2 函式 %1 的地址|包含對 %select{立即|consteval}2 %select{函式|建構函式}4 %1 的呼叫，而該呼叫並非常數運算式}3'
 # '%0 is an implicit parameter'
 H18B31C3BE2ED: '%0 是隱式參數'
 # '%0 is an incomplete type'
@@ -535,7 +533,7 @@ H7F1BAB170C64: '%0 不是列舉類型'
 # '%0 is not defined, but forward declared here; conversion would be valid if it was derived from %1'
 H176B6CEA9A74: '%0 未定義，但在此前向宣告；如果它繼承自 %1，轉換將有效'
 # '%0 is not defined, evaluates to 0'
-HBDB44DE505CF: '%0 未定義，評估為 0'
+HBDB44DE505CF: '%0 未定義，求值為 0'
 # '%0 is not literal because it has a non-trivial destructor'
 HC9535B0A1692: '%0 不是字面類型，因為它有非平凡的析構函數'
 # '%0 is not literal because it has a user-provided destructor'
@@ -612,8 +610,6 @@ HF9706A398326: '%0 必須是 Objective-C 類別的名稱，才能將 %1 轉換�
 H593384CDC4FD: '%0 必須在預處理指令內使用'
 # '%0 must be used within a preprocessing directive'
 HAA08D126AF16: '%0 必須至少有一個參數'
-# '%0 must have at least one parameter'
-H2488FE597801: '%0 不得同時出現在 "to" 和 "link" 子句中'
 # "%0 must not appear in both clauses 'to' and 'link'"
 HC3403F617C92: "%0 不得同時出現在 'to' 和 'link' 子句中"
 # '%0 must return type %1'
@@ -664,8 +660,6 @@ HD6330A6C968B: "%0 不應返回空指標，除非它被宣告為 'throw()'%selec
 HC155B92BBDDE: '%0 大小過大'
 # '%0 specified here'
 H2793186BA8E0: '%0 在此處指定'
-# '%0 takes type size_t (%1) as first parameter'
-H994A3A678C5B: '%0 的第一個參數型別需為 size_t (%1)'
 # '%0 template must have at least two parameters'
 HC33714C2985B: '%0 模板必須至少有兩個參數'
 # '%0 type %1 not found; include the base header with -finclude-default-header'
@@ -692,6 +686,8 @@ HC0632CD5FF96: "%0 在 AST 檔案 '%3' 中 %select{停用|啟用}1，但目前 %
 H39D399F5AEF8: '%0 已反序列化'
 # '%0 was marked unused but was used'
 H40B831F8FB51: '%0 被標記為未使用但實際被使用'
+# '%0 will return the size of the pointer, not the array itself'
+H8CFDDD42E21F: '%0 將返回指標的大小，而非陣列本身'
 # '%0%select{ attribute|}1 cannot be applied to a base specifier'
 H11035A3B905C: '%0%select{ 屬性|}1 不能應用於基本類別規範'
 # '%0%select{ attribute|}1 cannot be applied to a declaration'
@@ -742,6 +738,8 @@ HF0E3AF42C5DD: '%ordinal0參數必須是WebAssembly表'
 HB74677AB0CCF: '%ordinal0參數必須是整數'
 # '%ordinal0 argument must match the element type of the WebAssembly table in the %ordinal1 argument'
 HCC6BF06B970F: '%ordinal0參數必須與%ordinal1參數中的WebAssembly表的元素類型相符'
+# '%ordinal3 parameter of%select{| type aware}0%select{| destroying}1 %2 must have type %4'
+H2E6F520064CE: '%select{|類型感知}0%select{|銷毀}1 %2 的第 %ordinal3 個參數必須具有類型 %4'
 # '%plural{1:enumeration value %1 not explicitly handled in switch|2:enumeration values %1 and %2 not explicitly handled in switch|3:enumeration values %1, %2, and %3 not explicitly handled in switch|:%0 enumeration values not explicitly handled in switch: %1, %2, %3...}0'
 HE8DAC9A52D87: '%plural{1:列舉值 %1 在switch中未明確處理|2:列舉值 %1 和 %2 在switch中未明確處理|3:列舉值 %1、%2 和 %3 在switch中未明確處理|:%0 列舉值在switch中未明確處理：%1、%2、%3...}0'
 # '%plural{1:enumeration value %1 not handled in switch|2:enumeration values %1 and %2 not handled in switch|3:enumeration values %1, %2, and %3 not handled in switch|:%0 enumeration values not handled in switch: %1, %2, %3...}0'
@@ -816,6 +814,8 @@ H48AF719C5841: '%select{第 %2 個子物件|%3 具有類型 %2 的物件}0 無�
 H229282294F90: '%select{%diff{將 $ 賦值給 $|賦值給不同類型}1,0|%diff{將 $ 傳遞給類型為 $ 的參數|傳遞給不同類型參數}0,1|%diff{從具有結果類型 $ 的函式返回 $|從不同返回類型函式返回}0,1|%diff{轉換 $ 為類型 $|轉換不同類型}0,1|%diff{以類型 $ 的運算式初始化 $|以不同類型運算式初始化}0,1|%diff{將 $ 傳遞給類型為 $ 的參數|傳遞給不同類型參數}0,1|%diff{將 $ 轉換為類型 $|轉換不同類型}0,1}2 變更巢狀指標的記憶體空間'
 # '%select{%diff{assigning $ to $|assigning to different types}1,0|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2 changes address space of pointer'
 H34858D5559B9: '%select{%diff{將 $ 賦值給 $|賦值給不同類型}1,0|%diff{將 $ 傳遞給類型為 $ 的參數|傳遞給不同類型參數}0,1|%diff{從具有結果類型 $ 的函式返回 $|從不同返回類型函式返回}0,1|%diff{轉換 $ 為類型 $|轉換不同類型}0,1|%diff{以類型 $ 的運算式初始化 $|以不同類型運算式初始化}0,1|%diff{將 $ 傳遞給類型為 $ 的參數|傳遞給不同類型參數}0,1|%diff{將 $ 轉換為類型 $|轉換不同類型}0,1}2 變更指標的記憶體空間'
+# '%select{%diff{assigning $ to $|assigning to different types}1,0|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2 changes pointer authentication of pointee type'
+H8986390D3B16: '%select{%diff{將 $ 賦值給 $|賦值給類型不同的目標}1,0|%diff{將 $ 傳遞給類型為 $ 的參數|傳遞給類型不同的參數}0,1|%diff{從返回類型為 $ 的函數返回 $|從不同返回類型的函數返回}1,0|%diff{將 $ 轉換為類型 $|在類型間轉換}0,1|%diff{用類型為 $ 的運算式初始化 $|用不同類型的運算式初始化}0,1|%diff{將 $ 傳遞給類型為 $ 的參數|傳遞給類型不同的參數}0,1|%diff{將 $ 進行類型 $ 的轉型|在類型間轉型}0,1}2 改變指標驗證的目標型別'
 # '%select{%diff{assigning $ to $|assigning to different types}1,0|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2 changes retain/release properties of pointer'
 HCD0B002FCAD8: '%select{%diff{將 $ 賦值給 $|賦值給不同類型}1,0|%diff{將 $ 傳遞給類型為 $ 的參數|傳遞給不同類型參數}0,1|%diff{從具有結果類型 $ 的函式返回 $|從不同返回類型函式返回}0,1|%diff{轉換 $ 為類型 $|轉換不同類型}0,1|%diff{以類型 $ 的運算式初始化 $|以不同類型運算式初始化}0,1|%diff{將 $ 傳遞給類型為 $ 的參數|傳遞給不同類型參數}0,1|%diff{將 $ 轉換為類型 $|轉換不同類型}0,1}2 變更指標的retain/release屬性'
 # "%select{%diff{assigning to $ from $|assigning to different types}0,1|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2 converts between pointers to integer types %select{with different sign|where one is of the unique plain 'char' type and the other is not}3"
@@ -910,24 +910,24 @@ HE09C48EB126A: '%select{所有|第二及第三}0 參數至 %1 必須為純量或
 H561F9F6DB91B: '%select{屬性指定序列|%0}1 在此位置是 C++23 的擴充功能'
 # '%select{an attribute specifier sequence|%1}0 in this position is incompatible with C++ standards before C++23'
 HEF130F97BB12: '%select{屬性指定序列|%1}0 在此位置與 C++23 之前的標準不符'
+# '%select{and|because}0 %1 (%2 %3 %4) evaluated to false'
+H66E1D07D582D: '%select{和|因為}0 %1 (%2 %3 %4) 求值為 false'
 # '%select{and|because}0 %1 does not satisfy %2'
 H1152B396A251: '%select{且|因為}0 %1 不符合 %2'
 # '%select{and|because}0 %1 does not satisfy %2:'
 H7FDA8323151A: '%select{且|因為}0 %1 不符合 %2:'
-# "%select{and|because}0 '%1' (%2 %3 %4) evaluated to false"
-H5A2EAB383E7A: "%select{且|因為}0 '%1' (%2 %3 %4) 評估為 false"
-# "%select{and|because}0 '%1' evaluated to false"
-HD9EC26C0E6B0: "%select{且|因為}0 '%1' 評估為 false"
-# "%select{and|because}0 '%1' may throw an exception"
-HA87D7335D9EB: "%select{且|因為}0 '%1' 可能擲出例外"
+# '%select{and|because}0 %1 evaluated to false'
+H26D0E6409D84: '%select{和|因為}0 %1 求值為 false'
+# '%select{and|because}0 %1 may throw an exception'
+H22182AFC34C5: '%select{和|因為}0 %1 可能擲出例外'
 # "%select{and|because}0 '%1' would be invalid"
 HAD3CC48247E5: "%select{且|因為}0 '%1' 會無效"
 # "%select{and|because}0 '%1' would be invalid%2"
 HEF46AC24BE27: "%select{且|因為}0 '%1' 會無效 %2"
 # "%select{and|because}0 '%1' would be invalid: %2"
 HD3831227C190: "%select{且|因為}0 '%1' 會無效: %2"
-# "%select{and|because}0 type constraint '%1' was not satisfied:"
-HD561B1DB876A: "%select{且|因為}0 類型限制 '%1' 未被滿足:"
+# '%select{and|because}0 type constraint %1 was not satisfied:'
+H0831E4850047: '%select{和|因為}0 類型限制 %1 未被滿足：'
 # '%select{anonymous struct|union}0 member %1 has a non-trivial %select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}2'
 H443C398B6494: '%select{匿名結構體|共用體}0 成員 %1 有非平凡的 %select{預設建構函式|複製建構函式|移動建構函式|複製指派運算子|移動指派運算子|析構函式}2'
 # '%select{anonymous struct|union}0 member %1 with a non-trivial %select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}2 is incompatible with C++98'
@@ -953,7 +953,7 @@ H4DA493B4F5FF: '%select{調用非靜態成員函數|使用非靜態資料成員}
 # '%select{cannot assign to return value because function %1 returns a const value|cannot assign to variable %1 with const-qualified type %2|cannot assign to %select{non-|}1static data member %2 with const-qualified type %3|cannot assign to non-static data member within const member function %1|cannot assign to %select{variable %2|non-static data member %2|lvalue}1 with %select{|nested }3const-qualified data member %4|read-only variable is not assignable}0'
 H957C121C1C4E: '%select{無法對返回值進行賦值，因為函數 %1 返回了 const 值|無法對 const 限定類型 %2 的變數 %1 進行賦值|無法對 %select{非-|}1 靜態資料成員 %2 具有 const 限定類型 %3 進行賦值|無法在 const 成員函數 %1 內對非靜態資料成員進行賦值|無法對 %select{變數 %2|非靜態資料成員 %2|左值}1 具有 %select{|嵌套 }3const 限定資料成員 %4 進行賦值|唯讀變數無法進行賦值}0'
 # "%select{case value|enumerator value|non-type template argument|non-type parameter of template template parameter|array size|explicit specifier argument|noexcept specifier argument|call to 'size()'|call to 'data()'}0 %select{cannot be narrowed from type %2 to %3|evaluates to %2, which cannot be narrowed to type %3}1"
-HECF4733C9DA0: "%select{case值|枚舉值|非類型模板參數|匿名聯結體成員|陣列大小|顯式指定參數|noexcept指定參數|調用 'size()'|調用 'data()'}0 %select{不能從類型 %2 窄化為 %3|評估為 %2，這不能窄化為類型 %3}1"
+HECF4733C9DA0: "%select{case值|枚舉值|非類型模板參數|匿名聯結體成員|陣列大小|顯式指定參數|noexcept指定參數|調用 'size()'|調用 'data()'}0 %select{不能從類型 %2 窄化為 %3|求值為 %2，這不能窄化為類型 %3}1"
 # "%select{case value|enumerator value|non-type template argument|non-type parameter of template template parameter|array size|explicit specifier argument|noexcept specifier argument|call to 'size()'|call to 'data()'}0 is not a constant expression"
 HFB41B693F137: "%select{case 值|枚舉值|非類型模板參數|非類型參數的模板模板參數|陣列大小|顯示指定參數|noexcept 指定參數|調用 'size()'|調用 'data()'}0 不是常量表達式"
 # '%select{cast|implicit conversion}0 of %select{Objective-C|block|C}1 pointer type %2 to %select{Objective-C|block|C}3 pointer type %4 requires a bridged cast'
@@ -1058,8 +1058,8 @@ H3C92D92BB26F: '%select{預設建構|指派}0 lambda與C++20之前的C++標準�
 HF80E1E94C448: '%select{物件的預設建構函數|由物件繼承的建構函數}0 %1 被隱式刪除，因為所有%select{資料成員|匿名聯集成員的資料成員}2 均為const限定'
 # '%select{default constructor of|constructor inherited by}0 %1 is implicitly deleted because field %2 of %select{reference|const-qualified}4 type %3 would not be initialized'
 H3F45472DFCD6: '%select{具有|由...繼承的}0 %1 類別的預設建構函式被隱式刪除，因為其成員 %2 的 %select{引用|const限定}4 類型 %3 未被初始化'
-# '%select{default constructor of|copy constructor of|move constructor of|copy assignment operator of|move assignment operator of|destructor of|constructor inherited by}0 %1 is implicitly deleted because %select{base class %3|%select{||||variant }4field %3}2 %select{has %select{no|a deleted|multiple|an inaccessible|a non-trivial}4 %select{%select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor|%select{default|corresponding|default|default|default}4 constructor}0|destructor}5%select{||s||}4|is an ObjC pointer}6'
-H1BB10C6BA0EA: '%select{物件的預設建構函數|物件的複製建構函數|物件的移動建構函數|物件的複製賦值運算子|物件的移動賦值運算子|物件的解構函數|物件的繼承建構函數}0 %1 被隱式刪除，因為%select{基類 %3|%select{||||variant }4成員 %3}2 %select{有%select{無|被刪除|多個|無法存取|非平凡}4 %select{%select{預設建構函數|複製建構函數|移動建構函數|複製賦值運算子|移動賦值運算子|解構函數|%select{預設|對應|預設|預設|預設}4 建構函數}0|解構函數}5%select{||s||}4|是ObjC指標}6'
+# "%select{default constructor of|copy constructor of|move constructor of|copy assignment operator of|move assignment operator of|destructor of|constructor inherited by}0 %1 is implicitly deleted because %select{base class %3|%select{||||variant }4field %3}2 %select{has %select{no|a deleted|multiple|an inaccessible|a non-trivial}4 %select{%select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor|%select{default|corresponding|default|default|default}4 constructor}0|destructor}5%select{||s||}4|is an ObjC pointer|has an address-discriminated '__ptrauth' qualifier}6"
+H8B06D5202BF4: "%select{預設建構函式 的|複製建構函式 的|移動建構函式 的|複製賦值運算子 的|移動賦值運算子 的|析構函式 的|被繼承的建構函式}0 %1 是隱式刪除，因為 %select{基底類別 %3|%select{||||variant }4 欄位 %3}2 %select{具有 %select{不存在|已被刪除|多個|無法存取的|非平凡的}4 %select{%select{預設建構函式|複製建構函式|移動建構函式|複製賦值運算子|移動賦值運算子|析構函式|%select{預設|對應|預設|預設|預設}4 建構函式}0|析構函式}5%select{||s||}4|是ObjC指標|具有地址區分的 '__ptrauth' 修飾符}6"
 # "%select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}0 cannot be 'constexpr' in a class with virtual base class"
 HAA0AD1F4C5AC: "%select{預設建構函數|複製建構函數|移動建構函數|複製指派運算子|移動指派運算子|析構函數}0 在具有虛基類的類別中不能是 'constexpr'"
 # '%select{defaulted|deleted}0 function definitions are a C++11 extension'
@@ -1248,6 +1248,8 @@ HA353FC8D883A: "%select{非結構類型|非類別類型|非聯合類型|非列�
 H7895E4BCBED9: '%select{非虛|虛}0 派生在此處'
 # "%select{non-|function }0pointer argument to '__builtin_is_within_lifetime' is not allowed"
 HEC6E2A0FBA29: '__builtin_is_within_lifetime 的 %select{非指標|函數指標}0 參數不被允許'
+# '%select{non-|}0type aware %1 declared here in %2'
+HC09774CA5903: '%select{非-|}0 類型感知 %1 在 %2 這裡宣告'
 # "%select{no|too many}0 integer expression arguments provided to OpenACC 'num_gangs' %select{|clause: '%1' directive expects maximum of %2, %3 were provided}0"
 HDF54FE517944: "%select{未提供|超出}0 整數表達式參數給 OpenACC 'num_gangs' %select{|子句: '%1' 指令最多接受 %2，但提供了 %3}0"
 # "%select{orphaned 'omp section' directives are prohibited, it|'omp section' directive}0 must be closely nested to a sections region%select{|, not a %1 region}0"
@@ -1340,6 +1342,8 @@ HDAB148B74E30: '%select{reinterpret_cast|C型式轉換}0 從 %1 到 %2 改變巢
 H1688ED0E5178: '%select{reinterpret_cast|dynamic_cast|%select{this conversion|cast that performs the conversions of a reinterpret_cast}1|cast from %1}0 不允許在常數運算式中使用 %select{|在C++20之前的C++標準中||}0'
 # '%select{remainder|division}0 by zero is undefined'
 HDDF6DBF3AFB2: '%select{餘數|除法}0 除以零是未定義的行為'
+# "%select{return type|parameter type|property}1 may not be qualified with '__ptrauth'; type is %0"
+H89CAD73DCBC0: "%select{回傳類型|參數類型|屬性}1 不可使用 '__ptrauth' 修飾；類型為 %0"
 # '%select{returning|passing}0 a VL-dependent argument %select{from|to}0 a function with a different streaming-mode is undefined behaviour when the streaming and non-streaming vector lengths are different at runtime'
 HD835E99E7B94: '%select{返回|傳遞}0 一個 VL 依賴型參數 %select{從|到}0 具有不同流模式的函數，當流和非流向量長度在執行時不同時，會產生未定義行為'
 # '%select{returning|passing}0 a VL-dependent argument %select{from|to}0 a locally streaming function is undefined behaviour when the streaming and non-streaming vector lengths are different at runtime'
@@ -1347,7 +1351,7 @@ H78DE8F398FA2: '%select{返回|傳遞}0 一個 VL 依賴型參數 %select{從|�
 # '%select{return|parameter|variable|field|instance variable|synthesized instance variable}0 type %1 is an abstract class'
 H83DAE33A1A29: '%select{return|parameter|variable|field|instance variable|synthesized instance variable}0 類型 %1 是一個抽象類別'
 # "%select{self-|array |pointer }0comparison always evaluates to %select{a constant|true|false|'std::strong_ordering::equal'}1"
-H25C7EE9B164E: "%select{self-|array |pointer }0比較始終評估為 %select{常數|true|false|'std::strong_ordering::equal'}1"
+H25C7EE9B164E: "%select{self-|array |pointer }0比較始終求值為 %select{常數|true|false|'std::strong_ordering::equal'}1"
 # "%select{shader model|Vulkan environment|shader stage}0 '%1' in target '%2' is invalid for HLSL code generation"
 H559D5EF03AE6: "%select{著色器模型|Vulkan 環境|著色器階段}0 '%1' 在目標 '%2' 中對 HLSL 程式碼生成無效"
 # "%select{shader model|Vulkan environment|shader stage}0 is required as %select{OS|environment}1 in target '%2' for HLSL code generation"
@@ -1414,6 +1418,8 @@ H7C0418F179E9: '%select{類型標籤|參數}0索引 %1 大於指定的參數個�
 H7F72DD3ED811: '%select{typedef|type alias|type alias template}0 重新定義時類型不同%diff{（$與$不同）|}1,2'
 # '%select{uninitialized use occurs|variable is captured by block}0 here'
 H80571A54148A: '%select{未初始化的使用發生於|變數被區塊捕獲}0此處'
+# "%select{unknown|duplicate}0 modifier %1 in OpenACC modifier-list on '%2' clause"
+H8603FBD5B2C6: "在 '%2' 子句的 OpenACC 修飾符清單中發現 %select{未知|重複}0 修飾符 %1"
 # '%select{unknown|unsupported}0 machine mode %1'
 HB579643BB1CB: '%select{未知|不支援}0機器模式 %1'
 # '%select{unsafe pointer operation|unsafe pointer arithmetic|unsafe buffer access|function introduces unsafe buffer manipulation|unsafe invocation of %1|field %1 prone to unsafe buffer manipulation}0'
@@ -1457,7 +1463,7 @@ H1D02391D3A58: '%select{|直接 }0%select{方法|屬性}1 宣告與先前 %selec
 # '%select{|empty }0%select{struct|union}1 has size 0 in C, %select{size 1|non-zero size}2 in C++'
 HEA8D8C4B49F9: '%select{|空的 }0%select{struct|union}1 在C中大小為 0，在C++中%select{大小為 1|非零大小}2'
 # "%select{|implicit }0use of 'this' pointer is only allowed within the evaluation of a call to a 'constexpr' member function"
-HE1347141F3D2: "%select{|隱式 }0使用 'this' 指標僅允許在評估 'constexpr' 成員函數調用時使用"
+HE1347141F3D2: "%select{|隱式 }0使用 'this' 指標僅允許在求值 'constexpr' 成員函數調用時使用"
 # '%select{|implicitly }1declared %select{private|protected}0 here'
 H8D12655CD9C3: '%select{|隱式宣告的}%select{private|protected}0 在這裡'
 # "%select{|incremented }0enumerator value which exceeds the range of 'int' is a C23 extension (%1 is too %select{small|large}2)"
@@ -1492,6 +1498,14 @@ H00E98F1D44F7: '%select{|第二個 }0%1 令牌在此處'
 HD806C936F5D9: '%select{|static_cast|reinterpret_cast|dynamic_cast|C-style cast|函式樣式 cast|}0 從 %1 轉換到 %2 使用了已被刪除的函數 %select{|: %4}3'
 # '%select{|success |failure }0memory order argument to atomic operation is invalid'
 HFAC869D2863E: '%select{|成功 |失敗 }0原子運算的記憶體順序參數無效'
+# '%select{|type aware }0%select{|destroying }1%2 cannot take a dependent type as its %ordinal3 parameter; use %4 instead'
+H965362A13DF2: '%select{|類型感知 }0%select{|銷毀 }1%2 的第 %ordinal3 個參數不能接受依賴型別，請改用 %4'
+# '%select{|type aware }0%select{|destroying }1%2 cannot take a dependent type as its %ordinal3 parameter; use %5 (%4) instead'
+H8DC61B9CED29: '%select{|類型感知 }0%select{|銷毀 }1%2 的第 %ordinal3 個參數不能接受依賴型別，請改用 %5 (%4)'
+# '%select{|type aware }0%select{|destroying }1%2 must have at least %select{|one|two|three|four|five}3 parameter%s3'
+HDBF7BEA2895C: '%select{|類型感知 }0%select{|銷毀 }1%2 必須至少有 %select{|一|二|三|四|五}3個參數%s3'
+# '%select{|type aware }0%select{|destroying }1%2 takes type %5 (%4) as %ordinal3 parameter'
+HCA17F3BCF987: '%select{|類型感知 }0%select{|銷毀 }1%2 的第 %ordinal3 個參數為 %5 (%4)'
 # "%select{|umbrella }0header '%1' not found"
 H3FDB64D57A92: "%select{|總綱 }0標頭 '%1' 未找到"
 # '%select{|unsafe_unretained|strong|weak}1 property %0 may not also be declared %select{|__unsafe_unretained|__strong|__weak|__autoreleasing}2'
@@ -1605,7 +1619,7 @@ H9E6A8072EAD3: "'%0' 不能用於 %select{空指標|超出物件末端的指標|
 # "'%0' cannot be signed or unsigned"
 HE82DC08D960E: "'%0' 不能指定為有符號或無符號"
 # "'%0' cannot be used in an unevaluated context"
-HACCAB0092430: "'%0' 不能用於未評估的語境中"
+HACCAB0092430: "'%0' 不能用於未求值的語境中"
 # "'%0' cannot be used in the handler of a try block"
 HCC6C7DE7C0DC: "'%0' 不可在 try 區塊的處理程序中使用"
 # "'%0' cannot be used outside a function"
@@ -1650,8 +1664,6 @@ H5EA2B901E3DD: "'%0' 不包含GCC安裝"
 H5F193B6442A3: "'%0' 不支援 '-%1'；旗標被忽略"
 # "'%0' does not support '-moutline'; flag ignored"
 H8FCF49E8EFFE: "'%0' 不支援 '-moutline'；旗標被忽略"
-# "'%0' evaluates to a null function pointer"
-HC166C9B46BC9: "'%0' 評估為空函數指標"
 # "'%0' file not found"
 HE40852833202: "'%0' 檔案未找到"
 # '\'%0\' file not found with <angled> %select{include|import}1; use "quotes" instead'
@@ -1783,15 +1795,13 @@ H08EBA7A5907F: "'%0' 變數必須具有全域儲存"
 # "'%0' will always be truncated; specified size is %1, but format string expands to at least %2"
 H0AA6DDAAABA2: "'%0' 會永遠被截斷；指定大小為 %1，但格式字串展開後至少需要 %2"
 # "'%0' will always evaluate to 'true' in a manifestly constant-evaluated expression"
-H75D7A83FFEC6: "'%0' 在明確的常量運算表達式中永遠會評估為 'true'"
+H75D7A83FFEC6: "'%0' 在明確的常量運算表達式中永遠會求值為 'true'"
 # "'%0' will always overflow; destination buffer has size %1, but format string expands to at least %2"
 H6C8DA523F6B3: "'%0' 會永遠溢位；目的緩衝區大小為 %1，但格式字串展開後至少需要 %2"
 # "'%0' will always overflow; destination buffer has size %1, but size argument is %2"
 H6A8E065AE173: "'%0' 會永遠溢位；目的緩衝區大小為 %1，但大小參數是 %2"
 # "'%0' will always overflow; destination buffer has size %1, but the source string has length %2 (including NUL byte)"
 H4E1F13141ECB: "'%0' 會永遠溢位；目的緩衝區大小為 %1，但來源字串長度為 %2（包含NUL字元）"
-# "'%0' will return the size of the pointer, not the array itself"
-H10D34141626D: "'%0' 將傳回指標的大小，而非陣列本身"
 # "'%0' within '%1'"
 HFD060F45F3E4: "'%0' 在 '%1' 內"
 # "'%0': selected processor lacks floating point registers"
@@ -2002,6 +2012,12 @@ HA19FB1CE432F: '‘__leave’語句未處於__try區塊中'
 H0B1BBFD1CDEA: "'__local' 變數不能有初始值設定項"
 # "'__pixel' must be preceded by '__vector'.  '%0' declaration specifier not allowed here"
 H88B3B9C40157: "'__pixel' 必須由 '__vector' 領先。 '%0' 声明說明符在此處不允許"
+# "'__ptrauth' qualification mismatch%diff{ ($ and $)|}0,1"
+H6E0E8F990A99: "'__ptrauth' 限定符不匹配%diff{ ($ 和 $)|}1,0"
+# "'__ptrauth' qualifier must take between 1 and 3 arguments"
+HD53DD31D4F33: "'__ptrauth' 限定符需要 1 到 3 個參數"
+# "'__ptrauth' qualifier only applies to pointer types; %0 is invalid"
+H7B0BBE1DC52F: "'__ptrauth' 限定符僅適用於指標型別；%0 無效"
 # "'__super' cannot be used with a using declaration"
 HE7865E9E15F7: "'__super' 不能與 using 声明一起使用"
 # "'__thread' before '%0'"
@@ -2064,6 +2080,8 @@ H5112D2E8FE1B: "'callback' 屬性參數 %0 不是已知的函數參數"
 H11C2E7DC48A0: "'callback' 屬性調用方不具有函數類型"
 # "'callback' attribute callee may not be variadic"
 H5339D3799089: "'callback' 屬性調用方不可使用可變參數"
+# "'callback' attribute references function of type %0 which expects %1 %plural{1:argument|:arguments}1 but attribute specifies %2 parameter index %plural{1:argument|:arguments}2"
+HE68D93E84E5E: "'callback' 屬性引用類型 %0，%expect %1 %plural{1:參數|:參數}1，但屬性指定 %2 參數索引 %plural{1:參數|:參數}2"
 # "'callback' attribute specifies invalid callback callee"
 HAE51B1A6C397: "'callback' 屬性指定無效的回呼調用方"
 # "'callback' attribute specifies no callback callee"
@@ -2276,6 +2294,8 @@ H60F2BCD19874: "'nonmonotonic' 修飾符只能與 'dynamic' 或 'guided' 類型�
 H0D4CBB499E30: "'nonnull' 屬性應用於無指標參數的函數"
 # "'nonnull' attribute when used on parameters takes no arguments"
 H8544A5398585: "在參數上使用的 'nonnull' 屬性不需要參數"
+# "'not_tail_called' attribute prevents being called as a tail call"
+HD566EBB2A50E: "'not_tail_called' 屬性會阻止以尾調用方式呼叫"
 # "'nothrow' attribute conflicts with exception specification; attribute ignored"
 HA43C7748DBD1: "'nothrow' 屬性與例外規格衝突；屬性被忽略"
 # "'nowait' clause is here"
@@ -2453,17 +2473,17 @@ H13B6762030CD: "'this' 不能以引用形式被捕獲"
 # "'this' cannot be%select{| implicitly}0 used in a static member function declaration"
 H4C9AC15A6831: "'this' 指標不能在靜態成員函數宣告中 %select{| 隱式}0使用"
 # "'this' pointer cannot be null in well-defined C++ code; comparison may be assumed to always evaluate to %select{true|false}0"
-HC979F6DEC864: "'this' 指標在符合C++語法的程式中不能為空；比較可能被假設始終評估為 %select{true|false}0"
+HC979F6DEC864: "'this' 指標在符合C++語法的程式中不能為空；比較可能被假設始終求值為 %select{true|false}0"
 # "'this' pointer cannot be null in well-defined C++ code; pointer may be assumed to always convert to true"
 HE4633A40CE28: "'this' 指標在符合C++語法的程式中不能為空；指標可能被假設始終轉換為 true"
 # "'this' pointer references not allowed in naked functions"
 H95FED6FF2C73: "在裸函數（naked functions）中不允许引用 'this' 指標"
 # "'trivial_abi' cannot be applied to %0"
 H39CEA0BB8E5A: "'trivial_abi' 無法應用於 %0"
-# "'trivial_abi' is disallowed on %0 because %select{its copy constructors and move constructors are all deleted|it is polymorphic|it has a base of a non-trivial class type|it has a virtual base|it has a __weak field|it has a field of a non-trivial class type}1"
-HD222FF73C208: "'trivial_abi' 因以下原因不允許用於 %0：%select{其拷貝建構函數和移動建構函數都被刪除|它是多態類|它有非純粹類型的基類|它有虛基類|它有__weak成員|它有非純粹類型的成員}1"
+# "'trivial_abi' is disallowed on %0 because %select{its copy constructors and move constructors are all deleted|it is polymorphic|it has a base of a non-trivial class type|it has a virtual base|it has a __weak field|it has a field of a non-trivial class type|it has an address-discriminated '__ptrauth' field}1"
+HF2341EAAEAEC: "'trivial_abi' 禁用於 %0，因%select{其複製建構函式和移動建構函式皆已刪除|它是多態性類型|它具有非平凡類型的基類|它具有虛基類|它具有__weak欄位|它具有非平凡類型的欄位|它具有地址鑑別的 '__ptrauth' 欄位}1"
 # "'true' is not defined, evaluates to 0"
-HEC6C8880A6A3: "'true' 未定義，評估為 0"
+HEC6C8880A6A3: "'true' 未定義，求值為 0"
 # "'type_tag_for_datatype' attribute requires the initializer to be an %select{integer|integral}0 constant expression"
 H2191B1B324E8: "'type_tag_for_datatype' 屬性需要初始值為 %select{整數|integral}0 常數運算式"
 # "'type_tag_for_datatype' attribute requires the initializer to be an %select{integer|integral}0 constant expression that can be represented by a 64 bit integer"
@@ -2836,6 +2856,8 @@ H652DA545BF0D: '若其總樣本數量超過指定的百分位數，則該函數�
 H3FD0C1E415AD: '假設為全域的函數名稱，將被視為一個有趣圖的根節點，並獨立於其他類似圖形進行剖面分析。'
 # 'A huge scheduling region will have maps reduced by this many nodes at a time. Defaults to HugeRegion / 2.'
 HAEEA6B54FAD5: '巨大的調度區域每次將減少這麼多節點的映射。預設值為 HugeRegion / 2。'
+# 'A key=value pair. Replace __nvvm_reflect(name) with value.'
+H3D02297FABD7: '鍵值對。用值取代__nvvm_reflect(name)'
 # 'A lexical block (Function, Class, etc.).'
 HC41EB530ACBA: '詞法區塊（函數、類等）。'
 # "A list of mangled vtable type info names. Classes specified by the type info names and their derived ones will not be vtable-ICP'ed. Useful when the profiled types and actual types in the optimized binary could be different due to profiling limitations. Type info names are those string literals used in LLVM type metadata"
@@ -2896,10 +2918,8 @@ H104573A3D1B6: '每個迴圈維度的切割大小，填入 --polly-default-tile-
 H8DEB87E7711B: '每個迴圈維度的切割大小，填入 --polly-register-tile-size'
 # 'A tool to bundle several input files of the specified type <type> \nreferring to the same source file but different targets into a single \none. The resulting file can also be unbundled into different files by \nthis tool if -unbundle is provided.\n'
 HD409DEDBF7C5: '將同一來源檔案但不同目標的多個輸入檔案 <type> 捆绑成單一檔案的工具。\n產生的檔案也可透過此工具加上 -unbundle 參數解捆為不同檔案。\n'
-# 'A tool to detect the presence of AMDGPU devices on the system. \n\nThe tool will output each detected GPU architecture separated by a\nnewline character. If multiple GPUs of the same architecture are found\na string will be printed for each\n'
-H8EA7CFE7591E: '用於檢測系統上存在的 AMDGPU 裝置的工具。\n\n此工具會輸出每個檢測到的 GPU 架構，以換行符分隔。若發現相同架構的多個 GPU，會為每個裝置輸出字串。\n'
-# 'A tool to detect the presence of NVIDIA devices on the system. \n\nThe tool will output each detected GPU architecture separated by a\nnewline character. If multiple GPUs of the same architecture are found\na string will be printed for each\n'
-H813C62D59D1D: '用於檢測系統上存在的 NVIDIA 裝置的工具。\n\n此工具會輸出每個檢測到的 GPU 架構，以換行符分隔。若發現相同架構的多個 GPU，會為每個裝置輸出字串。\n'
+# 'A tool to detect the presence of offloading devices on the system. \n\nThe tool will output each detected GPU architecture separated by a\nnewline character. If multiple GPUs of the same architecture are found\na string will be printed for each\n'
+H1DF8966C5917: '用於檢測系統中卸載裝置的工具。\n\n此工具將輸出每個檢測到的GPU架構，以換行符分隔。若發現多個相同架構的GPU，將為每個GPU列印字串'
 # 'A tool to format C/C++/Java/JavaScript/JSON/Objective-C/Protobuf/C# code.\n\nIf no arguments are specified, it formats the code from standard input\nand writes the result to the standard output.\nIf <file>s are given, it reformats the files. If -i is specified\ntogether with <file>s, the files are edited in-place. Otherwise, the\nresult is written to the standard output.\n'
 HBD33E3D62435: '用於格式化 C/C++/Java/JavaScript/JSON/Objective-C/Protobuf/C# 程式碼的工具。\n\n若未指定參數，會從標準輸入讀取程式碼並輸出至標準輸出。\n若指定 <file>，則重新格式化這些檔案。若同時指定 -i 和 <file>，則直接修改原檔；否則輸出至標準輸出。\n'
 # 'A tool to generate an optimization report from YAML optimization record files.\n'
@@ -3138,8 +3158,6 @@ HD58C1F70322E: '將包含 BTI 的 .note.gnu.property 添加至組裝檔'
 H497BB320D249: '將包含 BTI 的 .note.gnu.property 添加至組裝檔（僅限 AArch64）'
 # 'Add <dir> to system include search path, as if in %INCLUDE%'
 H8CB70533A0CD: '將 <dir> 加入系統包含路徑搜尋清單，如同位於 %INCLUDE% 環境變數中'
-# 'Add AMDGPU function attributes'
-H4A9EBA76009C: '添加 AMDGPU 函式屬性'
 # 'Add AMDGPU uniform metadata'
 HE950C74F7CBF: '添加 AMDGPU 均勻元資料'
 # 'Add C++ implicit destructors to CFGs for all analyses'
@@ -3336,6 +3354,8 @@ H2B37E4881B6D: '等同於--threads-x'
 HAAA114F8EC1E: '等同於--unsymbolized-profile'
 # 'Alias for -Xclang'
 HCD7F2ECE0041: '等同於-Xclang'
+# 'Alias for -Xclangas'
+H132AA9B77570: '-Xclangas 的別名'
 # 'Alias for -all-stacks'
 HBF7B049FB306: '等同於-all-stacks'
 # 'Alias for -check-prefix permitting multiple comma separated values'
@@ -3418,6 +3438,8 @@ H4F2747860017: '對齊選擇的指令以緩解Intel因skx102缺陷更新微代�
 H93CADD3D554F: '對齊的分配/釋放函數不可用'
 # 'Alignment of bundle for binary files'
 H746C20CFEB90: '二進位檔的封裝對齊'
+# 'All Pointer Authentication scanners'
+HE5781D397620: '所有Pointer Authentication掃描器'
 # "All compile commands come from LSP and 'compile_commands.json' files are ignored"
 H35E96D7E99B1: '所有編譯命令均來自LSP，忽略compile_commands.json檔'
 # "All compile commands come from the 'compile_commands.json' files"
@@ -3432,6 +3454,8 @@ H8494FD0B179D: '不在重放中的所有決策都會發送到原始建議者（�
 HA0232E12FF85: '所有邊。'
 # 'All elements.'
 HD1FF88F0C212: '所有元素。'
+# 'All implemented scanners'
+HC6B3DAC5AC10: '所有已實作的掃描器'
 # 'All input lines'
 HAA2659CBF3BE: '所有輸入行'
 # 'All known subsections'
@@ -3450,14 +3474,16 @@ H5309722D6033: '所有合適的變數將應用 TOC 數據轉換'
 H69D2DF6DECC5: '所有虛函數表都包含類型資訊'
 # 'All warnings.'
 H294EA62DA621: '所有警告。'
-# 'Allocate all arrays of unknown size and temporary arrays in stack memory'
-H3AE89D60479D: '將未知大小的陣列和臨時陣列分配到堆疊記憶體中'
+# 'Allocate -frepack-arrays temporaries on the heap (default)'
+H23DD0FDC2602: '將-frepack-arrays暫存變數分配至堆（預設）'
 # 'Allocate array temporaries on the heap (default)'
 HF192F6B25D6C: '在堆上分配陣列臨時變數（預設）'
 # 'Allocate from a slab of the given size (allowable suffixes: Kb, Mb, Gb. default = Kb)'
 H8D1230E33C0D: '從給定大小的 slab 分配（允許的後綴：Kb、Mb、Gb。預設為 Kb）'
 # 'Allocate memory upfront rather than on-demand'
 H067B160BE7A4: '提前分配記憶體而不是按需分配'
+# 'Allocate temporary arrays for -frepack-arrays in stack memory'
+H60EEEE1BB97A: '將-frepack-arrays暫存陣列分配至堆疊記憶體'
 # 'Allocate to an enum type only as many bytes as it needs for the declared range of possible values'
 H5482421F99A5: '為枚舉類型分配的記憶體僅足夠存儲其宣告的可能值範圍所需的位元組'
 # "Allow '$' in identifiers"
@@ -3616,6 +3642,8 @@ HB6DC09C0C648: '允許Attributor為非精確定義創建淺層封裝器。'
 H2595BA1E26D0: '允許Attributor進行呼叫位置特定分析'
 # 'Allow the Attributor to use IP information derived from non-exact functions via cloning'
 H0E8CFBCDE797: '允許Attributor通過複製非精確函數來使用由此衍生的IP資訊'
+# 'Allow the compiler to assume that each translation unit has a unique source file name at link time'
+H43C1574D99AB: '允許編譯器假設每個翻譯單元在連結時具有唯一的來源檔名稱'
 # 'Allow the detection of full functions'
 H6DD82ED565A3: '允許檢測完整函數'
 # 'Allow the formation of VW_W operations (e.g., VWADD_W) with splat constants'
@@ -3870,6 +3898,8 @@ H40EE5717199D: '假設分佈式迴圈的迭代次數不會超過參與的團隊�
 H63C989F614F3: '假設不會在細粒度記憶體上執行原子操作'
 # 'Assume no atomic operations on remote memory'
 H0DEE4D7E8196: '假設不會在遠端記憶體上執行原子操作'
+# 'Assume that UAVs/SRVs may alias'
+HCF25B628FDEC: '假設UAVs/SRVs可能產生別名'
 # "Assume that exception objects' destructors are non-throwing"
 HA13DECB16694: '假設例外物件的析構函數不會拋出例外'
 # 'Assume that execution stops at trap instruction'
@@ -3916,6 +3946,8 @@ H08A666FD7289: '將除錯資訊附加到函數'
 HED658EC60D0F: '將除錯資訊附加到所有內容'
 # 'Attempt coalescing during PBQP register allocation.'
 H7648F369F9C7: '在PBQP暫存器配置期間嘗試合併。'
+# 'Attempt to allocate array temporaries created under -frepack-arrays on the stack'
+HB0B7FBFAAEA5: '嘗試將-frepack-arrays產生的陣列暫存變數分配至堆疊'
 # 'Attempt to allocate array temporaries on the stack, no matter their size'
 H1898E5AD9AA7: '無論大小如何，嘗試將陣列暫存器配置在堆疊上'
 # 'Attempt to drop solution if it is less profitable'
@@ -4322,6 +4354,8 @@ H8D990FD681E2: '調整贪婪寄存器配置器的存活範圍權重計算，使�
 HD4EADD7ABB24: '變更可變參數呼叫約定'
 # 'Check CFA info and insert CFI instructions if needed'
 HB1FAB917FF49: '檢查 CFA 資訊並依需求插入 CFI 指令'
+# 'Check all diagnostics (expected, unexpected, near-misses)'
+HDD500F45AE52: '檢查所有診斷（期望、非期望、接近匹配）'
 # 'Check debug info from -debugify'
 H8AF6D59AB27A: '檢查 -debugify 產生的除錯資訊'
 # 'Check debug info from -debugify-function'
@@ -4344,6 +4378,8 @@ H105B69431A40: '檢查是否在除錯時未更新BFI的未知區塊查詢區塊�
 HA0A80D536062: '檢查輸入異質存檔是否符合TargetID規則。\n'
 # 'Check module hash using the argument as a string table'
 H43F3CCEA9F64: '使用字串表格檢查模組雜湊'
+# 'Check only expected diagnostics'
+H1D795C0D9F5F: '僅檢查期望診斷'
 # 'Check pointer authentication auth/resign failures'
 HBEEB7E32E077: '選擇DWARF調試區段的壓縮方式:'
 # 'Check stack-use-after-scope'
@@ -4878,6 +4914,8 @@ H6E851EAFE0D8: 'DWO輸出檔名'
 H7800E8E1E097: 'DXContainer全域發射器'
 # 'DXIL Array Flattener'
 H8F82D482C158: 'DXIL陣列展平器'
+# 'DXIL CBuffer Access'
+HD94C3B98AA6B: 'DXIL CBuffer存取'
 # 'DXIL Data Scalarization'
 H8CA416EED877: 'DXIL資料純量化'
 # 'DXIL Finalize Linkage'
@@ -5071,7 +5109,7 @@ H535B6DB54DEC: '確定在IR中表現的屬性'
 # 'Determine when the Swift async frame pointer should be set'
 H0BCAA17B1F0F: '確定在何時設定 Swift 非同步框架指標'
 # 'Determines whether the optimizer honors parentheses when floating-point expressions are evaluated'
-HD46386982C52: '決定在評估浮點運算式時，優化器是否尊重括號'
+HD46386982C52: '決定在求值浮點運算式時，優化器是否尊重括號'
 # 'Diagnostic ID mapping utility'
 HC6CDFACE6E9C: '診斷ID映射工具'
 # 'Diff Options'
@@ -5622,8 +5660,6 @@ HB0977BC6B970: '禁用移除sext.w指令'
 H484EAB4F216F: '禁用移除符號擴展指令'
 # 'Disable replace with vector math call pass'
 HC8A504A99877: '禁用替換為向量數學調用的pass'
-# "Disable retain SubstTemplateTypeParmType nodes in the AST's representation of alias template specializations"
-H7BAFBB14B677: '禁用在別名模板特化AST表示中保留SubstTemplateTypeParmType節點'
 # 'Disable sanitizer coverage instrumentation for modules and functions that match the provided special case list, even the allowed ones'
 H8AE573AF38D9: '即使允許的模組和函數，也禁用根據提供的特殊情況清單匹配的模組和函數的檢查工具覆蓋插樁'
 # 'Disable sanitizer metadata for modules and functions that match the provided special case list'
@@ -5809,7 +5845,7 @@ H1A57049BF682: '停用在optimizeMemoryInst中結合不同部分的位址模式'
 # 'Disables debug printing for the new pass manager'
 H92F40F826D39: '停用新管線管理器的除錯列印'
 # 'Disables evaluation of GetElementPtr with constant operands'
-H5A42772B82EF: '停用具有常數操作數的GetElementPtr運算式評估'
+H5A42772B82EF: '停用具有常數操作數的GetElementPtr運算式求值'
 # 'Disables inttoptr/ptrtoint roundtrip optimization'
 H03E816B33DC1: '停用inttoptr/ptrtoint往返優化'
 # 'Disables potentially expensive checks in the transform interpreter, providing more speed at the expense of potential memory problems and silent corruptions'
@@ -5850,8 +5886,6 @@ H1C82DB59E408: '禁止使用movt/movw pairs（ARM only）'
 H613CDE699EC0: '分解十六進位字節字符串'
 # 'Disassembler Options'
 H4DCD7C09D805: '分解器選項'
-# 'Disassembler options'
-H44D3EF88EF05: '分解器選項'
 # 'Discard names from Value (other than GlobalValue).'
 H742AC63D224D: '丢棄Value（GlobalValue以外）的名称。'
 # 'Discard value names in LLVM IR'
@@ -6016,6 +6050,8 @@ H80E0CE8F43D2: '不將LR寄存器用作一般用途，僅限呼叫使用（僅�
 HC4FB93EDAFBC: '禁止編譯器合併任何sanitizers的handlers'
 # 'Do not allow compiler to merge handlers for specified sanitizers'
 H14D0727FA9D4: '禁止編譯器合併指定sanitizers的handlers'
+# 'Do not allow the compiler to assume that each translation unit has a unique source file name at link time'
+H4A0AFFA269DA: '禁止編譯器假設每個翻譯單元在連結時具有唯一的來源檔名稱'
 # 'Do not assume C++ operator new may not return NULL'
 H1F6F59A37FC5: '不假設C++運算子new不會傳回NULL'
 # 'Do not assume that any loop is finite.'
@@ -6162,6 +6198,8 @@ HDB8A084545A8: '不優化已損壞的生命周期區域'
 H5B1E0C37199B: '不輸出任何.gcov文件'
 # 'Do not override toolchain to compile HIP source to relocatable'
 H67099DA33091: '不覆寫工具鏈以將HIP來源編譯為可重新定位的'
+# 'Do not pack non-contiguous assumed shape dummy arrays into contiguous memory'
+HCB4D2BF8E235: '不將非連續的假設形狀虛擬陣列打包至連續記憶體'
 # 'Do not place constants in the .rodata section instead of the .sdata if they meet the -G <size> threshold (MIPS)'
 H21A91E9ACB5C: '如果符合 -G <size> 門檻，則不將常數置於 .rodata 區段而非 .sdata 區段（MIPS）'
 # 'Do not preserve comments in inline assembly'
@@ -6334,6 +6372,8 @@ H618F1A05266D: '不要轉換函數名稱的符號'
 HD22256B8D923: '不要禁用區塊簽名字串)'
 # "Don't disable features used for crash debugging (crash reports, llvm-symbolizer and core dumps)"
 HA02320B35AF6: '不要禁用用於程式崩潰除錯的功能（崩潰報告、llvm-symbolizer 和核心記憶體傾印）'
+# "Don't disable freeing of memory on exit"
+HE9E8ABFA5D70: '不關閉退出時的記憶體釋放'
 # "Don't discard temporary labels"
 H59AD35796471: '不要捨棄暫存標籤'
 # "Don't display class definitions"
@@ -6596,6 +6636,8 @@ H5DEA08F3B824: '將模組傾印至目前工作目錄。 (警告：將覆寫現�
 H0F661C11A2F3: '若指定，則以 YAML 格式傾印新檔案內容'
 # 'Dump provenance'
 H0B7FC19C4E7C: '傾印資料來源'
+# 'Dump ranges of deserialized declarations to use as bug minimization hints'
+HABFDC2505B83: '傾印反序列化宣告的範圍，用作最小化錯誤的提示'
 # 'Dump record layout information'
 H1A9181305386: '傾印紀錄布局資訊'
 # 'Dump record layout information for all complete types'
@@ -6982,6 +7024,8 @@ HD6132B919401: '發射指定的combiners'
 HE5D98DDE9AE9: '在.debug$H區段中發射類型記錄哈希'
 # "Emit verbose output about the analyzer's progress"
 HF03ADA31D285: '發射分析器（analyzer）進度的詳細輸出'
+# 'Emit x8 as fp instead of s0'
+H88FD472C55F8: '將x8輸出為浮點寄存器而非s0'
 # 'Emit xray_fn_idx section'
 HCE1B25AEB13C: '發射xray_fn_idx區段'
 # 'Emits more virtual tables to improve devirtualization'
@@ -7324,8 +7368,6 @@ H2602C065FC54: '在診斷中啟用顏色'
 H0FC588FEB00A: '啟用命令列參數往返功能'
 # 'Enable commoning of GEP instructions'
 H21E18391E092: '啟用共用GEP指令'
-# 'Enable communicating debuginfo positions through iterators, eliminating intrinsics. Has no effect if --preserve-input-debuginfo-format=true.'
-H99F0E8039EFB: '啟用通過迭代器傳遞除錯資訊位置，並消除內建函數。如果 --preserve-input-debuginfo-format=true，則此選項無效。'
 # 'Enable conflict detection in loop-access analysis'
 H9866609C7AAA: '在迴圈存取分析中啟用衝突檢測'
 # 'Enable consecutive memop optimization in AArch64PostLegalizerCombiner'
@@ -7694,8 +7736,6 @@ H1C98545F997D: '啟用執行階段重新定位計數器。'
 HA60D39957FD6: '當函式使用目標 GPU 不支援的特性時，啟用移除該函式'
 # 'Enable required s_wait_alu on SGPR hazards'
 H5931DB0CC40E: '啟用在 SGPR 威脅時所需的 s_wait_alu 指令'
-# "Enable retain SubstTemplateTypeParmType nodes in the AST's representation of alias template specializations"
-HB02FA0B87AE4: '在別名模板特化表示中保留 SubstTemplateTypeParmType 節點'
 # 'Enable rewrite partial reg uses pass'
 HC2E09FB1800A: '啟用重寫部分寄存器使用之 pass'
 # 'Enable runtime checks for stack overflow.'
@@ -8643,7 +8683,7 @@ HF1CEF43473D8: '強制long double為 64 位元'
 # 'Force long double to be 80 bits, padded to 128 bits for storage'
 H2FBC78A0A1C7: '強制long double為 80 位元，並填充至 128 位元以進行儲存'
 # 'Force machine combiner to use a specific strategy for machine trace metrics evaluation.'
-H8D7274D95AD0: '強制機器組合器使用特定策略進行機器跡象指標評估。'
+H8D7274D95AD0: '強制機器組合器使用特定策略進行機器跡象指標求值。'
 # 'Force matrix instruction fusion even if not profitable.'
 HABD067814D75: '即使不利，仍強制融合矩陣指令。'
 # 'Force optimization experiment (for testing)'
@@ -8870,6 +8910,8 @@ HB3B0D51C372C: '生成Clang診斷兼容性ID'
 HFF484ABCD39B: '為選擇項產生 Clang 診斷枚舉值'
 # 'Generate Clang diagnostic groups'
 HD491E8E3F838: '產生 Clang 診斷群組'
+# 'Generate Clang diagnostic interface headers'
+HC78769A357D2: '產生Clang診斷介面標頭檔'
 # 'Generate Clang diagnostic name index'
 H26D83AD60FA3: '產生 Clang 診斷名稱索引'
 # 'Generate Clang diagnostics definitions'
@@ -8890,8 +8932,8 @@ H93E694C37FB8: '產生介面存根文件。'
 H63A1CBFF2B95: '使用 perf itrace 參數產生 LBR 資訊'
 # 'Generate M NOPs before function entry'
 H411052747AED: '在函數入口前產生 M 個 NOP 指令'
-# 'Generate M NOPs before function entry and N-M NOPs after function entry'
-HCAAC0B0CBF62: '在函數入口前產生 M 個 NOP 指令，以及入口後產生 N-M 個 NOP 指令'
+# 'Generate M NOPs before function entry and N-M NOPs after function entry. If section is specified, use it instead of __patchable_function_entries.'
+H4A7E3BFEB46A: '在函數入口前產生M個無操作指令，並在函數入口後產生N-M個無操作指令。如果指定了區段，則使用該區段而非__patchable_function_entries。'
 # 'Generate Metal library'
 H30181B8F806A: '產生Metal函式庫'
 # 'Generate Offload API header contents'
@@ -9822,6 +9864,8 @@ H843E2B29FDA6: '內聯裝置上所有適用的函數。'
 HBFFBF85B1F6E: '提前內聯所有函數'
 # "Inline cold call sites in profile loader if it's beneficial for code size."
 H86BDD048441C: '如果對程式碼大小有益，則在剖析載入器中內聯冷呼叫位址。'
+# 'Inline expressions that are used only once rather than generating a let-binding'
+HBC10ADACCD0B: '內聯僅使用一次的運算式，而非生成let綁定'
 # 'Inline functions as deemed beneficial by the compiler'
 H648E731FB641: '內聯編譯器認為有益的函數'
 # 'Inline functions which are (explicitly or implicitly) marked inline'
@@ -9908,6 +9952,8 @@ H071F81C54D78: '在/guard:ehcont的有效目標處插入符號'
 H893CAC606686: '插入實驗性的`assertalign`節點。'
 # 'Insert vsetvlis before vmvNr.vs to ensure vtype is valid and vill is cleared'
 H0091B7D0D6C7: '在vmvNr.vs之前插入vsetvlis指令以確保vtype有效並清除vill'
+# 'InstPrinter options'
+HFBC5B2731840: 'InstPrinter選項'
 # 'Instantiate templates already while building a PCH'
 H9EE0E3239942: '在建立PCH時提前實例化模板'
 # 'Instead of emitting the pipelined code, annotate instructions with the generated schedule for feeding into the -modulo-schedule-test pass'
@@ -10033,7 +10079,7 @@ HD3F623D56EDC: '保留所有基準測試（預設）'
 # 'Keep all non-cold contexts (increases cloning overheads)'
 H4544ED3678BF: '保留所有非冷卻的上下文（會增加複製開銷）'
 # 'Keep aside the last <num-test-traces> traces in the profile when computing the function order and instead use them to evaluate that order'
-H77D85A9D26A6: '在計算函數順序時，將分析中的最後 <num-test-traces> 個追蹤資料保留一旁，並改用它們來評估該順序'
+H77D85A9D26A6: '在計算函數順序時，將分析中的最後 <num-test-traces> 個追蹤資料保留一旁，並改用它們來求值該順序'
 # 'Keep copies of symbols in LTO indexing'
 HB94AF3670BCE: '在 LTO 索引中保留符號的複本'
 # 'Keep going on errors encountered'
@@ -10104,8 +10150,8 @@ H1B7F78E6F996: 'LLVM IR 相似性視覺化工具\n'
 H6A5AC73C091C: 'LLVM OpenMP'
 # 'LLVM PDB Dumper\n'
 HD0867800CD16: 'LLVM PDB 傾印工具\n'
-# 'LLVM automatic testcase reducer.\n'
-HF2C9C9289AA4: 'LLVM 自動測試案例簡化器。\n'
+# 'LLVM automatic testcase reducer.\nSee https://llvm.org/docs/CommandGuide/llvm-reduce.html for more information.\n'
+HD6FE445BE8E3: 'LLVM 自動測試案例縮減工具。\n請參閱 https://llvm.org/docs/CommandGuide/llvm-reduce.html 以取得更多資訊。\n'
 # 'LLVM automatic testcase reducer. See\nhttp://llvm.org/cmds/bugpoint.html for more information.\n'
 H28E8E607A645: 'LLVM 自動測試案例簡化器。更多資訊請參閱 http://llvm.org/cmds/bugpoint.html\n'
 # 'LLVM code coverage tool\n'
@@ -10278,6 +10324,10 @@ H7CCE9D08A2A1: '僅連結必要的符號'
 H0C4B76743142: '在System Z通過後鏈接堆疊框架'
 # 'Link the LLVM C Library for GPUs'
 HD105C9964C21: '為GPU連結LLVM C程式庫'
+# 'Link the flang-rt shared library'
+H92B8D27A2242: '連結flang-rt共用函式庫'
+# 'Link the flang-rt static library'
+H31D4E54E52D3: '連結flang-rt靜態函式庫'
 # 'Link the following file lazily'
 HB68406E1D5AC: '遲延連結以下的檔案'
 # 'Link the given bitcode file before performing optimizations.'
@@ -10855,7 +10905,7 @@ H7D54283EC716: '記憶體條款的長度最大值（以指令為單位）'
 # 'Maximum length of dependent chains to hoist (default = 10, unlimited = -1)'
 HC4AAAE7F5958: '要提升的依賴鏈的最大長度（預設值 = 10，無限 = -1）'
 # 'Maximum length of recurrence chain when evaluating the benefit of commuting operands'
-H84087A27148D: '在評估交換操作元的效益時，遞迴鏈的最大長度'
+H84087A27148D: '在求值交換操作元的效益時，遞迴鏈的最大長度'
 # 'Maximum nesting level for parentheses, brackets, and braces'
 H62138B784DC3: '括號、方括號和大括號的最大嵌套層級'
 # 'Maximum num basic blocks before debug info dropped'
@@ -10881,7 +10931,7 @@ H6395D2BBFABE: 'MC/DC 覆蓋率中的最大條件數量'
 # 'Maximum number of cycles in the timeline view, or 0 for unlimited. Defaults to 80 cycles'
 H17E412044F75: '時間軸檢視中的最大週期數，或 0 表示無限。預設值為 80 個週期'
 # 'Maximum number of dataflow edges to traverse when evaluating the benefit of commuting operands'
-H635DA15AA164: '在評估交換運算元的效益時要遍歷的資料流邊數量最大值'
+H635DA15AA164: '在求值交換運算元的效益時要遍歷的資料流邊數量最大值'
 # 'Maximum number of dependences collected by loop-access analysis (default = 100)'
 H498CAFF81EAD: '迴圈存取分析（預設值 = 100）所收集的依賴關係最大數量'
 # 'Maximum number of instruction to generate when lowering constant multiplication instead of calling library function [default=14]'
@@ -10996,6 +11046,8 @@ H4E1E23E6B24B: '記憶體存取層級分析，區分同一語句中被存取的�
 H6449013A03CB: '不檢查使用情形下合併所有 const 全域變數'
 # 'Merge and hoist M0 initializations'
 H2D268DBDEF86: '合併並提升 M0 初始化'
+# 'Merge clones before assigning functions'
+H18C7B017FA56: '在指派函數前合併複本'
 # 'Merge context profiles before calculating thresholds.'
 H1C9DF3097EF8: '在計算閾值前合併上下文剖析'
 # 'Merge context sample profiles whose count is below cold threshold'
@@ -11120,6 +11172,10 @@ H9F5185006F74: '模數排程測試Pass'
 HC40B97D6B9FA: '模數軟體管線'
 # 'Move ARGUMENT instructions for WebAssembly'
 H688758DE208F: '為WebAssembly移動ARGUMENT指令'
+# 'Move contextual profiling roots and the graphs under them in their own module.'
+HC78C448BC37B: '將脈絡剖析根節點及其下的圖形移至它們自己的模組中。'
+# 'Move the symbols with the given name. This will delete these symbols wherever they are originally defined, and make sure their linkage is External where they are imported. It is meant to be used with the name of contextual profiling roots.'
+H50A29B7AC907: '移動具有指定名稱的符號。這會在它們原本定義的所有地方刪除這些符號，並確保在導入時其連結性為External。此選項應與脈絡剖析根節點的名稱一起使用。'
 # 'Move/duplicate certain instructions close to their use'
 HD38286726698: '將某些指令移動/複製到離其使用處較近的位置'
 # 'Multiplier to apply to threshold when determining whether or not to fold branch to common destination when vector operations are present'
@@ -11488,8 +11544,12 @@ H83B563F0FFD8: '僅匹配具有指定前綴的指令'
 HC54ECBB9C757: '僅輸出其最大計數值低於閾值的函數名稱'
 # 'Only precompile the input'
 H8B49F001F9E2: '僅預編譯輸入'
+# 'Only print AMD GPUs'
+HAEAFB4C4A2F4: '僅列印AMD GPU'
 # 'Only print IR for functions whose name match this for all print-[before|after][-all] options'
 HBF4D64D1868D: '僅對所有print-[before|after][-all]選項中名稱匹配的函數輸出IR'
+# 'Only print NVIDIA GPUs'
+HA8E45EB5D306: '僅列印NVIDIA GPU'
 # 'Only print to a depth of N elements.'
 HFC218BA7E9C0: '僅輸出至N個元素的深度'
 # 'Only process files that match this filter. This flag only applies to all-TUs.'
@@ -11558,6 +11618,8 @@ H89C2A6721B4D: '僅在輸出有變動時寫入'
 H82DD0380BC4C: '僅在輸出有變動時寫入輸出檔案'
 # "OpenACC %select{clause '%1'|directive '%2'|sub-array bound}0 requires expression of integer type (%3 invalid)"
 H24F0AB7B1FF3: "OpenACC %select{子句 '%1'|指令 '%2'|子陣列邊界}0 需要整數類型的運算式（%3 無效）"
+# "OpenACC '%0' clause cannot appear more than once%select{| in a 'device_type' region}2 on a '%1' directive"
+H5BA479702441: "OpenACC '%0' 子句不能在 '%1' 指令 %select{|的 'device_type' 區域中}2出現超過一次"
 # "OpenACC '%0' clause cannot appear on the same '%2' construct as a '%1' clause %select{inside a compute construct with a|and a}3 'num_gangs' clause with more than one argument"
 H86F6667DC7E5: "OpenACC '%0' 子句不能與 '%2' 結構中的 '%1' 子句 %select{內含 compute 結構的|以及}3 'num_gangs' 子句（參數超過一個）同時存在"
 # "OpenACC '%0' clause on a 'declare' directive is not allowed at global or namespace scope"
@@ -11570,6 +11632,8 @@ HA5F584B3696E: "OpenACC '%0' 結構必須有終止條件"
 H5108FA0063F8: "OpenACC '%0' 結構必須至少有一個 %1 子句"
 # "OpenACC '%0' construct must have initialization clause in canonical form ('var = init' or 'T var = init')"
 HB6396996D535: "OpenACC '%0' 結構的初始化子句必須採用標準形式（'var = init' 或 'T var = init'）"
+# "OpenACC '%0' modifier not valid on '%1' clause"
+H3160CD5E4802: "OpenACC '%0' 修飾符無法用於 '%1' 子句"
 # "OpenACC '%0' variable must monotonically increase or decrease ('++', '--', or compound assignment)"
 H4842B31AA1BD: "OpenACC '%0' 變數必須單調遞增或遞減（'++'、'--' 或複合賦值運算子）"
 # "OpenACC '%1' clause %select{|with more than 1 argument }0may not appear on a '%2' construct with a '%3' clause%select{ with more than 1 argument|}0"
@@ -11581,7 +11645,9 @@ H226495157F78: "OpenACC '%1' 子句在 '%0' 指令上無效"
 # "OpenACC 'bind' clause on a declaration must bind to the same name as previous bind clauses"
 H9E597FA760BB: "宣告上的 OpenACC 'bind' 子句必須綁定與先前 bind 子句相同的名稱"
 # "OpenACC 'collapse' clause loop count must be a %select{constant expression|positive integer value, evaluated to %1}0"
-HF187F732137C: "OpenACC 'collapse' 子句迴圈計數必須是 %select{常數運算式|正整數值，評估為 %1}0"
+HF187F732137C: "OpenACC 'collapse' 子句迴圈計數必須是 %select{常數運算式|正整數值，求值為 %1}0"
+# "OpenACC 'device_type' clause on a 'set' construct only permits one architecture"
+HB63E35D8A787: "OpenACC 'device_type' 子句在 'set' 構造中僅允許一種架構"
 # "OpenACC 'gang' clause may have at most one %select{unnamed or 'num'|'dim'|'static'}0 argument"
 HC064C4557CFE: "OpenACC 'gang' 子句最多只能有一個 %select{未命名或 'num'|'dim'|'static'}0 參數"
 # "OpenACC 'reduction' composite variable must not have non-scalar field"
@@ -11592,18 +11658,22 @@ HD35F9CAD567D: "OpenACC 'reduction' 變數必須是純量類型的複合結構�
 HEC7D1B479B8F: "OpenACC 'reduction' 變數必須是純量類型、子陣列或純量類型的複合結構；%select{|子陣列基底}1 類型為 %0"
 # "OpenACC 'reduction' variable must have the same operator in all nested constructs (%0 vs %1)"
 H28C388119D4E: "OpenACC 'reduction' 變數的所有嵌套結構必須使用相同的運算子 (%0 與 %1)"
+# "OpenACC 'routine' construct must have at least one 'gang', 'seq', 'vector', or 'worker' clause that applies to each 'device_type'"
+H32818FCDE6B7: "OpenACC 'routine' 構造必須至少有一個 'gang'、'seq'、'vector' 或 'worker' 子句，且這些子句必須適用於每個 'device_type'"
 # "OpenACC 'routine' directive with a name refers to a function with the same name as the function on the following line; this may be unintended"
 H18CDEE7EFD75: "OpenACC 'routine' 指令若指定函數名稱，將指向與下一行函數同名的函數；此行為可能非預期"
 # "OpenACC 'tile' clause size expression must be %select{an asterisk or a constant expression|positive integer value, evaluated to %1}0"
-HA638C30812B2: "OpenACC 'tile' 子句尺寸運算式必須是%select{星號或常量運算式|評估為 %1 的正整數值}0"
+HA638C30812B2: "OpenACC 'tile' 子句尺寸運算式必須是%select{星號或常量運算式|求值為 %1 的正整數值}0"
 # "OpenACC 'update' construct may not appear in place of the statement following a%select{n if statement| while statement| do statement| switch statement| label statement}0"
 H3E931AFE1E4E: "OpenACC 'update' 建構不能出現在 %select{if 陳述式|while 陳述式|do 陳述式|switch 陳述式|label 陳述式}0 之後的陳述式位置"
+# "OpenACC clause '%0' after 'device_type' clause on a 'routine' conflicts with the '%1' clause before the first 'device_type'"
+HA93644C02FFF: "OpenACC 'routine' 構造中 'device_type' 子句後的 '%0' 子句與第一個 'device_type' 之前的 '%1' 子句衝突"
 # "OpenACC clause '%0' may not appear on the same construct as a '%1' clause on a '%2' construct"
 HFD5E5BF152EC: "OpenACC '%2' 建構中不可同時出現 '%0' 與 '%1' 子句"
 # "OpenACC clause '%0' may not follow a '%1' clause in a '%2' construct"
 H3810BDC5F66B: "OpenACC '%2' 建構中 '%0' 子句不可出現在 '%1' 子句之後"
-# "OpenACC clause '%0' on '%1' construct conflicts with previous data dependence clause"
-HD0EC8D82D89C: "OpenACC '%1' 建構的 '%0' 子句與先前的資料依賴子句衝突"
+# "OpenACC clause '%0' on a 'routine' directive conflicts with the '%1' clause applying to the same 'device_type'"
+H672EE4A10B1D: "OpenACC 'routine' 指令的 '%0' 子句與 '%1' 子句在相同 'device_type' 下衝突"
 # "OpenACC clause name '%0' is a deprecated clause name and is now an alias for '%1'"
 H0277741A1F9D: "OpenACC 子句名稱 '%0' 是已棄用的子句別名，現與 '%1' 等效"
 # "OpenACC construct '%0' cannot be used here; it can only be used in a statement context"
@@ -11611,19 +11681,21 @@ HCF6F4162FC42: "OpenACC 建構 '%0' 不可在此處使用；此建構只能用�
 # "OpenACC construct 'routine' with implicit function not yet implemented, pragma ignored"
 H861502AB5841: "OpenACC 'routine' 建構的隱式函數尚未實作，pragma 無效"
 # "OpenACC construct 'self' has no effect when an 'if' clause evaluates to true"
-H4B8F857AB30C: "OpenACC 'self' 子句在 'if' 子句評估為 true 時無效"
+H4B8F857AB30C: "OpenACC 'self' 子句在 'if' 子句求值為 true 時無效"
+# 'OpenACC directives will result in no runtime behavior; use -fclangir to enable runtime effect'
+H106A424B384D: 'OpenACC 指令不會產生執行階段行為；請使用 -fclangir 選項以啟用執行階段效果'
 # 'OpenACC integer expression has incomplete class type %0'
 H5F66C1830606: 'OpenACC 整數運算式具有不完整的類別類型 %0'
 # 'OpenACC integer expression requires explicit conversion from %0 to %1'
 H20507033806F: 'OpenACC 整數運算式需要將 %0 明確轉換為 %1'
-# "OpenACC routine name '%0' does not name a function"
-H5802CAE72248: "OpenACC 函數名稱 '%0' 未命名函數"
-# "OpenACC routine name '%0' names a set of overloads"
-HEC7D774C632B: "OpenACC 函數名稱 '%0' 指代一組重載函數"
+# 'OpenACC routine name %0 does not name a function'
+H38F10B674F17: 'OpenACC routine 名稱 %0 未指定函式'
+# 'OpenACC routine name %0 names a set of overloads'
+H417FD900A33B: 'OpenACC routine 名稱 %0 指定多個重載函式'
 # 'OpenACC sub-array %select{lower bound|length}0 evaluated to a value (%1) that would be out of the range of the subscripted array size of %2'
-HD993EBC2FF56: 'OpenACC 子陣列 %select{下界|長度}0 評估值 (%1) 超出基底陣列的 %2 維度範圍'
+HD993EBC2FF56: 'OpenACC 子陣列 %select{下界|長度}0 求值值 (%1) 超出基底陣列的 %2 維度範圍'
 # 'OpenACC sub-array %select{lower bound|length}0 evaluated to negative value %1'
-H9C42001B0E35: 'OpenACC 子陣列 %select{下界|長度}0 評估為負值 %1'
+H9C42001B0E35: 'OpenACC 子陣列 %select{下界|長度}0 求值為負值 %1'
 # 'OpenACC sub-array base is of incomplete type %0'
 H568C42694CA4: 'OpenACC 子陣列基底為不完整類型 %0'
 # 'OpenACC sub-array cannot be of function type %0'
@@ -11990,6 +12062,8 @@ H3E1C9F287454: '請提交錯誤報告至 https://github.com/llvm/llvm-project/is
 H0DE59CCB7CD2: '請提交錯誤報告至 https://github.com/llvm/llvm-project/issues/，並包含崩潰的堆疊追蹤。\n'
 # 'POSIX thread model'
 HAAFA3F8D71A1: 'POSIX 線程模型'
+# 'Pack non-contiguous assumed shape dummy arrays into contiguous memory'
+H921464C334CB: '將非連續的假設形狀假陣列打包到連續記憶體中'
 # 'Pack non-contiguous assummed shape arrays into contiguous memory'
 H3E0440CD78CB: '將非連續的假設形狀陣列封裝到連續記憶體中'
 # 'Pad previous instructions to implement align directives'
@@ -12022,6 +12096,8 @@ HC027AB59908D: '在AIX上將 -b <arg> 傳遞給連結器'
 HC96FADA8EF05: '將 -z <arg> 傳遞給連結器'
 # 'Pass <arg> to clang -cc1'
 H7056B37839B2: '將 <arg> 傳遞給 clang -cc1'
+# 'Pass <arg> to clang -cc1as'
+HB0D05A4A9173: '傳遞 <arg> 至 clang -cc1as'
 # 'Pass <arg> to fatbinary invocation'
 HE6E06CC967E5: '將 <arg> 傳遞給 fatbinary 呼叫'
 # 'Pass <arg> to plugin <name>'
@@ -12107,7 +12183,7 @@ H87E2E1DC35F9: "路徑至 opt。 （預設值：搜尋 'opt' 的路徑。）"
 # 'Path to ptxas (used for compiling CUDA code)'
 H902CF64E7382: '路徑至 ptxas（用於編譯 CUDA 程式碼）'
 # 'Path to saved model evaluating native size from IR.'
-H90E4D367F618: '路徑至評估本機大小的保存模型。'
+H90E4D367F618: '路徑至求值本機大小的保存模型。'
 # 'Path to system headers on z/OS'
 H858924F171F6: '路徑至 z/OS 的系統標頭檔'
 # 'Path to system ignorelist file for sanitizers'
@@ -12149,7 +12225,7 @@ H135B935B6400: '呼叫需要更改PSTATE.SM函數的處罰值'
 # 'Penalty of inlining a call that requires a change to PSTATE.SM'
 HF8B0216049CB: '內聯需要更改PSTATE.SM函數的處罰值'
 # 'Percentage of prologue execution count to use as threshold when evaluating whether a block is cold enough to be profitable to move eligible spills there'
-HB814EF09C393: '使用函數prologue的執行計數百分比作為閾值，用以評估是否將符合條件的溢出移動到冷區塊是否值得'
+HB814EF09C393: '使用函數prologue的執行計數百分比作為閾值，用以求值是否將符合條件的溢出移動到冷區塊是否值得'
 # 'Percentage threshold for splitting single-instruction critical edge. If the branch threshold is higher than this threshold, we allow speculative execution of up to 1 instruction to avoid branching to splitted critical edge'
 HF3E418A57D78: '分支閾值高於此閾值時，允許預測執行最多 1 條指令以避免分支到分割的關鍵邊'
 # 'Percentage threshold of matched basic blocks at which stale profile inference is executed.'
@@ -12488,6 +12564,8 @@ H9226DB4F030F: '保留規範迴圈結構（預設值 = true）'
 HC15D6215FF01: '在 mergefunc 轉換時保留 thunk 中的除錯資訊'
 # 'Preserve expressions in AST rather than dropping them when encountering semantic errors'
 H606CF076FD66: '在AST中保留運算式而非在遇到語法錯誤時捨棄它們'
+# 'Preserve line and column number when merging locations.'
+H6B50620B43DC: '在合併位置時保留行號與列號。'
 # 'Preserve line numbers'
 HF7C338130FB4: '保留列號'
 # 'Preserve order of LLVM use-lists when serializing'
@@ -12576,6 +12654,8 @@ H3475474B9AF0: '在診斷資訊中列印絕對路徑'
 H3F08CE170EBB: '在傾印時列印MachineInstr的地址'
 # 'Print addresses of instructions when dumping'
 HF2156C7D4A91: '在傾印時列印指令的地址'
+# 'Print all GPUs (default)'
+HBE69208AFD33: '顯示所有 GPU（預設）'
 # 'Print all cost kinds'
 HCAA4E47DE719: '列印所有成本類型'
 # 'Print all hardware statistics'
@@ -13546,6 +13626,8 @@ H915A155B8538: '限制狀態點Operand的重新分配'
 HF665154F84D1: '僅對符合特殊案例清單（排除被封鎖的）的模組和函式，執行剖析覆蓋範圍插樁'
 # 'Restrict specifier.'
 H0429709567D5: '限制指定項。'
+# 'Restrict to vendor:'
+H32644C5851E5: '限制至供應商：'
 # 'Resume compilation after a specific pass'
 H0C491338806A: '在特定pass後恢復編譯'
 # 'Resume compilation before a specific pass'
@@ -14056,8 +14138,8 @@ H949A45EF9093: '以指定前綴將目錄加入包含路徑搜尋清單'
 H5882EA320C88: '設定未格式化檔案資料的字節順序轉換'
 # 'Set exception handling model'
 HBE5ECEAC70BC: '設定例外處理模型'
-# 'Set filename used to determine the language and to find\n.clang-format file.\nOnly used when reading from stdin.\nIf this is not passed, the .clang-format file is searched\nrelative to the current working directory when reading stdin.\nUnrecognized filenames are treated as C++.\nsupported:\n  CSharp: .cs\n  Java: .java\n  JavaScript: .js .mjs .cjs .ts\n  Json: .json\n  Objective-C: .m .mm\n  Proto: .proto .protodevel\n  TableGen: .td\n  TextProto: .txtpb .textpb .pb.txt .textproto .asciipb\n  Verilog: .sv .svh .v .vh'
-H76F2B4A51C95: '設定用於確定語言並搜尋.clang-format檔案的檔名。\n當從標準輸入讀取時使用。\n如果未傳遞此參數，.clang-format檔案將根據目前工作目錄搜尋。\n未辨識的檔名會視為C++。\n支援的格式：\n  C#：.cs\n  Java：.java\n  JavaScript：.js .mjs .cjs .ts\n  JSON：.json\n  Objective-C：.m .mm\n  Proto：.proto .protodevel\n  TableGen：.td\n  文字PROTO：.txtpb .textpb .pb.txt .textproto .asciipb\n  Verilog：.sv .svh .v .vh'
+# 'Set filename used to determine the language and to find\n.clang-format file.\nOnly used when reading from stdin.\nIf this is not passed, the .clang-format file is searched\nrelative to the current working directory when reading stdin.\nUnrecognized filenames are treated as C++.\nsupported:\n  CSharp: .cs\n  Java: .java\n  JavaScript: .js .mjs .cjs .ts\n  Json: .json .ipynb\n  Objective-C: .m .mm\n  Proto: .proto .protodevel\n  TableGen: .td\n  TextProto: .txtpb .textpb .pb.txt .textproto .asciipb\n  Verilog: .sv .svh .v .vh'
+H13B2BD633E05: '指定用於確定語言及尋找 .clang-format 檔案的檔案名稱。\n當從標準輸入讀取時使用此選項。\n若未指定，.clang-format 檔案將以目前工作目錄為基準尋找。\n未辨識的檔案名稱預設視為 C++。\n支援的擴充名稱：\n  CSharp: .cs\n  Java: .java\n  JavaScript: .js .mjs .cjs .ts\n  Json: .json .ipynb\n  Objective-C: .m .mm\n  Proto: .proto .protodevel\n  TableGen: .td\n  TextProto: .txtpb .textpb .pb.txt .textproto .asciipb\n  Verilog: .sv .svh .v .vh'
 # 'Set hexagon hvx loop upper bound align limit'
 HE4A380690C61: '設定hexagon hvx迴圈上界對齊限制'
 # 'Set hexagon loop align bundle limit'
@@ -14189,7 +14271,7 @@ H80FAEB4CB009: '設定遞迴模板實體化調用的最大深度'
 # 'Set the maximum number of clang-format errors to emit\nbefore stopping (0 = no limit).\nUsed only with --dry-run or -n'
 HCC14B05C0F0B: '設定clang-format錯誤訊息的最大顯示數量（達限後停止）（0=無限）。\n僅與--dry-run或-n選項一起使用'
 # 'Set the maximum number of entries to print in a constexpr evaluation backtrace (0 = no limit)'
-H894E58266D5D: '設定在constexpr評估回溯中顯示條目的最大數量（0=無限）'
+H894E58266D5D: '設定在constexpr求值回溯中顯示條目的最大數量（0=無限）'
 # 'Set the maximum number of entries to print in a macro expansion backtrace (0 = no limit)'
 H41EB48896694: '設定在宏展開回溯中顯示條目的最大數量（0=無限）'
 # 'Set the maximum number of entries to print in a template instantiation backtrace (0 = no limit)'
@@ -14201,7 +14283,7 @@ H72D58573A0FE: '設定ControlFlowHub中使用布林值記錄退出區塊時的�
 # 'Set the maximum number of source lines to show in a caret diagnostic (0 = no limit).'
 H501810E09B46: '設定在-caret診斷中顯示來源程式碼行數的最大數量（0=無限）'
 # 'Set the maximum number of steps in constexpr function evaluation'
-H220ED2A089D9: '設定constexpr函數評估中的最大步數'
+H220ED2A089D9: '設定constexpr函數求值中的最大步數'
 # 'Set the maximum number of times to perform spell checking on unrecognized identifiers (0 = no limit)'
 HAFFC709D0C08: '設定對未識別識別符進行拼字檢查的最大次數（0=無限）'
 # 'Set the maximum path length when checking whether a basic block is followed by a block that either has a terminating deoptimizing call or is terminated with an unreachable'
@@ -14607,7 +14689,7 @@ H72683DE0AF39: '指定用於後續輸入檔、-L<搜尋路徑> 和 -l<函式庫>
 # "Specifies the debug info's compilation dir"
 H64EB79AAF220: '指定除錯資訊的編譯目錄'
 # 'Specifies the evaluation method to use for floating-point arithmetic.'
-HB1694AF39E4A: '指定用於浮點運算的評估方法。'
+HB1694AF39E4A: '指定用於浮點運算的求值方法。'
 # 'Specifies the exception behavior of floating-point operations.'
 HF7A17A05FFEE: '指定浮點運算的例外處理行為。'
 # "Specifies the largest alignment guaranteed by '::operator new(size_t)'"
@@ -14774,6 +14856,8 @@ HFD25A07F8173: '指定要編碼到DWARF輸出中的.dwo檔名稱'
 HC274D886E608: '指定要建置的模組名稱'
 # 'Specify the name of the root module.'
 H385C12B5E6FA: '指定根模組的名稱'
+# 'Specify the number of threads to use for device offloading tasks during compilation.'
+H1A088440B2D0: '指定編譯期間裝置卸載任務使用的執行緒數。'
 # "Specify the output file type ('asm', 'null', or 'obj')"
 H908E78C67406: "指定輸出檔類型（'asm'、'null' 或 'obj'）"
 # 'Specify the output file. default: reduced.ll|.bc|.mir'
@@ -15890,6 +15974,8 @@ H1D5DFE08E7A8: '將堆疊生命周期的起始點視為首次使用時，而非S
 H79E1F4486D77: '將字串字面量視為const'
 # 'Treat subsequent input files as having type <language>'
 HC2DB15026570: '將後續輸入文件視為具有 <language> 類型'
+# 'Treat the given module as-if it were containing the post-thinlink module containing the root'
+H678738B3F81B: '將指定的模組視為已執行 thinlink 並包含根模組'
 # 'Treat usage of null pointers as undefined behavior (default)'
 HEF76E5F5F913: '將空指標的使用視為未定義行為（預設）'
 # 'Treat warnings as errors'
@@ -16164,6 +16250,8 @@ HF73D39350799: '使用SEH風格的例外處理'
 H18018B318301: '在除錯資訊中使用SHA1進行檔案校驗和'
 # 'Use SHA256 for file checksums in debug info'
 HF98F43EAE9BB: '在除錯資訊中使用SHA256進行檔案校驗和'
+# 'Use Section instead of __patchable_function_entries'
+H2F6710F2BEEF: '使用 Section 代替 __patchable_function_entries'
 # 'Use SjLj style exceptions'
 H44AA3EF8F7F8: '使用SjLj風格的例外處理'
 # 'Use Stable Hashing for MIR VReg Renaming'
@@ -16356,6 +16444,8 @@ H479023987FBB: '使用插樁剖面來引導PGO。'
 H45C76DB103C3: '使用內部機器物件程式碼發射器。'
 # 'Use jump tables for lowering switches'
 HFFDBCF7C79DB: '使用跳轉表來降級switch語句'
+# 'Use large decoder table format. This uses 24 bits for offset\nin the table instead of the default 16 bits.'
+H7EEE365A819D: '使用大型解碼表格式。此格式使用 24 位元表示表位移量，而非預設的 16 位元。'
 # 'Use large-integer access for consecutive bitfield runs.'
 HAFC147F2F63A: '對連續位段運行使用大整數存取。'
 # 'Use linker features to support dead code stripping of globals'
@@ -16860,6 +16950,8 @@ H7F1CA4DE1A48: '嘗試檢查否定下沈可行性時的最大查找深度'
 H3DED4F5FCF91: '指定要截斷頂點標籤的長度'
 # 'What to do with the summary when running this pass'
 H42E595F78536: '執行此 pass 時對摘要的處理方式'
+# "When -frepack-arrays is in effect, 'whole' enables repacking for arrays that are non-contiguous in any dimension, 'innermost' enables repacking for arrays that are non-contiguous in the innermost dimension (the default)"
+H20A445368AD8: "當 -frepack-arrays 開啟時，'whole' 選項會對所有非連續維度的陣列進行重新組合，'innermost' 則僅對最內層維度的非連續陣列進行重新組合（預設值）"
 # 'When -fvisibility-inlines-hidden is enabled, static variables in inline C++ member functions will also be given hidden visibility by default'
 HC9E644F8BF87: '在啟用 -fvisibility-inlines-hidden 時，內聯 C++ 成員函數中的 static 變數預設也會被賦予隱藏可見性'
 # 'When a diagnostic is emitted on an operation, also print the operation as an attached note'
@@ -16908,8 +17000,6 @@ H0B8C96DE116C: '在印出pass之後的IR時，僅在IR改變時印出'
 H42128FB51A38: '在印出pass之後的IR時，僅在pass失敗時印出'
 # 'When printing the IR before/after a pass, print file tree rooted at this directory. Use in conjunction with mlir-print-ir-* flags'
 HC069026BC657: '在印出pass前後的IR時，印出以該目錄為根的檔案樹。需與mlir-print-ir-*旗標搭配使用'
-# 'When set to true, IR files will be processed and printed in their current debug info format, regardless of default behaviour or other flags passed. Has no effect if input IR does not contain debug records or intrinsics. Ignored in llvm-link, llvm-lto, and llvm-lto2.'
-H75C824D62FD2: '若設定為true，IR檔案將會以目前的除錯資訊格式進行處理和印出，不論預設行為或其他旗標。若輸入的IR不包含除錯記錄或內建函式，則無效。在llvm-link、llvm-lto和llvm-lto2中被忽略。'
 # 'When set to true, const objects with relocatable address values are put into the RO data section.'
 H66324957E3F0: '若設定為true，具有可重新定位地址值的const物件將被置入RO資料區段。'
 # 'When stubbing functions, replace all uses will null'
@@ -16966,6 +17056,8 @@ HB249A06C5F2F: '是否將循環分配到可能無法被循環向量化器轉換�
 HDDECD32989A5: '是否產生 DWARF EH 框架條目。'
 # 'Whether to generate default bounds for arrays.'
 HA8699205DACC: '是否為陣列生成預設邊界。'
+# 'Whether to include the lower dimensions extents in the stride.'
+H4245438632CE: '是否將較低維度的範圍包含在間隔中。'
 # 'Whether to minimize added include paths'
 HC7C82427C36C: '是否最小化新增的包含路徑'
 # 'Whether to perform binary concatenation'
@@ -17170,6 +17262,8 @@ H323CC2CB8E5D: '_Atomic 無法套用到 %select{不完整 |陣列 |函數 |引�
 HE310DB69A9CE: '_GLOBAL_OFFSET_TABLE_'
 # '_Pragma takes a parenthesized string literal'
 HC3D115F3D6CB: '_Pragma 需要括號包圍的字串文字'
+# '__CUDA_ARCH'
+H640861EF7CBB: '__CUDA_ARCH'
 # '__DATA'
 H6F22B9326AE7: '__DATA'
 # '__LINKEDIT'
@@ -17238,6 +17332,8 @@ HAD92983EAEB2: '__weak 屬性不能用在成員宣告上'
 HC15AE9021482: '__weak 屬性在未啟用 ARC 時不能用在自動變數上'
 # '`#pragma const_seg` for section %1 will not apply to %0 due to the presence of a %select{mutable field||non-trivial constructor|non-trivial destructor}2'
 H8811D5F6122A: '`#pragma const_seg` 對區段 %1 將不會套用到 %0，因為存在 %select{可變更的成員||非平凡建構函數|非平凡析構函數}2'
+# '`interrupt_save_fp` only applies to targets that have a VFP unit enabled for this compilation; this will be treated as a regular `interrupt` attribute'
+HB2C8A1373FD2: '`interrupt_save_fp` 仅适用于在編譯期間啟用 VFP 單元的目標；此屬性將被視為普通的 `interrupt` 屬性'
 # 'a %select{function|block}0 declaration without a prototype is deprecated %select{in all versions of C|}0'
 HA427D7F1B8D9: '一個沒有原型的%select{函數|區塊}0宣告在C的各個版本中已棄用 %select{|}0'
 # "a %select{pack indexing|'decltype'}0 specifier cannot be used in a declarative nested name specifier"
@@ -17373,7 +17469,7 @@ H912E67080844: '添加顯式大括號以避免懸垂else問題'
 # 'add masking cost for i1 vectors'
 H3E72A2897B81: '為i1向量添加遮罩成本'
 # "add parentheses after the '!' to evaluate the %select{comparison|bitwise operator}0 first"
-H7D8E708D64E0: '在 "!" 後添加括號以優先評估%select{比較運算式|位元運算子}0'
+H7D8E708D64E0: '在 "!" 後添加括號以優先求值%select{比較運算式|位元運算子}0'
 # 'add parentheses around left hand side expression to silence this warning'
 HB1B6850C2A11: '在左邊運算式外添加括號以消除此警告'
 # "add the %select{'require_constant_initialization' attribute|'constinit' specifier}0 to the initializing declaration here"
@@ -17386,6 +17482,8 @@ H98175222693E: '將 %0 加到字串不會追加字串內容'
 HE53429791B46: '將 %0 加到字串指標不會追加字串內容'
 # 'addition of default argument on redeclaration makes this constructor a %select{default|copy|move}0 constructor'
 H540EC7EBFA01: '重新宣告時添加預設參數將使此建構函式成為%select{預設|複製|移動}0建構函式'
+# 'address argument to %select{atomic|__sync}0 operation must be a pointer to a non address discriminated type (%1 invalid)'
+H2613F565B379: '%select{原子|__sync}0 運算的位址參數必須是指向非地址區分類型的指標（%1 錯誤）'
 # 'address argument to atomic builtin cannot be const-qualified (%0 invalid)'
 H05DD72B70C0D: '原子內建函數的地址參數不能是const限定 (%0 錯誤)'
 # 'address argument to atomic builtin must be a pointer %select{|to a non-zero-sized object }1(%0 invalid)'
@@ -17419,7 +17517,7 @@ H15C0E2A98779: '非暫存內建函數的地址參數必須是指向指標（%0 �
 # 'address argument to nontemporal builtin must be a pointer to integer, float, pointer, or a vector of such types (%0 invalid)'
 H411242986562: '非暫存內建函數的地址參數必須是指向整數、浮點數、指標或這些類型的向量的指標（%0 適用）'
 # "address of %select{'%1'|function '%1'|array '%1'|lambda function pointer conversion operator}0 will always evaluate to 'true'"
-H17F3EBE2635E: "「%select{地址為 %1|函數「%1」的地址|陣列「%1」的地址|lambda函數指標轉換運算子}0」的地址將始終評估為 'true'"
+H17F3EBE2635E: "「%select{地址為 %1|函數「%1」的地址|陣列「%1」的地址|lambda函數指標轉換運算子}0」的地址將始終求值為 'true'"
 # 'address of %select{bit-field|vector element|property expression|register variable|matrix element}0 requested'
 HD8B1334D046A: '請求%select{位域|向量元素|屬性運算式|登錄變數|矩陣元素}0 的地址'
 # "address of non-static constexpr variable %0 may differ on each invocation of the enclosing function; add 'static' to give it a constant address"
@@ -17614,8 +17712,6 @@ HBD26597B24D2: '對佔位符 "_" 的參考存在歧義，因為它被多次定�
 HE31133550012: '內部連結宣告 %0 在多個模組中被定義，導致使用時產生歧義'
 # 'ambiguous vftable component for %0 introduced via covariant thunks; this is an inherent limitation of the ABI'
 HB0361B37BEF3: '通過協變Thunk引入的 %0 的vftable組件存在歧義；這是ABI的固有局限性'
-# 'amdgpu-arch options'
-HA34A9F0AE01E: 'amdgpu-arch 選項'
 # 'an array type is not allowed here'
 HCA0201F3FA96: '這裡不允许使用陣列類型'
 # 'an attribute list cannot appear here'
@@ -17643,9 +17739,9 @@ H5506BF1F155E: '委派構造函數的初始值設定項必須單獨存在'
 # 'an inline asm block cannot have an operand which is a bit-field'
 HD4AB7ACF49E9: '內嵌組件塊不能具有位段類型的操作數'
 # 'an unevaluated string literal cannot be a user-defined literal'
-H7294D821E112: '未評估的字串文字不能是使用者定義的文字'
+H7294D821E112: '未求值的字串文字不能是使用者定義的文字'
 # 'an unevaluated string literal cannot have an encoding prefix'
-HFC8ECFF25368: '未評估的字串文字不能有編碼前綴'
+HFC8ECFF25368: '未求值的字串文字不能有編碼前綴'
 # "analyzer constraint manager 'z3' is only available if LLVM was built with -DLLVM_ENABLE_Z3_SOLVER=ON"
 H156EC948497C: "分析程式約束管理員 'z3' 只有在LLVM以-DLLVM_ENABLE_Z3_SOLVER=ON編譯時才可用"
 # "analyzer-config option '%0' has a key but no value"
@@ -17788,10 +17884,12 @@ HBE77A0717D85: '在 CUDA C/C++ 中，#pragma unroll 的參數不應使用括號'
 H93740956E9C9: "對 '%0' 子句的參數必須為 %select{非負數|嚴格正數}1 整數值"
 # "argument to '%0' is missing (expected %1 value%s1)"
 HEA17C0D34C2C: "對 '%0' 的參數缺失（期望 %1 值%s1）"
+# "argument to '__ptrauth' must be an integer constant expression"
+H06E460DF36C3: "'__ptrauth' 參數必須是整數常量運算式"
 # "argument to 'gang' clause dimension must be %select{a constant expression|1, 2, or 3: evaluated to %1}0"
-H970EFD35B5B1: "對 'gang' 子句維度的參數必須為 %select{常數運算式|1、2 或 3：評估為 %1}0"
+H970EFD35B5B1: "對 'gang' 子句維度的參數必須為 %select{常數運算式|1、2 或 3：求值為 %1}0"
 # "argument to 'operator<=>' %select{cannot be narrowed from type %1 to %2|evaluates to %1, which cannot be narrowed to type %2}0"
-HAE154D16E74A: "對 'operator<=>' 的參數 %select{無法從類型 %1 縮窄至 %2|評估為 %1，無法縮窄至類型 %2}0"
+HAE154D16E74A: "對 'operator<=>' 的參數 %select{無法從類型 %1 縮窄至 %2|求值為 %1，無法縮窄至類型 %2}0"
 # "argument to 'sizeof' in %0 call is the same pointer type %1 as the %select{destination|source}2; expected %3 or an explicit length"
 H35BB4F2B1E83: "在 %0 調用中的 'sizeof' 參數與%select{目標|來源}2的指標類型 %1 相同；期望 %3 或明確的長度"
 # 'argument to __builtin_longjmp must be a constant 1'
@@ -17942,6 +18040,8 @@ H250CD1E6F903: '將已保留物件賦值給%select{弱|unsafe_unretained}0 %sele
 H8135CA913359: '將已保留物件賦值給非保留屬性；物件將於指派後被釋放'
 # "assigning to 'readonly' return result of an Objective-C message not allowed"
 H87457323E0B9: '不允許對Objective-C訊息的「readonly」傳回結果進行指派'
+# 'assigning value of preferred signed enum type %1 to unsigned bit-field %0; negative enumerators of enum %1 will be converted to positive values'
+H20F4D35FCD03: '將偏好有符號枚舉類型 %1 的值賦予無符號位段 %0；枚舉類型 %1 的負數枚舉值將轉換為正數'
 # 'assigning value of signed enum type %1 to unsigned bit-field %0; negative enumerators of enum %1 will be converted to positive values'
 H03B45829D6A4: '將帶符號列舉類型 %1 賦值給無符號位元區段 %0；列舉 %1 的負值枚舉常數將轉換為正數'
 # 'assignment of a weak-unavailable object to a __weak object'
@@ -17955,7 +18055,7 @@ HE419D89C08F2: '在共用體的其他成員初始化期間，將共用體的另�
 # 'assume the ABI is never violated'
 H2875C70D4F37: '假設未違反 ABI'
 # 'assumption evaluated to false'
-H4B3BD75DFF9D: '假設條件評估為 false'
+H4B3BD75DFF9D: '假設條件求值為 false'
 # 'assumption is ignored because it contains (potential) side-effects'
 H2E58C9356572: '因包含（潛在）副作用而忽略假設條件'
 # 'at least one argument of MTE builtin function must be a pointer (%0, %1 invalid)'
@@ -18210,6 +18310,8 @@ HA6B3D52AF212: '位域 %0 具有負寬度 (%1)'
 H1F66B27F57D3: '位域 %0 的類型 %1 非整數型別'
 # 'bit-field %0 is not wide enough to store all enumerators of %1'
 H1E7885609E9C: '位域 %0 寬度不足，無法儲存枚舉 %1 的所有枚舉值'
+# 'bit-field %0 is not wide enough to store all enumerators of preferred type %1'
+H0D56F6137EF8: '位段 %0 寬度不足，無法儲存偏好類型 %1 的所有枚舉值'
 # 'bit-field is declared here'
 HE5CFF566169E: '位域在此處宣告'
 # 'bit-fields are not supported in OpenCL'
@@ -18223,11 +18325,11 @@ H551B33870D5D: "bitcode函式庫 '%0' 不存在"
 # 'bitmasking for introspection of Objective-C object pointers is strongly discouraged'
 H7CE8DAA0A6CB: '對Objective-C物件指標進行內部檢查的位遮罩操作強烈不建議使用'
 # 'bitwise comparison always evaluates to %select{false|true}0'
-H8A4398170F46: '位元比較始終評估為 %select{false|true}0'
+H8A4398170F46: '位元比較始終求值為 %select{false|true}0'
 # "bitwise negation of a boolean expression%select{;| always evaluates to 'true';}0 did you mean logical negation?"
-HE532D6128324: "布林運算式的位元非運算 %select{;| 始終評估為 'true';}0 你是否想要邏輯非運算？"
+HE532D6128324: "布林運算式的位元非運算 %select{;| 始終求值為 'true';}0 你是否想要邏輯非運算？"
 # 'bitwise or with non-zero value always evaluates to true'
-H6F8F36ACC41B: '與非零值的位元或運算始終評估為 true'
+H6F8F36ACC41B: '與非零值的位元或運算始終求值為 true'
 # 'block cannot return %select{array|function}0 type %1'
 H91AB8D594327: '區塊不得返回 %select{陣列|函數}0 型別 %1'
 # 'block captures an autoreleasing out-parameter, which may result in use-after-free bugs'
@@ -18438,6 +18540,8 @@ H5F81F51806D8: '候選%select{建構函數|範本}0被忽略：實例化%select{
 HDF3920A3A1F2: "候選%select{函數|函數|函數（參數順序反轉）|建構函數|預設建構函數（隱式）|複製建構函數（隱式）|移動建構函數（隱式）|複製指定運算子（隱式）|移動指定運算子（隱式）|為此 'operator<=>' 隱式產生的 'operator=='|繼承而來的建構函數}0%select{|範本| %2}1 已被%select{明確標記不可用|明確刪除|隱式刪除}3"
 # "candidate %select{function|function|function (with reversed parameter order)|constructor|constructor (the implicit default constructor)|constructor (the implicit copy constructor)|constructor (the implicit move constructor)|function (the implicit copy assignment operator)|function (the implicit move assignment operator)|function (the implicit 'operator==' for this 'operator<=>)'|inherited constructor}0%select{| template| %2}1 not viable: %ordinal5 argument (%3) would lose %select{const|restrict|const and restrict|volatile|const and volatile|volatile and restrict|const, volatile, and restrict}4 qualifier%select{||s||s|s|s}4"
 H95E4AEB3B23E: "候選%select{函數|函數|函數（參數順序反轉）|建構函數|預設建構函數（隱式）|複製建構函數（隱式）|移動建構函數（隱式）|複製指定運算子（隱式）|移動指定運算子（隱式）|為此 'operator<=>' 隱式產生的 'operator=='|繼承而來的建構函數}0%select{|範本| %2}1 不可行：%ordinal5個參數（%3）將失去 %select{const|restrict|const和restrict|volatile|const和volatile|volatile和restrict|const、volatile和restrict}4 資格 %select{||s||s|s|s}4"
+# "candidate %select{function|function|function (with reversed parameter order)|constructor|constructor (the implicit default constructor)|constructor (the implicit copy constructor)|constructor (the implicit move constructor)|function (the implicit copy assignment operator)|function (the implicit move assignment operator)|function (the implicit 'operator==' for this 'operator<=>)'|inherited constructor}0%select{| template| %2}1 not viable: %ordinal8 argument (%3) has %select{no '__ptrauth'|%5}4 qualifier, but parameter has %select{no '__ptrauth'|%7}6 qualifier"
+HD856C23A94D5: "候選%select{函式|函式|參數順序反轉的函式|建構函式|隱式預設建構函式|隱式複製建構函式|隱式移動建構函式|隱式複製賦值運算子|隱式移動賦值運算子|隱式 'operator=='（對應 'operator<=>'）|繼承建構函式}0%select{| 範型| %2}1 不可行：第 %ordinal8 個參數（%3）%select{無 '__ptrauth' 修飾符|具有 %5 修飾符}4，但參數%select{無 '__ptrauth' 修飾符|具有 %7 修飾符}6"
 # "candidate %select{function|function|function (with reversed parameter order)|constructor|constructor (the implicit default constructor)|constructor (the implicit copy constructor)|constructor (the implicit move constructor)|function (the implicit copy assignment operator)|function (the implicit move assignment operator)|function (the implicit 'operator==' for this 'operator<=>)'|inherited constructor}0%select{| template| %2}1 not viable: %select{%ordinal7|'this'}6 argument (%3) has %select{no|__unsafe_unretained|__strong|__weak|__autoreleasing}4 ownership, but parameter has %select{no|__unsafe_unretained|__strong|__weak|__autoreleasing}5 ownership"
 H8D414CDC2F4E: "候選%select{函數|函數|函數（參數順序反轉）|建構函數|預設建構函數（隱式）|複製建構函數（隱式）|移動建構函數（隱式）|複製指定運算子（隱式）|移動指定運算子（隱式）|為此 'operator<=>' 隱式產生的 'operator=='|繼承而來的建構函數}0%select{|範本| %2}1 不可行：%select{%ordinal7|'this'}6 個參數（%3）具有%select{無|__unsafe_unretained|__strong|__weak|__autoreleasing}4 所有權，但參數需要%select{無|__unsafe_unretained|__strong|__weak|__autoreleasing}5 所有權"
 # "candidate %select{function|function|function (with reversed parameter order)|constructor|constructor (the implicit default constructor)|constructor (the implicit copy constructor)|constructor (the implicit move constructor)|function (the implicit copy assignment operator)|function (the implicit move assignment operator)|function (the implicit 'operator==' for this 'operator<=>)'|inherited constructor}0%select{| template| %2}1 not viable: %select{%ordinal7|'this'}6 argument (%3) has %select{no|__weak|__strong}4 ownership, but parameter has %select{no|__weak|__strong}5 ownership"
@@ -18528,6 +18632,8 @@ H5A02E21DB221: "無法在 '#pragma clang assume_nonnull' 內 %select{#include �
 HBEBB0813D273: '無法對超出物件結尾的指標 %select{存取基類|存取衍生類|存取成員|存取陣列元素|ERROR|存取實數部分|存取虛數部分}0'
 # 'cannot %select{access base class of|access derived class of|access field of|access array element of|perform pointer arithmetic on|access real component of|access imaginary component of}0 null pointer'
 H2E784B2C1B28: '無法對空指標 %select{存取基類|存取衍生類|存取成員|存取陣列元素|執行指標運算|存取實數部分|存取虛數部分}0'
+# "cannot %select{assign to %select{object|'%1'}2 with|pass argument to %select{parameter|parameter '%1'}2 with|return|convert to|%select{|implicitly }3initialize %select{object|'%1'}2 with|pass argument to parameter with|cast to|pass argument to parameter with}0 '%5' attributed type %4 because the pointee type %6 is incomplete"
+H1CA72EC4A20B: "無法將 %select{將物件指派為 %select{物件|'%1'}2|將參數 %select{參數|參數 '%1'}2 的引數指派為|傳回|轉換為|%select{|隱含 }3 初始化 %select{物件|'%1'}2|將參數的引數指派為|轉型為|將參數的引數指派為}0 '%5' 修飾類型 %4，因為所指類型 %6 是不完整類型"
 # 'cannot %select{assign|return|throw|subscript}0 a WebAssembly table'
 H1D574B1BA9C6: '無法對 WebAssembly 表進行 %select{指派|回傳|拋出|索引}0'
 # 'cannot %select{capture|take address of}0 WebAssembly reference'
@@ -18536,10 +18642,10 @@ H1706BDA5F276: '無法取得 WebAssembly 參考的 %select{捕獲|位址}0'
 H9709AF91935B: '無法 %select{遞減|遞增}0 枚舉類型 %1 的運算式'
 # 'cannot %select{decrement|increment}1 value of type %0'
 H7C6ED23E2E9F: '無法 %select{遞減|遞增}1 類型 %0 的值'
-# 'cannot %select{form pointer to|form reference to|form array of|form function returning|use parentheses when declaring variable with}0 deduced class template specialization type'
-HAF4CF818160D: '無法對推論的類模板專屬化類型 %select{形成指標|形成參考|形成陣列|形成函數回傳|在宣告變數時使用括號}0'
 # 'cannot %select{throw|catch}0 a WebAssembly reference type'
 H3CB66A7D1B81: '無法對 WebAssembly 參考類型 %select{拋出|捕獲}0'
+# "cannot %select{use '%1' with '%4' attributed|call '%1' with '%4' attributed return}0 type %2 because the pointee type %3 is incomplete"
+HF83C2ECBEF93: "無法 %select{使用 '%1' 並具有 '%4' 類型|呼叫 '%1' 具有 '%4' 類型的返回值}0 %2，因為所指類型 %3 是不完整的"
 # "cannot %select{use builtin operator '<=>'|default 'operator<=>'}1 because type '%0' was not found; include <compare>"
 H40A5A6DFAC87: "無法%select{使用內建運算子 '<=>'|預設 'operator<=>' }1，因為類型 '%0' 未找到；請包含 <compare>"
 # 'cannot %select{use type %1 for a function/method parameter|use type %1 for function/method return|default-initialize an object of type %1|declare an automatic variable of type %1|copy-initialize an object of type %1|assign to a variable of type %1|construct an automatic compound literal of type %1|capture a variable of type %1|cannot use volatile type %1 where it causes an lvalue-to-rvalue conversion}3 since it %select{contains|is}2 a union that is non-trivial to %select{default-initialize|destruct|copy}0'
@@ -18555,13 +18661,13 @@ HA111D2195E5D: '無法使用 new 建立 %select{函數|引用}1 類型 %0 的記
 # "cannot allocate array of 'auto'"
 H63BE6FF3ACD1: "無法建立 'auto' 類型的陣列"
 # "cannot allocate array; evaluated array bound %0 exceeds the limit (%1); use '-fconstexpr-steps' to increase this limit"
-H786F30B07D61: "無法建立陣列；評估的陣列大小 %0 超過限制（%1）；使用 '-fconstexpr-steps' 參數提高此限制"
+H786F30B07D61: "無法建立陣列；求值的陣列大小 %0 超過限制（%1）；使用 '-fconstexpr-steps' 參數提高此限制"
 # 'cannot allocate array; evaluated array bound %0 is negative'
-H5D0D0D0008CA: '無法建立陣列；評估的陣列大小 %0 為負數'
+H5D0D0D0008CA: '無法建立陣列；求值的陣列大小 %0 為負數'
 # 'cannot allocate array; evaluated array bound %0 is too large'
-H7762F6A6D3EC: '無法建立陣列；評估的陣列大小 %0 過大'
+H7762F6A6D3EC: '無法建立陣列；求值的陣列大小 %0 過大'
 # 'cannot allocate array; evaluated array bound %0 is too small to hold %1 explicitly initialized elements'
-H33075FED0F6C: '無法建立陣列；評估的陣列大小 %0 過小，無法存放 %1 個明確初始化的元素'
+H33075FED0F6C: '無法建立陣列；求值的陣列大小 %0 過小，無法存放 %1 個明確初始化的元素'
 # 'cannot allocate memory of %select{incomplete|function}0 type %1'
 H1CE3476A2AA9: '無法建立 %select{不完整|函數}0 類型 %1 的記憶體'
 # "cannot allocate untyped memory in a constant expression; use 'std::allocator<T>::allocate' to allocate memory of type 'T'"
@@ -18618,6 +18724,8 @@ H1C20AF9781FF: '無法將類型 %1 的物件轉換為指標類型 %2'
 HB63F6FC3F823: "無法將非零值 '%0' 轉換為 'event_t'"
 # 'cannot cast object of dynamic type %0 to type %1'
 H29A99B2195B9: '無法將動態類型 %0 的物件轉換為類型 %1'
+# "cannot cast to '__ptrauth'-qualified type %0"
+H6496D0FA4BB0: "無法將型態轉換為 '__ptrauth' 修飾型態 %0"
 # 'cannot catch %select{|reference to }0sizeless type %1'
 HFDB51E9BFE05: '無法捕捉 %select{|引用 }0 未定義大小的類型 %1'
 # 'cannot catch an Objective-C object by value'
@@ -18649,15 +18757,15 @@ HB2DFAB48BA84: '無法壓縮除錯區段 (%0 未啟用)'
 # 'cannot compute offset of bit-field %0'
 H55C2FB73C827: '無法計算位段 %0 的偏移量'
 # "cannot constant evaluate '%select{memcpy|memmove}0' between objects of incomplete type %1"
-H474B41288CFB: "無法在不完整類型 %1 的物件之間進行 '%select{memcpy|memmove}0' 的常量評估"
+H474B41288CFB: "無法在不完整類型 %1 的物件之間進行 '%select{memcpy|memmove}0' 的常量求值"
 # "cannot constant evaluate '%select{memcpy|memmove}0' between objects of non-trivially-copyable type %1"
-H4AA44A4233D2: "無法在非純粹可複製類型 %1 的物件之間進行 '%select{memcpy|memmove}0' 的常量評估"
+H4AA44A4233D2: "無法在非純粹可複製類型 %1 的物件之間進行 '%select{memcpy|memmove}0' 的常量求值"
 # "cannot constant evaluate '%select{memcpy|memmove}0' from object of type %1 to object of type %2"
-H6FAB8AA1F441: "無法在類型 %1 的物件和類型 %2 的物件之間進行 '%select{memcpy|memmove}0' 的常量評估"
+H6FAB8AA1F441: "無法在類型 %1 的物件和類型 %2 的物件之間進行 '%select{memcpy|memmove}0' 的常量求值"
 # 'cannot constant evaluate the result of adjusting alignment to %0'
-H8F0F0485C85D: '無法評估調整對齊至 %0 的結果'
+H8F0F0485C85D: '無法求值調整對齊至 %0 的結果'
 # 'cannot constant evaluate whether run-time alignment is at least %0'
-H8DC5B278E189: '無法評估執行階段對齊是否至少為 %0'
+H8DC5B278E189: '無法求值執行階段對齊是否至少為 %0'
 # 'cannot construct object of type %0 with virtual base class in a constant expression'
 H7DD1FDBBEF06: '無法在常量運算式中建立具有虛基類 %0 的物件'
 # 'cannot convert %0 token to an identifier'
@@ -18773,9 +18881,9 @@ H486DE8FE7D9E: '無法取得不完整列舉類型 %0 的底層類型'
 # 'cannot emit module %0: %select{size|mtime}1 must be explicitly specified for missing header file "%2"'
 H4AFEE6C7D624: '無法發送模組 %0：%select{大小|修改時間}1 須明確指定遺失的標頭檔 "%2"'
 # 'cannot evaluate call to virtual function in a constant expression in C++ standards before C++20'
-HC06FC1196550: '無法在 C++20 之前標準中評估常量運算式中的虛函數呼叫'
+HC06FC1196550: '無法在 C++20 之前標準中求值常量運算式中的虛函數呼叫'
 # 'cannot evaluate this expression if rounding mode is dynamic'
-HC673B661CF5A: '若舍入模式為動態時，無法評估此運算式'
+HC673B661CF5A: '若舍入模式為動態時，無法求值此運算式'
 # 'cannot export %0 as it is not at namespace scope'
 H49EEB2061C19: '無法導出位於命名空間範圍外的 %0'
 # 'cannot export redeclaration %0 here since the previous declaration %select{is not exported|has internal linkage|has module linkage}1'
@@ -18788,8 +18896,8 @@ H20ABDE201926: "無法找到 HIP 並行加速函式庫；請透過 '--hipstdpar-
 H74B6BE24033A: "無法找到HIP裝置函式庫 %select{| 的 %1}0；透過 '--hip-path' 或 '--hip-device-lib-path' 提供其路徑，或傳遞 '-nogpulib' 以不使用HIP裝置函式庫進行建置"
 # "cannot find HIP runtime; provide its path via '--rocm-path', or pass '-nogpuinc' to build without HIP runtime"
 H11EBFA045BE3: "無法找到 HIP 執行時間；請透過 '--rocm-path' 提供路徑，或透過 '-nogpuinc' 參數跳過 HIP 執行時間"
-# "cannot find ROCm device library%select{| for %1| for ABI version %1}0; provide its path via '--rocm-path' or '--rocm-device-lib-path', or pass '-nogpulib' to build without ROCm device library"
-H7B7F4A357272: "無法找到 ROCm 裝置函式庫 %select{| %1 的| ABI 版本 %1 的}0；請透過 '--rocm-path' 或 '--rocm-device-lib-path' 提供路徑，或透過 '-nogpulib' 參數跳過 ROCm 裝置函式庫"
+# "cannot find ROCm device library%select{| for %1| for ABI version %1%select{|, which requires ROCm %3 or higher}2}0; provide its path via '--rocm-path' or '--rocm-device-lib-path', or pass '-nogpulib' to build without ROCm device library"
+H66C4B1DCC978: "無法找到 ROCm 設備函式庫 %select{| for %1| for ABI 版本 %1%select{|，需要 ROCm %3 或更新版本}2}0；請透過 '--rocm-path' 或 '--rocm-device-lib-path' 提供其路徑，或使用 '-nogpulib' 參數來排除 ROCm 設備函式庫"
 # 'cannot find a valid user-defined mapper for type %0 with name %1'
 H0907A5973C27: '無法為類型 %0 找到名稱 %1 的有效使用者定義映射器'
 # "cannot find end ('%1') of expected %0"
@@ -18822,6 +18930,8 @@ H727EB43115FC: "無法找到 %0 的起始符號 ('{{')"
 HD5BDA70A3617: "在 %0 中未找到 regex 起始符號 '{{'"
 # 'cannot find suitable %select{getter|setter}0 for property %1'
 H0F811370E791: '無法找到屬性 %1 的合適 %select{取得器|設定器}0'
+# 'cannot form %select{pointer to|reference to|array of|function returning}0 deduced class template specialization type'
+H0C20361BB556: '無法形成 %select{指向|對應的引用|陣列|返回}0 推導出的類模板特化型態'
 # "cannot form %select{pointer to|reference to|array of}0 'decltype(auto)'"
 H7F41F0A9CCC7: "無法形成 %select{指向|引用|陣列}0 'decltype(auto)'"
 # 'cannot form a %select{pointer|reference}0 to a WebAssembly table'
@@ -19073,7 +19183,7 @@ H9F644F56E9E3: '無法將類型 %0 用作範圍'
 # 'cannot use type %0 as an iterator'
 H45599EAAF2D8: '無法將類型 %0 用作迭代器'
 # "cannot use type '%0' within '#pragma clang fp eval_method'; type is set according to the default eval method for the translation unit"
-HD91CCA267FD1: "無法在 '#pragma clang fp eval_method' 中使用類型 '%0'；該類型根據翻譯單元的預設評估方法設定"
+HD91CCA267FD1: "無法在 '#pragma clang fp eval_method' 中使用類型 '%0'；該類型根據翻譯單元的預設求值方法設定"
 # 'cannot use variable %1 in collapsed imperfectly-nested loop %select{init|condition|increment}0 statement'
 H40887EDB8E4A: '無法在塌陷的不完全嵌套迴圈%select{初始化|條件|遞增}0語句中使用變數 %1'
 # 'cannot use variable-length arrays in %select{__device__|__global__|__host__|__host__ __device__}0 functions'
@@ -19284,6 +19394,8 @@ H67A993394D9A: '類別模板 %0 已在此處實例化'
 H2F3153B3F0E2: '類別模板參數推導為 %0 選擇了已刪除的建構函數'
 # 'class template argument deduction for %0 selected an explicit %select{constructor|deduction guide}1 for copy-list-initialization'
 HC409A532BB3A: '類別模板參數推導為 %0 選擇了明確的 %select{建構函數|推導指引}1 供初始化清單初始化使用'
+# 'class template argument deduction for alias templates is a C++20 extension'
+HDC66CA6F51E2: '別名模板的類模板參數推導是 C++20 的擴展功能'
 # 'class template argument deduction for alias templates is incompatible with C++ standards before C++20'
 H0A109AC10809: '對別名模板進行類別模板參數推導與 C++20 之前的標準不相容'
 # 'class template argument deduction is incompatible with C++ standards before C++17%select{|; for compatibility, use explicit type name %1}0'
@@ -19392,6 +19504,8 @@ HA0D702990A9A: '兼容類型 %0 已在此處指定'
 H55D78247B7D8: "無法開啟編譯資料庫 '%0'：%1"
 # 'compile time floating point arithmetic suppressed in strict evaluation modes'
 H1CBDE348A919: '嚴格求值模式下會抑制編譯時間浮點運算'
+# "compiled from '%0' and '%1'"
+H27BB14892FCB: '由 "%0" 和 "%1" 編譯而成'
 # 'compiler has implicitly changed method %0 return type'
 HA0BE2730FEEE: '編譯器已隱式更改方法 %0 的返回類型'
 # 'completion handler is called twice'
@@ -19518,6 +19632,10 @@ HCE15ED850DE4: "建議將 '%0' 加入包含路徑"
 H6A4F6FD30F2D: "建議以 '%1' 呼叫約定定義 %0"
 # 'consider making the bit-field type %select{unsigned|signed}0'
 HDAE81431A685: '建議將位段類型定義為%select{無符號|有符號}0'
+# 'consider providing a complete definition for %0'
+H2F6F79E2A183: '建議提供 %0 的完整定義'
+# "consider using '__sized_by%select{|_or_null}0' instead of '__counted_by%select{|_or_null}0'"
+H40017362835A: "建議使用 '__sized_by%select{|_or_null}0' 代替 '__counted_by%select{|_or_null}0'"
 # "consider using __builtin_trap() or qualifying pointer with 'volatile'"
 H002E765592F2: '建議使用 __builtin_trap() 或以 volatile 修飾指標'
 # 'consider using vld1_%0%1() to initialize a vector from memory, or vcreate_%0%1() to initialize from an integer constant'
@@ -19533,13 +19651,13 @@ H02E8DDC8D310: 'const限定的變數無法 %0'
 # 'const-qualified variable without mutable fields cannot be %0'
 HF38DA802B6DD: '無可變字段的const限定變數無法 %0'
 # 'constant evaluation of %0 between arrays of types %1 and %2 is not supported; only arrays of narrow character types can be compared'
-H42EAC15FC487: '類型 %1 和 %2 的陣列間 %0 的常數運算式評估不支援；僅支援窄字符類型陣列的比較'
+H42EAC15FC487: '類型 %1 和 %2 的陣列間 %0 的常數運算式求值不支援；僅支援窄字符類型陣列的比較'
 # 'constant evaluation of %0 on array of type %1 is not supported; only arrays of narrow character types can be searched'
-HCF9A8296188E: '類型 %1 的陣列上 %0 的常數運算式評估不支援；僅支援窄字符類型陣列的搜尋'
+HCF9A8296188E: '類型 %1 的陣列上 %0 的常數運算式求值不支援；僅支援窄字符類型陣列的搜尋'
 # 'constant expression evaluates to %0 which cannot be narrowed to type %1'
-HE08100927247: '常數運算式評估結果 %0 無法窄化為類型 %1'
+HE08100927247: '常數運算式求值結果 %0 無法窄化為類型 %1'
 # 'constant expression evaluates to %0 which cannot be narrowed to type %1 in C++11'
-H3A70E9ED4BE6: 'C++11 中常數運算式評估結果 %0 無法窄化為類型 %1'
+H3A70E9ED4BE6: 'C++11 中常數運算式求值結果 %0 無法窄化為類型 %1'
 # 'consteval function %0 cannot override a non-consteval function'
 HD9788F98961F: 'consteval 函數 %0 無法覆寫非 consteval 函數'
 # 'consteval if is a C++23 extension'
@@ -19559,13 +19677,13 @@ H6D6AAEF0CE01: '未初始化所有成員的 constexpr 建構子是 C++20 擴展'
 # 'constexpr constructor that does not initialize all members is incompatible with C++ standards before C++20'
 H6CD8A3688EC0: '未初始化所有成員的 constexpr 建構子不相容於 C++20 之前的標準'
 # 'constexpr evaluation exceeded maximum depth of %0 calls'
-H71A1AF77C8D7: 'constexpr 評估超過 %0 呼叫層級的上限'
+H71A1AF77C8D7: 'constexpr 求值超過 %0 呼叫層級的上限'
 # 'constexpr evaluation hit maximum call limit'
-H2D336AD5FC66: 'constexpr 評估觸及呼叫次數上限'
+H2D336AD5FC66: 'constexpr 求值觸及呼叫次數上限'
 # 'constexpr evaluation hit maximum heap allocation limit'
-HEA6F0C77C92E: 'constexpr 評估觸及堆積分配上限'
+HEA6F0C77C92E: 'constexpr 求值觸及堆積分配上限'
 # 'constexpr evaluation hit maximum step limit; possible infinite loop?'
-H3A9C6A5C602B: 'constexpr 評估觸及執行步數上限；可能為無限迴圈？'
+H3A9C6A5C602B: 'constexpr 求值觸及執行步數上限；可能為無限迴圈？'
 # 'constexpr function %0 without __host__ or __device__ attributes cannot overload __device__ function with the same signature; add a __host__ attribute, or build with -fno-cuda-host-device-constexpr'
 HAF2225A9BAA0: '無 __host__ 或 __device__ 屬性的 constexpr 函式 %0 無法與相同簽章的 __device__ 函式重載；請新增 __host__ 屬性，或以 -fno-cuda-host-device-constexpr 編譯'
 # 'constexpr function with no return statements is incompatible with C++ standards before C++14'
@@ -19607,7 +19725,7 @@ HDBC0B5C441D3: "限制條件 '%0' 已在此處存在"
 # 'constraint depends on a previously diagnosed expression'
 HE3836E579C9B: '約束依賴於先前已診斷的運算式'
 # 'constraint variable %0 cannot be used in an evaluated context'
-H553F40E512D9: '約束變數 %0 不可在評估環境中使用'
+H553F40E512D9: '約束變數 %0 不可在求值環境中使用'
 # 'constraints not satisfied for %select{class template|function template|variable template|alias template|template template parameter|template}0 %1%2'
 H81A668F064ED: '%select{類別範型|函式範型|變數範型|別名範型|範型範型參數|範型}0 %1%2 的約束未被滿足'
 # "construct '%0' not allowed in a region associated with a directive with 'order' clause"
@@ -19717,11 +19835,11 @@ HFA594BB552D0: '將類型 %0 的delete運算式轉換為類型 %1 時調用了�
 # 'converting the enum constant to a boolean'
 HC26D67935F61: '將列舉常數轉換為布林值'
 # "converting the result of '<<' to a boolean always evaluates to %select{false|true}0"
-H66F90B0804A0: '將「<<」運算結果轉換為布林值始終評估為 %select{false|true}0'
-# "converting the result of '<<' to a boolean; did you mean '(%0) != 0'?"
-HB5F0E9F35B11: '將「<<」的運算結果轉換為布林值；是否意為「(%0) != 0」？'
+H66F90B0804A0: '將「<<」運算結果轉換為布林值始終求值為 %select{false|true}0'
+# "converting the result of '<<' to a boolean; did you mean to compare with '0'?"
+H2022F6B0CFBA: "將 '<<' 運算結果轉換為布林值；是否意圖與 '0' 進行比較？"
 # "converting the result of '?:' with integer constants to a boolean always evaluates to 'true'"
-H0B52D2457927: '將「?:」運算結果（包含整數常數）轉換為布林值始終評估為「true」'
+H0B52D2457927: '將「?:」運算結果（包含整數常數）轉換為布林值始終求值為「true」'
 # 'converting to boxing syntax requires casting %0 to %1'
 HDE90319BAAF3: '轉換至封裝語法需要將 %0 型別轉換為 %1'
 # 'coprocessor %0 must be configured as %select{GCP|CDE}1'
@@ -19878,6 +19996,8 @@ H82E18D14C9A2: "'for' 迴圈中非局部變數的宣告是 C23 的擴充功能"
 H1C8715C3541C: "'for' 迴圈中非局部變數的宣告與 C23 之前標準不相容"
 # 'declaration of reference variable %0 requires an initializer'
 H8635EDA9A8C6: '需要初始值設定才能宣告引用變數 %0'
+# 'declaration of type aware %0 in %1 must have matching type aware %2'
+HC35A59FCABD4: '在 %1 中 %0 的類型感知宣告必須具有對應的類型感知 %2'
 # 'declaration of variable %0 with deduced type %1 requires an initializer'
 H737154EADE2A: '需要初始值設定才能宣告型別已推論的變數 %0（推論型別為 %1）'
 # 'declaration requires a global constructor'
@@ -20226,6 +20346,8 @@ HB212F1F17A19: '指定初始值設定項與 C++20 之前的 C++ 標準不相容'
 HDC0C952FB90A: '在 %select{純量|不可分割且無大小}0 類型 %1 的初始值設定項中使用指定符'
 # 'designator into flexible array member subobject'
 H596716C96072: '在彈性陣列成員子物件中使用指定符'
+# 'destroying delete is not permitted to be type aware'
+HBF72010CD873: 'destroying delete 不允許具有類型感知'
 # "destroying object '%0' whose lifetime has already ended"
 H480FFC7A6CDF: "銷毀已結束生命週期的物件 '%0'"
 # 'destroying operator delete can have only an optional size and optional alignment parameter'
@@ -20276,6 +20398,8 @@ H55938C1F7AEA: '決定在從輸入日誌符號化函數識別碼時是否解除�
 HF854EBCB0FF7: '決定是否按時間戳排序輸入日誌記錄'
 # "device clause with ancestor device-modifier used without specifying 'requires reverse_offload'"
 H7C03F0398F87: "在未指定 'requires reverse_offload' 時使用具有祖先裝置修飾項的裝置子句"
+# "device files are not yet supported by '#embed' directive"
+H3E3F85E899CB: "裝置檔尚未被 '#embed' 指令支援"
 # 'diagnostic formatting in SARIF mode is currently unstable'
 HADEECC0D1814: 'SARIF 模式下的診斷格式目前不穩定'
 # 'diagnostic msg: %0'
@@ -20325,7 +20449,7 @@ H45FD89D6E3CC: '數字分隔符在C23之前的C標準規格中不相容'
 # 'digit separators are incompatible with C++ standards before C++14'
 H14907D30B29E: '數字分隔符不相容於C++14之前的標準'
 # 'dimension expression does not evaluate to a constant unsigned int'
-H7ABEC48E09A3: '維度運算式未評估為常數無符號整數'
+H7ABEC48E09A3: '維度運算式未求值為常數無符號整數'
 # "direct access to Objective-C's isa is deprecated in favor of object_getClass()"
 H9F7CC297D241: '直接訪問Objective-C的isa已棄用，請改用object_getClass()'
 # 'direct attribute on property %0 ignored (not implemented by this Objective-C runtime)'
@@ -21421,7 +21545,7 @@ HFDC07BD9FDE6: "期望迴圈起始處持有 %0 '%1'"
 # "expecting %0 '%1' to be held at the end of function"
 H696ED076811B: "期望函式結尾處持有 %0 '%1'"
 # 'explicit %select{constructor|conversion function|deduction guide}0 is not a candidate%select{| (explicit specifier evaluates to true)}1'
-H1B61513FD8B6: '顯式%select{建構函數|轉換函數|推導指引}0 不是候選 %select{| (顯式指定符評估為true)}1'
+H1B61513FD8B6: '顯式%select{建構函數|轉換函數|推導指引}0 不是候選 %select{| (顯式指定符求值為true)}1'
 # 'explicit %select{constructor|deduction guide}0 declared here'
 H110462FEE829: '在此處宣告顯式%select{建構函數|推導指引}0'
 # 'explicit %select{specialization|instantiation}0 of %select{non-|undeclared }3template %1 %2'
@@ -21569,7 +21693,7 @@ HBEECC801546A: '表達式不能跟隨後置 %0 運算子；請加上括號'
 # 'expression does not compute the number of elements in this array; element type is %0, not %1'
 H23C233069DBB: '該表達式不計算此陣列的元素數量；元素類型是 %0，而非 %1'
 # "expression evaluates to '%0 %1 %2'"
-H64BCD859D7BF: '該表達式評估為 "%0 %1 %2"'
+H64BCD859D7BF: '該表達式求值為 "%0 %1 %2"'
 # 'expression has incomplete class type %0'
 H58E1F9927C3B: '該表達式具有不完整的類型 %0'
 # 'expression is not a string literal'
@@ -21593,11 +21717,11 @@ HB7AF8EB968E8: '表達式結果未被使用；將結果賦予變數以強制執�
 # "expression result unused; should this cast be to 'void'?"
 HBBF825FCCB8B: "表達式結果未被使用；是否此轉換應為 'void' 型別？"
 # 'expression which evaluates to zero treated as a null pointer constant of type %0'
-H0240527F1E90: '評估為零的表達式被視為類型 %0 的空指標常數'
+H0240527F1E90: '求值為零的表達式被視為類型 %0 的空指標常數'
 # 'expression with side effects has no effect in an unevaluated context'
-H186C82044D81: '具有副作用的表達式在未評估的語境中不會產生任何效果'
+H186C82044D81: '具有副作用的表達式在未求值的語境中不會產生任何效果'
 # "expression with side effects will be evaluated despite being used as an operand to 'typeid'"
-H9C60337CD3B8: "用作 'typeid' 運算元的操作數時，具有副作用的表達式仍會被評估"
+H9C60337CD3B8: "用作 'typeid' 運算元的操作數時，具有副作用的表達式仍會被求值"
 # 'extension used'
 HD363255C0A95: '使用了擴充語法'
 # 'extern "C" language linkage specification begins here'
@@ -21814,8 +21938,6 @@ HF416CD096831: '__builtin_convertvector 的第一個參數必須是向量'
 HCF8EE366AB6A: '透明聯盟的第一個字段不能是 %select{浮點數|向量}0 類型 %1；transparent_union 屬性被忽略'
 # 'first non-designated initializer is here'
 H3AA2DBB89701: '第一個未指定標記的初始值設定項在此處'
-# 'first parameter of %0 must have type %1'
-HE845E4B59857: '%0 的第一個參數必須具有類型 %1'
 # 'first two arguments to __builtin_convertvector must have the same number of elements'
 HF134017C1A48: '__builtin_convertvector 的前兩個參數必須具有相同數量的元素'
 # "flag '%0' is ignored when flag '%1' is present"
@@ -22346,8 +22468,10 @@ H9AA979884A67: '實作已棄用的%select{方法|類別|類別別名}0'
 H0D7D4644123A: '實作不可用的方法'
 # 'implicit %select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}0 inferred target collision: call to both %select{__device__|__global__|__host__|__host__ __device__}1 and %select{__device__|__global__|__host__|__host__ __device__}2 members'
 HDD95624FC57A: '隱式%select{預設建構函數|複製建構函數|移動建構函數|複製賦值運算子|移動賦值運算子|析構函數}0推斷目標衝突：同時呼叫 %select{__device__|__global__|__host__|__host__ __device__}1 和 %select{__device__|__global__|__host__|__host__ __device__}2 成員'
+# "implicit '0' return value from 'main' is a C99 extension"
+HDE00C37DFBCC: "'main' 的隱式 0 返回值是 C99 延伸功能"
 # 'implicit boolean conversion of Objective-C object literal always evaluates to true'
-HFAC6148E9355: 'Objective-C物件字面量的隱式布林轉換始終評估為true'
+HFAC6148E9355: 'Objective-C物件字面量的隱式布林轉換始終求值為true'
 # "implicit capture of 'this' with a capture default of '=' is deprecated"
 H7D01BFC1D4A1: "隐含使用默认值 '=' 捕获 'this' 是已弃用的"
 # 'implicit capture of lambda object due to conversion to block pointer here'
@@ -22471,9 +22595,9 @@ H5B10BE57CF69: "在列印函式調用時，以參數 '(%0)' 傾印結構"
 # 'in defaulted %select{<ERROR>|equality|three-way|equality|relational}0 comparison operator for %1 first required here'
 H41C2C013E2E2: '在 %1 的預設 %select{<ERROR>|等式|三向|等式|關聯}0比較運算子中，首次需要在此處'
 # 'in evaluating default argument here'
-HA6EC671D8C49: '在評估此處的預設參數時'
+HA6EC671D8C49: '在求值此處的預設參數時'
 # 'in evaluation of exception specification for %q0 needed here'
-H94CE96486393: '在評估%q0所需的例外規格時'
+H94CE96486393: '在求值%q0所需的例外規格時'
 # 'in first definition, possible difference is here'
 HAF3474709EF4: '在首次定義中，可能的差異在此處'
 # "in implicit call to 'operator%select{!=|*|++}0' for iterator of type %1"
@@ -22794,8 +22918,8 @@ H17CD335B9F9F: '字元陣列的初始值字串過長，陣列大小為 %0 但初
 H822723DC0E42: '從空初始值清單初始化 %0 與C++98不相容'
 # "initializing 'char8_t' array with plain string literal"
 H1EA4AB240813: "使用純字面字串初始化 'char8_t' 陣列"
-# "initializing an array from a '%0' predefined identifier is a Microsoft extension"
-H8573434E16CF: "從 '%0' 預定義識別符初始化陣列是Microsoft擴充"
+# 'initializing an array from a %0 predefined identifier is a Microsoft extension'
+HF1EC87683FC5: '使用預先定義的識別符 %0 初始化陣列是 Microsoft 延伸功能'
 # 'initializing char array with wide string literal'
 H698D73717CFB: '使用寬字元字面值初始化char陣列'
 # 'initializing field %0 with default member initializer'
@@ -22996,8 +23120,8 @@ H6D1E048E9343: '互通變數 %0 用於多個動作子句中'
 H4EE913CC5003: "interop變數必須為類型 'omp_interop_t'"
 # 'interrupt service routine cannot be called directly'
 H0EEEBB03E095: '中斷服務常式不可直接呼叫'
-# "interrupt service routine with vfp enabled may clobber the interruptee's vfp state"
-H55034798B0BD: '啟用vfp的中斷服務常式可能會破壞被中斷的函數的vfp狀態'
+# "interrupt service routine with vfp enabled may clobber the interruptee's vfp state; consider using the `interrupt_save_fp` attribute to prevent this behavior"
+HBC940BDF20A5: '啟用 VFP 的中斷服務例程可能會破壞被中斷執行緒的 VFP 狀態；建議使用 `interrupt_save_fp` 屬性來避免此行為'
 # 'interval between profile writes (default: 0 = write only at program end).  This is useful for service workloads when you want to dump profile every X minutes or if you are killing the program and the profile is not being dumped at the end.'
 H3081FD16F975: '剖析寫入間隔（預設值：0 = 程式結束時寫入）。此選項對服務負載有幫助，當您希望每X分鐘輸出剖析資料，或在終止程式時剖析資料未被輸出的情況下使用'
 # 'intrinsic module directory'
@@ -23032,6 +23156,8 @@ H8F1C2E5DB890: "無效的C++ ABI名稱 '%0'"
 H91493C3284DF: "無效的CoreFoundation執行階段ABI '%0'；必須是以下其中一個：'objc', 'standalone', 'swift', 'swift-5.0', 'swift-4.2', 'swift-4.1'"
 # 'invalid Darwin version number: %0'
 HA0C57A49CA76: '無效的Darwin版本號：%0'
+# 'invalid LLVM IR input: %0'
+H196A3B80B48D: '無效的 LLVM IR 輸入：%0'
 # "invalid OS value '%0' in '%1'"
 H00BD3F016742: "無效的作業系統值 '%0' 在 '%1' 中"
 # 'invalid OpenACC clause %0'
@@ -23052,6 +23178,8 @@ HA12658A01ACA: "無效的Xarch參數：'%0'，並非所有驅動程式選項均�
 H7917BEC4B42C: "無效的Xarch參數：'%0'，需要參數的選項未被支援"
 # 'invalid __hlsl_resource_t type attributes'
 H9A97FF7B54BE: '無效的__hlsl_resource_t類型屬性'
+# "invalid address discrimination flag '%0'; '__ptrauth' requires '0' or '1'"
+H3802C33B9837: "無效的地址區分標誌 '%0'；'__ptrauth' 需要 '0' 或 '1'"
 # 'invalid address discrimination mode %0'
 H1D217687F248: '無效的地址區分模式 %0'
 # "invalid alignment option in '#pragma %select{align|options align}0' - ignored"
@@ -23165,7 +23293,7 @@ H6F9BD80EC0BE: "在 %select{十進位|八進位|二進位}1 常量中發現無�
 # "invalid digit '%0' in escape sequence"
 HF729B18CD0D2: "轉義序列中的無效數字 '%0'"
 # "invalid escape sequence '%0' in an unevaluated string literal"
-HF58F976119B7: "在未評估的字串字面量中發現無效的轉義序列 '%0'"
+HF58F976119B7: "在未求值的字串字面量中發現無效的轉義序列 '%0'"
 # "invalid exception model '%select{none|sjlj|seh|dwarf|wasm}0' for target '%1'"
 H00FCEE8853CC: "目標 '%1' 的無效例外處理模型 '%select{none|sjlj|seh|dwarf|wasm}0'"
 # 'invalid expected %0: %1'
@@ -23176,6 +23304,8 @@ H98E01B807F8E: '捕獲的 lambda 中的無效顯式物件參數類型 %0；類�
 H607716F86E02: '捕獲的 lambda 中的無效顯式物件參數類型 %0；類型必須公開從 lambda 派生'
 # 'invalid extra discrimination selection %0'
 HAC5AAEAB2B1D: '無效的額外 discrimination 選擇 %0'
+# "invalid extra discriminator flag '%0'; '__ptrauth' requires a value between '0' and '%1'"
+HBC87DBE11994: "無效的額外區分標誌 '%0'；'__ptrauth' 需要介於 '0' 和 '%1' 之間的值"
 # 'invalid feature combination: %0'
 H53E34DDB7754: '無效的特性組合：%0'
 # 'invalid field is here'
@@ -23360,6 +23490,8 @@ H4B1AA82F67A0: '無效的驗證器版本：%0；驗證器版本格式為"<主要
 HD365448B0579: '無效的驗證器版本：%0；如果驗證器的主要版本為 0，次要版本也必須為 0'
 # 'invalid validator version : %0; validator version must be less than or equal to current internal version'
 HED613B352B91: '無效的驗證器版本：%0；驗證器版本必須小於或等於當前內部版本'
+# "invalid value %0 in '%1' clause; valid values are %2"
+H70463648CF58: "'%1' 子句中的值 %0 無效；有效值為 %2"
 # "invalid value '%1' in '%0'"
 H7E000E39503F: "無效值 '%1' 在 '%0'"
 # "invalid value '%1' in '%0', expected one of: %2"
@@ -23391,7 +23523,7 @@ H01E41C702CFA: '它轉發給'
 # 'it is possible to stop the benchmarking process after some phase'
 H3F4A63E67588: '您可以在某個 pass 階段後停止測試程序'
 # 'iterator step expression %0 evaluates to 0'
-H68A0F13C3B50: '迭代器步進運算式 %0 評估為 0'
+H68A0F13C3B50: '迭代器步進運算式 %0 求值為 0'
 # 'iterator step expression %0 is not the integral expression'
 H5E0FE51F5C8D: '迭代器步進運算式 %0 非整數運算式'
 # "ivar %0 which backs the property is not referenced in this property's accessor"
@@ -23606,8 +23738,8 @@ HCE669C9CA888: 'lcov 追蹤檔輸出'
 H00D9FE7F4F87: '左操作元的類型 %0 在複合指派時，與右操作元的類型 %1 混合時不能被截斷'
 # 'left hand operand to %0 must be a %select{|pointer to }1class compatible with the right hand operand, but is %2'
 HE8A81161D486: '%0 的左操作元必須與右操作元兼容的 %select{|指標到 }1類別，但實際是 %2'
-# "left hand side of assignment operation('%0') must match one side of the sub-operation on the right hand side('%1' and '%2')"
-HA99FEEFA45D5: "指派運算的左邊（'%0'）必須與右邊的子運算（'%1' 和 '%2'）其中一邊的類型一致"
+# 'left hand side of assignment operation(%0) must match one side of the sub-operation on the right hand side(%1 and %2)'
+HEDD23F979FED: '賦值運算的左側 (%0) 必須與右側子運算的其中一側 (%1 和 %2) 匹配'
 # 'left operand of comma operator has no effect'
 H1D36CC5E4D5A: '逗號運算子的左操作元無效'
 # 'left shift of negative value %0'
@@ -24825,7 +24957,7 @@ HEE95067001EB: '非void的%select{函數|方法}1 %0 應回傳值'
 # 'non-void block should return a value'
 H66594B013217: '非void的區塊應回傳值'
 # "nonnull %select{function call|parameter}0 '%1' will evaluate to 'true' on first encounter"
-H925BCFBBE426: "非空%select{函數呼叫|參數}0 '%1' 在首次遇到時將評估為 'true'"
+H925BCFBBE426: "非空%select{函數呼叫|參數}0 '%1' 在首次遇到時將求值為 'true'"
 # 'not a Doxygen trailing comment'
 HB02E938B9DEC: '不是Doxygen的尾注註解'
 # "not currently inside '#pragma clang arc_cf_code_audited'"
@@ -24876,8 +25008,6 @@ HE591548912FE: '執行緒數'
 H6D6640DAD12D: '具有使用者定義後綴的數值字面量在此處無法使用'
 # "nvcc does not allow '__%0__' to appear after the parameter list in lambdas"
 H052A23E5C9DE: "nvcc 不允許在 lambda 的參數清單後使用 '__%0__'"
-# 'nvptx-arch options'
-H195E97C080C6: 'nvptx-arch 選項'
 # 'obj2yaml Options'
 HDEB46CD09A6E: 'obj2yaml 選項'
 # 'objc_precise_lifetime is not meaningful for %select{__unsafe_unretained|__autoreleasing}0 objects'
@@ -24904,8 +25034,8 @@ H4465935A9154: '類型 %0 的物件無法進行比較，因為其 %1 被隱式�
 HD27A532EA3C9: '類型 %0 的物件無法存放在只讀記憶體中'
 # 'object of type %0 is not compatible with %select{array element type|dictionary key type|dictionary value type}1 %2'
 HBDF524B06F4F: '類型 %0 的物件與%select{陣列元素類型|字典鍵類型|字典值類型}1 %2 不相容'
-# "object whose reference is captured by '%0' will be destroyed at the end of the full-expression"
-H1329A74CEAA1: "被 '%0' 捕獲之參考的物件將在完整運算式結束時被銷毀"
+# 'object whose reference is captured by %0 will be destroyed at the end of the full-expression'
+H79F166A683BE: '由 %0 捕獲引用的物件將在完整的運算式結束時被銷毀'
 # 'object whose reference is captured will be destroyed at the end of the full-expression'
 H04404B93E557: '被捕獲之參考的物件將在完整運算式結束時被銷毀'
 # 'octal integer literals are a C2y extension'
@@ -24916,6 +25046,8 @@ H0A7A0AD8FA23: '八進位整數字面量是 Clang 的擴充功能'
 HFF58B98B1092: '八進位整數字面量與 C2y 之前的標準不相容'
 # "octal literals without a '0o' prefix are deprecated"
 H297C91C7799F: '未使用 "0o" 前綴的八進位字面量已被棄用'
+# 'offload-arch options'
+H7186B8C146CF: 'offload-arch 選項'
 # 'offset of asan shadow mapping [EXPERIMENTAL]'
 HB87160E3C269: 'ASan陰影映射的偏移 [實驗性]'
 # 'offset-based plaintext format'
@@ -25033,9 +25165,9 @@ H73F559724DF8: '需要算術或指標類型，但類型 %0 的運算元不符合
 # 'operands to conditional of types%diff{ $ and $|}0,1 are incompatible in ARC mode'
 HA7936DDDD636: '在 ARC 模式下，條件運算元的類型%diff{ $ 和 $|}0,1 不相容'
 # "operator '%0' has lower precedence than '%1'; '%1' will be evaluated first"
-H7655BF3550EE: "運算元 '%0' 的優先順序低於 '%1'；'%1' 將會先被評估"
+H7655BF3550EE: "運算元 '%0' 的優先順序低於 '%1'；'%1' 將會先被求值"
 # "operator '?:' has lower precedence than '%0'; '%0' will be evaluated first"
-HFCE2B46187B8: "運算元 '?:' 的優先順序低於 '%0'；'%0' 將會先被評估"
+HFCE2B46187B8: "運算元 '?:' 的優先順序低於 '%0'；'%0' 將會先被求值"
 # 'operators in fold expression must be the same'
 H1479CC2CDE54: '摺疊表達式中的運算元必須相同'
 # 'opt-like flags'
@@ -25159,7 +25291,7 @@ HF36747707003: '將 case 值轉換為 switch 條件類型（%0 到 %1）時溢�
 # 'overflow in expression; result is %0 with type %1'
 H5FE3FC44898D: '運算式溢位；結果為 %0，類型為 %1'
 # 'overlapping comparisons always evaluate to %select{false|true}0'
-H9631A49EAD2B: '重叠的比较始终評估為 %select{false|true}0'
+H9631A49EAD2B: '重叠的比较始终求值為 %select{false|true}0'
 # "overload resolution selected deleted operator '%0'%select{|: %2}1"
 HB844E51E83EA: "運算子重載決策選擇了已刪除的運算子 '%0'%select{|: %2}1"
 # 'overloaded %0 cannot be a static member function'
@@ -25204,6 +25336,8 @@ H7A3B62788722: '使用 %0 覆寫模組目標三元組'
 HD38E3F8D7591: '覆寫虛函數時必須指定與被覆寫函數相同的程式碼段'
 # 'p'
 H516B9783FCA5: 'p'
+# 'pac-ret: return address protection (subset of "pauth")'
+H35B2314AE83E: 'pac-ret：返回地址保護（pauth 的子集）'
 # 'pack declaration outside of template'
 HDF7BB0B67932: '模板外部的封包宣告'
 # 'pack expansion contains parameter pack %0 that has a different length (%1 vs. %select{|at least }2%3) from outer parameter packs'
@@ -25445,13 +25579,13 @@ H7583F9BA4C9F: '將所有元素數量超過 <size> 的陣列分配放在堆上'
 # 'place all array allocations of dynamic size on the heap'
 H1E67C0E84EC2: '將所有動態大小的陣列分配放在堆上'
 # 'place parentheses around comparison expression to evaluate it first'
-H1021BF49A48F: '在比較運算式外放置括號以優先評估它'
+H1021BF49A48F: '在比較運算式外放置括號以優先求值它'
 # 'place parentheses around the %0 expression to evaluate it first'
-HD79F2195D659: '在 %0 運算式外放置括號以優先評估它'
-# "place parentheses around the '%0' expression to silence this warning"
-H7195F835EC30: "在 '%0' 運算式外放置括號以消除此警告"
+HD79F2195D659: '在 %0 運算式外放置括號以優先求值它'
+# 'place parentheses around the %quoted0 expression to silence this warning'
+HFD7FB705EA72: '在 %quoted0 表達式周圍添加括號以抑制此警告'
 # "place parentheses around the '?:' expression to evaluate it first"
-H9605DB1A560A: "在 '?:' 運算式外放置括號以優先評估它"
+H9605DB1A560A: "在 '?:' 運算式外放置括號以優先求值它"
 # 'place parentheses around the assignment to silence this warning'
 HE705E4D071BD: '在賦值運算式外放置括號以消除此警告'
 # 'place parentheses around the string literal to silence warning'
@@ -25572,6 +25706,8 @@ HD0E4E0A8CB08: '優先採用尾部摺疊，若失敗則建立標量尾部。'
 HEA9A1D5F496C: '當雙源形式也符合更新形式時，應優先採用更新形式'
 # 'prefer_list item must be a string literal or constant integral expression'
 HCAFE9C287B6C: 'prefer_list 項目必須是字串常數或定值整數運算式'
+# 'preferred type for bit-field %0 specified here'
+H89CF4480AE9D: '在此處指定的 bit-field %0 的偏好類型'
 # "prefers tail-folding, don't attempt vectorization if tail-folding fails."
 H12E0DCDDA093: '優先採用尾部摺疊，若失敗則不嘗試向量化。'
 # 'prefix attribute must be followed by an interface, protocol, or implementation'
@@ -26075,7 +26211,7 @@ HDF1E1AF5B7B2: '接收端類型 %0 不是Objective-C類'
 # 'record profile for inter-function control flow activity (default: true)'
 HB3410F96E4B8: '記錄函數間控制流活動的剖析（預設：true）'
 # 'recursive evaluation of default argument'
-H9D22EE24805A: '預設參數的遞迴評估'
+H9D22EE24805A: '預設參數的遞迴求值'
 # 'recursive template instantiation exceeded maximum depth of %0'
 H9F7DB4D308D0: '模板實例化超過最大深度 %0'
 # "redeclaration cannot add 'loader_uninitialized' attribute"
@@ -26181,7 +26317,7 @@ HFAC2C332E9F4: '引用 %diff{到 %select{類型|不完整類型}1 $ 無法綁定
 # 'reference binding of non-type template parameter %diff{of type $ to template argument of type $|to template argument}0,1 ignores qualifiers'
 H093001BBE364: '非類型模板參數 %diff{類型 $ 到類型 $ 的模板參數|到模板參數}0,1 的引用綁定忽略修飾符'
 # 'reference cannot be bound to dereferenced null pointer in well-defined C++ code; comparison may be assumed to always evaluate to %select{true|false}0'
-H136F139EE8E6: '引用無法綁定到符合語法的C++程式碼中的解引用空指標；比較可能被假設始終評估為 %select{true|false}0'
+H136F139EE8E6: '引用無法綁定到符合語法的C++程式碼中的解引用空指標；比較可能被假設始終求值為 %select{true|false}0'
 # 'reference cannot be bound to dereferenced null pointer in well-defined C++ code; pointer may be assumed to always convert to true'
 H5320A7915E7F: '引用無法綁定到符合語法的C++程式碼中的解引用空指標；指標可能被假設始終轉換為 true'
 # 'reference cannot be initialized with multiple values'
@@ -26317,7 +26453,7 @@ HE9564BE7AF0F: "重複的RISC-V 'interrupt' 屬性"
 # "repeated RISC-V 'interrupt' attribute is here"
 H2C65B1A1835B: "重複的RISC-V 'interrupt' 屬性在此處"
 # 'repeated evaluation of the same literal expression can produce different objects'
-H816EF14DCA64: '對同一字面運算式的重複評估可能產生不同的物件'
+H816EF14DCA64: '對同一字面運算式的重複求值可能產生不同的物件'
 # "replace 'default' with 'delete'"
 H6143A5F8A323: "將 'default' 替換為 'delete'"
 # "replace expression with '%0' %select{|or use 'xor' instead of '^' }1to silence this warning"
@@ -26368,6 +26504,8 @@ HBB5542941955: "保留的定位符 'omp_all_memory' 不得指定超過一次"
 H98614BF4F5B5: "保留的定位符 'omp_all_memory' 需要 'out' 或 'inout' 依賴類型"
 # 'resolve all otherwise unresolved externals to null'
 H0D8FB57C5D95: '將所有未解決的外部符號解析為空值'
+# 'resource has implicit register binding'
+H2038E0629D14: '資源具有隱含的註冊綁定'
 # 'respect alignment requirements provided by input IR'
 H3C9B5ECCDE76: '尊重輸入 IR 提供的對齊需求'
 # 'restrict requires a pointer or reference'
@@ -26508,8 +26646,8 @@ HB7C873D08ECC: 'sampler_t 初始化需要 32 位元整數，而非 %0'
 H54F7785F9F3D: '需要 sampler_t 變數 - 獲取到 %0'
 # 'sanstats Options'
 H8526EFD0A943: 'sanstats 選項'
-# "satisfaction of constraint '%0' depends on itself"
-H3716B39C40C1: "限制條件 '%0' 的滿足取決於其自身"
+# 'satisfaction of constraint %0 depends on itself'
+H172A48B0FE13: '約束 %0 的滿足情況依賴自身'
 # 'save recorded profile to a file'
 H0DD7B7A894BB: '將記錄的剖析資料儲存至檔案'
 # 'scalar initialized from empty initializer list is incompatible with C++98'
@@ -26558,10 +26696,12 @@ HF3ADBC91450B: '__builtin_alloca_with_align的第二個參數應以位元為單�
 HB28F8D41E677: '__builtin_annotation的第二個參數必須是非寬字元常數'
 # 'second argument to __builtin_call_with_static_chain must be of pointer type'
 H9D3B291ADD1F: '__builtin_call_with_static_chain的第二個參數必須是指標類型'
+# "section argument to 'patchable_function_entry' attribute is not valid for this target: %0"
+HBEBC9A622C36: "'patchable_function_entry' 屬性的區段參數不適用於此目標：%0"
 # 'section attribute is specified on redeclared variable'
 H4BE9B9505588: 'section屬性指定在重新宣告的變數上'
 # 'section length is evaluated to a negative value %0'
-HDAA24A68E89D: 'section長度被評估為負值 %0'
+HDAA24A68E89D: 'section長度被求值為負值 %0'
 # 'section length is unspecified and cannot be inferred because subscripted value is %select{not an array|an array of unknown bound}0'
 HD324F8149A40: 'section長度未指定且無法推導，因為下標值是%select{非陣列|未知維度的陣列}0'
 # 'section of pointer to function type %0'
@@ -26569,7 +26709,7 @@ HDFC73840E7DC: 'section的指標指向函數類型 %0'
 # 'section of pointer to incomplete type %0'
 HFA4996C0EBB1: 'section的指標指向不完整類型 %0'
 # 'section stride is evaluated to a non-positive value %0'
-H2C7B2A05B911: 'section的間隔被評估為非正數 %0'
+H2C7B2A05B911: 'section的間隔被求值為非正數 %0'
 # 'see attribute on parameter here'
 HDD0675B1BF06: '參見此處參數上的屬性'
 # 'seed for randomization'
@@ -26605,7 +26745,7 @@ H13B288111B84: 'Setter和getter必須同時為合成，或同時為使用者定�
 # 'setter cannot be specified for a readonly property'
 H0B75386E5DBF: '不能為readonly屬性指定setter'
 # 'setting the floating point evaluation method to `source` on a target without SSE is not supported'
-H3CBE26190DE7: '在無SSE的目標上將浮點數評估方法設定為`source`不受支援'
+H3CBE26190DE7: '在無SSE的目標上將浮點數求值方法設定為`source`不受支援'
 # 'several methods with selector %0 of mismatched types are found for the @selector expression'
 H992F0A773FBB: '在@selector運算式中找到具有選擇子 %0 但類型不匹配的多個方法'
 # 'share stubs across functions'
@@ -26632,6 +26772,8 @@ HA588BE6E194B: '顯示配置文件密度細節'
 HF6C65D702470: '顯示修復後的區段內容'
 # 'signed bit-field %0 needs an extra bit to represent the largest positive enumerators of %1'
 HE118008121A9: '已符號的位段 %0 需要額外的位元來表示 %1 的最大正枚舉值'
+# 'signed bit-field %0 needs an extra bit to represent the largest positive enumerators of preferred type %1'
+H16B76E9FE00B: '有符號位段 %0 需要額外的位元來表示偏好的類型 %1 中最大的正枚舉值'
 # 'signed left shift discards bits'
 HD469BF80AF3C: '已符號的左位移會遺失位元'
 # 'signed shift result (%0) requires %1 bits to represent, but %2 only has %3 bits'
@@ -26854,14 +26996,14 @@ HF2CC0A1A3C82: '無法在匿名%select{結構|聯結體}0中宣告靜態成員'
 H1CCD7A0167D8: '在自身初始化時使用靜態變數 %0 可能有問題'
 # 'static_cast between pointer-to-function and pointer-to-object is a Microsoft extension'
 H747267A37B70: '將函式指標轉換為物件指標的static_cast是Microsoft的擴充功能'
+# 'std::%0 must be a class template with a single type parameter'
+HAA8558BD9D00: 'std::%0 必須是帶有單一類型參數的類模板'
 # "std::coroutine_handle isn't a class template"
 H20FD07579F32: 'std::coroutine_handle不是類模板'
 # "std::coroutine_handle must have a member named '%0'"
 HC01B7EC5D8D7: "std::coroutine_handle必須有一個名為 '%0' 的成員"
 # "std::coroutine_traits isn't a class template"
 H3D3F8F520E5F: 'std::coroutine_traits不是類模板'
-# 'std::initializer_list must be a class template with a single type parameter'
-H57E56532E11C: 'std::initializer_list必須是帶有一個型別參數的類模板'
 # 'std::nothrow must be a valid variable declaration'
 H81985EEDEA6B: 'std::nothrow 必須是有效的變數宣告'
 # 'std::nothrow was not found; include <new> before defining a coroutine which uses get_return_object_on_allocation_failure()'
@@ -27174,10 +27316,10 @@ HA776568AF253: '類型為 %0 的臨時物件具有 %select{private|protected}1 �
 H1578DBDB8944: '假設未定義的陣列定義有單一元素'
 # 'tentative definition has type %0 that is never completed'
 H2533423DBC92: '未定義的定義具有從未完成的類型 %0'
-# 'tentative definition of variable with internal linkage has incomplete non-array type %0'
-H137EE1AFC5D6: '具有內部綁定的變數的未定義定義具有不完整的非陣列類型 %0'
+# 'tentative definition of variable with internal linkage has incomplete %select{non-array|array}0 type %1'
+H23883C0A0522: '具有內部連結的不完整 %select{非陣列|陣列}0 類型 %1 的暫定定義'
 # 'tenths of percents of main entry frequency to use as a threshold when evaluating whether a basic block is cold (0 means it is only considered cold if the block has zero samples). Default: 0 '
-HB4A505AFFDA6: '在評估基本區塊是否為冷區塊時，用作閾值的主入口頻率的十分之一百分比（0表示僅當區塊的樣本為零時才視為冷區塊）。預設值：0 '
+HB4A505AFFDA6: '在求值基本區塊是否為冷區塊時，用作閾值的主入口頻率的十分之一百分比（0表示僅當區塊的樣本為零時才視為冷區塊）。預設值：0 '
 # "test module file extension '%0' has different version (%1.%2) than expected (%3.%4)"
 HD419260C8BE7: "測試模組檔案擴充名 '%0' 的版本 (%1.%2) 與期望的 (%3.%4) 不同"
 # 'the #__include_macros directive is only for internal use by -imacros'
@@ -27238,8 +27380,8 @@ H88A5B848CED9: "上下文屬性 '%0' 不適用於上下文選擇器 '%1' 和上�
 HDD6FFFA1FE6E: "上下文選擇器 '%0' 可以嵌套在上下文集合 '%1' 中；試用 'match(%1={%0%select{|(屬性)}2})'"
 # "the context selector '%0' in context set '%1' requires a context property defined in parentheses; selector ignored"
 H4359A48C4F70: "上下文集合 '%1' 中的選擇器 '%0' 需要在括號內定義屬性；選擇器被忽略"
-# "the context selector '%0' in the context set '%1' cannot have a score ('%2'); score ignored"
-H98F3D66A37F6: "上下文集合 '%1' 中的選擇器 '%0' 不能具有分數 ('%2')；分數被忽略"
+# "the context selector '%0' in the context set '%1' cannot have a score (%quoted2); score ignored"
+H3FAFFF7C5EF8: "上下文集 '%1' 中的上下文選擇器 '%0' 不可指定分數（%quoted2）；分數將被忽略"
 # "the context selector '%0' is not valid for the context set '%1'; selector ignored"
 HDF7A50F1E9D4: "上下文選擇器 '%0' 不適用於上下文集合 '%1'；選擇器被忽略"
 # "the coroutine promise type %0 declares both 'return_value' and 'return_void'"
@@ -27424,8 +27566,6 @@ HF896DD5CD9DB: '此函數無法是協程：%0 非類別'
 HAD42B5488901: "此函數無法是協程：%q0 無名為 'promise_type' 的成員"
 # 'this function cannot be a coroutine: missing definition of specialization %0'
 HFC5D41C5C0FA: '此函數無法是協程：缺少專屬定義 %0'
-# 'this is generally caused by modules with the same name found in multiple paths'
-HB435423839CE: '此問題通常由多個路徑中找到相同名稱的模組所引起'
 # 'this placement new expression is not supported in constant expressions %select{|before C++2c}0'
 HFED2CB8F9A5D: '此置位 new 運算式不支援在常量運算式中使用 %select{|於 C++2c 前}0'
 # 'this pragma cannot appear in %0 declaration'
@@ -27622,6 +27762,8 @@ H1178A958ED5C: '泛型關聯中的類型 %0 與先前指定的類型 %1 兼容'
 HCA8F3A82743E: '泛型關聯中的類型 %0 是可變長度修飾類型'
 # 'type %0 in generic association not an object type'
 H9CBDAFFFD0D2: '泛型關聯中的類型 %0 不是物件類型'
+# 'type %0 is already %1-qualified'
+HEAFB5CEE4F59: '類型 %0 已具有 %1 修飾符'
 # 'type %0 is incomplete'
 H68C687943CFB: '類型 %0 是不完整類型'
 # 'type %0 is not a direct or virtual base of %1'
@@ -27654,6 +27796,14 @@ H67EB09767F26: '無法將類型參數套用到已特化的類別類型 %0'
 H41CCF55FF38B: '無法將類型參數套用到非類別類型 %0'
 # 'type arguments cannot be applied to non-parameterized class %0'
 HC40C2F44A862: '無法將類型參數套用到非參數化類別 %0'
+# 'type aware %0 requires a matching type aware %select{|placement }1%2 to be declared in the same scope'
+H9C477E0B6856: '型別感知 %0 需要與型別感知 %select{|placement }1%2 在相同作用域中宣告並具有匹配型別'
+# 'type aware %0 will not be used for coroutine allocation'
+H5B38A9DE0EAE: '類型感知 %0 不會用於協程配置'
+# 'type aware allocators are a C++2c extension'
+H55565F6468B1: '型別感知配置器是 C++2c 扩展'
+# 'type aware allocators are incompatible with C++ standards before C++2c'
+H25EF1B0FAFC1: '型別感知配置器與 C++2c 之前的标准不相容'
 # 'type bound %0 for type parameter %1 conflicts with %select{implicit|previous}2 bound %3%select{for type parameter %5|}4'
 H7F10FC1165B9: '類型參數 %1 的類型限制 %0 與 %select{隱含的|先前的}2 限制 %3%select{對類型參數 %5|}4 冲突'
 # 'type bound %0 for type parameter %1 is not an Objective-C pointer type'
@@ -28076,6 +28226,8 @@ H8B8A3DBA2D6F: "未知的警告群組 '%0'"
 H9E42BAF52A2D: "未知警告群組 '%0'，已忽略"
 # "unknown%select{ | embed}0 preprocessor parameter '%1'"
 HD697EE356FF3: "未知%select{ | 嵌入}0 前處理參數 '%1'"
+# 'unmatched type aware %0 declared here'
+HD5E243D80237: '未匹配的型別感知 %0 在此處宣告'
 # 'unnamed enumeration must be a definition'
 H4B9605BBAC49: '未命名的列舉必須是定義'
 # 'unnamed type as template argument is incompatible with C++98'
@@ -28258,6 +28410,8 @@ H25381B224554: '改用 __bridge 與 C 風格轉換進行直接轉換（不改變
 H89038B186CBF: '使用 __bridge_retained 與 C 風格轉換讓 ARC 物件可作為 +1 %0 的可用物件'
 # 'use __bridge_transfer with C-style cast to transfer ownership of a +1 %0 into ARC'
 H0BF38DCCAF48: '使用 __bridge_transfer 與 C 風格轉換將 +1 %0 的擁有權轉移給 ARC'
+# "use a custom address at which new code will be put, bypassing BOLT's logic to detect where to put code"
+H8BE27E21C6B2: '使用自訂地址存放新程式碼，繞過 BOLT 檢測程式碼存放位置的邏輯'
 # "use a function's hot size when doing clustering"
 H10032CBF870F: '進行群集化時使用函數的 hot size'
 # 'use a lock file so only one process in the system can run this pass at once. useful to avoid mangled debug output in multithreaded environments.'
@@ -28405,7 +28559,7 @@ HF5A1B33A1986: '在單一using宣告中使用多個宣告符與C++17之前的標
 # "use of non-standard escape character '\\%0'"
 H8F21313E1DFF: "使用非標準轉義字元 '\\%0'"
 # 'use of non-static data member %0 in an unevaluated context is incompatible with C++98'
-H47868E15CED8: '在未評估的語境中使用非靜態資料成員 %0 與C++98標準不相容'
+H47868E15CED8: '在未求值的語境中使用非靜態資料成員 %0 與C++98標準不相容'
 # 'use of null pointer as non-type template argument is incompatible with C++98'
 H6944D3B803C2: '將空指標用作非類型模板參數與 C++98 不相容'
 # 'use of old-style cast'
@@ -28652,8 +28806,8 @@ HEE231707A80F: '具有可伸縮陣列成員的變數 %0 不能在 lambda 表達�
 HECE6754B3154: '類型為 %1 的變數 %0 的初始值設定項具有不相容的類型 %2'
 # 'variable %0 with unknown type cannot be given a function type'
 HBD6B0E34602F: '類型未知的變數 %0 不可賦予函式類型'
-# "variable %select{|in unary expression|on right hand side of assignment|on left hand side of assignment|on left hand side of compound assignment|on left hand side of assignment}2('%3') must match variable used %select{|in unary expression|on right hand side of assignment|<not possible>|on left hand side of compound assignment|on left hand side of assignment}0('%1') from the first statement"
-H68D8E5C8B649: "%select{|一元運算式|賦值運算式的右操作元|賦值運算式的左操作元|複合賦值運算式的左操作元|賦值運算式的左操作元}2('%3') 中的變數必須與第一個語句中使用的 %select{|一元運算式|賦值運算式的右操作元|<not possible>|複合賦值運算式的左操作元|賦值運算式的左操作元}0('%1') 所對應的變數一致"
+# 'variable %select{|in unary expression|on right hand side of assignment|on left hand side of assignment|on left hand side of compound assignment|on left hand side of assignment}2(%3) must match variable used %select{|in unary expression|on right hand side of assignment|<not possible>|on left hand side of compound assignment|on left hand side of assignment}0(%1) from the first statement'
+HA70BF8F524C0: '變數 %select{|在單一運算式|在賦值運算式右側|在賦值運算式左側|在複合賦值運算式左側|在賦值運算式左側}2(%3) 必須與第一個語句中使用的變數 %select{|在單一運算式|在賦值運算式右側|<not possible>|在複合賦值運算式左側|在賦值運算式左側}0(%1) 匹配'
 # 'variable already marked as mapped in current construct'
 HA15930719644: '當前建構中已標記此變數為已映射'
 # "variable appearing in '%0' clause of OpenACC 'declare' directive must be in the same scope as the directive"

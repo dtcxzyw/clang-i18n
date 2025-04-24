@@ -384,10 +384,6 @@ H4649232301DD: '%0 はカーネル パラメータの型として使用できま
 H223FE9046675: '%0 は %1 に橋渡しできません'
 # '%0 cannot have a dependent return type; use %1 instead'
 H622C863D5758: '%0 は依存する戻り型を使用できません; %1 を代わりに使用してください'
-# '%0 cannot take a dependent type as first parameter; use %1 instead'
-HA474A1ABAD69: '%0 は最初のパラメータとして依存する型を受け付けません; %1 を代わりに使用してください'
-# '%0 cannot take a dependent type as first parameter; use size_t (%1) instead'
-H54AA7CDA647F: '%0 は最初のパラメータとして依存する型を受け付けません; size_t (%1) を代わりに使用してください'
 # "%0 cannot use 'super' because it is a root class"
 HCB7FBC7D0FE7: "%0 はルートクラスであるため 'super' を使用できません"
 # '%0 causes a section type conflict with %1'
@@ -436,6 +432,8 @@ H833E3DFEF469: '%0 はパラメータパックの名前を指していません�
 H0775C84F5711: "「%0」は '%1' %select{型修飾子|ストレージクラス仕様}2 をサポートしていません"
 # "%0 does not support the option '%1'"
 HCC61DEFC8375: '%0 はオプション "%1" をサポートしていません'
+# '%0 evaluates to a null function pointer'
+H8F92FCB5C04A: '%0 は null 関数ポインタに評価されます'
 # '%0 has C-linkage specified, but returns incomplete type %1 which could be incompatible with C'
 H36CF04C5AD21: '%0 はCリンケージが指定されていますが、不完全な型 %1 を返し、Cとの互換性がなくなる可能性があります'
 # '%0 has C-linkage specified, but returns user-defined type %1 which is incompatible with C'
@@ -612,8 +610,6 @@ HF9706A398326: '%0は、%1を%2に変換するためにはObjective-Cクラス�
 H593384CDC4FD: '%0は、宣言のどこかで指定されている場合、定義でも指定する必要があります'
 # '%0 must be used within a preprocessing directive'
 HAA08D126AF16: '%0はプリプロセスディレクティブ内で使用する必要があります'
-# '%0 must have at least one parameter'
-H2488FE597801: '%0は少なくとも1つのパラメータを必要とします'
 # "%0 must not appear in both clauses 'to' and 'link'"
 HC3403F617C92: '%0は「to」句と「link」句の両方に出現してはなりません'
 # '%0 must return type %1'
@@ -664,8 +660,6 @@ HD6330A6C968B: '%0 は "throw()" %select{|または "noexcept"}1 として宣言
 HC155B92BBDDE: '%0 サイズが大きすぎます'
 # '%0 specified here'
 H2793186BA8E0: '%0 はここに指定されています'
-# '%0 takes type size_t (%1) as first parameter'
-H994A3A678C5B: '%0 の最初のパラメータは size_t (%1) 型です'
 # '%0 template must have at least two parameters'
 HC33714C2985B: '%0 テンプレートは少なくとも2つのパラメータを必要とします'
 # '%0 type %1 not found; include the base header with -finclude-default-header'
@@ -692,6 +686,8 @@ HC0632CD5FF96: "%0 は AST ファイル '%3' で %select{無効化|有効化}1 �
 H39D399F5AEF8: '%0 は逆シリアル化されました'
 # '%0 was marked unused but was used'
 H40B831F8FB51: '%0 は未使用とマークされていましたが使用されました'
+# '%0 will return the size of the pointer, not the array itself'
+H8CFDDD42E21F: '%0 はポインタのサイズを返し、配列自体のサイズではありません'
 # '%0%select{ attribute|}1 cannot be applied to a base specifier'
 H11035A3B905C: '%0%select{ 属性|}1 はベース指定子に適用できません'
 # '%0%select{ attribute|}1 cannot be applied to a declaration'
@@ -742,6 +738,8 @@ HF0E3AF42C5DD: '%ordinal0 引数はWebAssemblyテーブルでなければなり�
 HB74677AB0CCF: '%ordinal0 引数は整数でなければなりません'
 # '%ordinal0 argument must match the element type of the WebAssembly table in the %ordinal1 argument'
 HCC6BF06B970F: '%ordinal0 引数は%ordinal1 引数のWebAssemblyテーブルの要素型と一致する必要があります'
+# '%ordinal3 parameter of%select{| type aware}0%select{| destroying}1 %2 must have type %4'
+H2E6F520064CE: '%select{|型認識}0%select{|破棄}1 %2 の%ordinal3引数は%4型でなければなりません'
 # '%plural{1:enumeration value %1 not explicitly handled in switch|2:enumeration values %1 and %2 not explicitly handled in switch|3:enumeration values %1, %2, and %3 not explicitly handled in switch|:%0 enumeration values not explicitly handled in switch: %1, %2, %3...}0'
 HE8DAC9A52D87: '%plural{1:switchで明示的に処理されていない列挙値%1|2:switchで明示的に処理されていない列挙値%1と%2|3:switchで明示的に処理されていない列挙値%1、%2、および%3|:%0 個の列挙値がswitchで明示的に処理されていません：%1、%2、%3...}0'
 # '%plural{1:enumeration value %1 not handled in switch|2:enumeration values %1 and %2 not handled in switch|3:enumeration values %1, %2, and %3 not handled in switch|:%0 enumeration values not handled in switch: %1, %2, %3...}0'
@@ -816,6 +814,8 @@ H48AF719C5841: '%select{%2はサブオブジェクトが存在する|%3の型%2�
 H229282294F90: '%select{%diff{値$を$に代入しています|異なる型への代入}1,0|%diff{パラメータの型$に値$を渡しています|異なる型のパラメータへの渡し}0,1|%diff{関数の戻り値型$から値$を返却しています|戻り値型が異なる関数からの返却}0,1|%diff{型$を型$に変換しています|型間の変換}0,1|%diff{式の型$で型$を初期化しています|異なる型の式による初期化}0,1|%diff{パラメータの型$に値$を送信しています|異なる型のパラメータへの送信}0,1|%diff{型$を型$にキャストしています|型間のキャスト}0,1}2のネストポインタのアドレス空間が変化します'
 # '%select{%diff{assigning $ to $|assigning to different types}1,0|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2 changes address space of pointer'
 H34858D5559B9: '%select{%diff{値$を$に代入しています|異なる型への代入}1,0|%diff{パラメータの型$に値$を渡しています|異なる型のパラメータへの渡し}0,1|%diff{関数の戻り値型$から値$を返却しています|戻り値型が異なる関数からの返却}0,1|%diff{型$を型$に変換しています|型間の変換}0,1|%diff{式の型$で型$を初期化しています|異なる型の式による初期化}0,1|%diff{パラメータの型$に値$を送信しています|異なる型のパラメータへの送信}0,1|%diff{型$を型$にキャストしています|型間のキャスト}0,1}2のポインタのアドレス空間が変化します'
+# '%select{%diff{assigning $ to $|assigning to different types}1,0|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2 changes pointer authentication of pointee type'
+H8986390D3B16: '%select{%diff{ポインタ認証の対象型が異なる$を$に代入|assigning to different types}1,0|%diff{引数$に異なる型のパラメータ$を渡す|passing to parameter of different type}0,1|%diff{戻り値の型$と異なる$を関数から返却|returning from function with different return type}0,1|%diff{型$への変換|converting between types}0,1|%diff{型$の式で$を初期化|initializing with expression of different type}0,1|%diff{パラメータ$に異なる型の$を送信|sending to parameter of different type}0,1|%diff{型$へのキャスト|casting between types}0,1}2 はポインタ認証の対象型を変更します'
 # '%select{%diff{assigning $ to $|assigning to different types}1,0|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2 changes retain/release properties of pointer'
 HCD0B002FCAD8: '%select{%diff{値$を$に代入しています|異なる型への代入}1,0|%diff{パラメータの型$に値$を渡しています|異なる型のパラメータへの渡し}0,1|%diff{関数の戻り値型$から値$を返却しています|戻り値型が異なる関数からの返却}0,1|%diff{型$を型$に変換しています|型間の変換}0,1|%diff{式の型$で型$を初期化しています|異なる型の式による初期化}0,1|%diff{パラメータの型$に値$を送信しています|異なる型のパラメータへの送信}0,1|%diff{型$を型$にキャストしています|型間のキャスト}0,1}2のポインタのretain/releaseプロパティが変更されます'
 # "%select{%diff{assigning to $ from $|assigning to different types}0,1|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2 converts between pointers to integer types %select{with different sign|where one is of the unique plain 'char' type and the other is not}3"
@@ -910,24 +910,24 @@ HE09C48EB126A: '%select{すべての|3番目と4番目の}0 引数 %1 は互換�
 H561F9F6DB91B: '%select{属性仕様シーケンス|%0}1 はこの位置での C++23 の拡張機能です'
 # '%select{an attribute specifier sequence|%1}0 in this position is incompatible with C++ standards before C++23'
 HEF130F97BB12: '%select{属性仕様シーケンス|%1}0 は C++23 より前の標準では互換しません'
+# '%select{and|because}0 %1 (%2 %3 %4) evaluated to false'
+H66E1D07D582D: '%select{および|なぜなら}0 %1 (%2 %3 %4) の評価結果が false になりました'
 # '%select{and|because}0 %1 does not satisfy %2'
 H1152B396A251: '%select{および|理由として}0 %1 は %2 を満たしません'
 # '%select{and|because}0 %1 does not satisfy %2:'
 H7FDA8323151A: '%select{および|理由として}0 %1 は %2 を満たしません:'
-# "%select{and|because}0 '%1' (%2 %3 %4) evaluated to false"
-H5A2EAB383E7A: "%select{および|理由として}0 '%1' (%2 %3 %4) の評価結果が false です"
-# "%select{and|because}0 '%1' evaluated to false"
-HD9EC26C0E6B0: "%select{および|理由として}0 '%1' の評価結果が false です"
-# "%select{and|because}0 '%1' may throw an exception"
-HA87D7335D9EB: "%select{および|理由として}0 '%1' は例外を送出します"
+# '%select{and|because}0 %1 evaluated to false'
+H26D0E6409D84: '%select{および|なぜなら}0 %1 の評価結果が false になりました'
+# '%select{and|because}0 %1 may throw an exception'
+H22182AFC34C5: '%select{および|なぜなら}0 %1 は例外を送出する可能性があります'
 # "%select{and|because}0 '%1' would be invalid"
 HAD3CC48247E5: "%select{および|理由として}0 '%1' は無効となります"
 # "%select{and|because}0 '%1' would be invalid%2"
 HEF46AC24BE27: "%select{および|なぜなら}0 '%1' は無効になる%2"
 # "%select{and|because}0 '%1' would be invalid: %2"
 HD3831227C190: "%select{および|なぜなら}0 '%1' は無効になるため: %2"
-# "%select{and|because}0 type constraint '%1' was not satisfied:"
-HD561B1DB876A: "%select{および|なぜなら}0 型制約 '%1' が満たされませんでした:"
+# '%select{and|because}0 type constraint %1 was not satisfied:'
+H0831E4850047: '%select{および|なぜなら}0 型制約 %1 が満たされませんでした:'
 # '%select{anonymous struct|union}0 member %1 has a non-trivial %select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}2'
 H443C398B6494: '%select{匿名構造体|ユニオン}0 メンバ %1 は非自明な %select{デフォルトコンストラクタ|コピーコンストラクタ|ムーブコンストラクタ|コピー代入演算子|ムーブ代入演算子|デストラクタ}2 を持っています'
 # '%select{anonymous struct|union}0 member %1 with a non-trivial %select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}2 is incompatible with C++98'
@@ -1058,8 +1058,8 @@ H3C92D92BB26F: '%select{デフォルト構築|代入}0 ラムダはC++20以前�
 HF80E1E94C448: '%select{%1のデフォルトコンストラクタ|匿名ユニオンメンバーの}0 %select{全データメンバ|データメンバ}2 がconst修飾されているため、暗黙に削除されました'
 # '%select{default constructor of|constructor inherited by}0 %1 is implicitly deleted because field %2 of %select{reference|const-qualified}4 type %3 would not be initialized'
 H3F45472DFCD6: '%select{のデフォルトコンストラクタ|継承されたコンストラクタ}0 %1 は、%select{reference|const-qualified}4 型 %3 のフィールド %2 が初期化されないため暗黙的に削除されました'
-# '%select{default constructor of|copy constructor of|move constructor of|copy assignment operator of|move assignment operator of|destructor of|constructor inherited by}0 %1 is implicitly deleted because %select{base class %3|%select{||||variant }4field %3}2 %select{has %select{no|a deleted|multiple|an inaccessible|a non-trivial}4 %select{%select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor|%select{default|corresponding|default|default|default}4 constructor}0|destructor}5%select{||s||}4|is an ObjC pointer}6'
-H1BB10C6BA0EA: '%select{のデフォルトコンストラクタ|コピーコンストラクタ|ムーブコンストラクタ|代入演算子|ムーブ代入演算子|デストラクタ|継承されたコンストラクタ}0 %1 は、%select{基底クラス %3|%select{||||variant }4フィールド %3}2 %select{が%select{存在しない|削除済み|複数存在する|非公開|非トレイシー}4 %select{%select{デフォルトコンストラクタ|コピーコンストラクタ|ムーブコンストラクタ|代入演算子|ムーブ代入演算子|デストラクタ|%select{デフォルト|対応する|デフォルト|デフォルト|デフォルト}4 コンストラクタ}0|デストラクタ}5%select{||s||}4|ObjC ポインタです}6 のため暗黙的に削除されました'
+# "%select{default constructor of|copy constructor of|move constructor of|copy assignment operator of|move assignment operator of|destructor of|constructor inherited by}0 %1 is implicitly deleted because %select{base class %3|%select{||||variant }4field %3}2 %select{has %select{no|a deleted|multiple|an inaccessible|a non-trivial}4 %select{%select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor|%select{default|corresponding|default|default|default}4 constructor}0|destructor}5%select{||s||}4|is an ObjC pointer|has an address-discriminated '__ptrauth' qualifier}6"
+H8B06D5202BF4: "%select{%sのデフォルトコンストラクタ|コピーコンストラクタ|ムーブコンストラクタ|コピー代入演算子|ムーブ代入演算子|デストラクタ|継承したコンストラクタ}0 %1 は、%select{基底クラス %3|%select{||||variant }4フィールド %3}2 の%select{が %select{存在しません|削除されています|複数存在します|非公開です|非単純です}4 %select{%select{デフォルトコンストラクタ|コピーコンストラクタ|ムーブコンストラクタ|コピー代入演算子|ムーブ代入演算子|デストラクタ|%select{デフォルト|対応する|デフォルト|デフォルト|デフォルト}4 コンストラクタ}0|デストラクタ}5%select{||s||}4|ObjC ポインタです| '__ptrauth' のアドレス判別修飾子を持ちます}6 のため暗黙的に削除されました"
 # "%select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}0 cannot be 'constexpr' in a class with virtual base class"
 HAA0AD1F4C5AC: "仮想基底クラスを持つクラスでは、%select{デフォルトコンストラクタ|コピー コンストラクタ|ムーブ コンストラクタ|代入演算子|ムーブ代入演算子|デストラクタ}0 は 'constexpr' にできません"
 # '%select{defaulted|deleted}0 function definitions are a C++11 extension'
@@ -1248,6 +1248,8 @@ HA353FC8D883A: "%select{非構造体型|非クラス型|非ユニオン型|非�
 H7895E4BCBED9: '%select{非仮想|仮想}0継承ここ'
 # "%select{non-|function }0pointer argument to '__builtin_is_within_lifetime' is not allowed"
 HEC6E2A0FBA29: "%select{非|関数 }0ポインタ引数の'%__builtin_is_within_lifetime'は許可されません"
+# '%select{non-|}0type aware %1 declared here in %2'
+HC09774CA5903: '%select{非型|}0修飾の%1が%2内でここに宣言されています'
 # "%select{no|too many}0 integer expression arguments provided to OpenACC 'num_gangs' %select{|clause: '%1' directive expects maximum of %2, %3 were provided}0"
 HDF54FE517944: "%select{0|過剰}0の整数式引数がOpenACC 'num_gangs' %select{|句'%1'ディレクティブは最大%2を受け付けますが、%3が提供されました}0に渡されました"
 # "%select{orphaned 'omp section' directives are prohibited, it|'omp section' directive}0 must be closely nested to a sections region%select{|, not a %1 region}0"
@@ -1340,6 +1342,8 @@ HDAB148B74E30: '%select{reinterpret_cast|Cスタイルキャスト}0 による%1
 H1688ED0E5178: '%select{reinterpret_cast|dynamic_cast|%select{this conversion|cast that performs the conversions of a reinterpret_cast}1|cast from %1}0 は定数式内で使用できません%select{| (C++20未満)||}0'
 # '%select{remainder|division}0 by zero is undefined'
 HDDF6DBF3AFB2: '%select{余り|除算}0 をゼロで実行することは未定義です'
+# "%select{return type|parameter type|property}1 may not be qualified with '__ptrauth'; type is %0"
+H89CAD73DCBC0: "%select{戻り値型|パラメータ型|プロパティ}1 には '__ptrauth' 記法を指定できません; 型は %0 です"
 # '%select{returning|passing}0 a VL-dependent argument %select{from|to}0 a function with a different streaming-mode is undefined behaviour when the streaming and non-streaming vector lengths are different at runtime'
 HD835E99E7B94: '%select{戻す|渡す}0 VL依存の引数%select{から|へ}0 ストリーミングモードの異なる関数間での操作は、実行時のストリーミングと非ストリーミングベクターレングスが異なる場合、未定義動作です'
 # '%select{returning|passing}0 a VL-dependent argument %select{from|to}0 a locally streaming function is undefined behaviour when the streaming and non-streaming vector lengths are different at runtime'
@@ -1414,6 +1418,8 @@ H7C0418F179E9: '%select{型タグ|引数}0のインデックス%1は指定され
 H7F72DD3ED811: '%select{typedef|type alias|type alias template}0の再定義では異なる型が指定されています%diff{ ($2 vs $1)|}1,2'
 # '%select{uninitialized use occurs|variable is captured by block}0 here'
 H80571A54148A: '%select{未初期化の使用がここに発生|ブロックで変数がキャプチャされました}0'
+# "%select{unknown|duplicate}0 modifier %1 in OpenACC modifier-list on '%2' clause"
+H8603FBD5B2C6: "OpenACC の '%2'句の修飾子リストに%select{未知の|重複の}0修飾子 %1 が指定されました"
 # '%select{unknown|unsupported}0 machine mode %1'
 HB579643BB1CB: '%select{不明な|非対応の}0マシンモード %1'
 # '%select{unsafe pointer operation|unsafe pointer arithmetic|unsafe buffer access|function introduces unsafe buffer manipulation|unsafe invocation of %1|field %1 prone to unsafe buffer manipulation}0'
@@ -1492,6 +1498,14 @@ H00E98F1D44F7: '%select{|2つ目の }0%1トークンはここ'
 HD806C936F5D9: '%select{|static_cast|reinterpret_cast|dynamic_cast|C-style cast|functional-style cast|}0 %1 から %2 へのキャストで削除された関数を使用しています%select{|: %4}3'
 # '%select{|success |failure }0memory order argument to atomic operation is invalid'
 HFAC869D2863E: '%select{|成功 |失敗 }0原子操作のメモリオーダー引数が無効です'
+# '%select{|type aware }0%select{|destroying }1%2 cannot take a dependent type as its %ordinal3 parameter; use %4 instead'
+H965362A13DF2: '%select{|型認識 }0%select{|破棄 }1%2 の%ordinal3引数は依存型を受け付けません; %4 を使用してください'
+# '%select{|type aware }0%select{|destroying }1%2 cannot take a dependent type as its %ordinal3 parameter; use %5 (%4) instead'
+H8DC61B9CED29: '%select{|型認識 }0%select{|破棄 }1%2 の%ordinal3引数は依存型を受け付けません; %5 (%4) を使用してください'
+# '%select{|type aware }0%select{|destroying }1%2 must have at least %select{|one|two|three|four|five}3 parameter%s3'
+HDBF7BEA2895C: '%select{|型認識 }0%select{|破棄 }1%2 は少なくとも%select{|1|2|3|4|5}3つのパラメータ%s3が必要です'
+# '%select{|type aware }0%select{|destroying }1%2 takes type %5 (%4) as %ordinal3 parameter'
+HCA17F3BCF987: '%select{|型認識 }0%select{|破棄 }1%2 の%ordinal3引数は型 %5 (%4) を取ります'
 # "%select{|umbrella }0header '%1' not found"
 H3FDB64D57A92: '%select{|アンバrella }0ヘッダーファイル "%1" が見つかりません'
 # '%select{|unsafe_unretained|strong|weak}1 property %0 may not also be declared %select{|__unsafe_unretained|__strong|__weak|__autoreleasing}2'
@@ -1650,8 +1664,6 @@ H5EA2B901E3DD: "'%0' にはGCCインストールが含まれません"
 H5F193B6442A3: "'%0' は '-%1' をサポートしていません; フラグが無視されました"
 # "'%0' does not support '-moutline'; flag ignored"
 H8FCF49E8EFFE: "'%0' は '-moutline' をサポートしていません; フラグが無視されました"
-# "'%0' evaluates to a null function pointer"
-HC166C9B46BC9: "'%0' はNULL関数ポインタとして評価されました"
 # "'%0' file not found"
 HE40852833202: "'%0' ファイルが見つかりません"
 # '\'%0\' file not found with <angled> %select{include|import}1; use "quotes" instead'
@@ -1790,8 +1802,6 @@ H6C8DA523F6B3: "'%0'は常にオーバーフローします; バッファサイ�
 H6A8E065AE173: "'%0' は常にオーバーフローします; 宛先バッファのサイズは%1ですが、サイズ引数は%2です"
 # "'%0' will always overflow; destination buffer has size %1, but the source string has length %2 (including NUL byte)"
 H4E1F13141ECB: "'%0' は常にオーバーフローします; 宛先バッファのサイズは%1ですが、ソース文字列の長さは%2（ヌルバイトを含む）です"
-# "'%0' will return the size of the pointer, not the array itself"
-H10D34141626D: "'%0' は配列自体ではなくポインタのサイズを返します"
 # "'%0' within '%1'"
 HFD060F45F3E4: "'%0' は'%1'の内部で使用されています"
 # "'%0': selected processor lacks floating point registers"
@@ -2002,6 +2012,12 @@ HA19FB1CE432F: "'__leave'文は__tryブロック外では使用できません"
 H0B1BBFD1CDEA: '__local変数には初期化子を指定できません'
 # "'__pixel' must be preceded by '__vector'.  '%0' declaration specifier not allowed here"
 H88B3B9C40157: "__pixelは__vectorの前に置く必要があります。ここでの宣言仕様子'%0'は使用できません"
+# "'__ptrauth' qualification mismatch%diff{ ($ and $)|}0,1"
+H6E0E8F990A99: "'__ptrauth' 記法の不一致%diff{ ($ と $)|}0,1"
+# "'__ptrauth' qualifier must take between 1 and 3 arguments"
+HD53DD31D4F33: "'__ptrauth' 記法には1から3つの引数が必要です"
+# "'__ptrauth' qualifier only applies to pointer types; %0 is invalid"
+H7B0BBE1DC52F: "'__ptrauth' 記法はポインタ型にのみ適用できます; %0 は無効です"
 # "'__super' cannot be used with a using declaration"
 HE7865E9E15F7: '__superはusing宣言と併用できません'
 # "'__thread' before '%0'"
@@ -2064,6 +2080,8 @@ H5112D2E8FE1B: '「callback」属性の引数%0は、既知の関数パラメー
 H11C2E7DC48A0: '「callback」属性の呼び出し元には関数型がありません'
 # "'callback' attribute callee may not be variadic"
 H5339D3799089: '「callback」属性の呼び出し元は可変長関数です'
+# "'callback' attribute references function of type %0 which expects %1 %plural{1:argument|:arguments}1 but attribute specifies %2 parameter index %plural{1:argument|:arguments}2"
+HE68D93E84E5E: "'callback' 属性が %0 型の関数を参照していますが、この関数は%1 %plural{1:引数|:引数}1 を必要とします。属性で指定されたパラメータインデックスは%2 %plural{1:引数|:引数}2 です"
 # "'callback' attribute specifies invalid callback callee"
 HAE51B1A6C397: '「callback」属性が無効なコールバック呼び出し元を指定しています'
 # "'callback' attribute specifies no callback callee"
@@ -2276,6 +2294,8 @@ H60F2BCD19874: '「nonmonotonic」修飾子は「dynamic」または「guided」
 H0D4CBB499E30: 'ポインタ引数のない関数に「nonnull」属性が適用されました'
 # "'nonnull' attribute when used on parameters takes no arguments"
 H8544A5398585: 'パラメータに「nonnull」属性を使用する場合、引数は必要ありません'
+# "'not_tail_called' attribute prevents being called as a tail call"
+HD566EBB2A50E: "'not_tail_called'属性はテールコールとして呼び出されることを防ぎます"
 # "'nothrow' attribute conflicts with exception specification; attribute ignored"
 HA43C7748DBD1: '「nothrow」属性は例外指定と競合しています; 属性は無視されました'
 # "'nowait' clause is here"
@@ -2460,8 +2480,8 @@ HE4633A40CE28: "'this' ポインタは、明確に定義されたC++コードで
 H95FED6FF2C73: "ヌード関数では'this'ポインタへの参照は許可されていません"
 # "'trivial_abi' cannot be applied to %0"
 H39CEA0BB8E5A: "'trivial_abi' は%0に適用できません"
-# "'trivial_abi' is disallowed on %0 because %select{its copy constructors and move constructors are all deleted|it is polymorphic|it has a base of a non-trivial class type|it has a virtual base|it has a __weak field|it has a field of a non-trivial class type}1"
-HD222FF73C208: "'trivial_abi' は%0に適用できない理由: %select{コピーコンストラクタとムーブコンストラクタがすべて削除されています|ポリモーフィックである|非自明なクラス型の基底クラスを有する|仮想基底を有する|__weakフィールドを有する|非自明なクラス型のフィールドを有する}1"
+# "'trivial_abi' is disallowed on %0 because %select{its copy constructors and move constructors are all deleted|it is polymorphic|it has a base of a non-trivial class type|it has a virtual base|it has a __weak field|it has a field of a non-trivial class type|it has an address-discriminated '__ptrauth' field}1"
+HF2341EAAEAEC: "'trivial_abi'は%0に適用できません。理由: %select{コピー コンストラクタとムーブ コンストラクタがすべて削除されています|ポリモーフィック型です|非単純なクラス型の基底クラスを持ちます|バーチャル基底を持ちます|__weakフィールドを持ちます|非単純なクラス型のフィールドを持ちます|アドレス区別付きの'__ptrauth'フィールドを持ちます}1"
 # "'true' is not defined, evaluates to 0"
 HEC6C8880A6A3: "'true' は定義されておらず、0として評価されます"
 # "'type_tag_for_datatype' attribute requires the initializer to be an %select{integer|integral}0 constant expression"
@@ -2836,6 +2856,8 @@ H652DA545BF0D: '全サンプルカウントが指定されたパーセンタイ�
 H3FD0C1E415AD: 'グローバルであると想定される関数名。これには興味深いグラフのルートとして扱われ、他の類似したグラフとは独立してプロファイリングされます。'
 # 'A huge scheduling region will have maps reduced by this many nodes at a time. Defaults to HugeRegion / 2.'
 HAEEA6B54FAD5: '巨大スケジューリング領域のマップは、この数のノードずつ削減されます。デフォルトはHugeRegion / 2です。'
+# 'A key=value pair. Replace __nvvm_reflect(name) with value.'
+H3D02297FABD7: 'キー=値のペア。__nvvm_reflect(name)を値で置き換えます'
 # 'A lexical block (Function, Class, etc.).'
 HC41EB530ACBA: '語彙的ブロック（Function、Classなど）。'
 # "A list of mangled vtable type info names. Classes specified by the type info names and their derived ones will not be vtable-ICP'ed. Useful when the profiled types and actual types in the optimized binary could be different due to profiling limitations. Type info names are those string literals used in LLVM type metadata"
@@ -2896,10 +2918,8 @@ H104573A3D1B6: '--polly-default-tile-size で埋められた各ループ次元�
 H8DEB87E7711B: '--polly-register-tile-size で埋められた各ループ次元のタイルサイズです。'
 # 'A tool to bundle several input files of the specified type <type> \nreferring to the same source file but different targets into a single \none. The resulting file can also be unbundled into different files by \nthis tool if -unbundle is provided.\n'
 HD409DEDBF7C5: '同じソースファイルを指すが異なるターゲット向けの複数の入力ファイルを、一つにバンドルするツールです。\nこのツールに -unbundle を指定することで、バンドルされたファイルを再び個別のファイルに分解することもできます。\n'
-# 'A tool to detect the presence of AMDGPU devices on the system. \n\nThe tool will output each detected GPU architecture separated by a\nnewline character. If multiple GPUs of the same architecture are found\na string will be printed for each\n'
-H8EA7CFE7591E: 'システムに存在する AMDGPU デバイスを検出するツールです。\n\n検出された各 GPU アーキテクチャは改行文字で区切られ出力されます。同じアーキテクチャの複数の GPU が見つかった場合、それぞれの文字列が表示されます。\n'
-# 'A tool to detect the presence of NVIDIA devices on the system. \n\nThe tool will output each detected GPU architecture separated by a\nnewline character. If multiple GPUs of the same architecture are found\na string will be printed for each\n'
-H813C62D59D1D: 'システムに存在する NVIDIA デバイスを検出するツールです。\n\n検出された各 GPU アーキテクチャは改行文字で区切られ出力されます。同じアーキテクチャの複数の GPU が見つかった場合、それぞれの文字列が表示されます。\n'
+# 'A tool to detect the presence of offloading devices on the system. \n\nThe tool will output each detected GPU architecture separated by a\nnewline character. If multiple GPUs of the same architecture are found\na string will be printed for each\n'
+H1DF8966C5917: 'システムに存在するオフローディングデバイスを検出するツール。\n\n検出された各GPUアーキテクチャを改行文字で区切って出力します。同じアーキテクチャのGPUが複数ある場合、各々の文字列を出力します'
 # 'A tool to format C/C++/Java/JavaScript/JSON/Objective-C/Protobuf/C# code.\n\nIf no arguments are specified, it formats the code from standard input\nand writes the result to the standard output.\nIf <file>s are given, it reformats the files. If -i is specified\ntogether with <file>s, the files are edited in-place. Otherwise, the\nresult is written to the standard output.\n'
 HBD33E3D62435: 'C/C++/Java/JavaScript/JSON/Objective-C/Protobuf/C# のコードを整形するツールです。\n\n引数が指定されていない場合、標準入力からコードを整形し標準出力に結果を出力します。\n<file> を指定するとファイルを整形します。-i を一緒に指定するとファイルを直接上書きします。そうでない場合は標準出力に結果を出力します。\n'
 # 'A tool to generate an optimization report from YAML optimization record files.\n'
@@ -3138,8 +3158,6 @@ HD58C1F70322E: '.note.gnu.property with BTIをアセンブリファイルに追�
 H497BB320D249: '.note.gnu.property with BTIをアセンブリファイルに追加する（AArch64のみ）'
 # 'Add <dir> to system include search path, as if in %INCLUDE%'
 H8CB70533A0CD: 'システムのインクルード検索パスに<dir>を追加します。%INCLUDE%にある場合と同じように'
-# 'Add AMDGPU function attributes'
-H4A9EBA76009C: 'AMDGPU関数属性を追加する'
 # 'Add AMDGPU uniform metadata'
 HE950C74F7CBF: 'AMDGPU uniformメタデータを追加する'
 # 'Add C++ implicit destructors to CFGs for all analyses'
@@ -3336,6 +3354,8 @@ H2B37E4881B6D: '--threads-xの別名'
 HAAA114F8EC1E: '--unsymbolized-profileの別名'
 # 'Alias for -Xclang'
 HCD7F2ECE0041: '-Xclangの別名'
+# 'Alias for -Xclangas'
+H132AA9B77570: '-Xclangasのエイリアス'
 # 'Alias for -all-stacks'
 HBF7B049FB306: '-all-stacksの別名'
 # 'Alias for -check-prefix permitting multiple comma separated values'
@@ -3418,6 +3438,8 @@ H4F2747860017: 'Intelのマイクロコード更新（errata skx102対策）に�
 H93CADD3D554F: 'アライメント調整されたアロケーション/ディアルロケーション関数は利用できません'
 # 'Alignment of bundle for binary files'
 H746C20CFEB90: 'バンドルのアライメント (バイナリファイル用)'
+# 'All Pointer Authentication scanners'
+HE5781D397620: 'すべてのポインタ認証スキャナ'
 # "All compile commands come from LSP and 'compile_commands.json' files are ignored"
 H35E96D7E99B1: 'すべてのコンパイルコマンドはLSPから取得し、"compile_commands.json"ファイルは無視されます'
 # "All compile commands come from the 'compile_commands.json' files"
@@ -3432,6 +3454,8 @@ H8494FD0B179D: 'replayに含まれないすべての決定を元のアドバイ�
 HA0232E12FF85: 'すべてのエッジ'
 # 'All elements.'
 HD1FF88F0C212: 'すべての要素'
+# 'All implemented scanners'
+HC6B3DAC5AC10: '実装済みのすべてのスキャナ'
 # 'All input lines'
 HAA2659CBF3BE: 'すべての入力行'
 # 'All known subsections'
@@ -3450,14 +3474,16 @@ H5309722D6033: '適切な変数にはTOC データ変換が適用されます'
 H69D2DF6DECC5: 'vtable すべてに型情報がある'
 # 'All warnings.'
 H294EA62DA621: 'すべての警告。'
-# 'Allocate all arrays of unknown size and temporary arrays in stack memory'
-H3AE89D60479D: '不明なサイズの配列と一時配列をすべてスタックメモリに配置'
+# 'Allocate -frepack-arrays temporaries on the heap (default)'
+H23DD0FDC2602: '-frepack-arrays一時配列をヒープに配置（デフォルト）'
 # 'Allocate array temporaries on the heap (default)'
 HF192F6B25D6C: '配列の一時領域をヒープに配置（既定値）'
 # 'Allocate from a slab of the given size (allowable suffixes: Kb, Mb, Gb. default = Kb)'
 H8D1230E33C0D: '指定サイズのスラブから確保（許容される接尾辞: Kb, Mb, Gb. 既定値はKb）'
 # 'Allocate memory upfront rather than on-demand'
 H067B160BE7A4: '必要に応じるのではなく事前にメモリを確保'
+# 'Allocate temporary arrays for -frepack-arrays in stack memory'
+H60EEEE1BB97A: '-frepack-arraysの一時配列をスタックメモリに配置'
 # 'Allocate to an enum type only as many bytes as it needs for the declared range of possible values'
 H5482421F99A5: 'enum 型には、宣言された値範囲に必要なだけバイト数を割り当てる'
 # "Allow '$' in identifiers"
@@ -3616,6 +3642,8 @@ HB6DC09C0C648: '非厳密な定義に対して、Attributorが浅いラッパー
 H2595BA1E26D0: 'Attributorがコールサイト固有の解析を行うことを許可します。'
 # 'Allow the Attributor to use IP information derived from non-exact functions via cloning'
 H0E8CFBCDE797: 'クローン経由で非厳密関数から得られたIP情報を使用することをAttributorに許可します。'
+# 'Allow the compiler to assume that each translation unit has a unique source file name at link time'
+H43C1574D99AB: '各翻訳単位がリンカ時における一意のソースファイル名を仮定することを許可'
 # 'Allow the detection of full functions'
 H6DD82ED565A3: '完全な関数の検出を許可します。'
 # 'Allow the formation of VW_W operations (e.g., VWADD_W) with splat constants'
@@ -3870,6 +3898,8 @@ H40EE5717199D: '分散ループが参加チームよりも多くの反復をし�
 H63C989F614F3: '細粒度メモリ上でアトミック操作がないと仮定します'
 # 'Assume no atomic operations on remote memory'
 H0DEE4D7E8196: 'リモートメモリ上でアトミック操作がないと仮定します'
+# 'Assume that UAVs/SRVs may alias'
+HCF25B628FDEC: 'UAV/SRVがアリエス可能であると仮定'
 # "Assume that exception objects' destructors are non-throwing"
 HA13DECB16694: '例外オブジェクトのデストラクタは例外を投げないと仮定します'
 # 'Assume that execution stops at trap instruction'
@@ -3916,6 +3946,8 @@ H08A666FD7289: '関数にデバッグ情報を付与する'
 HED658EC60D0F: 'すべてのものにデバッグ情報を付与する'
 # 'Attempt coalescing during PBQP register allocation.'
 H7648F369F9C7: 'PBQPレジスタ割り当て中にレジスタ結合を試みる'
+# 'Attempt to allocate array temporaries created under -frepack-arrays on the stack'
+HB0B7FBFAAEA5: '-frepack-arraysの一時配列をスタックに配置する試みを許可'
 # 'Attempt to allocate array temporaries on the stack, no matter their size'
 H1898E5AD9AA7: '配列の一時変数をスタック上に配置するように試みる（サイズに関係なく）'
 # 'Attempt to drop solution if it is less profitable'
@@ -4322,6 +4354,8 @@ H8D990FD681E2: 'レジスタクラスのAllocationPriorityを、範囲がグロ�
 HD4EADD7ABB24: '可変長呼び出し規約を変更'
 # 'Check CFA info and insert CFI instructions if needed'
 HB1FAB917FF49: 'CFA情報のチェックを行い、必要に応じてCFI命令を挿入'
+# 'Check all diagnostics (expected, unexpected, near-misses)'
+HDD500F45AE52: 'すべての診断をチェック（期待/非期待/近接ミス）'
 # 'Check debug info from -debugify'
 H8AF6D59AB27A: '-debugifyからデバッグ情報のチェック'
 # 'Check debug info from -debugify-function'
@@ -4344,6 +4378,8 @@ H105B69431A40: '不明なブロックに対してブロック周波数がクエ�
 HA0A80D536062: '入力の異種アーキビのTargetIDルールに基づく有効性をチェック'
 # 'Check module hash using the argument as a string table'
 H43F3CCEA9F64: '引数を文字列テーブルとして使用して、モジュールハッシュをチェック'
+# 'Check only expected diagnostics'
+H1D795C0D9F5F: '期待される診断のみをチェック'
 # 'Check pointer authentication auth/resign failures'
 HBEEB7E32E077: 'ポインタ認証のauth/resign失敗をチェック'
 # 'Check stack-use-after-scope'
@@ -4878,6 +4914,8 @@ H6E851EAFE0D8: 'DWO出力ファイル名'
 H7800E8E1E097: 'DXContainerグローバル発行者'
 # 'DXIL Array Flattener'
 H8F82D482C158: 'DXIL配列フラットナー'
+# 'DXIL CBuffer Access'
+HD94C3B98AA6B: 'DXIL CBuffer アクセス'
 # 'DXIL Data Scalarization'
 H8CA416EED877: 'DXILデータスカラライゼーション'
 # 'DXIL Finalize Linkage'
@@ -5622,8 +5660,6 @@ HB0977BC6B970: 'sext.w削除を無効化'
 H484EAB4F216F: '符号拡張命令の削除を無効化'
 # 'Disable replace with vector math call pass'
 HC8A504A99877: 'ベクターマスコール置換パスを無効化'
-# "Disable retain SubstTemplateTypeParmType nodes in the AST's representation of alias template specializations"
-H7BAFBB14B677: 'エイリアステンプレート固有化のAST表現におけるSubstTemplateTypeParmTypeノードの保持を無効化'
 # 'Disable sanitizer coverage instrumentation for modules and functions that match the provided special case list, even the allowed ones'
 H8AE573AF38D9: '特別なケースリストに一致するモジュールや関数（許可されたものも含む）に対するsanitizerカバレッジインストルメンテーションを無効化'
 # 'Disable sanitizer metadata for modules and functions that match the provided special case list'
@@ -5850,8 +5886,6 @@ H1C82DB59E408: 'movt/movw ペアの使用を禁止 (ARM 専用)'
 H613CDE699EC0: '16進バイトの文字列を逆アセンブル'
 # 'Disassembler Options'
 H4DCD7C09D805: 'ディアセンブラー オプション'
-# 'Disassembler options'
-H44D3EF88EF05: 'ディアセンブラー オプション'
 # 'Discard names from Value (other than GlobalValue).'
 H742AC63D224D: 'GlobalValue 以外の Value から名前を削除'
 # 'Discard value names in LLVM IR'
@@ -6016,6 +6050,8 @@ H80E0CE8F43D2: 'LR レジスタを汎用使用ではなく、呼び出し専用�
 HC4FB93EDAFBC: 'どのサンイザラもを対象としたハンドラのマージをコンパイラに許可しない'
 # 'Do not allow compiler to merge handlers for specified sanitizers'
 H14D0727FA9D4: '指定されたサンイザラもを対象としたハンドラのマージをコンパイラに許可しない'
+# 'Do not allow the compiler to assume that each translation unit has a unique source file name at link time'
+H4A0AFFA269DA: '各翻訳単位がリンカ時における一意のソースファイル名を仮定しないように制限'
 # 'Do not assume C++ operator new may not return NULL'
 H1F6F59A37FC5: 'C++ のオペレータ new が NULL を返さないことを想定しない'
 # 'Do not assume that any loop is finite.'
@@ -6162,6 +6198,8 @@ HDB8A084545A8: '破損したlifetime zonesの最適化を行わない'
 H5B1E0C37199B: '.gcovファイルを出力しない'
 # 'Do not override toolchain to compile HIP source to relocatable'
 H67099DA33091: 'HIPソースをリロケータブルにコンパイルするためにツールチェーンを上書きしない'
+# 'Do not pack non-contiguous assumed shape dummy arrays into contiguous memory'
+HCB4D2BF8E235: '非連続仮想形状ダミー配列を連続メモリにパックしないようにする'
 # 'Do not place constants in the .rodata section instead of the .sdata if they meet the -G <size> threshold (MIPS)'
 H21A91E9ACB5C: '-G <サイズ> の閾値を満たす場合、.rodataセクションではなく.sdataセクションに定数を配置しない（MIPS限定）'
 # 'Do not preserve comments in inline assembly'
@@ -6334,6 +6372,8 @@ H618F1A05266D: '関数名のデマングルをしない'
 HD22256B8D923: 'ブロックシグネチャーストリングを無効にしない'
 # "Don't disable features used for crash debugging (crash reports, llvm-symbolizer and core dumps)"
 HA02320B35AF6: 'クラッシュデバッグ用の機能 (クラッシュレポート、llvm-symbolizer、コアダンプ) を無効にしない'
+# "Don't disable freeing of memory on exit"
+HE9E8ABFA5D70: '終了時にメモリ解放を無効化しない'
 # "Don't discard temporary labels"
 H59AD35796471: '一時ラベルを破棄しない'
 # "Don't display class definitions"
@@ -6596,6 +6636,8 @@ H5DEA08F3B824: '現在の作業ディレクトリにモジュールをダンプ�
 H0F661C11A2F3: '指定された場合、YAML形式で新しいファイルの内容をダンプします。'
 # 'Dump provenance'
 H0B7FC19C4E7C: 'プロvenience情報をダンプ'
+# 'Dump ranges of deserialized declarations to use as bug minimization hints'
+HABFDC2505B83: '逆シリアル化された宣言の範囲をバグ最小化のヒントとしてダンプします'
 # 'Dump record layout information'
 H1A9181305386: 'レコードのレイアウト情報をダンプ'
 # 'Dump record layout information for all complete types'
@@ -6982,6 +7024,8 @@ HD6132B919401: '指定されたコンビナーを出力'
 HE5D98DDE9AE9: '.debug$Hセクションにタイプレコードハッシュを出力'
 # "Emit verbose output about the analyzer's progress"
 HF03ADA31D285: '分析器の進行状況に関する詳細な出力を行う'
+# 'Emit x8 as fp instead of s0'
+H88FD472C55F8: 'x8をfpとして出力し、s0の代わりにする'
 # 'Emit xray_fn_idx section'
 HCE1B25AEB13C: 'xray_fn_idx セクションを生成します'
 # 'Emits more virtual tables to improve devirtualization'
@@ -7324,8 +7368,6 @@ H2602C065FC54: '診断メッセージでの色使用を有効にする'
 H0FC588FEB00A: 'コマンドライン引数の round-trip (往復) を有効にする'
 # 'Enable commoning of GEP instructions'
 H21E18391E092: 'GEP命令のコモンイングを有効にする'
-# 'Enable communicating debuginfo positions through iterators, eliminating intrinsics. Has no effect if --preserve-input-debuginfo-format=true.'
-H99F0E8039EFB: 'イテレーターを通じてデバッグ情報の位置を伝達し、組み込み関数を削除する機能を有効にする。--preserve-input-debuginfo-format=trueの場合、効果なし。'
 # 'Enable conflict detection in loop-access analysis'
 H9866609C7AAA: 'ループ アクセス分析での競合検出を有効にする'
 # 'Enable consecutive memop optimization in AArch64PostLegalizerCombiner'
@@ -7694,8 +7736,6 @@ H1C98545F997D: '実行時にrelocatingカウンタを再配置する'
 HA60D39957FD6: 'ターゲットGPUがサポートしない機能を使用する関数を削除する'
 # 'Enable required s_wait_alu on SGPR hazards'
 H5931DB0CC40E: 'SGPRハザードに対する必須のs_wait_aluを有効にする'
-# "Enable retain SubstTemplateTypeParmType nodes in the AST's representation of alias template specializations"
-HB02FA0B87AE4: 'エイリアステンプレート特化のAST表現におけるSubstTemplateTypeParmTypeノードを保持する'
 # 'Enable rewrite partial reg uses pass'
 HC2E09FB1800A: '部分レジスタ使用の書き換えパスを有効にする'
 # 'Enable runtime checks for stack overflow.'
@@ -8870,6 +8910,8 @@ HB3B0D51C372C: 'Clang診断互換性IDを生成'
 HFF484ABCD39B: 'Clangのselect用診断enumを生成します'
 # 'Generate Clang diagnostic groups'
 HD491E8E3F838: 'Clang診断グループを生成します'
+# 'Generate Clang diagnostic interface headers'
+HC78769A357D2: 'Clang診断インターフェースのヘッダーを生成します'
 # 'Generate Clang diagnostic name index'
 H26D83AD60FA3: 'Clang診断名インデックスを生成します'
 # 'Generate Clang diagnostics definitions'
@@ -8890,8 +8932,8 @@ H93E694C37FB8: 'Interface Stubファイルを生成します'
 H63A1CBFF2B95: 'perf itrace引数を使用してLBR情報を生成'
 # 'Generate M NOPs before function entry'
 H411052747AED: '関数エントリ直前にM NOPを生成'
-# 'Generate M NOPs before function entry and N-M NOPs after function entry'
-HCAAC0B0CBF62: '関数エントリ直前にM NOPを生成し、エントリ後にはN-M NOPを生成'
+# 'Generate M NOPs before function entry and N-M NOPs after function entry. If section is specified, use it instead of __patchable_function_entries.'
+H4A7E3BFEB46A: '関数エントリの前にM NOPを生成し、関数エントリ後にN-M NOPを生成します。sectionが指定されている場合、__patchable_function_entriesの代わりに使用します。'
 # 'Generate Metal library'
 H30181B8F806A: 'Metalライブラリを生成'
 # 'Generate Offload API header contents'
@@ -9822,6 +9864,8 @@ H843E2B29FDA6: 'デバイス上で適用可能なすべての関数をインラ�
 HBFFBF85B1F6E: '早期にすべての関数をインライン化します'
 # "Inline cold call sites in profile loader if it's beneficial for code size."
 H86BDD048441C: 'プロファイルローダー内の非頻繁なコールサイトをコードサイズに有益な場合にインライン化します。'
+# 'Inline expressions that are used only once rather than generating a let-binding'
+HBC10ADACCD0B: '1回だけ使用される式をlet-bindingを生成する代わりにインライン化します'
 # 'Inline functions as deemed beneficial by the compiler'
 H648E731FB641: 'コンパイラが有益と判断した関数をインライン化します'
 # 'Inline functions which are (explicitly or implicitly) marked inline'
@@ -9908,6 +9952,8 @@ H071F81C54D78: '/guard:ehcont 用の有効なターゲットにシンボルを�
 H893CAC606686: '実験的な`assertalign`ノードを挿入'
 # 'Insert vsetvlis before vmvNr.vs to ensure vtype is valid and vill is cleared'
 H0091B7D0D6C7: 'vtypeの有効性とvillクリアを保証するため、vmvNr.vsの前にvsetvliを挿入'
+# 'InstPrinter options'
+HFBC5B2731840: 'InstPrinter オプション'
 # 'Instantiate templates already while building a PCH'
 H9EE0E3239942: 'PCH構築時にテンプレートを事前に展開'
 # 'Instead of emitting the pipelined code, annotate instructions with the generated schedule for feeding into the -modulo-schedule-test pass'
@@ -10104,8 +10150,8 @@ H1B7F78E6F996: 'LLVM IR類似度可視化ツール\n'
 H6A5AC73C091C: 'LLVM OpenMP'
 # 'LLVM PDB Dumper\n'
 HD0867800CD16: 'LLVM PDBダンプツール\n'
-# 'LLVM automatic testcase reducer.\n'
-HF2C9C9289AA4: 'LLVM 自動テストケース削減ツール。\n'
+# 'LLVM automatic testcase reducer.\nSee https://llvm.org/docs/CommandGuide/llvm-reduce.html for more information.\n'
+HD6FE445BE8E3: 'LLVM自動テストケースリデューサー。\n詳細は https://llvm.org/docs/CommandGuide/llvm-reduce.html を参照してください。\n'
 # 'LLVM automatic testcase reducer. See\nhttp://llvm.org/cmds/bugpoint.html for more information.\n'
 H28E8E607A645: 'LLVM 自動テストケース削減ツール。詳細は\nhttp://llvm.org/cmds/bugpoint.html を参照してください。\n'
 # 'LLVM code coverage tool\n'
@@ -10278,6 +10324,10 @@ H7CCE9D08A2A1: '必要なシンボルのみをリンク'
 H0C4B76743142: 'System Z でバックチェーンを通じてスタック フレームをリンク'
 # 'Link the LLVM C Library for GPUs'
 HD105C9964C21: 'GPU 用の LLVM C ライブラリをリンク'
+# 'Link the flang-rt shared library'
+H92B8D27A2242: 'flang-rt共有ライブラリをリンクします'
+# 'Link the flang-rt static library'
+H31D4E54E52D3: 'flang-rt静的ライブラリをリンクします'
 # 'Link the following file lazily'
 HB68406E1D5AC: '指定されたファイルを遅延リンクします'
 # 'Link the given bitcode file before performing optimizations.'
@@ -10996,6 +11046,8 @@ H4E1E23E6B24B: '同じステートメント内のアクセスされた参照を�
 H6449013A03CB: '使用箇所を確認せずにすべてのconstグローバルをマージ'
 # 'Merge and hoist M0 initializations'
 H2D268DBDEF86: 'M0の初期化をマージして上位に持ち上げる'
+# 'Merge clones before assigning functions'
+H18C7B017FA56: '関数を割り当てる前にクローンを統合します'
 # 'Merge context profiles before calculating thresholds.'
 H1C9DF3097EF8: 'しきい値を計算する前にコンテキストプロファイルをマージ'
 # 'Merge context sample profiles whose count is below cold threshold'
@@ -11120,6 +11172,10 @@ H9F5185006F74: 'モジュロ スケジューリング テスト パス'
 HC40B97D6B9FA: 'モジュロ ソフトウェア ピペットライン'
 # 'Move ARGUMENT instructions for WebAssembly'
 H688758DE208F: 'WebAssembly用にARGUMENT命令を移動'
+# 'Move contextual profiling roots and the graphs under them in their own module.'
+HC78C448BC37B: 'コンテキストプロファイリングルートとそれらの下にあるグラフをそれぞれのモジュールに移動します。'
+# 'Move the symbols with the given name. This will delete these symbols wherever they are originally defined, and make sure their linkage is External where they are imported. It is meant to be used with the name of contextual profiling roots.'
+H50A29B7AC907: '指定された名前のシンボルを移動します。これにより、これらのシンボルが元に定義された場所から削除され、インポートされる場所でリンクがExternalになるように保証されます。これはコンテキストプロファイリングルートの名前と組み合わせて使用するためのものです。'
 # 'Move/duplicate certain instructions close to their use'
 HD38286726698: '特定の命令をその使用箇所に近づけて移動または複製'
 # 'Multiplier to apply to threshold when determining whether or not to fold branch to common destination when vector operations are present'
@@ -11488,8 +11544,12 @@ H83B563F0FFD8: '指定されたプレフィックスを持つ命令のみを一�
 HC54ECBB9C757: '最大カウント値が閾値未満の関数の名前のみを出力する'
 # 'Only precompile the input'
 H8B49F001F9E2: '入力を事前コンパイルのみ行う'
+# 'Only print AMD GPUs'
+HAEAFB4C4A2F4: 'AMD GPUのみを表示します'
 # 'Only print IR for functions whose name match this for all print-[before|after][-all] options'
 HBF4D64D1868D: 'print-[before|after][-all] オプションのすべてのケースにおいて、名前が一致する関数のIRのみを出力する'
+# 'Only print NVIDIA GPUs'
+HA8E45EB5D306: 'NVIDIA GPUのみを表示します'
 # 'Only print to a depth of N elements.'
 HFC218BA7E9C0: '要素数Nまでの深さでのみ出力する'
 # 'Only process files that match this filter. This flag only applies to all-TUs.'
@@ -11558,6 +11618,8 @@ H89C2A6721B4D: '出力が変更された場合のみ書き込みます。'
 H82DD0380BC4C: '出力ファイルが変更された場合のみ書き込みます。'
 # "OpenACC %select{clause '%1'|directive '%2'|sub-array bound}0 requires expression of integer type (%3 invalid)"
 H24F0AB7B1FF3: "OpenACC %select{句 '%1'|ディレクティブ '%2'|サブ配列境界}0は整数型の式を必要とします (%3 が無効)"
+# "OpenACC '%0' clause cannot appear more than once%select{| in a 'device_type' region}2 on a '%1' directive"
+H5BA479702441: "OpenACC '%0'句は'%1'ディレクティブにおいて%select{| 'device_type'領域内}2で複数回出現できません"
 # "OpenACC '%0' clause cannot appear on the same '%2' construct as a '%1' clause %select{inside a compute construct with a|and a}3 'num_gangs' clause with more than one argument"
 H86F6667DC7E5: "OpenACC '%0' 句は '%2' コンストラクトで '%1' 句%select{コンピュート構造内の|と}3 'num_gangs' 句（引数が複数の場合）と同時に使用できません"
 # "OpenACC '%0' clause on a 'declare' directive is not allowed at global or namespace scope"
@@ -11570,6 +11632,8 @@ HA5F584B3696E: "OpenACC '%0' コンストラクトには終了条件が必要で
 H5108FA0063F8: "OpenACC '%0' コンストラクトには少なくとも1つの %1 句が必要です"
 # "OpenACC '%0' construct must have initialization clause in canonical form ('var = init' or 'T var = init')"
 HB6396996D535: "OpenACC '%0' 変数の初期化句は正規形式('var = init'または'T var = init')でなければなりません"
+# "OpenACC '%0' modifier not valid on '%1' clause"
+H3160CD5E4802: "OpenACCの'%0'修飾子は'%1'句で有効ではありません"
 # "OpenACC '%0' variable must monotonically increase or decrease ('++', '--', or compound assignment)"
 H4842B31AA1BD: "OpenACC '%0' 変数は単調増加または単調減少する必要があります('++', '--',または複合代入演算子)"
 # "OpenACC '%1' clause %select{|with more than 1 argument }0may not appear on a '%2' construct with a '%3' clause%select{ with more than 1 argument|}0"
@@ -11582,6 +11646,8 @@ H226495157F78: "OpenACC '%1' 句は '%0' ディレクティブには無効です
 H9E597FA760BB: "OpenACC 'bind' 句は宣言で前回のbind句と同名のバインド先を指定する必要があります"
 # "OpenACC 'collapse' clause loop count must be a %select{constant expression|positive integer value, evaluated to %1}0"
 HF187F732137C: "OpenACC 'collapse' 句のループカウントは%select{定数式|正の整数値（%1に評価される）}0でなければなりません"
+# "OpenACC 'device_type' clause on a 'set' construct only permits one architecture"
+HB63E35D8A787: "OpenACC 'routine'構文は、各'device_type'に対して'gang'、'seq'、'vector'、または'worker'句の少なくとも1つを含む必要があります"
 # "OpenACC 'gang' clause may have at most one %select{unnamed or 'num'|'dim'|'static'}0 argument"
 HC064C4557CFE: "OpenACC 'gang' 句は%select{名前なしまたは'num'|'dim'|'static'}0引数を1つまで指定できます"
 # "OpenACC 'reduction' composite variable must not have non-scalar field"
@@ -11592,18 +11658,22 @@ HD35F9CAD567D: "OpenACC 'reduction' 変数はスカラ型の複合体でなけ�
 HEC7D1B479B8F: "OpenACC 'reduction' 変数はスカラ型、サブ配列、またはスカラ型の複合体でなければなりません;%select{|サブ配列ベース}1の型は%0です"
 # "OpenACC 'reduction' variable must have the same operator in all nested constructs (%0 vs %1)"
 H28C388119D4E: "OpenACC 'reduction' 変数はネストしたコンストラクト全体で同一の演算子を使用する必要があります (%0 vs %1)"
+# "OpenACC 'routine' construct must have at least one 'gang', 'seq', 'vector', or 'worker' clause that applies to each 'device_type'"
+H32818FCDE6B7: "OpenACC 'routine'構文には、各'device_type'に適用される'gang'、'seq'、'vector'、または'worker'句のうち少なくとも1つが必要です"
 # "OpenACC 'routine' directive with a name refers to a function with the same name as the function on the following line; this may be unintended"
 H18CDEE7EFD75: "OpenACC 'routine' ディレクティブの名前指定は、次の行の関数と同じ名前の関数を指しています。意図しない可能性があります"
 # "OpenACC 'tile' clause size expression must be %select{an asterisk or a constant expression|positive integer value, evaluated to %1}0"
 HA638C30812B2: "OpenACC 'tile' 句のサイズ式は%select{アスタリスクまたは定数式|正の整数値（%1に評価される）}0でなければなりません"
 # "OpenACC 'update' construct may not appear in place of the statement following a%select{n if statement| while statement| do statement| switch statement| label statement}0"
 H3E931AFE1E4E: "OpenACCの'update'構造体は、%select{n if文| while文| do文| switch文| ラベル文}0の後のステートメントの代わりに使用できません"
+# "OpenACC clause '%0' after 'device_type' clause on a 'routine' conflicts with the '%1' clause before the first 'device_type'"
+HA93644C02FFF: "OpenACC 'routine'ディレクティブの'%0'句は、同じ'device_type'に適用される'%1'句と衝突します"
 # "OpenACC clause '%0' may not appear on the same construct as a '%1' clause on a '%2' construct"
 HFD5E5BF152EC: "OpenACCの句'%0'は、'%2'構造体の'%1'句と同じ構造体で使用できません"
 # "OpenACC clause '%0' may not follow a '%1' clause in a '%2' construct"
 H3810BDC5F66B: "OpenACCの'%2'構造体において、'%0'句は'%1'句の後に続くことはできません"
-# "OpenACC clause '%0' on '%1' construct conflicts with previous data dependence clause"
-HD0EC8D82D89C: "OpenACCの'%1'構造体における'%0'句は、以前のデータ依存性句と衝突します"
+# "OpenACC clause '%0' on a 'routine' directive conflicts with the '%1' clause applying to the same 'device_type'"
+H672EE4A10B1D: "OpenACC 'routine'ディレクティブの'%0'句は、同じ'device_type'に適用される'%1'句と競合しています"
 # "OpenACC clause name '%0' is a deprecated clause name and is now an alias for '%1'"
 H0277741A1F9D: "OpenACCの句名'%0'は非推奨の句名であり、現在'%1'のエイリアスです"
 # "OpenACC construct '%0' cannot be used here; it can only be used in a statement context"
@@ -11612,14 +11682,16 @@ HCF6F4162FC42: "OpenACCの構造体'%0'はここでは使用できません。�
 H861502AB5841: "OpenACC構造体 'routine' に暗黙の関数が未実装のため、pragma が無視されました"
 # "OpenACC construct 'self' has no effect when an 'if' clause evaluates to true"
 H4B8F857AB30C: "OpenACCの構造体'self'は、'if'句がtrueを評価した場合、効果はありません"
+# 'OpenACC directives will result in no runtime behavior; use -fclangir to enable runtime effect'
+H106A424B384D: 'OpenACCディレクティブは実行時の動作を生成しません；実行時効果を有効にするには-fclangirを指定してください'
 # 'OpenACC integer expression has incomplete class type %0'
 H5F66C1830606: 'OpenACCの整数式には未完了のクラス型%0があります'
 # 'OpenACC integer expression requires explicit conversion from %0 to %1'
 H20507033806F: 'OpenACCの整数式は%0から%1への明示的な変換が必要です'
-# "OpenACC routine name '%0' does not name a function"
-H5802CAE72248: "OpenACCのルーチン名'%0'は関数を指定していません"
-# "OpenACC routine name '%0' names a set of overloads"
-HEC7D774C632B: "OpenACCのルーチン名'%0'はオーバーロードの一連を指定しています"
+# 'OpenACC routine name %0 does not name a function'
+H38F10B674F17: 'OpenACCルーチン名%0は関数を指定していません'
+# 'OpenACC routine name %0 names a set of overloads'
+H417FD900A33B: 'OpenACCルーチン名%0はオーバーロードのセットを指定しています'
 # 'OpenACC sub-array %select{lower bound|length}0 evaluated to a value (%1) that would be out of the range of the subscripted array size of %2'
 HD993EBC2FF56: 'OpenACCのサブ配列の%select{下限|長さ}0が、添字付き配列のサイズ%2の範囲外となる値(%1)に評価されました'
 # 'OpenACC sub-array %select{lower bound|length}0 evaluated to negative value %1'
@@ -11990,6 +12062,8 @@ H3E1C9F287454: 'PLEAE は、バグ報告を https://github.com/llvm/llvm-project
 H0DE59CCB7CD2: 'PLEAE は、バグ報告を https://github.com/llvm/llvm-project/issues/ に提出してください。クラッシュ バックトレースを含めてください。\n'
 # 'POSIX thread model'
 HAAFA3F8D71A1: 'POSIX スレッド モデル'
+# 'Pack non-contiguous assumed shape dummy arrays into contiguous memory'
+H921464C334CB: '非連続の仮形状ダミー配列を連続メモリにパックする'
 # 'Pack non-contiguous assummed shape arrays into contiguous memory'
 H3E0440CD78CB: '非連続の仮定形状配列を連続メモリにパックする'
 # 'Pad previous instructions to implement align directives'
@@ -12022,6 +12096,8 @@ HC027AB59908D: 'AIX のリンカに -b <arg> を渡す'
 HC96FADA8EF05: 'リンカに-z <arg> を渡します'
 # 'Pass <arg> to clang -cc1'
 H7056B37839B2: 'clang -cc1 に <arg> を渡します'
+# 'Pass <arg> to clang -cc1as'
+HB0D05A4A9173: 'clang -cc1asに<arg>を渡す'
 # 'Pass <arg> to fatbinary invocation'
 HE6E06CC967E5: 'fatbinary呼び出しに <arg> を渡します'
 # 'Pass <arg> to plugin <name>'
@@ -12488,6 +12564,8 @@ H9226DB4F030F: '標準的なループ構造を保持する (デフォルト = tr
 HC15D6215FF01: 'mergefunc変換が行われた場合、サード内のデバッグ情報を保持する'
 # 'Preserve expressions in AST rather than dropping them when encountering semantic errors'
 H606CF076FD66: '意味エラーを検出してもAST内で式を保持し、それらを削除しない'
+# 'Preserve line and column number when merging locations.'
+H6B50620B43DC: '位置をマージする際に行と列番号を保持する'
 # 'Preserve line numbers'
 HF7C338130FB4: '行番号を保持する'
 # 'Preserve order of LLVM use-lists when serializing'
@@ -12576,6 +12654,8 @@ H3475474B9AF0: '診断情報に絶対パスを表示'
 H3F08CE170EBB: 'ダンプ時にMachineInstrsのアドレスを表示'
 # 'Print addresses of instructions when dumping'
 HF2156C7D4A91: 'ダンプ時に命令のアドレスを表示'
+# 'Print all GPUs (default)'
+HBE69208AFD33: 'すべてのGPUを表示（デフォルト）'
 # 'Print all cost kinds'
 HCAA4E47DE719: 'すべてのコスト種類を表示'
 # 'Print all hardware statistics'
@@ -13546,6 +13626,8 @@ H915A155B8538: 'statepointオペランドのrematを制限'
 HF665154F84D1: '指定された特別なケースリストに一致するモジュールと関数のみにsanitizer coverage instrumentationを限定し、ブロックされたものは除く'
 # 'Restrict specifier.'
 H0429709567D5: 'specifierを制限'
+# 'Restrict to vendor:'
+H32644C5851E5: 'ベンダーを制限:'
 # 'Resume compilation after a specific pass'
 H0C491338806A: '特定のパスの後にコンパイルを再開'
 # 'Resume compilation before a specific pass'
@@ -14056,8 +14138,8 @@ H949A45EF9093: 'プレフィックス付きディレクトリをインクルー�
 H5882EA320C88: '非フォーマットファイルのデータのエンディアン変換を設定'
 # 'Set exception handling model'
 HBE5ECEAC70BC: '例外処理モデルを設定'
-# 'Set filename used to determine the language and to find\n.clang-format file.\nOnly used when reading from stdin.\nIf this is not passed, the .clang-format file is searched\nrelative to the current working directory when reading stdin.\nUnrecognized filenames are treated as C++.\nsupported:\n  CSharp: .cs\n  Java: .java\n  JavaScript: .js .mjs .cjs .ts\n  Json: .json\n  Objective-C: .m .mm\n  Proto: .proto .protodevel\n  TableGen: .td\n  TextProto: .txtpb .textpb .pb.txt .textproto .asciipb\n  Verilog: .sv .svh .v .vh'
-H76F2B4A51C95: '標準入力から読み込む際に使用するファイル名を設定。\nこのオプションが指定されない場合、標準入力時は現在の作業ディレクトリ relatives で.clang-format ファイルを検索します。\n未認識のファイル名はC++として扱われます。\n対応ファイル形式:\n  CSharp: .cs\n  Java: .java\n  JavaScript: .js .mjs .cjs .ts\n  Json: .json\n  Objective-C: .m .mm\n  Proto: .proto .protodevel\n  TableGen: .td\n  TextProto: .txtpb .textpb .pb.txt .textproto .asciipb\n  Verilog: .sv .svh .v .vh'
+# 'Set filename used to determine the language and to find\n.clang-format file.\nOnly used when reading from stdin.\nIf this is not passed, the .clang-format file is searched\nrelative to the current working directory when reading stdin.\nUnrecognized filenames are treated as C++.\nsupported:\n  CSharp: .cs\n  Java: .java\n  JavaScript: .js .mjs .cjs .ts\n  Json: .json .ipynb\n  Objective-C: .m .mm\n  Proto: .proto .protodevel\n  TableGen: .td\n  TextProto: .txtpb .textpb .pb.txt .textproto .asciipb\n  Verilog: .sv .svh .v .vh'
+H13B2BD633E05: '標準入力から読み込む際に使用するファイル名を指定し、.clang-formatファイルの検索に使用します。\n入力が標準入力の場合、このオプションが指定されないと、.clang-formatファイルは現在の作業ディレクトリに対して相対的に検索されます。\n認識できないファイル名はC++として扱われます。\nサポートされる拡張子:\n  CSharp: .cs\n  Java: .java\n  JavaScript: .js .mjs .cjs .ts\n  Json: .json .ipynb\n  Objective-C: .m .mm\n  Proto: .proto .protodevel\n  TableGen: .td\n  TextProto: .txtpb .textpb .pb.txt .textproto .asciipb\n  Verilog: .sv .svh .v .vh'
 # 'Set hexagon hvx loop upper bound align limit'
 HE4A380690C61: 'hexagon hvxループの上側境界アライメントの制限値を設定'
 # 'Set hexagon loop align bundle limit'
@@ -14774,6 +14856,8 @@ HFD25A07F8173: '.dwo ファイルの名前を DWARF 出力にエンコードす�
 HC274D886E608: '構築するモジュールの名前を指定'
 # 'Specify the name of the root module.'
 H385C12B5E6FA: 'ルートモジュールの名前を指定'
+# 'Specify the number of threads to use for device offloading tasks during compilation.'
+H1A088440B2D0: 'コンパイル中にデバイスオフローディングタスクに使用するスレッド数を指定します'
 # "Specify the output file type ('asm', 'null', or 'obj')"
 H908E78C67406: "出力ファイルの種類を指定 ('asm', 'null', または 'obj')"
 # 'Specify the output file. default: reduced.ll|.bc|.mir'
@@ -15890,6 +15974,8 @@ H1D5DFE08E7A8: 'スタック lifetime をSTART マーカーではなく最初の
 H79E1F4486D77: '文字列リテラルをconstとして扱う'
 # 'Treat subsequent input files as having type <language>'
 HC2DB15026570: 'その後の入力ファイルを型<language>として扱う'
+# 'Treat the given module as-if it were containing the post-thinlink module containing the root'
+H678738B3F81B: '与えられたモジュールを、ルートを含むポスト・スリムリンク・モジュールとして扱う'
 # 'Treat usage of null pointers as undefined behavior (default)'
 HEF76E5F5F913: 'NULL ポインタの使用を未定義動作として扱う（既定値）'
 # 'Treat warnings as errors'
@@ -16164,6 +16250,8 @@ HF73D39350799: 'SEHスタイルの例外を使用する'
 H18018B318301: 'デバッグ情報内のファイルのチェックサムにSHA1を使用'
 # 'Use SHA256 for file checksums in debug info'
 HF98F43EAE9BB: 'デバッグ情報内のファイルのチェックサムにSHA256を使用'
+# 'Use Section instead of __patchable_function_entries'
+H2F6710F2BEEF: '__patchable_function_entriesの代わりにSectionを使用する'
 # 'Use SjLj style exceptions'
 H44AA3EF8F7F8: 'SjLjスタイルの例外を使用する'
 # 'Use Stable Hashing for MIR VReg Renaming'
@@ -16356,6 +16444,8 @@ H479023987FBB: 'インストルメンテーションプロファイルを使用�
 H45C76DB103C3: '内部マシンオブジェクトコードエミッタを使用する'
 # 'Use jump tables for lowering switches'
 HFFDBCF7C79DB: 'スイッチを展開する際にジャンプテーブルを使用する'
+# 'Use large decoder table format. This uses 24 bits for offset\nin the table instead of the default 16 bits.'
+H7EEE365A819D: '大規模なデコーダテーブル形式を使用します。デフォルトの16ビットではなく、テーブルのオフセットには24ビットを使用します'
 # 'Use large-integer access for consecutive bitfield runs.'
 HAFC147F2F63A: '連続したビットフィールド実行に対して大規模整数アクセスを使用する'
 # 'Use linker features to support dead code stripping of globals'
@@ -16860,6 +16950,8 @@ H7F1CA4DE1A48: '否定沈めの可能性をチェックする際の最大探索�
 H3DED4F5FCF91: '頂点ラベルの切り詰め長さを設定'
 # 'What to do with the summary when running this pass'
 H42E595F78536: 'このパス実行時のサマリーの処理方法'
+# "When -frepack-arrays is in effect, 'whole' enables repacking for arrays that are non-contiguous in any dimension, 'innermost' enables repacking for arrays that are non-contiguous in the innermost dimension (the default)"
+H20A445368AD8: "-frepack-arraysが有効な場合、'whole'は各次元が非連続な配列の再配置を有効にし、'innermost'は最も内側の次元が非連続な配列の再配置を有効にします（デフォルト）"
 # 'When -fvisibility-inlines-hidden is enabled, static variables in inline C++ member functions will also be given hidden visibility by default'
 HC9E644F8BF87: '-fvisibility-inlines-hiddenが有効な場合、インラインC++メンバー関数内の静的変数もデフォルトでhidden visibilityを設定'
 # 'When a diagnostic is emitted on an operation, also print the operation as an attached note'
@@ -16908,8 +17000,6 @@ H0B8C96DE116C: 'パス後のIRを印刷する際、IRが変更された場合の
 H42128FB51A38: 'パス後のIRを印刷する際、パスが失敗した場合のみ印刷する'
 # 'When printing the IR before/after a pass, print file tree rooted at this directory. Use in conjunction with mlir-print-ir-* flags'
 HC069026BC657: 'パスの前後でIRを印刷する際、このディレクトリをルートとするファイルツリーを印刷します。mlir-print-ir-*フラグと併用してください'
-# 'When set to true, IR files will be processed and printed in their current debug info format, regardless of default behaviour or other flags passed. Has no effect if input IR does not contain debug records or intrinsics. Ignored in llvm-link, llvm-lto, and llvm-lto2.'
-H75C824D62FD2: 'trueに設定すると、デバッグ情報のフォーマットは現在の形式で処理され印刷され、デフォルト動作や他のフラグを無視します。入力IRにデバッグレコードや固有表現がない場合、効果はありません。llvm-link、llvm-lto、llvm-lto2では無視されます'
 # 'When set to true, const objects with relocatable address values are put into the RO data section.'
 H66324957E3F0: 'trueに設定すると、再配置可能なアドレス値を持つconstオブジェクトはROデータセクションに配置されます'
 # 'When stubbing functions, replace all uses will null'
@@ -16966,6 +17056,8 @@ HB249A06C5F2F: 'ループベクター化で必ずしもif-convertibleでない�
 HDDECD32989A5: 'DWARF EHフレームエントリを生成するかどうか'
 # 'Whether to generate default bounds for arrays.'
 HA8699205DACC: '配列のデフォルト境界を生成するかどうか'
+# 'Whether to include the lower dimensions extents in the stride.'
+H4245438632CE: 'ストライドに下位次元の範囲を含めるかどうか'
 # 'Whether to minimize added include paths'
 HC7C82427C36C: '追加されたインクルードパスを最小化するかどうか'
 # 'Whether to perform binary concatenation'
@@ -17170,6 +17262,8 @@ H323CC2CB8E5D: '_Atomicは%select{不完全な |配列 |関数 |参照 |アト�
 HE310DB69A9CE: '_GLOBAL_OFFSET_TABLE_'
 # '_Pragma takes a parenthesized string literal'
 HC3D115F3D6CB: '_Pragmaは括弧付きの文字列リテラルが必要です'
+# '__CUDA_ARCH'
+H640861EF7CBB: '__CUDA_ARCH'
 # '__DATA'
 H6F22B9326AE7: '__DATA'
 # '__LINKEDIT'
@@ -17238,6 +17332,8 @@ HAD92983EAEB2: '__weak属性はフィールド宣言に指定できません'
 HC15AE9021482: '__weak属性はARCが有効でない場合、自動変数に指定できません'
 # '`#pragma const_seg` for section %1 will not apply to %0 due to the presence of a %select{mutable field||non-trivial constructor|non-trivial destructor}2'
 H8811D5F6122A: '`#pragma const_seg`セクション%1は%select{ミュータブルフィールド||非トレビアルコンストラクタ|非トレビアルデストラクタ}2の存在により、%0には適用されません'
+# '`interrupt_save_fp` only applies to targets that have a VFP unit enabled for this compilation; this will be treated as a regular `interrupt` attribute'
+HB2C8A1373FD2: '`interrupt_save_fp`は、このコンパイルでVFPユニットが有効なターゲットのみに適用されます；これは通常の`interrupt`属性として扱われます'
 # 'a %select{function|block}0 declaration without a prototype is deprecated %select{in all versions of C|}0'
 HA427D7F1B8D9: '%select{関数|ブロック}0のプロトタイプなし宣言は、Cの全バージョンで非推奨です %select{ |とC23ではサポートされません}0'
 # "a %select{pack indexing|'decltype'}0 specifier cannot be used in a declarative nested name specifier"
@@ -17386,6 +17482,8 @@ H98175222693E: '文字列に%0を追加しても、文字列に追加されま�
 HE53429791B46: '文字列ポインタに%0を追加しても、文字列に追加されません'
 # 'addition of default argument on redeclaration makes this constructor a %select{default|copy|move}0 constructor'
 H540EC7EBFA01: '再宣言時にデフォルト引数を追加すると、このコンストラクタは%select{デフォルト|コピー|ムーブ}0コンストラクタになります'
+# 'address argument to %select{atomic|__sync}0 operation must be a pointer to a non address discriminated type (%1 invalid)'
+H2613F565B379: 'address argument to %select{atomic|__sync}0 演算のアドレス引数は、非アドレス区別型へのポインタでなければなりません (%1 が無効)'
 # 'address argument to atomic builtin cannot be const-qualified (%0 invalid)'
 H05DD72B70C0D: '原子的ビルトイン関数のアドレス引数はconst修飾できません (%0無効)'
 # 'address argument to atomic builtin must be a pointer %select{|to a non-zero-sized object }1(%0 invalid)'
@@ -17614,8 +17712,6 @@ HBD26597B24D2: "複数の場所で定義されているプレースホルダー 
 HE31133550012: '%0 の内部リンケージ宣言が複数のモジュールで定義されているため、使用に曖昧さが生じました'
 # 'ambiguous vftable component for %0 introduced via covariant thunks; this is an inherent limitation of the ABI'
 HB0361B37BEF3: '共変サムクスを介して導入された %0 の vftable コンポーネントが曖昧です。これはABIの固有の制限です'
-# 'amdgpu-arch options'
-HA34A9F0AE01E: 'amdgpu-arch オプション'
 # 'an array type is not allowed here'
 HCA0201F3FA96: 'ここでは配列型は使用できません'
 # 'an attribute list cannot appear here'
@@ -17788,6 +17884,8 @@ HBE77A0717D85: "CUDA C/C++では '#pragma unroll' の引数に括弧を使用し
 H93740956E9C9: "句 '%0' の引数は%select{非負|正}1の整数値でなければなりません"
 # "argument to '%0' is missing (expected %1 value%s1)"
 HEA17C0D34C2C: "'%0' の引数が不足しています（%1 値%s1が期待されます）"
+# "argument to '__ptrauth' must be an integer constant expression"
+H06E460DF36C3: "'__ptrauth' 引数には整数定数式を指定してください"
 # "argument to 'gang' clause dimension must be %select{a constant expression|1, 2, or 3: evaluated to %1}0"
 H970EFD35B5B1: "'gang' 句の次元は%select{定数式|1, 2, または 3: %1 に評価されました}0でなければなりません"
 # "argument to 'operator<=>' %select{cannot be narrowed from type %1 to %2|evaluates to %1, which cannot be narrowed to type %2}0"
@@ -17942,6 +18040,8 @@ H250CD1E6F903: '保持されたオブジェクトを %select{weak|unsafe_unretai
 H8135CA913359: '保持されたオブジェクトをunsafeプロパティに代入しています; 代入後にオブジェクトが解放されます'
 # "assigning to 'readonly' return result of an Objective-C message not allowed"
 H87457323E0B9: "'読み取り専用' 戻り値へのObjective-Cメッセージの代入は許可されていません"
+# 'assigning value of preferred signed enum type %1 to unsigned bit-field %0; negative enumerators of enum %1 will be converted to positive values'
+H20F4D35FCD03: 'preferred signed enum type %1 の値を符号なしビットフィールド %0 に代入しています; enum %1 の負の列挙子は正の値に変換されます'
 # 'assigning value of signed enum type %1 to unsigned bit-field %0; negative enumerators of enum %1 will be converted to positive values'
 H03B45829D6A4: '符号付き列挙型 %1 の値を符号なしビットフィールド %0 に代入しています; enum %1 の負の列挙子は正の値に変換されます'
 # 'assignment of a weak-unavailable object to a __weak object'
@@ -18210,6 +18310,8 @@ HA6B3D52AF212: 'ビットフィールド %0 の幅は負の値 (%1) です'
 H1F66B27F57D3: 'ビットフィールド %0 の型 %1 は整数型ではありません'
 # 'bit-field %0 is not wide enough to store all enumerators of %1'
 H1E7885609E9C: '%0 ビットフィールドは %1 のすべての列挙子を格納するには十分な幅ではありません'
+# 'bit-field %0 is not wide enough to store all enumerators of preferred type %1'
+H0D56F6137EF8: 'ビットフィールド %0 は、preferred type %1 のすべての列挙子を格納する十分な幅を持っていません'
 # 'bit-field is declared here'
 HE5CFF566169E: 'ビットフィールドはここに宣言されています'
 # 'bit-fields are not supported in OpenCL'
@@ -18438,6 +18540,8 @@ H5F81F51806D8: '候補 %select{コンストラクタ|テンプレート}0 が無
 HDF3920A3A1F2: '%select{関数|関数|引数順が逆の関数|コンストラクタ|暗黙のデフォルトコンストラクタ|暗黙のコピーコンストラクタ|暗黙のムーブコンストラクタ|暗黙のコピー代入演算子|暗黙のムーブ代入演算子|operator<=>に対応する暗黙のoperator==|継承コンストラクタ}0%select{|テンプレート| %2}1 は %select{明示的に利用不可|明示的に削除|暗黙的に削除}3 されています'
 # "candidate %select{function|function|function (with reversed parameter order)|constructor|constructor (the implicit default constructor)|constructor (the implicit copy constructor)|constructor (the implicit move constructor)|function (the implicit copy assignment operator)|function (the implicit move assignment operator)|function (the implicit 'operator==' for this 'operator<=>)'|inherited constructor}0%select{| template| %2}1 not viable: %ordinal5 argument (%3) would lose %select{const|restrict|const and restrict|volatile|const and volatile|volatile and restrict|const, volatile, and restrict}4 qualifier%select{||s||s|s|s}4"
 H95E4AEB3B23E: '%select{関数|関数|引数順が逆の関数|コンストラクタ|暗黙のデフォルトコンストラクタ|暗黙のコピーコンストラクタ|暗黙のムーブコンストラクタ|暗黙のコピー代入演算子|暗黙のムーブ代入演算子|operator<=>に対応する暗黙のoperator==|継承コンストラクタ}0%select{|テンプレート| %2}1 は %ordinal5 番目の引数 (%3) が %select{const|restrict|constとrestrict|volatile|constとvolatile|volatileとrestrict|const, volatile, およびrestrict}4 質問子%select{||s||s|s|s}4 を失うため不可行です'
+# "candidate %select{function|function|function (with reversed parameter order)|constructor|constructor (the implicit default constructor)|constructor (the implicit copy constructor)|constructor (the implicit move constructor)|function (the implicit copy assignment operator)|function (the implicit move assignment operator)|function (the implicit 'operator==' for this 'operator<=>)'|inherited constructor}0%select{| template| %2}1 not viable: %ordinal8 argument (%3) has %select{no '__ptrauth'|%5}4 qualifier, but parameter has %select{no '__ptrauth'|%7}6 qualifier"
+HD856C23A94D5: "%select{function|function|function (with reversed parameter order)|constructor|constructor (the implicit default constructor)|constructor (the implicit copy constructor)|constructor (the implicit move constructor)|function (the implicit copy assignment operator)|function (the implicit move assignment operator)|function (the implicit 'operator==' for this 'operator<=>)'|inherited constructor}0%select{| template| %2}1 not viable: %ordinal8 引数 (%3) は%select{ '__ptrauth' なし|%5}4 修飾子を持っており、パラメータの%select{ '__ptrauth' なし|%7}6 修飾子と一致しません"
 # "candidate %select{function|function|function (with reversed parameter order)|constructor|constructor (the implicit default constructor)|constructor (the implicit copy constructor)|constructor (the implicit move constructor)|function (the implicit copy assignment operator)|function (the implicit move assignment operator)|function (the implicit 'operator==' for this 'operator<=>)'|inherited constructor}0%select{| template| %2}1 not viable: %select{%ordinal7|'this'}6 argument (%3) has %select{no|__unsafe_unretained|__strong|__weak|__autoreleasing}4 ownership, but parameter has %select{no|__unsafe_unretained|__strong|__weak|__autoreleasing}5 ownership"
 H8D414CDC2F4E: "%select{関数|関数|引数の順序が逆の関数|コンストラクタ|暗黙のデフォルトコンストラクタ|暗黙のコピーコンストラクタ|暗黙のムーブコンストラクタ|暗黙のコピー代入演算子|暗黙のムーブ代入演算子|暗黙の'operator<=>'用'operator==|継承コンストラクタ}0%select{|テンプレート| %2}1の候補は不適切です：%select{%ordinal7|%this'}6引数（%3）が%select{なし|__unsafe_unretained|__strong|__weak|__autoreleasing}4オーナーシップを持っていますが、パラメータは%select{なし|__unsafe_unretained|__strong|__weak|__autoreleasing}5オーナーシップを持っています"
 # "candidate %select{function|function|function (with reversed parameter order)|constructor|constructor (the implicit default constructor)|constructor (the implicit copy constructor)|constructor (the implicit move constructor)|function (the implicit copy assignment operator)|function (the implicit move assignment operator)|function (the implicit 'operator==' for this 'operator<=>)'|inherited constructor}0%select{| template| %2}1 not viable: %select{%ordinal7|'this'}6 argument (%3) has %select{no|__weak|__strong}4 ownership, but parameter has %select{no|__weak|__strong}5 ownership"
@@ -18528,6 +18632,8 @@ H5A02E21DB221: " '#pragma clang assume_nonnull' 内で %select{#include ファ�
 HBEBB0813D273: ' %select{基底クラスの|派生クラスの|フィールドの|配列要素の|ERROR|実部の|虚部の}0 ポインタをオブジェクトの末尾の先にアクセスできません'
 # 'cannot %select{access base class of|access derived class of|access field of|access array element of|perform pointer arithmetic on|access real component of|access imaginary component of}0 null pointer'
 H2E784B2C1B28: ' %select{基底クラスの|派生クラスの|フィールドの|配列要素の|ポインタ算術の|実部の|虚部の}0 NULL ポインタをアクセスできません'
+# "cannot %select{assign to %select{object|'%1'}2 with|pass argument to %select{parameter|parameter '%1'}2 with|return|convert to|%select{|implicitly }3initialize %select{object|'%1'}2 with|pass argument to parameter with|cast to|pass argument to parameter with}0 '%5' attributed type %4 because the pointee type %6 is incomplete"
+H1CA72EC4A20B: "cannot %select{assign to %select{object|'%1'}2 with|pass argument to %select{parameter|parameter '%1'}2 with|return|convert to|%select{|implicitly }3initialize %select{object|'%1'}2 with|pass argument to parameter with|cast to|pass argument to parameter with}0 '%5' attributed type %4 because the pointee type %6 is incomplete"
 # 'cannot %select{assign|return|throw|subscript}0 a WebAssembly table'
 H1D574B1BA9C6: 'WebAssembly テーブルを %select{代入|戻す|スロー|サブスクリプト}0することはできません'
 # 'cannot %select{capture|take address of}0 WebAssembly reference'
@@ -18536,10 +18642,10 @@ H1706BDA5F276: 'WebAssembly リファレンスを %select{キャプチャでき�
 H9709AF91935B: 'enum 型 %1 の %select{減算|加算}0 式はできません'
 # 'cannot %select{decrement|increment}1 value of type %0'
 H7C6ED23E2E9F: '%select{減算|加算}1 演算子の型 %0 は使用できません'
-# 'cannot %select{form pointer to|form reference to|form array of|form function returning|use parentheses when declaring variable with}0 deduced class template specialization type'
-HAF4CF818160D: '%select{ポインタを形成できません|参照を形成できません|配列を形成できません|戻り値として関数を宣言できません|変数宣言に丸カッコを使用できません}0 選択されたテンプレート型'
 # 'cannot %select{throw|catch}0 a WebAssembly reference type'
 H3CB66A7D1B81: 'WebAssembly リファレンスタイプを %select{スローできません|キャッチできません}0'
+# "cannot %select{use '%1' with '%4' attributed|call '%1' with '%4' attributed return}0 type %2 because the pointee type %3 is incomplete"
+HF83C2ECBEF93: "%select{'%1' に '%4' 属性を付与|'%1' の'%4' 属性を返す呼び出し}0 型 %2 は、pointee 型 %3 が未完了のため使用できません"
 # "cannot %select{use builtin operator '<=>'|default 'operator<=>'}1 because type '%0' was not found; include <compare>"
 H40A5A6DFAC87: "'%0'型が見つからないため%select{ビルトイン演算子'<=>'を使用|'operator<=>'をデフォルト}1できません；<compare>を含めること"
 # 'cannot %select{use type %1 for a function/method parameter|use type %1 for function/method return|default-initialize an object of type %1|declare an automatic variable of type %1|copy-initialize an object of type %1|assign to a variable of type %1|construct an automatic compound literal of type %1|capture a variable of type %1|cannot use volatile type %1 where it causes an lvalue-to-rvalue conversion}3 since it %select{contains|is}2 a union that is non-trivial to %select{default-initialize|destruct|copy}0'
@@ -18618,6 +18724,8 @@ H1C20AF9781FF: '型%1をポインタ型%2にキャストできません'
 HB63F6FC3F823: "イベント型'event_t'に非ゼロ値'%0'をキャストできません"
 # 'cannot cast object of dynamic type %0 to type %1'
 H29A99B2195B9: '動的型%0のオブジェクトを型%1にキャストできません'
+# "cannot cast to '__ptrauth'-qualified type %0"
+H6496D0FA4BB0: '__ptrauth修飾型 %0 へのキャストはできません'
 # 'cannot catch %select{|reference to }0sizeless type %1'
 HFDB51E9BFE05: '%select{|参照先の}0型%1（サイズなし）をキャッチできません'
 # 'cannot catch an Objective-C object by value'
@@ -18788,8 +18896,8 @@ H20ABDE201926: "'--hipstdpar-path'でHIP標準並列化ライブラリの場所�
 H74B6BE24033A: "HIPデバイスライブラリ%select{ |%1用}0が見つかりません; '--hip-path'または'--hip-device-lib-path'でパスを指定、または'-nogpulib'オプションでHIPデバイスライブラリなしでビルドしてください"
 # "cannot find HIP runtime; provide its path via '--rocm-path', or pass '-nogpuinc' to build without HIP runtime"
 H11EBFA045BE3: "'--rocm-path'でHIPランタイムのパスを指定、または'-nogpuinc'オプションでHIPランタイムなしでビルドしてください"
-# "cannot find ROCm device library%select{| for %1| for ABI version %1}0; provide its path via '--rocm-path' or '--rocm-device-lib-path', or pass '-nogpulib' to build without ROCm device library"
-H7B7F4A357272: "ROCMデバイスライブラリ%select{ |%1用|ABIバージョン%1用}0が見つかりません; '--rocm-path'または'--rocm-device-lib-path'でパスを指定、または'-nogpulib'オプションでROCMデバイスライブラリなしでビルドしてください"
+# "cannot find ROCm device library%select{| for %1| for ABI version %1%select{|, which requires ROCm %3 or higher}2}0; provide its path via '--rocm-path' or '--rocm-device-lib-path', or pass '-nogpulib' to build without ROCm device library"
+H66C4B1DCC978: "ROCmデバイスライブラリが見つかりません%select{| %1用| ABIバージョン%1%select{|、これはROCm %3以降が必要です}2}0; パスは '--rocm-path' または '--rocm-device-lib-path' で指定、または '-nogpulib' を指定してROCmデバイスライブラリなしでビルドしてください"
 # 'cannot find a valid user-defined mapper for type %0 with name %1'
 H0907A5973C27: '%0 という名前の型 %1 用のユーザー定義マッパーが見つかりません'
 # "cannot find end ('%1') of expected %0"
@@ -18822,6 +18930,8 @@ H727EB43115FC: "予期される %0 の開始 ('{{') が見つかりません"
 HD5BDA70A3617: "%0 内の正規表現開始 '{{' が見つかりません"
 # 'cannot find suitable %select{getter|setter}0 for property %1'
 H0F811370E791: 'プロパティ %1 用の適切な %select{getter|setter}0 を見つかりません'
+# 'cannot form %select{pointer to|reference to|array of|function returning}0 deduced class template specialization type'
+H0C20361BB556: '%select{ポインタへの|参照への|配列の|戻り値としての}0 推論されたクラステンプレート特殊化型を作成できません'
 # "cannot form %select{pointer to|reference to|array of}0 'decltype(auto)'"
 H7F41F0A9CCC7: "'decltype(auto)' に対する %select{ポインタ|参照|配列}0 を作成できません"
 # 'cannot form a %select{pointer|reference}0 to a WebAssembly table'
@@ -19284,6 +19394,8 @@ H67A993394D9A: 'クラステンプレート %0 はここでインスタンチエ
 H2F3153B3F0E2: 'クラステンプレート引数の推論で %0 から選択されたコンストラクタは削除されています'
 # 'class template argument deduction for %0 selected an explicit %select{constructor|deduction guide}1 for copy-list-initialization'
 HC409A532BB3A: 'クラステンプレート引数の推論で %0 から明示的な %select{コンストラクタ|推論ガイド}1 がコピー/リスト初期化で選択されました'
+# 'class template argument deduction for alias templates is a C++20 extension'
+HDC66CA6F51E2: 'エイリアステンプレートのクラステンプレート引数推論はC++20拡張機能です'
 # 'class template argument deduction for alias templates is incompatible with C++ standards before C++20'
 H0A109AC10809: 'クラステンプレート引数の推論はC++20以前のC++標準と互換性がありません'
 # 'class template argument deduction is incompatible with C++ standards before C++17%select{|; for compatibility, use explicit type name %1}0'
@@ -19392,6 +19504,8 @@ HA0D702990A9A: '互換性のある型 %0 がここに指定されています'
 H55D78247B7D8: "コンパイルデータベース '%0' を開けませんでした: %1"
 # 'compile time floating point arithmetic suppressed in strict evaluation modes'
 H1CBDE348A919: '厳密評価モードではコンパイル時の浮動小数点演算は抑制されます'
+# "compiled from '%0' and '%1'"
+H27BB14892FCB: "'%0'と'%1'からコンパイルされました"
 # 'compiler has implicitly changed method %0 return type'
 HA0BE2730FEEE: 'コンパイラは暗黙にメソッド %0 の戻り値の型を変更しました'
 # 'completion handler is called twice'
@@ -19518,6 +19632,10 @@ HCE15ED850DE4: "'%0'をヘッダ検索パスに追加してください"
 H6A4F6FD30F2D: "'%1'コール規約で%0を定義してください"
 # 'consider making the bit-field type %select{unsigned|signed}0'
 HDAE81431A685: 'ビットフィールドの型を%select{unsigned|signed}0にする'
+# 'consider providing a complete definition for %0'
+H2F6F79E2A183: '%0 の完全な定義を提供する必要があります'
+# "consider using '__sized_by%select{|_or_null}0' instead of '__counted_by%select{|_or_null}0'"
+H40017362835A: "'__counted_by%select{|_or_null}0'の代わりに'__sized_by%select{|_or_null}0'を使用することを検討してください"
 # "consider using __builtin_trap() or qualifying pointer with 'volatile'"
 H002E765592F2: "__builtin_trap()を使用するか、ポインタに'volatile'修飾を追加してください"
 # 'consider using vld1_%0%1() to initialize a vector from memory, or vcreate_%0%1() to initialize from an integer constant'
@@ -19718,8 +19836,8 @@ HFA594BB552D0: '型 %0 から型 %1 への削除式の変換は明示的な変�
 HC26D67935F61: '列挙定数をブール値に変換'
 # "converting the result of '<<' to a boolean always evaluates to %select{false|true}0"
 H66F90B0804A0: "'<<' の結果をブール値に変換すると常に %select{false|true}0 になります"
-# "converting the result of '<<' to a boolean; did you mean '(%0) != 0'?"
-HB5F0E9F35B11: "'<<' の結果をブール値に変換; '(%0) != 0' を意図したかもしれません"
+# "converting the result of '<<' to a boolean; did you mean to compare with '0'?"
+H2022F6B0CFBA: "'<<'の結果をブール値に変換しています; '0'と比較する意図でしたか？"
 # "converting the result of '?:' with integer constants to a boolean always evaluates to 'true'"
 H0B52D2457927: "整数定数を使用した '?:' の結果をブール値に変換すると常に 'true' になります"
 # 'converting to boxing syntax requires casting %0 to %1'
@@ -19878,6 +19996,8 @@ H82E18D14C9A2: "'for'ループでの非ローカル変数の宣言はC23拡張�
 H1C8715C3541C: "'for'ループでの非ローカル変数の宣言はC23以前の規格と互換性ありません"
 # 'declaration of reference variable %0 requires an initializer'
 H8635EDA9A8C6: 'リファレンス変数%0の宣言には初期化子が必要です'
+# 'declaration of type aware %0 in %1 must have matching type aware %2'
+HC35A59FCABD4: '%1 内の型認識%0宣言は、対応する型認識%2を有する必要があります'
 # 'declaration of variable %0 with deduced type %1 requires an initializer'
 H737154EADE2A: '型推論を使用した変数%0 %1の宣言には初期化子が必要です'
 # 'declaration requires a global constructor'
@@ -20226,6 +20346,8 @@ HB212F1F17A19: '指定子初期化子は C++20 以前の C++ 標準と互換性�
 HDC0C952FB90A: '%select{スカラ型|分割不可能なサイズレス型}0 の %1 型に対する指定子の初期化子'
 # 'designator into flexible array member subobject'
 H596716C96072: '柔軟な配列メンバー サブオブジェクトに対する指定子初期化子'
+# 'destroying delete is not permitted to be type aware'
+HBF72010CD873: '削除の破棄は型認識を許可しません'
 # "destroying object '%0' whose lifetime has already ended"
 H480FFC7A6CDF: "既に終了したライフタイムを持つオブジェクト '%0' を破棄しています"
 # 'destroying operator delete can have only an optional size and optional alignment parameter'
@@ -20276,6 +20398,8 @@ H55938C1F7AEA: '入力ログから関数IDをシンボル化する際に、関�
 HF854EBCB0FF7: '入力ログレコードをタイムスタンプでソートするかどうかを決定します'
 # "device clause with ancestor device-modifier used without specifying 'requires reverse_offload'"
 H7C03F0398F87: 'ancestor device-modifierを使用したdevice句で、requires reverse_offloadが指定されていません'
+# "device files are not yet supported by '#embed' directive"
+H3E3F85E899CB: '#embedディレクティブではデバイスファイルはまだサポートされていません'
 # 'diagnostic formatting in SARIF mode is currently unstable'
 HADEECC0D1814: 'SARIFモードでの診断フォーマットは現在不安定です'
 # 'diagnostic msg: %0'
@@ -21814,8 +21938,6 @@ HF416CD096831: ' __builtin_convertvector の最初の引数はベクター型で
 HCF8EE366AB6A: '透過型共用体の最初のフィールドは %select{浮動小数点|ベクター}0 型 %1 を持てません; transparent_union 属性が無視されました'
 # 'first non-designated initializer is here'
 H3AA2DBB89701: '最初の非指定初期化子はここにあります'
-# 'first parameter of %0 must have type %1'
-HE845E4B59857: '%0の最初の引数は%1型でなければなりません'
 # 'first two arguments to __builtin_convertvector must have the same number of elements'
 HF134017C1A48: '__builtin_convertvectorの最初の2つの引数は要素数が同じでなければなりません'
 # "flag '%0' is ignored when flag '%1' is present"
@@ -22346,6 +22468,8 @@ H9AA979884A67: '非推奨の%select{メソッド|クラス|カテゴリ}0を実�
 H0D7D4644123A: '使用できないメソッドを実装しています'
 # 'implicit %select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}0 inferred target collision: call to both %select{__device__|__global__|__host__|__host__ __device__}1 and %select{__device__|__global__|__host__|__host__ __device__}2 members'
 HDD95624FC57A: '暗黙の%select{デフォルトコンストラクタ|コピーコンストラクタ|ムーブコンストラクタ|コピー代入演算子|ムーブ代入演算子|デストラクタ}0推論ターゲット衝突: %select{__device__|__global__|__host__|__host__ __device__}1と%select{__device__|__global__|__host__|__host__ __device__}2メンバーの両方に呼び出し'
+# "implicit '0' return value from 'main' is a C99 extension"
+HDE00C37DFBCC: "main関数からの暗黙の'0'戻り値はC99拡張機能です"
 # 'implicit boolean conversion of Objective-C object literal always evaluates to true'
 HFAC6148E9355: 'オブジェクトCオブジェクトリテラルの暗黙のブール変換は常にtrueを評価します'
 # "implicit capture of 'this' with a capture default of '=' is deprecated"
@@ -22794,8 +22918,8 @@ H17CD335B9F9F: 'char 配列の初期化文字列が長すぎます、配列サ�
 H822723DC0E42: '空の初期化子リストから %0 を初期化することは C++98 と互換性ありません'
 # "initializing 'char8_t' array with plain string literal"
 H1EA4AB240813: 'char8_t 配列を通常の文字列リテラルで初期化しようとしています'
-# "initializing an array from a '%0' predefined identifier is a Microsoft extension"
-H8573434E16CF: 'プリディファインド識別子 "%0" から配列を初期化することは Microsoft の拡張機能です'
+# 'initializing an array from a %0 predefined identifier is a Microsoft extension'
+HF1EC87683FC5: '%0 の事前定義識別子からの配列初期化はMicrosoft拡張機能です'
 # 'initializing char array with wide string literal'
 H698D73717CFB: 'ワイド文字列リテラルで char 配列を初期化しようとしています'
 # 'initializing field %0 with default member initializer'
@@ -22996,8 +23120,8 @@ H6D1E048E9343: 'インターペロプ変数%0は複数のアクション句で�
 H4EE913CC5003: 'インターペロプ変数は型"omp_interop_t"でなければなりません'
 # 'interrupt service routine cannot be called directly'
 H0EEEBB03E095: 'インタラプトサービスルーチンを直接呼び出せません'
-# "interrupt service routine with vfp enabled may clobber the interruptee's vfp state"
-H55034798B0BD: 'vfp が有効な中断サービスルーチンは、interruptee の vfp ステートを破壊する可能性があります'
+# "interrupt service routine with vfp enabled may clobber the interruptee's vfp state; consider using the `interrupt_save_fp` attribute to prevent this behavior"
+HBC940BDF20A5: '__vfpの有効状態で割り込みサービスルーチンは割り込まれた側のVFPステートを上書きする可能性があります。この挙動を防ぐには`interrupt_save_fp`属性を使用してください'
 # 'interval between profile writes (default: 0 = write only at program end).  This is useful for service workloads when you want to dump profile every X minutes or if you are killing the program and the profile is not being dumped at the end.'
 H3081FD16F975: 'プロファイル書き込み間隔（デフォルト: 0 = プログラム終了時にのみ書き込む）。これは、X 分間隔でプロファイルをダンプしたいサービスワークロードや、プログラム終了時にプロファイルがダンプされない場合に役立ちます'
 # 'intrinsic module directory'
@@ -23032,6 +23156,8 @@ H8F1C2E5DB890: "無効な C++ ABI 名 '%0'"
 H91493C3284DF: "無効な CoreFoundation Runtime ABI '%0'; 'objc', 'standalone', 'swift', 'swift-5.0', 'swift-4.2', 'swift-4.1' のいずれかでなければなりません"
 # 'invalid Darwin version number: %0'
 HA0C57A49CA76: 'Darwin バージョン番号が無効です: %0'
+# 'invalid LLVM IR input: %0'
+H196A3B80B48D: '無効なLLVM IR入力: %0'
 # "invalid OS value '%0' in '%1'"
 H00BD3F016742: "'%1' 内のOS値'%0'が無効です"
 # 'invalid OpenACC clause %0'
@@ -23052,6 +23178,8 @@ HA12658A01ACA: "無効なXarch引数：'%0'、すべてのドライバーオプ�
 H7917BEC4B42C: "無効なXarch引数：'%0'、引数を要求するオプションはサポートされていません"
 # 'invalid __hlsl_resource_t type attributes'
 H9A97FF7B54BE: '__hlsl_resource_t型の属性が無効です'
+# "invalid address discrimination flag '%0'; '__ptrauth' requires '0' or '1'"
+H3802C33B9837: "'__ptrauth'フラグ'%0'は無効です。0または1を指定してください"
 # 'invalid address discrimination mode %0'
 H1D217687F248: '%0のアドレス判別モードが無効です'
 # "invalid alignment option in '#pragma %select{align|options align}0' - ignored"
@@ -23176,6 +23304,8 @@ H98E01B807F8E: 'キャプチャを伴うラムダ内の明示的オブジェク�
 H607716F86E02: 'キャプチャを伴うラムダ内の明示的オブジェクトパラメータタイプ %0 が無効です；このタイプはラムダからパブリックに派生したものでなければなりません'
 # 'invalid extra discrimination selection %0'
 HAC5AAEAB2B1D: '無効な追加の判別選択 %0'
+# "invalid extra discriminator flag '%0'; '__ptrauth' requires a value between '0' and '%1'"
+HBC87DBE11994: "'__ptrauth'の追加ディ scriminatorフラグ'%0'は無効です。0から'%1'までの値を指定してください"
 # 'invalid feature combination: %0'
 H53E34DDB7754: '無効なフィーチャーの組み合わせ: %0'
 # 'invalid field is here'
@@ -23360,6 +23490,8 @@ H4B1AA82F67A0: "検証バージョン%0の形式は'<major>.<minor>'（例:'1.4'
 HD365448B0579: '検証バージョン%0、メジャーバージョンが0の場合、マイナーバージョンも0でなければなりません'
 # 'invalid validator version : %0; validator version must be less than or equal to current internal version'
 HED613B352B91: '検証バージョン%0は現在の内部バージョン以下でなければなりません'
+# "invalid value %0 in '%1' clause; valid values are %2"
+H70463648CF58: "'%1'句の値%0は無効です。有効な値は%2です"
 # "invalid value '%1' in '%0'"
 H7E000E39503F: "'%0'の値'%1'が無効"
 # "invalid value '%1' in '%0', expected one of: %2"
@@ -23606,8 +23738,8 @@ HCE669C9CA888: 'lcov トレースファイル出力'
 H00D9FE7F4F87: '右辺の型%1と組み合わせる際に、左辺の型%0の複合代入オペランドが切り捨てられません'
 # 'left hand operand to %0 must be a %select{|pointer to }1class compatible with the right hand operand, but is %2'
 HE8A81161D486: '%0 の左辺オペランドは%select{|ポインタ型の }1クラスで右辺オペランドと互換性をもたねばなりませんが、%2となっています'
-# "left hand side of assignment operation('%0') must match one side of the sub-operation on the right hand side('%1' and '%2')"
-HA99FEEFA45D5: "代入演算の左辺('%0')は右辺のサブ演算('%1'と'%2')のいずれか一方と一致する必要があります"
+# 'left hand side of assignment operation(%0) must match one side of the sub-operation on the right hand side(%1 and %2)'
+HEDD23F979FED: '代入操作の左辺(%0)は右辺のサブ操作(%1と%2)のいずれか一方と一致する必要があります'
 # 'left operand of comma operator has no effect'
 H1D36CC5E4D5A: 'カンマ演算子の左辺オペランドは効果がありません'
 # 'left shift of negative value %0'
@@ -24876,8 +25008,6 @@ HE591548912FE: 'スレッドの数'
 H6D6640DAD12D: 'ユーザー定義の接尾辞を持つ数値リテラルはここでは使用できません'
 # "nvcc does not allow '__%0__' to appear after the parameter list in lambdas"
 H052A23E5C9DE: "nvccでは、ラムダのパラメータリスト後に'__%0__'を記述できません"
-# 'nvptx-arch options'
-H195E97C080C6: 'nvptx-アーキテクチャ オプション'
 # 'obj2yaml Options'
 HDEB46CD09A6E: 'obj2yaml オプション'
 # 'objc_precise_lifetime is not meaningful for %select{__unsafe_unretained|__autoreleasing}0 objects'
@@ -24904,8 +25034,8 @@ H4465935A9154: '%0型のオブジェクトは、%1が暗黙のうちに削除さ
 HD27A532EA3C9: '%0型のオブジェクトは読み取り専用メモリに配置できません'
 # 'object of type %0 is not compatible with %select{array element type|dictionary key type|dictionary value type}1 %2'
 HBDF524B06F4F: '%0型のオブジェクトは、%select{配列要素の型|辞書のキーの型|辞書の値の型}1の%2と互換性ありません'
-# "object whose reference is captured by '%0' will be destroyed at the end of the full-expression"
-H1329A74CEAA1: "'%0'によってキャプチャされた参照のオブジェクトは、完全式の終了時に破棄されます"
+# 'object whose reference is captured by %0 will be destroyed at the end of the full-expression'
+H79F166A683BE: '%0によってキャプチャされたオブジェクトは、完全式の終了時に破棄されます'
 # 'object whose reference is captured will be destroyed at the end of the full-expression'
 H04404B93E557: 'キャプチャされた参照のオブジェクトは、完全式の終了時に破棄されます'
 # 'octal integer literals are a C2y extension'
@@ -24916,6 +25046,8 @@ H0A7A0AD8FA23: '8進数リテラルはClang拡張機能です'
 HFF58B98B1092: '8進数リテラルはC2y以前の規格と互換性ありません'
 # "octal literals without a '0o' prefix are deprecated"
 H297C91C7799F: "'0o'プレフィックスのない8進数リテラルは非推奨になりました"
+# 'offload-arch options'
+H7186B8C146CF: 'オフロードアーキテクチャ オプション'
 # 'offset of asan shadow mapping [EXPERIMENTAL]'
 HB87160E3C269: 'asanシャドウマッピングのオフセット [実験的]'
 # 'offset-based plaintext format'
@@ -25204,6 +25336,8 @@ H7A3B62788722: 'モジュールのターゲットトリプルを %0 で上書き
 HD38E3F8D7591: '仮想関数のオーバーライドは元の関数と同じコードセグメントを指定する必要があります'
 # 'p'
 H516B9783FCA5: 'p'
+# 'pac-ret: return address protection (subset of "pauth")'
+H35B2314AE83E: 'pac-ret: 戻りアドレス保護("pauth"のサブセット)'
 # 'pack declaration outside of template'
 HDF7BB0B67932: 'テンプレート外でのパック宣言'
 # 'pack expansion contains parameter pack %0 that has a different length (%1 vs. %select{|at least }2%3) from outer parameter packs'
@@ -25448,8 +25582,8 @@ H1E67C0E84EC2: '動的サイズの配列配置をすべてヒープ上に配置'
 H1021BF49A48F: '比較式を最初に評価するには、丸カッコで囲んでください'
 # 'place parentheses around the %0 expression to evaluate it first'
 HD79F2195D659: '式の評価を優先するには%0式の周囲に丸括弧を追加してください'
-# "place parentheses around the '%0' expression to silence this warning"
-H7195F835EC30: "この警告を抑制するには'%0'式の周囲に丸括弧を追加してください"
+# 'place parentheses around the %quoted0 expression to silence this warning'
+HFD7FB705EA72: 'この警告を抑制するには%quoted0式の周りに括弧を追加してください'
 # "place parentheses around the '?:' expression to evaluate it first"
 H9605DB1A560A: "評価を優先するには'?:'式の周囲に丸括弧を追加してください"
 # 'place parentheses around the assignment to silence this warning'
@@ -25572,6 +25706,8 @@ HD0E4E0A8CB08: 'tail-foldingを優先し、tail-foldingが失敗した場合はs
 HEA9A1D5F496C: 'ds formが更新形式の場合、更新形式を優先します。'
 # 'prefer_list item must be a string literal or constant integral expression'
 HCAFE9C287B6C: 'prefer_listの項目は文字列リテラルまたは定数整数式でなければなりません。'
+# 'preferred type for bit-field %0 specified here'
+H89CF4480AE9D: 'ビットフィールド%0のここでの優先型指定'
 # "prefers tail-folding, don't attempt vectorization if tail-folding fails."
 H12E0DCDDA093: 'tail-foldingを優先し、tail-foldingが失敗した場合、ベクトル化を試みません。'
 # 'prefix attribute must be followed by an interface, protocol, or implementation'
@@ -26368,6 +26504,8 @@ HBB5542941955: "'omp_all_memory' 予約ロケーターは複数回指定でき�
 H98614BF4F5B5: "'omp_all_memory' 予約ロケーターには 'out' または 'inout' 依存種類が必要です"
 # 'resolve all otherwise unresolved externals to null'
 H0D8FB57C5D95: 'その他の未解決の外部参照をすべてヌルに解決します'
+# 'resource has implicit register binding'
+H2038E0629D14: 'リソースは暗黙のレジスタバインディングを持っています'
 # 'respect alignment requirements provided by input IR'
 H3C9B5ECCDE76: '入力IRが指定するアライメント要件を尊重します'
 # 'restrict requires a pointer or reference'
@@ -26508,8 +26646,8 @@ HB7C873D08ECC: 'サンプラー_t初期化は32ビット整数を必要としま
 H54F7785F9F3D: 'サンプラー_t変数が必要です - %0が指定されました'
 # 'sanstats Options'
 H8526EFD0A943: 'sanstatsオプション'
-# "satisfaction of constraint '%0' depends on itself"
-H3716B39C40C1: "制約'%0'の充足は自分自身に依存しています"
+# 'satisfaction of constraint %0 depends on itself'
+H172A48B0FE13: '制約%0は自身に依存しています'
 # 'save recorded profile to a file'
 H0DD7B7A894BB: '記録済みプロファイルをファイルに保存'
 # 'scalar initialized from empty initializer list is incompatible with C++98'
@@ -26558,6 +26696,8 @@ HF3ADBC91450B: '__builtin_alloca_with_alignの2番目の引数はビット単位
 HB28F8D41E677: '__builtin_annotationの2番目の引数は幅なし文字列定数でなければなりません'
 # 'second argument to __builtin_call_with_static_chain must be of pointer type'
 H9D3B291ADD1F: '__builtin_call_with_static_chainの2番目の引数はポインタ型でなければなりません'
+# "section argument to 'patchable_function_entry' attribute is not valid for this target: %0"
+HBEBC9A622C36: "'patchable_function_entry'属性のセクション引数はこのターゲットでは無効です: %0"
 # 'section attribute is specified on redeclared variable'
 H4BE9B9505588: 'セクション属性が再宣言された変数に指定されています'
 # 'section length is evaluated to a negative value %0'
@@ -26632,6 +26772,8 @@ HA588BE6E194B: 'プロファイルの密度詳細を表示'
 HF6C65D702470: '修正が適用された後のセクションの内容を表示'
 # 'signed bit-field %0 needs an extra bit to represent the largest positive enumerators of %1'
 HE118008121A9: '符号付きビットフィールド %0 は、%1 の最大の正の列挙子を表現するために、追加のビットが必要です'
+# 'signed bit-field %0 needs an extra bit to represent the largest positive enumerators of preferred type %1'
+H16B76E9FE00B: '符号付きビットフィールド%0は、優先型%1の最大正の列挙子を表現するために追加のビットが必要です'
 # 'signed left shift discards bits'
 HD469BF80AF3C: '符号付き左シフトはビットを破棄します'
 # 'signed shift result (%0) requires %1 bits to represent, but %2 only has %3 bits'
@@ -26854,14 +26996,14 @@ HF2CC0A1A3C82: '匿名の %select{struct|union}0 内では静的メンバを宣�
 H1CCD7A0167D8: '静的変数 %0 は、自身の初期化内で不審に使用されています'
 # 'static_cast between pointer-to-function and pointer-to-object is a Microsoft extension'
 H747267A37B70: '関数ポインタとオブジェクトポインタ間の static_cast は Microsoft の拡張機能です'
+# 'std::%0 must be a class template with a single type parameter'
+HAA8558BD9D00: 'std::%0は単一の型パラメータを持つクラステンプレートでなければなりません'
 # "std::coroutine_handle isn't a class template"
 H20FD07579F32: 'std::coroutine_handle はクラステンプレートではありません'
 # "std::coroutine_handle must have a member named '%0'"
 HC01B7EC5D8D7: 'std::coroutine_handle はメンバー "%0" を持たなければなりません'
 # "std::coroutine_traits isn't a class template"
 H3D3F8F520E5F: 'std::coroutine_traits はクラステンプレートではありません'
-# 'std::initializer_list must be a class template with a single type parameter'
-H57E56532E11C: 'std::initializer_listは単一の型パラメータを持つクラステンプレートでなければなりません'
 # 'std::nothrow must be a valid variable declaration'
 H81985EEDEA6B: 'std::nothrowは有効な変数宣言でなければなりません'
 # 'std::nothrow was not found; include <new> before defining a coroutine which uses get_return_object_on_allocation_failure()'
@@ -27174,8 +27316,8 @@ HA776568AF253: '型%0の一時オブジェクトは%select{private|protected}1�
 H1578DBDB8944: '推定配列定義は1要素を持つと仮定されます'
 # 'tentative definition has type %0 that is never completed'
 H2533423DBC92: '推定定義は%0という型を持っており、完成しません'
-# 'tentative definition of variable with internal linkage has incomplete non-array type %0'
-H137EE1AFC5D6: '内部リンケージを持つ変数の推定定義は、非配列の未完成型%0を持っています'
+# 'tentative definition of variable with internal linkage has incomplete %select{non-array|array}0 type %1'
+H23883C0A0522: '内部リンクを持つ変数の仮定義は、%select{配列ではない|配列}0型%1が未完了です'
 # 'tenths of percents of main entry frequency to use as a threshold when evaluating whether a basic block is cold (0 means it is only considered cold if the block has zero samples). Default: 0 '
 HB4A505AFFDA6: '基本ブロックがColdかどうかを評価する際の閾値として使用する、メインエントリーフレキランスの百分率の十分位 (0はブロックがサンプル0の場合のみColdとみなされます。デフォルト:0)'
 # "test module file extension '%0' has different version (%1.%2) than expected (%3.%4)"
@@ -27238,8 +27380,8 @@ H88A5B848CED9: "コンテキストプロパティ'%0'はコンテクストセレ
 HDD6FFFA1FE6E: "コンテクストセレクタ'%0'はコンテクストセット'%1'でネストできます；'match(%1={%0%select{|(property)}2})'を試してください"
 # "the context selector '%0' in context set '%1' requires a context property defined in parentheses; selector ignored"
 H4359A48C4F70: "コンテクストセット'%1'内のコンテクストセレクタ'%0'には、括弧内に定義されたコンテキストプロパティが必要です；セレクタは無視されました"
-# "the context selector '%0' in the context set '%1' cannot have a score ('%2'); score ignored"
-H98F3D66A37F6: "コンテクストセット'%1'内のコンテクストセレクタ'%0'にはスコア'%2'を指定できません；スコアは無視されました"
+# "the context selector '%0' in the context set '%1' cannot have a score (%quoted2); score ignored"
+H3FAFFF7C5EF8: "コンテキストセット'%1'内のコンテキストセレクタ'%0'はスコア(%quoted2)を指定できません。スコアは無視されました"
 # "the context selector '%0' is not valid for the context set '%1'; selector ignored"
 HDF7A50F1E9D4: "コンテクストセット'%1'内のコンテクストセレクタ'%0'は無効です；セレクタは無視されました"
 # "the coroutine promise type %0 declares both 'return_value' and 'return_void'"
@@ -27424,8 +27566,6 @@ HF896DD5CD9DB: 'この関数はコルーチンにはできません: %0はクラ
 HAD42B5488901: "この関数はコルーチンにはできません: %q0には'promise_type'というメンバーがありません"
 # 'this function cannot be a coroutine: missing definition of specialization %0'
 HFC5D41C5C0FA: 'この関数はコルーチンにはできません: 特殊化%0の定義がありません'
-# 'this is generally caused by modules with the same name found in multiple paths'
-HB435423839CE: 'これは通常、複数のパスに同じ名前のモジュールが存在するためです'
 # 'this placement new expression is not supported in constant expressions %select{|before C++2c}0'
 HFED2CB8F9A5D: 'このplacement new式は定数式ではサポートされていません%select{|C++2c以前では}0'
 # 'this pragma cannot appear in %0 declaration'
@@ -27622,6 +27762,8 @@ H1178A958ED5C: '汎用結合における型 %0 は、以前に指定された型
 HCA8F3A82743E: '汎用結合における型 %0 は可変修飾型です'
 # 'type %0 in generic association not an object type'
 H9CBDAFFFD0D2: '汎用結合における型 %0 はオブジェクト型ではありません'
+# 'type %0 is already %1-qualified'
+HEAFB5CEE4F59: '型%0はすでに%1修飾されています'
 # 'type %0 is incomplete'
 H68C687943CFB: '型 %0 は未完全型です'
 # 'type %0 is not a direct or virtual base of %1'
@@ -27654,6 +27796,14 @@ H67EB09767F26: '型引数はすでに特殊化されたクラス型%0には適�
 H41CCF55FF38B: '型引数はクラス型でない%0には適用できません'
 # 'type arguments cannot be applied to non-parameterized class %0'
 HC40C2F44A862: '型引数はパラメータ化されていないクラス%0には適用できません'
+# 'type aware %0 requires a matching type aware %select{|placement }1%2 to be declared in the same scope'
+H9C477E0B6856: '型意識型%0は同じスコープ内で宣言された対応する型意識型%select{|placement }1%2が必要です'
+# 'type aware %0 will not be used for coroutine allocation'
+H5B38A9DE0EAE: '型意識型%0はコルーチンの確保に使用されません'
+# 'type aware allocators are a C++2c extension'
+H55565F6468B1: '型意識型アロケータはC++2cの拡張機能です'
+# 'type aware allocators are incompatible with C++ standards before C++2c'
+H25EF1B0FAFC1: '型意識型アロケータはC++2c以前のC++標準と互換性がありません'
 # 'type bound %0 for type parameter %1 conflicts with %select{implicit|previous}2 bound %3%select{for type parameter %5|}4'
 H7F10FC1165B9: '型パラメータ%1の型制約%0は%select{暗黙の|前の}2制約%3%select{型パラメータ%5に対して|}4と矛盾しています'
 # 'type bound %0 for type parameter %1 is not an Objective-C pointer type'
@@ -28076,6 +28226,8 @@ H8B8A3DBA2D6F: "不明な警告グループ '%0'"
 H9E42BAF52A2D: "不明な警告グループ '%0'、無視されました"
 # "unknown%select{ | embed}0 preprocessor parameter '%1'"
 HD697EE356FF3: "不明な%select{ | embed}0プリプロセッサ パラメーター '%1'"
+# 'unmatched type aware %0 declared here'
+HD5E243D80237: 'ここで宣言された一致しない型意識型%0'
 # 'unnamed enumeration must be a definition'
 H4B9605BBAC49: '名前のない列挙型は定義でなければなりません'
 # 'unnamed type as template argument is incompatible with C++98'
@@ -28258,6 +28410,8 @@ H25381B224554: '所有権の変更なしに直接変換するにはCスタイル
 H89038B186CBF: 'ARCオブジェクトを+1 %0として利用可能にするには、Cスタイルキャストと__bridge_retainedを使用してください'
 # 'use __bridge_transfer with C-style cast to transfer ownership of a +1 %0 into ARC'
 H0BF38DCCAF48: '+1 %0のオーナーシップをARCに移転するには、Cスタイルキャストと__bridge_transferを使用してください'
+# "use a custom address at which new code will be put, bypassing BOLT's logic to detect where to put code"
+H8BE27E21C6B2: 'BOLTのコード配置検出ロジックをバイパスし、新しいコードを配置するカスタムアドレスを使用します'
 # "use a function's hot size when doing clustering"
 H10032CBF870F: 'クラスタリングを行う際に関数のホットサイズを使用します'
 # 'use a lock file so only one process in the system can run this pass at once. useful to avoid mangled debug output in multithreaded environments.'
@@ -28652,8 +28806,8 @@ HEE231707A80F: '柔軟配列メンバーを持つ変数 %0 はラムダ式でキ
 HECE6754B3154: '型 %1 の変数 %0 は、互換性のない型 %2 の初期化子を持っています。'
 # 'variable %0 with unknown type cannot be given a function type'
 HBD6B0E34602F: '不明な型の変数 %0 には関数型を付与できません。'
-# "variable %select{|in unary expression|on right hand side of assignment|on left hand side of assignment|on left hand side of compound assignment|on left hand side of assignment}2('%3') must match variable used %select{|in unary expression|on right hand side of assignment|<not possible>|on left hand side of compound assignment|on left hand side of assignment}0('%1') from the first statement"
-H68D8E5C8B649: "変数%select{|単項式中|代入の右辺|代入の左辺|複合代入の左辺|代入の左辺}2('%3')は、最初の文の%select{|単項式中|代入の右辺|<不可能>|複合代入の左辺|代入の左辺}0('%1')と一致する必要があります"
+# 'variable %select{|in unary expression|on right hand side of assignment|on left hand side of assignment|on left hand side of compound assignment|on left hand side of assignment}2(%3) must match variable used %select{|in unary expression|on right hand side of assignment|<not possible>|on left hand side of compound assignment|on left hand side of assignment}0(%1) from the first statement'
+HA70BF8F524C0: '変数%select{|単項式で|代入式の右辺に|代入式の左辺に|複合代入式の左辺に|代入式の左辺に}2(%3)は、最初のステートメントから使用された変数%select{|単項式で|代入式の右辺に|<不可能>|複合代入式の左辺に|代入式の左辺に}0(%1)と一致する必要があります'
 # 'variable already marked as mapped in current construct'
 HA15930719644: '変数は現在の構造体で既にマップ済みとしてマークされています。'
 # "variable appearing in '%0' clause of OpenACC 'declare' directive must be in the same scope as the directive"
