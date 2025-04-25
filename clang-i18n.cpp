@@ -20,6 +20,7 @@
 #include <cstdlib>
 #include <dlfcn.h>
 #include <string>
+#include <type_traits>
 #include <unordered_map>
 
 #include "config.h"
@@ -143,27 +144,20 @@ static void *getRealFuncAddrImpl(const char *ManagledName,
   return RealAddr;
 }
 
-template <typename F> static F *getRealFuncAddr(F *InterceptorFunc) {
-  void *InterceptorAddr;
-  std::memcpy(&InterceptorAddr, &InterceptorFunc, sizeof(InterceptorAddr));
-  Dl_info Info;
-  dladdr(InterceptorAddr, &Info);
-  void *RealFuncAddr = getRealFuncAddrImpl(Info.dli_sname, InterceptorAddr);
-  assert(RealFuncAddr && "Failed to find the real function address");
-  F *RealFunc;
-  std::memcpy(&RealFunc, &RealFuncAddr, sizeof(RealFunc));
-  return RealFunc;
-}
+template <typename FunPtr>
+concept FunctionPointer = 
+    std::is_function_v<std::remove_pointer_t<FunPtr>> || 
+    std::is_member_function_pointer_v<FunPtr>;
 
-template <typename T, typename F>
-static F T::*getRealFuncAddr(F T::*InterceptorFunc) {
+template <FunctionPointer FunPtr>
+static FunPtr getRealFuncAddr(FunPtr InterceptorFunc) {
   void *InterceptorAddr;
   std::memcpy(&InterceptorAddr, &InterceptorFunc, sizeof(InterceptorAddr));
   Dl_info Info;
   dladdr(InterceptorAddr, &Info);
   void *RealFuncAddr = getRealFuncAddrImpl(Info.dli_sname, InterceptorAddr);
   assert(RealFuncAddr && "Failed to find the real function address");
-  F T::*RealFunc;
+  FunPtr RealFunc;
   std::memcpy(&RealFunc, &RealFuncAddr, sizeof(RealFunc));
   return RealFunc;
 }
