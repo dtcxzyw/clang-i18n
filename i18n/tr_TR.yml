@@ -6,6 +6,8 @@ H71324B3824F3: '\nİşlenmiş dosyaların depolanmış olduğu dizin.\nTanımlam
 H41BC7E2887B5: '\nSembolleri birleştirmek için kullanılan dizin.'
 # '\nThe output directory for saving the results.'
 H9976AAF7AB83: '\nSonuçları kaydetmek için çıkış dizini.'
+# '\nTurn on time profiler. Generates clang-doc-tracing.json'
+H57CFA45FD036: '\nZaman profili oluşturmayı açar. clang-doc-tracing.json dosyasını üretir'
 # '\nURL of repository that hosts code.\nUsed for links to definition locations.'
 HC00AE5E38B4C: "\nKodları barındıran depo URL'si.\nTanımlama konumlarına bağlantılar oluşturulmak için kullanılır."
 # '  Type "'
@@ -20,6 +22,8 @@ HFCBE1727461C: " '%0' ham dize literal ayırıcısında C++2c öncesi standartla
 H6248B40D9879: ' (varsayılan: '
 # ' <subcommand> --help" to get more help on a specific subcommand'
 H386881D1E849: ' <altkomut> --help" belirli bir altkomut hakkında daha fazla yardım almak için'
+# ' BOLT Code Heatmap tool\n\n  Produces code heatmaps using sampled profile\n\n  Inputs:\n  - Binary (supports BOLT-optimized binaries),\n  - Sampled profile collected from the binary:\n    - perf data or pre-aggregated profile data (instrumentation profile not supported)\n    - perf data can have basic (IP) or branch-stack (LBR) samples\n\n  Outputs:\n  - Heatmaps: colored ASCII (requires a color-capable terminal or a conversion tool like `aha`)\n    Multiple heatmaps are produced by default with different granularities (set by `block-size` option)\n  - Section hotness: per-section samples% and utilization%\n  - Cumulative distribution: working set size corresponding to a given percentile of samples\n'
+H8E5615231EC0: ' BOLT Kod Isı Haritası aracı\n\n  Örneklenmiş profil kullanarak kod ısı haritaları üretir\n\n  Girdiler:\n  - İkili (BOLT-optimized ikililer desteklenir),\n  - İkiliden toplanan örneklenmiş profil:\n    - perf verisi veya önceden toplanmış profil verisi (enstrümantasyon profili desteklenmez)\n    - perf verisi temel (IP) veya dal-yığın (LBR) örnekleri içerebilir\n\n  Çıktılar:\n  - Isı haritaları: renkli ASCII (renk destekleyen terminal veya `aha` gibi dönüştürme aracı gerektirir)\n    Varsayılan olarak farklı ayrıntı düzeylerinde (block-size seçeneği ile belirlenir) birden fazla ısı haritası üretilir\n  - Bölüm sıcaklığı: bölüme göre örneklerin % oranı ve kullanım oranı\n  - Kümülatif dağıtım: örneklerin belirli bir yüzdesi için çalışma kümesi boyutu\n'
 # ' BrainF compiler\n'
 H25D59DE4A1CF: ' BrainF derleyicisi\n'
 # ' [options]'
@@ -112,8 +116,8 @@ H42FA898C6606: '#warning C++23 öncesi standartlarla uyumsuz'
 HDC6BFCFF388E: '%0 %select{parametre|dönüş}1 türü desteklenmiyor; bu hedef için vektör türlerinin desteği %2 ile eklendi'
 # "%0 '%1' is acquired exclusively and shared in the same scope"
 H7390A9DF88C0: "%0 '%1' aynı kapsamda hem özel hem paylaşılan şekilde edindi"
-# "%0 '%1' is not held on every path through here"
-H6674AA570899: "%0 '%1' bu yordamın her yolunda tutulmamış"
+# "%0 '%1' is not held on every path through here%select{| with equal reentrancy depth}2"
+HDC5F203131ED: "%0 '%1', buradaki tüm yollarda tutulmuyor%select{| ve eşit yeniden giriş derinliğiyle}2"
 # "%0 '%1' is still held at the end of function"
 HC378A7D8C58E: "%0 '%1' fonksiyon sonunda hala tutuluyor"
 # "%0 '%1' must be acquired before '%2'"
@@ -166,8 +170,8 @@ H9411040D8420: "%0 özniteliği sadece 'capability' özniteliği ile notasyonlan
 H3C2BAB720741: '%0 özniteliği bir parametre başına sadece bir kez uygulanabilir'
 # '%0 attribute can only be applied to a %select{function|method}1 with an error parameter'
 H5477D07BA320: "%0 özniteliği sadece hata parametresi bulunan bir %select{fonksiyon|yöntem}1'e uygulanabilir"
-# '%0 attribute can only be applied to a ARM, HLSL or RISC-V builtin'
-H63E9059C2A3F: '%0 özniteliği sadece ARM, HLSL veya RISC-V yerleşik fonksiyonlarına uygulanabilir'
+# '%0 attribute can only be applied to a ARM, HLSL, SPIR-V or RISC-V builtin'
+H57FF55F870DD: '%0 niteliği sadece ARM, HLSL, SPIR-V veya RISC-V yerleşiklerine uygulanabilir'
 # '%0 attribute can only be applied to instance variables or properties'
 H30E90B5958C9: '%0 özniteliği sadece örnek değişkenler veya özelliklere uygulanabilir'
 # "%0 attribute cannot be applied to %select{a function parameter|a variable with 'register' storage class|a 'catch' variable|a bit-field|an enumeration}1"
@@ -264,6 +268,8 @@ HCEAC369F8447: '%0 özniteliğinin minimum ve maksimum bağımsız değişken sa
 H1EED532B31A7: "%0 özniteliği, 'swift_async' özniteliğiyle işaretlenmiş bir %select{fonksiyon|yöntem}1'e uygulanmalıdır"
 # '%0 attribute must be greater than 0'
 H2544E0569FB3: "%0 özniteliği 0'dan büyük olmalıdır"
+# '%0 attribute on %1 must be preceded by %2 attribute'
+H0419F1FBA2F3: '%1 üzerindeki %0 niteliğinden önce %2 niteliği gelmelidir'
 # '%0 attribute on entry function does not match the target profile'
 H789CC95F4AD2: '%0 özniteliği giriş fonksiyonu hedef profil ile uyuşmuyor'
 # '%0 attribute only applies to %select{Objective-C object|pointer|pointer-to-CF-pointer|pointer/reference-to-OSObject-pointer}1 parameters'
@@ -404,8 +410,8 @@ H6B7D1478B098: '%0 bir referansın referansı olarak bildirildi'
 HF5B76F9106FA: '%0 burada bildirildi'
 # '%0 defined here'
 HAF9360C4877D: '%0 burada tanımlandı'
-# "%0 differs in AST file '%1' vs. current file"
-H2B8E15EA63E3: "%0, AST dosyasındaki '%1' ile mevcut dosya arasında farklılık gösteriyor"
+# "%0 differs in precompiled file '%1' vs. current file"
+HA74FA48CA1FC: "%0, '%1' derlenmiş dosyasında ve mevcut dosyada farklılık gösteriyor"
 # '%0 dimension is outside the allowed range [1, %1]'
 H082ED204EAD0: '%0 boyutu izin verilen [1, %1] aralığı dışında'
 # '%0 does not have a member named %1'
@@ -428,6 +434,8 @@ H21D124F292F8: '%0, bir değer göstermiyor'
 H84CFFC360255: '%0, parametre paketinin adını göstermiyor'
 # '%0 does not refer to the name of a parameter pack; did you mean %1?'
 H833E3DFEF469: '%0, parametre paketinin adını göstermiyor; %1 demeyi mi istediniz?'
+# "%0 does not support input file format of file '%1': '%select{Source|ModuleMap|Precompiled|Unknown}2'"
+HBC389132B383: "%0, '%1' dosyasının giriş dosyası biçimini desteklemiyor: '%select{Kaynak|ModülHaritası|Derlenmiş|Bilinmeyen}2'"
 # "%0 does not support the '%1' %select{type qualifier|storage class specifier}2"
 H0775C84F5711: "%0, '%1' %select{tür belirleyicisi|depolama sınıfı belirteci}2'i desteklemiyor"
 # "%0 does not support the option '%1'"
@@ -482,8 +490,8 @@ H18B31C3BE2ED: '%0 bir gizli parametredir'
 H23B2652D4493: '%0 bir eksik tiptir'
 # '%0 is an invalid name for a module'
 H04BC4C58E825: '%0 bir modül için geçersiz bir isimdir'
-# "%0 is currently enabled, but was not in the AST file '%1'"
-H4A72404ECC3D: "%0 şu an etkin ama '%1' AST dosyasında etkin değildi"
+# "%0 is currently enabled, but was not in the precompiled file '%1'"
+H7E4FD8DFEFA0: "%0 şu anda etkin, ancak '%1' derlenmiş dosyasında değildi"
 # '%0 is defined here; did you mean %1?'
 H3B788FE6A551: '%0 burada tanımlandı; %1 demeyi mi istediniz?'
 # '%0 is deprecated'
@@ -500,6 +508,8 @@ HE1EB0B2A5FDF: '%0 tamamlanmamıştır'
 HFEFEB7B90D08: "%0 '%1' istisna belirtimi eksik"
 # '%0 is no longer a pack expansion but a pack indexing type; add a name to specify a pack expansion'
 H52ECBB1B9A17: '%0 artık bir paket indeksleme türüdür; paket genişletmesi belirtmek için bir ad ekleyin'
+# '%0 is not %select{trivially relocatable|replaceable|trivially copyable|constructible with provided types}1'
+H286C96520443: '%0, %select{kolayca taşınabilir değil|değiştirilebilir değil|kolayca kopyalanabilir değil|sağlanan türlerle kurulamıyor}1'
 # '%0 is not a class type'
 H5598919CD04A: '%0 bir sınıf türü değildir'
 # '%0 is not a class%select{ or namespace|, namespace, or enumeration}1'
@@ -558,6 +568,8 @@ H580226EF44DA: '%0 -fembed-bitcode ile kullanılamaz'
 HFCE20933CC31: '%0 virtual değil ve pure olarak tanımlanamaz'
 # '%0 is only available %select{|in %4 environment }3on %1 %2 or newer'
 H1926B8ADA9BD: '%0 sadece %select{|%4 ortamında }3%1 %2 veya daha yeni ortamda kullanılabilir'
+# '%0 is only available for the SPIR-V target'
+H92D6E58DBBBB: '%0 sadece SPIR-V hedefi için mevcuttur'
 # '%0 is only supported when \'-mrvv-vector-bits=<bits>\' is specified with a value of "zvl" or a power 2 in the range [64,65536]'
 H714177E08C3D: '%0 yalnızca \'-mrvv-vector-bits=<bits>\' 64-65536 arası 2 kuvveti veya "zvl" ile belirlendiğinde desteklenir'
 # "%0 is only supported when '-msve-vector-bits=<bits>' is specified with a value of 128, 256, 512, 1024 or 2048"
@@ -680,8 +692,8 @@ H88684475A953: '%0 değişkeni %1 olamaz'
 HF56ADE356ADE: "%0 değişkeni '#pragma omp %2' direktifinde %1 klausülünde olamaz"
 # '%0 variable must be %1'
 H2457271DFCB0: '%0 değişkeni %1 olmak zorundadır'
-# "%0 was %select{disabled|enabled}1 in AST file '%3' but is currently %select{disabled|enabled}2"
-HC0632CD5FF96: "%0, AST dosyası '%3'ta %select{devre dışı|etkin}1 ancak şu anda %select{devre dışı|etkin}2 durumundadır"
+# "%0 was %select{disabled|enabled}1 in precompiled file '%3' but is currently %select{disabled|enabled}2"
+H4CAD7163A1ED: "%0 '%3' derlenmiş dosyasında %select{devre dışıydı|etkindi}1 ancak şu anda %select{devre dışı|etkin}2"
 # '%0 was deserialized'
 H39D399F5AEF8: '%0 dönüştürülmüştür'
 # '%0 was marked unused but was used'
@@ -700,6 +712,8 @@ H96D80DF95948: '%0%select{ özniteliği|}1 türlerde uygulanamaz'
 H45C12381C633: "%0%select{ özniteliği|}1 sadece %2'ye uygulanır"
 # '%0%select{ attribute|}1 only applies to %select{functions|unions|variables and functions|functions and methods|functions, methods and blocks|functions, methods, and parameters|variables|variables and fields|variables, data members and tag types|types and namespaces|variables, functions and classes|kernel functions|non-K&R-style functions|for loop statements|virtual functions|parameters and implicit object parameters|non-member functions|functions, classes, or enumerations|classes|typedefs}2'
 H9D37840D3CB2: '%0%select{ attribute|}1 sadece %select{fonksiyonlara|birleşiklere|değişkenlere ve fonksiyonlara|fonksiyonlara ve yöntemlere|fonksiyonlara, yöntemlere ve bloklara|fonksiyonlara, yöntemlere ve parametrelere|değişkenlere|değişkenlere ve alanlara|değişkenlere, veri üyesine ve etiket türlerine|türlere ve ad alanlarına|değişkenlere, fonksiyonlara ve sınıflara|kernel fonksiyonlarına|K&R tarzı olmayan fonksiyonlara|for döngüsü ifadelerine|virtual fonksiyonlara|parametreler ve açıkça belirtilmemiş nesne parametrelerine|üyeli olmayan fonksiyonlara|fonksiyonlara, sınıflara veya numaralandırmalara|sınıflara|typedeflere}2 uygulanabilir'
+# '%0%select{ attribute|}1 only applies to fields or variables of character array type; type is %2'
+H0DF527EADF11: '%0%select{ niteliği|}1 sadece karakter dizisi türünde olan alanlara veya değişkenlere uygulanır; tür %2'
 # "%0%select{| following the 'template' keyword}1 cannot refer to a dependent template"
 HA18DA36B7236: "%0%select{| 'template' anahtar kelimesinin ardından}1 bağımlı bir şablon gösteremez"
 # "%0%select{| following the 'template' keyword}1 does not refer to a template"
@@ -718,6 +732,8 @@ H50F1AE498158: "%0; yeniden sıralamayı mümkün kılmak için döngünün ön�
 H696063533F0E: "%0; yeniden sıralamayı mümkün kılmak için döngünün önüne '#pragma clang loop vectorize(enable)' belirtin; eğer diziler her zaman bağımsızsa, döngünün önüne '#pragma clang loop vectorize(assume_safety)' belirtin veya bağımsız dizi argümanlarıyla '__restrict__' belirteci kullanın -- bu seçenekler yanlış kullanılırsa hatalı sonuçlar oluşacaktır"
 # '%0B (%human0B) in local locations, %1B (%human1B) in locations loaded from AST files, for a total of %2B (%human2B) (%3%% of available space)'
 H9B3C5907D274: '%0B (%human0B) yerel konumlarda, %1B (%human1B) AST dosyalarından yüklenen konumlarda, toplamda %2B (%human2B) (%3%% mevcut alanın) yer kaplamıştır'
+# '%0{storage class} argument for SPIR-V builtin is not a 32-bits integer'
+H519A82184DBD: 'SPIR-V yerleşik işlevi için %0{depolama sınıfı} bağımsız değişkeni 32 bitlik bir tam sayı değil'
 # '%1 %0 is hidden by a non-type declaration of %0 here'
 HC05432050C69: "%1 %0 burada %0'yi gizleyen bir non-type bildirimi tarafından gizlenmiş"
 # '%1 is a %select{private|protected}0 member of %3'
@@ -730,10 +746,12 @@ HE4DF3395C0FE: '%diff{K&R fonksiyon parametresinin terfi edilmiş türü $, önc
 HBE91EA4F0CCD: '%diff{K&R fonksiyon parametresinin promosyon edilmiş türü $, parametre türü $ ile uyumsuz|K&R fonksiyon parametresinin promosyon edilmiş türü, parametre türüyle uyumsuz}0,1 daha önceki prototiple bildirildi'
 # '%diff{return type $ must match previous return type $|return type must match previous return type}0,1 when %select{block literal|lambda expression}2 has unspecified explicit return type'
 H503B0717AF47: '%diff{dönüş türü $, önceki dönüş türü $ ile eşleşmelidir|dönüş türü önceki dönüş türü ile eşleşmelidir}0,1 %select{blok literal|lambda ifadesi}2 belirtilmemiş açık dönüş tipi olduğunda'
-# "%ordinal0 argument must be a %select{|scalar|vector|matrix|vector of|scalar or vector of}1%plural{[2,3]:%plural{0:|:%plural{0:|:,}2}3|:}1%plural{0:|: }1%select{|integer|signed integer|unsigned integer|'int'|pointer to a valid matrix element}2%plural{0:|: }2%plural{0:|:%plural{0:|:or }2}3%select{|floating-point}3%plural{0:|: }3%plural{[0,3]:type|:types}1 (was %4)"
-HEE73BAE75429: "%ordinal0 parametre %select{|skaler|vektör |matris |vektör |skaler veya vektör}1%plural{[2,3]:%plural{0:|:%plural{0:|,}2}3|:}1%plural{0:|: }1%select{|tamsayı |imzalı tamsayı |imzasız tamsayı |'int' |geçerli bir matris elemanına işaretçi}2%plural{0:|: }2%plural{0:|:%plural{0:|:veya }2}3%select{|ondalıklı sayı}3%plural{0:|: }3%plural{[0,3]:tip|:tip}1 (gerçekten %4)"
+# "%ordinal0 argument must be a %select{|scalar|vector|matrix|vector of|scalar or vector of}1%plural{[2,3]:%plural{0:|:%plural{0:|:,}2}3|:}1%plural{0:|: }1%select{|integer|signed integer|unsigned integer|'int'|pointer to a valid matrix element}2%plural{0:|: }2%plural{0:|:%plural{0:|:or }2}3%select{|floating-point|16 or 32 bit floating-point}3%plural{0:|: }3%plural{[0,3]:type|:types}1 (was %4)"
+HAE59C0ED31CA: "Sıra numarası %ordinal0 bağımsız değişkeni bir %select{|skaler|vektör|matris|vektörden|skaler veya vektörden}1 olmalıdır%plural{[2,3]:%plural{0:|:,%plural{0:|:,}2}3|:}1%plural{0:|: }1%select{|tamsayı|işaretli tamsayı|işaretsiz tamsayı|'int'|geçerli matris elemanına işaretçi}2%plural{0:|: }2%plural{0:|:%plural{0:|:veya }2}3%select{|kayan noktalı|16 veya 32 bit kayan noktalı}3%plural{0:|: }3%plural{[0,3]:tür|:türler}1 (girilen: %4)"
 # '%ordinal0 argument must be a WebAssembly table'
 HF0E3AF42C5DD: '%ordinal0 numaralı argüman bir WebAssembly tablosu olmalı'
+# '%ordinal0 argument must be an externref'
+H80DC046B6BA1: 'Sıra numarası %ordinal0 bağımsız değişkeni bir externref olmalıdır'
 # '%ordinal0 argument must be an integer'
 HB74677AB0CCF: '%ordinal0 numaralı argüman bir tam sayı olmalı'
 # '%ordinal0 argument must match the element type of the WebAssembly table in the %ordinal1 argument'
@@ -852,8 +870,6 @@ HFE0AE74FD7A7: '%select{<hata>|eşitlik|üçli|eşitlik|karşılaştırma}0 kar�
 HDE23AA7C6E82: '%select{<hata>|fonksiyon şablonu|değişken şablonu|alıntı şablonu|şablon şablon parametresi|kavram|şablon}0 %1 şablon argümanları gerektirir; argüman tümevarımı yalnızca sınıf şablonları veya alıntı şablonları için izin verilir'
 # '%select{@available|__builtin_available}0 does not guard availability here; use if (%select{@available|__builtin_available}0) instead'
 HBA44F219FD20: '%select{@available|__builtin_available}0 burada uygunluk korumuyor; bunun yerine if (%select{@available|__builtin_available}0) kullanın'
-# "%select{AST file '%1' was|current translation unit is}0 compiled with the target feature '%2' but the %select{current translation unit is|AST file '%1' was}0 not"
-H5C12AF216CA3: "%select{AST dosyası '%1' %select|hazır çeviri birimi}0 '%2' hedef özelliğine göre derlendi ancak %select{hazır çeviri birimi|AST dosyası '%1'}0 bu özelliğe sahip değil"
 # "%select{MIPS|MSP430|RISC-V|AVR}0 '%select{interrupt|signal}1' attribute only applies to functions that have %select{no parameters|a 'void' return type}2"
 HC530D462FB18: "%select{MIPS|MSP430|RISC-V|AVR}0 '%select{interrupt|signal}1' özniteliği %select{parametre yok|'void' dönüş türüne sahip}2 fonksiyonlara uygulanabilir"
 # "%select{OpenACC '%3' construct|while loop|do loop}0 cannot appear in intervening code of a '%1' with a '%2' clause"
@@ -866,18 +882,18 @@ H8129F6E36883: '%select{PCH|geçerli çevrim birimi}0 VFS kaplaması yok'
 H1F8E7EA59762: '%select{PCH|hazır çeviri birimi}0 VFS katmanları yok'
 # '%select{PCH|current translation unit}0 has the following VFS overlays:\n%1'
 HF3357458F7A1: '%select{PCH|hazır çeviri birimi}0 aşağıdaki VFS katmanlarına sahip:\n%1'
-# "%select{PCH|module|AST}0 file '%1' built from a different branch (%2) than the compiler (%3)"
-H47225B26A402: "%select{PCH|modül|AST}0 dosyası '%1' derleyiciden farklı bir dal (%2) derlendi (derleyici: %3)"
-# "%select{PCH|module|AST}0 file '%1' contains compiler errors"
-H70FD1E0F0771: "%select{PCH|modül|AST}0 dosyası '%1' derleme hataları içeriyor"
-# "%select{PCH|module|AST}0 file '%1' is out of date and needs to be rebuilt%select{|: %3}2"
-H1F11095B483F: "%select{PCH|modül|AST}0 dosyası '%1' güncel değil ve yeniden oluşturulması gerekiyor%select{|: %3}2"
-# "%select{PCH|module|AST}0 file '%1' not found%select{|: %3}2"
-HA37A363A734E: "%select{PCH|modül|AST}0 dosyası '%1' bulunamadı%select{|: %3}2"
-# "%select{PCH|module|AST}0 file '%1' uses a newer format that cannot be read"
-H80665252BAE8: "%select{PCH|modül|AST}0 dosyası '%1' okunamayan daha yeni bir formatta"
-# "%select{PCH|module|AST}0 file '%1' uses an older format that is no longer supported"
-HB4B0734241D0: "%select{PCH|modül|AST}0 dosyası '%1' desteklenmeyen eskisi formatta"
+# "%select{PCH|module|precompiled }0 file '%1' uses a newer format that cannot be read"
+H07F5AC341880: "%select{PCH|modül|derlenmiş }0 dosyası '%1', okunamayan daha yeni bir biçim kullanıyor"
+# "%select{PCH|module|precompiled}0 file '%1' built from a different branch (%2) than the compiler (%3)"
+H9745C76C9827: "%select{PCH|modül|derlenmiş}0 dosyası '%1', derleyicinin (%3) aksine farklı bir branch (%2) üzerinden oluşturuldu"
+# "%select{PCH|module|precompiled}0 file '%1' contains compiler errors"
+H4EAD7147E188: "%select{PCH|modül|derlenmiş}0 dosyası '%1' derleyici hataları içeriyor"
+# "%select{PCH|module|precompiled}0 file '%1' is out of date and needs to be rebuilt%select{|: %3}2"
+H34F1D2EC0C97: "%select{PCH|modül|derlenmiş}0 dosyası '%1' güncel değil ve yeniden oluşturulmalı%select{|: %3}2"
+# "%select{PCH|module|precompiled}0 file '%1' not found%select{|: %3}2"
+HD144036A5800: "%select{PCH|modül|derlenmiş}0 dosyası '%1' bulunamadı%select{|: %3}2"
+# "%select{PCH|module|precompiled}0 file '%1' uses an older format that is no longer supported"
+HBC82CDA04A3A: "%select{PCH|modül|ön derlenmiş}0 dosyası '%1', artık desteklenmeyen eski bir formatta kullanıyor"
 # '%select{__block variables|global variables|fields|instance variables}0 cannot have __autoreleasing ownership'
 H8459C5DA92C1: '%select{__block değişkenleri|global değişkenleri|alanlar|örnek değişkenleri}0 __autoreleasing sahipliği olamaz'
 # '%select{__device__|__global__|__host__|__host__ __device__}0 function %1 cannot overload %select{__device__|__global__|__host__|__host__ __device__}2 function %3'
@@ -886,6 +902,8 @@ HD56CBB05D1A2: '%select{__device__|__global__|__host__|__host__ __device__}0 fon
 H9A7D97DDD421: '%select{bağlamsal bir tür|bir dizi türü|vektör veya vektörel yapılabilir skaler olmayan bir tür}0 özniteliği %1 için geçersiz bir bağımsız değişken'
 # "%select{a variable|a parameter|'this'}0 cannot appear in more than one %1 clause"
 HE09D18DCA51A: "%select{bir değişken|bir parametre|'this'}0 sadece bir tane %1 clauseda bulunabilir"
+# "%select{active|which applies to}0 '%1' clause here"
+H2AA7AEE20DF7: "%select{etkin|uygulanan}0 '%1' buradaki yan tümcesi"
 # '%select{address of|reference to}0 stack memory associated with %select{local variable|parameter|compound literal}2 %1 %select{returned|passed to musttail function}3'
 HDE8352A90808: '%select{adresi|bağlantısı}0 %select{yerel değişken|parametre|compund literal}2 %1 %select{döndürüldü|musttail fonksiyonuna geçirildi}3 ile ilişkili yığıt belleği'
 # '%select{alias|ifunc}0 definition is part of a cycle'
@@ -936,6 +954,8 @@ HE6728E1CAD49: "%select{anonim struct|birleşim}0 üyesi %1, C++98 ile uyumsuzdu
 H510A2D2A82E0: '%select{aritmetik işlemi|bit düzeyinde işlemi|karşılaştırma|koşullu ifade|bileşik atama}0 %select{ondalıklı|numaralandırma}1 türü %2 %plural{2:ile|4:den|:ve}0 %select{numaralandırma|ondalıklı}1 türü %3'
 # '%select{arithmetic between|bitwise operation between|comparison of|conditional expression between|compound assignment of}0 %select{floating-point|enumeration}1 type %2 %plural{2:with|4:from|:and}0 %select{enumeration|floating-point}1 type %3 is deprecated'
 H08C01E0FFD79: '%select{aritmetik işlemi|bit düzeyinde işlemi|karşılaştırma|koşullu ifade|bileşik atama}0 %select{ondalıklı|numaralandırma}1 türü %2 %plural{2:ile|4:den|:ve}0 %select{numaralandırma|ondalıklı}1 türü %3 yetersizdir'
+# '%select{arithmetic between|bitwise operation between|comparison of|conditional expression between|compound assignment of}0 different Unicode character types %1 and %2'
+H815FA4B1A658: '%select{arasında aritmetik işlem|arasında bit düzeyinde işlem|arasındaki karşılaştırma|arasında koşullu ifade|bileşik atama}0 farklı Unicode karakter türleri %1 ve %2'
 # '%select{arithmetic between|bitwise operation between|comparison of|conditional expression between|compound assignment of}0 different enumeration types%diff{ ($ and $)|}1,2'
 H15481858FE39: '%select{aritmetik işlemi|bit düzeyinde işlemi|karşılaştırma|koşullu ifade|bileşik atama}0 farklı numaralandırma türleri%diff{ ($ ve $)|}1,2'
 # '%select{arithmetic between|bitwise operation between|comparison of|conditional expression between|compound assignment of}0 different enumeration types%diff{ ($ and $)|}1,2 is deprecated'
@@ -996,10 +1016,10 @@ HC805ED783ADF: '%select{sınıf|değişken}0 şablonunun kısmi spesifikasyonu h
 HD6682742D913: '%select{sınıf|değişken}0 şablonu kısmi özellesmesi temel şablon kadar özel değil'
 # '%select{codeseg|section}0 does not match previous declaration'
 H9AFE01E1A06A: '%select{codeseg|section}0 önceki bildirimle uyuşmuyor'
-# "%select{command line contains|AST file '%1' was built with}0 '-detailed-preprocessing-record' but %select{AST file '%1' was not built with it|it is not present on the command line}0"
-H668E0E039D43: "%select{komut satırı içerir|AST dosyası '%1' oluşturuldu}0 '-detailed-preprocessing-record' ancak %select{AST dosyası '%1' bu özelliyle oluşturulmadı|komut satırında mevcut değil}0"
-# "%select{command line contains|AST file '%1' was built with}0 '-undef' but %select{AST file '%1' was not built with it|it is not present on the command line}0"
-H8E60AF265E55: "%select{komut satırı içerir|AST dosyası '%1' oluşturuldu}0 '-undef' ancak %select{AST dosyası '%1' bu özelliyle oluşturulmadı|komut satırında mevcut değil}0"
+# "%select{command line contains|precompiled file '%1' was built with}0 '-detailed-preprocessing-record' but %select{precompiled file '%1' was not built with it|it is not present on the command line}0"
+HDDE8830E5E4D: "%select{komut satırı '-detailed-preprocessing-record' içeriyor|ön derlenmiş '%1' dosyası ile oluşturuldu}0 ancak %select{ön derlenmiş '%1' dosyası bununla oluşturulmadı|komut satırında yok}0"
+# "%select{command line contains|precompiled file '%1' was built with}0 '-undef' but %select{precompiled file '%1' was not built with it|it is not present on the command line}0"
+H538B2717C6E0: "%select{komut satırı '-undef' içeriyor|ön derlenmiş '%1' dosyası '-undef' ile oluşturuldu}0 ancak %select{ön derlenmiş '%1' dosyası bununla oluşturulmadı|komut satırında yok}0"
 # '%select{comparison between %diff{ ($ and $)|}0,1|arithmetic operation with operands of type %diff{ ($ and $)|}0,1|conditional operator with the second and third operands of type %diff{ ($ and $)|}0,1}2 which are pointers to non-overlapping address spaces'
 H47A4B5F7D5D9: '%select{ %diff{ ($ ve $)|}0,1 arasında karşılaştırma |%diff{ ($ ve $)|}0,1 türündeki operandlarla aritmetik işlem |%diff{ ($ ve $)|}0,1 türündeki ikinci ve üçüncü operandlarla koşullu operatör}2 nesneleri, kesişmeyen adres uzaylarına işaret eden pointerlar'
 # '%select{const_cast|static_cast|reinterpret_cast|dynamic_cast|C-style cast|functional-style cast|addrspace_cast}0 from %1 to %2 converts between mismatching address spaces'
@@ -1184,6 +1204,8 @@ HEFD5CC9864D7: '%select{uyumsuz|tekrar eden}0 yönergeler "%1" ve "%2"'
 HFD8E12A874BC: '%select{örnek değişkeni|özellik}2 %0 özniteliği nesne tipi olmalı (geçersiz %1)'
 # '%select{instance|class}1 method %0 not found ; did you mean %2?'
 H113C6B0985AF: '%select{örnek|sınıf}1 %0 metodu bulunamadı ; muhtemel %2?'
+# '%select{integer|float}0 literal is too large to be represented as a %select{32-bit %select{signed|}1 integer|float}0 type'
+H84C45039D88A: '%select{tamsayı|kayan nokta}0 sabiti, %select{32-bit %select{imzalı|}1 tamsayı|kayan nokta}0 türü olarak temsil edilemeyecek kadar büyük'
 # '%select{integer|integral}1 constant expression must have %select{integer|integral or unscoped enumeration}1 type, not %0'
 H07847569345A: '%select{tamsayı|integral}1 sabit ifadesi %select{tamsayı|integral veya kapsamı belirtilmemiş enumerasyon}1 tipi olmalı, %0 değil'
 # "%select{interrupt service routine|function with attribute 'no_caller_saved_registers'}0 should only call a function with attribute 'no_caller_saved_registers' or be compiled with '-mgeneral-regs-only'"
@@ -1248,6 +1270,8 @@ HA353FC8D883A: '%select{struct tipi değil|sınıf tipi değil|union tipi değil
 H7895E4BCBED9: '%select{non-virtual|virtual}0 varlık burada'
 # "%select{non-|function }0pointer argument to '__builtin_is_within_lifetime' is not allowed"
 HEC6E2A0FBA29: "%select{fonksiyon dışı işaretçi|fonksiyon}0 argümanı '__builtin_is_within_lifetime' için izin verilmiyor"
+# '%select{non-|}0overlapping comparisons always evaluate to %select{false|true}0'
+HDA33BE63192F: '%select{çakışmayan|}0 karşılaştırmalar her zaman %select{false|true}0 sonucunu verir'
 # '%select{non-|}0type aware %1 declared here in %2'
 HC09774CA5903: "%select{non-|}0tip bilgili %1 %2'de tanımlandı"
 # "%select{no|too many}0 integer expression arguments provided to OpenACC 'num_gangs' %select{|clause: '%1' directive expects maximum of %2, %3 were provided}0"
@@ -1286,6 +1310,8 @@ HECDCB166B532: '%select{işaretçi | bağlantı}0 WebAssembly referans tipi izin
 H8FC8E4B28636: '%select{işaretçi | bağlantı}0 bir consteval bildirimi bir sabit ifade değildir'
 # '%select{pointer|reference}1 to non-const type %0 with no explicit ownership'
 H0FF342784C44: '%select{işaretçi | bağlantı}1, %0 const olmayan tipine sahip olma belirtilmemiş'
+# "%select{precompiled file '%1' was|current translation unit is}0 compiled with the target feature '%2' but the %select{current translation unit is|precompiled file '%1' was}0 not"
+H61983A41BC0C: "%select{ön derlenmiş '%1' dosyası|%2 hedef özelliğine sahip}0 ile derlendi ancak %select{mevcut çeviri birimi|ön derlenmiş '%1' dosyası}0 değil"
 # '%select{precompiled header|module}0 uses __DATE__ or __TIME__'
 H2637E05CCFD6: '%select{önceden derlenmiş başlık | modül}0 __DATE__ veya __TIME__ kullanmaktadır'
 # '%select{program scope|static local|extern}0 variable must reside in %1 address space'
@@ -1382,6 +1408,8 @@ H74349A7BD7CA: '%select{struct|interface|class}0 %plural{1:sınıf|: sınıflar}
 H2D10AD8D0564: '%select{struct|interface|class}0%select{| template}1 %2 daha önce %select{struct|interface|class}3%select{| template}1 olarak tanımlandı; bu geçerli ancak Microsoft C++ ABI altında link hataları oluşabilir'
 # '%select{struct|interface|union|class|enum}0 %1 does not declare any constructor to initialize its non-modifiable members'
 HAB227F7E6966: '%select{struct|interface|union|class|enum}0 %1, non-modifiable üyelerini başlatmak için herhangi bir yapıcı fonksiyon belirtmedi'
+# '%select{struct|union|enum}0 defined within a struct or union is not visible in C++'
+H20DE76C1377D: 'Bir yapı veya birlik içinde tanımlanan %select{yapı|birlik|enum}0 C++ dilinde görünmezdir'
 # '%select{struct|union}0 kernel parameters may not contain pointers'
 H1723C50B8752: '%select{struct|union}0 çekirdek parametreleri işaretçi içeremez'
 # '%select{struct|union}0 without named members is a GNU extension'
@@ -1436,6 +1464,8 @@ H74FA7B9CE6BC: "%select{türünün değerleri|underlying türüne sahip enum de�
 HF8F02B43BB62: '%select{değer|tür}0 bağımlı ifade debug komutuna argüman olarak geçirildi'
 # '%select{variable|static data member}0 instantiated with function type %1'
 HE6193A7D74C4: '%select{değişken|static veri üyesi}0 %1 fonksiyon türü ile başlatıldı'
+# '%select{variable|variable template|variable template partial specialization|variable template explicit specialization}0 %1 declared with deduced type %2 cannot appear in its own initializer'
+H7CD30BEC5DE9: '%select{değişken|değişken şablonu|değişken şablonu kısmi özelleştirmesi|değişken şablonu açık özelleştirmesi}0 %1, çıkarılan tür %2 ile bildirildiğinde kendi başlatıcısında görünemez'
 # '%select{via initialization of|binding reference}0 variable %select{%2 |}1here'
 HB0440A5001E5: '%select{bağlama ile başlatılan|bağlama başvurusu}0 değişken %select{%2 |}1burada'
 # "%select{virtual method|function pointer}0 cannot be inferred '%1'"
@@ -1870,6 +1900,10 @@ H89BC3FB5059E: "'%select{make_unsigned|make_signed}0', %select{bool|_BitInt(1)}1
 HF4936F4E6501: "'%select{memcpy|wmemcpy}0', çakışan bellek bölgeleri arasında kullanıldı"
 # "'%select{pure|const}0' attribute on function returning 'void'; attribute ignored"
 H219A6665B476: "'%select{pure|const}0' niteliği 'void' döndüren bir işlevde kullanıldı; nitelik yoksayıldı"
+# "'%select{trivially_relocatable_if_eligible|replaceable_if_eligible}0' keyword is a C++2c extension"
+H6BB09EC63ECD: "'%select{trivially_relocatable_if_eligible|replaceable_if_eligible}0' anahtar sözcüğü C++2c uzantısıdır"
+# "'%select{trivially_relocatable|replaceable}0_if_eligible' keyword is incompatible with standards before C++2c"
+HE67149BBE77B: "'%select{trivially_relocatable|replaceable}0_if_eligible' anahtar sözcüğü C++2c öncesi standartlarla uyumsuzdur"
 # "'%select{|short|long|long long}0 %1' is invalid"
 H4742130B5F6C: "'%select{|short|long|long long}0 %1' geçersiz bir ifadedir"
 # "'&&' of a value and its negation always evaluates to false"
@@ -1948,8 +1982,8 @@ HC050BA19FE21: "'[[%select{nodiscard|gnu::warn_unused_result}0]]' özniteliği b
 HA6D310EC7345: "'[[carries_dependency]]' özniteliği bir işlev bildirimi veya lambda'nın parametresinde kullanılabilmektedir"
 # "'[]' after delete interpreted as 'delete[]'; add parentheses to treat this as a lambda-expression"
 H9FAF75D55EEF: "'[]' delete sonrasında 'delete[]' olarak yorumlanıyor; bu ifadeyi lambda ifadesi olarak görmek için parantez ekleyin"
-# "'_BitInt' %select{vector|matrix}0 element width must be %select{a power of 2|at least as wide as 'CHAR_BIT'}1"
-H0C14DAF989FF: "'_BitInt' %select{vektör|matris}0 eleman genişliği %select{2'nin bir kuvveti olmalı|'CHAR_BIT' kadar geniş veya daha geniş olmalı}1"
+# "'_BitInt' %select{vector|matrix}0 element width must be a power of 2"
+HE9CD7B30FBE6: "'_BitInt' %select{vektör|matris}0 eleman genişliği 2'nin üssü olmalıdır"
 # "'_BitInt' in %select{C17 and earlier|C++}0 is a Clang extension"
 HDE7EEC66FEFB: "'_BitInt' %select{C17 ve önceki sürümlerde|C++}0'da Clang uzantısıdır"
 # "'_BitInt' suffix for literals is a C23 extension"
@@ -2016,8 +2050,8 @@ H88B3B9C40157: "'__pixel' '__vector' ile öne gelmelidir. '%0' bildirim belirtec
 H6E0E8F990A99: "'__ptrauth' eklentisi uyuşmazlık%diff{ ($ ve $)|}0,1"
 # "'__ptrauth' qualifier must take between 1 and 3 arguments"
 HD53DD31D4F33: "'__ptrauth' ekli tip 1-3 aralığında parametre almalıdır"
-# "'__ptrauth' qualifier only applies to pointer types; %0 is invalid"
-H7B0BBE1DC52F: "'__ptrauth' sadece işaretçi tipleri için geçerlidir; %0 geçersiz"
+# "'__ptrauth' qualifier only applies to pointer or pointer sized integer types; %0 is invalid"
+HEA3E527DDE36: "'__ptrauth' niteleyicisi sadece işaretçi veya işaretçi boyutunda tamsayı türlerine uygulanabilir; %0 geçersizdir"
 # "'__super' cannot be used with a using declaration"
 HE7865E9E15F7: "'__super' bir using bildirimi ile kullanılamaz"
 # "'__thread' before '%0'"
@@ -2142,6 +2176,8 @@ HA795F2923798: "Burada 'decltype(auto)' kullanılamaz"
 H7E1DB4CB833F: "C++14 uzantısı olan 'decltype(auto)' tür belirteci"
 # "'decltype(auto)' type specifier is incompatible with C++ standards before C++14"
 HA38CAC8829B9: "C++14'den önceki C++ standartlarıyla uyumsuz 'decltype(auto)' tür belirteci"
+# "'default' clause for 'metadirective' is deprecated; use 'otherwise' instead"
+H505947545CF6: "'metadirective' için 'default' yan tümcesi kullanımdan kaldırıldı; bunun yerine 'otherwise' kullanın"
 # "'default' statement not in switch statement"
 H1133498536DD: "Switch ifadesi dışında bulunan 'default' ifadesi"
 # "'defined' cannot appear within this context"
@@ -2556,6 +2592,8 @@ H5AC04D68943E: '-E veya -x seçeneği gerekir (girdi standart girişten alındı
 H0B5239D5C711: '-O4, -O3 ile aynıdır'
 # '-Wa,--allow-experimental-crel must be specified to use -Wa,--crel. CREL is experimental and uses a non-standard section type code'
 HB2A451FA1760: '-Wa,--allow-experimental-crel belirtmelisiniz -Wa,--crel kullanabilmek için. CREL deneysel aşamada olup standart dışı bir bölüm türü kullanıyor'
+# '-code-completion-at=<file>:<line>:<column> requires <line> and <column> to be integers greater than zero'
+HEFD41ED402A1: '-code-completion-at=<dosya>:<satır>:<kolon> satır ve kolonun sıfırdan büyük tamsayılar olmasını gerektirir'
 # '-dealloc is being overridden in a category'
 H75DBC0C062A1: 'Bir kategoride -dealloc geçersizleştiriliyor'
 # '-dependency-file requires at least one -MT or -MQ option'
@@ -2590,6 +2628,10 @@ H6C62B9F141CF: '-fsanitize-address-field-padding %0 için yok edildi çünkü %s
 HA7F31D279886: "-ftest-module-file-extension argümanı '%0' gerekli 'blockname:major:minor:hashed:user info' biçimi değildir"
 # '-ftrivial-auto-var-init-stop-after=%0 has been enabled to limit the number of times ftrivial-auto-var-init=%1 gets applied.'
 HA5103A32F2CB: '-ftrivial-auto-var-init-stop-after=%0 etkinleştirildi ve ftrivial-auto-var-init=%1 uygulanmasının sayılarını sınırlamak için.'
+# '-header-include-filtering=%0 requires a compatible value for -header-include-format'
+HFD5CA9639FF5: '-header-include-filtering=%0 -header-include-format için uyumlu bir değer gerektirir'
+# '-header-include-format=%0 requires a compatible value for -header-include-filtering'
+H11F9E33E0B1B: '-header-include-format=%0 -header-include-filtering için uyumlu bir değer gerektirir'
 # '-mcmse is not supported for %0'
 HBC9BABD34806: '%0 için -mcmse desteklenmiyor'
 # '-mharden-sls is only supported on armv7-a or later'
@@ -2868,6 +2910,8 @@ HC033F70F7A4D: 'Kaydedilmesi gereken sembol isimlerinin listesi'
 H6A89F885E7F6: 'Döngü tasarrufunun üzerine eklenen bir çarpan, tasarrufun maliyeti karşılamadığını belirlemek için kullanılır'
 # "A string that'll be prepended to all log statements. Useful when running multiple instances on same host."
 HE0B8D8E429AE: 'Tüm log ifadelerine eklenecek bir dize. Aynı sunucuda birden fazla örneği çalıştırıldığında kullanışlıdır.'
+# 'A textual (comma separated) description of the pass pipeline e.g.,-passes="foo,bar", to have analysis passes available before a pass, add "require<foo-analysis>". See https://llvm.org/docs/NewPassManager.html#invoking-opt for more details on the pass pipeline syntax. '
+HB4D744456DA4: 'Geçiş hattının metinsel (virgülle ayrılmış) açıklaması örneğin, -passes="foo,bar", bir geçişten önce analiz geçişlerini kullanıma sunmak için "require<foo-analysis>" ekleyin. Geçiş hattı sözdizimiyle ilgili daha fazla bilgi için şu adresi ziyaret edin: https://llvm.org/docs/NewPassManager.html#invoking-opt'
 # 'A textual description of the alias analysis pipeline for handling managed aliasing queries'
 H4D54EF8DEC89: 'Yönetilen takma isim sorgularını işlemek için alias analizi boru hattının metin tabanlı açıklaması'
 # 'A textual description of the cgscc pass pipeline inserted at the CGSCCOptimizerLate extension point into default pipelines'
@@ -2900,8 +2944,6 @@ H5D27DE009EB3: "Metinsel bir açıklama varsayılan anahtarlara PipelineStart ek
 H07C815591653: "Metinsel bir test için geçiş pipeline'ı açıklaması"
 # "A textual description of the pass pipeline, same as what's passed to `opt -passes`."
 HAD654D568007: "Metinsel bir geçiş pipeline açıklaması, opt -passes'ye aktarılan ile aynıdır."
-# 'A textual description of the pass pipeline. To have analysis passes available before a certain pass, add "require<foo-analysis>".'
-H799364B80DF3: 'Metinsel bir geçiş pipeline açıklaması. Belirli bir geçişten önce analiz geçişlerini eklemek için "require<foo-analiz>" ekleyin.'
 # "A textual description of the pass pipeline. To have analysis passes available before a certain pass, add 'require<foo-analysis>'."
 HB92573A0FB9B: "Metinsel bir geçiş pipeline açıklaması. Belirli bir geçişten önce analiz geçişlerini eklemek için 'require<foo-analiz>' ekleyin."
 # "A textual description of the pass pipeline. To have analysis passes available before a certain pass, add 'require<foo-analysis>'. '-passes' overrides the pass pipeline (but not all effects) from specifying '--opt-level=O?' (O2 is the default) to clang-linker-wrapper.  Be sure to include the corresponding 'default<O?>' in '-passes'."
@@ -2930,6 +2972,8 @@ H87DB5533D231: 'Birden fazla nesne dosyasını tek bir ikili dosyaya birleştirm
 H43DC1BE6F67F: 'GPU hedefi için derlenmiş birim testlerini başlatmak için bir araç. Bu, çapraz derleme emülatörlerine benzer bir arayüz sunmayı amaçlamaktadır.'
 # 'AArch64 A57 FP Load-Balancing'
 H89C796F20C61: 'AArch64 A57 FP Yük Dengeleme'
+# 'AArch64 Assembly Printer'
+H149E1B5ADAFC: 'AArch64 Assembler Yazıcı'
 # 'AArch64 Branch Targets'
 H9304B7C9D5D8: 'AArch64 Dal Hedefleri'
 # 'AArch64 CCMP Pass'
@@ -2982,12 +3026,16 @@ H73581D76FB10: 'AArch64Arm64ECCallLowering'
 H7FF392C86EBF: "ABI '%0' '%1' için desteklenmiyor"
 # "ABI '%0' is not supported on CPU '%1'"
 H1189F24D3D62: "ABI '%0' CPU '%1' üzerinde desteklenmiyor"
+# 'AIX PPC Assembly Printer'
+H954F34380A8A: 'AIX PPC Assembly Yazıcısı'
 # 'AMD vector math library'
 HA177FC4B0F5A: 'AMD vektör matematik kütüphanesi'
 # 'AMDGPU Address space based Alias Analysis'
 HEE464CD5CFF9: 'AMDGPU Adres alanı tabanlı Alias Analizi'
 # 'AMDGPU Address space based Alias Analysis Wrapper'
 HA70F43663430: 'AMDGPU Adres alanı tabanlı Alias Analizi Sürümci'
+# 'AMDGPU Assembly Printer'
+HFD4F4422703F: 'AMDGPU Assembly Yazıcısı'
 # 'AMDGPU Attributor'
 HB96C03301054: 'AMDGPU Attributor'
 # 'AMDGPU CFG Structurizer'
@@ -3018,6 +3066,8 @@ H570A9C93F411: 'AMDGPU Son çekiş yüklemesini işaretle'
 HF352DB9ED395: 'AMDGPU RA Öncesi Uzun Şube Kaydı'
 # 'AMDGPU Pre-RA optimizations'
 HB1D166D82990: 'AMDGPU RA Öncesi Optimizasyonlar'
+# 'AMDGPU Preload Kernel Arguments'
+H8AF72F195656: 'AMDGPU Çekirdek Argümanlarını Ön Yükle'
 # 'AMDGPU Preload Kernel Arguments Prolog'
 HA4C7048C1EF3: 'AMDGPU Kernel Argümanlarını Ön Yükleme Prolog'
 # 'AMDGPU Printf lowering'
@@ -3052,6 +3102,8 @@ H5B6E5D0BD096: 'ANALYSIS_FP_COMMUTE'
 HB87A25B6CDE7: 'API notlarında %0 değiştirme tipi, orijinal %1 tipinden farklı bir boyuta sahiptir'
 # 'ARC %select{unused|__unsafe_unretained|__strong|__weak|__autoreleasing}0 lifetime qualifier on return type is ignored'
 H4E4E8ED8984D: 'ARC %select{ kullanılmayan | __unsafe_unretained | __strong | __weak | __autoreleasing }0 döndürülen tip üzerindeki yaşam belirleyicisi yoksayılır'
+# 'ARC Assmebly Printer'
+H528084674BCB: 'ARC Assmebly Yazıcısı'
 # 'ARC DAG->DAG Pattern Instruction Selection'
 H40C54AF1B605: 'ARC DAG->DAG Örnek Deseni Yapılandırma Seçimi'
 # 'ARC finalize branches'
@@ -3066,6 +3118,8 @@ HBA6CEB1E81A4: 'ARC, tutulabilir nesne türündeki esnek dizi üyelerini yasakla
 H8E9C79FD3192: 'ARC, depolama özniteliği veya sahip niteliği belirtilmemiş bir Objective-C nesnesinin özelliğini sentezlemeyi yasaklar'
 # 'ARC forbids use of %0 in a @selector'
 H9E100CA24C33: 'ARC, @selector içinde %0 kullanmayı yasaklar'
+# 'ARM Assembly Printer'
+H821520E8B386: 'ARM Assembly Yazıcısı'
 # 'ARM Branch Targets'
 H320FDCF5D874: 'ARM İletişim Hedefleri'
 # 'ARM EHABI exceptions'
@@ -3096,12 +3150,8 @@ H77670EF47A4C: 'ARM pseudo emri genişletme geçişi'
 H7DDE5DF1D5E8: 'ARM sls sertleştirme Geçişi'
 # 'AST and IR generation'
 H9BC428E8F3F3: 'AST ve IR üretimi'
-# "AST file '%0' was compiled for the %1 '%2' but the current translation unit is being compiled for target '%3'"
-HCADF9CC20080: "AST dosyası '%0' %1 '%2' için derlendi, ancak geçerli çeviri birimi '%3' hedefi için derleniyor"
-# "AST file '%0' was not built as a module"
-HF2D0BB327E40: "AST dosyası '%0' bir modül olarak oluşturulmadı"
-# "AST file '%2' was compiled with module cache path '%0', but the path is currently '%1'"
-H5B70E03C1FF3: "AST dosyası '%2' '%0' modül önbellek yolu ile derlendi, ancak mevcut yol '%1'"
+# 'AVR Assembly Printer'
+HEC272DC617AD: 'AVR Assembly Yazıcısı'
 # 'AVR DAG->DAG Instruction Selection'
 H8D3BB39761E3: 'AVR DAG->DAG Talimat Seçimi'
 # 'AVR Shift Expansion'
@@ -3176,8 +3226,8 @@ HAAED7844B106: 'Doğrudan değişkenlere TBAA etiketleri ekle'
 H3C7A729C0FA0: 'Yer tutucu parametrelere TBAA etiketleri ekle'
 # 'Add TBAA tags to global variables'
 HE3F5E682DA95: 'Global değişkenlere TBAA etiketleri ekle'
-# 'Add TBAA tags to local allocations. UNSAFE.'
-H91FE178A4638: 'Yerel tahsislere TBAA etiketleri ekle. GÜVENLİ DEĞİL.'
+# 'Add TBAA tags to local allocations.'
+H4C0FDC192CCF: 'Yerel tahsislere TBAA etiketleri ekle'
 # 'Add __emutls_[vt]. variables for emultated TLS model'
 H0F84398949DD: '__emutls_[vt]. değişkenlerini emüle edilmiş TLS modeli için ekle'
 # 'Add a call to __hwasan_add_frame_record for storing into the stack ring buffer'
@@ -3238,6 +3288,8 @@ H4AD0218E28C9: 'ObjC Sistem dahil etme arama yolu ekleyin'
 H4E8397371575: 'ObjC++ Sistem dahil etme arama yolu ekleyin'
 # 'Add directory to the end of the list of include search paths'
 HA9C01D5A6394: 'Dizin, dahil etme arama yolları listesinin sonuna ekle'
+# "Add directory to the internal system framework search path; these are assumed to not be user-provided and are used to model system and standard frameworks' paths."
+H52CD13889F28: 'Dizin yollarını dahili sistem çatısı arama yoluna ekle; bunların kullanıcı tarafından sağlanmadığı varsayılır ve sistem ile standart çatıların yollarını modellemek için kullanılır.'
 # 'Add directory to the internal system include search path with implicit extern "C" semantics; these are assumed to not be user-provided and are used to model system and standard headers\' paths.'
 HA6F738C6C497: 'Dizin, iç sistem dahil etme arama yollarına ekleyin ve gizli extern "C" semantiği ile; bu, kullanıcı tarafından sağlanmadığı varsayılmaktadır ve sistem ve standart başlık dosyalarının yollarını modellemek için kullanılır.'
 # "Add directory to the internal system include search path; these are assumed to not be user-provided and are used to model system and standard headers' paths."
@@ -3252,6 +3304,8 @@ H1430FC8452EC: '.ll dosyasına bilgilendirme yorumları ekle'
 H35835E4FFD3B: 'Bir LSR maliyet modeline talimat sayısını ekle'
 # 'Add library.'
 H87317E57D7DD: 'Kütüphane ekle.'
+# 'Add lifetime markers to generated constant size allocas'
+HC8366738065B: 'Oluşturulan sabit boyutlu tahsislere yaşam süresi işaretçileri ekle'
 # 'Add linker option'
 HEB1AFB3AB781: 'Birleştirici seçeneğini ekle'
 # 'Add missing headers to depfile'
@@ -3528,6 +3582,8 @@ HF852DDC4F55A: 'Adres çöküşünde BaseOffs alanlarının birleştirilmesine i
 H26B9669FA2AC: 'Adres çöküşünde BaseReg alanlarının birleştirilmesine izin ver'
 # 'Allow combining of ScaledReg field in Address sinking.'
 HDEF3EE554628: 'Adres çöküşünde ScaledReg alanlarının birleştirilmesine izin ver'
+# 'Allow compiler to annotate sanitizer instrumentation with extra debug info for all sanitizers, where supported'
+HCBC6B18AD214: 'Tüm temizlik araçlarının enstrümantasyonlarını ekstra hata ayıklama bilgisiyle açıklama izni ver (desteklenen yerlerde)'
 # 'Allow compiler to merge handlers for all sanitizers'
 H5230AC99F094: "Tüm sanitizerlar için handle'leri birleştirmeye derleyiciye izin ver"
 # 'Allow compiler to merge handlers for specified sanitizers'
@@ -3562,10 +3618,10 @@ HA9A95BA27CAD: 'Döngüyü açarken (unrolling) döngü kalanı (ekstra döngül
 H0C587C47350A: 'Karmaşık IT blokları üretmesine izin ver.'
 # 'Allow generation of data access to code sections (AArch64/ARM only)'
 H4E803F81C9B5: 'Kod bölümlerine (kod kesimlerine) erişim izni ver (sadece AArch64/ARM).'
-# 'Allow header insertions'
-H94D83C00667E: 'Başlık eklemlerine izin ver.'
-# 'Allow header removals'
-H47A033C84B47: 'Başlık kaldırımlarına izin ver.'
+# 'Allow header insertions (deprecated. Use -disable-insert instead)'
+H2636E70EED6C: 'Başlık eklemelerine izin ver (kullanım dışı. Bunun yerine -disable-insert kullanın)'
+# 'Allow header removals (deprecated. Use -disable-remove instead)'
+H6A88BB16BC90: 'Başlık kaldırma işlemlerine izin ver (kullanım dışı. Bunun yerine -disable-remove kullanın)'
 # 'Allow incomplete IR on a best effort basis (references to unknown metadata will be dropped)'
 H05F1B598EC8B: "En iyi çabayla eksik IR'ye izin ver (bilinmeyen meta veri referansları atılır)."
 # "Allow inlining when caller has a superset of callee's nobuiltin attributes."
@@ -3642,8 +3698,8 @@ HB6DC09C0C648: "Attributor'un kesin olmayan tanımalar için dar kapsamlı sarma
 H2595BA1E26D0: "Attributor'un çağrı noktasına özel analiz yapmasına izin ver"
 # 'Allow the Attributor to use IP information derived from non-exact functions via cloning'
 H0E8CFBCDE797: "Attributor'un kopyalama yoluyla elde edilen kesin olmayan fonksiyonlardan türetilmiş IP bilgilerini kullanmasına izin ver"
-# 'Allow the compiler to assume that each translation unit has a unique source file name at link time'
-H43C1574D99AB: 'Derleyiciyi, her bir çevirme biriminin bağlantı zamanında benzersiz bir kaynak dosya adı olduğunu varsaymasına izin ver'
+# 'Allow the compiler to assume that each translation unit has a unique source file identifier (see -funique-source-file-identifier) at link time'
+H857226BB03C5: 'Derleyicinin her çeviri biriminin bağlantılı zamanda benzersiz bir kaynak dosya tanımlayıcısı olduğunu varsaymasına izin ver (bkz. -funique-source-file-identifier)'
 # 'Allow the detection of full functions'
 H6DD82ED565A3: 'Tam fonksiyonların tespiti yapılmasına izin ver'
 # 'Allow the formation of VW_W operations (e.g., VWADD_W) with splat constants'
@@ -3762,6 +3818,8 @@ H7CC4A0AB7F2C: 'Bilinen Bitler Analizi (ComputingKnownBits)'
 H4D110E7E06DE: 'Bellek ile bağlı bir fonksiyon olup olmadığını analiz et'
 # 'Analyze Machine Code For Garbage Collection'
 H9DF9D8E23EF5: 'Makineli Kodu Çöp Toplama İcin Analiz Et'
+# 'Analyze and emit instructions for Win64 Unwind v2'
+HBAD8BCB2E044: 'Win64 Unwind v2 için talimatları analiz et ve yayınla'
 # 'Analyze array contents for load forwarding'
 H400B26D98EF4: 'Yükseklik İleri Aktarma (load forwarding) için dizi içeriklerini analiz et'
 # 'Annotate LTO phase (prelink / postlink), or main (no LTO) for sample-profile inline pass name.'
@@ -3770,6 +3828,8 @@ HE2E0B6955283: 'Örnek profilleme_inline geçiş adı için LTO aşamasını (pr
 H917E9747DC24: 'SI Kontrol Akışını Etiketle'
 # 'Annotate call sites of function declarations.'
 H117120C6D4F8: 'Fonksiyon bildirimlerinin çağrı noktalarına anotasyon ekle.'
+# 'Annotate sanitizer instrumentation with extra debug info for the specified sanitizers, if supported'
+H2FA3995AD0E4: 'Belirtilen temizlik araçları için destekleniyorsa enstrümantasyonları ekstra hata ayıklama bilgisiyle açıklama'
 # 'Annotate table jump instruction to correlate it with the jump table.'
 H49774B77C4AA: 'Atla tablosu ile ilişkilendirme için tablo atlaması yönergesine anotasyon ekle.'
 # 'Any subsection not covered by another option'
@@ -3840,6 +3900,10 @@ HAB61ED834BD0: 'Argüman Yığıt Tevcih'
 H3D79343D82D3: "CompilerInvocation'a aktarılacak argüman"
 # 'Arguments passed onto the interesting-ness test'
 H2C80A4DD32DD: 'İlginçlik testine aktarılan argümanlar'
+# 'Arguments to pass to the DTLTO distributor process.'
+H02599B65A936: 'DTLTO dağıtıcı sürecine geçirilecek bağımsız değişkenler'
+# 'Arguments to pass to the remote compiler for backend compilations.'
+HE57FA5E1C8EF: 'Arka uç derlemeleri için uzak derleyiciye geçirecek bağımsız değişkenler'
 # 'Arm Performance Libraries'
 H044D40FECAA8: 'Arm Performans Kütüphaneleri'
 # 'Array subrange.'
@@ -3940,6 +4004,8 @@ H4EA740EFEAD0: 'Dış çağrıların stack kullanımı varsayılıyor (bayt cins
 HD200FE62329F: 'Varsayımlar Önbelleği İzleyicisi'
 # 'At top of block or after label'
 H305A8BE31E6D: 'Blokun en上方ında veya etiketten sonra'
+# 'Attach calleeguids as value profile metadata for indirect calls.'
+HDF15CBA413B3: "Dolaylı çağrılar için değer profili meta verisi olarak çağrılan GUID'leri ekle"
 # 'Attach debug info to a function'
 H08A666FD7289: 'Bir fonksiyona hata ayıklama bilgisi ekle'
 # 'Attach debug info to everything'
@@ -3998,6 +4064,8 @@ HF7FB7C2D71C6: 'BOLT optimizasyon seçenekleri'
 H72F40B1DAEF4: 'BOLT yer değiştirme modu seçenekleri'
 # 'BOLTDIFF generic options'
 HBCE6535FC79B: 'BOLTDIFF genel seçenekler'
+# 'BPF Assembly Printer'
+H12132B1ED395: 'BPF Assembly Yazıcısı'
 # 'BPF Check And Adjust IR'
 H4D7204899754: 'BPF Kontrol ve IR Ayarı'
 # 'BPF DAG->DAG Pattern Instruction Selection'
@@ -4286,6 +4354,8 @@ H21AAA3835725: 'CSKY DAG->DAG Desen Talimat Seçimi'
 H1AC93DA4EF44: 'CSKY sabit ada yerleştirme ve dal kısaltma geçişi'
 # 'CSS stylesheets to extend the default styles.'
 H9DE4F76128DB: 'Varsayılan stilin genişletilmesi için CSS stil sayfaları'
+# 'CSV format'
+H6111A3501F49: 'CSV format'
 # 'CUDA device code does not support va_arg'
 H3A59FE235409: "CUDA cihaz kodu va_arg'i desteklemiyor"
 # 'CUDA device code does not support variadic functions'
@@ -4622,6 +4692,8 @@ HEC7B02DFBAC4: 'Entegre derleyici ile LLC kullanarak derleme'
 HCD76E8AFE5EE: 'Derleyici üretilmiş öğeler.'
 # 'Compiler runtime library to use'
 H8A88FADF9B7C: 'Kullanılacak derleyici çalışma zamanı kütüphanesi'
+# 'Compiler to use for DTLTO ThinLTO backend compilations.'
+H870FEFEAA364: 'DTLTO ThinLTO arka uç derlemeleri için kullanılacak derleyici.'
 # 'Complex Deinterleaving'
 H7404ACD7E023: 'Karmaşık İlişkisizleştirme'
 # 'Compress all sections when writing the profile (only meaningful for -extbinary)'
@@ -4722,6 +4794,8 @@ H292802AB79DD: 'Belirsiz ve deneme özelliklerinin etkinleştirilip etkinleştir
 H08542ADEE520: 'InstCombine aşamasındaki Negator dönüşümlerini kontrol eder'
 # 'Controls how scalar integer arguments are extended in calls to unprototyped and varargs functions'
 H7A8FE1AC1071: 'Prototiple olmayan ve değişken bağımsız değişkenli fonksiyonlara çağrılar sırasında tamsayı bağımsız değişkenlerinin nasıl genişletileceğini belirler'
+# 'Controls if structs should be imported as literal structs, i.e., nameless structs.'
+H2343CB68FB97: "struct'ların değişmez struct'lar olarak, yani isimsiz struct'lar olarak içe aktarılıp aktarılmayacağını kontrol eder."
 # 'Controls the backend parallelism of -flto=thin (default of 0 means the number of threads will be derived from the number of CPUs detected)'
 H6966D13FD63C: 'flto=thin için arka uç paralellik seviyesini kontrol eder (0 varsayılanı, tespit edilen CPU sayısı ile thread sayısı belirlenir)'
 # 'Controls the semantics of floating-point calculations.'
@@ -4920,6 +4994,8 @@ HD94C3B98AA6B: 'DXIL CBuffer Erişimi'
 H8CA416EED877: 'DXIL Veri Skalerleştirmesi'
 # 'DXIL Finalize Linkage'
 H674F973B6F8F: 'DXIL Bağlama Sonlandırma'
+# 'DXIL Forward Handle Accesses'
+HC699E42DFEAE: 'DXIL İleri Tanıtıcı Erişimleri'
 # 'DXIL Intrinsic Expansion'
 H92F9B358ADE0: 'DXIL Intrinsic Genişletmesi'
 # 'DXIL Legalizer'
@@ -4930,14 +5006,20 @@ HF96947D33548: 'DXIL Meta Veri Biçimlendirilmiş Yazıcı'
 HA9F2740D603A: 'DXIL Modül Meta Veri analizi'
 # 'DXIL Op Lowering'
 HEEFF9D70DBBF: 'DXIL İşlem Düşürme'
+# 'DXIL Post Optimization Validation'
+H0D86A1C91B64: 'DXIL Post-Optimization Doğrulaması'
 # 'DXIL Prepare Module'
 HF62B7360E273: 'DXIL Modül Hazırlama'
 # 'DXIL Resource Access'
 HF5E458A33121: 'DXIL Kaynak Erişimi'
 # 'DXIL Resource Binding Analysis'
 HC92CD4D22E79: 'DXIL Kaynak Bağlama Analizi'
+# 'DXIL Resource Implicit Binding'
+H9C2D45B76116: 'DXIL Kaynak Örtük Bağlama'
 # 'DXIL Resource Type Analysis'
 HF10ABCFBFE52: 'DXIL Kaynak Tür Analizi'
+# 'DXIL Resources Analysis'
+HDA90852D3576: 'DXIL Kaynaklar Analizi'
 # 'DXIL Root Signature Analysis'
 HBF76A637272F: 'DXIL Kök İmzası Analizi'
 # 'DXIL Shader Flag Analysis'
@@ -5160,6 +5242,8 @@ HE1BB044E9400: "Tüm fonksiyonlar için CHR'yi devre dışı bırak"
 H0D1EAB308F4D: "CIR dönüşümleri pipeline'ını devre dışı bırak"
 # 'Disable CTR loops for PPC'
 HFB1BF72E3D56: 'PPC için CTR döngülerini devre dışı bırak'
+# 'Disable CUDA Warp Function'
+HED60E177B610: 'CUDA Warp Fonksiyonunu Devre Dışı Bırak'
 # 'Disable Codegen Prepare'
 H9DF18DE3903B: "Codegen Prepare'yi devre dışı bırak"
 # 'Disable ConstantHoisting'
@@ -5276,6 +5360,8 @@ H66EB15B22DDA: 'SYCL C++ uzantılarını devre dışı bırak'
 H4EAE17DB87E5: 'Sparc yaprak prosedür optimizasyonunu devre dışı bırak'
 # 'Disable Stack Slot Coloring'
 HC67B1F734851: 'Yığın yuvası renklendirme devre dışı bırak'
+# 'Disable Trap Unreachable for BPF'
+HAE15965950D8: "BPF için Trap Ulaşılamaz'ı Devre Dışı Bırak"
 # 'Disable V8+ mode'
 HF617D77F2415: 'V8+ modunu devre dışı bırak'
 # 'Disable VSX FMA instruction mutation'
@@ -5376,6 +5462,8 @@ HDC89DC5720AF: 'İç içe geçmiş yüklemeleri birleştirme özelliğini devre 
 H529251337527: 'Komut satırı bağımsız değişkenlerinin round-trip özelliğini devre dışı bırak'
 # 'Disable compare instruction optimization'
 HCA46CE080B75: 'Karşılaştırma emri optimizasyonunu devre dışı bırak'
+# 'Disable constant-folding of FP intrinsics and libcalls.'
+HFF24E246DB9A: "FP intrinsiklerinin ve libcalls'ların sabit-katlamasını devre dışı bırak."
 # 'Disable control flow integrity (CFI) checks for cross-DSO calls.'
 HBA298571E50D: 'DSO arası çağrılar için Kontrol Akışı Bütünlüğü (CFI) denetimlerini devre dışı bırak'
 # 'Disable control-flow mitigations for Load Value Injection (LVI)'
@@ -5488,6 +5576,10 @@ H9030F85E3C32: 'Yalnızca veri üretimi veya kullanımı için fonksiyon外形le
 HA056175A68C0: 'gotol yönergelerini devre dışı bırak'
 # 'Disable hazard detection during preRA scheduling'
 H42E4A02F5152: 'Devre dışı bırak: preRA zamanlaması sırasında tehlike algılamasını'
+# 'Disable header insertions'
+H11A783969925: 'Başlık eklemelerini devre dışı bırak'
+# 'Disable header removals'
+H0705FC99009C: 'Başlık kaldırma işlemlerini devre dışı bırak'
 # 'Disable heap memory profiling'
 HD2AF1D7462E3: 'Devre dışı bırak: yığın belleği profili'
 # 'Disable hoisting instructions to hotter blocks'
@@ -5736,6 +5828,8 @@ H475D4ABE9D62: "Bir sayısal işleme kullanılarak tek duyarlılık ondalıklı 
 H8178C8159BC2: 'ARM Parallel DSP geçişi devre dışı bırak'
 # 'Disable the CFI fixup pass'
 H170DD55153F0: 'CFI düzeltme geçişi devre dışı bırak'
+# 'Disable the DAG combiner'
+HF3DAFFFFA107: 'DAG birleştiricisini devre dışı bırak'
 # 'Disable the Sparc delay slot filler.'
 HDE8C0A85D477: 'Sparc gecikme yuvası doldurucuyu devre dışı bırak'
 # 'Disable the abort'
@@ -5800,6 +5894,8 @@ HE0F6634D8D16: 'Tip yükseltilmesi aşamasını devre dışı bırak'
 HAE3C6A80BF96: 'Topluluk olmayan yüksek kayıt basıncı azaltma zamanlama aşamasını devre dışı bırak'
 # 'Disable unused template argument warnings.'
 H8A2178DF0ED5: 'Kullanılmayan şablon bağımsız değişkeni uyarılarını devre dışı bırak'
+# 'Disable unwind v2 (epilog) information for x64 Windows'
+H2002C343134B: 'x64 Windows için açılım v2 (epilog) bilgisini devre dışı bırak'
 # 'Disable use of DFA during scheduling'
 HFCEBEB8744EF: 'Zamanlamada DFA kullanımı devre dışı bırak'
 # 'Disable use of LD/ST pairs for SME2 or SVE2p1'
@@ -6018,6 +6114,8 @@ H4365E41B0200: 'Belirtilen miktarın en azından anadüzyapıPadding’i olan s�
 HC457A02E6744: 'Belirtilen miktarın en azındanPadding’i olan tipleri gösterir.'
 # 'Displays only those types which are greater than or equal to the specified size.'
 H939E231DB942: 'Belirtilen boyuttan büyük veya eşit olan tipleri gösterir.'
+# 'Distributor to use for ThinLTO backend compilations. Specifying this enables DTLTO.'
+H94E676409243: "ThinLTO arka uç derlemeleri için kullanılacak dağıtıcı. Bunun belirtilmesi DTLTO'yu etkinleştirir."
 # 'Divisor of cold branch probability.BranchProbability = 1/ColdBranchProbDenom'
 HFEB48317469C: 'Soğuk dallanma olasılığının böleni. BranchProbability = 1/ColdBranchProbDenom'
 # 'Do PGO instrumentation sampling'
@@ -6046,12 +6144,14 @@ HC6FB1327B189: 'Parametre sınırları eklemeyi ve ilgili kümeleri basitleştir
 HFA5D85E291BA: 'Döngüleri hizalama ve ön yükleme yapmayı devre dışı bırak'
 # 'Do not allocate the LR register for general purpose usage, only for calls. (AArch64 only)'
 H80E0CE8F43D2: 'LR kayıtını genel amaçlı kullanım için ayırmayı, sadece çağrılar için ayırmayı devre dışı bırak (yalnızca AArch64)'
+# 'Do not allow compiler to annotate sanitizer instrumentation with extra debug info for any sanitizers'
+H4387C2461E4F: 'Derleyicinin herhangi bir temizlik aracı için enstrümantasyonuna ek hata ayıklama bilgisi eklenmesine izin verme'
+# 'Do not allow compiler to annotate sanitizer instrumentation with extra debug info for the specified sanitizers'
+H0A0FD94EAF41: 'Derleyicinin belirtilen temizlik araçları için enstrümantasyonuna ek hata ayıklama bilgisi eklenmesine izin verme'
 # 'Do not allow compiler to merge handlers for any sanitizers'
 HC4FB93EDAFBC: 'Herhangi bir temizleyici için derleyicinin işleyicileri birleştirmesine izin verme'
 # 'Do not allow compiler to merge handlers for specified sanitizers'
 H14D0727FA9D4: 'Belirtilen temizleyiciler için derleyicinin işleyicileri birleştirmesine izin verme'
-# 'Do not allow the compiler to assume that each translation unit has a unique source file name at link time'
-H4A0AFFA269DA: 'Derleyiciyi, her bir çevirme biriminin bağlantı zamanında benzersiz bir kaynak dosya adı olduğunu varsaymasına izin verme'
 # 'Do not assume C++ operator new may not return NULL'
 H1F6F59A37FC5: "C++ operatör new'in NULL döndürmeyebileceğini varsayma"
 # 'Do not assume that any loop is finite.'
@@ -6138,14 +6238,16 @@ H194F6AFAEB48: 'Hata vermek yerine sadece uyarıları yazdırın'
 H09A7570CEE99: 'İlk hata karşısında başarısız olma'
 # 'Do not follow the AAPCS standard requirement stating that volatile bit-field width is dictated by the field container type. (ARM only).'
 H33C6AFA87C27: 'AAPCS standartta, "volatile bit alan" genişliğinin alan konteyner türü tarafından belirlendiği şartını takip etmeyin (Yalnızca ARM)'
+# 'Do not force validation of user headers when repeatedly loading a module file within single build session'
+HC2C2C627ADC2: 'Tek bir yapı oturumu içinde modül dosyası tekrar yüklenirken kullanıcı başlıklarının doğrulanmasını zorlama'
 # 'Do not generate code for uses of this PCH that assumes an explicit object file will be built for the PCH'
 H882EA3DF4A8E: "Bu PCH'nin bir nesne dosyasının oluşturulacağı varsayılan kullanımına yönelik kod üretmeyin"
 # 'Do not generate comments'
 H64C7ECF357DC: 'Yorumlar üretmeyin'
 # 'Do not generate debug info for types in an object file built from this PCH and do not generate them elsewhere'
 H4C63A76D37C7: "Bu PCH'den oluşturulmuş bir nesne dosyasındaki tipler için hata ayıklama bilgileri oluşturmayın ve bunları başka yerlerde de oluşturmayın"
-# 'Do not generate load-load barrier instructions (dbar 0x700)'
-H2C61D7A4E1E5: 'Yük-yük baraj yönergeleri oluşturmayın (dbar 0x700)'
+# 'Do not generate same-address load-load barrier instructions (dbar 0x700)'
+HAC760584246F: 'Aynı-adres yükleme-yükleme bariyer talimatlarını (dbar 0x700) üretme'
 # 'Do not globally set the denormals-are-zero (DAZ) and flush-to-zero (FTZ) bits in the floating-point control register on program startup'
 H792FD67CD9D7: 'Program başlangıcında ondalıklı sayı kontrol kaydındaki DAZ (Denormals-are-zero) ve FTZ (Flush-to-zero) bitlerini genel olarak ayarlamayın'
 # 'Do not hoist instructions if targetblock is N times hotter than the source.'
@@ -6166,6 +6268,8 @@ HC43E127B525B: 'Tanılama mesajlarında kaynak konum bilgileri içerme'
 HF033C0F0A8BE: 'Varsayılan HIP sarmalayıcı başlıkları ve dahil etme yollarını içerme'
 # 'Do not inline functions with a stack size that exceeds the specified limit'
 HF6E40440F4E2: 'Belirtilen sınıra ulaşan veya geçen yığın boyutuna sahip fonksiyonları içe aktarma'
+# 'Do not inline hlfir.copy_in operations'
+H36767557A51A: 'hlfir.copy_in işlemlerini satıriçi yapma'
 # 'Do not inline recursive functions with a stack size that exceeds the specified limit'
 HE8D9228D38D0: 'Belirtilen sınıra ulaşan veya geçen yığın boyutuna sahip özyineleme fonksiyonlarını içe aktarma'
 # 'Do not instrument callsites to functions in this list. Intended for testing.'
@@ -6334,10 +6438,14 @@ H465B564B215B: 'Değer analizçisi için statik sayaç ayarlaması yapın'
 HAA6808E72416: 'Sadece açıklayıcı bildirimleri belgele'
 # 'Documentation in HTML format.'
 H35BAD16C1698: 'HTML formatında belgeler'
+# 'Documentation in JSON format'
+HF1E57A499766: 'JSON formatında belgeler'
 # 'Documentation in MD format.'
 HA974194AB003: 'MD formatında belgeler'
 # 'Documentation in YAML format.'
 H5814855B30B7: 'YAML formatında belgeler'
+# 'Documentation in mustache HTML format'
+H1B1C504B8FE0: 'Mustache HTML formatında belgeler'
 # 'Dominance Frontier Construction'
 H0D043E29B031: 'Yönetim Sınırı Oluşturma'
 # 'Dominator Tree Construction'
@@ -6872,8 +6980,6 @@ H2B3A6CDD77E1: 'Windows Control Flow Guard tablolarını ve denetimlerini oluşt
 H12EF1A548A1C: 'Windows Control Flow Guard tablolarını sadece oluştur (denetim yok)'
 # 'Emit Windows EH Continuation Guard tables'
 H7CFD101BE344: 'Windows EH Continuation Guard tablolarını oluştur'
-# 'Emit `[first]private` variables as clauses on the MLIR ops.'
-HDAD278A55FD1: 'MLIR operasyonlarında `[first]private` değişkenlerini ifadeler olarak ekle'
 # 'Emit a call to trap function rather than a trap instruction'
 H7926ECB4152F: 'Tuzak fonksiyonuna bir çağrı yapmak yerine tuzak emri oluştur'
 # 'Emit a compilation database fragment to the specified directory'
@@ -6996,6 +7102,8 @@ HDFDB7BBE51F4: 'Desteklendiği takdirde seçilen formatta çıktı üret'
 H9D5251957AE9: 'Görselleştirilmiş sembol grafiklerini çıktı olarak ver'
 # 'Emit pristine LLVM IR from the frontend by not running any LLVM passes at all.Same as -S + -emit-llvm + -disable-llvm-passes.'
 H4945F63ADF72: 'Ön uçtan LLVM geçişlerini hiç çalıştırmadan temiz LLVM IR ver. Bu, -S + -emit-llvm + -disable-llvm-passes ile aynıdır.'
+# 'Emit private/local variables as clauses/specifiers on MLIR ops.'
+HBCB27910E0F7: 'MLIR işlemleri üzerinde özel/yerel değişkenleri yan tümceler/belirleyiciler olarak üret.'
 # 'Emit pseudo probes for sample profiling'
 HEE6673E22F38: 'Örnek profil oluşturma için pseudo kontrol noktaları ver'
 # 'Emit pseudo probes to enable PGO profile generation.'
@@ -7068,10 +7176,10 @@ H6232FED85C51: "AMDGPU Alias Analiz'ini etkinleştir"
 HA046043EEDCA: 'AMDGPU işlev çağrısı desteği etkinleştir'
 # 'Enable AMDGPUAttributorPass'
 H9BDDE4ABB4D1: "AMDGPUAttributorPass'ı etkinleştir"
+# 'Enable APX features (EGPR, NDD and NF) for instructions with relocations on x86-64 ELF'
+H93395525FD86: 'x86-64 ELF üzerinde yer değiştirmeli talimatlar için APX özellikleri (EGPR, NDD ve NF) etkinleştir.'
 # 'Enable ARC-style weak references in Objective-C'
 H9B793CE9E824: "Objective-C'de ARC tarzı zayıf başvuruları etkinleştir"
-# 'Enable ARM 2-addr to 3-addr conv'
-HFA9A2110C825: "ARM 2-addr'dan 3-addr'ye dönüşümü etkinleştir"
 # 'Enable ARM load/store optimization pass'
 HF1C1057F91DB: 'ARM yük/depo optimizasyon geçişi etkinleştir'
 # 'Enable AddressSanitizer'
@@ -7118,6 +7226,8 @@ H261A5A2FD07D: 'Optimizasyonlarda Debug Info Metadata koruma testini etkinleşti
 H7236F64CF290: 'MLIR eylemlerini hata ayarlamak için debugger ekinin etkinleştirilmesi'
 # 'Enable EH Asynchronous exceptions'
 H2CA5CA1CFDC6: 'EH asenkron istisnalarını etkinleştir'
+# 'Enable EVL-based induction variable simplify Pass'
+H0167530440BA: 'EVL tabanlı indüksiyon değişkeni sadeleştirme geçişini etkinleştir.'
 # 'Enable FP math optimizations that assume approx func'
 HA55AFA6BF75B: 'Yaklaşık fonksiyonu varsaydığı ondalıklı nokta matematik optimizasyonlarını etkinleştir'
 # 'Enable FP math optimizations that assume no +-Infs'
@@ -7176,6 +7286,8 @@ HDC17AF33380B: 'KernelAddressSanitizer araçlandırmasını etkinleştir'
 HE6892C669196: 'KernelHWAddressSanitizer araçlandırmasını etkinleştir'
 # 'Enable KernelMemorySanitizer instrumentation'
 H98BCB50602AD: 'KernelMemorySanitizer araçlandırmasını etkinleştir'
+# 'Enable Key Instructions, which reduces the jumpiness of optimized code stepping (DWARF only). Requires LLVM built with LLVM_EXPERIMENTAL_KEY_INSTRUCTIONS.'
+H235B8746F9EA: 'Anahtar Talimatları etkinleştir, bu da optimize edilmiş kodun adım adım yürütülmesindeki sıçramayı azaltır (sadece DWARF). LLVM_EXPERIMENTAL_KEY_INSTRUCTIONS ile derlenmiş LLVM gerektirir.'
 # 'Enable LSR phi elimination'
 H6F6B88180DCF: 'LSR phi kaldırmasını etkinleştir'
 # "Enable LTO in 'full' mode"
@@ -7378,6 +7490,8 @@ HCFE5EA586D23: 'Sürekli araçlandırma profili modunu etkinleştir'
 H655AACCB94AB: "LICM'de kontrol akışı (ve PHI) kaldırmayı etkinleştir."
 # 'Enable control flow integrity (CFI) checks for cross-DSO calls.'
 H65983BF9B362: 'Kontrol akışı bütünlüğü (CFI) denetimlerini DSO arası çağrılar için etkinleştir.'
+# 'Enable control flow structurization into `spirv.mlir.selection` and `spirv.mlir.loop`. This may need to be disabled to support deserialization of early exits (see #138688)'
+H34FF13170268: 'Kontrol akışı yapılandırmasını `spirv.mlir.selection` ve `spirv.mlir.loop` içine etkinleştir. Erken çıkışların serileştirilmesini desteklemek için devre dışı bırakılması gerekebilir (bkz. #138688)'
 # 'Enable control height reduction optimization (CHR)'
 H0F0478FE42AF: 'Kontrol yüksekliği azaltma optimizasyonunu (CHR) etkinleştir.'
 # 'Enable conversion of arithmetic operations to predicate instructions'
@@ -7474,6 +7588,8 @@ H46D83DE2E772: 'Global değerlerin adresindeki fonksiyon spesifikasyonunu etkinl
 H82096BB5EF83: 'Boş temel blokları toplayan garbaj toplamayı etkinleştir'
 # 'Enable generating trap for unreachable'
 HA93A4015EC75: 'Ulaşılamaz kodlar için tuzak üretmeyi etkinleştir'
+# 'Enable generation of calls to objc_claimAutoreleasedReturnValue'
+HBF41104B9A28: 'objc_claimAutoreleasedReturnValue çağrılarının üretimini etkinleştir.'
 # 'Enable generation of complex instructions'
 HD949F4B874C3: 'Karmaşık yönergeler üretmeyi etkinleştir'
 # 'Enable generation of instruction packets'
@@ -7658,8 +7774,8 @@ H5D736AD67AD6: 'Öptimizasyonları etkinleştir'
 HCF0A62237B7C: 'Sıkı atıfta kurallara dayalı optimizasyonları etkinleştir'
 # "Enable optimizations based on the strict definition of an enum's value range"
 H186F36BCDB9E: 'Bir enumun değer aralığının sıkı tanımına dayalı optimizasyonları etkinleştir'
-# 'Enable optimizations based on the strict definition of flexible arrays'
-HA59BB0439AAE: 'Esnek dizilerin sıkı tanımına dayalı optimizasyonları etkinleştir'
+# 'Enable optimizations based on the strict definition of flexible arrays.'
+H63F456F0E338: 'Esnek dizilerin kesin tanımına dayalı optimizasyonları etkinleştir.'
 # 'Enable optimizations based on the strict rules for overwriting polymorphic C++ objects'
 H13CA0465139C: 'Çok biçimlilikli C++ nesnelerini yazma kurallarına dayalı optimizasyonları etkinleştir'
 # 'Enable optimizations on complex GEPs'
@@ -8050,6 +8166,8 @@ HB262A3E07E79: 'C işlev işaretçilerinde tür ayrıştırmasını etkinleştir
 HADD895A7C263: "matematik kütüphanesi çağrıları için riskli double'dan float'a küçültmeyi etkinleştir"
 # 'Enable unswitch cost multiplier that prohibits exponential explosion in nontrivial unswitch.'
 H05E336233C05: 'Karmaşık unswitch işlemlerinde üssel patlama engellemek için unswitch maliyet çarpanını etkinleştir.'
+# 'Enable unwind v2 (epilog) information for x64 Windows'
+H53CAE0AFFD48: 'x64 Windows için unwind v2 (epilog) bilgisini etkinleştir.'
 # 'Enable use of AA during MI DAG construction'
 H13EA04236348: 'MI DAG inşasında AA kullanmaya izin ver.'
 # 'Enable use of AdvSIMD scalar integer instructions'
@@ -8580,8 +8698,8 @@ HAC353EF77E07: 'Her fonksiyon için, potansiyel LVI gizli cihazlarını göstere
 H3C8BB209ABDE: "Her fonksiyon için, potansiyel LVI gizli cihazlarını gösteren bir dot grafiği stdout'a çıkartın. Sadece test amaçlı kullanılır."
 # 'For merge, use the provided unstripped binary to correlate the raw profile.'
 H5C641C769774: 'Birleştirirken, sağlanan unstripped ikili dosyayı kullanarak ham profili ilişkilendirin.'
-# 'For partially supported constructs, emit `[first]private` variables as clauses on the MLIR ops.'
-H6182FD8E07DA: 'Yarım destekli yapılar için, [first]private değişkenleri MLIR işlemlerinde madde olarak belirtin.'
+# 'For partially supported constructs, emit private/local variables as clauses/specifiers on MLIR ops.'
+H5E0F9648E945: 'Kısmen desteklenen yapılarda MLIR işlemleri üzerinde özel/yerel değişkenleri yan tümceler/belirleyiciler olarak üret.'
 # 'For paths in debug info, remap directory <old> to <new>. If multiple options match a path, the last option wins'
 H3D3679C30C18: 'Hata ayıklama bilgilerindeki yollar için, <old> dizinini <new> dizinine yeniden haritalayın. Birden fazla seçenek bir yolda eşleşirse, son seçenek geçerlidir.'
 # 'For sample profiles, list function names (with calling context for csspgo) for overlapped functions with similarities below the cutoff (percentage times 10000).'
@@ -8738,6 +8856,8 @@ HF7823207CF83: 'Reg-alloc öncesi list scheduling için yukarıdan aşağıya zo
 H5BE24FD8EC8D: 'AdvSIMD skaler emirlerini her yerde kullanmak zorla etkinleştir'
 # 'Force using MLIR complex operations instead of libm complex operations'
 HE874B9895802: "MLIR karmaşık işlemlerini libm'inkiler yerine kullanmak zorla etkinleştir"
+# 'Force validation of user headers when repeatedly loading a module file within single build session'
+H0E2DB592B82B: 'Tek bir derleme oturumu içinde modül dosyası tekrar tekrar yüklendiğinde kullanıcı başlıklarının doğrulanmasını zorla.'
 # 'Force wchar_t to be a short unsigned int'
 H344B5212E317: "wchar_t'yi short unsigned int olarak zorla tanımla"
 # 'Force wchar_t to be an unsigned int'
@@ -8942,6 +9062,8 @@ H228CB18FCD9A: 'Offload API başlık içeriğini oluştur.'
 HDB1F685BA2FE: 'Offload API yazdırma başlığını oluştur.'
 # 'Generate Offload API wrapper function definitions'
 HE6C5D6F8A8FB: 'Offload API sarmalayıcı fonksiyon tanımlarını oluştur.'
+# 'Generate Offload Error Code enum'
+HD6D65DD43A04: 'Offload Hata Kodu numaralandırmasını oluştur.'
 # 'Generate OpenCL builtin declaration handlers'
 HA18DDE5AEDF3: 'OpenCL yerleşik bildirim işleyicileri oluştur.'
 # 'Generate OpenCL builtin declaration tests'
@@ -9050,6 +9172,8 @@ HACE26ADDC9C9: 'clang için arm_sve_typeflags.inc oluştur'
 H7C1E9F56F891: 'clang için arm_vector_types.h oluştur'
 # 'Generate attribute documentation'
 H5EECEC688125: 'Öznitelik belgelerini oluştur'
+# 'Generate attribute spelling list'
+H5E3166505291: 'Öznitelik yazım listesini oluştur.'
 # 'Generate attributes for this dialect'
 HE3FD9C3103CA: 'Bu dialekçe için öznitelikler oluştur'
 # 'Generate bitsplit instructions'
@@ -9170,8 +9294,6 @@ HF07E69C59A11: 'LLDB seçenek tanımlarını oluştur'
 HBD76019A4518: 'LLDB özellik tanımlarını oluştur'
 # 'Generate lldb property enum definitions'
 H4D3EB8680DC4: 'LLDB özellik enum tanımlarını oluştur'
-# 'Generate load-load barrier instructions (dbar 0x700)'
-HB092D2DF4B79: 'Yüklenme-yüklenme barajı komutlarını oluştur (dbar 0x700)'
 # 'Generate local calls to out-of-line atomic operations'
 H160B36160D89: 'Satır dışı atomik işlemlere yerel çağrılar oluştur'
 # 'Generate loop nest for tiling.'
@@ -9204,6 +9326,12 @@ H49DE9A8DC6D7: 'Oku-yaz pozisyon bağımsız kodu oluştur (yalnızca ARM)'
 HBCD3850127B9: 'Standart C++ modül arayüz biriminden azaltılmış önceden oluşturulmuş modül arayüzünü oluştur'
 # 'Generate relocatable device code, also known as separate compilation mode'
 H2AB415613F7B: 'Taşıma yapılabilir cihaz kodu oluştur (ayrı derleme modu olarak da bilinir)'
+# 'Generate riscv_andes_vector_builtin_cg.inc for clang'
+H99B584F39405: 'clang için riscv_andes_vector_builtin_cg.inc oluştur.'
+# 'Generate riscv_andes_vector_builtin_sema.inc for clang'
+HBB62F00F6C63: 'clang için riscv_andes_vector_builtin_sema.inc oluştur.'
+# 'Generate riscv_andes_vector_builtins.inc for clang'
+H01F7AE9F3E5F: 'clang için riscv_andes_vector_builtins.inc oluştur.'
 # 'Generate riscv_sifive_vector_builtin_cg.inc for clang'
 H2F882B6DED2D: 'clang için riscv_sifive_vector_builtin_cg.inc dosyasını oluştur'
 # 'Generate riscv_sifive_vector_builtin_sema.inc for clang'
@@ -9218,6 +9346,8 @@ H5A79CE9F1F74: 'clang için riscv_vector_builtin_cg.inc dosyasını oluştur'
 HA3230378A26C: 'clang için riscv_vector_builtin_sema.inc dosyasını oluştur'
 # 'Generate riscv_vector_builtins.inc for clang'
 H5D02D25DD210: 'clang için riscv_vector_builtins.inc dosyasını oluştur'
+# 'Generate same-address load-load barrier instructions (dbar 0x700)'
+HA12298FF2D2D: 'Aynı adres yük-yük bariyer talimatlarını oluştur (dbar 0x700).'
 # 'Generate software floating point library calls'
 H05167BC54E72: 'Yazılısal kesirli noktalı kütüphane çağrılarını oluştur'
 # 'Generate source-level debug information'
@@ -9376,6 +9506,8 @@ H6D36D04383CD: 'ısı haritası seçenekleri'
 H92F16AA997F0: "Yeni talimatlar ürettiğimizde IR'yi doğrulayarak hataları bulmaya yardımcı olur (*çok* pahalı)."
 # 'Heuristics-based inliner version'
 H91CCDBD88F85: 'Öneri temelli inliner sürümü'
+# 'Hexagon Assembly Printer'
+H04AB1ED5271E: 'Hexagon Assembler Yazıcı'
 # 'Hexagon Branch Relaxation'
 HE56E26D71726: 'Hexagon Dal Gevşetme'
 # 'Hexagon CFG Optimizer'
@@ -9526,6 +9658,8 @@ HC5A8A1BFD3A5: 'IBM MASS vektör kütüphanesi'
 H91B04B0AEDF0: 'IBOutletCollection özelliklerinin copy/strong olup assign olmaması gerekiyor'
 # 'IEEE 754 denormal numbers'
 HB645808304FA: 'IEEE 754 denormal sayıları'
+# 'IR2Vec Options'
+H353091CB276E: 'IR2Vec Seçenekleri'
 # 'IRDL file to register before processing the input'
 H9ADEB68395C9: 'Girdi işlemeden önce kaydedilecek IRDL dosyası'
 # 'IRTranslator LLVM IR -> MI'
@@ -9966,8 +10100,6 @@ H03C32E83B1C7: 'Birleştirilmiş Çalışma Zamanı Oluşturma (LTO) yerine, her
 HA0AFB51F310C: 'Birleştirilmiş Çalışma Zamanı Oluşturma (LTO) yerine, her bir IR dosyasında sembolleri listele'
 # 'Instead of running LTO, print the mach-o cpu in each IR file'
 HE9DA1147E6B8: 'Birleştirilmiş Çalışma Zamanı Oluşturma (LTO) yerine, her bir IR dosyasında mach-o CPU’sunu yazdır'
-# 'Instead of spilling a variable right away, defer the actual code insertion to the end of the allocation. That way the allocator might still find a suitable coloring for this variable because of other evicted variables.'
-HFC03D1ABDED7: 'Bir değişkeni hemen boşaltmak yerine, kod ekleme işlemi atamadaki sona ertelensin. Bu şekilde atama için uygun bir renklendirme bulabilir.'
 # 'Instruction Inverse Throughput'
 H08AC91953156: 'Yönerge Ters Akış Hızı'
 # 'Instruction Latency'
@@ -10170,6 +10302,8 @@ H45ADD610F25F: 'LTO seçenekleri'
 H1F6F6CBC7560: 'LTO, -fuse-ld=lld seçicisini gerektirir'
 # 'Label.'
 H213B873A2E3C: 'Etiket.'
+# 'Lanai Assembly Printer'
+HABEAC7BF71A9: 'Lanai Assembler Yazıcısı'
 # 'Lanai DAG->DAG Pattern Instruction Selection'
 HF0BD56FB7903: 'Lanai DAG->DAG kalıbı talimat seçimi'
 # 'Lanai memory ALU combiner pass'
@@ -10338,6 +10472,8 @@ HF4FD097D1426: "İki katmanlı MLIR modüllerini tek bir LLVM IR modülüne bağ
 HC775F1647BB7: 'Linkage adı.'
 # 'Linking with hot/cold operator new interfaces'
 H1970EBF2160A: 'Isı/soğuk operatör new arayüzleri ile bağlanma.'
+# 'Linux PPC Assembly Printer'
+H99056A1F92AF: 'Linux PPC Assembler Yazıcısı'
 # 'List bundle IDs in the bundled file.\n'
 H3D67FC934FB6: "Paketlenmiş dosyadaki paket ID'lerini listele.\n"
 # 'List each file/graph name if/when it is linked'
@@ -10422,6 +10558,8 @@ H997812E5B96A: 'Sadece konumlar'
 H7DDDF7706229: "Eylem yürütme log dosyasına yaz, '-' parametresi verilirse stderr kullan"
 # 'Look up implicit modules in the prebuilt module path'
 H7389FC31B294: 'Ön derlenmiş modül yolu içindeki açık modülleri ara'
+# 'LoongArch Assembly Printer'
+H883C4FD99127: 'LoongArch Assembler Yazıcısı'
 # 'LoongArch DAG->DAG Pattern Instruction Selection'
 HCE16825D2625: 'LoongArch DAG->DAG Örüntü Talimat Seçimi'
 # 'LoongArch Dead register definitions'
@@ -10516,6 +10654,8 @@ HA8D215D9A1DE: 'Modül yapısı ile düşür'
 HDC139AA56721: 'Tablo arama ile düşür'
 # 'Lowers br_unless into inverted br_if'
 H7B5FDAFDDAB0: "br_unless'ı tersine çevrilmiş br_if olarak düşürür"
+# 'M68k Assembly Printer'
+HC2BE99D7AAA9: 'M68k Assembler Yazıcısı'
 # 'M68k DAG->DAG Pattern Instruction Selection'
 H81D40D6EAF4E: 'M68k DAG->DAG Desen Yönergeleri Seçimi'
 # 'M68k MOVEM collapser pass'
@@ -10566,6 +10706,8 @@ H730B2A8B0BD8: 'MS-stili inline derleme mevcut değil: %0'
 H3C329400C4C7: 'MSF Kapsayıcı Seçenekleri'
 # 'MSF File Options'
 H4EFCF40C1C07: 'MSF Dosya Seçenekleri'
+# 'MSP430 Assembly Printer'
+HCA8BC34B7977: 'MSP430 Assembler Yazıcısı'
 # 'MSP430 DAG->DAG Pattern Instruction Selection'
 H9B855DBB6F56: 'MSP430 DAG->DAG Örüntü Talimat Seçimi'
 # 'MVE gather/scattering lowering pass'
@@ -10686,6 +10828,8 @@ H1AD32AEEC75F: 'Hata ayıklama bilgilerinde dosya kaynak yollarını haritala'
 H9B100E19B599: 'Varsayılan görünürlük ile dışa aktarma arasındaki haritalama'
 # 'Margin representing the unused percentage of the register pressure limit'
 HC98A7EB598BA: 'Kayıt basıncı limitinin kullanılmamış yüzdesini temsil eden marj'
+# 'Mark <function> as being replaceable by the Windows kernel loader'
+HE4564C872616: '<function> öğesini Windows çekirdek yükleyicisi tarafından değiştirilebilir olarak işaretle'
 # 'Mark code section jump table data regions.'
 H820E75B4A88C: 'Kod bölümü atlama tablosu veri bölgelerini işaretleyin'
 # 'Mark cold functions with minsize.'
@@ -10952,6 +11096,8 @@ H61122E3872D7: 'Zaman çizelgesi görünümünde yazdırılacak en fazla yinelem
 HACE4628A8A6D: 'Potansiyel değerleri parçalarken koruyacağımız en fazla yineleme sayısı'
 # 'Maximum number of load-store instructions that should be handled in the dependency matrix. Higher value may lead to more interchanges at the cost of compile-time'
 HC041FD354820: 'Bağlılık matrisinde işlenecek load-store komutlarının en fazla sayısı. Daha yüksek bir değer, derleme süresi karşılığında daha fazla değiş tokuşa yol açabilir.'
+# 'Maximum number of memory instructions to place in the same hard clause'
+H0D0A665E7C31: 'Aynı sıkı yan tümcede yer alacak en fazla bellek talimat sayısı'
 # 'Maximum number of parameters for a split function'
 H21349A957046: 'Bir bölünmüş fonksiyon için en fazla parametre sayısı'
 # 'Maximum number of physical registers which can be used for register mappings'
@@ -11074,10 +11220,14 @@ H18C80D21224E: 'Orta yarı kopyalama modu'
 H43135A085735: 'Orta yarı döngü modu'
 # 'Min number of instructions to consider tail merging'
 HCFE1247214B4: 'Son birleştirmesi dikkate alınması için minimum yötem sayısı'
+# 'Min percent of cold bytes at a callsite to discard non-cold contexts'
+HF5E8027EF436: 'Bir çağrı sitesinde soğuk olmayan bağlamları reddetmek için gereken en düşük soğuk bayt yüzdesi'
 # 'Min percent of cold bytes matched to hint allocation cold'
 HF5A0792EF995: 'Soğuk atamayı önermek için soğuk baytların minimum yüzde eşleşmesi'
 # 'Min percent of cold bytes to hint alloc cold during cloning'
 H30A19A7158C7: 'Kopyalama sırasında soğuk atamayı önermek için soğuk baytların minimum yüzde miktarı'
+# 'Min percent of max cold bytes for critical cold context'
+HC9060B18CE7F: 'Eleştirel soğuk bağlam için maksimum soğuk baytın en düşük yüzdesi'
 # 'Min stride to add prefetches'
 H9E2620BA9D60: 'Ön yüklemeler eklemek için minimum atlayış (stride) değeri'
 # 'MinGW specific. Disable support for automatic dllimport in code generation and linking'
@@ -11134,6 +11284,8 @@ H2DECB545864A: 'Döngü başına minimum göreli kazanç eşiği (1/X). Varsayı
 H82ABB54FDFA0: 'Zaman analizcisi tarafından izlenen minimum zaman keskinliği (mikrosaniye cinsinden)'
 # 'Minimum type size in bits for breaking large PHI nodes'
 HB05B1AF899B8: 'Büyük PHI düğümlerini kırma için minimum tip boyutu (bit cinsinden)'
+# 'Mips Assembly Printer'
+H033FCF512C08: 'Mips Assembler Yazıcısı'
 # 'Mips VR4300 mulmul bugfix'
 HBC6DCC9857CF: 'Mips VR4300 mulmul hata düzeltmesi'
 # 'Miscellaneous Options'
@@ -11166,6 +11318,8 @@ HDE0289089F3A: 'Modül ayıklayıcı'
 H3224F1E17512: 'Modül özet indeksi dosya adı'
 # 'Module summary info'
 HCFDC7E39A72C: 'Modül özet bilgisi'
+# 'Module.'
+H9EC9858FCED5: 'Modül.'
 # 'Modulo Schedule test pass'
 H9F5185006F74: 'Modulo zamanlama test geçişi'
 # 'Modulo Software Pipelining'
@@ -11200,6 +11354,8 @@ H2A7AB317ED00: 'N, iki’nin bir kuvveti olmalı. Döngüleri sınırına hizala
 H9D1213E22820: 'NVPTX Adres Alanı Tabanlı Alias Analizi'
 # 'NVPTX Address space based Alias Analysis Wrapper'
 HB227AE568CB7: 'NVPTX Adres Alanı Tabanlı Alias Analizi Sarmalayıcı'
+# 'NVPTX Assembly Printer'
+H0111C7243DC7: 'NVPTX Assembler Yazıcısı'
 # 'NVPTX DAG->DAG Pattern Instruction Selection'
 HB23F4D978D1F: 'NVPTX DAG->DAG Örüntüye Göre Bütünleme Seçimi'
 # 'NVPTX Forward Params'
@@ -11214,14 +11370,16 @@ H11B08A79FA4D: 'NVPTX Spesifik: 0 için sqrt.approx kullan, 1 için sqrt.rn kull
 HDAF968D22832: 'NVPTX Spesifik: f16 matematik işlemlerini devre dışı bırak.'
 # "NVPTX Specific: FMA contraction (0: don't do it 1: do it  2: do it aggressively"
 HD36FDD8676CA: 'NVPTX Spesifik: FMA daraltma (0: yapma 1: yap 2: agresif yap)'
+# 'NVPTX Specific: Override the precision of the lowering for f32 fdiv'
+H1927850A3B01: 'NVPTX Özgü: f32 fdiv için düşürme işleminin duyarlılığını geçici olarak değiştir'
 # 'NVPTX Specific: force 4-byte minimal alignment for byval params of device functions.'
 H40664A3C3B0F: 'NVPTX Spesifik: Cihaz fonksiyonlarının byval parametreleri için 4-byte minimal hizalama zorla'
 # 'NVPTX Specific: schedule for register pressue'
 H0940771EECAF: 'NVPTX Spesifik: kayıt pressue için zamanlama yap'
 # 'NVPTX Specific: whether to use lg2.approx for log2'
 HDC539A3BEBE1: 'NVPTX Spesifik: log2 için lg2.approx kullanılıp kullanılmayacağı'
-# 'NVPTX Specifies: 0 use div.approx, 1 use div.full, 2 use IEEE Compliant F32 div.rnd if available.'
-HADD307B6A067: 'NVPTX Spesifik: 0 için div.approx kullan, 1 için div.full kullan, 2 ise IEEE uyumlu F32 div.rnd mevcut ise kullan'
+# 'NVPTX Tag Invariant Loads'
+HB8013F653097: 'NVPTX Sabit Yüklemeleri Etiketle'
 # 'NVPTX target requires CUDA 9.2 or above; CUDA %0 detected'
 HC81CA29CBF97: 'NVPTX hedefi CUDA 9.2 veya üzeri gerektirir; CUDA %0 algılandı'
 # 'NVVM reflection, enabled by default'
@@ -11618,6 +11776,8 @@ H89C2A6721B4D: 'Sadece değiştiyse çıktı yaz'
 H82DD0380BC4C: 'Sadece değiştiyse çıktı dosyasını yaz'
 # "OpenACC %select{clause '%1'|directive '%2'|sub-array bound}0 requires expression of integer type (%3 invalid)"
 H24F0AB7B1FF3: "OpenACC %select{klavuz '%1'|yönerge '%2'|alt-dizi sınırı}0, tam sayı türünde bir ifade gerektirir (%3 geçersiz)"
+# "OpenACC '%0' clause applies to 'device_type' '%1', which conflicts with previous '%0' clause"
+HF0863871567F: "OpenACC ''%0'' yan tümcesi, önceki ''%0'' yan tümcesiyle çakışan ''device_type'' ''%1'' öğesine uygulanır"
 # "OpenACC '%0' clause cannot appear more than once%select{| in a 'device_type' region}2 on a '%1' directive"
 H5BA479702441: "OpenACC '%0' klausülü '%1' direktifinde%select{| bir 'device_type' bölgesinde}2 birden fazla kez görünemez"
 # "OpenACC '%0' clause cannot appear on the same '%2' construct as a '%1' clause %select{inside a compute construct with a|and a}3 'num_gangs' clause with more than one argument"
@@ -11642,8 +11802,8 @@ HE77D7FA4A4F6: "OpenACC '%1' bendesi %select{|1'den fazla bağımsız değişken
 H22BA6A918DDE: "OpenACC '%1' yan tümcesi '%0' emri altında birden fazla kez kullanılamaz"
 # "OpenACC '%1' clause is not valid on '%0' directive"
 H226495157F78: "OpenACC '%1' yan tümcesi '%0' emri için geçerli değildir"
-# "OpenACC 'bind' clause on a declaration must bind to the same name as previous bind clauses"
-H9E597FA760BB: "Bir bildirideki OpenACC 'bind' yan tümcesi, önceki bind yan tümcelerle aynı isme bağlanmalıdır"
+# "OpenACC 'bind' clause on a declaration must bind to the same name as previous 'bind' clauses"
+HC59CAAD94E7A: 'Bir bildirimdeki OpenACC bind yan tümcesi, önceki bind yan tümceleriyle aynı ada bağlanmalıdır'
 # "OpenACC 'collapse' clause loop count must be a %select{constant expression|positive integer value, evaluated to %1}0"
 HF187F732137C: "OpenACC 'collapse' yan tümcesi döngü sayısı bir %select{sabit ifade|pozitif tam sayı değeri, %1 olarak değerlendirilir}0 olmalıdır"
 # "OpenACC 'device_type' clause on a 'set' construct only permits one architecture"
@@ -11836,6 +11996,10 @@ HD160B7A51C58: 'Bellek işlem boyutunu bu değerin altında veya eşit olarak op
 H226573EDB1C0: 'Optimizasyon Pipeline'
 # 'Option passed to ISL'
 HA7C0FFCC5B20: 'ISL için geçirilen seçenek'
+# 'Optional function name to filter collection by'
+H65912274A33B: 'Toplamayı filtrelemek için isteğe bağlı işlev adı'
+# 'Optional function name to filter collection by (accepts regular expressions)'
+HB4B18F2D54D8: 'Toplamayı filtrelemek için isteğe bağlı işlev adı (düzenli ifadeler kabul eder)'
 # 'Optional remark arg to filter collection by (accepts regular expressions).'
 H3E0D571E2D16: '(Düzenli ifadeler kabul eder) filtrelemek için opsiyonel not argümanı.'
 # 'Optional remark arg to filter collection by.'
@@ -12212,6 +12376,8 @@ H16575118DC15: 'Profil yeniden haritalama dosyasının yolu'
 H327691C6666D: 'Profilin yolu'
 # 'Path to the project. Required when connecting using remote index.'
 HD4FC494735F6: 'Proje yolu. Uzak indeks kullanılarak bağlanırken gereklidir'
+# 'Path to the vocabulary file for IR2Vec'
+HD630B03243E1: 'IR2Vec için kelime dosyasının yolu'
 # 'Path to where .dwo files will be written out to.'
 H41452088F682: '.dwo dosyalarının yazılacağı yolu'
 # 'Path where the development - mode inlining log is saved.'
@@ -12784,6 +12950,8 @@ H2D490B90F012: 'Bellek erişimi fonksiyonlarını yazdır'
 H565E0827BDFD: 'Yönerge bilgi görünümünde bellek barajı bilgilerini yazdır'
 # 'Print module to stderr'
 HFFEB1D6642AE: 'Modülü stderr a yazdır'
+# 'Print more information to dbgs about GlobalISel legalizer rules being verified'
+H00897DED79CD: 'dbgs üzerinde GlobalISel yasallaştırıcı kurallarının doğrulanmasına ilişkin daha fazla bilgi yazdır'
 # 'Print name of local stack variable'
 H5190847365AF: 'Yerel yığın değişkeninin adını yazdır'
 # 'Print non-default options after command line parsing'
@@ -12958,8 +13126,8 @@ H5031BC87FCBE: 'Uyarıları da hatalarla birlikte yazdır'
 H7DD376461997: 'Yerel kapsam ve inline bilgileriyle yazdır (öznitelikler, tipler ve konumlar için takma adları atlayarak)'
 # 'Printing a logical representation of low-level debug information.\n'
 HC0290F8303A5: 'Düşük seviyeli hata ayıklama bilgisinin mantıksal temsili yazdırılır.\n'
-# "Prints 'unknown' intrinsics that were handled heuristically. Use -msan-dump-strict-instructions to print intrinsics that could not be handled exactly nor heuristically."
-HE08944C3B0E2: "'Bilinmeyen' ancak sezgisel olarak işlenen 'intrinsics'leri yazdırır. -msan-dump-strict-instructions seçicisini kullanarak tam olarak veya sezgisel olarak işlenemeyen intrinsicsleri yazdırmak için bu seçiciyi kullanın."
+# "Prints 'unknown' instructions that were handled heuristically. Use -msan-dump-strict-instructions to print instructions that could not be handled explicitly nor heuristically."
+HBC7AE3CB843B: "Sezgisel olarak işlenen 'bilinmeyen' komutları yazdırır. Açıkça ya da sezgisel olarak işlenemeyen komutları yazdırmak için -msan-dump-strict-instructions kullanın."
 # 'Prints comments for instruction based on inline cost analysis'
 H8F93FDBF8523: 'İnline maliyet analizine dayalı yönerge yorumları yazdırır'
 # 'Prints debug information for the new pass manager'
@@ -13112,6 +13280,12 @@ H38622892495A: 'R600 Paketleme'
 H9C6C89BC6C1D: 'R600 Vektör Kayıt Birleştirici'
 # 'R600ExpandSpecialInstrs'
 HD068997DE698: 'R600 Özel İstrler Genişletici'
+# "RISC-V 'interrupt' attribute '%0' requires extension '%1'"
+H8A25210ABAD4: "RISC-V 'kesme' özelliği '%0', '%1' genişlemesini gerektirir"
+# "RISC-V 'interrupt' attribute contains invalid combination of interrupt types"
+H3F0F8D14C6DB: "RISC-V 'kesme' özelliği geçersiz kesme türleri kombinasyonunu içeriyor"
+# 'RISC-V Assembly Printer'
+H9361560AFA27: 'RISC-V Assembly Yazıcısı'
 # 'RISC-V CodeGenPrepare'
 H405FA7A845BC: 'RISC-V CodeGenHazırlama'
 # 'RISC-V DAG->DAG Pattern Instruction Selection'
@@ -13122,6 +13296,8 @@ HC73090960463: 'RISC-V Ölü Kayıt Tanımları'
 H0F357F81783D: 'RISC-V Maskeleri Katlama'
 # 'RISC-V Fold Memory Offset'
 HBC0E6B2D64FC: 'RISC-V Bellek Ofseti Katlama'
+# 'RISC-V Indirect Branch Tracking'
+H10B581240D72: 'RISC-V Dolaylı Dal İzleme'
 # 'RISC-V Insert Read/Write CSR Pass'
 H05452489D81B: 'RISC-V Oku/Yaz CSR Geçişini Ekle'
 # 'RISC-V Insert VSETVLI pass'
@@ -13156,8 +13332,6 @@ H9FBA8B3D1AEE: 'RISC-V Zcmp Hareket Birleştirme Geçişi'
 H3692DAF330DE: 'RISC-V atomik pseudo yönerge genişletme aşaması'
 # 'RISC-V gather/scatter lowering pass'
 H05AC68772FF6: 'RISC-V gather/scatter düşürme aşaması'
-# "RISC-V interrupt attribute '%0' requires extension '%1'"
-H6CFF2777C071: "RISC-V interrupt özniteliği '%0', '%1' uzantısına ihtiyaç duyar"
 # 'RISC-V post-regalloc pseudo instruction expansion pass'
 H7D576AB43EFF: 'RISC-V post-regalloc pseudo yönerge genişletme aşaması'
 # 'RISC-V pseudo instruction expansion pass'
@@ -13188,6 +13362,8 @@ H3683BABDE7E9: 'PIC modunda stub’dan yükü yeniden üret'
 H10A4CB1F102D: 'ReachingDefAnalysis'
 # 'Read commands from file'
 HDC06C8ECE255: 'Dosya üzerinden komutlar oku'
+# 'Read function map names in indexed CodeGenData. Can be disabled to save memory and time for final consumption of the indexed CodeGenData in production.'
+H1E1056B753A2: 'İndeksli CodeGenData içinde işlev harita adlarını okuyun. Üretim ortamında indeksli CodeGenData’nın nihai tüketimi için bellek ve zaman kazanmak amacıyla devre dışı bırakılabilir.'
 # 'Read specified document from input (default = 1)'
 H289DB22297D5: 'Giriden belirtilen belgeyi oku (varsayılan = 1)'
 # 'Read summary from given YAML file before running pass'
@@ -13866,6 +14042,8 @@ H3F602E05A4A8: 'SPIR-V şeydör yeteneği'
 HF7AF8DE76675: 'SPIR-V çevirmen uyumlu modu'
 # 'SPIR-V capabilities to avoid if there are other options enabling a feature'
 H9E1D87EB2349: 'Diğer seçeneklerle etkinleştirildiğinde SPIR-V yeteneklerini kullanmayacak'
+# 'SPIRV Assembly Printer'
+H86AC0377A655: 'SPIRV Assembly Yazıcısı'
 # 'SPIRV NonSemantic.Shader.DebugInfo.100 emitter'
 H16A3D5391B31: 'SPIRV NonSemantic.Shader.DebugInfo.100 üretici'
 # 'SPIRV convergence regions analysis'
@@ -14660,12 +14838,16 @@ H658C75F7C985: 'Kaynak Kod Analizi - Ölü Simgenin Temizlenme Frekansı'
 H418F37A89230: 'Kaynak Kod Analizi - Çıktı Seçenekleri'
 # 'Source Code Analysis - Symbolic Constraint Engines'
 HD8341B8B44B5: 'Kaynak Kod Analizi - Sembolik Kısıtlama Motorları'
+# 'Source language name.'
+HE1B71BB29701: 'Kaynak dil adı.'
 # 'Source prefix to elide'
 HF556E14613B2: 'Atlanacak kaynak öneki'
 # "Source-level compatibility for Altivec vectors (for PowerPC targets). This includes results of vector comparison (scalar for 'xl', vector for 'gcc') as well as behavior when initializing with a scalar (splatting for 'xl', element zero only for 'gcc'). For 'mixed', the compatibility is as 'gcc' for 'vector bool/vector pixel' and as 'xl' for other types. Current default is 'mixed'."
 HCF923B012626: 'Altivec vektörleri için kaynak seviyesi uyumluluğu (PowerPC hedefler için). Bu, vektör karşılaştırmasının sonuçlarını (xl için skaler, gcc için vektör) ve skalerle başlatıldığında davranışını (xl için splatting, gcc için sadece 0. eleman) içerir. "mixed" için, "vector bool/vector pixel" için gcc ve diğer tipler için xl uyumluluğu kullanılır. Mevcut varsayılan "mixed"tir.'
 # 'SourceLocation in file %0 at offset %1 is invalid'
 H2A6519004798: "Dosya %0'da %1 konumundaki SourceLocation geçersiz"
+# 'Sparc Assembly Printer'
+H91EE11A0F136: 'Sparc Assembly Yazıcısı'
 # 'Spawn a separate process for each cc1'
 H4079AEA987DF: 'Her cc1 için ayrı bir süreç başlat'
 # 'Spawns a subprocess for each snippet execution, allows for the use of memory annotations'
@@ -14700,8 +14882,8 @@ H048BF6366B06: 'Giriş dosyasının adını belirtir'
 HE1BE8B43F7F0: 'CU işlenecek toplu iş boyutunu belirtir. Daha yüksek sayı performansı artırır, ancak daha fazla bellek tüketir. Varsayılan değer 1'
 # 'Specify "safe" i.e. known-good backend:'
 H8A9DA72ACD37: '"safe" (bilinen iyi) arka uç belirtin:'
-# 'Specify <function, basic block1[;basic block2...]> pairs to extract.\nEach pair will create a function.\nIf multiple basic blocks are specified in one pair,\nthe first block in the sequence should dominate the rest.\neg:\n  --bb=f:bb1;bb2 will extract one function with both bb1 and bb2;\n  --bb=f:bb1 --bb=f:bb2 will extract two functions, one with bb1, one with bb2.'
-H849E2CD57584: '<fonksiyon, temel blok1[;temel blok2...]> çiftlerini çıkarmak için belirtin.\nHer bir çift bir fonksiyon oluşturur.\nBirden fazla temel blok belirtilirse,\nsıradaki ilk blok geri kalanları kontrol etmelidir.\nörn:\n  --bb=f:bb1;bb2 hem bb1 hem de bb2 ile bir fonksiyon çıkarır;\n  --bb=f:bb1 --bb=f:bb2 ise iki ayrı fonksiyon çıkarır, biri bb1 ile, diğeri bb2 ile'
+# "Specify <function, basic block1[;basic block2...]> pairs to extract.\nEach pair will create a function.\nIf multiple basic blocks are specified in one pair,\nthe first block in the sequence should dominate the rest.\nIf an unnamed basic block is to be extracted,\n'%' should be added before the basic block variable names.\neg:\n  --bb=f:bb1;bb2 will extract one function with both bb1 and bb2;\n  --bb=f:bb1 --bb=f:bb2 will extract two functions, one with bb1, one with bb2.\n  --bb=f:%1 will extract one function with basic block 1;"
+H5393854BACA7: "Çıkarılacak <işlev, temel blok1[;temel blok2...]> çiftlerini belirtin.\nHer çift bir işlev oluşturur.\nBir çiftte birden fazla temel blok belirtilirse,\ndizideki ilk blok diğerlerinin önünde gelmelidir.\nAdlandırılmamış bir temel blok çıkarılacaksa,\n'%' temel blok değişken adlarının önüne eklenmelidir.\nÖrnek:\n  --bb=f:bb1;bb2 hem bb1 hem de bb2 ile bir işlev çıkarır;\n  --bb=f:bb1 --bb=f:bb2 bb1 ile bir işlev, bb2 ile bir işlev çıkarır;\n  --bb=f:%1 temel blok 1 ile bir işlev çıkarır;"
 # 'Specify <script> as linker script'
 HE790F52CC3F0: '<script> derleyici betiği olarak belirtin'
 # 'Specify CU wavefront execution mode (AMDGPU only)'
@@ -14810,6 +14992,8 @@ HECCC4473972C: '“test” adlı (yani şüpheli arka uç) belirtin:'
 HDC6898D3AB44: 'BPF yığıt boyutu sınırını belirtin'
 # 'Specify the Swift version to use when filtering API notes'
 HC09727464228: 'API notlarını filtrelerken kullanılan Swift sürümünü belirtin'
+# 'Specify the available SPIR-V extensions. If this option is not specified, then all extensions are available.'
+HA471B42FD9F7: 'Kullanılabilir SPIR-V eklentilerini belirtin. Bu seçenek belirtilmemişse tüm eklentiler kullanılabilir olur.'
 # "Specify the boundary's size to align branches"
 H7FCB2E0E7262: 'Dalga sınırlarının boyutunu belirtin'
 # 'Specify the class to use for constant Objective-C string objects.'
@@ -14890,6 +15074,8 @@ HE59A5BD76AE3: 'Açıklamaları gruplamak için özelliğini belirtin'
 H0AB4126F0C29: 'RVV vektör kayıt defterinin bit cinsinden boyutunu belirtin'
 # 'Specify the size in bits of an SVE vector register. Defaults to the vector length agnostic value of "scalable". (AArch64 only)'
 H2F3DFF504736: 'SVE vektör kayıt defterinin bit cinsinden boyutunu belirtin. Vektör uzunluğundan bağımsız "scalable" değeri varsayılandır. (Sadece AArch64)'
+# 'Specify the source file identifier for -funique-source-file-names; uses the source file path if not specified'
+H0140BA1E31AB: '-funique-source-file-names için kaynak dosya tanımlayıcısını belirtin; belirtilmemişse kaynak dosya yolu kullanılır'
 # 'Specify the stackmap encoding version (default = 3)'
 H7CF270813613: 'Stackmap kodlama sürümünü belirtin (varsayılan = 3)'
 # 'Specify the target Objective-C runtime kind and version'
@@ -15138,6 +15324,8 @@ HDCC1F5EAEC7B: 'Çıktı yazdırma için kullanılacak sözdizimi varyantı'
 H40E12820EB61: 'Objective-C işaretçileri için retain ve release çağrılarını sentezle'
 # 'System directory for configuration files'
 H2B1CA8129B49: 'Yapılandırma dosyaları için sistem dizini'
+# 'SystemZ Assembly Printer'
+HF4545950D35C: 'SystemZ Assembly Yazıcısı'
 # 'SystemZ Comparison Elimination'
 HA6D4515C513E: 'SystemZ Karşılaştırma İptal Etme'
 # 'SystemZ Copy Physregs'
@@ -16060,6 +16248,8 @@ HB2F8536F04B5: 'Yanlış devirtualization’ların kontrol türü'
 HDEE9A9BDCFC8: 'Dökülecek simge türü (varsayılan tüm)'
 # 'Type of the files to be bundled/unbundled.\nCurrent supported types are:\n  i    - cpp-output\n  ii   - c++-cpp-output\n  cui  - cuda-cpp-output\n  hipi - hip-cpp-output\n  d    - dependency\n  ll   - llvm\n  bc   - llvm-bc\n  s    - assembler\n  o    - object\n  a    - archive of objects\n  gch  - precompiled-header\n  ast  - clang AST file'
 H23DE32DB4F4F: 'Bundan/unbundan dosya türleri.\nDesteklenen türler şunlardır:\n  i    - cpp-output\n  ii   - c++-cpp-output\n  cui  - cuda-cpp-output\n  hipi - hip-cpp-output\n  d    - bağımlılık\n  ll   - llvm\n  bc   - llvm-bc\n  s    - assembler\n  o    - object\n  a    - nesne arşivi\n  gch  - önceden derlenmiş başlık dosyası\n  ast  - clang AST dosyası'
+# 'Type sizes.'
+H42125920C0CF: 'Tür boyutları.'
 # 'Type-Based Alias Analysis'
 H432902366273: 'Tür Temelli Eşanlam Analizi'
 # 'Types (Pointer, Reference, etc.).'
@@ -16092,6 +16282,8 @@ H40151C08E668: 'Beklenmeyen vftable bileşen türü %0 bileşen numarası %1 iç
 H18CD82918982: 'Eşitlik Analizi'
 # 'Unify divergent function exit nodes'
 H8B72079558B4: 'Ayrışan işlev çıkış düğümlerini birleştir'
+# 'Unify function instantiations'
+H7D11BF20733C: 'İşlev örneklerini birleştir'
 # 'Unify multiple OpenCL metadata due to linking'
 H1E880963D2AC: 'Bağlama nedeniyle birden fazla OpenCL meta verisini birleştir'
 # 'Union.'
@@ -16218,6 +16410,10 @@ HCD3F9F572B30: 'GlobalISel beklentisi meşruiyetini kullanmak için, seçim kal�
 HBF33CE828D70: 'HLFIR düşürme (deneysel) kullan'
 # 'Use IEEE 754 quadruple-precision for long double'
 H52864CA1A557: 'Uzun double için IEEE 754 dörtlü hassasiyetini kullan'
+# 'Use IEEE Compliant F32 div.rnd if available (default)'
+H2BB28E9D2AB7: 'Mevcutsa IEEE Uyumlu F32 div.rnd kullan (varsayılan)'
+# 'Use IEEE Compliant F32 div.rnd if available, no FTZ'
+HBC0417BA3204: 'Mevcutsa IEEE Uyumlu F32 div.rnd kullan, FTZ yok'
 # 'Use INTEGER(KIND=8) for the result type in size-related intrinsics'
 H31BCF654D576: 'Boyutla ilgili iç fonksiyonların sonucu için INTEGER(KIND=8) kullan'
 # 'Use InstrItineraryData for latency lookup'
@@ -16330,6 +16526,8 @@ H76D3FF42212F: 'Sonuca giden devamlayıcıları bulmak için blok sıklık bilgi
 HA5972065E561: 'Modülleri kaydetmek/yerine yükleme için önbellek yöneticisini kullan'
 # 'Use call site prioritized inlining for sample profile loader. Currently only CSSPGO is supported.'
 H91095FED309C: 'Örnek profil yükleyicisi için çağrı yeri öncelikli içe aktarma kullan. Şu anda sadece CSSPGO desteklenmektedir.'
+# 'Use callback for max stack depth tracing with minimum stack depth M'
+H90D68B59D6FC: 'M minimum yığın derinliği ile maksimum yığın derinliği izleme için geri çağırım kullan'
 # 'Use callbacks instead of inline instrumentation sequences.'
 H3EC6C04656EA: 'Görev döndürmelerini (callbacks) inline_strumentasyon dizileri yerine kullan.'
 # 'Use callee size priority.'
@@ -16378,6 +16576,10 @@ H1078C08F764F: 'Çalışma zamanında yüklenen model kullan (geliştirme modu)'
 H323DACFD356C: 'C++ standart kütüphanesi içerme yolu olarak dizini kullan'
 # 'Use distinct LTO pipelines'
 H5CC3AC1C99CE: 'Farklı LTO borularını kullan'
+# 'Use div.approx'
+H83DB5654E52E: 'div.approx kullan'
+# 'Use div.full'
+H982A66A56BFC: 'div.full kullan'
 # 'Use div.w[u] and mod.w[u] instructions with input not sign-extended.'
 HCBB92DFD904B: 'Sign-extended olmayan girişle div.w[u] ve mod.w[u] yönergelerini kullan.'
 # 'Use dot format instead of plain text when dumping VPlans'
@@ -16716,6 +16918,8 @@ H11CFB81E3E7B: 'Kullanıcı tarafından sağlanan varlık yolu, HTML çıktısı
 HEFB279BA9297: 'Modül hash yerine kaynak dosya adını kullanır. Bu, kaynak dosya adının benzersiz bir isim/yol olması ve isim çakışmalarını önlemesi gereklidir'
 # 'VALU instruction count threshold for adjusting wave priority'
 H323BECA8255D: 'VALU yönergisi sayacı eşiği dalganın önceliğini ayarlamak için'
+# 'VE Assembly Printer'
+H35AB8A791661: 'VE Montajcı Yazıcısı'
 # 'VE DAG->DAG Pattern Instruction Selection'
 H31A1129B2EDC: 'VE DAG->DAG desenli yönergeler seçimi'
 # 'VLIW scheduler'
@@ -16900,6 +17104,8 @@ H9BB1C52DB1D8: 'Tespit edilen uyarılar.'
 H0499BE5B2273: 'Üretilecek uyarılar.'
 # 'Weakly link in the blocks runtime'
 H32E4B9C0D02B: "Blocks runtime'ini zayıf bağlantılı olarak bağla"
+# 'WebAssembly Assmebly Printer'
+H618A8F3DD855: 'WebAssembly Montajcı Yazıcısı'
 # 'WebAssembly Clean Code After Trap'
 H5004FAB71B78: 'WebAssembly Trap Sonrası Temiz Kod'
 # 'WebAssembly Emscripten-style exception handling'
@@ -16940,6 +17146,12 @@ H8B46242EE529: 'WebAssembly: Dolaşma-dönüş optimizasyonlarını devre dış�
 HBD0CCB517ABD: 'WebAssembly: Sadece test amaçlı, gizli yerel değişkenleri yönlendirme çıktısında göster.'
 # 'WebAssembly: output stack registers in instruction output for test purposes only.'
 HCAF0317DF2F0: 'WebAssembly: Sadece test amaçlı, yığın kayıtlarını yönlendirme çıktısında göster.'
+# 'Weight for argument embeddings'
+H6E245963349C: 'Argüman gömme verileri için ağırlık'
+# 'Weight for opcode embeddings'
+HAF6B081C42AD: 'Opcode gömme verileri için ağırlık'
+# 'Weight for type embeddings'
+HAD8C8AF4F1BA: 'Tür gömme verileri için ağırlık'
 # 'Weight of the branch likely to be taken (default = 2000)'
 H39B8B6D520C6: 'Dalın alınma olasılığına göre ağırlık (varsayılan = 2000)'
 # 'Weight of the branch unlikely to be taken (default = 1)'
@@ -17162,6 +17374,8 @@ HF422AA3A57C9: 'İşlem çalıştırıldıktan sonra verilen bitcode veya YAML d
 H214BE48CC62F: 'Endeksli biçimün önceki sürümünü yazmak için bazı ileri uyumlu özellikleri etkinleştir'
 # 'Writes always set the type'
 H90F97A092B90: 'Yazmalar her zaman tipi ayarlar'
+# 'X86 Assembly Printer'
+HD5F043986D92: 'X86 Montajcı Yazıcısı'
 # 'X86 Call Frame Optimization'
 H6C1AD91D1BC8: 'X86 Çağrı Çerçevesi Optimizasyonu'
 # 'X86 DAG->DAG Instruction Selection'
@@ -17186,6 +17400,8 @@ H71421E3EAECA: 'X86 Kısmi İndirgeme'
 HB7A0BD877623: 'X86 Dönüş Thunks'
 # 'X86 Speculative Execution Side Effect Suppression'
 HAC95FD71C1F3: 'X86 Spekülatif Yürütme Yan Etkilerini Bastırma'
+# 'X86 Suppress APX features for relocation'
+H1A67E3308F3A: 'X86 Taşıma için APX özelliklerini bastır'
 # 'X86 cmov Conversion'
 H459397A41EF1: 'X86 cmov Dönüşümü'
 # 'X86 optimize LEA pass'
@@ -17204,10 +17420,14 @@ H12CE3299B81B: 'X86: Sanal Kayıt Yeniden Atamayı devre dışı bırak.'
 HEFF525BFF565: 'X86: Store Forwarding Blocks için inceleme için geriye doğru emir sayısı.'
 # 'X86: enable AMX scalarizition.'
 HCECBA05C8A45: "X86: AMX scalarizition'i etkinleştir."
+# 'XCore Assembly Printer'
+H1AA113AD0A3E: 'XCore Montajcı Yazıcısı'
 # 'XCore DAG->DAG Pattern Instruction Selection'
 H581ED762EAE6: 'XCore DAG->DAG Desen Emir Seçimi'
 # 'XRay Tools\n\n  This program consolidates multiple XRay trace processing tools for convenient access.\n'
 HFB113E3ACE56: 'XRay Araçları\n\n Bu program, kullanışlı erişim için birden çok XRay izleme işleme aracını birleştirir.\n'
+# 'Xtensa Assembly Printer'
+H1172BF988F99: 'Xtensa Montajcı Yazıcısı'
 # 'YAML'
 HFFBCB202B09D: 'YAML'
 # 'Yaml database created by find-all-symbols'
@@ -17288,6 +17508,10 @@ HE188099287CD: '__block özniteliği sadece yerel değişkenlerde kullanılabilm
 HD7DB9752FAAD: "__block değişkeni %0, %select{lambda ifadesi|captured statement}1'te yakalanamaz"
 # '__builtin_btf_type_id argument %0 not a constant'
 H48F1BECDC866: '__builtin_btf_type_id bağımsız değişkeni %0 sabit değil'
+# '__builtin_get_vtable_pointer requires an argument of%select{| polymorphic}0 class pointer type, but %1 %select{was provided|has no virtual methods}0'
+H6F5E8AE6B1DC: '__builtin_get_vtable_pointer bir %select{|polimorfik}0 sınıf işaretçi türü argümanı gerektirir, ancak %1 %select{sağlandı|sanal metot yok}0'
+# '__builtin_get_vtable_pointer requires an argument with a complete type, but %0 is incomplete'
+HC06F79966A72: '__builtin_get_vtable_pointer tam bir türe sahip argüman gerektirir, ancak %0 tam değil'
 # '__builtin_longjmp is not supported for the current target'
 H53A6EFDFCD17: '__builtin_longjmp şu anki hedef için desteklenmemektedir'
 # "__builtin_mul_overflow does not support 'signed _BitInt' operands of more than %0 bits"
@@ -17308,6 +17532,8 @@ H57FE08B33075: '__builtin_preserve_type_info bağımsız değişkeni %0 sabit de
 H08E9B75B93D5: '__builtin_setjmp şu anki hedef için desteklenmemektedir'
 # '__constant__, __device__, and __managed__ are not allowed on non-static local variables'
 H4A2DC7998EB3: '__constant__, __device__, ve __managed__ öznitelikleri statik olmayan yerel değişkenlerde kullanılamaz'
+# '__constant__, __device__, and __shared__ variables must use default address space'
+HE599218FA9CA: '__constant__, __device__ ve __shared__ değişkenler varsayılan adres alanını kullanmalıdır'
 # '__declspec attribute %0 is not supported'
 H4B7BDD3DADC0: '__declspec özniteliği %0 desteklenmemektedir'
 # '__declspec attributes must be an identifier or string literal'
@@ -17882,6 +18108,8 @@ H35898B1EF5C2: "özniteliğinin %select{'code_seg'|'section'}1 parametresi bu he
 HBE77A0717D85: "CUDA C/C++'da '#pragma unroll'ün bağımsız değişkeni parantez içinde olmamalıdır"
 # "argument to '%0' clause must be a %select{non-negative|strictly positive}1 integer value"
 H93740956E9C9: '‘%0’ yan tümcesinin bağımsız değişkeni bir %select{negatif olmayan|sadece pozitif}1 tamsayı değer olmalıdır'
+# "argument to '%0' clause requires a value that can be represented by a 64-bit"
+H628A3A124E33: "'%0' yan tümcesi için argüman, 64 bit ile temsil edilebilen bir değeri olmalıdır"
 # "argument to '%0' is missing (expected %1 value%s1)"
 HEA17C0D34C2C: "parametresi '%0' eksik (beklenen %1 değer%s1)"
 # "argument to '__ptrauth' must be an integer constant expression"
@@ -18030,6 +18258,8 @@ HAA2952BA222F: 'asm operandı %0 tipi tamamlanmamış'
 H8FB938C946B0: 'asm belirteci "%0" burada ilk kez referans edildi'
 # 'asm-specifier for input or output variable conflicts with asm clobber list'
 H99E324C19D00: 'giriş veya çıkış değişkeni için asm belirteci, asm hasar listesi ile çakışıyor'
+# 'assertion failed during evaluation of constant expression'
+H0BDBA0DDBFCA: 'Sabit ifade değerlendirmesi sırasında onaylama başarısız oldu'
 # 'assigning %select{array literal|dictionary literal|numeric literal|boxed expression|<should not happen>|block literal}0 to a weak %select{property|variable}1; object will be released after assignment'
 H8FFA1E619C25: '%select{dizi literali|sözlük literali|sayısal literali|kapsüllenen ifade|<bunun gibi olmamalı>|blok literali}0 bir %select{özellik|değişken}1 zayıf atamasına atanıyor; nesne atama sonrası serbest bırakılacak'
 # 'assigning %select{field|instance variable}0 to itself'
@@ -18116,6 +18346,8 @@ H09CC6A21F4B4: '%0 özniteliği, argüman paketi genişletmesini desteklemiyor'
 H409C4714E4F9: "'if %select{ constexpr| consteval}1' ifadesini belirtirken %0 özniteliği etkili değildir"
 # 'attribute %0 has no effect when annotating an infinite loop'
 HB06D2414EAF4: '%0 özniteliği sonsuz bir döngüyü işaretlerken etkisizdir'
+# 'attribute %0 here'
+HC3F98113517C: 'buradaki %0 niteliği'
 # 'attribute %0 ignored, because it cannot be applied to a type'
 H5708F2759194: '%0 özniteliği, bir tipe uygulanamadığı için yoksayıldı'
 # 'attribute %0 ignored, because it cannot be applied to omitted return type'
@@ -18236,6 +18468,8 @@ HA75BA84DF85B: 'çünkü %select{temel sınıfı |alanı |}0 türü %1, kullanı
 HC07ABEF26326: 'çünkü %select{temel sınıfın |alanın |}0%1 tipi varsayılan yapıcısı yok'
 # 'because field %0 has an initializer'
 H7DB53EF856A5: 'çünkü %0 alan bir başlatıcıya sahip'
+# 'because it %select{is a reference type|is const|is volatile|has an ARC lifetime qualifier|is a variably-modified type|has a virtual base %1|not %select{a|an array of objects of}1 scalar or class type|has a non-trivially-relocatable base %1|has a non-trivially-relocatable member %1 of type %2|has a non-replaceable base %1|has a non-replaceable member %1 of type %2|has a non-trivially-copyable base %1|has a non-trivially-copyable member %1 of type %2|has a %select{deleted|user-provided}1 destructor|has a user provided %select{copy|move}1 constructor|has a deleted %select{copy|move}1 constructor|has a user provided %select{copy|move}1 assignment operator|has a deleted %select{copy|move}1 assignment operator|is a union with a user-declared %select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}1|is a function type|is a cv void type|is an incomplete array type}0'
+HF88804C54D6A: "çünkü bu %select{referans türüdür|const'tur|volatile'dur|bir ARC yaşam süresi niteleyicisine sahiptir|değişken değiştirilebilir türdür|%1 sanal taban sınıfına sahiptir|değil %select{bir|nesnelerden oluşan dizi}1 skaler veya sınıf türü|%1 geçici olarak taşınabilir olmayan bir tabana sahiptir|%2 türünde %1 geçici olarak taşınabilir olmayan bir üyesi vardır|%1 değiştirilemez tabana sahiptir|%2 türünde %1 değiştirilemez bir üyesi vardır|%1 geçici olarak kopyalanamaz tabana sahiptir|%2 türünde %1 geçici olarak kopyalanamaz bir üyesi vardır|%select{silinmiş|kullanıcı tarafından sağlanan}1 yıkıcı fonksiyonu vardır|%select{kopyalama|taşıma}1 yapıcısı kullanıcı tarafından sağlanmıştır|%select{kopyalama|taşıma}1 yapıcısı silinmiştir|%select{kopyalama|taşıma}1 atama operatörü kullanıcı tarafından sağlanmıştır|%select{kopyalama|taşıma}1 atama operatörü silinmiştir|kullanıcı tanımlı %select{varsayılan yapıcı|kopyalama yapıcısı|taşıma yapıcısı|kopyalama atama operatörü|taşıma atama operatörü|yıkıcı}1 fonksiyonuna sahip bir birleşimdir|işlev türüdür|cv void türüdür|tamamlanmamış dizi türüdür}0"
 # 'because it has a default argument'
 H4C6DC4DA1E45: 'çünkü varsayılan bir argümanı vardır'
 # 'because it is a variadic function'
@@ -18304,6 +18538,8 @@ H937D8317B6A5: "'c' bağlama tipi bufer bildirimi içinde yoksayıldı. 'packoff
 H2F0190E0856D: "'i' bağlama tipi yoksayıldı. 'integer constant' bağlama tipi artık desteklenmiyor"
 # "bit fields cannot be used to specify storage in a '%0' clause"
 H5C9BE7997F9C: "bit alanları '%0' bendeki depolama belirtmek için kullanılamaz"
+# 'bit-field %0 has bit-width %1 here'
+H38A912E965D9: 'bit-alanı %0 burada %1 bit genişliğine sahiptir'
 # 'bit-field %0 has negative width (%1)'
 HA6B3D52AF212: '%0 bit alanı negatif genişlikte (%1)'
 # 'bit-field %0 has non-integral type %1'
@@ -18312,6 +18548,8 @@ H1F66B27F57D3: '%0 bit alanı tamsayısal olmayan bir %1 tipine sahip'
 H1E7885609E9C: "bit alan %0, %1'in tüm numaralandırıcılarını depolamak için yeterince geniş değil"
 # 'bit-field %0 is not wide enough to store all enumerators of preferred type %1'
 H0D56F6137EF8: "bit alanı %0, tercih edilen tip %1'in tüm enumeratörlerini depolamak için yeterince geniş değil"
+# 'bit-field %0 of type %1 has a different storage size than the preceding bit-field (%2 vs %3 bytes) and will not be packed under the Microsoft ABI'
+H9DAB2952ED10: 'türü %1 olan bit-alanı %0 önceki bit-alanı ile aynı depolama boyutuna sahip değil (%2 vs %3 bayt) ve Microsoft ABI altında paketlenmeyecek'
 # 'bit-field is declared here'
 HE5CFF566169E: 'bit alan burada bildirilmiştir'
 # 'bit-fields are not supported in OpenCL'
@@ -18396,6 +18634,8 @@ HABBC844A5E58: 'builtin işlevleri doğrudan çağrılmalıdır'
 HFC2F5B50372D: 'builtin başlıkları sistem modüllerine aittir ve _Builtin_ modülleri cstdlib başlıkları için yok sayılır'
 # 'builtin is not supported on this target'
 H6C31A7E5443F: 'bu hedefte_builtin desteklenmemektedir'
+# 'builtin requires %select{spirv|spirv32 or spirv64}0 target'
+HB951F2F94853: 'yerleşik %select{spirv|hedef spirv32 veya spirv64}0 gerektirir'
 # 'builtin requires%select{| at least one of the following extensions}0: %1'
 HBE3E35E72C33: 'builtin %select{| aşağıdaki en az bir uzantıyı gerektirir}0: %1'
 # "but in %select{'%1'|definition here}0 found %select{%3 referenced %plural{1:protocol|:protocols}3|%ordinal3 referenced protocol with different name %4}2"
@@ -19358,6 +19598,8 @@ HAE8DDB1E1535: 'sınıf %0 uyumsuz üst sınıflar içeriyor'
 H5BCC48BDFD6B: 'sınıf %0 önceki bildirimi tipler parametresiyle yapılmıştı'
 # "class already marked '%0'"
 HCB141E8798E7: "sınıf zaten '%0' olarak işaretlenmiş"
+# "class already marked '%select{trivially_relocatable_if_eligible|replaceable_if_eligible}0'"
+H5024671CC38B: "sınıf zaten '%select{kayıtlarla_taşınabilir_seçkin|değiştirilebilir_seçkin}0' olarak işaretlenmiş"
 # 'class extension has no primary class'
 H14396A81AB6D: 'sınıf genişletmesi bir temel sınıfa sahip değil'
 # 'class has %0 base %plural{1:class|:classes}0'
@@ -19446,6 +19688,10 @@ H28609FC0503F: 'sayım listelerinin sonundaki virgül C++98 ile uyumsuzdur'
 H5D12051B65A0: 'boş işaretçisiyle bir karakter sabiti karşılaştırılıyor; %select{NULL|(void *)0}0 ile karşılaştırmak istediniz mi?'
 # 'comparing floating point with == or != is unsafe'
 H1DE5EF3912E1: 'noktalı sayısal değerleri == veya != ile karşılaştırmak güvenli değildir'
+# "comparing values of different Unicode code unit types %0 and %1 compares unrelated code units '%2' and '%3'"
+H8DCD3F2A59F0: "farklı Unicode kod birimi türlerinin karşılaştırılması %0 ve %1 ilişkisiz kod birimlerini '%2' ve '%3' karşılaştırır"
+# 'comparing values of different Unicode code unit types %0 and %1 may compare different code points'
+H29AC22B06621: 'farklı Unicode kod birimi türlerinin karşılaştırılması %0 ve %1 farklı kod noktalarını karşılaştırabilir'
 # 'comparing with this %select{specifier|format string}0'
 H0EA8BCD476F7: 'bu %select{belirteç|format dizesi}0 ile karşılaştırma'
 # "comparison against address of weak declaration '%0' can only be performed at runtime"
@@ -19468,6 +19714,8 @@ H5D551E6212F9: "iki diziyi karşılaştırmak C++20'de gerekmez olacak; adresler
 H4D3F55AAB37F: "iki diziyi karşılaştırmak yasaklanmış; adreslerini karşılaştırmak için unary '+' kullanın"
 # "comparison between two arrays is ill-formed in C++26; to compare array addresses, use unary '+' to decay operands to pointers"
 H20B4EE22A6C2: "iki diziyi karşılaştırma C++26'da hatalıdır; adreslerini karşılaştırmak için unary '+' ile operandları işaretçilere döndürün"
+# "comparison in fold expression would evaluate to '(X %0 Y) %0 Z' which does not behave the same as a mathematical expression"
+HEA2CC1542868: "katlama ifadesindeki karşılaştırma '(X %0 Y) %0 Z' olarak değerlendirilir ki matematiksel ifade ile aynı davranışta değildir"
 # "comparison of %select{address of|function|array}0 '%1' %select{not |}2equal to a null pointer is always %select{true|false}2"
 H61B7557646A7: "%select{adresi|fonksiyon|dizi}0 '%1' %select{not |}2bir boş işaretçisiyle eşit olma karşılaştırması her zaman %select{true|false}2 döner"
 # 'comparison of address of base class subobject %0 of class %1 to field %2 has unspecified value'
@@ -19724,8 +19972,6 @@ HA5CE432D2BF4: "non-type şablon parametrelerinde basit 'auto' dışında kısı
 HDBC0B5C441D3: "kısıt '%0' burada zaten mevcuttur"
 # 'constraint depends on a previously diagnosed expression'
 HE3836E579C9B: 'kısıt, daha önce tespit edilmiş bir ifadeye bağlıdır'
-# 'constraint variable %0 cannot be used in an evaluated context'
-H553F40E512D9: 'kısıt değişkeni %0, değerlendirilmiş bir bağda kullanılamaz'
 # 'constraints not satisfied for %select{class template|function template|variable template|alias template|template template parameter|template}0 %1%2'
 H81A668F064ED: 'kısıtlamalar, %select{sınıf şablonu|fonksiyon şablonu|değişken şablonu|alıntı şablonu|şablon şablon parametresi|şablon}0 %1%2 için karşılanmamıştır'
 # "construct '%0' not allowed in a region associated with a directive with 'order' clause"
@@ -19894,6 +20140,8 @@ H84F45A8B13FB: "current_version uyuşmuyor: '%0' (girilen) vs '%1' (bulunan)"
 HCB49175AA5FC: "acquired_before/after bağımlılıklarında döngü, '%0' ile başlıyor"
 # "cyclic dependency in module '%0': %1"
 H2C783846485B: "modül '%0' de siklik bağımlılığı: %1"
+# 'd'
+H3C363836CF4E: 'd'
 # 'data argument not used by format string'
 HB79E446EA7A1: 'veri bağımsız değişkeni format dizesi tarafından kullanılmıyor'
 # "data argument position '%0' exceeds the number of data arguments (%1)"
@@ -20142,6 +20390,14 @@ H9659057B9931: 'varsayılan istisna işleme modeli'
 H303212CBDF84: 'sabit türden bir %0 nesnesinin varsayılan başlatılması%select{| kullanıcı tarafından sağlanmayan bir varsayılan yapıcı yoksa}1'
 # 'default initialization of an object of const type %0%select{| without a user-provided default constructor}1 is a Microsoft extension'
 H48E5A1B64C89: 'sabit türden bir %0 nesnesinin varsayılan başlatılması%select{| kullanıcı tarafından sağlanmayan bir varsayılan yapıcı yoksa}1 Microsoft bir uzantısıdır'
+# 'default initialization of an object of type %0 is incompatible with C++'
+H6366610D5A2C: '%0 türündeki bir nesnenin varsayılan başlatması C++ ile uyumlu değildir'
+# 'default initialization of an object of type %0 leaves the object uninitialized%select{| and is incompatible with C++}1'
+H925C796D0E64: '%0 türündeki bir nesnenin varsayılan başlatması nesneyi başlatılmamış bırakır%select{| ve C++ ile uyumsuzdur}1'
+# 'default initialization of an object of type %0 with const member is incompatible with C++'
+H4DB5E81E949B: 'sabit üyesi olan %0 türündeki bir nesnenin varsayılan başlatması C++ ile uyumlu değildir'
+# 'default initialization of an object of type %0 with const member leaves the object uninitialized%select{| and is incompatible with C++}1'
+H08A6BE1665E0: 'sabit üyesi olan %0 türündeki bir nesnenin varsayılan başlatması nesneyi başlatılmamış bırakır%select{| ve C++ ile uyumsuzdur}1'
 # 'default label in switch which covers all enumeration values'
 HF1A67825B6F5: "tüm numaralandırma değerlerini kapsayan bir switch'te varsayılan etiket"
 # 'default member initializer declared here'
@@ -20180,6 +20436,8 @@ HAADBD633A7F2: 'varsayılan %0, %2, %select{union gibi bir sınıf|union}1 ve va
 H6F959181B71C: 'varsayılan %0, bu dönüşümü kullanan yerleşik karşılaştırma fonksiyonu karşılaştırma için en iyi uyum olurdu, bu yüzden gizli olarak silinmiştir'
 # 'defaulted %0 is implicitly deleted because class %1 has a reference member'
 HDDAEEF62F6DD: 'varsayılan %0, sınıf %1 bir referans üyesi içerdiği için gizli olarak silinmiştir'
+# 'defaulted %0 is implicitly deleted because defaulted comparison of vector types is not supported'
+H62937001BFCD: 'varsayılan %0 örtük olarak silindi çünkü vektör türlerinin varsayılan karşılaştırması desteklenmiyor'
 # "defaulted %0 is implicitly deleted because implied %select{|'==' |'<' }1comparison %select{|for member %3 |for base class %3 }2is ambiguous"
 H8204A4BEFE67: "varsayılan %0, %select{|'==' |'<' }1 belirtilen karşılaştırma %select{|üye %3 için |temel sınıf %3 için }2 belirsiz olduğu için gizli olarak silinmiştir"
 # 'defaulted %0 is implicitly deleted because it would invoke a %select{private|protected}3 %4%select{ member of %6| member of %6 to compare member %2| to compare base class %2}1'
@@ -20252,8 +20510,8 @@ H396EB4CE9202: '%0 için gizli kopyalama %select{yapıcı|atama operatörü}1 ta
 H86596A04E020: "gizlice bildirilmiş %select{varsayılan yapıcı|kopyalama yapıcı|hareket yapıcı|kopyalama atama operatörü|hareket atama operatörü|yıkıcı|fonksiyon}1'in tanımı"
 # 'definition of macro %0 does not match definition in precompiled header'
 H79B9B4BA8FFF: 'makro %0 tanımı, pre-derlenmiş başlık dosyasındaki tanımla uyuşmuyor'
-# "definition of macro '%0' differs between the AST file '%3' ('%1') and the command line ('%2')"
-H40BB23B29C3F: "makro '%0' tanımı, AST dosyası '%3' ('%1') ve komut satırı ('%2') arasında farklılık gösteriyor"
+# "definition of macro '%0' differs between the precompiled file '%3' ('%1') and the command line ('%2')"
+HF4FF588C4EAE: "'%0' makrosunun tanımı ön derlenmiş dosya '%3' ('%1') ve komut satırı ('%2') arasında farklılık gösteriyor"
 # "definition of module '%0' is not available; use -fmodule-file= to specify path to precompiled module interface"
 H1ED33479DE5D: "modül '%0' tanımı kullanılamıyor; -fmodule-file= bayrağını kullanarak önceden derlenmiş modül arayüzünün yolunu belirtin"
 # 'definition of type %0 conflicts with %select{typedef|type alias}1 of the same name'
@@ -20410,6 +20668,8 @@ H0E16FA84CCEE: 'diagtool bul-tanılama-id seçenekleri'
 H41E6876DEC05: "beklenmeyen %0 '%2', '%1' tarafından yönetiliyor"
 # "did not find header '%0' in framework '%1' (loaded from '%2')"
 H33EA4C9E31A5: "Framework '%1' içinde '%0' başlığı bulunamadı ( '%2' den yüklenmiştir)"
+# "did not specify mandatory parameter '%0'"
+H3CB9D79D973B: "'%0' zorunlu parametresi belirtilmedi"
 # "did you forget ';'?"
 H5762CA5BE293: 'Noktalı virgül (;) unuttunuz mu?'
 # "did you intend to use '#pragma pack (pop)' instead of '#pragma pack()'?"
@@ -20576,6 +20836,8 @@ HB502CD3A2C1B: 'uygulanmasın'
 H30A32C42CDF9: 'içeriği iki ikili arasında değişmeyen fonksiyonların karşılaştırmasını yapma'
 # 'do not display graphs.'
 H0D6F782C8BD3: 'grafikleri göstermeyi durdur'
+# 'do not emit module ctors for global counters'
+H4C00D7F83272: 'global sayaçlar için modül kurucularını üretme'
 # 'do not infer Objective-C related result type based on method family'
 HA72282825A47: 'Objective-C ile ilgili sonuç türünü yöntem ailesi temelinde çıkarım yapma'
 # 'do not optimize PLT calls'
@@ -20740,6 +21002,8 @@ H4BDEA82874BB: "durum değeri '%0' tekrar edildi"
 HCE899F8A3E5C: "'%0' ve '%1' ikisi de '%2'ye eşittir: durum değeri çakışması"
 # 'duplicate code segment specifiers'
 HBEFD6978776A: 'kod segmenti belirteçleri tekrar edildi'
+# 'duplicate declaration of %0 is invalid in C++'
+H3F3D9A6BB48A: "%0 bildirimi C++'ta geçersizdir"
 # 'duplicate declaration of method %0'
 HA0EF6CBBD7AC: "yöntem %0'nun bildirimi tekrar edildi"
 # 'duplicate default generic association'
@@ -20796,6 +21060,8 @@ H63A7F05406AD: "sabit ifadelerde C++20'den önce dinamik bellek tahsisi izin ver
 HD37DA789564D: 'dinamik özellik örnek değişken belirtimi içeremez'
 # 'dynamic_cast will not work since RTTI data is disabled by %select{-fno-rtti-data|/GR-}0'
 HBD4085CEECCB: 'dynamic_cast çalışmayacaktır çünkü RTTI verileri %select{-fno-rtti-data|/GR-}0 ile devre dışı bırakılmıştır'
+# 'e'
+H58E6B3A414A1: 'e'
 # 'editor placeholder in source file'
 H8455BF28630F: 'kaynak dosyasında editör yer tutucu'
 # "effects conflict when merging declarations; kept '%0', discarded '%1'"
@@ -20880,6 +21146,8 @@ HCB2363578F85: 'blok tür imzasının genişletilmiş kodlamasını etkinleştir
 H94C246A27D7E: 'sabit biçimi etkinleştir'
 # 'enable load elimination using memory profiling data when performing ICP'
 HF69B8E887DB3: 'ICP yaparken bellek profili verilerini kullanarak yük kaldırmayı etkinleştir'
+# "enable memory profile parsing if it's present in the input data, on by default unless `--itrace` is set."
+H015F6FD662F3: 'giriş verilerinde bellek profili ayrıştırma etkinleştirilsin, varsayılan olarak açıktır, `--itrace` ayarlanmamışsa'
 # 'enable module-wide attributor runs'
 H6A1678301319: 'modül genelinde öznitelendirici yürütmelerini etkinleştir'
 # 'enable openacc'
@@ -20976,6 +21244,8 @@ H88874600742B: "'%0' ortamı desteklenmiyor: '%1'"
 H4F81D6E33B46: "'SOURCE_DATE_EPOCH' ortam değişkeni ('%0') %1 veya daha küçük olmalı ve negatif olmamalı bir ondalık tamsayı olmalıdır"
 # 'environment variable CC_PRINT_HEADERS_%select{FORMAT|FILTERING}0 has invalid value %1'
 H69C68EA8FAC0: 'CC_PRINT_HEADERS_%select{FORMAT|FILTERING}0 ortam değişkeni geçersiz değer %1 içeriyor'
+# 'environment variable CC_PRINT_HEADERS_FORMAT=%0 requires a compatible value for CC_PRINT_HEADERS_FILTERING'
+HFC634F31327F: 'CC_PRINT_HEADERS_FORMAT=%0 ortam değişkeni CC_PRINT_HEADERS_FILTERING için uyumlu bir değere ihtiyaç duyar'
 # 'epsilon for benchmark point clustering'
 HA3C9480C7F62: 'benchmark noktası klüsterleme için epsilon değeri'
 # 'epsilon for detection of when the cluster is different from the LLVM schedule profile values'
@@ -21406,10 +21676,10 @@ H05B1FBF9EBC9: '‘#pragma %0’ içinde tanımlayıcı bekleniyor - yoksayıld�
 H94E463CD5EE5: 'makro parametre listesinde tanımlayıcı bekleniyor'
 # "expected identifier or one of the following operators: '+', '-', '*', '&', '|', '^', '&&', or '||'"
 H7E170CC2FF20: "Tanımlayıcı veya aşağıdaki operatörlerden biri bekleniyor: '+', '-', '*', '&', '|', '^', '&&' veya '||'"
-# 'expected identifier or string literal'
-H0AF1E0FEC1A8: 'tanımlayıcı veya dize literal bekleniyor'
 # 'expected identifier or string literal describing a context %select{set|selector|property}0; %select{set|selector|property}0 skipped'
 HE89AF4D1E70E: 'Bir bağlamı %select{set|selector|property}0 tanımlayan bir tanımlayıcı veya dize literal bekleniyor; %select{set|selector|property}0 atlandı'
+# "expected identifier or string literal in OpenACC 'bind' clause"
+H5985E2854824: "OpenACC 'bind' yan tümcesinde tanımlayıcı veya string sabiti bekleniyor"
 # "expected identifier specifying the name of the 'omp critical' directive"
 HDAF324FC0746: '‘omp critical’ yönergesinin adını belirten bir tanımlayıcı bekleniyor'
 # 'expected identifier that represents an attribute name'
@@ -21540,10 +21810,12 @@ H9F489F0C181E: 'döngü yineleme değişkeni%select{| %1}0 bekleniyordu'
 H7FA31289BDF2: "tür 'omp_interop_t' olan%select{| sabit olmayan}0 değişken bekleniyordu"
 # 'expected%select{| one of}0 %1 directive name modifier%select{|s}0'
 HF9EF92E2746A: 'beklenen%select{| biri}0 %1 yönerge adı değiştiricisi%select{|ler}0'
-# "expecting %0 '%1' to be held at start of each loop"
-HFDC07BD9FDE6: "her döngünün başında %0 '%1' tutulması bekleniyor"
+# "expecting %0 '%1' to be held at start of each loop%select{| with equal reentrancy depth}2"
+HB151B2C16229: "%0 '%1' her döngünün başında%select{| eşit yeniden giriş derinliği ile}2 tutulması bekleniyor"
 # "expecting %0 '%1' to be held at the end of function"
 H696ED076811B: "fonksiyonun sonunda %0 '%1' tutulması bekleniyor"
+# 'expecting a pointer argument to the generic address space'
+HA58F994AB425: 'genel adres alanına bir işaretçi argümanı bekleniyor'
 # 'explicit %select{constructor|conversion function|deduction guide}0 is not a candidate%select{| (explicit specifier evaluates to true)}1'
 H1B61513FD8B6: 'belirtilmiş %select{yapıcı işlev|dönüşüm işlevi|tahminleyici}0 aday değildir%select{| (explicit belirteci true olarak değerlendirilir)}1'
 # 'explicit %select{constructor|deduction guide}0 declared here'
@@ -21828,6 +22100,8 @@ H9B5B1B6B054E: 'alan %0 farklı çevirme birimlerinde uyumsuz türlerle tanımla
 H3B91A03ADD90: 'alan %0 burada %1 türünde'
 # "field %0 in '%select{counted_by|sized_by|counted_by_or_null|sized_by_or_null}1' not inside structure"
 H161B48990AE3: "alan %0, '%select{counted_by|sized_by|counted_by_or_null|sized_by_or_null}1' içinde bir yapıda bulunmuyor"
+# 'field %0 is not a bit-field'
+H28FDD2B05CEC: '%0 alanı bit-alanı değildir'
 # 'field %0 is uninitialized when used here'
 H215FDF8256E9: 'alan %0 burada kullanılırken başlatılmamıştır'
 # 'field %0 with variable sized type %1 is not at the end of class'
@@ -21874,8 +22148,8 @@ H4D0FA4262CAB: "alanların sabit bir boyutuna sahip olması gerekiyor: 'yapı i�
 H3AFCF68EDB4D: "'%0' dosyası beklenen %1 konumunda bulunamadı"
 # "file '%0' from the precompiled header has been overridden"
 H0CD8B8C2C117: "'%0' önceden derlenmiş başlık dosyası geçersiz kılındı"
-# "file '%0' has been modified since the %select{precompiled header|module file|AST file}1 '%2' was built: %select{size|mtime|content}3 changed%select{| (was %5, now %6)}4"
-H031EEE30BF07: "'%0' dosya %select{önceden derlenmiş başlık|modül dosyası|AST dosyası}1 '%2' oluşturulduktan sonra değiştirildi: %select{boyut|son değiştirme zamanı|içerik}3 değişti%select{| (önceki %5, şimdi %6)}4"
+# "file '%0' has been modified since the %select{precompiled header|module file|precompiled file}1 '%2' was built: %select{size|mtime|content}3 changed%select{| (was %5, now %6)}4"
+HA383582927C4: "'%0' dosyası, %select{önceden derlenmiş başlık|modül dosyası|önceden derlenmiş dosya}1 '%2' oluşturulduktan sonra değiştirildi: %select{boyut|zaman damgası|içerik}3 değişti%select{| (eski %5, yeni %6)}4"
 # "file '%0' is not a module file"
 H5DD90DFEF976: "'%0' modül dosyası değildir"
 # "file '%0' is too large for Clang to process"
@@ -21886,8 +22160,8 @@ H1DA05AEA2D52: "'%0' dosya ilk işlendikten sonra değiştirildi"
 HC79263152CF4: "'--extract-api-ignores=' ile belirtilen '%0' dosyası bulunamadı"
 # "file '%0' specified by '-fmodules-embed-file=' not found"
 HE609B0415A4D: "'-fmodules-embed-file=' ile belirtilen '%0' dosyası bulunamadı"
-# "file '%1' is not a valid precompiled %select{PCH|module|AST}0 file: %2"
-H208E3D0A2BB0: "'%1' geçerli bir önceden derlenmiş %select{PCH|modül|AST}0 dosyası değildir: %2"
+# "file '%1' is not a valid %select{PCH|module|precompiled}0 file: %2"
+H6C9F242B009C: "'%1' geçerli bir %select{PCH|modül|önceden derlenmiş}0 dosyası değil: %2"
 # 'file containing an ordered list of functions to use for function reordering'
 HAA6E189FC7DA: 'fonksiyon yeniden sıralama için kullanılan sıralı bir fonksiyon listesi içeren dosya'
 # 'file entered %0 time%s0 using %1B (%human1B) of space%plural{0:|: plus %2B (%human2B) for macro expansions}2'
@@ -21940,10 +22214,14 @@ HCF8EE366AB6A: "Saydamlı bir union'un ilk alanı, %1 türü olamaz; %select{ond
 H3AA2DBB89701: 'belirtimi olmayan ilk başlatıcı burada'
 # 'first two arguments to __builtin_convertvector must have the same number of elements'
 HF134017C1A48: "__builtin_convertvector'in ilk iki parametresi aynı sayıda eleman içermelidir"
+# "first%select{||| and second}0 argument%select{|||s}0 to '__builtin_trivially_relocate' must be %select{a pointer|non-const|relocatable|of the same type}0"
+H922BBD5C29FD: "ilk%select{||| ve ikinci}0 '__builtin_trivially_relocate' işlevine verilen argüman%select{|||lar}0 %select{bir işaretçi|sabit olmayan|taşınabilir|aynı türde}0 olmalıdır"
 # "flag '%0' is ignored when flag '%1' is present"
 H83C2C7BB9944: "'%0' bayrağı '%1' bayrağı mevcut olduğunda yok sayılır"
 # "flag '%0' results in undefined behavior with '%1' conversion specifier"
 H3E280AED1AE3: "'%0' bayrağı '%1' dönüşüm belirteci ile birlikte belirsiz davranışa yol açar"
+# 'flag value is neither a literal 0 nor a named value'
+HD5CDE1D3FA16: 'bayrak değeri ne sabit 0 ne de adlandırılmış bir değerdir'
 # 'flat namespace libraries are not supported'
 H5F018FAC5A55: 'düz ad alanlı kütüphaneler desteklenmiyor'
 # 'flexible array initialization is a GNU extension'
@@ -21970,6 +22248,8 @@ H04521DEE401E: 'esnek dizi üyeleri C99 standartında tanımlanmıştır'
 H8CC54601E715: 'esnek dizi, parantezleme ile sardılmış bir başlatıcı gerektirir'
 # "float ABI '%0' is not supported by current library"
 H4A77B1741C96: "'%0' float ABI'si mevcut kütüphane tarafından desteklenmiyor"
+# 'float literal has a magnitude that is too small to be represented as a float type'
+HFFD25AF4AD9F: 'float sabiti, float türü olarak temsil edilemeyecek kadar küçük bir büyüklüğe sahiptir'
 # 'floating point arithmetic produces %select{an infinity|a NaN}0'
 HE17E4C75C5CF: 'ondalıklı sayı aritmetiği %select{sonsuzluk|NaN}0 üretebilir'
 # 'floating point classification requires argument of floating point type (passed in %0)'
@@ -22274,6 +22554,8 @@ HCC1F871B655D: "başlık dosyası '%0' giriş '%1', API çıkarma sırasında ö
 H089F6388D5E8: "başlık dosyası '%0' giriş türü '%1', modül derleme sırasında önceki girişiyle uyuşmuyor; geçersinmek için '-x %2' kullanın"
 # 'heap allocation performed here'
 H3CBBD5C4CC88: 'burada yığın yer ayrılması yapıldı'
+# 'heatmap bucket size, optionally followed by zoom-out sizes for coarse-grained heatmaps (default 64B, 4K, 256K).'
+H8DE740B4864F: 'ısı haritası bölmesi boyutu, isteğe bağlı olarak daha kaba ısı haritaları için zoom-out boyutları ile (varsayılan 64B, 4K, 256K)'
 # 'hexadecimal floating %select{constant|literal}0 requires %select{an exponent|a significand}1'
 HEA69D9247DD1: 'onaltılık kesirli %select{sabit|literal}0, %select{bir üs|bir anlamlandırıcı}1 gerektirir'
 # 'hexadecimal floating constants are a C99 feature'
@@ -22302,6 +22584,8 @@ H4C1045D46DF7: 'hugify'
 HE74AE57FF6C4: 'okunabilir YAML biçimi'
 # "identifier %0 after '~' in destructor name does not name a type"
 H83FECEE0EB8D: "'~' karakterinin sonraki %0 tanıtıcı, yıkıcı adında bir türü belirtmiyor"
+# 'identifier %0 conflicts with a C++ keyword'
+HA06C7A563CB5: '%0 tanımlayıcısı C++ anahtar sözcüğüyle çakışıyor'
 # 'identifier %0 in object destruction expression does not name a type'
 H9BF7AFAC2ABF: 'nesne yıkım ifadesindeki %0 tanıtıcı, bir türü belirtmiyor'
 # 'identifier %0 in object destruction expression does not name the type %1 of the object being destroyed'
@@ -22330,6 +22614,8 @@ H4C9CA904F4C7: 'çağırana (caller) soğuk (cold) değilse'
 HEE68D0DE6C99: "eğer girdi dwp dosyası ise, .debug_info bölümü analiz edilerek cu-index'e DW_SECT_INFO katkıları doldurulur. DWARF5 için aynı zamanda TU İndex doldurulur"
 # 'if there is more than one benchmark for an opcode, said benchmarks may end up not being clustered into the same cluster if the measured performance characteristics are different. by default all such opcodes are filtered out. this flag will instead show only such unstable opcodes'
 H1E3EED942083: "bir opcode için birden fazla benchmark varsa, ölçülen performans özellikleri farklı ise bu testler aynı kümeye (cluster) eklenmeyebilir. varsayılan olarak tüm bu opcode'ler filtrelenir. bu bayrak sadece istikrarsız opcode'ları gösterir"
+# 'if you see this diagnostic, a Clang developer has made a mistake'
+H64B3C8B6BDD2: 'bu tanılama mesajını görüyorsanız, bir Clang geliştiricisi hata yapmıştır'
 # 'if you supply your own aligned allocation functions, use -faligned-allocation to silence this diagnostic'
 H71B886D5B0E4: 'kendi hizalı (aligned) alloca fonksiyonlarınızı sağlarsanız, bu tanılama mesajını susturmak için -faligned-allocation kullanın'
 # 'ifunc resolver function must return a pointer'
@@ -22490,12 +22776,22 @@ H5E6175D2FC4A: 'gizli dönüşüm sanal bileşeni atıyor: %0 → %1'
 HC3B95ADC5255: 'gizli dönüşüm %0 değerlerinin %1 türünün aralığına sığmaması durumunda gerçekleşiyor'
 # 'implicit conversion from %0 to %1 changes non-zero value from %2 to %3'
 H5699AB9A4A11: 'gizli dönüşüm %0 → %1 dönüşümünde sıfırdan farklı değer %2 → %3 olarak değişiyor'
+# "implicit conversion from %0 to %1 changes the meaning of the %select{code unit|code point}2 '%3'"
+HB7C90A078D7A: '%0’dan %1’e örtülü dönüşüm, %select{kod birimi|kod noktası}2 "%3"ün anlamını değiştirir'
 # 'implicit conversion from %0 to %1 changes value from %2 to %3'
 H3C62B43256C2: 'gizli dönüşüm %0 → %1 dönüşümünde değer %2 → %3 olarak değişiyor'
+# "implicit conversion from %0 to %1 discards 'cfi_unchecked_callee' attribute"
+HA1DC9D474D83: '%0’dan %1’e örtülü dönüşüm "cfi_unchecked_callee" niteliğini göz ardı eder'
 # 'implicit conversion from %0 to %1 is not permitted in C++'
 HD43915D50111: 'C++ dilinde %0 → %1 dönüşümü gizlice yapılamaz'
+# 'implicit conversion from %0 to %1 may change the meaning of the represented code unit'
+H9A77784FE5D1: '%0’dan %1’e örtülü dönüşüm temsil edilen kod biriminin anlamını değiştirebilir'
 # 'implicit conversion from %0 to %1 may lose precision'
 H1D559B11094C: '%0 → %1 gizli dönüşümü hassasiyet kaybı olabilir'
+# 'implicit conversion from %0 to %1 may lose precision and change the meaning of the represented code unit'
+HA74C62CA22F2: '%0’dan %1’e örtülü dönüşüm hassasiyet kaybedebilir ve temsil edilen kod biriminin anlamını değiştirebilir'
+# 'implicit conversion from %0 to enumeration type %1 is invalid in C++'
+H1F403D06A877: '%0’dan %1 numaralandırma türüne örtülü dönüşüm C++ dilinde geçersizdir'
 # 'implicit conversion from %2 to %3 changes value from %0 to %1'
 H9616CD29DFC9: '%2 → %3 dönüşümünde değer %0 → %1 olarak değişiyor'
 # 'implicit conversion from array size expression of type %0 to %select{integral|enumeration}1 type %2 is a C++11 extension'
@@ -22518,6 +22814,8 @@ HA48CBAE7D71E: '%0 → %1 gizli dönüşümü ondalıklı sayı hassasiyetini ar
 H8151E8B82266: '%0 → %1 gizli dönüşümü ondalıklı sayı hassasiyetini azaltıyor'
 # 'implicit conversion loses integer precision: %0 to %1'
 H7E75B58A91F6: '%0 → %1 gizli dönüşümü tamsayı hassasiyetini azaltıyor'
+# 'implicit conversion loses integer precision: %0 to %1 on negation'
+H166C8894D74F: 'örtülü dönüşüm tamsayı hassasiyetini kaybeder: %0’dan %1"e negatif durumda'
 # 'implicit conversion of %select{NULL|nullptr}0 constant to %1'
 H81DB38ED2223: '%select{NULL|nullptr}0 sabitini %1 türüne gizli dönüşüm'
 # 'implicit conversion of out of range value from %0 to %1 is undefined'
@@ -22532,6 +22830,8 @@ H1859EAB52A1F: "implisit dönüştürme ondalık sayıyı tam sayıya dönüşt�
 H0BABC92466FD: "implisit dönüştürme dize ifadesini bool'a dönüştürür: %0'dan %1'e"
 # 'implicit conversion turns vector to scalar: %0 to %1'
 HB2E373F67C4B: "implisit dönüştürme vektörü skaler'e dönüştürür: %0'dan %1'e"
+# 'implicit conversion when %select{%diff{assigning to $ from type $|assigning to type from type}0,1|%diff{passing $ to parameter of type $|passing type to parameter of type}0,1|%diff{returning $ from a function with result type $|returning type from a function with result type}0,1|<CLANG BUG IF YOU SEE THIS>|%diff{initializing $ with an expression of type $|initializing type with an expression of type}0,1|%diff{sending $ to parameter of type $|sending type to parameter of type}0,1|<CLANG BUG IF YOU SEE THIS>}2 is not permitted in C++'
+H0D8004D76948: '%select{%diff{$ değişkenine $ türünden atama yaparken|$ türünden değişken ataması yaparken}0,1|%diff{$ türündeki ifadeyi $ türünde parametreye geçirirken|türü parametreye geçirirken}0,1|%diff{$ türündeki ifadeyi $ dönüş türünde fonksiyondan döndürürken|türü fonksiyondan döndürürken}0,1|<CLANG BUG IF YOU SEE THIS>|%diff{$ türündeki ifadeyle $ türünde değişken başlatılırken|türüyle değişken başlatılırken}0,1|%diff{$ türündeki ifadeyi $ türünde parametreye gönderirken|türü parametreye gönderirken}0,1|<CLANG BUG IF YOU SEE THIS>}2 dönüşümü C++ dilinde izin verilmiyor'
 # 'implicit conversion when assigning computation result loses floating-point precision: %0 to %1'
 H063DB898AD67: "hesap sonucunu atama sırasında implisit dönüştürme ondalık sayı hassasiyetini kaybeder: %0'dan %1'e"
 # 'implicit conversions between vector types (%0 and %1) are not permitted'
@@ -22558,6 +22858,8 @@ H452F7C0F821A: "kütüphane işlevi '%0' %1 türü ile gizlice bildirildi"
 HD0131FA6D64A: 'gizlice %0 olarak belirlendi'
 # "implicitly disabling vptr sanitizer because rtti wasn't enabled"
 HABA9C105D8F8: 'RTTI etkin olmadığı için vptr sanitizer gizlice devre dışı bırakıldı'
+# "implicitly treating version as '%0'"
+H5C5C4BA079A3: 'sürümü örtülü olarak "%0" olarak ele alıyor'
 # 'import %select{module|name}0 (%1) does not match the import %select{module|name}0 (%2) of the previous declaration'
 HE913E2E83F88: 'içe aktarma %select{module|name}0 (%1), önceki bildirimindeki %select{module|name}0 (%2) ile uyuşmuyor'
 # 'import %select{module|name}0 cannot be applied to a function with a definition'
@@ -22740,8 +23042,8 @@ H0184822E59BB: 'tamamlanmamış evrensel karakter adı'
 H5B8C01DBAD90: "tamamlanmamış evrensel karakter adı; '\\' karakteri ve belirteç olarak değerlendiriliyor"
 # 'inconsistent number of instance variables specified'
 H7EB07F9DCA1E: 'örnek değişkenlerde tutarsız sayı'
-# "incorrect adjust_args type, expected 'need_device_ptr' or 'nothing'"
-H34BB37A9E639: 'hatalı adjust_args türü, "need_device_ptr" veya "nothing" bekleniyordu'
+# "incorrect 'adjust_args' type, expected 'need_device_ptr'%select{|, 'need_device_addr',}0 or 'nothing'"
+H1403BB6ED4C3: "geçersiz 'adjust_args' türü, 'need_device_ptr'%select{|, 'need_device_addr',}0 veya 'nothing' bekleniyor"
 # 'incorrect format for -preamble-bytes=N,END'
 HD764A19076F3: "'-preamble-bytes=N,END' biçimi yanlış, beklenen 'N,END'"
 # "incorrect map type modifier, expected one of: 'always', 'close', 'mapper'%select{|, 'present'|, 'present', 'iterator'}0%select{|, 'ompx_hold'}1%select{|, 'self'}2"
@@ -22914,6 +23216,10 @@ H52C4E394B1C2: 'Başlatıcı, %1 tipindeki nesnenin önceki başlatmasını, olm
 HF948F6263A8D: 'Char dizisi için başlatıcı dizesi çok uzun'
 # 'initializer-string for char array is too long, array size is %0 but initializer has size %1 (including the null terminating character)'
 H17CD335B9F9F: 'Char dizisi için başlatıcı dizesi çok uzun, dizinin boyutu %0 ancak başlatıcı %1 boyutlu (sonlandırıcı karakter dahil)'
+# 'initializer-string for character array is too long for C++, array size is %0 but initializer has size %1 (including the null terminating character)'
+H1C3EADBC5750: 'karakter dizisi için başlatıcı dizesi C++ için çok uzun, dizi boyutu %0 ama başlatıcının boyutu %1 (boş karakter dahil)'
+# "initializer-string for character array is too long, array size is %0 but initializer has size %1 (including the null terminating character); did you mean to use the 'nonstring' attribute?"
+H4D31F68C37C8: "karakter dizisi için başlatıcı dizesi çok uzun, dizi boyutu %0 ama başlatıcının boyutu %1 (boş karakter dahil); belki 'nonstring' niteliğini kullanmak istediniz?"
 # 'initializing %0 from an empty initializer list is incompatible with C++98'
 H822723DC0E42: "Boş bir başlatıcı listesinden %0'ı başlatmak C++98 ile uyumsuzdur"
 # "initializing 'char8_t' array with plain string literal"
@@ -23138,6 +23444,8 @@ H33DD8376B05A: '#ident yönergesi geçersiz'
 HDBE197B56289: 'İç içe derleme dizgesinde geçersiz %%capeçidi'
 # "invalid %0 at end of declaration; did you mean '='?"
 H6911F0CCF565: "tanımlama sonunda geçersiz %0; '=' demeyi mi istediniz?"
+# "invalid %1 version '%0' in availability attribute"
+HB3CB22885AD2: "geçersiz %1 sürümü '%0' kullanılabilirlik niteliğinde"
 # 'invalid %select{arithmetic between|bitwise operation between|comparison of|conditional expression between|compound assignment of}0 %select{floating-point|enumeration}1 type %2 %plural{2:with|4:from|:and}0 %select{enumeration|floating-point}1 type %3'
 H06A881D8D9FE: 'geçersiz %select{arasındaki aritmetik|arasındaki bitişik işlem|arasındaki karşılaştırma|arasındaki koşullu ifade|arasındaki bileşik atama}0 %select{ondalıklı|numaralandırma}1 türü %2 %plural{2:ile|4:gelen|:ve}0 %select{numaralandırma|ondalıklı}1 türü %3'
 # 'invalid %select{arithmetic between|bitwise operation between|comparison of|conditional expression between|compound assignment of}0 different enumeration types%diff{ ($ and $)|}1,2'
@@ -23502,10 +23810,14 @@ H38383851595E: "'%0' içindeki '%1' geçersiz değer, '%2' veya daha büyük olm
 H9E8659EA6C7E: "'%0' içindeki '%1' geçersiz değer; hizalama 2 nin bir kuvveti olmalıdır"
 # "invalid value '%1' in '%0'; alignment must be a power of 2"
 H2DA82E98A2A4: "'%0' içindeki '%1' geçersiz değer, 'none' veya pozitif bir tam sayı olmalıdır"
+# 'invalid value for %select{storage class}0 argument'
+H53A1EFEC052F: '%select{depolama sınıfı}0 argümanı için geçersiz değer'
 # "invalid value for 'default' clause; expected 'present' or 'none'"
 H8D0169FE239F: "geçersiz değer 'default' ifadesi için; 'present' veya 'none' bekleniyor"
 # 'invalid vector element type %0'
 HEFB9A08F90A0: "'%0' içinde geçersiz sürüm numarası"
+# "invalid version number '%0' inferred from '%1'"
+H04EAF3982B06: "geçersiz sürüm numarası '%0', '%1' ifadesinden çıkarıldı"
 # "invalid version number in '%0'"
 H561E007CCA86: "geçersiz sanal dosya sistemi örtü dosyası '%0'"
 # "invalid virtual filesystem overlay file '%0'"
@@ -23640,12 +23952,18 @@ H4BF0CCE50F51: 'çıkış, __attribute__((cleanup)) ile belirlenen değişkenin 
 HD66C6E5AB564: 'çıkış, non-trivial yıkıcı olan değişkenin kapsamını terk ediyor'
 # 'jump exits try block'
 HE15267C61E24: 'çıkış, try bloğunu terk ediyor'
+# 'jump from switch statement to this case label is incompatible with C++'
+H65E63DA93A2A: 'switch ifadesinden bu case etiketine atlamak C++ ile uyumlu değil'
 # 'jump from switch statement to this case label is incompatible with C++98'
 HFD45DFD4341B: 'switch ifadesinden bu case etiketine atlama C++98 ile uyumsuzdur'
+# 'jump from this %select{indirect|asm}0 goto statement to one of its possible targets is incompatible with C++'
+HCA1B45FA0F11: 'bu %select{dolaylı|asm}0 goto ifadesinden olası hedeflerinden birine atlamak C++ ile uyumlu değil'
 # 'jump from this %select{indirect|asm}0 goto statement to one of its possible targets is incompatible with C++98'
 H6B5196F09490: 'bu %select{indirect|asm}0 goto ifadesinden mümkün hedeflerine birine atlamak C++98 ile uyumsuzdur'
 # 'jump from this goto statement to its label is a Microsoft extension'
 HF443D2C187C8: 'bu goto ifadesinden etiketine atlamak Microsoft uzantısıdır'
+# 'jump from this goto statement to its label is incompatible with C++'
+HCF98C797091F: 'bu goto ifadesinden etiketine atlamak C++ ile uyumlu değil'
 # 'jump from this goto statement to its label is incompatible with C++98'
 H91A60091F523: 'bu goto ifadesinden etiketine atlamak C++98 ile uyumsuzdur'
 # 'jump out of __finally block has undefined behavior'
@@ -23868,8 +24186,14 @@ H9B15C3D059EC: 'llvm-reduce seçenekleri'
 H8076D5B81C5F: 'girdi dosyasını Toy kaynak olarak yükleyin.'
 # 'load the input file as an MLIR file'
 HAC00602D295B: 'girdi dosyasını bir MLIR dosyası olarak yükleyin'
+# "loaded module file '%0' conflicts with imported file '%1'"
+H758569B6F13F: "yüklenen modül dosyası '%0', içeri aktarılan '%1' dosyasıyla çakışıyor"
 # 'loader options'
 HA2203CDD473C: 'yükleyici seçenekleri'
+# "loading modulemap '%0'"
+HB01A5C3EDED8: "'%0' modül haritası yükleniyor"
+# "loading parsed module '%0'"
+H71E4776B6574: "'%0' ayrıştırılmış modül yükleniyor"
 # 'local %select{struct|interface|union|class|enum}0 cannot be declared __module_private__'
 H4E0562614A60: 'yerel %select{struct|interface|union|class|enum}0, __module_private__ ile bildirilemez'
 # 'local declaration nearly matches'
@@ -23930,8 +24254,8 @@ H416ADCAF4BDC: "makro %0 'final' olarak işaretlenmiş ve %select{tanımsız|yen
 H0BD2BA6647E5: 'makro %0, başlıklarda kullanımda güvenli olmayan olarak işaretlenmiş%select{|: %2}1'
 # "macro '%0' contains embedded newline; text after the newline is ignored"
 HCA29C3134207: "'%0' makrosu gömülü yeni satır içeriyor; yeni satırdan sonraki metin yoksayılıyor"
-# "macro '%0' was %select{defined|undef'd}1 in the AST file '%2' but %select{undef'd|defined}1 on the command line"
-HEF8B87D78B88: "'%0' makrosu AST dosyası '%2'de %select{tanımlandı|#undef'd}1, ancak komut satırında %select{#undef'd|tanımlandı}1"
+# "macro '%0' was %select{defined|undef'd}1 in the precompiled file '%2' but %select{undef'd|defined}1 on the command line"
+H4EEB08267D43: "'%0' makrosu önceden derlenmiş '%2' dosyasında %select{tanımlandı|tanımsız yapıldı}1 ama komut satırında %select{tanımsız yapıldı|tanımlandı}1"
 # "macro expansion producing 'defined' has undefined behavior"
 H6CE80CBEAD13: "'defined' üreten makro genişletmesi tanımsız davranışa sahiptir"
 # 'macro is not used'
@@ -23960,8 +24284,8 @@ HFB74BDFA805D: 'atla tablolarının boyutunu küçültmek için atla noktaların
 H89B411120801: 'yorumlayıcı, her volatile yük ve saklama işlemlerini yazdırsın'
 # "malformed block record in PCH file: '%0'"
 H89FF1C99B4CC: "PCH dosyasında bozuk bir blok kaydı: '%0'"
-# "malformed or corrupted AST file: '%0'"
-HCB00083D669D: "bozuk veya hasarlı bir AST dosyası: '%0'"
+# "malformed or corrupted precompiled file: '%0'"
+H32ACB7141453: "bozulmuş veya zarar görmüş önceden derlenmiş dosya: '%0'"
 # "malformed sanitizer coverage allowlist: '%0'"
 HA08307F61916: "bozuk bir temizleyici kapsam izin listesi: '%0'"
 # "malformed sanitizer coverage ignorelist: '%0'"
@@ -24016,6 +24340,8 @@ HB91994902F54: 'GatherAllAliases() sırasında takma ad bilgisi kontrolü için 
 H5D6C3AFD428B: 'Fonksiyonun içe aktarım amaçlı olarak küçük kabul edilmesi için maksimum bayt sayısı'
 # 'max stack depth tracing'
 H293E22C2DAE9: 'maksimum yığın derinliği izleme'
+# 'max stack depth tracing should use callback and only when stack depth more than specified'
+HD415B8718378: 'maksimum yığın derinliği izlemesi yalnızca belirtilen derinlikten büyük olduğunda geri çağırım kullanmalıdır'
 # 'maxclusterrank requires sm_90 or higher, CUDA arch provided: %0, ignoring %1 attribute'
 H49A2942ECE44: 'maxclusterrank, sm_90 veya üzeri gerektirir, CUDA mimarisi sağlanmış: %0, %1 özniteliği yoksayıldı'
 # 'maximal number of instructions to instrument in any given BB'
@@ -24054,6 +24380,8 @@ H7C9CC9A0FF49: "fonksiyon dışında 'asm' üzerinde '%0' anlamsızdır"
 H4412290B83EA: 'fonksiyon sürelerinin medyanı'
 # 'member %0 cannot have template arguments'
 H7530E8235E69: 'üye %0 şablon bağımsız değişkeni alamaz'
+# "member %0 declared 'const' here"
+H320C50D376E4: "%0 üyesi burada 'const' olarak tanımlandı"
 # 'member %0 declared here'
 H523D63E160D3: 'üye %0 burada bildirildi'
 # 'member %0 first declared here'
@@ -24250,8 +24578,10 @@ HECF75AD1494B: "burada tanımlanan küresel modül parçasının sonunda eksik '
 H6110BBE085CA: "bağımlı şablon adı %0 öncesi 'template' kelimesi eksik"
 # "missing 'typename' prior to dependent type name %0"
 H1584997CE5DB: "bağımlı tür adı %0 öncesi 'typename' kelimesi eksik"
-# "missing 'typename' prior to dependent type name %0; implicit 'typename' is a C++20 extension"
-H15976F1154C9: "bağımlı tür adı %0 öncesi 'typename' kelimesi eksik; varsayılan 'typename' C++20 uzantısıdır"
+# "missing 'typename' prior to dependent type name %0 is a C++20 extension"
+HA061A76A5828: "bağımlı tür adı %0'dan önce eksik 'typename' ifadesi C++20 uzantısıdır"
+# "missing 'typename' prior to dependent type name %0 is incompatible with C++ standards before C++20"
+HCDF9EEE90AEA: "bağımlı tür adı %0'dan önce eksik 'typename' ifadesi C++20 öncesi standartlarla uyumsuzdur"
 # "missing 'typename' prior to dependent type template name %0"
 HB65342C255DD: "bağımlı tür şablon adı %0 öncesi 'typename' kelimesi eksik"
 # "missing '}' at end of definition of %q0"
@@ -24316,6 +24646,8 @@ HC91AE5B6C664: 'kapanış %select{\'|\'"\'}0 karakteri eksik'
 H110B9B84BD50: "kapanış ')' karakteri eksik"
 # 'missing type bound %0 for type parameter %1 in %select{@interface|@class}2'
 HCB937BA83DD0: 'tür parametresi %1 için tür sınırı %0 belirtilmedi, %select{@interface|@class}2 içinde'
+# "missing version number in '%0'"
+H5280152B38E3: "'%0' içinde sürüm numarası eksik"
 # 'mixed CUDA and HIP compilation is not supported'
 HDE7D3706C5B5: 'CUDA ve HIP derlemesini karıştırmak desteklenmiyor'
 # "mixing 'target_clones' specifier mechanisms is permitted for GCC compatibility; use a comma separated sequence of string literals, or a string literal containing a comma-separated list of versions"
@@ -24350,8 +24682,8 @@ HA1E9FFD28E50: 'modülerleştir.\n'
 H85DEF90A3AE0: "Modül %0, '%1' dışa aktaran bir modüle bağımlı değil"
 # "module %0 does not directly depend on a module exporting '%1', which is part of indirectly-used module %2"
 H9D50309367F5: "Modül %0, '%1' dışa aktaran bir modüle doğrudan bağımlı değil, bu da dolaylı olarak kullanılan modül %2'nin bir parçasıdır"
-# "module '%0' %select{in|imported by}4 AST file '%1' found in a different module map file (%2) than when the importing AST file was built (%3)"
-H7F407C161851: "Modül '%0' %select{içindeki|içe aktarılan}4 AST dosyası '%1', bu modül haritası dosyası (%2) içe aktaran AST dosyası oluşturulduğunda kullanılan dosyadan (%3) farklıdır"
+# "module '%0' %select{in|imported by}4 precompiled file '%1' found in a different module map file (%2) than when the importing precompiled file was built (%3)"
+H9B94DD93868B: "'%0' modülü '%1' önceden derlenmiş dosyasında %select{bulunuyor|tarafından içeri aktarıldı}4 ve bu modül haritası dosyası (%2), içeri aktaran önceden derlenmiş dosyanın oluşturulduğu modül haritası dosyasından (%3) farklı"
 # "module '%0' %select{is incompatible with|requires}1 feature '%2'"
 H4440A0170E90: "Modül '%0', '%2' özelliğine %select{uyumlu değil|ihtiyaç duyuyor}1"
 # "module '%0' %select{uses|does not use}1 additional module map '%2'%select{| not}1 used when the module was built"
@@ -24360,8 +24692,8 @@ HAC53C3FABCDA: "Modül '%0', ekstra modül haritası '%2'yi %select{kullanıyor|
 H6556B7A46703: "Modül '%0' zaten '%1' olarak yeniden dışa aktarılmıştır"
 # "module '%0' conflicts with already-imported module '%1': %2"
 HED958876B86C: "Modül '%0', zaten içe aktarılmış modül '%1' ile çakışıyor: %2"
-# "module '%0' in AST file '%1' %select{(imported by AST file '%2') |}4is not defined in any loaded module map file; maybe you need to load '%3'?"
-H951252F32734: "AST dosyası '%1' içindeki modül '%0' %select{(AST dosyası '%2' tarafından içe aktarılmış) |}4hiçbir yüklenmiş modül haritası dosyasında tanımlı değil; belki '%3' dosyasını yüklemeniz gerekiyor?"
+# "module '%0' in precompiled file '%1' %select{(imported by precompiled file '%2') |}4is not defined in any loaded module map file; maybe you need to load '%3'?"
+HDC91DE6A026C: "'%0' modülü '%1' önceden derlenmiş dosyasında %select{(içeri aktarılan '%2' önceden derlenmiş dosyası) |}4yüklenen bir modül haritası dosyasında tanımlı değil; belki '%3' dosyasını yüklemeniz gerekebilir mi?"
 # "module '%0' is defined in both '%1' and '%2'"
 H9937FAC6E395: "Modül '%0', hem '%1' hem de '%2' dosyalarında tanımlanmıştır"
 # "module '%0' is needed but has not been provided, and implicit use of module files is disabled"
@@ -24534,6 +24866,8 @@ H530DD8BE4BB8: 'Taşıma yapılabilir bir PCH dosyası oluştururken sistem kök
 H25B19F90B2A8: "Tip %0%select{| bu kapsamda}2 referansı için '%1' etiketini kullanmalısınız"
 # 'my-tool options'
 H6F25BE7781B0: 'my-tool seçenekleri'
+# 'n'
+HD1854CAE891E: 'n'
 # 'name defined in alias declaration must be an identifier'
 HF20E175DA10B: 'Alias bildirimi içindeki isim bir tanımlayıcı olmalıdır'
 # 'name defined in concept definition must be an identifier'
@@ -24966,6 +25300,8 @@ HD79C4D940185: "'#pragma clang arc_cf_code_audited' bloku içinde değil"
 HF77D5E6601B3: "'#pragma clang assume_nonnull' bloku içinde değil"
 # "not currently inside '#pragma unsafe_buffer_usage'"
 H658512A345D7: "'#pragma unsafe_buffer_usage' bloku içinde değil"
+# 'not eliding copy on return'
+H0FB30CAF71B6: 'kopyanın dönüşte atlanması yapılmıyor'
 # 'not enough variable arguments in %0 declaration to fit a sentinel'
 H9930B56495BC: "%0 bildirimi için sentinal'a uygun değişken bağımsız değişkeni yeterli değil"
 # 'not packing field %0 as it is non-POD for the purposes of layout'
@@ -25290,8 +25626,6 @@ H5560C4070D86: 'llvm indirgelemeden sonra MLIR dökümünü çıkart'
 HF36747707003: "değer %0, switch koşul tipi %1'e dönüştürülürken taşma meydana geldi"
 # 'overflow in expression; result is %0 with type %1'
 H5FE3FC44898D: 'ifadede taşma; sonuç %0 ve tipi %1'
-# 'overlapping comparisons always evaluate to %select{false|true}0'
-H9631A49EAD2B: 'karşlaşılan karşılaştırmalar her zaman %select{false|true}0 olarak değerlendirilir'
 # "overload resolution selected deleted operator '%0'%select{|: %2}1"
 HB844E51E83EA: "çoktanbfdönümü silinmiş '%0' operatörünü seçti%select{|: %2}1"
 # 'overloaded %0 cannot be a static member function'
@@ -25326,6 +25660,8 @@ H0BEA2CFA1C71: " '%0' seçeneğini '%1' seçeneği ile geçersiz kılmak."
 HE764C7911186: 'Bu hedefte şu anda desteklenmeyen bir yuvarlama modu geçersiz kılmak.'
 # 'overriding currently unsupported use of floating point exceptions on this target'
 H4E019EDC5E1E: 'Bu hedefte şu anda desteklenmeyen ondalık sayı istisnalarının kullanımı geçersiz kılmak.'
+# "overriding deployment version from '%0' to '%1'"
+H3B5CC52823D1: "dağıtım sürümü '%0' değerinden '%1' olarak geçici olarak değiştiriliyor"
 # 'overriding method has mismatched ns_consumed attribute on its parameter'
 H94209C3B1D29: 'Geçersiz kılma yöntemi parametresindeki ns_consumed özniteliği uyuşmazlık gösteriyor.'
 # 'overriding method has mismatched ns_returns_%select{not_retained|retained}0 attributes'
@@ -25462,6 +25798,8 @@ HB3431A17CC77: 'İkinci bağımsız değişkeni parantezle包起来, uyarıları
 HD07F8AE496CA: 'Bir üye dizisini parantezle包起来 başlatmak, GNU eklentisidir'
 # 'parse the input, create a PFT, dump it, and exit'
 H8632144C8313: 'Girdiyi analiz edin, bir PFT oluşturun, döküm yapın ve çıkın'
+# "parsing modulemap '%0'"
+HAF9932C8E4DC: "'%0' modül haritası ayrıştırılıyor"
 # 'partial ordering for explicit instantiation of %0 is ambiguous'
 HE38D1382AB5B: "%0'nın açık bir örneklenmesi için kısmi sıralama belirsizdir"
 # 'partial specialization cannot be declared as a friend'
@@ -25602,8 +25940,8 @@ H83FB1C107237: "placement new, depolama türünü %0'dan %1'e değiştirecek"
 HBC4E2F0D8FF6: "sade '_Complex' bir tür belirteci gerektirir; varsayılan olarak '_Complex double' alınıyor"
 # "platform does not match: '%0' (provided) vs '%1' (found)"
 H5C64A2FB6312: "platform uyuşmuyor: '%0' (girilen) vs '%1' (bulunan)"
-# "please rebuild precompiled header '%0'"
-HFBA0A20CA8AF: "önceden derlenmiş başlık '%0' tekrar derlenmelidir"
+# "please rebuild precompiled file '%0'"
+HC5036CB84980: "lütfen '%0' önceden derlenmiş dosyasını yeniden derleyin"
 # 'plt'
 H8B8091C3AD1A: 'plt'
 # 'pointer %0 declared here'
@@ -25684,8 +26022,16 @@ H08BDBEAABFC9: 'pragma include_alias beklenen dosya adı'
 HF67398D54EBA: "pragma pop_macro could not pop '%0', no matching push_macro"
 # "preceding '...' declares a function parameter pack"
 HB271FF2CAE5F: "önceki '...' declares a function parameter pack"
+# 'preceding bit-field %0 declared here with type %1'
+H8E483BDFCE6F: 'burada %1 türüyle bildirilen önceki bit-alanı %0'
 # 'precompiled'
 H5B5680CDE56B: 'önceden derlenmiş'
+# "precompiled file '%0' was compiled for the %1 '%2' but the current translation unit is being compiled for target '%3'"
+H1980F89A839A: "'%0' önceden derlenmiş dosyası '%2' '%1' hedefi için derlendi ama geçerli çeviri birimi '%3' hedefi için derleniyor"
+# "precompiled file '%0' was not built as a module"
+H45336ACA964E: "'%0' önceden derlenmiş dosyası bir modül olarak derlenmedi"
+# "precompiled file '%2' was compiled with module cache path '%0', but the path is currently '%1'"
+HD917C02B86F6: "'%2' önceden derlenmiş dosyası modül önbelleği yolu '%0' kullanılarak derlendi ama şu anki yol '%1'"
 # "precompiled header '%0' was ignored because '%1' is not first '-include'"
 H47051C658E08: "Önceden derlenmiş başlık '%0' yok edildi çünkü '%1' ilk '-include' değil"
 # "precompiled header '%0' was ignored because it is not a clang PCH file"
@@ -25726,6 +26072,8 @@ HEDFC0D57E1AE: 'Önceki %select{template type|non-type template|template templat
 HAE3E66A916BE: 'Önceki %select{etiketlenmemiş |}0fonksiyonun aşırı yüklemesi burada'
 # "previous '#pragma pack' directive that modifies alignment is here"
 H39F3F82E0571: "Önceki hizalama değiştirme '#pragma pack' direktifi burada"
+# "previous '%0' clause is here"
+HDC66D6DA5D75: "önceki '%0' yan tümcesi burada"
 # "previous '%0' directive used here"
 HE7A8B08DD5DE: "Önceki '%0' direktifi burada kullanılmıştır"
 # "previous 'critical' region starts here"
@@ -25740,8 +26088,6 @@ H720F62C2E50B: 'Önceki binding paketi burada belirtilmiş'
 HE8A56E8F5AF3: 'önceki çağrı burada%select{; sonrasında çağrılabilmediğini belirtmek için nil olarak ayarla|}0'
 # 'previous case defined here'
 H67B17B33B89D: 'önceki durum burada tanımlandı'
-# 'previous clause is here'
-HE9FAFB90DAE5: 'önceki bend burada'
 # 'previous clause with directive name modifier specified here'
 H59743B40EF38: 'önceki (direktif ad değiştiricisi belirtilmiş) bend burada'
 # "previous command '%select{\\|@}0%1' (an alias of '\\%2') here"
@@ -25910,6 +26256,8 @@ H64A4A3141F70: 'boyut nedeniyle geçersiz kılınamayan fonksiyonları yazdır'
 H8FB878E6408D: 'ilk ikili dosyada profili olan ama ikincisinde olmayan fonksiyonları yazdır'
 # 'print global symbols after disassembly'
 H6F71EE919FF4: 'yerleştirme sonrası global sembolleri yazdır'
+# 'print heatmap to a given file'
+HF4CFE90F13C4: 'ısı haritasını belirtilen dosyaya yazdır'
 # 'print jump tables'
 HE7814FCDE82F: 'atla tablolarını yazdır'
 # 'print loop related information'
@@ -25922,8 +26270,8 @@ HE37470A2DD9C: 'fonksiyonları yazdırırken bellek veri ek açıklamalarını y
 H02687E68D720: 'bilinmeyen kontrol akışı olan fonksiyon isimlerini yazdır'
 # 'print no details'
 HE1459B6CBBDF: 'hiçbir detay yazdırma'
-# 'print out instructions with default strict semantics'
-HBF6B61DB25E4: 'varsayılan sıkı semantiği olan yönergeleri yazdır'
+# 'print out instructions with default strict semantics i.e.,check that all the inputs are fully initialized, and mark the output as fully initialized. These semantics are applied to instructions that could not be handled explicitly nor heuristically.'
+H49408DBFABD2: 'varsayılan sıkı anlambilimlerle talimatları yazdır, yani tüm girişlerin tamamen başlatıldığından emin olun ve çıktıyı tamamen başlatılmış olarak işaretleyin. Bu anlambilimler, açıkça ya da sezgisel olarak işlenemeyen talimatlara uygulanır.'
 # 'print output address range for each basic block in the function whenBinaryFunction::print is called'
 H4D2F05339EF5: 'BinaryFunction::print çağrıldığında her temel blok için çıktı adres aralığını yazdır'
 # "print pass arguments to pass to 'opt'"
@@ -26626,6 +26974,8 @@ H63B188C37A7C: 'rvalue referans tipi %0, istisna belirtiminde kullanılamaz'
 HE6F99D294F8D: 'rvalue referansları C++11 eklentisidir'
 # 'rvalue references are incompatible with C++98'
 HBB045EE53C13: 'rvalue referansları C++98 ile uyumsuzdur'
+# 's'
+HA0F1490A20D0: 's'
 # 'safe buffers debug: %0'
 H6B8774B1FDA7: 'güvenli buferler hata ayıklama: %0'
 # 'safety buffer size'
@@ -26814,8 +27164,6 @@ HBE6DF8480F3A: 'strncat çağrısında boyut parametresi kaynağı boyutu gibi g
 H5666676F632D: 'boyut %select{1, 2 veya 4|1, 2, 4, 12 veya 16}0 olmalı'
 # "size of '__builtin_bit_cast' source type %0 does not match destination type %1 (%2 vs %3 bytes)"
 HE2800B62712B: '__builtin_bit_cast kaynak türünün %0 boyutu hedef türü %1 ile uyuşmuyor (%2 vs %3 bayt)'
-# 'size of a heat map block in bytes (default 64)'
-HF50CC8CAD0AC: 'heat map bloğunun bayt cinsinden boyutu (varsayılan 64)'
 # "size of array element of type %0 (%1 bytes) isn't a multiple of its alignment (%2 bytes)"
 H64B3D7C6AA54: '%0 tipi dizininin eleman boyutu (%1 bayt) hizalama değerine (%2 bayt) bölünemiyor'
 # 'size of array has non-integer type %0'
@@ -26870,6 +27218,8 @@ H7D02F3625956: 'kaynak yöneticisi konum adres alanı kullanımı:'
 H7EB7CDEAD3CD: '%q0 üyesinin spesifikasyonu, örneklenmiş bir üyesi spesifikasyon yapmaz'
 # 'specified %0 type tag requires a null pointer'
 HEFCCEFE3C17F: '%0 belirtilen tür etiketi null bir işaretçi gerektirir'
+# "specified the same parameter '%0' multiple times"
+HA300C97F904A: "'%0' parametresi birden fazla kez belirtildi"
 # 'specifies thread count for the multithreading for updating DWO debug info'
 H230218760941: 'DWO hata ayıklama bilgilerini güncellemek için çoklu iş parçacığı sayısını belirtir'
 # 'specify a target CPU'
@@ -27358,6 +27708,8 @@ H2951C6144658: "Depolama tipi '__block' izin verilmez"
 H6D4B76B01E9C: 'Bilinmeyen bir türdeki bir bildirimin adresi sadece bir pointer türüne dönüştürülebilir'
 # "the argument '%0' is not supported for option '%1'. Mapping to '%1%2'"
 HA4EFCA49DC99: "Parametre '%0' opsiyonu '%1' için desteklenmiyor. '%1%2'ye haritalanıyor"
+# 'the argument to vk::Literal must be a vk::integral_constant'
+HAA2FE1B1AE05: 'vk::Literal argümanı bir vk::integral_constant olmalıdır'
 # "the clang compiler does not support '%0'"
 HCB0DF6FD34A3: "clang derleyici '%0' desteklememektedir"
 # "the clang compiler does not support '%0' for C++ on Darwin/i386"
@@ -27518,6 +27870,8 @@ HF043D197C95F: '%0 türü bir hızlı enumerasyona sahip nesneye işaretçisi de
 HF8245CD4DD36: 'nesne ifadesinin türü %diff{($0) yok edilen ($1) türüyle uyuşmuyor | yok edilen türüyle uyuşmuyor}0,1 pseudo-yönetici ifadesinde'
 # 'the type of the explicit object parameter of an explicitly-defaulted %select{copy|move}0 assignment operator should be reference to %1'
 H48B3F2D609BF: 'Bir açıkça varsayılan %select{kopya|hareket}0 atama operatörünün açıkça belirtilen nesne parametresinin türü %1 referansı olmalıdır'
+# 'the type of variable template specialization %0 declared with deduced type %1 depends on itself'
+HA37293515585: '%1 türüyle türemiş olarak bildirilen %0 değişken şablonu özelleştirmesinin türü kendisine bağlıdır'
 # 'the user condition in the OpenMP context selector needs to be constant; %0 is not'
 H518CAE3CEA63: 'OpenMP bağlam seçiciindeki kullanıcı koşulu sabit olmalıdır; %0 sabit değil'
 # "the value of 'simdlen' parameter must be less than or equal to the value of the 'safelen' parameter"
@@ -27752,8 +28106,10 @@ HF59CA2FD696F: "%0 türü %3 %plural{1:eleman|:elemanlar}2'ye ayrışır, ancak 
 HCAF6714D32F7: '%0 türü %select{alt indeks|çağrı}1 operatörünü sağlamaz'
 # 'type %0 found by destructor name lookup'
 H35BD375D3364: 'destrüktör adı araması ile %0 türü bulundu'
-# 'type %0 has incompatible definitions in different translation units'
-HB192C667507F: '%0 türü farklı çeviri birimlerinde uyumsuz tanımlara sahip'
+# 'type %0 has %select{an attribute|a member with an attribute}1 which currently causes the types to be treated as though they are incompatible'
+HAC4DA8103F8D: '%0 türü, şu anda türlerin uyumsuzmuş gibi davranıldığı %select{bir özniteliğe|özniteliğe sahip bir üyeye}1 sahiptir'
+# 'type %0 has incompatible definitions%select{| in different translation units}1'
+HF1AFD0FA558D: '%0 türü uyumsuz tanımlara sahip%select{|farklı çeviri birimlerinde}1'
 # 'type %0 has unexpected layout'
 H8C8909F11F0A: '%0 türü beklenmeyen bir yapıya sahip'
 # 'type %0 in generic association compatible with previously specified type %1'
@@ -27762,8 +28118,8 @@ H1178A958ED5C: '%0 türü önce belirtilen %1 türüyle uyumlu bir genel ilişki
 HCA8F3A82743E: '%0 tipi genel ilişkilendirme içinde değişken değiştirilmiş bir tipdir'
 # 'type %0 in generic association not an object type'
 H9CBDAFFFD0D2: '%0 tipi genel ilişkilendirme içinde bir nesne tipi değildir'
-# 'type %0 is already %1-qualified'
-HEAFB5CEE4F59: 'tip %0 zaten %1 belirtilmiş durumda'
+# "type %0 is already '__ptrauth'-qualified"
+H046D04C84060: "%0 türü zaten '__ptrauth'-nitelendirilmiş"
 # 'type %0 is incomplete'
 H68C687943CFB: '%0 tipi tamamlanmamıştır'
 # 'type %0 is not a direct or virtual base of %1'
@@ -28160,6 +28516,8 @@ H50CF8A7A4EC4: "önyükleme dizesi '%0' yanlış yazılmış olabilir; özniteli
 H585A62063A9D: "önyükleme dizesi '%0' bilinmeyen; öznitelik yoksayılabilir"
 # 'unknown attribute %0 ignored'
 H2C00F439265B: 'bilinmeyen öznitelik %0 yoksayıldı'
+# "unknown attribute %0 ignored; did you mean '%1'?"
+H582EB59A2C0E: "bilinmeyen öznitelik %0 yoksayılıyor; demek istediniz mi? '%1'"
 # "unknown attribute '%0'"
 HB9EC0CD4D3F9: "bilinmeyen öznitelik '%0'"
 # "unknown attribute subject rule '%0'"
@@ -28264,6 +28622,8 @@ H0E188D9916C4: 'desteklenmeyen MC/DC boolean ifadesi; iç içe boolean ifadesi i
 H97B49477D381: 'desteklenmeyen MC/DC boolean ifadesi; koşul sayısı (%0) maksimumdan (%1) fazla. İfade örtüşmez'
 # 'unsupported MC/DC boolean expression; number of test vectors (%0) exceeds max (%1). Expression will not be covered'
 HA1952652ED2D: 'desteklenmeyen MC/DC boolean ifadesi; test vektörü sayısı (%0) maksimumdan (%1) fazla. İfade örtüşmez'
+# 'unsupported OpenACC extension clause %0'
+H6EE2042EA6AA: 'desteklenmeyen OpenACC uzantı yan tümcesi %0'
 # 'unsupported OpenCL extension %0 - ignoring'
 H90715CF4E48F: 'desteklenmeyen OpenCL eklentisi %0 - yok sayılıyor'
 # "unsupported architecture '%0' for MS-style inline assembly"
@@ -28542,8 +28902,6 @@ H123B46BAB412: 'fonksiyon %0 kullanımı önerilmez; başarısızlığın kontro
 H17E19DFB3C7C: 'önceden bildirilmemiş bir işlev şablonu adının açık şablon bağımsız değişkenleri ile işlev çağrısında kullanımı C++20 öncesi standartlarla uyumsuzdur'
 # 'use of function template name with no prior declaration in function call with explicit template arguments is incompatible with C++ standards before C++20'
 H640DD80A631A: "önceki bildirim olmayan bir fonksiyon şablon isminin, açık şablon bağımsız değişkenleri ile fonksiyon çağrısında kullanımı C++20'den önceki standartlarla uyumsuzdur"
-# "use of implicit 'typename' is incompatible with C++ standards before C++20"
-HFA6B14FF689A: "gizli 'typename' kullanımı C++20'den önceki standartlarla uyumsuzdur"
 # "use of incomplete type %0 in a '_Generic' association is incompatible with C standards before C2y"
 H805F57844181: "sabit parametre ile '%0' mantıksal operatör kullanımı"
 # "use of logical '%0' with constant operand"
@@ -28646,6 +29004,8 @@ H152CFF6748B3: "sürüm numarası ayırıcı olarak '_' veya '.' kullanın; örn
 H1D7871DD27F1: 'allocas ve dışarı aktarılmış denetimlerde kısa parçalar kullanın'
 # 'use strict dwarf'
 HD69F3507E82F: 'daha sert dwarf kullanın'
+# 'use stricter verifier for FIR operations with volatile types'
+H2542C8B1617A: 'geçici türlerle FIR işlemleri için daha katı doğrulayıcıyı kullan'
 # 'use stricter verifier for HLFIR intrinsic operations'
 H7296989D6AE9: 'HLFIR yerleşik işlemler için daha sert doğrulayıcı kullanın'
 # "use the GNU '__attribute__' syntax"
@@ -28776,8 +29136,6 @@ H66B3CD6187EF: "değişken %0 hem 'extern' hem de 'loader_uninitialized' öznite
 H17BA614E3EF4: 'Belirtilmemiş yakalama varsayımı ile, değişken %0, lambda ifadesinde gizli olarak yakalanamaz'
 # 'variable %0 cannot be threadprivate because it is %select{thread-local|a global named register variable}1'
 HF72C764C6D1B: 'değişken %0, %select{thread-local|bir isimli kayıt değişkeni}1 olduğu için threadprivate olamaz'
-# 'variable %0 declared with deduced type %1 cannot appear in its own initializer'
-H9648530537F2: 'sınıfı çıkarılan türle (%1) bildirilen %0 değişkeni, kendi başlatıcısında kullanılamaz'
 # 'variable %0 is %select{decremented|incremented}1 both in the loop header and in the loop body'
 H5880C36D679C: 'değişken %0, döngü başlığı ve döngü vucutunda hem %select{azaltılıyor|hızlandırılıyor}1'
 # "variable %0 is %select{used|captured}1 uninitialized whenever %select{'%3' condition is %select{true|false}4|'%3' loop %select{is entered|exits because its condition is false}4|'%3' loop %select{condition is true|exits because its condition is false}4|switch %3 is taken|its declaration is reached|%3 is called}2"
@@ -28976,6 +29334,8 @@ H58A74A7AA4A0: 'sürüm 1'
 H85DE840F8B53: 'sürüm 2'
 # 'version 3'
 HA54E81A648CA: 'sürüm 3'
+# 'version 4'
+H6BCF2142DE82: 'sürüm 4'
 # 'version control conflict marker in file'
 H58D6C666A33F: 'dosyada sürüm denetimi çakışma işareti'
 # "version for '%0' already specified"

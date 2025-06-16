@@ -112,9 +112,13 @@ def get_custom_messages(
                     for i in range(1, len(expr)):
                         try:
                             if suffix:
-                                substr = ast.literal_eval(expr[i:].replace("\n", ""))
+                                substr = expr[i:].replace("\n", "")
                             else:
-                                substr = ast.literal_eval(expr[:-i].replace("\n", ""))
+                                substr = expr[:-i].replace("\n", "")
+                            if "\\ " in substr:
+                                substr = None
+                                continue
+                            substr = ast.literal_eval(substr)
                             if not isinstance(substr, str):
                                 substr = None
                                 continue
