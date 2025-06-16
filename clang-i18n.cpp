@@ -145,9 +145,8 @@ static void *getRealFuncAddrImpl(const char *ManagledName,
 }
 
 template <typename FunPtr>
-concept FunctionPointer = 
-    std::is_function_v<std::remove_pointer_t<FunPtr>> || 
-    std::is_member_function_pointer_v<FunPtr>;
+concept FunctionPointer = std::is_function_v<std::remove_pointer_t<FunPtr>> ||
+                          std::is_member_function_pointer_v<FunPtr>;
 
 template <FunctionPointer FunPtr>
 static FunPtr getRealFuncAddr(FunPtr InterceptorFunc) {
@@ -290,11 +289,19 @@ DummyArgToStringFn(DiagnosticsEngine::ArgumentKind AK, intptr_t QT,
 }
 
 INTERCEPTOR_ATTRIBUTE
+#if LLVM_VERSION_MAJOR >= 21
+DiagnosticsEngine::DiagnosticsEngine(IntrusiveRefCntPtr<DiagnosticIDs> diags,
+                                     DiagnosticOptions &DiagOpts,
+                                     DiagnosticConsumer *client,
+                                     bool ShouldOwnClient)
+    : Diags(std::move(diags)), DiagOpts(DiagOpts) {
+#else
 DiagnosticsEngine::DiagnosticsEngine(
     IntrusiveRefCntPtr<DiagnosticIDs> diags,
     IntrusiveRefCntPtr<DiagnosticOptions> DiagOpts, DiagnosticConsumer *client,
     bool ShouldOwnClient)
     : Diags(std::move(diags)), DiagOpts(std::move(DiagOpts)) {
+#endif
   static PatchFormatDiagnostic Patcher;
   setClient(client, ShouldOwnClient);
   ArgToStringFn = DummyArgToStringFn;
