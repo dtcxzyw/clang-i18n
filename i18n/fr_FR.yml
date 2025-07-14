@@ -300,6 +300,8 @@ H4FBE5E81E84C: '%0 attribut : les types des paramètres ne correspondent pas : l
 HBB1E6D667EEA: '%0 attribut : les paramètres ne correspondent pas à la déclaration précédente'
 # '%0 attribute references function %1, which %plural{0:takes no arguments|1:takes one argument|:takes exactly %2 arguments}2'
 HC6916839EF90: '%0 attribut fait référence à la fonction %1, qui %plural{0:prend aucun argument|1:prend un argument|:prend exactement %2 arguments}2'
+# '%0 attribute references function of type %1 which expects %2 %plural{1:argument|:arguments}2 but attribute specifies %3 parameter index %plural{1:argument|:arguments}3'
+HD8F1ACE7E4A2: "%0 référence une fonction de type %1 qui attend %2 %plural{1:argument|:arguments}2 mais l'attribut spécifie l'indice de paramètre %3 %plural{1:argument|:arguments}3"
 # '%0 attribute references parameter %1, but the function %2 has only %3 parameters'
 H95C6EBBF3D05: "%0 attribut fait référence au paramètre %1, mais la fonction %2 n'a que %3 paramètres"
 # '%0 attribute requires %select{int or bool|an integer constant|a string|an identifier}1'
@@ -508,8 +510,8 @@ HE1EB0B2A5FDF: '%0 est incomplet'
 HFEFEB7B90D08: "%0 manque la spécification d'exception '%1'"
 # '%0 is no longer a pack expansion but a pack indexing type; add a name to specify a pack expansion'
 H52ECBB1B9A17: "%0 n'est plus une expansion de paquet mais un type d'indexation de paquet ; ajoutez un nom pour spécifier une expansion de paquet"
-# '%0 is not %select{trivially relocatable|replaceable|trivially copyable|constructible with provided types}1'
-H286C96520443: "%0 n'est pas %select{trivialement relocalisable|remplaçable|trivialement copiable|constructible avec les types fournis}1"
+# '%0 is not %select{trivially relocatable|replaceable|trivially copyable|empty|standard-layout}1'
+HB8555713DE55: "%0 n'est pas %select{réallocable trivialement|remplaçable|copiable trivialement|vide|layout standard}1"
 # '%0 is not a class type'
 H5598919CD04A: "%0 n'est pas un type de classe"
 # '%0 is not a class%select{ or namespace|, namespace, or enumeration}1'
@@ -602,8 +604,8 @@ H2BF1BAAD2D9C: "%0 géré par '%1' est '%3' au lieu de '%2'"
 H4E355023D40F: "%0 marqué 'override' ne surcharge aucune fonction membre"
 # '%0 may be deprecated because the receiver type is unknown'
 H33FCAE6FB142: '%0 peut être obsolète car le type récepteur est inconnu'
-# '%0 may be duplicated when built into a shared library: it is mutable, has hidden visibility, and external linkage'
-H5AAA1A09F587: '%0 peut être dupliqué lors de la construction en bibliothèque partagée : il est modulable, a une visibilité cachée et une liaison externe'
+# '%0 may be duplicated when built into a shared library: it is mutable, with external linkage and %select{hidden visibility|no import/export annotation}1'
+HB6423D2516E9: "%0 peut être dupliqué lors de la construction dans une bibliothèque partagée : il est modifiable, avec liaison externe et %select{visibilité cachée|aucune annotation d'import/export}1"
 # '%0 may be unavailable because the receiver type is unknown'
 H5F639AF749BC: '%0 peut ne pas être disponible car le type récepteur est inconnu'
 # '%0 may not be nested in a struct due to flexible array member'
@@ -858,6 +860,8 @@ HD4A3AC42422A: "%select{'#pragma clang fp eval_method'|option 'ffp-eval-method'}
 H11DB7A31A7DA: "%select{'auto'|'decltype(auto)'|'__auto_type'|arguments de modèle}0 déduit comme %1 dans la déclaration de %2 et déduit comme %3 dans la déclaration de %4"
 # "%select{'auto'|'decltype(auto)'|'__auto_type'|use of %select{class template|function template|variable template|alias template|template template parameter|concept|template}2 %3 requires template arguments; argument deduction}0 not allowed %select{in function prototype|in non-static struct member|in struct member|in non-static union member|in union member|in non-static class member|in interface member|in exception declaration|in template parameter until C++17|in block literal|in template argument|in typedef|in type alias|in function return type|in conversion function type|here|in lambda parameter|in type allocated by 'new'|in K&R-style function parameter|in template parameter|in friend declaration|in function prototype that is not a function declaration|in requires expression parameter|in array declaration|in declaration of conversion function template|in lambda parameter before C++14}1"
 H7226E87E7B56: "%select{'auto'|'decltype(auto)'|'__auto_type'|l'utilisation de %select{le modèle de classe|le modèle de fonction|le modèle de variable|l'alias de modèle|le paramètre modèle de modèle|le concept|le modèle}2 %3 nécessite des arguments de modèle ; déduction d'arguments}0 n'est pas autorisée %select{dans un prototype de fonction|dans un membre de structure non statique|dans un membre de structure|dans un membre d'union non statique|dans un membre d'union|dans un membre de classe non statique|dans un membre d'interface|dans une déclaration d'exception|dans un paramètre de modèle avant C++17|dans un littéral de bloc|dans un argument de modèle|dans un typedef|dans un alias de type|dans le type de retour d'une fonction|dans le type d'une fonction de conversion|ici|dans un paramètre de lambda|dans le type alloué par 'new'|dans un paramètre de fonction K&R|dans un paramètre de modèle|dans une déclaration 'friend'|dans un prototype de fonction non déclaration|dans un paramètre d'expression 'requires'|dans une déclaration de tableau|dans la déclaration d'un modèle de fonction de conversion|dans un paramètre de lambda avant C++14}1"
+# "%select{'const' and 'volatile' qualifiers|'const' qualifier|'volatile' qualifier}0 in enumeration underlying type ignored"
+H712F09927E6F: "%select{'const' et 'volatile' qualifieurs|'const' qualifieur|'volatile' qualifieur}0 dans le type sous-jacent de l'énumération ignorés"
 # "%select{'mutable'|'static'|'constexpr'|'consteval'}0 cannot appear multiple times in a lambda declarator"
 HA9F29290F39F: "%select{'mutable'|'statique'|'constexpr'|'consteval'}0 ne peut apparaître plusieurs fois dans un déclarateur lambda"
 # "%select{'size' argument to memset is '0'|setting buffer to a 'sizeof' expression}0; did you mean to transpose the last two arguments?"
@@ -1348,6 +1352,8 @@ H08EBC2661AFA: "%select{lecture de|lecture de|affectation à|incrémentation de|
 H2547ED9973E0: "%select{lecture de|lecture de|affectation à|incrémentation de|décrémentation de|appel de membre sur|dynamic_cast de|typeid appliqué à|construction de|destruction de|lecture de}0 objet '%1' dont la valeur n'est pas connue"
 # '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 temporary is not allowed in a constant expression outside the expression that created the temporary'
 H1A04D5C0C6D4: "%select{lecture de|lecture de|affectation à|incrémentation de|décrémentation de|appel de membre sur|dynamic_cast de|typeid appliqué à|construction de|destruction de|lecture de}0 le temporaire n'est pas autorisé dans une expression constante en dehors de l'expression ayant créé le temporaire"
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 variable %1 whose value is not known'
+H9168EB67A6E1: '%select{lecture de|lecture de|assignation à|incrémentation de|décrémentation de|appel de membre sur|dynamic_cast de|typeid appliqué à|construction de|destruction de|lecture de}0 variable %1 dont la valeur est inconnue'
 # '%select{reading|writing}1 the value pointed to by %0 requires holding %select{any mutex|any mutex exclusively}1'
 H20B2C79559EA: '%select{lecture|écriture}1 de la valeur pointée par %0 nécessite de détenir %select{un verrou|un verrou exclusif}1'
 # '%select{reading|writing}1 variable %0 requires holding %select{any mutex|any mutex exclusively}1'
@@ -1982,6 +1988,8 @@ HC050BA19FE21: "L'attribut « [[%select{nodiscard|gnu::warn_unused_result}0]] »
 HA6D310EC7345: "l'attribut « [[carries_dependency]] » est autorisé uniquement sur un paramètre dans une déclaration de fonction ou un lambda"
 # "'[]' after delete interpreted as 'delete[]'; add parentheses to treat this as a lambda-expression"
 H9FAF75D55EEF: '« [] » après « delete » interprété comme « delete[] » ; ajoutez des parenthèses pour le traiter comme une expression lambda'
+# "'_Atomic' qualifier ignored; operations involving the enumeration type will be non-atomic"
+H83D24975584A: "Le qualifieur '_Atomic' est ignoré ; les opérations impliquant le type énumération ne seront pas atomiques"
 # "'_BitInt' %select{vector|matrix}0 element width must be a power of 2"
 HE9CD7B30FBE6: "La largeur des éléments du %select{vecteur|matrice}0 '_BitInt' doit être une puissance de 2"
 # "'_BitInt' in %select{C17 and earlier|C++}0 is a Clang extension"
@@ -2114,8 +2122,6 @@ H5112D2E8FE1B: "L'argument %0 de l'attribut 'callback' n'est pas un paramètre d
 H11C2E7DC48A0: "La fonction appelée de l'attribut 'callback' n'a pas un type de fonction"
 # "'callback' attribute callee may not be variadic"
 H5339D3799089: "L'attribut 'callback' ne peut pas spécifier un appelé variadique"
-# "'callback' attribute references function of type %0 which expects %1 %plural{1:argument|:arguments}1 but attribute specifies %2 parameter index %plural{1:argument|:arguments}2"
-HE68D93E84E5E: "l'attribut 'callback' fait référence à une fonction de type %0 qui attend %1 %plural{1:argument|:arguments}1 mais l'attribut spécifie %2 index de paramètre %plural{1:argument|:arguments}2"
 # "'callback' attribute specifies invalid callback callee"
 HAE51B1A6C397: "L'attribut 'callback' spécifie un appelé callback invalide"
 # "'callback' attribute specifies no callback callee"
@@ -2276,8 +2282,10 @@ HD3EE247E6A72: "'main' ne peut pas être déclaré variadiques"
 HB0C6AFB93EDB: "'main' ne peut pas être supprimé"
 # "'main' must return 'int'"
 HD54CCE2AF684: "'main' doit retourner 'int'"
-# '\'main\' should not be \'extern "%select{C|C++}0"\''
-H19102C631788: '\'main\' ne doit pas être \'extern "%select{C|C++}0"\''
+# "'main' never has module linkage"
+HBE18C564DFDC: "'main' n'a jamais de liaison de module"
+# '\'main\' should not be \'extern "C"\''
+HE59536BA4AAD: '\'main\' ne devrait pas être \'extern "C"\''
 # "'main' should not be declared static"
 H9A6B59304912: "'main' ne doit pas être déclaré comme statique"
 # "'malloc' argument %0 must take a pointer type as its first argument"
@@ -2870,6 +2878,8 @@ H2D6A17BDE0D3: 'Option de débogage pour ajouter une pénalité supplémentaire 
 H3723DB39ACD6: 'Un fichier contenant une liste de fichiers à traiter, un par ligne.'
 # 'A file containing list of basic blocks to extract'
 HBF68C649BA33: 'Un fichier contenant la liste des blocs de base à extraire'
+# 'A file containing list of mangled function names to mark for Windows Secure Hot-Patching'
+H9CEC6B9E65B1: 'Un fichier contenant une liste des noms de fonctions mangled à marquer pour Windows Secure Hot-Patching'
 # 'A file containing list of symbol names to preserve'
 HCBA362E0A436: 'Un fichier contenant la liste des noms de symboles à conserver'
 # 'A file containing regexes of symbol names that are not expected to be updated when changing namespaces around them.'
@@ -2902,6 +2912,8 @@ HAEEA6B54FAD5: 'Dans une région d’ordonnancement importante, les cartes seron
 H3D02297FABD7: 'Un couple clé=valeur. Remplacez __nvvm_reflect(name) par la valeur.'
 # 'A lexical block (Function, Class, etc.).'
 HC41EB530ACBA: 'Un bloc lexical (Fonction, Classe, etc.).'
+# 'A list of mangled function names to mark for Windows Secure Hot-Patching'
+H48C7A7FA87F8: 'Une liste des noms de fonctions mangled à marquer pour Windows Secure Hot-Patching'
 # "A list of mangled vtable type info names. Classes specified by the type info names and their derived ones will not be vtable-ICP'ed. Useful when the profiled types and actual types in the optimized binary could be different due to profiling limitations. Type info names are those string literals used in LLVM type metadata"
 HB3A60F3783C6: 'Une liste de noms de types vtable mangés. Les classes désignées par ces noms de type et leurs dérivées ne seront pas soumises à l’ICP des vtables. Utile lorsque les types profilés et les types réels dans le binaire optimisé peuvent différer en raison des limitations de profilage. Les noms de type sont les littéraux de chaîne utilisés dans les métadonnées de type LLVM'
 # 'A list of symbol names to preserve'
@@ -3036,8 +3048,6 @@ HEE464CD5CFF9: 'Analyse d’alias basée sur les espaces d’adresse AMDGPU'
 HA70F43663430: 'Emballage d’analyse d’alias basée sur les espaces d’adresse AMDGPU'
 # 'AMDGPU Assembly Printer'
 HFD4F4422703F: "Imprimeur d'assemblage AMDGPU"
-# 'AMDGPU Attributor'
-HB96C03301054: 'AMDGPU Attributor'
 # 'AMDGPU CFG Structurizer'
 HFAE00DA66175: 'Structuriseur CFG pour AMDGPU'
 # 'AMDGPU DAG->DAG Pattern Instruction Selection'
@@ -3082,14 +3092,14 @@ H910A7C3E575C: 'AMDGPU Sélection du registre banque'
 H697AE5C583A4: 'AMDGPU Supprimer les fonctions incompatibles'
 # 'AMDGPU Reserve WWM Registers'
 H9CD9A7466F8D: 'AMDGPU Réserver les registres WWM'
+# 'AMDGPU Rewrite AGPR-Copy-MFMA'
+H0C0C75698AFE: 'AMDGPU Réécriture AGPR-Copy-MFMA'
 # 'AMDGPU Rewrite Out Arguments'
 H1EE5CA590389: 'AMDGPU Réécriture des arguments de sortie'
 # 'AMDGPU Software lowering of LDS'
 H06C3E98E4BA5: 'AMDGPU Réduction logicielle de LDS'
 # 'AMDGPU atomic optimizations'
 HD4C4B30A81C8: 'AMDGPU optimisations atomiques'
-# 'AMDGPU promote alloca to vector'
-H76A58E341CF5: 'AMDGPU Promotion de alloca vers un vecteur'
 # 'AMDGPU promote alloca to vector or LDS'
 H505D453A0AB0: 'AMDGPU Promotion de alloca vers un vecteur ou LDS'
 # 'ANALYSIS'
@@ -3298,6 +3308,8 @@ H76AF34D02BE9: 'Ajoute un répertoire au chemin interne de recherche des inclusi
 HFB17BE810349: 'Ajoute les répertoires de la variable d’environnement <var> au chemin de recherche des inclusions avec les avertissements désactivés'
 # 'Add extra TOC register dependencies'
 HB5EA8815333D: 'Ajouter des dépendances supplémentaires des registres TOC'
+# 'Add include paths for CUDA/HIP and include the default CUDA/HIP wrapper headers (default)'
+H3B5D170DE00F: "Ajouter les chemins d'inclusion pour CUDA/HIP et inclure les en-têtes par défaut CUDA/HIP (par défaut)"
 # 'Add informational comments to the .ll file'
 H1430FC8452EC: 'Ajouter des commentaires informatifs au fichier .ll'
 # 'Add instruction count to a LSR cost model'
@@ -4032,6 +4044,8 @@ H80A446F5E125: "Options d'attributs"
 H6A8CFBBE8142: 'Attribuer une plage avec un compteur nul à toutes les fonctions, même si elles ne sont pas couvertes par des échantillons.'
 # 'Auto-generates preprocessed source files and a reproduction script'
 H2B36EB61E3F1: 'Génère automatiquement des fichiers sources prétraités et un script de reproduction'
+# 'Automatic detection (default)'
+HC8E2AAB5B8ED: 'Détection automatique (par défaut)'
 # 'Automatically put hot code on 2MB page(s) (hugify) at runtime. No manual call to hugify is needed in the binary (which is what --hot-text relies on).'
 H0155A65DE424: "Place automatiquement le code chaud sur des pages de 2MB (hugify) lors de l'exécution. Aucun appel manuel à hugify n'est nécessaire dans le binaire (contrairement à --hot-text qui en dépend)."
 # 'Auxiliary target triple.'
@@ -4124,6 +4138,8 @@ HAA9EC9D57F33: 'Allocateur de registres de base'
 HDDB9289EB602: 'Être plus conservateur dans les optimisations de chargement/stockage ARM'
 # 'Before everything'
 HD2BEA8D1D530: 'Avant tout'
+# 'Best effort generate unwind v2 (epilog) information for x64 Windows'
+H8DADB3FA7445: "Génère au mieux les informations d'unwind v2 (épilogue) pour x64 Windows"
 # 'Best scheduler for the target'
 H5C9427319FEA: 'Meilleur planificateur pour la cible'
 # 'Binary encoding'
@@ -4798,8 +4814,12 @@ H7A8FE1AC1071: 'Contrôler la façon dont les arguments scalaires entiers sont �
 H2343CB68FB97: "Contrôle si les structures doivent être importées comme des structures littérales, c'est-à-dire des structures sans nom"
 # 'Controls the backend parallelism of -flto=thin (default of 0 means the number of threads will be derived from the number of CPUs detected)'
 H6966D13FD63C: 'Contrôler le parallélisme du backend pour -flto=thin (la valeur par défaut 0 signifie que le nombre de threads sera déduit du nombre de CPU détectés)'
+# 'Controls the calculation methods of complex number multiplication and division.'
+H2B2D13E28F33: 'Contrôle les méthodes de calcul de la multiplication et division des nombres complexes.'
 # 'Controls the semantics of floating-point calculations.'
 H71E38C97DF72: 'Contrôler la sémantique des calculs à virgule flottante.'
+# 'Controls the various implementations for complex multiplication and division [full|improved|basic]'
+HF43898BA9E15: 'Contrôle les différentes implémentations pour la multiplication et division complexes [full|improved|basic]'
 # 'Controls transformations in div-rem-pairs pass'
 HECF2FCF96025: 'Contrôle les transformations dans le passage div-rem-pairs'
 # 'Controls transformations in partially-inline-libcalls'
@@ -4852,10 +4872,14 @@ HAE6876018E56: 'Instrumentation ABI conventionnelle pour le runtime du nettoyeur
 H3BBD1D4AD52A: "Convertir les attributs align en hypothèses lors de l'inline."
 # 'Convert all cmovs to branches.'
 HC3FD80CE54EF: 'Convertir tous les cmov en branches.'
+# 'Convert available_externally global variables into locals if they are in specificed addrspace, renaming them to avoid link-time clashes.'
+HCB6B5F968D66: "Convertir les variables globales available_externally en locales si elles sont dans un espace d'adresses spécifié, les renommant pour éviter les conflits à l'édition de liens."
 # 'Convert available_externally into locals, renaming them to avoid link-time clashes.'
 H719EAE04A8AC: 'Convertir available_externally en locales, en les renommant pour éviter les conflits au moment du lien.'
 # 'Convert cmovs to branches whenever they have memory operands.'
 HF77C545DF219: "Convertir les cmov en branches dès lors qu'ils ont des opérandes mémoire."
+# 'Convert constant loads to immediate values.'
+H23894E56AFA4: 'Convertir les accès constants en valeurs immédiates.'
 # 'Convert eligible reg+reg instructions to reg+imm'
 HC9D049FFF42E: 'Convertir les instructions reg+reg éligibles en reg+imm'
 # 'Convert i1 constants to i32/i64 if they are returned'
@@ -4876,6 +4900,8 @@ H7167152F0FAC: 'Convertir le profil généré en un profil avec une nouvelle str
 H378B86E985E0: 'Coût pour l’utilisation initiale d’un registre sauvegardé par le sous-programme appelé.'
 # 'Cost multiplier to multiply onto inlined call sites where the new call was previously an intra-SCC call (not relevant when the original call was already intra-SCC). This can accumulate over multiple inlinings (e.g. if a call site already had a cost multiplier and one of its inlined calls was also subject to this, the inlined call would have the original multiplier multiplied by intra-scc-cost-multiplier). This is to prevent tons of inlining through a child SCC which can cause terrible compile times'
 H698CAA7A18F5: 'Multiplicateur de coût à appliquer aux sites d’appel en-ligne où l’appel nouveau était précédemment un appel intra-SCC (non pertinent lorsque l’appel original était déjà intra-SCC). Cela peut s’accumuler au fil des en-lignements multiples (par exemple, si un site d’appel avait déjà un multiplicateur de coût et qu’un de ses appels en-lignés était également concerné, l’appel en-ligné aurait le multiplicateur original multiplié par le multiplicateur-intra-SCC). Cela permet d’éviter un excès d’en-lignement à travers un SCC enfant, ce qui peut causer des temps de compilation catastrophiques'
+# 'Cost of a single inline asm instruction when inlining'
+H68DBEA28BCC0: "Coût d'une seule instruction asm inline lors de l'inlining"
 # 'Cost of a single instruction when inlining'
 H036B559D08B8: 'Coût d’une seule instruction lors de l’enlignement'
 # 'Cost of alloca argument'
@@ -5216,6 +5242,8 @@ H4769C553D95E: 'Répertoire des fichiers include'
 H34B714818DA5: 'Répertoire où enregistrer les dépendances des modules'
 # "Directory to output dSYM's (if any) to"
 H6E5284514F1A: "Répertoire de sortie pour les dSYM (s'il y a lieu)"
+# 'Directory to output generated files to'
+HE3CB6F2F2395: 'Répertoire de sortie pour les fichiers générés'
 # 'Directory to store cached object files (must be user writable)'
 HF3C59BF42111: "Répertoire où stocker les fichiers objets mis en cache (doit être modifiable par l'utilisateur)"
 # 'Directory used as a base for relative coverage mapping paths'
@@ -5720,6 +5748,8 @@ H6AAEA4B38739: "Désactiver l'inlinage pré-instrumentation"
 H74925BF6B59C: "Désactiver la duplication de la queue d'enregistrement pré-allouée"
 # 'Disable precise memory mode (AMDGPU only)'
 H638CDA8718C5: 'Désactiver le mode mémoire précis (AMDGPU uniquement)'
+# 'Disable precompiled headers, overrides -emit-pch and -include-pch'
+HE3FC2C2DAED2: 'Désactiver les en-têtes précompilés, annule -emit-pch et -include-pch'
 # 'Disable precompiled headers, overrides /Yc and /Yu'
 HA85F69F96408: 'Désactiver les macros prédéfinies et de ligne de commande du préprocesseur'
 # 'Disable predefined and command line preprocessor macros'
@@ -5894,8 +5924,6 @@ HE0F6634D8D16: 'Désactiver la promotion de type'
 HAE3C6A80BF96: 'Désactiver la phase d’ordonnancement réduisant la pression des registres non regroupés.'
 # 'Disable unused template argument warnings.'
 H8A2178DF0ED5: 'Désactiver les avertissements sur les arguments de modèle non utilisés.'
-# 'Disable unwind v2 (epilog) information for x64 Windows'
-H2002C343134B: 'Désactiver les informations de déroulement v2 (épilogue) pour x64 Windows'
 # 'Disable use of DFA during scheduling'
 HFCEBEB8744EF: 'Désactiver l’utilisation de l’automate à états finis (DFA) lors de l’ordonnancement'
 # 'Disable use of LD/ST pairs for SME2 or SVE2p1'
@@ -5922,6 +5950,8 @@ HE4C65ABEFA0D: 'Désactiver la validation des options de diagnostic lors du char
 H46E40B609BEA: 'Désactiver les vector doubles new-value-stores'
 # 'Disable verification of LLVM IR'
 H1AB74862104E: 'Désactiver la vérification de LLVM IR'
+# 'Disable version-independent external API notes support'
+H979BF3BF4565: "Désactiver le support des notes d'API externes indépendantes de la version"
 # 'Disable virtual register cycle interference checks'
 H2BA1419A0C46: 'Désactiver les vérifications d’interférence de cycles pour les registres virtuels'
 # 'Disable whole program visibility (overrides enabling options)'
@@ -6134,8 +6164,8 @@ H7E3445F24099: 'Ne pas ajouter %INCLUDE% au chemin de recherche des inclus'
 H98822B20FC31: "Ne pas ajouter -rpath avec le répertoire de ressources spécifique à l'architecture aux drapeaux du lien. Lorsque --hip-link est spécifié, ne pas ajouter -rpath avec le répertoire de bibliothèque HIP au runtime aux drapeaux du lien"
 # 'Do not add a BTI instruction after a setjmp or other return-twice construct (Arm/AArch64 only)'
 H97946DA95B7B: 'Ne pas ajouter une instruction BTI après un setjmp ou une autre construction à retour multiple (seulement Arm/AArch64)'
-# 'Do not add include paths for CUDA/HIP and do not include the default CUDA/HIP wrapper headers'
-HCB5DBE4305C2: "Ne pas ajouter les chemins d'inclusion pour CUDA/HIP et ne pas inclure les en-têtes par défaut de wrapper CUDA/HIP"
+# 'Do not add include paths for CUDA/HIP and include the default CUDA/HIP wrapper headers'
+H84053D245C4F: "Ne pas ajouter les chemins d'inclusion pour CUDA/HIP et inclure les en-têtes d'enveloppe CUDA/HIP par défaut"
 # 'Do not add instruction count to lsr cost model'
 HE7651E5EC0B1: "Ne pas ajouter le compteur d'instructions au modèle de coût LSR"
 # 'Do not add parameter bounds and do no gist simplify sets accordingly'
@@ -6612,14 +6642,16 @@ H8E78A20B661E: 'Ne pas utiliser des noms uniques pour les sections de texte et d
 HE1A69C7730A8: "Ne pas vérifier les fichiers d'entrée pour les modules si le module a été validé ou chargé avec succès pendant cette session de construction"
 # "Don't verify that MIR is fully legal between GlobalISel passes"
 H2547A49B1E5F: 'Ne pas vérifier que MIR est entièrement légal entre les passes GlobalISel'
+# "Don't work around Cortex-A53 erratum 835769 (AArch64 only)"
+H734D66A528ED: "Ne pas contourner l'erratum Cortex-A53 835769 (uniquement AArch64)"
+# "Don't work around Cortex-A53 erratum 843419 (AArch64 only)"
+H01EF57F41E09: "Ne pas contourner l'erratum Cortex-A53 843419 (uniquement AArch64)"
 # "Don't work around Cortex-A57 Erratum 1742098 (ARM only)"
 H3E4B9BDEA672: "Ne pas contourner l'erratum Cortex-A57 1742098 (ARM uniquement)"
 # "Don't work around Cortex-A72 Erratum 1655431 (ARM only)"
 HBBA28409C8FE: "Ne pas contourner l'erratum Cortex-A72 1655431 (ARM uniquement)"
 # "Don't work around VLLDM erratum CVE-2021-35465 (ARM only)"
 H2D48982037C5: "Ne pas contourner l'erratum VLLDM CVE-2021-35465 (ARM uniquement)"
-# "Don't workaround Cortex-A53 erratum 835769 (AArch64 only)"
-H674F1B2934BD: "Ne pas contourner l'erratum Cortex-A53 835769 (AArch64 uniquement)"
 # "Don't write fields with default values"
 HDC62F7F06017: 'Ne pas écrire les champs avec des valeurs par défaut'
 # "Dot-separated value representing the Microsoft compiler version number to report in _MSC_VER (0 = don't define it (default))"
@@ -6992,8 +7024,8 @@ H0EBAF7E7ADAA: "Émettre une erreur fatale si l'analyse du format échoue"
 HAE97C70DDD39: "Émettre un fichier objet natif ('.o')"
 # 'Emit a section containing jump table addresses and sizes'
 H0281F291EFBA: 'Émettre une section contenant les adresses et tailles des tables de saut'
-# 'Emit a section containing remark diagnostics metadata. By default, this is enabled for the following formats: yaml-strtab, bitstream.'
-H75D67E9CFF88: 'Émettre une section contenant les métadonnées des diagnostics de remarque. Par défaut, ceci est activé pour les formats suivants : yaml-strtab, bitstream.'
+# 'Emit a section containing remark diagnostics metadata. By default, this is enabled for the following formats: bitstream.'
+HF87AD4ADED8E: 'Émettre une section contenant des métadonnées de diagnostics de remarque. Par défaut, ceci est activé pour les formats suivants : bitstream.'
 # 'Emit a section containing stack size metadata'
 H698AD84DCB32: 'Émettre une section contenant les métadonnées de taille de pile'
 # 'Emit a warning if less than N% of records in the input profile are matched to the IR.'
@@ -7188,6 +7220,8 @@ H10A93E69F908: 'Activer AddressSanitizer'
 H39CF1AD1DDBB: 'Activer la syntaxe d’initialisation de vecteur AltiVec'
 # 'Enable Apple gcc-compatible #pragma pack handling'
 HF6255EFF4697: 'Activer le traitement compatible Apple gcc de #pragma pack'
+# 'Enable Arm SPE mode.'
+H3F7930D1C835: 'Activer le mode Arm SPE.'
 # 'Enable BFI update verification for CodeGenPrepare.'
 HDEF1BBE64E03: 'Activer la vérification de mise à jour BFI pour CodeGenPrepare.'
 # 'Enable C++ builtin type char8_t'
@@ -7236,8 +7270,6 @@ H3B25285FD614: "Activer les optimisations de calcul à virgule flottante qui sup
 H9640D97F95AD: "Activer les optimisations de calcul à virgule flottante qui supposent l'absence de NaNs"
 # 'Enable FP math optimizations that assume the sign of 0 is insignificant'
 HE827F0FDD8E0: 'Activer les optimisations de calcul à virgule flottante qui supposent que le signe de 0 est insignifiant'
-# 'Enable Fast Math processing'
-H2F61C44B4052: 'Activer le traitement Fast Math'
 # 'Enable Freestanding (disable builtins / TLI) during LTO'
 H4C62FBB216B5: "Activer le mode Freestanding (désactiver les builtins / TLI) lors de l'optimisation LTO"
 # 'Enable GPU Mode managed|unified'
@@ -7278,6 +7310,8 @@ H37F33A534B6A: 'Activer la memcpy spécifique à Hexagon pour les destinations v
 H56C08FC94B0D: 'Activer la prise en charge des #pragma pack IBM XL'
 # 'Enable ICMP_EQ to ICMP_S(L|G)T conversion.'
 H50B860EE6750: 'Activer la conversion de ICMP_EQ vers ICMP_S(L|G)T'
+# 'Enable IEEE strict mode (equivalent to -ffp-model=strict)'
+H5BE2ABCAB943: 'Activer le mode strict IEEE (équivalent à -ffp-model=strict)'
 # 'Enable JumpTableToSwitch pass (default = off)'
 H595911A42177: 'Activer le passage JumpTableToSwitch (par défaut = désactivé)'
 # 'Enable KernelAddressSanitizer instrumentation'
@@ -7920,6 +7954,8 @@ H526152B74AA2: 'Activer un comportement de support spécial pour le débogueur'
 H40F60E7DDF05: 'Activer un support spécial de débogueur pour les subscripteurs et littéraux Objective-C'
 # 'Enable specialization of functions that take a literal constant as an argument'
 H8CB997684347: 'Activer la spécialisation des fonctions qui prennent une constante littérale comme argument'
+# 'Enable specific target library builtin functions'
+HBCC4694DDD21: 'Activer les fonctions intégrées spécifiques à la bibliothèque cible'
 # 'Enable specifying registers without the % prefix'
 H4FA626EAB19A: 'Activer la spécification des registres sans le préfixe %'
 # 'Enable speculative execution side effect suppression (SESES). Includes LVI control flow integrity mitigations'
@@ -8166,8 +8202,6 @@ HB262A3E07E79: 'Activer la discrimination de type pour les pointeurs de fonction
 HADD895A7C263: 'Activer la réduction non sûre de double à float pour les appels de bibliothèque mathématique'
 # 'Enable unswitch cost multiplier that prohibits exponential explosion in nontrivial unswitch.'
 H05E336233C05: 'Activer le multiplicateur de coût pour unswitch qui interdit l’explosion exponentielle dans unswitch non trivial'
-# 'Enable unwind v2 (epilog) information for x64 Windows'
-H53CAE0AFFD48: 'Activer les informations de déroulement v2 (épilogue) pour x64 Windows'
 # 'Enable use of AA during MI DAG construction'
 H13EA04236348: 'Activer l’utilisation de AA lors de la construction du DAG MI'
 # 'Enable use of AdvSIMD scalar integer instructions'
@@ -8224,6 +8258,8 @@ H21971438C1F9: 'Activer la vérification de l’IR LLVM'
 H0C498CC2C452: 'Activer la vérification de MemorySSA.'
 # 'Enable verification of assumption cache'
 HA1CDE46C471E: 'Activer la vérification du cache d’hypothèses'
+# 'Enable version-independent external API notes support'
+H6907BE5E1528: "Activer le support des notes d'API externes indépendantes de la version"
 # 'Enable vextract optimization'
 HEA51F4DB759E: 'Activer l’optimisation vextract'
 # 'Enable virtual function elimination'
@@ -8368,6 +8404,8 @@ HA1B7947727A7: 'Dépendances exactes sans dépendances transitives'
 H6264B2F9B33C: "Bloc de capture d'exception."
 # 'Exception try block.'
 H5C51BB50B6C6: "Bloc d'essai d'exception."
+# 'Exclude __builtin_allow_runtime_check for the top hottest code responsible for the given fraction of PGO counters (0.0 [default] = skip none; 1.0 = skip all). Argument format: <value>'
+H29E673B4E7B2: "Exclure __builtin_allow_runtime_check pour le code le plus chaud responsable de la fraction donnée des compteurs PGO (0,0 [par défaut] = ignorer aucun ; 1,0 = ignorer tous). Format de l'argument : <valeur>"
 # 'Exclude compilands by regular expression'
 HE55B6BA9D8DC: 'Exclure les compilands par expression régulière'
 # 'Exclude functions matching the filter from the output.'
@@ -8684,6 +8722,8 @@ HCFFD910F1E45: "Pour obtenir la liste des architectures disponibles pour la cibl
 HF30AFF2F9F8C: 'Pour toutes les options parcourant les modules, ignorer les modules des bibliothèques système'
 # 'For all options that iterate over modules, limit to the specified module'
 H076A99AD2B76: 'Pour toutes les options parcourant les modules, limiter au module spécifié'
+# 'For blocks with more predecessors, certain layout optimizationswill be disabled to prevent quadratic compile time.'
+HF97FF7653EEE: "Pour les blocs ayant plus de prédécesseurs, certaines optimisations de mise en page seront désactivées afin d'éviter un temps de compilation quadratique."
 # 'For cold function instrumentation, skip instrumenting functions whose entry count is above the given value.'
 HE6D6C775176E: "Pour l'instrumentation des fonctions froides, ignorer l'instrumentation des fonctions dont le compteur d'entrée dépasse la valeur spécifiée."
 # 'For cold function instrumentation, treat count unknown(e.g. unprofiled) functions as cold.'
@@ -8762,6 +8802,8 @@ HD5FFAD3EC478: 'Forcer l’ordonnancement en mode descendant pré-affectation de
 H5694C07468F1: 'Forcer le codegen à supposer que le mode d’arrondi peut changer dynamiquement'
 # 'Force disable the lazy-loading on-demand of metadata when loading bitcode for importing.'
 H2329A45D867C: 'Désactiver le chargement paresseux à la demande des métadonnées lors du chargement de bitcode pour l’importation'
+# 'Force disabling recomputing of function entry count, on successful tail recursion elimination.'
+H9076B008099B: "Forcer la désactivation du recalcul du compteur d'entrée de fonction lors de l'élimination réussie de la récursion terminale."
 # 'Force double to be <n> bits'
 H6A3CAE57D5DB: 'Forcer double à être de <n> bits'
 # 'Force each unsigned fixed point type to have an extra bit of padding to align their scales with those of signed fixed point types'
@@ -9044,6 +9086,10 @@ H93A2FEDB326C: 'Générer les unités de type DWARF4.'
 H35927234EEF2: 'Générer les informations Extract API en tant qu’effet secondaire de la compilation.'
 # 'Generate IR involving scalable vector types'
 HBFD721B3719E: 'Générer du code IR impliquant des types de vecteurs scalables'
+# 'Generate ISD::PTRADD nodes for 64-bit pointer arithmetic in the SelectionDAG ISel'
+HFAF410FD50C4: "Générer des nœuds ISD::PTRADD pour l'arithmétique de pointeurs 64 bits dans le SelectionDAG ISel"
+# 'Generate ISD::PTRADD nodes for pointer arithmetic in SelectionDAG for FEAT_CPA'
+HB8B12732A8CE: "Générer des nœuds ISD::PTRADD pour l'arithmétique de pointeurs dans le SelectionDAG pour FEAT_CPA"
 # 'Generate Interface Stub Files, emit merged text not binary.'
 H48D6D551365C: 'Générer les fichiers de stub d’interface, émettre du texte fusionné au lieu d’un binaire.'
 # 'Generate Interface Stub Files.'
@@ -9056,6 +9102,8 @@ H411052747AED: 'Générer M instructions NOP avant l’entrée de la fonction'
 H4A7E3BFEB46A: "Générer M NOP avant l'entrée de la fonction et (N-M) NOP après l'entrée de la fonction. Si une section est spécifiée, utilisez-la à la place de __patchable_function_entries."
 # 'Generate Metal library'
 H30181B8F806A: 'Générer la bibliothèque Metal'
+# 'Generate Offload API documentation contents'
+H3EEDBD9BFB3E: "Générer le contenu de la documentation de l'API Offload"
 # 'Generate Offload API header contents'
 H228CB18FCD9A: 'Générer le contenu des en-têtes pour l’API Offload'
 # 'Generate Offload API print header'
@@ -9064,6 +9112,8 @@ HDB1F685BA2FE: 'Générer l’en-tête d’impression pour l’API Offload'
 HE6C5D6F8A8FB: 'Générer les définitions des fonctions enveloppe pour l’API Offload'
 # 'Generate Offload Error Code enum'
 HD6D65DD43A04: "Générer l'énumération des codes d'erreur de déchargement"
+# 'Generate Offload Info enum'
+H6C940F8912A4: "Générer l'énumération Offload Info"
 # 'Generate OpenCL builtin declaration handlers'
 HA18DDE5AEDF3: 'Générer les gestionnaires de déclarations des fonctions internes OpenCL'
 # 'Generate OpenCL builtin declaration tests'
@@ -9376,6 +9426,8 @@ H62C541A61A79: 'Générer les types pour ce dialecte'
 H337DAB1315D8: 'Générer des informations de débogage uniques pour chaque instruction comportant un opérande mémoire. Doit être activé pour la précharge du cache pilotée par le profil, à la fois lors de la construction du binaire profilé et lors de la construction du binaire consommant le profil.'
 # 'Generate unoptimized CFGs for all analyses'
 HA85B8A701BAB: 'Générer des CFG non optimisés pour toutes les analyses'
+# 'Generate unwind v2 (epilog) information for x64 Windows'
+H497FF3C89C8C: "Générer des informations d'unwind v2 (épilogue) pour x64 Windows"
 # 'Generate unwinding tables for all functions'
 HF1490D883AAC: 'Générer des tables de déroulement pour toutes les fonctions'
 # 'Generate verbose assembly output'
@@ -9664,6 +9716,8 @@ H353091CB276E: 'Options IR2Vec'
 H9ADEB68395C9: 'Fichier IRDL à enregistrer avant de traiter l’entrée'
 # 'IRTranslator LLVM IR -> MI'
 HA8BDC735DCBC: 'Traducteur IR LLVM vers MI'
+# 'ISO C does not allow an attribute list to appear here'
+H87C1ACDDFB37: "ISO C ne permet pas qu'une liste d'attributs apparaisse ici"
 # 'ISO C does not allow indirection on operand of type %0'
 HC4C25916B558: 'ISO C n’autorise pas d’indirection sur un opérande de type %0'
 # "ISO C does not support '~' for complex conjugation of %0"
@@ -10048,6 +10102,8 @@ H9190E8521B57: 'Insérer des vérifications KCFI pour les appels indirects'
 HB3BFBF584BC3: 'Insérer des opérations XRay'
 # 'Insert a break point on the last enabled count of a chunks list'
 H14F2710F0183: 'Insérer un point d’arrêt sur le dernier compteur activé d’une liste de chunks'
+# 'Insert a s_nop x before every instruction'
+H8F84AC247FBC: 'Insérer un s_nop x avant chaque instruction'
 # 'Insert a specific header. This should run with STDIN mode.\nThe result is written to stdout. It is currently used for\neditor integration. Support YAML/JSON format:\n  -insert-header="{\n     FilePath: "/path/to/foo.cc",\n     QuerySymbolInfos: [\n       {RawIdentifier: foo,\n        Range: {Offset: 0, Length: 3}}\n     ],\n     HeaderInfos: [ {Headers: "\\"foo_a.h\\"",\n                     QualifiedName: "a::foo"} ]}"'
 HAF484669F973: 'Insérer un en-tête spécifique. Cette commande doit s’exécuter en mode STDIN.\nLe résultat est écrit sur stdout. Il est actuellement utilisé pour\nl’intégration d’éditeurs. Prise en charge des formats YAML/JSON :\n  -insert-header="{\n     FilePath: "/path/to/foo.cc",\n     QuerySymbolInfos: [\n       {RawIdentifier: foo,\n        Range: {Offset: 0, Length: 3}}\n     ],\n     HeaderInfos: [ {Headers: "\\"foo_a.h\\"",\n                     QualifiedName: "a::foo"} ]}"'
 # 'Insert calls to __dfsan_*_callback functions on data events.'
@@ -10486,6 +10542,8 @@ H7F26F6260A72: 'Liste des fichiers avec des problèmes de compilation ou de modu
 H3054F37FF6EE: 'Liste des fonctions pour lesquelles afficher l’assembly. Accepte uniquement les noms démangés. Fonctionne uniquement avec show-disassembly-only'
 # "List of key and value arguments. Required keywords are 'file' and 'triple'."
 H45A6C5D3DB8C: "Liste des arguments clé-valeur. Les mots-clés obligatoires sont 'file' et 'triple'."
+# 'List of mangled symbol names of functions that should be hot-patched for Windows Secure Hot-Patching'
+H069FC15DF4AD: 'Liste des noms de symboles mangled des fonctions devant être hot-patched pour Windows Secure Hot-Patching'
 # 'List of modes to link in by default into XRay instrumented binaries.'
 HA0397880FB9D: 'Liste des modes à lier par défaut dans les binaires instrumentés XRay.'
 # 'List of profitability heuristics to be used. They are applied in the given order'
@@ -10838,6 +10896,8 @@ H17C76AA34906: 'Marquer les fonctions froides avec minsize.'
 H16FE57B8D4DF: 'Marquer les fonctions froides avec optnone.'
 # 'Mark cold functions with optsize.'
 H10A3EEBA4167: 'Marquez les fonctions froides avec optsize.'
+# 'Mark functions for Windows hot patch support'
+HA71C0C5DF674: 'Marquer les fonctions pour le support de hot patch pour Windows'
 # 'Mark intrinsics that match the specified regexp as taking alias.scopes, noalias, and tbaa metadata'
 H2D0DBCB8116B: "Marquez les intrinsèques correspondant à l'expression régulière spécifiée comme prenant en compte les métadonnées alias.scopes, noalias et tbaa"
 # 'Mark intrinsics that match the specified regexp as taking an access group metadata'
@@ -11130,6 +11190,8 @@ H35B2504140C1: 'Nombre maximal de threads à utiliser pour traiter les blocs de 
 H2DC8A9AE4C6B: "Nombre maximal de fois d'exécution de l'ensemble complet des passes delta (par défaut=5)"
 # 'Maximum number of undroppable users for instruction sinking'
 H51772496A3DD: "Nombre maximal d'utilisateurs non supprimables pour le glissement d'instructions"
+# 'Maximum number of unwind codes permitted in each unwind info.'
+H5E5E0E167948: "Nombre maximum de codes d'unwind autorisés dans chaque information d'unwind"
 # 'Maximum number phis to handle in intptr/ptrint folding'
 H8EB042BFB02C: 'Nombre maximal de phis à gérer lors du pliage intptr/ptrint'
 # 'Maximum of xors'
@@ -11248,6 +11310,10 @@ H8DBDD3BC94CA: 'Minimiser la pénalité de transition AVX vers SSE'
 H4957842A8433: 'Minimiser le nombre de registres utilisés'
 # 'Minimum BranchProbability to consider a region cold.'
 HD5C5EDF501D8: 'Minimum de BranchProbability pour considérer une région comme froide.'
+# 'Minimum absolute count for promoted target to be inlinable'
+HF5D22FDC7744: "Comptage absolu minimum pour qu'une cible promue puisse être inline"
+# 'Minimum absolute count for promotion candidate'
+H6AD35D07E050: 'Comptage absolu minimum pour un candidat à la promotion'
 # 'Minimum block executions to consider its BranchProbabilityInfo valid'
 HC699EC9E0880: "Minimum d'exécutions du bloc pour considérer BranchProbabilityInfo valide"
 # "Minimum block frequency, expressed as a multiple of caller's entry frequency, for a callsite to be hot in the absence of profile information."
@@ -11362,6 +11428,8 @@ HB23F4D978D1F: "Sélection d'instructions DAG->DAG par modèle pour NVPTX"
 H3B9CC422F869: 'Transmission des paramètres NVPTX'
 # 'NVPTX Peephole'
 H5BF795D76A44: 'Peephole NVPTX'
+# 'NVPTX Prologue/Epilogue Insertion'
+HC15F7ADF1BF9: 'Insertion du Prologue/Épilogue NVPTX'
 # 'NVPTX ProxyReg Erasure'
 HDFA70554F191: 'Élimination des ProxyReg NVPTX'
 # 'NVPTX Specific: 0 use sqrt.approx, 1 use sqrt.rn.'
@@ -11754,6 +11822,8 @@ H115A29858DAD: 'Séparer uniquement les tables de saut contenant des fonctions d
 H159246FC6C6B: 'Séparer uniquement les tables de saut dont la taille est inférieure ou égale à JumpTableSizeThreshold.'
 # 'Only supported on AArch64, PowerPC, RISC-V, SPARC, SystemZ, and X86'
 H6BC9222A7886: 'Supporté uniquement sur AArch64, PowerPC, RISC-V, SPARC, SystemZ et X86'
+# 'Only translate FIR to MLIR, do not lower to LLVM IR'
+H8E667376A04B: 'Traduire uniquement FIR en MLIR, ne pas convertir en LLVM IR'
 # 'Only try to inject loop invariant conditions and unswitch on them to eliminate branches that are not-taken 1/<this option> times or less.'
 H93BBEDA4C81E: 'Tenter uniquement d’injecter des conditions invariantes dans les boucles et de les désunifier pour éliminer les branches non prises 1/<cette option> fois ou moins.'
 # 'Only use DAG-combiner alias analysis in this function'
@@ -11868,8 +11938,10 @@ H7C8F28679BDB: 'La plage spécifiée [%0:%1] du sous-tableau OpenACC serait hors
 H64A7517C6764: "La valeur indexée du sous-tableau OpenACC n'est pas un tableau ou un pointeur"
 # "OpenACC variable %select{in 'use_device' clause|on 'declare' construct}0 is not a valid variable name or array name"
 H5FFA8811F2EF: "La variable OpenACC %select{dans la clause 'use_device'|dans la construction 'declare'}0 n'est pas un nom de variable ou de tableau valide"
-# 'OpenACC variable in cache directive is not a valid sub-array or array element'
-H0DEC3018E66D: "La variable OpenACC dans la directive cache n'est pas un sous-tableau ou un élément de tableau valide"
+# "OpenACC variable in 'cache' directive is not a valid sub-array or array element"
+H73608DEEA57F: "La variable OpenACC dans la directive 'cache' n'est pas un sous-tableau ou un élément de tableau valide"
+# "OpenACC variable in 'cache' directive was not declared outside of the associated 'loop' directive; directive has no effect"
+HCF3CECDE633E: "La variable OpenACC dans la directive 'cache' n'a pas été déclarée à l'extérieur de la directive 'loop' associée ; la directive n'a aucun effet"
 # 'OpenACC variable is not a valid variable name, sub-array, array element,%select{| member of a composite variable,}0 or composite variable member'
 HA8B26141C7C6: "La variable OpenACC n'est pas un nom de variable valide, un sous-tableau, un élément de tableau, %select{| membre d'une variable composite,}0 ou membre de variable composite"
 # 'OpenCL extension %0 is core feature or supported optional core feature - ignoring'
@@ -11928,8 +12000,8 @@ H66F93F9F54F1: "La cible d'offload OpenMP '%0' est similaire à la cible '%1' d�
 H52C83AA3C087: 'OpenMP ne permet qu’un construct ordered avec la clause simd imbriqué dans un construct simd'
 # 'OpenMP standard version'
 HA403864CFA0F: 'Version de la norme OpenMP'
-# 'OpenMP support in flang is still experimental'
-HA42DEF114A36: 'Le support OpenMP dans flang est encore expérimental'
+# 'OpenMP support for version %0 in flang is still incomplete'
+H8472BB300FE4: 'Le support OpenMP pour la version %0 dans flang est encore incomplet'
 # "OpenMP target architecture '%0' pointer size is incompatible with host '%1'"
 HF18160FDA94C: "La taille du pointeur de l'architecture cible OpenMP '%0' est incompatible avec l'hôte '%1'"
 # "OpenMP target is invalid: '%0'"
@@ -12078,6 +12150,8 @@ HCE705FE1F603: 'Liant spécifique à Orc'
 H1D5554EC3474: 'Ordonner les symboles de pile locaux.'
 # 'Other Options'
 H9CB6F2FB01DF: 'Autres options'
+# 'Out-of-process Execution Options'
+H723C1D5E6DBF: "Options d'exécution hors-processus"
 # 'Outline loop blocks from loop chain if (frequency of loop) / (frequency of block) is greater than this ratio'
 HB57131BBFAC5: 'Découper les blocs de boucle à partir de la chaîne de boucle si le rapport (fréquence de la boucle) / (fréquence du bloc) est supérieur à ce ratio'
 # 'Output'
@@ -12208,6 +12282,8 @@ H790D0193AFF1: 'Remplace le résultat utilisé pour la requête getMaximumVF, ut
 H1F6C8876A478: 'Remplace la valeur de la macro _OPENACC pour les tests expérimentaux lors du développement du support OpenACC.'
 # 'Overwrite edited files.'
 HA46F1C96B7DC: 'Écraser les fichiers modifiés.'
+# 'Overwrites the Unwind v2 mode for testing purposes.'
+H7F860D04EA52: 'Écrase le mode Unwind v2 à des fins de test'
 # 'PASSED'
 H75168D9452E2: 'PASSED'
 # 'PBQP register allocator'
@@ -12326,6 +12402,8 @@ HAA93B63D725F: 'Chemin vers le fichier CSV contenant les lignes de noms de fonct
 H9AB7FF7DDB14: 'Chemin vers le SavedModel issu de l\'itération d\'entraînement précédente.\nLe répertoire doit également contenir une spécification JSON des sorties à logger, où la première entrée doit correspondre à la décision d\'enlacement. Le fichier de spécification doit s\'appeler output_spec.json. La valeur JSON attendue est un tableau de dictionnaires. Chaque dictionnaire doit comporter 2 clés :\n\n- "tensor_spec", suivi de la description TensorSpec de la sortie ;\n- "logging_name", une chaîne indiquant le nom à utiliser pour logger les valeurs de sortie.\n\nExemple :\n[\n  {\n    "logging_name" : "some_name", \n    "tensor_spec" : { \n      "name" : "model_name", \n      "port" : 0,\n      "shape" : [2, 3],\n      "type" : "float"\n      }\n  }\n]\n\nLa première valeur doit toujours correspondre à la décision.'
 # 'Path to a directory containing a .clang-format file\ndescribing a formatting style to use for formatting\ncode when -style=file.\n'
 H1C68FD05289D: "Chemin d'accès vers un répertoire contenant un fichier .clang-format décrivant un style de mise en forme à utiliser pour formater le code quand -style=file est spécifié.\n"
+# 'Path to a file that contains a list of mangled names of functions that should be hot-patched for Windows Secure Hot-Patching'
+H38984CCBD829: 'Chemin vers un fichier contenant une liste de noms mangled des fonctions devant être hot-patched pour Windows Secure Hot-Patching'
 # 'Path to a system assembler, picked up on AIX only'
 HD76EB0189931: "Chemin vers l'assembling système, utilisé uniquement sur AIX"
 # 'Path to binary from which the profile was collected.'
@@ -12356,6 +12434,8 @@ H6EB010D2085A: 'Chemin vers le fichier ignorelist système pour les sanitiseurs'
 HEE09636C6E6A: 'Chemin vers le SDK DIA'
 # 'Path to the IR file produced by the frontend for the host.'
 H6108420B0DC9: "Chemin vers le fichier IR produit par le frontend pour l'hôte."
+# 'Path to the ORC runtime'
+HA6D50B3F5E21: 'Chemin vers le runtime ORC'
 # 'Path to the VCToolChain'
 H5C43C23950E7: "Chemin d'accès vers VCToolChain"
 # 'Path to the Windows SDK'
@@ -12480,6 +12560,8 @@ HAEF32BE4B3F4: 'Plateforme à utiliser avec LLJIT'
 HDE1D650C630F: 'Pointeur vers un membre.'
 # 'Pointer.'
 H2EBACB6EF9AE: 'Pointeur.'
+# 'Poison fully undef temporary values. Partially undefined constant vectors are unaffected by this flag (see -msan-poison-undef-vectors).'
+HF2AB52CC9719: 'Poisonne les valeurs undef complètement temporaires. Les vecteurs constants partiellement indéfinis ne sont pas affectés par ce drapeau (voir -msan-poison-undef-vectors)'
 # 'Polly - Calculate dependences'
 H6CAD158D9763: 'Polly - Calculer les dépendances'
 # 'Polly - Calculate dependences for all the SCoPs of a function'
@@ -12654,6 +12736,10 @@ H2F5309EAAE70: "Abaissement d'intrinsèques avant ISel"
 H81B4ED48A8E1: 'Optimisations pré-RA'
 # 'Pre-load dynamic libraries (e.g. language runtimes required by the ORC runtime)'
 HDF44F8CD7956: 'Précharger les bibliothèques dynamiques (ex. les runtimes de langage requis par le runtime ORC)'
+# 'Precisely poison disjoint OR. If false (legacy behavior), disjointedness is ignored (i.e., 1|1 is initialized).'
+H84A2723C1D06: "Poisonner précisément l'OR disjoint. Si false (comportement hérité), le caractère disjoint est ignoré (c'est-à-dire que 1|1 est initialisé)"
+# 'Precisely poison partially undefined constant vectors. If false (legacy behavior), the entire vector is considered fully initialized, which may lead to false negatives. Fully undefined constant vectors are unaffected by this flag (see -msan-poison-undef).'
+H3AF54DB62013: "Poisonner précisément les vecteurs constants partiellement indéfinis. Si false (comportement hérité), l'ensemble du vecteur est considéré comme entièrement initialisé, ce qui peut entraîner des faux négatifs. Les vecteurs constants entièrement indéfinis ne sont pas affectés par ce drapeau (voir -msan-poison-undef)"
 # 'Predicate conditions in read only loops'
 H0D01A5F11CC3: 'Conditions prédicatives dans les boucles en lecture seule'
 # 'Prefer add+cnt over addvl/inc/dec'
@@ -13594,12 +13680,12 @@ HB0E9E547E094: 'Signaler l’analyse des transformations provenant des passes d�
 H815014839294: 'Signaler les transformations effectuées par les passes d’optimisation dont le nom correspond à l’expression régulière POSIX fournie'
 # 'Reports layout used for print, compare and select.'
 HF32D32507443: 'Indique le layout utilisé pour l’impression, la comparaison et le choix.'
-# 'Require & in extract patterns'
-H9F971AAB4945: 'Exiger le caractère & dans les motifs d’extraction'
 # 'Require all positive matches to cover an entire input line.\nAllows leading and trailing whitespace if --strict-whitespace\nis not also passed.'
 HA9004341F6EF: 'Exiger que toutes les correspondances positives couvrent une ligne d’entrée entière.\nAutoriser les espaces blancs au début et à la fin si --strict-whitespace n’est pas également passé.'
 # 'Require declaration of modules used within a module'
 HE82DE2BF2262: 'Exiger la déclaration des modules utilisés au sein d’un module'
+# 'Require generation of unwind v2 (epilog) information for x64 Windows'
+H98E0A3B1CC77: "Exiger la génération d'informations d'unwind v2 (épilogue) pour x64 Windows"
 # 'Require math functions to indicate errors by setting errno'
 HE643AF2E91DD: 'Exiger aux fonctions mathématiques d’indiquer les erreurs en définissant errno'
 # 'Require member pointer base types to be complete if they would be significant under the Microsoft ABI'
@@ -13832,6 +13918,8 @@ HE6E28450C65C: 'Espace de test du réécrivant'
 HD27186628DE0: 'Réécrivant à exécuter'
 # 'Right before the vectorizer'
 HE1F20E3A6191: 'Juste avant le vectoriseur'
+# 'Root Signature Version'
+H6DA963688EFB: 'Version de la signature racine'
 # 'Root for relative input paths'
 H44AB7F76C38B: 'Répertoire racine pour les chemins d’entrée relatifs'
 # 'Root.'
@@ -14508,6 +14596,8 @@ HCF37C352FCE6: 'Définir le seuil pour pgo-verify-bfi : ignorer les compteurs do
 H00413175E081: 'Définir le compteur de déroulement par épluchage, à des fins de test'
 # 'Set the z/OS release of the runtime environment'
 HD212DAE31048: 'Définir la version z/OS de l’environnement d’exécution'
+# 'Set to false to ignore Key Instructions metadata'
+H66DB94ACCB44: 'Définir sur false pour ignorer les métadonnées des instructions clés'
 # 'Set up preprocessor for static analyzer (done automatically when static analyzer is run).'
 HE7E0E6B1AE87: 'Configurer le préprocesseur pour l’analyse statique (fait automatiquement lorsque l’analyseur statique est exécuté).'
 # 'Set update method of profile counters'
@@ -14904,6 +14994,8 @@ H8905580ACB2D: 'Spécifie un triple cible par défaut quand celui-ci n’est pas
 H5F9EC5F91118: "Spécifie un répertoire où Clang peut trouver 'include' et 'lib{,32,64}/gcc{,-cross}/$triple/$version'. Clang utilisera l'installation GCC avec la version la plus élevée"
 # "Specify a directory where Flang can find 'lib{,32,64}/gcc{,-cross}/$triple/$version'. Flang will use the GCC installation with the largest version"
 H59AA0290DBA6: "Spécifie un répertoire où Flang peut trouver 'lib{,32,64}/gcc{,-cross}/$triple/$version'. Flang utilisera l'installation GCC avec la version la plus élevée"
+# 'Specify a list of target architectures to use for offloading.'
+HC0CC9BFF0E02: "Spécifiez une liste d'architectures cibles à utiliser pour l'offloading."
 # 'Specify a plugin to optimize LFENCE insertion'
 H749CB0E11874: 'Spécifier un plug-in pour optimiser l’insertion de LFENCE'
 # 'Specify a reference program output (for miscompilation detection)'
@@ -15072,6 +15164,8 @@ H8278427A48F9: 'Spécifiez la propriété selon laquelle collecter les remarques
 HE59A5BD76AE3: 'Spécifiez la propriété par laquelle regrouper les remarques.'
 # 'Specify the size in bits of an RVV vector register'
 H0AB4126F0C29: 'Spécifiez la taille en bits d’un registre vectoriel RVV'
+# 'Specify the size in bits of an SVE vector register in streaming mode. Defaults to the vector length agnostic value of "scalable". (AArch64 only)'
+H3E2C921FE104: 'Spécifiez la taille en bits d\'un registre vectoriel SVE en mode streaming. Par défaut, la valeur indépendante de la longueur vectorielle est "scalable". (AArch64 uniquement)'
 # 'Specify the size in bits of an SVE vector register. Defaults to the vector length agnostic value of "scalable". (AArch64 only)'
 H2F3DFF504736: 'Spécifiez la taille en bits d’un registre vectoriel SVE. La valeur par défaut est celle indépendante de la longueur vectorielle « scalable ». (Uniquement pour AArch64)'
 # 'Specify the source file identifier for -funique-source-file-names; uses the source file path if not specified'
@@ -15090,8 +15184,12 @@ HCEF5AB90855A: 'Spécifiez le type de métadonnées à émettre pour les sanitiz
 HDBA609305F00: 'Spécifiez les types de comparaisons pour lesquelles générer un code utilisant uniquement les registres GPR.'
 # 'Specify the version of the memprof format to use'
 H1B82817FBBA6: 'Spécifiez la version du format memprof à utiliser'
+# 'Specify the vscale maximum. Defaults to the vector length agnostic value of "0". (AArch64 only)'
+HBB5D2CB16EF5: 'Spécifiez le maximum de vscale. Par défaut, la valeur indépendante de la longueur vectorielle est "0". (AArch64 uniquement)'
 # 'Specify the vscale maximum. Defaults to the vector length agnostic value of "0". (AArch64/RISC-V only)'
 HA66591A80BFB: 'Spécifiez la valeur maximale de vscale. La valeur par défaut est la valeur indépendante de la longueur vectorielle « 0 ». (Uniquement pour AArch64/RISC-V)'
+# 'Specify the vscale minimum. Defaults to "1". (AArch64 only)'
+H4DA44845ACC8: 'Spécifiez le minimum de vscale. Par défaut, "1". (AArch64 uniquement)'
 # 'Specify the vscale minimum. Defaults to "1". (AArch64/RISC-V only)'
 H0C205532C01D: 'Spécifiez la valeur minimale de vscale. La valeur par défaut est « 1 ». (Uniquement pour AArch64/RISC-V)'
 # 'Specify time trace file destination'
@@ -16050,12 +16148,12 @@ H702F4D424F4D: 'Heure du début de la session de compilation actuelle'
 H84F95E67A022: 'Modèle de code tiny'
 # 'Tool Options'
 HCB6E15CE20D4: 'Options de l’outil'
+# 'Tool for generating LLDBRPC'
+H77DE4F01EA61: 'Outil pour générer LLDBRPC'
 # 'Tool options'
 H6AA40067A445: 'Options de l’outil'
-# 'Tool used for detecting AMD GPU arch in the system.'
-HF986F57FE389: 'Outil utilisé pour détecter l’architecture GPU AMD dans le système.'
-# 'Tool used for detecting NVIDIA GPU arch in the system.'
-H3CE78A0FD186: 'Outil utilisé pour détecter l’architecture GPU NVIDIA dans le système.'
+# 'Tool used for detecting offloading architectures in the system.'
+H649BE12C147A: "Outil utilisé pour détecter les architectures d'offloading dans le système."
 # 'Toolchain identification name.'
 H577F665D266E: 'Nom d’identification de la toolchain.'
 # 'Toplevel siblings divisor for cost multiplier.'
@@ -16284,8 +16382,6 @@ H18CD82918982: "Analyse d'uniformité"
 H8B72079558B4: 'Unifier les nœuds de sortie divergents des fonctions'
 # 'Unify function instantiations'
 H7D11BF20733C: 'Unifier les instanciations de fonctions'
-# 'Unify multiple OpenCL metadata due to linking'
-H1E880963D2AC: 'Unifier les métadonnées OpenCL multiples en raison du liage'
 # 'Union.'
 H8AC81596AB6F: 'Union.'
 # 'Uniqueify Internal Linkage Symbol Names by appending the MD5 hash of the module path'
@@ -16386,6 +16482,8 @@ H785682C5C939: 'Utiliser les entrées de sélection d’adresse de base DWARF da
 H37CB53594E9C: 'Utiliser les exceptions au style DWARF'
 # 'Use Decision Forest model to rank completion items'
 H05DCA5EC7686: 'Utiliser le modèle Decision Forest pour classer les éléments de complétion'
+# 'Use DirectX memory layout for Vulkan resources.'
+H3650417554FC: 'Utiliser la disposition mémoire DirectX pour les ressources Vulkan.'
 # 'Use EH-safe code when synthesizing retains and releases in -fobjc-arc'
 H36FC7089F28D: 'Utiliser du code EH-safe lors de la synthèse des retenues et libérations dans -fobjc-arc'
 # 'Use F5 series hardware multiplier'
@@ -16488,6 +16586,10 @@ H3A40020AE1F7: 'Utilisez un type signé pour wchar_t'
 H48F702933B27: "Utilisez un seul arbre TBAA pour toutes les fonctions et ne pas utiliser le passage des balises d'alias FIR"
 # 'Use a single TBAA tree for all functions and do not use the FIR alias tags pass'
 HC642932368D3: 'Utiliser un seul arbre TBAA pour toutes les fonctions et ne pas utiliser le passe FIR alias tags'
+# 'Use a synthetic profile with no data to generate baseline coverage'
+H7D610CEB3EA4: 'Utiliser un profil synthétique sans données pour générer une couverture de référence'
+# 'Use a table of function pointers instead of a switch case in the\ngenerated `decodeToMCInst` function. Helps improve compile time\nof the generated code.'
+H7D161A4180FD: "Utiliser une table de pointeurs de fonctions au lieu d'une instruction switch case dans la\nfonction générée `decodeToMCInst`. Aide à améliorer le temps de compilation\ndu code généré."
 # 'Use absolute paths for invoking subcommands (default)'
 HFDEA884CA19F: 'Utiliser des chemins absolus pour lancer les sous-commandes (par défaut)'
 # 'Use addrx+offset extension form for any address with a prior base address'
@@ -16660,6 +16762,8 @@ HD66DB2015BA3: 'Utiliser les intrinsic vectoriels masqués'
 HE791F5E32608: 'Utiliser md5 pour représenter les noms de fonctions dans le profil de sortie (uniquement significatif pour -extbinary)'
 # 'Use memory profile for profile-guided memory optimization'
 H5A1906ADE19C: "Utiliser un profil mémoire pour l'optimisation mémoire orientée profil"
+# 'Use memset.pattern intrinsic whenever possible'
+H18BAF8A230CF: "Utiliser l'intrinsèque memset.pattern chaque fois que possible"
 # 'Use more powerful methods of sharpening expression ranges. May be costly in terms of compile time'
 HD0AB27E80870: "Utiliser des méthodes plus puissantes pour l'affûtage des plages d'expressions. Peut être coûteux en termes de temps de compilation"
 # 'Use native PDB reader instead of DIA'
@@ -16724,6 +16828,8 @@ HE68D3A295C31: 'Utilisez une disposition par lignes'
 H74ED44C8AB6B: 'Utilisez des vérifications d’alias à l’exécution pour résoudre les alias possibles.'
 # 'Use sampled profile to guide PGO.'
 H83EE2F7AD7E3: 'Utilisez un profil échantillonné pour guider PGO.'
+# 'Use scalar memory layout for Vulkan resources.'
+H4F0ECC21E176: 'Utiliser la disposition mémoire scalaire pour les ressources Vulkan.'
 # 'Use sections+offset as references rather than labels.'
 HC0250DDB1574: 'Utilisez sections+offset comme références plutôt que des étiquettes.'
 # 'Use segment set for the computation of the live ranges of physregs.'
@@ -16752,6 +16858,8 @@ HBB884418570D: 'Utilisez les sondes de pile (par défaut)'
 HC2C965E8960E: 'Utilisez le runtime de débogage statique'
 # 'Use static run-time'
 H53E3F295A611: 'Utilisez le runtime statique'
+# 'Use strict OpenGL std140/std430 memory layout for Vulkan resources.'
+HB5A902F1841B: "Utiliser la disposition mémoire strict d'OpenGL std140/std430 pour les ressources Vulkan."
 # 'Use target platform default'
 H1C5D924DE4CE: 'Utilisez les paramètres par défaut de la plateforme cible'
 # 'Use text-based completion if the parser is not ready'
@@ -16800,10 +16908,10 @@ H5EC45CECD53A: "Spécifiez le décalage à utiliser pour l'adresse du gardien de
 H2907454E4058: "Spécifiez l'enregistrement (reg) à utiliser pour l'adresse du gardien de la protection de la pile"
 # 'Use the given symbol for addressing the stack-protector guard'
 HB4E7196A5294: "Spécifiez le symbole à utiliser pour l'adresse du gardien de la protection de la pile"
-# 'Use the given vector functions library'
-H8A7DC0CD5F6E: 'Utilisez la bibliothèque de fonctions vectorielles spécifiée'
-# 'Use the given vector functions library. Note: -fveclib={ArmPL,SLEEF} implies -fno-math-errno'
-HB6448F1B4907: 'Utilisez la bibliothèque de fonctions vectorielles spécifiée. Note : -fveclib={ArmPL,SLEEF} implique -fno-math-errno'
+# 'Use the given vector functions library.\n  Note: -fveclib=libmvec on AArch64 requires GLIBC 2.40 or newer.'
+H4435A330E24A: 'Utiliser la bibliothèque de fonctions vectorielles donnée.\n  Remarque : -fveclib=libmvec sur AArch64 nécessite GLIBC 2.40 ou plus récent.'
+# 'Use the given vector functions library.\n  Note: -fveclib={ArmPL,SLEEF,libmvec} implies -fno-math-errno.\n  Note: -fveclib=libmvec on AArch64 requires GLIBC 2.40 or newer.'
+HA17885783579: 'Utiliser la bibliothèque de fonctions vectorielles donnée.\n  Remarque : -fveclib={ArmPL,SLEEF,libmvec} implique -fno-math-errno.\n  Remarque : -fveclib=libmvec sur AArch64 nécessite GLIBC 2.40 ou plus récent.'
 # 'Use the gnu89 inline semantics'
 H86341C44D7F1: 'Utilisez les sémantiques inline de gnu89'
 # "Use the host's platform-specific path separator character when expanding the __FILE__ macro"
@@ -16828,8 +16936,6 @@ HA522D7482E1A: "Utilisez la plateforme native pour l'exécuteur. Nécessite -orc
 H4FEA64EFDBD7: 'Utilisez le nouveau pilote pour le déplacement OpenMP.'
 # 'Use the new driver for offloading compilation.'
 H2C38A94F0FE6: 'Utilisez le nouveau pilote pour la compilation de déplacement.'
-# 'Use the new method of lowering partial reductions.'
-H67B6026FF0E7: "Utilisez la nouvelle méthode d'abaissement des réductions partielles."
 # 'Use the new offloading linker to perform the link job.'
 HBE633D219689: 'Utilisez le nouveau liant de déplacement pour effectuer le travail de liaison.'
 # 'Use the old (incorrect) instruction latency calculation'
@@ -16930,6 +17036,8 @@ H5B0B3696A2CD: "Valider les fichiers d'entrée PCH en fonction de leur contenu s
 HE7966DE5A8B2: "Valider les fichiers d'entrée PCM en fonction de leur contenu si la date de modification (mtime) diffère"
 # 'Validate that all vtables have type infos in LTO'
 H66B413E67029: 'Vérifier que toutes les tables de virtualité (vtables) possèdent des informations de type dans LTO'
+# 'Validate the CFI directives'
+H9B4BB745DB04: 'Valider les directives CFI'
 # 'Validate the system headers that a module depends on when loading the module'
 HEE36D448D56F: 'Valider les en-têtes système sur lesquels le module dépend lors de son chargement'
 # 'Value for __PIC__'
@@ -17056,6 +17164,8 @@ H4109B1BD7A45: 'Options d’affichage'
 HBAB873C35568: 'Carte des registres virtuels'
 # 'Virtual Register Rewriter'
 H70230BEE99F4: 'Réécrivain de registres virtuels'
+# 'Vocab file for IR2Vec; Setting this enables configuring the model to use IR2Vec embeddings.'
+H5D3E99B7F8E7: 'Fichier vocabulaire pour IR2Vec ; Définir ceci permet de configurer le modèle pour utiliser les intégrations IR2Vec.'
 # 'Volatile loads and stores have acquire and release semantics'
 HA2D66EAC62AA: 'Les chargements et stockages volatiles ont des sémantiques d’acquisition et de libération'
 # 'Volatile loads and stores have standard semantics'
@@ -17314,6 +17424,10 @@ H86EB91F51633: "Modèle d'exceptions Windows"
 H08E7C52DD63F: 'Avec -globals, ne déverser que les variables globales dont le nom correspond à la valeur fournie'
 # 'With PGO, include profile count in optimization remarks'
 HA68492B41822: "Avec PGO, inclure le compteur de profil dans les remarques d'optimisation"
+# 'Work around Cortex-A53 erratum 835769 (AArch64 only)'
+HE42DD4529739: 'Contourner le défaut 835769 du Cortex-A53 (AArch64 uniquement)'
+# 'Work around Cortex-A53 erratum 843419 (AArch64 only)'
+HAF02536F6C92: 'Contourner le défaut 843419 du Cortex-A53 (AArch64 uniquement)'
 # 'Work around Cortex-A57 Erratum 1742098 (ARM only)'
 H2CF5C8E79954: "Contourner l'erratum Cortex-A57 1742098 (ARM uniquement)"
 # 'Work around Cortex-A72 Erratum 1655431 (ARM only)'
@@ -17322,8 +17436,6 @@ HB9954D8E1844: "Contourner l'erratum Cortex-A72 1655431 (ARM uniquement)"
 H6484FD8B0341: "Contourner l'erratum VLLDM CVE-2021-35465 (ARM uniquement)"
 # 'Work with `--skip-symbolization` or `--unsymbolized-profile` to write/read the offset instead of virtual address.'
 H1CA65028F454: "Utiliser avec `--skip-symbolization` ou `--unsymbolized-profile` pour écrire/lire le décalage à la place de l'adresse virtuelle."
-# 'Workaround Cortex-A53 erratum 835769 (AArch64 only)'
-H479486F0F64D: "Contournement de l'erratum Cortex-A53 835769 (AArch64 uniquement)"
 # "Wouldn't use segmented stack"
 HF45022A557BC: "N'utiliserait pas de pile segmentée"
 # 'Write Bitcode'
@@ -18048,10 +18160,10 @@ H5DB23C0A38DF: "l'argument %0 n'est pas un type de classe non qualifié"
 H4812A4DC04E0: "l'argument %0 doit être un entier constant 1 ou -1"
 # 'argument %0 of type %1 with mismatched bound'
 HDE368B7DDAF1: "l'argument %0 de type %1 avec une limite non correspondante"
+# 'argument %0 to %1 attribute is not a typedef for a specialization of %2'
+H4BA7B09F82CC: "L'argument %0 de l'attribut %1 n'est pas un typedef pour une spécialisation de %2"
 # 'argument %0 to %1 must be a 2-bit unsigned literal (i.e. 0, 1, 2 or 3)'
 HD2DEDD810BB8: "l'argument %0 à %1 doit être une littérale non signée sur 2 bits (c'est-à-dire 0, 1, 2 ou 3)"
-# "argument %0 to 'preferred_name' attribute is not a typedef for a specialization of %1"
-H873B3444BA19: "l'argument %0 à l'attribut 'preferred_name' n'est pas un typedef pour une spécialisation de %1"
 # 'argument %0 value should represent a contiguous bit field'
 H004B84FF9E91: "La valeur de l'argument %0 doit représenter un champ de bits contigu"
 # "argument '%0' is deprecated%select{|, use '%2' instead}1"
@@ -18468,8 +18580,8 @@ HA75BA84DF85B: "car %select{la classe de base de |le champ de |}0le type %1 a un
 HC07ABEF26326: "car %select{la classe de base de |le champ de |}0le type %1 n'a pas de constructeur par défaut"
 # 'because field %0 has an initializer'
 H7DB53EF856A5: 'car le champ %0 a une initialisation'
-# 'because it %select{is a reference type|is const|is volatile|has an ARC lifetime qualifier|is a variably-modified type|has a virtual base %1|not %select{a|an array of objects of}1 scalar or class type|has a non-trivially-relocatable base %1|has a non-trivially-relocatable member %1 of type %2|has a non-replaceable base %1|has a non-replaceable member %1 of type %2|has a non-trivially-copyable base %1|has a non-trivially-copyable member %1 of type %2|has a %select{deleted|user-provided}1 destructor|has a user provided %select{copy|move}1 constructor|has a deleted %select{copy|move}1 constructor|has a user provided %select{copy|move}1 assignment operator|has a deleted %select{copy|move}1 assignment operator|is a union with a user-declared %select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}1|is a function type|is a cv void type|is an incomplete array type}0'
-HF88804C54D6A: "car il %select{est un type référence|est const|est volatile|possède un qualificateur de durée de vie ARC|est un type modifiable|possède une base virtuelle %1|n'est pas %select{un|un tableau d'objets de}1 type scalaire ou classe|possède une base non trivialement déplaçable %1|possède un membre non trivialement déplaçable %1 de type %2|possède une base non remplaçable %1|possède un membre non remplaçable %1 de type %2|possède une base non trivialement copiable %1|possède un membre non trivialement copiable %1 de type %2|possède un destructeur %select{supprimé|fourni par l'utilisateur}1|possède un constructeur %select{copie|déplacement}1 fourni par l'utilisateur|possède un constructeur %select{copie|déplacement}1 supprimé|possède un opérateur d'affectation %select{copie|déplacement}1 fourni par l'utilisateur|possède un opérateur d'affectation %select{copie|déplacement}1 supprimé|est une union avec un %select{constructeur par défaut|constructeur de copie|constructeur de déplacement|opérateur d'affectation par copie|opérateur d'affectation par déplacement|destructeur}1 déclaré par l'utilisateur|est un type fonction|est un type void cv|est un type tableau incomplet}0"
+# 'because it %select{is a reference type|is const|is volatile|has an ARC lifetime qualifier|is a variably-modified type|has a virtual base %1|is not %select{a|an array of objects of}1 scalar or class type|has a non-trivially-relocatable base %1|has a non-trivially-relocatable member %1 of type %2|has a non-replaceable base %1|has a non-replaceable member %1 of type %2|has a non-trivially-copyable base %1|has a non-trivially-copyable member %1 of type %2|has a non-static data member %1 of type %2|has a virtual function %1|has a base class %1 that is not empty|field %1 is a non-zero-length bit-field|has a non-standard-layout base %1|has mixed access specifiers|field %1 has a different access specifier than field %2|has multiple base classes with data members|has a non-standard-layout member %1 of type %2|has an indirect base %1 with data members|has a %select{deleted|user-provided}1 destructor|has a user provided %select{copy|move}1 constructor|has a deleted %select{copy|move}1 constructor|has a user provided %select{copy|move}1 assignment operator|has a deleted %select{copy|move}1 assignment operator|is a union with a user-declared %select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}1|is a function type|is a cv void type|is an incomplete array type}0'
+H2030E13CC9FD: "car il %select{est un type référence|est const|est volatile|possède un qualificateur de durée de vie ARC|est un type modifié variablement|possède une base virtuelle %1|n'est pas %select{un|un tableau d'objets de}1 type scalaire ou classe|possède une base %1 non-trivialement relocalisable|possède un membre %1 non-trivialement relocalisable de type %2|possède une base %1 non-remplaçable|possède un membre %1 non-remplaçable de type %2|possède une base %1 non-copiable trivialement|possède un membre %1 non-copiable trivialement de type %2|possède un membre %1 de type %2 non statique|possède une fonction virtuelle %1|possède une classe de base %1 non vide|le champ %1 est un champ de bits de longueur non nulle|possède une base %1 non standard|possède des spécificateurs d'accès mixtes|le champ %1 a un spécificateur d'accès différent du champ %2|possède plusieurs classes de base avec des membres de données|possède un membre %1 non standard de type %2|possède une base indirecte %1 avec des membres de données|possède un destructeur %select{supprimé|défini par l'utilisateur}1|possède un constructeur %select{copie|déplacement}1 défini par l'utilisateur|possède un constructeur %select{copie|déplacement}1 supprimé|possède un opérateur d'assignation %select{copie|déplacement}1 défini par l'utilisateur|possède un opérateur d'assignation %select{copie|déplacement}1 supprimé|est une union avec un %select{constructeur par défaut|constructeur de copie|constructeur de déplacement|opérateur d'assignation par copie|opérateur d'assignation par déplacement|destructeur}1 déclaré par l'utilisateur|est un type fonction|est un type void cv|est un type tableau incomplet}0"
 # 'because it has a default argument'
 H4C6DC4DA1E45: 'car il a un argument par défaut'
 # 'because it is a variadic function'
@@ -20748,6 +20860,8 @@ H164583DA86CB: 'la directive ne peut être spécifiée qu’au sein de protocole
 H1C3ABA756D9B: 'la directive doit être à l’échelle du fichier ou de l’espace de noms'
 # "directive name modifier '%0' is not allowed for '#pragma omp %1'"
 H92E146113514: "le modificateur de nom de directive '%0' n'est pas autorisé pour '#pragma omp %1'"
+# "directive spelling '%0' is introduced in a later OpenMP version"
+HEE7866CE4A48: "l'orthographe de la directive '%0' est introduite dans une version ultérieure d'OpenMP"
 # 'directory to dump objects to'
 HD09DDF1651F9: 'répertoire où déposer les objets'
 # 'disable '
@@ -20832,6 +20946,8 @@ H138D0C477A7F: 'les fonctions membres inline dllexport/dllimport des classes dll
 H1B629BAD5F55: 'dllimport ne peut pas être appliqué à une définition de fonction non inline'
 # 'do not apply'
 HB502CD3A2C1B: 'ne pas appliquer'
+# 'do not define rtti static objects for types belonging to other compilation units'
+HC30411B67BBA: "ne définissez pas d'objets statiques RTTI pour des types appartenant à d'autres unités de compilation"
 # 'do not diff functions whose contents have not been changed from one binary to another'
 H30A32C42CDF9: "ne pas comparer les fonctions dont le contenu n'a pas été modifié entre deux binaires"
 # 'do not display graphs.'
@@ -21136,6 +21252,8 @@ H3201C4D45BA3: 'activer les passes de l’attributeur sur les SCC du graphe d’
 HF8CFF517B8BE: 'activer la fusion des branches dupliquées pour PPC'
 # 'enable const and copy propagation after tail duplication'
 H9919F0504195: 'activer la propagation de const et de copie après duplication en queue'
+# 'enable do concurrent offload'
+H46D39C98F0F7: 'activer le déchargement simultané'
 # 'enable elimination of sign-extensions'
 HF1685FA60FF7: "activer l'élimination des extensions de signe"
 # 'enable elimination of zero-extensions'
@@ -21350,8 +21468,6 @@ H0F6B0905AE5F: 'Attendu %0 à la fin du module'
 HC79E103ACDFE: 'Attendu %0 dans la clause OpenMP «%1»'
 # 'expected %0 or %1'
 HC08F459555DA: 'Attendu %0 ou %1'
-# 'expected %0 to denote end of parameters, or, another valid parameter of %1'
-H05DB43940E29: 'attendu %0 pour désigner la fin des paramètres, ou un autre paramètre valide de %1'
 # 'expected %0; %1 is a keyword in Objective-C++'
 H62A445966708: 'Attendu %0 ; %1 est un mot-clé en Objective-C++'
 # 'expected %1 after %0'
@@ -22060,6 +22176,8 @@ H14746831D212: "Échec de l'expansion du fichier de réponse : %0"
 H265A065BBB4D: "Échec de la recherche du fichier du module pour le module '%0'"
 # "failed to hash content for '%0' because memory buffer cannot be retrieved"
 H13A2DD939D67: "Échec du calcul du hachage du contenu pour '%0' car le tampon mémoire ne peut pas être récupéré"
+# 'failed to open hotpatch functions file (-fms-hotpatch-functions-file): %0 : %1'
+H65A132C06842: "échec de l'ouverture du fichier des fonctions hotpatch (-fms-hotpatch-functions-file) : %0 : %1"
 # "failed to process suppression mapping file '%0': %1"
 H61E7856A5801: "Échec du traitement du fichier de mappage de suppression '%0' : %1"
 # "failing because %select{environment variable 'FORCE_CLANG_DIAGNOSTICS_CRASH' is set|'-gen-reproducer' is used}0"
@@ -22216,6 +22334,8 @@ H3AA2DBB89701: 'le premier initialiseur non désigné se trouve ici'
 HF134017C1A48: 'les deux premiers arguments de __builtin_convertvector doivent avoir le même nombre d’éléments'
 # "first%select{||| and second}0 argument%select{|||s}0 to '__builtin_trivially_relocate' must be %select{a pointer|non-const|relocatable|of the same type}0"
 H922BBD5C29FD: "Le premier%select{||| et le deuxième}0 argument%select{|||s}0 de '__builtin_trivially_relocate' doit être %select{un pointeur|non-const|relogeable|du même type}0"
+# 'fixed width SVE vector type %0 cannot be used in a %select{streaming|streaming-compatible}1 function'
+HF5F8AB3EDA90: 'le type vectoriel SVE de largeur fixe %0 ne peut pas être utilisé dans une fonction %select{streaming|compatible avec le streaming}1'
 # "flag '%0' is ignored when flag '%1' is present"
 H83C2C7BB9944: "le drapeau '%0' est ignoré quand le drapeau '%1' est présent"
 # "flag '%0' results in undefined behavior with '%1' conversion specifier"
@@ -22888,6 +23008,8 @@ HD074A7D9BA2D: "importation du module '%0'%select{| dans '%3'}2 à partir de '%1
 H25C0CF982742: 'les importations doivent immédiatement suivre la déclaration du module'
 # 'impossible constraint in asm: cannot store value into a register'
 HEC9C616BA3F9: 'contrainte impossible dans l’asm : ne peut stocker une valeur dans un registre'
+# 'impute missing fall-throughs for branch-only traces'
+H70510CF84F4B: 'compléter les fall-throughs manquants pour les traces ne comportant que des branches'
 # 'in %select{implicit|defaulted}0 %select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}1 for %2 first required here'
 H7F88B1ED021A: 'dans %select{implicite|par défaut}0 %select{constructeur par défaut|constructeur de copie|constructeur de déplacement|opérateur d’affectation par copie|opérateur d’affectation de déplacement|destructeur}1 pour %2 premièrement requis ici'
 # "in call to '%0'"
@@ -23134,8 +23256,8 @@ HA49BF476668F: 'les méthodes init doivent retourner un type pointeur d’objet,
 H55BD0EE327C7: "la clause d'initialisation de la boucle OpenMP for n'est pas sous forme canonique ('var = init' ou 'T var = init')"
 # 'initialization is not supported for __shared__ variables'
 H36A01643C5A6: 'l’initialisation n’est pas prise en charge pour les variables __shared__'
-# 'initialization of %0 may run twice when built into a shared library: it has hidden visibility and external linkage'
-H8FC0CAE3AC23: "l'initialisation de %0 peut s'exécuter deux fois lors de la construction en bibliothèque partagée : elle a une visibilité cachée et un lien externe"
+# 'initialization of %0 may run twice when built into a shared library: it has external linkage and %select{hidden visibility|no import/export annotation}1'
+HFF48A02B21D8: "l'initialisation de %0 pourrait s'exécuter deux fois lorsqu'intégrée à une bibliothèque partagée : elle a une liaison externe et %select{une visibilité masquée|aucune annotation d'importation/exportation}1"
 # "initialization of %select{|signed }0char array with UTF-8 string literal is not permitted by %select{'-fchar8_t'|C++20}1"
 H2A8B3176C3CF: "l'initialisation d'un tableau %select{|signed }0char avec une littérale de chaîne UTF-8 n'est pas autorisée par %select{'-fchar8_t'|C++20}1"
 # 'initialization of an array %diff{of type $ from a compound literal of type $|from a compound literal}0,1 is a GNU extension'
@@ -23454,6 +23576,8 @@ H796D4C8F35F6: 'type d’énumération différent %select{arithmétique entre|op
 H898CA374F6B7: 'opération %select{branchement|retour|lancer}0 %select{hors de|dans}1 un constructeur Compute/Combined OpenACC non valide'
 # 'invalid %select{constructor|destructor}0 declaration'
 HDEF8993ADCB9: 'déclaration %select{constructeur|destructeur}0 non valide'
+# 'invalid %select{parameter|value}0 of %1'
+H3C7631E4E84E: 'invalide %select{paramètre|valeur}0 de %1'
 # "invalid 'this' expression on 'map' clause"
 H008D791665EC: "expression 'this' non valide dans la clause 'map'"
 # "invalid -Xopenmp-target argument: '%0', options requiring arguments are unsupported"
@@ -23624,6 +23748,8 @@ H5BFFCF48D855: 'Nom de fichier invalide pour la directive #line'
 H6AF3C8643D27: 'nom de fichier invalide pour la directive de marqueur de ligne'
 # 'invalid flag line marker directive'
 H5CC65A10A5E0: 'directive de marqueur de ligne avec un drapeau invalide'
+# 'invalid flags for version 1.%0'
+H9678CE3AD11D: 'drapeaux invalides pour la version 1.%0'
 # "invalid float ABI '%0'"
 H606FAE3A11E2: "ABI de flottant invalide '%0'"
 # "invalid iOS deployment version '%0', iOS 10 is the maximum deployment target for 32-bit targets"
@@ -25036,6 +25162,8 @@ H8F7A1C6703AA: "Aucune autre clause 'if' n'est autorisée"
 H3089388E4475: "Pas plus d'une option '--config' est autorisée"
 # 'no multilib found matching flags: %0'
 HCDE4340CFBD3: "Aucune multilib correspondant aux drapeaux %0 n'a été trouvée"
+# 'no multilib structure encoded for Arm, Aarch64 and PPC targets'
+H06F6ACF4778D: 'aucune structure multilib encodée pour les cibles Arm, Aarch64 et PPC'
 # 'no namespace named %0 in %1; did you mean %select{|simply }2%3?'
 HF6FEAE5E55D9: 'Aucun espace de noms nommé %0 dans %1 ; vouliez-vous dire %select{|simplement }2%3 ?'
 # 'no namespace named %0; did you mean %1?'
@@ -25626,6 +25754,8 @@ H5560C4070D86: 'Afficher le dump de MLIR après le nivellement LLVM'
 HF36747707003: 'Débordement lors de la conversion de la valeur de case vers le type de condition switch (%0 vers %1)'
 # 'overflow in expression; result is %0 with type %1'
 H5FE3FC44898D: "Débordement dans l'expression ; le résultat est %0 avec le type %1"
+# 'overlapping resource range here'
+HE80CFB0554C5: 'plage de ressources chevauchante ici'
 # "overload resolution selected deleted operator '%0'%select{|: %2}1"
 HB844E51E83EA: "Résolution de surcharge a sélectionné l'opérateur supprimé '%0'%select{| : %2}1"
 # 'overloaded %0 cannot be a static member function'
@@ -25934,6 +26064,8 @@ H7E34AEC856E5: 'Le marqueur de position est déclaré ici'
 H4C0235C28642: 'Les variables marqueurs de position sont une extension C++2c'
 # 'placeholder variables are incompatible with C++ standards before C++2c'
 H6BE10CEEDF1B: 'Les variables marqueurs de position ne sont pas compatibles avec les standards C++ antérieurs à C++2c'
+# 'placement new expression with a const-qualified argument of type %0 is not allowed'
+H3CC55454B35E: 'expression "placement new" avec un argument de type %0 qualifié "const" non autorisée'
 # 'placement new would change type of storage from %0 to %1'
 H83FB1C107237: "L'utilisation de placement new modifierait le type de stockage de %0 à %1"
 # "plain '_Complex' requires a type specifier; assuming '_Complex double'"
@@ -25966,8 +26098,6 @@ H08EA28E0562A: "le type de pointeur vers fonction membre %0 ne peut être appel�
 HC15C6EF198BF: "types de pointeur/entier incompatibles dans l'expression conditionnelle%diff{ ($ et $)|}0,1"
 # 'poison on failure'
 HE44AF8732393: "marquer comme poison en cas d'échec"
-# 'poison undef temps'
-H7A7B675BE411: 'marquer les variables non initialisées (undef) comme poison'
 # 'poison uninitialized stack variables'
 H47518342CB8C: 'marquer les variables de pile non initialisées comme poison'
 # 'poison uninitialized stack variables with a call'
@@ -26854,6 +26984,8 @@ H98614BF4F5B5: "le localisateur réservé 'omp_all_memory' nécessite un type de
 H0D8FB57C5D95: 'résoudre toutes les externes non résolues autrement à null'
 # 'resource has implicit register binding'
 H2038E0629D14: 'la ressource possède une liaison de registre implicite'
+# 'resource ranges %select{t|u|b|s}0[%1;%select{%3]|unbounded)}2 and %select{t|u|b|s}4[%5;%select{%7]|unbounded)}6 overlap within space = %8 and visibility = %select{All|Vertex|Hull|Domain|Geometry|Pixel|Amplification|Mesh}9'
+HC3022BE39794: "les plages de ressources %select{t|u|b|s}0[%1;%select{%3]|non bornée)}2 et %select{t|u|b|s}4[%5;%select{%7]|non bornée)}6 se chevauchent dans l'espace = %8 et la visibilité = %select{Toutes|Vertex|Enveloppe|Domaine|Géométrie|Pixel|Amplification|Maillage}9"
 # 'respect alignment requirements provided by input IR'
 H3C9B5ECCDE76: "respecter les exigences d'alignement fournies par le IR d'entrée"
 # 'restrict requires a pointer or reference'
@@ -27396,6 +27528,8 @@ HA27BA101BC94: 'les littéraux de chaîne dépassant cette longueur utiliseront 
 H7121B365791A: 'chaîne pour définir les valeurs par défaut du type'
 # "strip 'repz' prefix from 'repz retq' sequence (on by default)"
 H5E0A0D55638D: 'supprimer le préfixe "repz" de la séquence "repz retq" (activé par défaut)'
+# "structure '%0' is too large, which exceeds maximum allowed size of %1 bytes"
+H80E70414C57E: "la structure '%0' est trop grande, sa taille dépasse la taille maximale autorisée de %1 octets"
 # 'structured binding declaration in a condition is a C++2c extension'
 H7AF1E5D1A2D0: 'une déclaration de liaison structurée dans une condition est une extension C++2c'
 # 'structured binding declaration in a condition is incompatible with C++ standards before C++2c'
@@ -27740,6 +27874,8 @@ HDF7A50F1E9D4: "Le sélecteur de contexte '%0' n'est pas valide pour l'ensemble 
 H089B386C28E8: "Le type de promesse de coroutine %0 déclare à la fois 'return_value' et 'return_void'"
 # 'the current #pragma pack alignment value is modified in the included file'
 H1259B6694648: "La valeur d'alignement actuelle de #pragma pack est modifiée dans le fichier inclus"
+# "the delimited form of '#pragma omp declare target' without clauses is deprecated; use '#pragma omp begin declare target' instead"
+H3E6F48DB3D38: "la forme délimitée de '#pragma omp declare target' sans clauses est obsolète ; utilisez '#pragma omp begin declare target' à la place"
 # 'the event_t type can only be used with __private address space qualifier'
 HF7753CC750DA: "Le type event_t ne peut être utilisé qu'avec le qualificateur d'espace d'adresse __private"
 # 'the experimental clang interpreter failed to evaluate an expression'
@@ -27982,6 +28118,8 @@ HDA13A5D2D868: 'pour correspondre à ce %0'
 HEF9A1EC0D665: "pour correspondre à ce ']'"
 # "to match this '{'"
 H013B6E508561: "pour correspondre à ce '{'"
+# 'todo: remove this warning after we have atleast one warning based on the lifetime analysis'
+H9B430729E740: "à faire : supprimer cet avertissement après avoir au moins un avertissement basé sur l'analyse de durée de vie"
 # 'token is not a valid binary operator in a preprocessor subexpression'
 H93EB0C533EDF: "le jeton n'est pas un opérateur binaire valide dans une sous-expression du préprocesseur"
 # "token pasting of ',' and __VA_ARGS__ is a GNU extension"
@@ -28842,8 +28980,6 @@ HEDE074D6F05D: "l'utilisation de 'long long' avec '__vector' nécessite l'activa
 H194F4A31DAD4: "l'utilisation de 'long' avec '__vector' est déconseillée"
 # "use of 'operator->' on type %0 would invoke a sequence of more than %1 'operator->' calls"
 HE55B12BF8DE6: "l'utilisation de 'operator->' sur le type %0 déclencherait une séquence de plus de %1 appels à 'operator->'"
-# "use of 'static_assert' without inclusion of <assert.h> is a Microsoft extension"
-HFC681B3993FC: "l'utilisation de 'static_assert' sans inclure <assert.h> est une extension Microsoft"
 # "use of 'template' keyword outside of a template is incompatible with C++98"
 HADE615C257C6: "l'utilisation du mot-clé 'template' en dehors d'un modèle n'est pas compatible avec C++98"
 # 'use of @defs is not supported on this architecture and platform'
@@ -29114,6 +29250,8 @@ H0FCCEC09B538: 'La valeur %1 ne peut pas être représentée dans le type %0'
 H2964C78586A1: "La valeur '%0' est hors de la plage de la contrainte '%1'"
 # 'value is not an integer: %0'
 HDF6724275715: "La valeur n'est pas un entier : %0"
+# 'value must be in the range [%0, %1]'
+H3AC8BA891479: "la valeur doit être dans l'intervalle [%0, %1]"
 # 'value of #pragma pack(show) == %0'
 H78F0B6172824: '#pragma pack(show) vaut %0'
 # 'value of the aligned pointer (%0) is not a multiple of the asserted %1 %plural{1:byte|:bytes}1'
@@ -29252,6 +29390,8 @@ HC36BFC632A54: 'Les modèles de variable ne sont pas compatibles avec les standa
 H9908D11CFEF9: "Une variable avec l'attribut 'loader_uninitialized' ne peut pas avoir d'initialiseur"
 # "variable with 'loader_uninitialized' attribute must have a trivial default constructor"
 H30559420B01D: "Une variable avec l'attribut 'loader_uninitialized' doit avoir un constructeur par défaut trivial"
+# "variable with 'vk::constant_id' attribute must be a const int/float/enum/bool and be initialized with a literal"
+HF5292B9CD7D5: "la variable avec l'attribut 'vk::constant_id' doit être un int/float/enum/bool const et être initialisée avec un littéral"
 # 'variable with local storage in initial value of threadprivate variable'
 H06BE1F004442: "Une variable avec un stockage local dans la valeur initiale d'une variable threadprivate"
 # 'variable%select{s| %1|s %1 and %2|s %1, %2, and %3|s %1, %2, %3, and %4}0 used in loop condition not modified in loop body'

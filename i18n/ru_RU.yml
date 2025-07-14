@@ -300,6 +300,8 @@ H4FBE5E81E84C: '%0 типы параметров атрибута не совп�
 HBB1E6D667EEA: '%0 параметры атрибута не соответствуют параметрам в предыдущем объявлении'
 # '%0 attribute references function %1, which %plural{0:takes no arguments|1:takes one argument|:takes exactly %2 arguments}2'
 HC6916839EF90: '%0 attribute references function %1, which %plural{0:не принимает аргументов|1:принимает один аргумент|:принимает ровно %2 аргументов}2'
+# '%0 attribute references function of type %1 which expects %2 %plural{1:argument|:arguments}2 but attribute specifies %3 parameter index %plural{1:argument|:arguments}3'
+HD8F1ACE7E4A2: '%0 атрибут ссылается на функцию типа %1, которая ожидает %2 %plural{аргумент|аргументов}2, но атрибут указывает индекс параметра %3 %plural{аргумент|аргументов}3'
 # '%0 attribute references parameter %1, but the function %2 has only %3 parameters'
 H95C6EBBF3D05: '%0 attribute references parameter %1, but the function %2 has only %3 parameters'
 # '%0 attribute requires %select{int or bool|an integer constant|a string|an identifier}1'
@@ -508,8 +510,8 @@ HE1EB0B2A5FDF: '%0 является неполным'
 HFEFEB7B90D08: "%0 отсутствует спецификация исключений '%1'"
 # '%0 is no longer a pack expansion but a pack indexing type; add a name to specify a pack expansion'
 H52ECBB1B9A17: '%0 больше не является расширением пакета, а является типом индексирования пакета; добавьте имя для указания расширения пакета'
-# '%0 is not %select{trivially relocatable|replaceable|trivially copyable|constructible with provided types}1'
-H286C96520443: '%0 не %select{тривиально переносимый|заменяемый|тривиально копируемый|конструируемый с указанными типами}1'
+# '%0 is not %select{trivially relocatable|replaceable|trivially copyable|empty|standard-layout}1'
+HB8555713DE55: '%0 не является %select{тривиально перемещаемым|заменяемым|тривиально копируемым|пустым|стандартной компоновки}1'
 # '%0 is not a class type'
 H5598919CD04A: '%0 не является классовым типом'
 # '%0 is not a class%select{ or namespace|, namespace, or enumeration}1'
@@ -602,8 +604,8 @@ H2BF1BAAD2D9C: "%0, управляемый '%1', равен '%3' вместо о
 H4E355023D40F: "%0 отмечена как 'override', но не переопределяет никаких член-функций"
 # '%0 may be deprecated because the receiver type is unknown'
 H33FCAE6FB142: '%0 может быть устаревшим, поскольку тип получателя неизвестен'
-# '%0 may be duplicated when built into a shared library: it is mutable, has hidden visibility, and external linkage'
-H5AAA1A09F587: '%0 может быть дублирован при сборке в shared library: это изменяемый, имеет скрытую видимость и внешнюю связь'
+# '%0 may be duplicated when built into a shared library: it is mutable, with external linkage and %select{hidden visibility|no import/export annotation}1'
+HB6423D2516E9: '%0 может быть продублирован при сборке в разделяемую библиотеку: он изменяемый, с внешним связыванием и %select{скрытой видимостью|без аннотации импорта/экспорта}1'
 # '%0 may be unavailable because the receiver type is unknown'
 H5F639AF749BC: '%0 может быть недоступен, так как тип получателя неизвестен'
 # '%0 may not be nested in a struct due to flexible array member'
@@ -858,6 +860,8 @@ HD4A3AC42422A: "%select{'#pragma clang fp eval_method'|option 'ffp-eval-method'}
 H11DB7A31A7DA: "%select{'auto'|'decltype(auto)'|'__auto_type'|template arguments}0 выведен как %1 в объявлении %2 и выведен как %3 в объявлении %4"
 # "%select{'auto'|'decltype(auto)'|'__auto_type'|use of %select{class template|function template|variable template|alias template|template template parameter|concept|template}2 %3 requires template arguments; argument deduction}0 not allowed %select{in function prototype|in non-static struct member|in struct member|in non-static union member|in union member|in non-static class member|in interface member|in exception declaration|in template parameter until C++17|in block literal|in template argument|in typedef|in type alias|in function return type|in conversion function type|here|in lambda parameter|in type allocated by 'new'|in K&R-style function parameter|in template parameter|in friend declaration|in function prototype that is not a function declaration|in requires expression parameter|in array declaration|in declaration of conversion function template|in lambda parameter before C++14}1"
 H7226E87E7B56: "%select{'auto'|'decltype(auto)'|'__auto_type'|использование %select{класс шаблона|функции шаблона|шаблонной переменной|алиаса шаблона|шаблона параметра шаблона|концепта|шаблона}2 %3 требует аргументов шаблона; вывод аргументов}0 недопустим %select{в прототипе функции|в непостоянном члене структуры|в члене структуры|в непостоянном члене объединения|в члене объединения|в непостоянном члене класса|в члене интерфейса|в декларации исключения|в параметре шаблона до C++17|в литеральной конструкции|в аргументе шаблона|в typedef|в синониме типа|в возвращаемом типе функции|в типе конверсионной функции|здесь|в параметре лямбды|в типе, выделяемом 'new'|в параметре функции K&R-стиля|в параметре шаблона|в декларации друга|в прототипе функции, который не является декларацией функции|в параметре выражения requires|в декларации массива|в декларации конверсионной функции-шаблона|в параметре лямбды до C++14}1"
+# "%select{'const' and 'volatile' qualifiers|'const' qualifier|'volatile' qualifier}0 in enumeration underlying type ignored"
+H712F09927E6F: "%select{'const' и 'volatile' квалификаторы|'const' квалификатор|'volatile' квалификатор}0 в базовом типе перечисления игнорируются"
 # "%select{'mutable'|'static'|'constexpr'|'consteval'}0 cannot appear multiple times in a lambda declarator"
 HA9F29290F39F: "%select{'mutable'|'static'|'constexpr'|'consteval'}0 не может появляться несколько раз в деклараторе лямбды"
 # "%select{'size' argument to memset is '0'|setting buffer to a 'sizeof' expression}0; did you mean to transpose the last two arguments?"
@@ -1348,6 +1352,8 @@ H08EBC2661AFA: '%select{чтение объекта|чтение объекта|
 H2547ED9973E0: "%select{чтение|чтение|присваивание к|инкремент объекта|декремент объекта|вызов члена объекта|dynamic_cast объекта|typeid применённый к|конструирование объекта|уничтожение объекта|чтение}0 объекта '%1', значение которого неизвестно"
 # '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 temporary is not allowed in a constant expression outside the expression that created the temporary'
 H1A04D5C0C6D4: '%select{чтение временного объекта|чтение временного объекта|присвоение временному объекту|инкремент временного объекта|декремент временного объекта|вызов метода временного объекта|dynamic_cast временного объекта|применение typeid к временному объекту|конструирование временного объекта|деструкция временного объекта|чтение временного объекта}0 недопустимо в постоянном выражении за пределами выражения, которое его создало'
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 variable %1 whose value is not known'
+H9168EB67A6E1: '%select{чтение|чтение|присваивание|инкремент|декремент|вызов члена|dynamic_cast|typeid примененный к|конструирование|деструкция|чтение}0 переменной %1, значение которой неизвестно'
 # '%select{reading|writing}1 the value pointed to by %0 requires holding %select{any mutex|any mutex exclusively}1'
 H20B2C79559EA: '%select{чтение|запись}1 значения, на которое указывает %0, требует захвата %select{любого мьютекса|любого мьютекса эксклюзивно}1'
 # '%select{reading|writing}1 variable %0 requires holding %select{any mutex|any mutex exclusively}1'
@@ -1982,6 +1988,8 @@ HC050BA19FE21: "'[[%select{nodiscard|gnu::warn_unused_result}0]]' атрибут
 HA6D310EC7345: "'[[carries_dependency]]' атрибут разрешён только для параметра в объявлении функции или лямбда-выражении"
 # "'[]' after delete interpreted as 'delete[]'; add parentheses to treat this as a lambda-expression"
 H9FAF75D55EEF: "Символы '[]' после оператора delete интерпретируются как 'delete[]'; добавьте скобки, чтобы рассматривать это как lambda-expression"
+# "'_Atomic' qualifier ignored; operations involving the enumeration type will be non-atomic"
+H83D24975584A: "Квалификатор '_Atomic' игнорируется; операции с типом перечисления будут некатомарными"
 # "'_BitInt' %select{vector|matrix}0 element width must be a power of 2"
 HE9CD7B30FBE6: "'_BitInt' ширина элемента %select{вектора|матрицы}0 должна быть степенью двойки"
 # "'_BitInt' in %select{C17 and earlier|C++}0 is a Clang extension"
@@ -2114,8 +2122,6 @@ H5112D2E8FE1B: "'callback' атрибут аргумент %0 не являет�
 H11C2E7DC48A0: "'callback' атрибут callee не имеет функциональный тип"
 # "'callback' attribute callee may not be variadic"
 H5339D3799089: "Атрибут 'callback' callee не может быть вариативным"
-# "'callback' attribute references function of type %0 which expects %1 %plural{1:argument|:arguments}1 but attribute specifies %2 parameter index %plural{1:argument|:arguments}2"
-HE68D93E84E5E: "'callback' атрибут ссылается на функцию типа %0, которая ожидает %1 %plural{1:аргумент|:аргументов}1 но атрибут указывает %2 параметров %plural{1:аргумент|:аргументов}2"
 # "'callback' attribute specifies invalid callback callee"
 HAE51B1A6C397: "'callback' атрибут указывает недопустимый callee"
 # "'callback' attribute specifies no callback callee"
@@ -2276,8 +2282,10 @@ HD3EE247E6A72: "'main' не может быть объявлен вариати�
 HB0C6AFB93EDB: "'main' не может быть удален"
 # "'main' must return 'int'"
 HD54CCE2AF684: "'main' должен возвращать 'int'"
-# '\'main\' should not be \'extern "%select{C|C++}0"\''
-H19102C631788: 'Функция \'main\' не должна быть объявленной как \'extern "%select{C|C++}0"\''
+# "'main' never has module linkage"
+HBE18C564DFDC: "'main' никогда не имеет модульного связывания"
+# '\'main\' should not be \'extern "C"\''
+HE59536BA4AAD: '\'main\' не должна быть \'extern "C"\''
 # "'main' should not be declared static"
 H9A6B59304912: "'main' не должен быть объявлен static"
 # "'malloc' argument %0 must take a pointer type as its first argument"
@@ -2870,6 +2878,8 @@ H2D6A17BDE0D3: 'Параметр отладки для добавления до
 H3723DB39ACD6: 'Файл, содержащий список файлов для обработки, по одному на строку.'
 # 'A file containing list of basic blocks to extract'
 HBF68C649BA33: 'Файл, содержащий список базовых блоков для извлечения'
+# 'A file containing list of mangled function names to mark for Windows Secure Hot-Patching'
+H9CEC6B9E65B1: 'Файл, содержащий список искажённых имён функций для отметки Windows Secure Hot-Patching'
 # 'A file containing list of symbol names to preserve'
 HCBA362E0A436: 'Файл, содержащий список имен символов для сохранения'
 # 'A file containing regexes of symbol names that are not expected to be updated when changing namespaces around them.'
@@ -2902,6 +2912,8 @@ HAEEA6B54FAD5: 'Огромный регион планирования буде�
 H3D02297FABD7: 'Пара ключ=значение. Замените __nvvm_reflect(name) на значение.'
 # 'A lexical block (Function, Class, etc.).'
 HC41EB530ACBA: 'Лексический блок (Function, Class и т.д.).'
+# 'A list of mangled function names to mark for Windows Secure Hot-Patching'
+H48C7A7FA87F8: 'Список искажённых имён функций для отметки Windows Secure Hot-Patching'
 # "A list of mangled vtable type info names. Classes specified by the type info names and their derived ones will not be vtable-ICP'ed. Useful when the profiled types and actual types in the optimized binary could be different due to profiling limitations. Type info names are those string literals used in LLVM type metadata"
 HB3A60F3783C6: "Список имен mangl'ованных vtable-типов информации. Классы, указанные в именах типов информации, и их производные не будут подвергнуты vtable-ICP. Полезно, когда профилируемые типы и фактические типы в оптимизированном бинарнике могут различаться из-за ограничений профилирования. Имена типов информации — это те строковые литералы, которые используются в метаданных типов LLVM"
 # 'A list of symbol names to preserve'
@@ -3036,8 +3048,6 @@ HEE464CD5CFF9: 'AMDGPU-анализ алиасов, основанный на а
 HA70F43663430: 'AMDGPU Обёртка для анализа алиасов, основанная на адресном пространстве'
 # 'AMDGPU Assembly Printer'
 HFD4F4422703F: 'Печать кода AMDGPU на языке ассемблера'
-# 'AMDGPU Attributor'
-HB96C03301054: 'AMDGPU Attributor'
 # 'AMDGPU CFG Structurizer'
 HFAE00DA66175: 'AMDGPU CFG Структуризатор'
 # 'AMDGPU DAG->DAG Pattern Instruction Selection'
@@ -3082,14 +3092,14 @@ H910A7C3E575C: 'Выбор банка регистров AMDGPU'
 H697AE5C583A4: 'AMDGPU Удалить Несовместимые Функции'
 # 'AMDGPU Reserve WWM Registers'
 H9CD9A7466F8D: 'AMDGPU Зарезервировать WWM-регистры'
+# 'AMDGPU Rewrite AGPR-Copy-MFMA'
+H0C0C75698AFE: 'AMDGPU Переписать AGPR-Копировать-MFMA'
 # 'AMDGPU Rewrite Out Arguments'
 H1EE5CA590389: 'AMDGPU Переписывание выходных аргументов'
 # 'AMDGPU Software lowering of LDS'
 H06C3E98E4BA5: 'AMDGPU Программное понижение LDS'
 # 'AMDGPU atomic optimizations'
 HD4C4B30A81C8: 'Атомарные оптимизации AMDGPU'
-# 'AMDGPU promote alloca to vector'
-H76A58E341CF5: 'AMDGPU преобразование alloca в вектор'
 # 'AMDGPU promote alloca to vector or LDS'
 H505D453A0AB0: 'AMDGPU promote alloca to vector or LDS'
 # 'ANALYSIS'
@@ -3298,6 +3308,8 @@ H76AF34D02BE9: 'Добавьте каталог в внутренний сист
 HFB17BE810349: 'Добавить каталоги из переменной окружения <var> в путь поиска включений с подавлением предупреждений'
 # 'Add extra TOC register dependencies'
 HB5EA8815333D: 'Добавить дополнительные зависимости регистра TOC'
+# 'Add include paths for CUDA/HIP and include the default CUDA/HIP wrapper headers (default)'
+H3B5D170DE00F: 'Добавить пути включения для CUDA/HIP и включить заголовочные файлы обёрток по умолчанию (по умолчанию)'
 # 'Add informational comments to the .ll file'
 H1430FC8452EC: 'Добавьте информационные комментарии в файл .ll'
 # 'Add instruction count to a LSR cost model'
@@ -4032,6 +4044,8 @@ H80A446F5E125: 'Параметры атрибутов'
 H6A8CFBBE8142: "Attribute all functions' range with zero count even it's not hit by any samples."
 # 'Auto-generates preprocessed source files and a reproduction script'
 H2B36EB61E3F1: 'Автоматически генерирует предварительно обработанные исходные файлы и сценарий воспроизведения'
+# 'Automatic detection (default)'
+HC8E2AAB5B8ED: 'Автоматическое определение (по умолчанию)'
 # 'Automatically put hot code on 2MB page(s) (hugify) at runtime. No manual call to hugify is needed in the binary (which is what --hot-text relies on).'
 H0155A65DE424: 'Автоматически размещает горячий код на страницах размером 2MB (hugify) во время выполнения. Ручной вызов hugify в бинарном файле не требуется (то, на чем основан флаг --hot-text).'
 # 'Auxiliary target triple.'
@@ -4124,6 +4138,8 @@ HAA9EC9D57F33: 'Базовый аллоцировщик регистров'
 HDDB9289EB602: 'Быть более консервативным в оптимизации ARM load/store'
 # 'Before everything'
 HD2BEA8D1D530: 'Перед всем'
+# 'Best effort generate unwind v2 (epilog) information for x64 Windows'
+H8DADB3FA7445: 'Генерировать информацию unwind v2 (эпилог) для x64 Windows с максимальным усилием'
 # 'Best scheduler for the target'
 H5C9427319FEA: 'Лучший планировщик для целевой платформы'
 # 'Binary encoding'
@@ -4798,8 +4814,12 @@ H7A8FE1AC1071: 'Управляет тем, как скалярные целоч�
 H2343CB68FB97: 'Управляет, следует ли импортировать структуры как литеральные структуры, то есть анонимные структуры'
 # 'Controls the backend parallelism of -flto=thin (default of 0 means the number of threads will be derived from the number of CPUs detected)'
 H6966D13FD63C: 'Управляет параллелизмом backend для -flto=thin (значение по умолчанию 0 означает, что количество потоков будет определяться на основе количества ЦП, обнаруженных в системе)'
+# 'Controls the calculation methods of complex number multiplication and division.'
+H2B2D13E28F33: 'Управляет методами вычисления умножения и деления комплексных чисел'
 # 'Controls the semantics of floating-point calculations.'
 H71E38C97DF72: 'Управляет семантикой вычислений с плавающей точкой.'
+# 'Controls the various implementations for complex multiplication and division [full|improved|basic]'
+HF43898BA9E15: 'Управляет различными реализациями умножения и деления комплексных чисел [полная|улучшенная|базовая]'
 # 'Controls transformations in div-rem-pairs pass'
 HECF2FCF96025: 'Управляет преобразованиями в пассе div-rem-pairs'
 # 'Controls transformations in partially-inline-libcalls'
@@ -4852,10 +4872,14 @@ HAE6876018E56: 'Инструментация ABI по умолчанию для 
 H3BBD1D4AD52A: 'Преобразовать align атрибуты в предположения во время инлайнинга.'
 # 'Convert all cmovs to branches.'
 HC3FD80CE54EF: 'Преобразовать все cmovs в ветки.'
+# 'Convert available_externally global variables into locals if they are in specificed addrspace, renaming them to avoid link-time clashes.'
+HCB6B5F968D66: 'Преобразовать глобальные переменные available_externally в локальные, если они находятся в указанном addrspace, переименовывая их для избежания конфликтов времени связывания'
 # 'Convert available_externally into locals, renaming them to avoid link-time clashes.'
 H719EAE04A8AC: 'Преобразовать available_externally в локальные, переименовывая их для избежания конфликтов во время линковки.'
 # 'Convert cmovs to branches whenever they have memory operands.'
 HF77C545DF219: 'Преобразовывать cmovs в ветвления, когда они имеют операнды памяти.'
+# 'Convert constant loads to immediate values.'
+H23894E56AFA4: 'Преобразовать константные загрузки в немедленные значения'
 # 'Convert eligible reg+reg instructions to reg+imm'
 HC9D049FFF42E: 'Преобразовать подходящие инструкции reg+reg в reg+imm'
 # 'Convert i1 constants to i32/i64 if they are returned'
@@ -4876,6 +4900,8 @@ H7167152F0FAC: 'Преобразовать сгенерированный про
 H378B86E985E0: 'Стоимость первого использования callee-saved регистра.'
 # 'Cost multiplier to multiply onto inlined call sites where the new call was previously an intra-SCC call (not relevant when the original call was already intra-SCC). This can accumulate over multiple inlinings (e.g. if a call site already had a cost multiplier and one of its inlined calls was also subject to this, the inlined call would have the original multiplier multiplied by intra-scc-cost-multiplier). This is to prevent tons of inlining through a child SCC which can cause terrible compile times'
 H698CAA7A18F5: 'Множитель стоимости для умножения на встроенные точки вызова, где новый вызов ранее был внутрисвязным вызовом (неактуально, если исходный вызов уже был внутрисвязным). Это может накапливаться при множественных встраиваниях (например, если точка вызова уже имела множитель стоимости, и один из её встроенных вызовов также подвергался этому, то встроенный вызов получит исходный множитель, умноженный на intra-scc-cost-multiplier). Это旨在防止通过子SCC进行大量内联，这可能导致糟糕的编译时间'
+# 'Cost of a single inline asm instruction when inlining'
+H68DBEA28BCC0: 'Стоимость одной встроенной asm-инструкции при встраивании'
 # 'Cost of a single instruction when inlining'
 H036B559D08B8: 'Затраты на одну инструкцию при инлайнинге'
 # 'Cost of alloca argument'
@@ -5216,6 +5242,8 @@ H4769C553D95E: 'Директория заголовочных файлов'
 H34B714818DA5: 'Директория для выгрузки зависимостей модуля'
 # "Directory to output dSYM's (if any) to"
 H6E5284514F1A: 'Каталог для выходных dSYM (если есть)'
+# 'Directory to output generated files to'
+HE3CB6F2F2395: 'Каталог для вывода сгенерированных файлов'
 # 'Directory to store cached object files (must be user writable)'
 HF3C59BF42111: 'Каталог для хранения временных объектных файлов (должен быть доступен для записи пользователю)'
 # 'Directory used as a base for relative coverage mapping paths'
@@ -5720,6 +5748,8 @@ H6AAEA4B38739: 'Отключить инлайнер прединструмент
 H74925BF6B59C: 'Отключить дублирование хвоста до выделения регистра'
 # 'Disable precise memory mode (AMDGPU only)'
 H638CDA8718C5: 'Отключить точный режим памяти (только для AMDGPU)'
+# 'Disable precompiled headers, overrides -emit-pch and -include-pch'
+HE3FC2C2DAED2: 'Отключить предкомпилированные заголовки, переопределяет -emit-pch и -include-pch'
 # 'Disable precompiled headers, overrides /Yc and /Yu'
 HA85F69F96408: 'Отключить предкомпилированные заголовки, переопределяет /Yc и /Yu'
 # 'Disable predefined and command line preprocessor macros'
@@ -5894,8 +5924,6 @@ HE0F6634D8D16: 'Отключить этап повышения типов'
 HAE3C6A80BF96: 'Отключить этап планирования снижения высокого давления регистров без кластеризации.'
 # 'Disable unused template argument warnings.'
 H8A2178DF0ED5: 'Отключить предупреждения о неиспользуемых аргументах шаблона.'
-# 'Disable unwind v2 (epilog) information for x64 Windows'
-H2002C343134B: 'Отключить информацию о раскрутке v2 (эпилог) для x64 Windows'
 # 'Disable use of DFA during scheduling'
 HFCEBEB8744EF: 'Отключить использование DFA во время планирования'
 # 'Disable use of LD/ST pairs for SME2 or SVE2p1'
@@ -5922,6 +5950,8 @@ HE4C65ABEFA0D: 'Отключить проверку параметров диа�
 H46E40B609BEA: 'Отключить вектор double записи новых значений'
 # 'Disable verification of LLVM IR'
 H1AB74862104E: 'Отключить верификацию LLVM IR'
+# 'Disable version-independent external API notes support'
+H979BF3BF4565: 'Отключить поддержку независимых от версии внешних заметок API'
 # 'Disable virtual register cycle interference checks'
 H2BA1419A0C46: 'Отключить проверки циклов интерференции виртуальных регистров'
 # 'Disable whole program visibility (overrides enabling options)'
@@ -6134,8 +6164,8 @@ H7E3445F24099: 'Не добавляйте %INCLUDE% в путь поиска в�
 H98822B20FC31: 'Не добавляйте -rpath с архитектурно-специфическим ресурсным каталогом в флаги линкера. При указании --hip-link не добавляйте -rpath с каталогом HIP runtime library directory в флаги линкера'
 # 'Do not add a BTI instruction after a setjmp or other return-twice construct (Arm/AArch64 only)'
 H97946DA95B7B: 'Не добавляйте инструкцию BTI после setjmp или других конструкций, возвращающих дважды (только для Arm/AArch64)'
-# 'Do not add include paths for CUDA/HIP and do not include the default CUDA/HIP wrapper headers'
-HCB5DBE4305C2: 'Не добавляйте пути включения для CUDA/HIP и не включайте стандартные оболочки CUDA/HIP по умолчанию'
+# 'Do not add include paths for CUDA/HIP and include the default CUDA/HIP wrapper headers'
+H84053D245C4F: 'Не добавлять пути включения для CUDA/HIP и не включать стандартные заголовки-обёртки CUDA/HIP'
 # 'Do not add instruction count to lsr cost model'
 HE7651E5EC0B1: 'Не добавляйте количество инструкций в модель стоимости LSR'
 # 'Do not add parameter bounds and do no gist simplify sets accordingly'
@@ -6612,14 +6642,16 @@ H8E78A20B661E: 'Не используйте уникальные имена дл
 HE1A69C7730A8: 'Не проверять входные файлы модулей, если модуль уже успешно проверен или загружен в текущей сессии сборки'
 # "Don't verify that MIR is fully legal between GlobalISel passes"
 H2547A49B1E5F: 'Не проверять, что MIR полностью легален между пассами GlobalISel'
+# "Don't work around Cortex-A53 erratum 835769 (AArch64 only)"
+H734D66A528ED: 'Не учитывать ошибку Cortex-A53 835769 (только для AArch64)'
+# "Don't work around Cortex-A53 erratum 843419 (AArch64 only)"
+H01EF57F41E09: 'Не учитывать ошибку Cortex-A53 843419 (только для AArch64)'
 # "Don't work around Cortex-A57 Erratum 1742098 (ARM only)"
 H3E4B9BDEA672: 'Не обходить ошибку Cortex-A57 Erratum 1742098 (только ARM)'
 # "Don't work around Cortex-A72 Erratum 1655431 (ARM only)"
 HBBA28409C8FE: 'Не обходить ошибку Cortex-A72 1655431 (только ARM)'
 # "Don't work around VLLDM erratum CVE-2021-35465 (ARM only)"
 H2D48982037C5: 'Не обходить ошибку VLLDM CVE-2021-35465 (только для ARM)'
-# "Don't workaround Cortex-A53 erratum 835769 (AArch64 only)"
-H674F1B2934BD: 'Не обходить ошибку Cortex-A53 835769 (только для AArch64)'
 # "Don't write fields with default values"
 HDC62F7F06017: 'Не записывайте поля с значениями по умолчанию'
 # "Dot-separated value representing the Microsoft compiler version number to report in _MSC_VER (0 = don't define it (default))"
@@ -6992,8 +7024,8 @@ H0EBAF7E7ADAA: 'Выдавать критическую ошибку, если �
 HAE97C70DDD39: "Создать объектный файл ('.o')"
 # 'Emit a section containing jump table addresses and sizes'
 H0281F291EFBA: 'Сгенерировать раздел, содержащий адреса таблиц переходов и их размеры'
-# 'Emit a section containing remark diagnostics metadata. By default, this is enabled for the following formats: yaml-strtab, bitstream.'
-H75D67E9CFF88: 'Создать раздел, содержащий метаданные диагностических замечаний. По умолчанию это включено для следующих форматов: yaml-strtab, bitstream.'
+# 'Emit a section containing remark diagnostics metadata. By default, this is enabled for the following formats: bitstream.'
+HF87AD4ADED8E: 'Создать секцию с метаданными диагностических замечаний. По умолчанию включено для следующих форматов: битовый поток.'
 # 'Emit a section containing stack size metadata'
 H698AD84DCB32: 'Генерировать секцию, содержащую метаданные размера стека'
 # 'Emit a warning if less than N% of records in the input profile are matched to the IR.'
@@ -7188,6 +7220,8 @@ H10A93E69F908: 'Включить AddressSanitizer'
 H39CF1AD1DDBB: 'Включить синтаксис инициализаторов векторов AltiVec'
 # 'Enable Apple gcc-compatible #pragma pack handling'
 HF6255EFF4697: 'Включить поддержку обработки #pragma pack, совместимую с Apple gcc'
+# 'Enable Arm SPE mode.'
+H3F7930D1C835: 'Включить режим Arm SPE.'
 # 'Enable BFI update verification for CodeGenPrepare.'
 HDEF1BBE64E03: 'Включить проверку обновления BFI для CodeGenPrepare.'
 # 'Enable C++ builtin type char8_t'
@@ -7236,8 +7270,6 @@ H3B25285FD614: 'Включить оптимизации для вычислен�
 H9640D97F95AD: 'Включить оптимизации вычислений с плавающей точкой, предполагающие отсутствие NaN'
 # 'Enable FP math optimizations that assume the sign of 0 is insignificant'
 HE827F0FDD8E0: 'Включить оптимизации с плавающей запятой, предполагающие, что знак 0 несущественен'
-# 'Enable Fast Math processing'
-H2F61C44B4052: 'Включить режим Fast Math'
 # 'Enable Freestanding (disable builtins / TLI) during LTO'
 H4C62FBB216B5: 'Включить Freestanding (отключить встроенные / TLI) во время LTO'
 # 'Enable GPU Mode managed|unified'
@@ -7278,6 +7310,8 @@ H37F33A534B6A: 'Включить специфичный для Hexagon memcpy д
 H56C08FC94B0D: 'Включить обработку #pragma pack в стиле IBM XL'
 # 'Enable ICMP_EQ to ICMP_S(L|G)T conversion.'
 H50B860EE6750: 'Включить преобразование ICMP_EQ в ICMP_S(L|G)T.'
+# 'Enable IEEE strict mode (equivalent to -ffp-model=strict)'
+H5BE2ABCAB943: 'Включить строгий режим IEEE (эквивалентно -ffp-model=strict)'
 # 'Enable JumpTableToSwitch pass (default = off)'
 H595911A42177: 'Включить пасс JumpTableToSwitch (по умолчанию отключен)'
 # 'Enable KernelAddressSanitizer instrumentation'
@@ -7920,6 +7954,8 @@ H526152B74AA2: 'Включить специальное поведение по�
 H40F60E7DDF05: 'Включить специальную поддержку отладчика для Objective-C индексирования и литералов'
 # 'Enable specialization of functions that take a literal constant as an argument'
 H8CB997684347: 'Включить специализацию функций, принимающих литеральную константу в качестве аргумента'
+# 'Enable specific target library builtin functions'
+HBCC4694DDD21: 'Включить встроенные функции целевой библиотеки'
 # 'Enable specifying registers without the % prefix'
 H4FA626EAB19A: 'Включить возможность указания регистров без префикса %'
 # 'Enable speculative execution side effect suppression (SESES). Includes LVI control flow integrity mitigations'
@@ -8166,8 +8202,6 @@ HB262A3E07E79: 'Включить различение типов для указ
 HADD895A7C263: 'Включить небезопасное сокращение double до float для вызовов математической библиотеки'
 # 'Enable unswitch cost multiplier that prohibits exponential explosion in nontrivial unswitch.'
 H05E336233C05: 'Включить множитель стоимости unswitch, который запрещает экспоненциальный рост при сложных операциях unswitch.'
-# 'Enable unwind v2 (epilog) information for x64 Windows'
-H53CAE0AFFD48: 'Включить информацию раскрутки v2 (эпилога) для x64 Windows'
 # 'Enable use of AA during MI DAG construction'
 H13EA04236348: 'Включить использование AA во время конструирования MI DAG'
 # 'Enable use of AdvSIMD scalar integer instructions'
@@ -8224,6 +8258,8 @@ H21971438C1F9: 'Включить проверку LLVM IR'
 H0C498CC2C452: 'Включить проверку MemorySSA.'
 # 'Enable verification of assumption cache'
 HA1CDE46C471E: 'Включить проверку кэша предположений'
+# 'Enable version-independent external API notes support'
+H6907BE5E1528: 'Включить поддержку независимых от версии внешних заметок API'
 # 'Enable vextract optimization'
 HEA51F4DB759E: 'Включить оптимизацию vextract'
 # 'Enable virtual function elimination'
@@ -8368,6 +8404,8 @@ HA1B7947727A7: 'Точные зависимости без транзитивн�
 H6264B2F9B33C: 'Блок перехвата исключений.'
 # 'Exception try block.'
 H5C51BB50B6C6: 'Блок try исключения.'
+# 'Exclude __builtin_allow_runtime_check for the top hottest code responsible for the given fraction of PGO counters (0.0 [default] = skip none; 1.0 = skip all). Argument format: <value>'
+H29E673B4E7B2: 'Исключить __builtin_allow_runtime_check для наиболее "горячего" кода, ответственного за заданную долю счётчиков PGO (0.0 [по умолчанию] = не пропускать ничего; 1.0 = пропустить всё). Формат аргумента: <значение>'
 # 'Exclude compilands by regular expression'
 HE55B6BA9D8DC: 'Исключить compilands по регулярному выражению'
 # 'Exclude functions matching the filter from the output.'
@@ -8684,6 +8722,8 @@ HCFFD910F1E45: "Для просмотра списка доступных арх
 HF30AFF2F9F8C: 'Для всех параметров, которые перебирают модули, игнорировать модули из системных библиотек'
 # 'For all options that iterate over modules, limit to the specified module'
 H076A99AD2B76: 'Для всех параметров, перебирающих модули, ограничить до указанного модуля'
+# 'For blocks with more predecessors, certain layout optimizationswill be disabled to prevent quadratic compile time.'
+HF97FF7653EEE: 'Для блоков с большим количеством предшественников определённые оптимизации размещения будут отключены для предотвращения квадратичного времени компиляции.'
 # 'For cold function instrumentation, skip instrumenting functions whose entry count is above the given value.'
 HE6D6C775176E: 'Для инструментирования холодных функций пропускать инструментирование функций, у которых количество входов превышает заданное значение.'
 # 'For cold function instrumentation, treat count unknown(e.g. unprofiled) functions as cold.'
@@ -8762,6 +8802,8 @@ HD5FFAD3EC478: 'Принудительное планирование списк
 H5694C07468F1: 'Принудительно заставить генератор кода предполагать, что режим округления может изменяться динамически'
 # 'Force disable the lazy-loading on-demand of metadata when loading bitcode for importing.'
 H2329A45D867C: 'Принудительно отключить ленивую загрузку по запросу метаданных при загрузке биткода для импорта.'
+# 'Force disabling recomputing of function entry count, on successful tail recursion elimination.'
+H9076B008099B: 'Принудительно отключить пересчёт количества входов в функцию при успешном устранении хвостовой рекурсии'
 # 'Force double to be <n> bits'
 H6A3CAE57D5DB: 'Принудительно установить размер double в <n> бит'
 # 'Force each unsigned fixed point type to have an extra bit of padding to align their scales with those of signed fixed point types'
@@ -9044,6 +9086,10 @@ H93A2FEDB326C: 'Генерировать единицы типов DWARF4.'
 H35927234EEF2: 'Генерировать извлечение информации API в качестве побочного эффекта компиляции.'
 # 'Generate IR involving scalable vector types'
 HBFD721B3719E: 'Создать IR, содержащее масштабируемые векторные типы'
+# 'Generate ISD::PTRADD nodes for 64-bit pointer arithmetic in the SelectionDAG ISel'
+HFAF410FD50C4: 'Генерировать узлы ISD::PTRADD для 64-битной арифметики указателей в SelectionDAG ISel'
+# 'Generate ISD::PTRADD nodes for pointer arithmetic in SelectionDAG for FEAT_CPA'
+HB8B12732A8CE: 'Генерировать узлы ISD::PTRADD для арифметики указателей в SelectionDAG для FEAT_CPA'
 # 'Generate Interface Stub Files, emit merged text not binary.'
 H48D6D551365C: 'Генерировать файлы заглушек интерфейса, выдавать объединенный текст вместо двоичного.'
 # 'Generate Interface Stub Files.'
@@ -9056,6 +9102,8 @@ H411052747AED: 'Сгенерировать M NOP-ов до входа в фун�
 H4A7E3BFEB46A: 'Создать M NOP-ов перед началом функции и N-M NOP-ов после начала функции. Если указана секция, использовать её вместо __patchable_function_entries.'
 # 'Generate Metal library'
 H30181B8F806A: 'Создать библиотеку Metal'
+# 'Generate Offload API documentation contents'
+H3EEDBD9BFB3E: 'Создать содержание документации Offload API'
 # 'Generate Offload API header contents'
 H228CB18FCD9A: 'Создать содержимое заголовочного файла API Offload'
 # 'Generate Offload API print header'
@@ -9064,6 +9112,8 @@ HDB1F685BA2FE: 'Сгенерировать заголовок API Offload для
 HE6C5D6F8A8FB: 'Создать определения обёрточных функций API Offload'
 # 'Generate Offload Error Code enum'
 HD6D65DD43A04: 'Сгенерировать перечисление кодов ошибок выгрузки'
+# 'Generate Offload Info enum'
+H6C940F8912A4: 'Создать перечисление Offload Info'
 # 'Generate OpenCL builtin declaration handlers'
 HA18DDE5AEDF3: 'Создать обработчики builtin объявлений OpenCL'
 # 'Generate OpenCL builtin declaration tests'
@@ -9376,6 +9426,8 @@ H62C541A61A79: 'Создавать типы для этого диалекта'
 H337DAB1315D8: 'Создавать уникальную отладочную информацию для каждой инструкции с операндом памяти. Должна быть включена для профиль-ориентированного предзагрузчика кэша, как в сборке бинарного файла, подвергаемого профилированию, так и в сборке бинарного файла, использующего профиль.'
 # 'Generate unoptimized CFGs for all analyses'
 HA85B8A701BAB: 'Генерировать неоптимизированные CFG для всех анализов'
+# 'Generate unwind v2 (epilog) information for x64 Windows'
+H497FF3C89C8C: 'Генерировать информацию развёртки v2 (эпилога) для x64 Windows'
 # 'Generate unwinding tables for all functions'
 HF1490D883AAC: 'Генерировать таблицы unwinding для всех функций'
 # 'Generate verbose assembly output'
@@ -9664,6 +9716,8 @@ H353091CB276E: 'Опции IR2Vec'
 H9ADEB68395C9: 'Файл IRDL для регистрации до обработки входных данных'
 # 'IRTranslator LLVM IR -> MI'
 HA8BDC735DCBC: 'Транслятор IR LLVM IR → MI'
+# 'ISO C does not allow an attribute list to appear here'
+H87C1ACDDFB37: 'ISO C не позволяет размещать здесь список атрибутов'
 # 'ISO C does not allow indirection on operand of type %0'
 HC4C25916B558: 'ISO C не разрешает разыменование над операндом типа %0'
 # "ISO C does not support '~' for complex conjugation of %0"
@@ -10048,6 +10102,8 @@ H9190E8521B57: 'Добавить проверки KCFI для косвенных
 HB3BFBF584BC3: 'Вставить XRay ops'
 # 'Insert a break point on the last enabled count of a chunks list'
 H14F2710F0183: 'Вставить точку останова на последнем активном счетчике списка блоков'
+# 'Insert a s_nop x before every instruction'
+H8F84AC247FBC: 'Вставлять s_nop x перед каждой инструкцией'
 # 'Insert a specific header. This should run with STDIN mode.\nThe result is written to stdout. It is currently used for\neditor integration. Support YAML/JSON format:\n  -insert-header="{\n     FilePath: "/path/to/foo.cc",\n     QuerySymbolInfos: [\n       {RawIdentifier: foo,\n        Range: {Offset: 0, Length: 3}}\n     ],\n     HeaderInfos: [ {Headers: "\\"foo_a.h\\"",\n                     QualifiedName: "a::foo"} ]}"'
 HAF484669F973: 'Укажите конкретный заголовочный файл. Это должно выполняться в режиме STDIN.\nРезультат записывается в stdout. В настоящее время используется для интеграции с редактором. Поддерживается формат YAML/JSON:\n  -insert-header="{\n     FilePath: "/path/to/foo.cc",\n     QuerySymbolInfos: [\n       {RawIdentifier: foo,\n        Range: {Offset: 0, Length: 3}}\n     ],\n     HeaderInfos: [ {Headers: "\\"foo_a.h\\"",\n                     QualifiedName: "a::foo"} ]}"'
 # 'Insert calls to __dfsan_*_callback functions on data events.'
@@ -10486,6 +10542,8 @@ H7F26F6260A72: 'Список файлов с проблемами компиля
 H3054F37FF6EE: 'Список функций для вывода дизассемблирования. Принимаются только деманглированные имена. Работает только с show-disassembly-only'
 # "List of key and value arguments. Required keywords are 'file' and 'triple'."
 H45A6C5D3DB8C: "Список ключей и значений аргументов. Обязательные ключевые слова: 'file' и 'triple'."
+# 'List of mangled symbol names of functions that should be hot-patched for Windows Secure Hot-Patching'
+H069FC15DF4AD: 'Список искажённых имён символов функций, которые должны быть подвергнуты горячему патчу для Windows Secure Hot-Patching'
 # 'List of modes to link in by default into XRay instrumented binaries.'
 HA0397880FB9D: 'Список режимов, включаемых по умолчанию в бинарники, инструментированные XRay.'
 # 'List of profitability heuristics to be used. They are applied in the given order'
@@ -10838,6 +10896,8 @@ H17C76AA34906: 'Отметьте холодные функции с помощь
 H16FE57B8D4DF: 'Отмечайте холодные функции атрибутом optnone.'
 # 'Mark cold functions with optsize.'
 H10A3EEBA4167: 'Маркируйте холодные функции с помощью optsize.'
+# 'Mark functions for Windows hot patch support'
+HA71C0C5DF674: 'Пометить функции для поддержки горячего патча Windows'
 # 'Mark intrinsics that match the specified regexp as taking alias.scopes, noalias, and tbaa metadata'
 H2D0DBCB8116B: 'Отмечать встроенные функции, которые соответствуют указанному регулярному выражению, как принимающие метаданные alias.scopes, noalias и tbaa'
 # 'Mark intrinsics that match the specified regexp as taking an access group metadata'
@@ -11130,6 +11190,8 @@ H35B2504140C1: 'Максимальное количество threads для о�
 H2DC8A9AE4C6B: 'Максимальное количество выполнений полного набора delta-проходов (default=5)'
 # 'Maximum number of undroppable users for instruction sinking'
 H51772496A3DD: 'Максимальное количество недроппабельных пользователей для опускания инструкций'
+# 'Maximum number of unwind codes permitted in each unwind info.'
+H5E5E0E167948: 'Максимальное количество кодов раскрутки, разрешённых в каждом блоке информации раскрутки'
 # 'Maximum number phis to handle in intptr/ptrint folding'
 H8EB042BFB02C: 'Максимальное количество phis для обработки в сворачивании intptr/ptrint'
 # 'Maximum of xors'
@@ -11248,6 +11310,10 @@ H8DBDD3BC94CA: 'Минимизировать штраф при переходе 
 H4957842A8433: 'Минимизировать количество используемых регистров'
 # 'Minimum BranchProbability to consider a region cold.'
 HD5C5EDF501D8: 'Минимальная BranchProbability, чтобы считать регион холодным.'
+# 'Minimum absolute count for promoted target to be inlinable'
+HF5D22FDC7744: 'Минимальное абсолютное значение счётчика для продвигаемой цели, чтобы её можно было встроить'
+# 'Minimum absolute count for promotion candidate'
+H6AD35D07E050: 'Минимальное абсолютное значение счётчика для кандидата на продвижение'
 # 'Minimum block executions to consider its BranchProbabilityInfo valid'
 HC699EC9E0880: 'Минимальное количество выполнений блока для считывания действительной BranchProbabilityInfo'
 # "Minimum block frequency, expressed as a multiple of caller's entry frequency, for a callsite to be hot in the absence of profile information."
@@ -11362,6 +11428,8 @@ HB23F4D978D1F: 'NVPTX DAG->DAG Шаблон Выбор Инструкций'
 H3B9CC422F869: 'NVPTX Передача параметров'
 # 'NVPTX Peephole'
 H5BF795D76A44: 'NVPTX Peephole'
+# 'NVPTX Prologue/Epilogue Insertion'
+HC15F7ADF1BF9: 'Вставка пролога/эпилога NVPTX'
 # 'NVPTX ProxyReg Erasure'
 HDFA70554F191: 'NVPTX ProxyReg Удаление'
 # 'NVPTX Specific: 0 use sqrt.approx, 1 use sqrt.rn.'
@@ -11754,6 +11822,8 @@ H115A29858DAD: 'Только разделять таблицы переходо�
 H159246FC6C6B: 'Только разделяйте таблицы переходов с размером, меньшим или равным JumpTableSizeThreshold.'
 # 'Only supported on AArch64, PowerPC, RISC-V, SPARC, SystemZ, and X86'
 H6BC9222A7886: 'Поддерживается только на AArch64, PowerPC, RISC-V, SPARC, SystemZ и X86'
+# 'Only translate FIR to MLIR, do not lower to LLVM IR'
+H8E667376A04B: 'Только перевести FIR в MLIR, не понижать до LLVM IR'
 # 'Only try to inject loop invariant conditions and unswitch on them to eliminate branches that are not-taken 1/<this option> times or less.'
 H93BBEDA4C81E: 'Только пытаться внедрять условия инварианта цикла и выполнять раскрой циклов (unswitch) на их основе для исключения ветвей, которые не выбираются 1/<this option> раз или меньше.'
 # 'Only use DAG-combiner alias analysis in this function'
@@ -11868,8 +11938,10 @@ H7C8F28679BDB: 'Указанный диапазон подмассива OpenACC
 H64A7517C6764: 'Значение подмассива OpenACC не является массивом или указателем'
 # "OpenACC variable %select{in 'use_device' clause|on 'declare' construct}0 is not a valid variable name or array name"
 H5FFA8811F2EF: "OpenACC переменная %select{в 'use_device' clause|в 'declare' construct}0 не является допустимым именем переменной или массива"
-# 'OpenACC variable in cache directive is not a valid sub-array or array element'
-H0DEC3018E66D: 'Переменная OpenACC в директиве кэша не является допустимым подмассивом или элементом массива'
+# "OpenACC variable in 'cache' directive is not a valid sub-array or array element"
+H73608DEEA57F: "Переменная OpenACC в директиве 'cache' не является допустимой подматрицей или элементом массива"
+# "OpenACC variable in 'cache' directive was not declared outside of the associated 'loop' directive; directive has no effect"
+HCF3CECDE633E: "Переменная OpenACC в директиве 'cache' не была объявлена вне связанной директивы 'loop'; директива не оказывает эффекта"
 # 'OpenACC variable is not a valid variable name, sub-array, array element,%select{| member of a composite variable,}0 or composite variable member'
 HA8B26141C7C6: 'Имя переменной OpenACC не является допустимым именем переменной, подмассивом, элементом массива,%select{| элементом составной переменной,}0 или членом составной переменной'
 # 'OpenCL extension %0 is core feature or supported optional core feature - ignoring'
@@ -11928,8 +12000,8 @@ H66F93F9F54F1: "Целевой объект OpenMP offloading '%0' похож н
 H52C83AA3C087: 'OpenMP разрешает только конструкцию ordered с клозом simd, вложенную в конструкцию simd'
 # 'OpenMP standard version'
 HA403864CFA0F: 'версия стандарта OpenMP'
-# 'OpenMP support in flang is still experimental'
-HA42DEF114A36: 'Поддержка OpenMP в flang по-прежнему экспериментальная'
+# 'OpenMP support for version %0 in flang is still incomplete'
+H8472BB300FE4: 'Поддержка OpenMP для версии %0 в flang пока не завершена'
 # "OpenMP target architecture '%0' pointer size is incompatible with host '%1'"
 HF18160FDA94C: "Архитектура цели OpenMP '%0' имеет размер указателя, несовместимый с хостом '%1'"
 # "OpenMP target is invalid: '%0'"
@@ -12078,6 +12150,8 @@ HCE705FE1F603: 'Orc-специфический линкер'
 H1D5554EC3474: 'Упорядочить локальные символы стека.'
 # 'Other Options'
 H9CB6F2FB01DF: 'Другие параметры'
+# 'Out-of-process Execution Options'
+H723C1D5E6DBF: 'Параметры выполнения вне процесса'
 # 'Outline loop blocks from loop chain if (frequency of loop) / (frequency of block) is greater than this ratio'
 HB57131BBFAC5: 'Выделять блоки цикла из цепочки циклов, если частота цикла / частота блока больше этого коэффициента'
 # 'Output'
@@ -12208,6 +12282,8 @@ H790D0193AFF1: 'Переопределяет результат, использ�
 H1F6C8876A478: 'Переопределяет значение макроса _OPENACC для экспериментального тестирования во время разработки поддержки OpenACC'
 # 'Overwrite edited files.'
 HA46F1C96B7DC: 'Перезаписывать изменённые файлы.'
+# 'Overwrites the Unwind v2 mode for testing purposes.'
+H7F860D04EA52: 'Перезаписывает режим Unwind v2 в целях тестирования'
 # 'PASSED'
 H75168D9452E2: 'ПРОЙДЕНО'
 # 'PBQP register allocator'
@@ -12326,6 +12402,8 @@ HAA93B63D725F: 'Путь к CSV-файлу, содержащему строки 
 H9AB7FF7DDB14: 'Путь к SavedModel из предыдущей итерации обучения.\nДиректория также должна содержать JSON-спецификацию выходных данных, которые \nдолжны быть записаны в лог, где первым элементом должен быть результат инлайн-вывода. Файл \nсо спецификацией должен называться output_spec.json. Ожидаемое JSON-значение должно быть \nмассивом словарей. Каждый словарь должен содержать 2 ключа: \n\n- tensor_spec, за которым следует описание TensorSpec выходных данных; и \n- logging_name, строка, указывающая имя для использования при записи выходных данных в лог.\n\nПример:\n[\n  {\n    "logging_name" : "some_name", \n    "tensor_spec" : { \n      "name" : "model_name", \n      "port" : 0,\n      "shape" : [2, 3],\n      "type" : "float"\n      }\n  }\n]\n\nПервое значение должно всегда соответствовать решению о инлайне.'
 # 'Path to a directory containing a .clang-format file\ndescribing a formatting style to use for formatting\ncode when -style=file.\n'
 H1C68FD05289D: 'Путь к каталогу, содержащему файл .clang-format\nописывающий стиль форматирования, используемый для форматирования\nкода при использовании -style=file.\n'
+# 'Path to a file that contains a list of mangled names of functions that should be hot-patched for Windows Secure Hot-Patching'
+H38984CCBD829: 'Путь к файлу, содержащему список искажённых имён функций, которые должны быть подвергнуты горячему патчу для Windows Secure Hot-Patching'
 # 'Path to a system assembler, picked up on AIX only'
 HD76EB0189931: 'Путь к системному ассемблеру, обнаруживаемому только на AIX'
 # 'Path to binary from which the profile was collected.'
@@ -12356,6 +12434,8 @@ H6EB010D2085A: 'Путь к системному файлу ignorelist для с
 HEE09636C6E6A: 'Путь к DIA SDK'
 # 'Path to the IR file produced by the frontend for the host.'
 H6108420B0DC9: 'Путь к файлу IR, сгенерированному фронтендом для хоста.'
+# 'Path to the ORC runtime'
+HA6D50B3F5E21: 'Путь к среде выполнения ORC'
 # 'Path to the VCToolChain'
 H5C43C23950E7: 'Путь к VCToolChain'
 # 'Path to the Windows SDK'
@@ -12480,6 +12560,8 @@ HAEF32BE4B3F4: 'Платформа для использования с LLJIT'
 HDE1D650C630F: 'Указатель на член.'
 # 'Pointer.'
 H2EBACB6EF9AE: 'Указатель.'
+# 'Poison fully undef temporary values. Partially undefined constant vectors are unaffected by this flag (see -msan-poison-undef-vectors).'
+HF2AB52CC9719: 'Помечать полностью неопределённые временные значения. Частично неопределённые постоянные векторы не затрагиваются этим флагом (см. -msan-poison-undef-vectors)'
 # 'Polly - Calculate dependences'
 H6CAD158D9763: 'Polly - Вычисление зависимостей'
 # 'Polly - Calculate dependences for all the SCoPs of a function'
@@ -12654,6 +12736,10 @@ H2F5309EAAE70: 'Пред-ISel понижение встроенных'
 H81B4ED48A8E1: 'Оптимизации Pre-RA'
 # 'Pre-load dynamic libraries (e.g. language runtimes required by the ORC runtime)'
 HDF44F8CD7956: 'Предварительная загрузка динамических библиотек (например, языковых сред выполнения, требуемых средой выполнения ORC)'
+# 'Precisely poison disjoint OR. If false (legacy behavior), disjointedness is ignored (i.e., 1|1 is initialized).'
+H84A2723C1D06: 'Точно помечать операцию побитового ИЛИ для несвязанных значений. Если значение false (устаревшее поведение), несвязанность игнорируется (например, 1|1 считается инициализированным)'
+# 'Precisely poison partially undefined constant vectors. If false (legacy behavior), the entire vector is considered fully initialized, which may lead to false negatives. Fully undefined constant vectors are unaffected by this flag (see -msan-poison-undef).'
+H3AF54DB62013: 'Точно помечать частично неопределённые постоянные векторы. Если значение false (устаревшее поведение), весь вектор считается полностью инициализированным, что может привести к ложным отрицательным результатам. Полностью неопределённые постоянные векторы не затрагиваются этим флагом (см. -msan-poison-undef)'
 # 'Predicate conditions in read only loops'
 H0D01A5F11CC3: 'Предикатные условия в циклах только для чтения'
 # 'Prefer add+cnt over addvl/inc/dec'
@@ -13594,12 +13680,12 @@ HB0E9E547E094: 'Выводить сведения об анализе транс
 H815014839294: 'Отображать преобразования, выполняемые оптимизационными этапами, чьи имена соответствуют заданному POSIX-регулярному выражению'
 # 'Reports layout used for print, compare and select.'
 HF32D32507443: 'Отображает макет, используемый для print, compare и select.'
-# 'Require & in extract patterns'
-H9F971AAB4945: 'Требуется & в шаблонах извлечения'
 # 'Require all positive matches to cover an entire input line.\nAllows leading and trailing whitespace if --strict-whitespace\nis not also passed.'
 HA9004341F6EF: 'Требовать, чтобы все положительные совпадения покрывали всю входную строку. Разрешает начальные и конечные пробелы, если флаг --strict-whitespace не указан.'
 # 'Require declaration of modules used within a module'
 HE82DE2BF2262: 'Требуется объявление модулей, используемых внутри модуля'
+# 'Require generation of unwind v2 (epilog) information for x64 Windows'
+H98E0A3B1CC77: 'Требовать генерацию информации раскрутки v2 (эпилога) для x64 Windows'
 # 'Require math functions to indicate errors by setting errno'
 HE643AF2E91DD: 'Требуется, чтобы математические функции указывали ошибки через установку errno'
 # 'Require member pointer base types to be complete if they would be significant under the Microsoft ABI'
@@ -13832,6 +13918,8 @@ HE6E28450C65C: 'Песочница Rewriter'
 HD27186628DE0: 'Rewriter для выполнения'
 # 'Right before the vectorizer'
 HE1F20E3A6191: 'Непосредственно перед vectorizer'
+# 'Root Signature Version'
+H6DA963688EFB: 'Версия корневой сигнатуры'
 # 'Root for relative input paths'
 H44AB7F76C38B: 'Корень для относительных входных путей'
 # 'Root.'
@@ -14508,6 +14596,8 @@ HCF37C352FCE6: 'Установите порог для pgo-verify-bfi: проп�
 H00413175E081: 'Установить значение unroll peeling count для целей тестирования'
 # 'Set the z/OS release of the runtime environment'
 HD212DAE31048: 'Установить версию z/OS среды выполнения'
+# 'Set to false to ignore Key Instructions metadata'
+H66DB94ACCB44: 'Установите значение false, чтобы игнорировать метаданные ключевых инструкций'
 # 'Set up preprocessor for static analyzer (done automatically when static analyzer is run).'
 HE7E0E6B1AE87: 'Настроить препроцессор для статического анализатора (выполняется автоматически при запуске статического анализатора).'
 # 'Set update method of profile counters'
@@ -14904,6 +14994,8 @@ H8905580ACB2D: 'Укажите целевую тройку по умолчани
 H5F9EC5F91118: "Укажите каталог, где Clang может найти 'include' и 'lib{,32,64}/gcc{,-cross}/$triple/$version'. Clang будет использовать установку GCC с наибольшей версией"
 # "Specify a directory where Flang can find 'lib{,32,64}/gcc{,-cross}/$triple/$version'. Flang will use the GCC installation with the largest version"
 H59AA0290DBA6: "Укажите каталог, где Flang может найти 'lib{,32,64}/gcc{,-cross}/$triple/$version'. Flang будет использовать установку GCC с наибольшей версией"
+# 'Specify a list of target architectures to use for offloading.'
+HC0CC9BFF0E02: 'Укажите список целевых архитектур для использования при оффлодинге.'
 # 'Specify a plugin to optimize LFENCE insertion'
 H749CB0E11874: 'Укажите плагин для оптимизации вставки LFENCE'
 # 'Specify a reference program output (for miscompilation detection)'
@@ -15072,6 +15164,8 @@ H8278427A48F9: 'Укажите свойство для сбора замечан
 HE59A5BD76AE3: 'Укажите свойство, по которому группировать замечания.'
 # 'Specify the size in bits of an RVV vector register'
 H0AB4126F0C29: 'Укажите размер в битах векторного регистра RVV'
+# 'Specify the size in bits of an SVE vector register in streaming mode. Defaults to the vector length agnostic value of "scalable". (AArch64 only)'
+H3E2C921FE104: 'Задайте размер в битах векторного регистра SVE в режиме потоковой передачи. По умолчанию используется значение, не зависящее от длины вектора — «scalable». (только для AArch64)'
 # 'Specify the size in bits of an SVE vector register. Defaults to the vector length agnostic value of "scalable". (AArch64 only)'
 H2F3DFF504736: 'Укажите размер в битах регистра вектора SVE. По умолчанию используется значение «scalable», независимое от длины вектора. (только для AArch64)'
 # 'Specify the source file identifier for -funique-source-file-names; uses the source file path if not specified'
@@ -15090,8 +15184,12 @@ HCEF5AB90855A: 'Укажите тип метаданных для вывода �
 HDBA609305F00: 'Укажите типы сравнений для генерации кода только для GPR.'
 # 'Specify the version of the memprof format to use'
 H1B82817FBBA6: 'Укажите версию формата memprof для использования'
+# 'Specify the vscale maximum. Defaults to the vector length agnostic value of "0". (AArch64 only)'
+HBB5D2CB16EF5: 'Задайте максимальное значение vscale. По умолчанию используется значение, не зависящее от длины вектора — «0». (только для AArch64)'
 # 'Specify the vscale maximum. Defaults to the vector length agnostic value of "0". (AArch64/RISC-V only)'
 HA66591A80BFB: 'Укажите максимальное значение vscale. Значение по умолчанию — независимое от длины вектора «0». (только для AArch64/RISC-V)'
+# 'Specify the vscale minimum. Defaults to "1". (AArch64 only)'
+H4DA44845ACC8: 'Задайте минимальное значение vscale. По умолчанию — «1». (только для AArch64)'
 # 'Specify the vscale minimum. Defaults to "1". (AArch64/RISC-V only)'
 H0C205532C01D: 'Укажите минимальное значение vscale. Значение по умолчанию: "1". (только AArch64/RISC-V)'
 # 'Specify time trace file destination'
@@ -16050,12 +16148,12 @@ H702F4D424F4D: 'Время начала текущей сессии сборки
 H84F95E67A022: 'Малая модель кода'
 # 'Tool Options'
 HCB6E15CE20D4: 'Параметры инструментов'
+# 'Tool for generating LLDBRPC'
+H77DE4F01EA61: 'Инструмент для генерации LLDBRPC'
 # 'Tool options'
 H6AA40067A445: 'Опции инструмента'
-# 'Tool used for detecting AMD GPU arch in the system.'
-HF986F57FE389: 'Инструмент, используемый для определения AMD GPU arch в системе.'
-# 'Tool used for detecting NVIDIA GPU arch in the system.'
-H3CE78A0FD186: 'Инструмент, используемый для обнаружения архитектуры NVIDIA GPU в системе.'
+# 'Tool used for detecting offloading architectures in the system.'
+H649BE12C147A: 'Инструмент, используемый для обнаружения архитектур оффлодинга в системе.'
 # 'Toolchain identification name.'
 H577F665D266E: 'Имя идентификатора toolchain.'
 # 'Toplevel siblings divisor for cost multiplier.'
@@ -16284,8 +16382,6 @@ H18CD82918982: 'Анализ однородности'
 H8B72079558B4: 'Объединить расходящиеся выходные узлы функции'
 # 'Unify function instantiations'
 H7D11BF20733C: 'Объединить экземпляры функций'
-# 'Unify multiple OpenCL metadata due to linking'
-H1E880963D2AC: 'Объединение множественных метаданных OpenCL из-за связывания'
 # 'Union.'
 H8AC81596AB6F: 'Объединение.'
 # 'Uniqueify Internal Linkage Symbol Names by appending the MD5 hash of the module path'
@@ -16386,6 +16482,8 @@ H785682C5C939: 'Используйте записи выбора базовог�
 H37CB53594E9C: 'Используйте исключения в стиле DWARF'
 # 'Use Decision Forest model to rank completion items'
 H05DCA5EC7686: 'Используйте модель Decision Forest для ранжирования элементов автодополнения'
+# 'Use DirectX memory layout for Vulkan resources.'
+H3650417554FC: 'Используйте макет памяти DirectX для ресурсов Vulkan.'
 # 'Use EH-safe code when synthesizing retains and releases in -fobjc-arc'
 H36FC7089F28D: 'Используйте код, безопасный для обработки исключений, при синтезировании retain и release в -fobjc-arc'
 # 'Use F5 series hardware multiplier'
@@ -16488,6 +16586,10 @@ H3A40020AE1F7: 'Используйте перематериализуемую п
 H48F702933B27: 'Используйте подписаннный тип для wchar_t'
 # 'Use a single TBAA tree for all functions and do not use the FIR alias tags pass'
 HC642932368D3: 'Используйте один TBAA tree для всех функций и не используйте FIR alias tags pass'
+# 'Use a synthetic profile with no data to generate baseline coverage'
+H7D610CEB3EA4: 'Используйте синтетический профиль без данных для создания базового покрытия.'
+# 'Use a table of function pointers instead of a switch case in the\ngenerated `decodeToMCInst` function. Helps improve compile time\nof the generated code.'
+H7D161A4180FD: 'Используйте таблицу указателей на функции вместо конструкции switch-case в сгенерированной функции `decodeToMCInst`. Помогает улучшить время компиляции сгенерированного кода.'
 # 'Use absolute paths for invoking subcommands (default)'
 HFDEA884CA19F: 'Используйте полные пути для вызова подкоманд (по умолчанию)'
 # 'Use addrx+offset extension form for any address with a prior base address'
@@ -16660,6 +16762,8 @@ HD66DB2015BA3: 'Используйте маскированные векторн
 HE791F5E32608: 'Используйте md5 для представления имён функций в выходном профиле (имеет смысл только для -extbinary)'
 # 'Use memory profile for profile-guided memory optimization'
 H5A1906ADE19C: 'Используйте профиль памяти для профильной оптимизации памяти'
+# 'Use memset.pattern intrinsic whenever possible'
+H18BAF8A230CF: 'Используйте встроенную функцию memset.pattern, когда это возможно.'
 # 'Use more powerful methods of sharpening expression ranges. May be costly in terms of compile time'
 HD0AB27E80870: 'Используйте более мощные методы уточнения диапазонов выражений. Может быть дорогостоящим в плане времени компиляции'
 # 'Use native PDB reader instead of DIA'
@@ -16724,6 +16828,8 @@ HE68D3A295C31: 'Используйте строчный порядок хран�
 H74ED44C8AB6B: 'Используйте проверки псевдонимов во время выполнения для разрешения возможных псевдонимов.'
 # 'Use sampled profile to guide PGO.'
 H83EE2F7AD7E3: 'Используйте выборочный профиль для направления PGO.'
+# 'Use scalar memory layout for Vulkan resources.'
+H4F0ECC21E176: 'Используйте скалярный макет памяти для ресурсов Vulkan.'
 # 'Use sections+offset as references rather than labels.'
 HC0250DDB1574: 'Используйте sections+offset в качестве ссылок вместо меток.'
 # 'Use segment set for the computation of the live ranges of physregs.'
@@ -16752,6 +16858,8 @@ HBB884418570D: 'Использовать stack probes (по умолчанию)'
 HC2C965E8960E: 'Используй статическую отладочную run-time'
 # 'Use static run-time'
 H53E3F295A611: 'Используйте статический рантайм'
+# 'Use strict OpenGL std140/std430 memory layout for Vulkan resources.'
+HB5A902F1841B: 'Используйте строгий макет памяти OpenGL std140/std430 для ресурсов Vulkan.'
 # 'Use target platform default'
 H1C5D924DE4CE: 'Использовать настройки по умолчанию целевой платформы'
 # 'Use text-based completion if the parser is not ready'
@@ -16800,10 +16908,10 @@ H5EC45CECD53A: 'Используйте заданное смещение для 
 H2907454E4058: 'Используйте заданный reg для адресации стековой защиты'
 # 'Use the given symbol for addressing the stack-protector guard'
 HB4E7196A5294: 'Используйте заданный символ для адресации защиты стека'
-# 'Use the given vector functions library'
-H8A7DC0CD5F6E: 'Используйте указанную библиотеку векторных функций'
-# 'Use the given vector functions library. Note: -fveclib={ArmPL,SLEEF} implies -fno-math-errno'
-HB6448F1B4907: 'Используйте заданную библиотеку векторных функций. Примечание: -fveclib={ArmPL,SLEEF} подразумевает использование -fno-math-errno'
+# 'Use the given vector functions library.\n  Note: -fveclib=libmvec on AArch64 requires GLIBC 2.40 or newer.'
+H4435A330E24A: 'Используйте указанную библиотеку векторных функций.\n  Примечание: -fveclib=libmvec на AArch64 требует GLIBC версии 2.40 или новее.'
+# 'Use the given vector functions library.\n  Note: -fveclib={ArmPL,SLEEF,libmvec} implies -fno-math-errno.\n  Note: -fveclib=libmvec on AArch64 requires GLIBC 2.40 or newer.'
+HA17885783579: 'Используйте указанную библиотеку векторных функций.\n  Примечание: -fveclib={ArmPL,SLEEF,libmvec} подразумевает -fno-math-errno.\n  Примечание: -fveclib=libmvec на AArch64 требует GLIBC версии 2.40 или новее.'
 # 'Use the gnu89 inline semantics'
 H86341C44D7F1: 'Использовать семантику inline по стандарту gnu89'
 # "Use the host's platform-specific path separator character when expanding the __FILE__ macro"
@@ -16828,8 +16936,6 @@ HA522D7482E1A: 'Используйте native платформу для испо
 H4FEA64EFDBD7: 'Используйте новый драйвер для OpenMP offloading.'
 # 'Use the new driver for offloading compilation.'
 H2C38A94F0FE6: 'Используйте новый драйвер для компиляции с переносом нагрузки.'
-# 'Use the new method of lowering partial reductions.'
-H67B6026FF0E7: 'Используйте новый метод преобразования частичных редукций.'
 # 'Use the new offloading linker to perform the link job.'
 HBE633D219689: 'Используйте новый offloading linker для выполнения операции связывания.'
 # 'Use the old (incorrect) instruction latency calculation'
@@ -16930,6 +17036,8 @@ H5B0B3696A2CD: 'Проверять входные файлы PCH на основ
 HE7966DE5A8B2: 'Проверять входные файлы PCM на основе содержимого, если mtime отличается'
 # 'Validate that all vtables have type infos in LTO'
 H66B413E67029: 'Проверить, что все таблицы виртуальных функций имеют информацию о типах в LTO'
+# 'Validate the CFI directives'
+H9B4BB745DB04: 'Проверьте директивы CFI.'
 # 'Validate the system headers that a module depends on when loading the module'
 HEE36D448D56F: 'Проверять системные заголовки, от которых зависит модуль при его загрузке'
 # 'Value for __PIC__'
@@ -17056,6 +17164,8 @@ H4109B1BD7A45: 'Параметры просмотра'
 HBAB873C35568: 'Виртуальная карта регистров'
 # 'Virtual Register Rewriter'
 H70230BEE99F4: 'Переписчик виртуальных регистров'
+# 'Vocab file for IR2Vec; Setting this enables configuring the model to use IR2Vec embeddings.'
+H5D3E99B7F8E7: 'Файл словаря для IR2Vec; Установка этого параметра включает настройку модели для использования встраиваний IR2Vec.'
 # 'Volatile loads and stores have acquire and release semantics'
 HA2D66EAC62AA: 'Volatile загрузки и записи имеют acquire и release семантику'
 # 'Volatile loads and stores have standard semantics'
@@ -17314,6 +17424,10 @@ H86EB91F51633: 'Модель исключений Windows'
 H08E7C52DD63F: 'С опцией -globals выводятся только глобальные переменные, чьи имена совпадают с заданным значением'
 # 'With PGO, include profile count in optimization remarks'
 HA68492B41822: 'С использованием PGO включать профильные счетчики в сообщения оптимизации'
+# 'Work around Cortex-A53 erratum 835769 (AArch64 only)'
+HE42DD4529739: 'Обойдите ошибку Cortex-A53 835769 (только для AArch64).'
+# 'Work around Cortex-A53 erratum 843419 (AArch64 only)'
+HAF02536F6C92: 'Обойдите ошибку Cortex-A53 843419 (только для AArch64).'
 # 'Work around Cortex-A57 Erratum 1742098 (ARM only)'
 H2CF5C8E79954: 'Обход ошибки Cortex-A57 Erratum 1742098 (только ARM)'
 # 'Work around Cortex-A72 Erratum 1655431 (ARM only)'
@@ -17322,8 +17436,6 @@ HB9954D8E1844: 'Обход ошибки Cortex-A72 Erratum 1655431 (только
 H6484FD8B0341: 'Обход ошибки VLLDM CVE-2021-35465 (только для ARM)'
 # 'Work with `--skip-symbolization` or `--unsymbolized-profile` to write/read the offset instead of virtual address.'
 H1CA65028F454: 'Используйте `--skip-symbolization` или `--unsymbolized-profile` для записи/чтения смещения вместо виртуального адреса.'
-# 'Workaround Cortex-A53 erratum 835769 (AArch64 only)'
-H479486F0F64D: 'Обходной путь Cortex-A53 erratum 835769 (только AArch64)'
 # "Wouldn't use segmented stack"
 HF45022A557BC: 'Не будет использоваться segmented stack'
 # 'Write Bitcode'
@@ -18048,10 +18160,10 @@ H5DB23C0A38DF: 'аргумент %0 не является типом класс�
 H4812A4DC04E0: 'аргумент %0 должен быть постоянным целым числом 1 или -1'
 # 'argument %0 of type %1 with mismatched bound'
 HDE368B7DDAF1: 'аргумент %0 типа %1 с несоответствующей границей'
+# 'argument %0 to %1 attribute is not a typedef for a specialization of %2'
+H4BA7B09F82CC: 'Аргумент %0 для атрибута %1 не является typedef для специализации %2.'
 # 'argument %0 to %1 must be a 2-bit unsigned literal (i.e. 0, 1, 2 or 3)'
 HD2DEDD810BB8: 'аргумент %0 для %1 должен быть 2-битным беззнаковым литералом (т.е. 0, 1, 2 или 3)'
-# "argument %0 to 'preferred_name' attribute is not a typedef for a specialization of %1"
-H873B3444BA19: "аргумент %0 для атрибута 'preferred_name' не является typedef специализации %1"
 # 'argument %0 value should represent a contiguous bit field'
 H004B84FF9E91: 'значение аргумента %0 должно представлять непрерывное битовое поле'
 # "argument '%0' is deprecated%select{|, use '%2' instead}1"
@@ -18468,8 +18580,8 @@ HA75BA84DF85B: 'Потому что%select{ базовый класс типа |
 HC07ABEF26326: 'так как %select{базовый класс объекта |поле объекта |}0тип %1 не имеет конструктора по умолчанию'
 # 'because field %0 has an initializer'
 H7DB53EF856A5: 'потому что поле %0 имеет инициализатор'
-# 'because it %select{is a reference type|is const|is volatile|has an ARC lifetime qualifier|is a variably-modified type|has a virtual base %1|not %select{a|an array of objects of}1 scalar or class type|has a non-trivially-relocatable base %1|has a non-trivially-relocatable member %1 of type %2|has a non-replaceable base %1|has a non-replaceable member %1 of type %2|has a non-trivially-copyable base %1|has a non-trivially-copyable member %1 of type %2|has a %select{deleted|user-provided}1 destructor|has a user provided %select{copy|move}1 constructor|has a deleted %select{copy|move}1 constructor|has a user provided %select{copy|move}1 assignment operator|has a deleted %select{copy|move}1 assignment operator|is a union with a user-declared %select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}1|is a function type|is a cv void type|is an incomplete array type}0'
-HF88804C54D6A: 'поскольку оно %select{является ссылочным типом|является const|является volatile|имеет квалификатор времени жизни ARC|является типом с переменной модификацией|имеет виртуальную базу %1|не %select{является|массив объектов}1 скалярного или классового типа|имеет нетривиально переносимую базу %1|имеет нетривиально переносимого члена %1 типа %2|имеет незаменяемую базу %1|имеет незаменяемого члена %1 типа %2|имеет нетривиально копируемую базу %1|имеет нетривиально копируемого члена %1 типа %2|имеет %select{удалённый|пользовательский}1 деструктор|имеет пользовательский %select{копирующий|перемещающий}1 конструктор|имеет удалённый %select{копирующий|перемещающий}1 конструктор|имеет пользовательский %select{копирующий|перемещающий}1 оператор присваивания|имеет удалённый %select{копирующий|перемещающий}1 оператор присваивания|является объединением с пользовательским %select{конструктором по умолчанию|копирующим конструктором|перемещающим конструктором|оператором присваивания копированием|оператором присваивания перемещением|деструктором}1|является функциональным типом|является типом cv void|является неполным массивом}0'
+# 'because it %select{is a reference type|is const|is volatile|has an ARC lifetime qualifier|is a variably-modified type|has a virtual base %1|is not %select{a|an array of objects of}1 scalar or class type|has a non-trivially-relocatable base %1|has a non-trivially-relocatable member %1 of type %2|has a non-replaceable base %1|has a non-replaceable member %1 of type %2|has a non-trivially-copyable base %1|has a non-trivially-copyable member %1 of type %2|has a non-static data member %1 of type %2|has a virtual function %1|has a base class %1 that is not empty|field %1 is a non-zero-length bit-field|has a non-standard-layout base %1|has mixed access specifiers|field %1 has a different access specifier than field %2|has multiple base classes with data members|has a non-standard-layout member %1 of type %2|has an indirect base %1 with data members|has a %select{deleted|user-provided}1 destructor|has a user provided %select{copy|move}1 constructor|has a deleted %select{copy|move}1 constructor|has a user provided %select{copy|move}1 assignment operator|has a deleted %select{copy|move}1 assignment operator|is a union with a user-declared %select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}1|is a function type|is a cv void type|is an incomplete array type}0'
+H2030E13CC9FD: 'поскольку он %select{является ссылочным типом|константным|volatile|имеет квалификатор времени жизни ARC|является типом с переменной модификацией|имеет виртуальный базовый класс %1|не является %select{массивом объектов|массивом объектов}1 скалярного или классового типа|имеет базовый класс %1, который нельзя перемещать тривиально|имеет член %1 типа %2, который нельзя перемещать тривиально|имеет базовый класс %1, который нельзя заменить|имеет член %1 типа %2, который нельзя заменить|имеет базовый класс %1, который нельзя копировать тривиально|имеет член %1 типа %2, который нельзя копировать тривиально|имеет нестатический член данных %1 типа %2|имеет виртуальную функцию %1|имеет базовый класс %1, который не пуст|поле %1 является битовым полем ненулевой длины|имеет базовый класс %1, не соответствующий стандартной компоновке|имеет смешанные спецификаторы доступа|поле %1 имеет другой спецификатор доступа, чем поле %2|имеет несколько базовых классов с членами данных|имеет член %1 типа %2, не соответствующий стандартной компоновке|имеет косвенный базовый класс %1 с членами данных|имеет %select{удаленный|определенный пользователем}1 деструктор|имеет определенный пользователем %select{копирующий|перемещающий}1 конструктор|имеет удаленный %select{копирующий|перемещающий}1 конструктор|имеет определенный пользователем %select{оператор копирования|оператор перемещения}1|имеет удаленный %select{оператор копирования|оператор перемещения}1|является объединением с явно определенным %select{конструктором по умолчанию|копирующим конструктором|перемещающим конструктором|оператором присваивания копирования|оператором присваивания перемещения|деструктором}1|является функциональным типом|является типом cv void|является неполным массивом}0'
 # 'because it has a default argument'
 H4C6DC4DA1E45: 'потому что у него есть аргумент по умолчанию'
 # 'because it is a variadic function'
@@ -20748,6 +20860,8 @@ H164583DA86CB: 'директива может быть задана только
 H1C3ABA756D9B: 'directive должна находиться в файловой области или в области пространства имен'
 # "directive name modifier '%0' is not allowed for '#pragma omp %1'"
 H92E146113514: "модификатор имени директивы '%0' не допускается для '#pragma omp %1'"
+# "directive spelling '%0' is introduced in a later OpenMP version"
+HEE7866CE4A48: "Правописание директивы '%0' было добавлено в более поздней версии OpenMP"
 # 'directory to dump objects to'
 HD09DDF1651F9: 'каталог для выгрузки объектов'
 # 'disable '
@@ -20832,6 +20946,8 @@ H138D0C477A7F: 'dllexport/dllimport inline member functions of dllexport/import 
 H1B629BAD5F55: 'dllimport не может быть применен к определению не встроенной функции'
 # 'do not apply'
 HB502CD3A2C1B: 'не применять'
+# 'do not define rtti static objects for types belonging to other compilation units'
+HC30411B67BBA: 'Не определяйте статические объекты RTTI для типов, относящихся к другим единицам компиляции'
 # 'do not diff functions whose contents have not been changed from one binary to another'
 H30A32C42CDF9: 'не сравнивайте функции, содержимое которых не было изменено от одного бинарника к другому'
 # 'do not display graphs.'
@@ -21136,6 +21252,8 @@ H3201C4D45BA3: 'включить запуски атрибутатора call gr
 HF8CFF517B8BE: 'включить объединение дублирующихся ветвей для PPC'
 # 'enable const and copy propagation after tail duplication'
 H9919F0504195: 'включить const и copy propagation после tail duplication'
+# 'enable do concurrent offload'
+H46D39C98F0F7: 'Включить параллельную выгрузку'
 # 'enable elimination of sign-extensions'
 HF1685FA60FF7: 'включить устранение знаковых расширений'
 # 'enable elimination of zero-extensions'
@@ -21350,8 +21468,6 @@ H0F6B0905AE5F: 'ожидалось %0 в конце модуля'
 HC79E103ACDFE: "ожидалось %0 в OpenMP clause '%1'"
 # 'expected %0 or %1'
 HC08F459555DA: 'ожидалось %0 или %1'
-# 'expected %0 to denote end of parameters, or, another valid parameter of %1'
-H05DB43940E29: 'ожидалось, что %0 обозначает конец параметров или другой допустимый параметр %1'
 # 'expected %0; %1 is a keyword in Objective-C++'
 H62A445966708: 'ожидалось %0; %1 является ключевым словом в Objective-C++'
 # 'expected %1 after %0'
@@ -22060,6 +22176,8 @@ H14746831D212: 'не удалось раскрыть файл ответа: %0'
 H265A065BBB4D: "не удалось найти файл модуля для модуля '%0'"
 # "failed to hash content for '%0' because memory buffer cannot be retrieved"
 H13A2DD939D67: "Не удалось создать хэш содержимого для '%0', так как буфер памяти не может быть получен"
+# 'failed to open hotpatch functions file (-fms-hotpatch-functions-file): %0 : %1'
+H65A132C06842: 'Не удалось открыть файл функций горячей замены (-fms-hotpatch-functions-file): %0 : %1'
 # "failed to process suppression mapping file '%0': %1"
 H61E7856A5801: "не удалось обработать файл сопоставления подавления '%0': %1"
 # "failing because %select{environment variable 'FORCE_CLANG_DIAGNOSTICS_CRASH' is set|'-gen-reproducer' is used}0"
@@ -22216,6 +22334,8 @@ H3AA2DBB89701: 'первый необозначенный инициализат
 HF134017C1A48: 'первые два аргумента к __builtin_convertvector должны иметь одинаковое количество элементов'
 # "first%select{||| and second}0 argument%select{|||s}0 to '__builtin_trivially_relocate' must be %select{a pointer|non-const|relocatable|of the same type}0"
 H922BBD5C29FD: "первый%select{||| и второй}0 аргумент%select{|||ы}0 для '__builtin_trivially_relocate' должен быть %select{указателем|неконстантным|перемещаемым|одного типа}0"
+# 'fixed width SVE vector type %0 cannot be used in a %select{streaming|streaming-compatible}1 function'
+HF5F8AB3EDA90: 'Тип вектора SVE фиксированной ширины %0 нельзя использовать в %select{потоковой|совместимой с потоком}1 функции'
 # "flag '%0' is ignored when flag '%1' is present"
 H83C2C7BB9944: "флаг '%0' игнорируется, когда присутствует флаг '%1'"
 # "flag '%0' results in undefined behavior with '%1' conversion specifier"
@@ -22888,6 +23008,8 @@ HD074A7D9BA2D: "импортирую модуль '%0'%select{| в '%3'}2 из '
 H25C0CF982742: 'imports должны непосредственно следовать за объявлением модуля'
 # 'impossible constraint in asm: cannot store value into a register'
 HEC9C616BA3F9: 'недопустимое ограничение в asm: невозможно сохранить значение в регистр'
+# 'impute missing fall-throughs for branch-only traces'
+H70510CF84F4B: 'Приписать недостающие переходы для трасс только с ветвлениями'
 # 'in %select{implicit|defaulted}0 %select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}1 for %2 first required here'
 H7F88B1ED021A: 'в %select{неявном|по умолчанию}0 %select{default constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}1 для %2 первое требование здесь'
 # "in call to '%0'"
@@ -23134,8 +23256,8 @@ HA49BF476668F: 'методы инициализации должны возвр�
 H55BD0EE327C7: 'клауза инициализации цикла OpenMP не в каноническом виде («var = init» или «T var = init»)'
 # 'initialization is not supported for __shared__ variables'
 H36A01643C5A6: 'Инициализация не поддерживается для __shared__ переменных'
-# 'initialization of %0 may run twice when built into a shared library: it has hidden visibility and external linkage'
-H8FC0CAE3AC23: 'инициализация %0 может выполниться дважды при сборке в shared library: у нее есть скрытая видимость и внешняя связность'
+# 'initialization of %0 may run twice when built into a shared library: it has external linkage and %select{hidden visibility|no import/export annotation}1'
+HFF48A02B21D8: 'Инициализация %0 может быть выполнена дважды при сборке в разделяемую библиотеку: она имеет внешнее связывание и %select{скрытую видимость|отсутствие аннотаций импорта/экспорта}1'
 # "initialization of %select{|signed }0char array with UTF-8 string literal is not permitted by %select{'-fchar8_t'|C++20}1"
 H2A8B3176C3CF: "инициализация %select{|signed }0массива char с литералом UTF-8 не допускается %select{'-fchar8_t'|C++20}1"
 # 'initialization of an array %diff{of type $ from a compound literal of type $|from a compound literal}0,1 is a GNU extension'
@@ -23454,6 +23576,8 @@ H796D4C8F35F6: 'некорректный %select{арифметическая о
 H898CA374F6B7: 'недопустимый %select{ветвь|возврат|бросок}0 %select{из|в}1 OpenACC Compute/Combined Construct'
 # 'invalid %select{constructor|destructor}0 declaration'
 HDEF8993ADCB9: 'недопустимое %select{constructor|destructor}0 объявление'
+# 'invalid %select{parameter|value}0 of %1'
+H3C7631E4E84E: 'Недопустимый %select{параметр|значение}0 из %1'
 # "invalid 'this' expression on 'map' clause"
 H008D791665EC: "недопустимое 'this' выражение в map-предложении"
 # "invalid -Xopenmp-target argument: '%0', options requiring arguments are unsupported"
@@ -23624,6 +23748,8 @@ H5BFFCF48D855: 'недопустимое имя файла для директи
 H6AF3C8643D27: 'недопустимое имя файла для директивы метки строки'
 # 'invalid flag line marker directive'
 H5CC65A10A5E0: 'недопустимая директива метки строки флага'
+# 'invalid flags for version 1.%0'
+H9678CE3AD11D: 'Недопустимые флаги для версии 1.%0'
 # "invalid float ABI '%0'"
 H606FAE3A11E2: "недопустимый float ABI '%0'"
 # "invalid iOS deployment version '%0', iOS 10 is the maximum deployment target for 32-bit targets"
@@ -25036,6 +25162,8 @@ H8F7A1C6703AA: "Дополнительные 'if'-предложения не р
 H3089388E4475: "Разрешается не более одного параметра '--config'"
 # 'no multilib found matching flags: %0'
 HCDE4340CFBD3: 'multilib не найден, соответствующие флаги: %0'
+# 'no multilib structure encoded for Arm, Aarch64 and PPC targets'
+H06F6ACF4778D: 'Для целевых платформ Arm, Aarch64 и PPC не закодирована структура multilib'
 # 'no namespace named %0 in %1; did you mean %select{|simply }2%3?'
 HF6FEAE5E55D9: 'нет пространства имен с именем %0 в %1; не имели в виду %select{|просто }2%3?'
 # 'no namespace named %0; did you mean %1?'
@@ -25626,6 +25754,8 @@ H5560C4070D86: 'выводить дамп MLIR после преобразова
 HF36747707003: 'переполнение при преобразовании значения case в тип условия switch (%0 в %1)'
 # 'overflow in expression; result is %0 with type %1'
 H5FE3FC44898D: 'переполнение в выражении; результат равен %0 с типом %1'
+# 'overlapping resource range here'
+HE80CFB0554C5: 'Пересекающийся диапазон ресурсов здесь'
 # "overload resolution selected deleted operator '%0'%select{|: %2}1"
 HB844E51E83EA: "разрешение перегрузки выбрало удалённый оператор '%0'%select{|: %2}1"
 # 'overloaded %0 cannot be a static member function'
@@ -25934,6 +26064,8 @@ H7E34AEC856E5: 'заглушка объявлена здесь'
 H4C0235C28642: 'placeholder variables are a C++2c extension'
 # 'placeholder variables are incompatible with C++ standards before C++2c'
 H6BE10CEEDF1B: 'переменные-заполнители несовместимы с стандартами C++ до C++2c'
+# 'placement new expression with a const-qualified argument of type %0 is not allowed'
+H3CC55454B35E: 'Выражение placement new с аргументом типа %0, квалифицированным как const, не разрешено'
 # 'placement new would change type of storage from %0 to %1'
 H83FB1C107237: 'placement new изменит тип хранения с %0 до %1'
 # "plain '_Complex' requires a type specifier; assuming '_Complex double'"
@@ -25966,8 +26098,6 @@ H08EA28E0562A: 'указатель на функцию-члена типа %0 м
 HC15C6EF198BF: 'несоответствие типов указателя/целого в условном выражении%diff{ ($ и $)|}0,1'
 # 'poison on failure'
 HE44AF8732393: 'запрет при сбое'
-# 'poison undef temps'
-H7A7B675BE411: 'зараженные undef временные'
 # 'poison uninitialized stack variables'
 H47518342CB8C: 'загрязнение непроинициализированных переменных стека'
 # 'poison uninitialized stack variables with a call'
@@ -26854,6 +26984,8 @@ H98614BF4F5B5: "зарезервированный идентификатор 'o
 H0D8FB57C5D95: 'присвоить все оставшиеся неразрешённые внешние символы значению NULL'
 # 'resource has implicit register binding'
 H2038E0629D14: 'ресурс имеет неявную привязку к регистру'
+# 'resource ranges %select{t|u|b|s}0[%1;%select{%3]|unbounded)}2 and %select{t|u|b|s}4[%5;%select{%7]|unbounded)}6 overlap within space = %8 and visibility = %select{All|Vertex|Hull|Domain|Geometry|Pixel|Amplification|Mesh}9'
+HC3022BE39794: 'диапазоны ресурсов %select{t|u|b|s}0[%1;%select{%3]|неограниченный)}2 и %select{t|u|b|s}4[%5;%select{%7]|неограниченный)}6 пересекаются в пространстве = %8 и видимости = %select{Все|Вершина|Оболочка|Область|Геометрия|Пиксель|Амплификация|Меш}9'
 # 'respect alignment requirements provided by input IR'
 H3C9B5ECCDE76: 'соблюдать требования выравнивания, указанные входным IR'
 # 'restrict requires a pointer or reference'
@@ -27396,6 +27528,8 @@ HA27BA101BC94: 'строковые литералы, превышающие эт
 H7121B365791A: 'строка для установки значений по умолчанию типа'
 # "strip 'repz' prefix from 'repz retq' sequence (on by default)"
 H5E0A0D55638D: "удалять префикс 'repz' из последовательности 'repz retq' (включено по умолчанию)"
+# "structure '%0' is too large, which exceeds maximum allowed size of %1 bytes"
+H80E70414C57E: "Структура '%0' слишком велика, превышает максимально допустимый размер %1 байт"
 # 'structured binding declaration in a condition is a C++2c extension'
 H7AF1E5D1A2D0: 'объявление структурированного связывания в условии является расширением C++2c'
 # 'structured binding declaration in a condition is incompatible with C++ standards before C++2c'
@@ -27740,6 +27874,8 @@ HDF7A50F1E9D4: "селектор контекста '%0' не действите
 H089B386C28E8: "тип промиса корутины %0 объявляет и 'return_value', и 'return_void'"
 # 'the current #pragma pack alignment value is modified in the included file'
 H1259B6694648: 'текущее значение выравнивания #pragma pack изменено в включённом файле'
+# "the delimited form of '#pragma omp declare target' without clauses is deprecated; use '#pragma omp begin declare target' instead"
+H3E6F48DB3D38: "Форма с разделителями '#pragma omp declare target' без предложений устарела; используйте '#pragma omp begin declare target'"
 # 'the event_t type can only be used with __private address space qualifier'
 HF7753CC750DA: 'тип event_t может использоваться только с квалификатором адресного пространства __private'
 # 'the experimental clang interpreter failed to evaluate an expression'
@@ -27982,6 +28118,8 @@ HDA13A5D2D868: 'чтобы соответствовать этому %0'
 HEF9A1EC0D665: "чтобы соответствовать этому ']'"
 # "to match this '{'"
 H013B6E508561: "соответствует этому '{'"
+# 'todo: remove this warning after we have atleast one warning based on the lifetime analysis'
+H9B430729E740: 'сделать: удалить это предупреждение после появления хотя бы одного предупреждения на основе анализа времени жизни'
 # 'token is not a valid binary operator in a preprocessor subexpression'
 H93EB0C533EDF: 'токен является недопустимым бинарным оператором в подвыражении препроцессора'
 # "token pasting of ',' and __VA_ARGS__ is a GNU extension"
@@ -28842,8 +28980,6 @@ HEDE074D6F05D: "использование 'long long' с '__vector' требу�
 H194F4A31DAD4: "использование 'long' с '__vector' устарело"
 # "use of 'operator->' on type %0 would invoke a sequence of more than %1 'operator->' calls"
 HE55B12BF8DE6: "использование 'operator->' на типе %0 вызовет последовательность больше %1 операторов ->"
-# "use of 'static_assert' without inclusion of <assert.h> is a Microsoft extension"
-HFC681B3993FC: "использование 'static_assert' без включения <assert.h> является расширением Microsoft"
 # "use of 'template' keyword outside of a template is incompatible with C++98"
 HADE615C257C6: "использование ключевого слова 'template' вне шаблона несовместимо с C++98"
 # 'use of @defs is not supported on this architecture and platform'
@@ -29114,6 +29250,8 @@ H0FCCEC09B538: 'значение %1 не может быть представл�
 H2964C78586A1: "значение '%0' выходит за пределы диапазона для ограничения '%1'"
 # 'value is not an integer: %0'
 HDF6724275715: 'значение не является целым числом: %0'
+# 'value must be in the range [%0, %1]'
+H3AC8BA891479: 'Значение должно находиться в диапазоне [%0, %1]'
 # 'value of #pragma pack(show) == %0'
 H78F0B6172824: 'значение #pragma pack(show) равно %0'
 # 'value of the aligned pointer (%0) is not a multiple of the asserted %1 %plural{1:byte|:bytes}1'
@@ -29252,6 +29390,8 @@ HC36BFC632A54: 'шаблоны переменных не совместимы с
 H9908D11CFEF9: "переменная с атрибутом 'loader_uninitialized' не может иметь инициализатор"
 # "variable with 'loader_uninitialized' attribute must have a trivial default constructor"
 H30559420B01D: "переменная с атрибутом 'loader_uninitialized' должна иметь тривиальный конструктор по умолчанию"
+# "variable with 'vk::constant_id' attribute must be a const int/float/enum/bool and be initialized with a literal"
+HF5292B9CD7D5: "Переменная с атрибутом 'vk::constant_id' должна быть const int/float/enum/bool и инициализироваться литералом"
 # 'variable with local storage in initial value of threadprivate variable'
 H06BE1F004442: 'variable with local storage in initial value of threadprivate variable'
 # 'variable%select{s| %1|s %1 and %2|s %1, %2, and %3|s %1, %2, %3, and %4}0 used in loop condition not modified in loop body'
