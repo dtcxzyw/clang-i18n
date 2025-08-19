@@ -1336,24 +1336,24 @@ HFA8AACB1DC9D: '%select{чтение из|чтение из|присвоение
 H030F1EA383B2: '%select{чтение из|чтение из|присвоение в|инкремент|декремент|вызов члена для|dynamic_cast объекта|typeid применённый к|конструирование подобъекта|деструкция|чтение из}0 %select{объект вне своего срока жизни|неинициализированный объект}1 не разрешено в константном выражении'
 # '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of subobject of|destruction of|read of}0 member %1 of union with %select{active member %3|no active member}2 is not allowed in a constant expression'
 HAA36C87281CE: '%select{чтение|чтение|присваивание|инкремент|декремент|вызов члена|dynamic_cast|typeid применённый к|конструирование подобъекта|разрушение|чтение}0 члена %1 объединения с %select{активным членом %3|без активного члена}2 не разрешено в постоянном выражении'
-# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 %select{temporary|variable}1 whose %plural{8:storage duration|:lifetime}0 has ended'
-H1E2EE7FC7CDC: '%select{чтение|чтение|присвоение|инкремент|декремент|вызов метода|dynamic_cast|typeid для|конструирование|деструкция|чтение}0 %select{временного объекта|переменной}1, чья %plural{8:время существования|:жизнь}0 закончилась'
-# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 dereferenced null pointer is not allowed in a constant expression'
-H22FE9FDFDD6D: '%select{чтение из|чтение из|присваивание в|инкремент|декремент|вызов члена у|dynamic_cast для|typeid применён к|конструирование|деструкция|чтение из}0 dereferenced null pointer is not allowed in a constant expression'
-# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 dereferenced one-past-the-end pointer is not allowed in a constant expression'
-H0D344CA7C10F: '%select{чтение из|чтение из|присваивание в|инкремент|декремент|вызов члена|dynamic_cast из|typeid применённый к|конструирование|деструкция|чтение из}0 разыменования указателя, указывающего на элемент за концом массива, не разрешено в постоянном выражении'
-# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 element of array without known bound is not allowed in a constant expression'
-H5DD079C28614: '%select{чтение из|чтение из|присвоение в|инкремент|декремент|вызов члена|dynamic_cast для|typeid применён к|конструирование|деструкция|чтение из}0 элемент массива без известной границы не разрешено в постоянном выражении'
-# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 heap allocated object that has been deleted'
-H0F4326DA1EA9: '%select{чтение объекта|чтение объекта|присваивание объекту|инкремент объекта|декремент объекта|вызов метода объекта|dynamic_cast объекта|typeid применён к объекту|создание объекта|уничтожение объекта|чтение объекта}0 объекта, выделенного в куче, который был удалён'
-# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 mutable member %1 is not allowed in a constant expression'
-H08EBC2661AFA: '%select{чтение объекта|чтение объекта|присваивание в|инкремент объекта|декремент объекта|вызов метода объекта|dynamic_cast объекта|typeid применён к|конструирование объекта|деструкция объекта|чтение объекта}0 mutable member %1 is not allowed in a constant expression'
-# "%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 object '%1' whose value is not known"
-H2547ED9973E0: "%select{чтение|чтение|присваивание к|инкремент объекта|декремент объекта|вызов члена объекта|dynamic_cast объекта|typeid применённый к|конструирование объекта|уничтожение объекта|чтение}0 объекта '%1', значение которого неизвестно"
-# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 temporary is not allowed in a constant expression outside the expression that created the temporary'
-H1A04D5C0C6D4: '%select{чтение временного объекта|чтение временного объекта|присвоение временному объекту|инкремент временного объекта|декремент временного объекта|вызов метода временного объекта|dynamic_cast временного объекта|применение typeid к временному объекту|конструирование временного объекта|деструкция временного объекта|чтение временного объекта}0 недопустимо в постоянном выражении за пределами выражения, которое его создало'
-# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 variable %1 whose value is not known'
-H9168EB67A6E1: '%select{чтение|чтение|присваивание|инкремент|декремент|вызов члена|dynamic_cast|typeid примененный к|конструирование|деструкция|чтение}0 переменной %1, значение которой неизвестно'
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 %select{temporary|variable}1 whose %plural{8:storage duration|:lifetime}0 has ended'
+H306E4F51DC7B: '%select{чтение|чтение|присваивание|инкремент|декремент|вызов метода|dynamic_cast|typeid для|конструирование|деструктирование|чтение|чтение}0 %select{временного объекта|переменной}1, %plural{8:время хранения|время жизни}0 которого завершилось'
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 dereferenced null pointer is not allowed in a constant expression'
+HAE6F19793252: '%select{чтение|чтение|присваивание|инкремент|декремент|вызов метода|dynamic_cast|typeid для|конструирование|деструктирование|чтение|чтение}0 разыменованный нулевой указатель не разрешён в константном выражении'
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 dereferenced one-past-the-end pointer is not allowed in a constant expression'
+H41D88F91AE19: '%select{чтение|чтение|присваивание|инкремент|декремент|вызов метода|dynamic_cast|typeid для|конструирование|деструктирование|чтение|чтение}0 разыменованный указатель за пределами массива не разрешён в константном выражении'
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 element of array without known bound is not allowed in a constant expression'
+H31A306A5DC41: '%select{чтение|чтение|присваивание|инкремент|декремент|вызов метода|dynamic_cast|typeid для|конструирование|деструктирование|чтение|чтение}0 элемент массива без известной границы не разрешён в константном выражении'
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 heap allocated object that has been deleted'
+H0E9826DBDEAC: '%select{чтение|чтение|присваивание|инкремент|декремент|вызов метода|dynamic_cast|typeid для|конструирование|деструктирование|чтение|чтение}0 объект, выделенный в куче, который был удалён'
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 mutable member %1 is not allowed in a constant expression'
+H1A7997C2421D: '%select{чтение|чтение|присваивание|инкремент|декремент|вызов метода|dynamic_cast|typeid для|конструирование|деструктирование|чтение|чтение}0 изменяемый член %1 не разрешён в константном выражении'
+# "%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 object '%1' whose value is not known"
+H60CA13D949B0: "%select{чтение|чтение|присваивание|инкремент|декремент|вызов метода|dynamic_cast|typeid для|конструирование|деструктирование|чтение|чтение}0 объект '%1', значение которого неизвестно"
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 temporary is not allowed in a constant expression outside the expression that created the temporary'
+H97FF5E6CE8B9: '%select{чтение|чтение|присваивание|инкремент|декремент|вызов метода|dynamic_cast|typeid для|конструирование|деструктирование|чтение|чтение}0 временный объект не разрешён в константном выражении вне выражения, создавшего его'
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 variable %1 whose value is not known'
+H0CD8843CE69A: '%select{чтение|чтение|присваивание|инкремент|декремент|вызов метода|dynamic_cast|typeid для|конструирование|деструктирование|чтение|чтение}0 переменная %1, значение которой неизвестно'
 # '%select{reading|writing}1 the value pointed to by %0 requires holding %select{any mutex|any mutex exclusively}1'
 H20B2C79559EA: '%select{чтение|запись}1 значения, на которое указывает %0, требует захвата %select{любого мьютекса|любого мьютекса эксклюзивно}1'
 # '%select{reading|writing}1 variable %0 requires holding %select{any mutex|any mutex exclusively}1'
@@ -1468,6 +1468,8 @@ H2BC4F8FF7FD4: '%select{использование этого символа в 
 H74FA7B9CE6BC: "%select{значения типа|элементы перечисления с базовым типом}2 '%0' не должны использоваться в качестве аргументов формата; необходимо явно привести к типу %1 вместо этого"
 # '%select{value|type}0-dependent expression passed as an argument to debug command'
 HF8F02B43BB62: '%select{value|type}0-зависимое выражение передано в качестве аргумента отладочной команды'
+# '%select{variable template|concept}0 template parameter is a C++2c extension'
+H5AFF4B413F4C: '%select{переменная шаблона|концепт}0 параметр шаблона является расширением C++2c'
 # '%select{variable|static data member}0 instantiated with function type %1'
 HE6193A7D74C4: '%select{переменная|статическое член-данных}0 инстанцировано с функциональным типом %1'
 # '%select{variable|variable template|variable template partial specialization|variable template explicit specialization}0 %1 declared with deduced type %2 cannot appear in its own initializer'
@@ -1570,6 +1572,8 @@ HCE0F9341D433: "'#pragma %0' может появляться только на �
 HD3947EF6D864: "'#pragma %0' может появляться только в области видимости файла или в начале составного оператора"
 # "'#pragma %0' is not supported on this target - ignored"
 H10F342B08150: "'#pragma %0' не поддерживается на этой платформе - проигнорировано"
+# "'#pragma %select{push_macro|pop_macro}0' expected a non-empty string"
+HF56A6742DACA: "'#pragma %select{push_macro|pop_macro}0' ожидает непустую строку"
 # "'#pragma STDC FENV_ACCESS ON' is illegal when precise is disabled"
 H17CE846EF8B0: "'#pragma STDC FENV_ACCESS ON' недопустимо, когда precise отключен"
 # "'#pragma alloc_text' is applicable only to functions"
@@ -2478,18 +2482,6 @@ H624EF03C7676: "'swift_indirect_result' параметры должны быть
 H855B85E209CE: "'switch' отсутствует метка 'default'"
 # "'sycl_kernel' attribute only applies to a function template with at least two template parameters"
 H5AFFA7408711: "'sycl_kernel' атрибут применим только к шаблону функции с не менее чем двумя параметрами шаблона"
-# "'sycl_kernel_entry_point' attribute cannot be added to a function after the function is defined"
-H018E12D5A5B2: "Атрибут 'sycl_kernel_entry_point' не может быть добавлен к функции после того, как функция определена"
-# "'sycl_kernel_entry_point' attribute cannot be applied to a %select{non-static member function|variadic function|deleted function|defaulted function|constexpr function|consteval function|function declared with the 'noreturn' attribute|coroutine|function defined with a function try block}0"
-H86CAEB999295: "Атрибут 'sycl_kernel_entry_point' не может быть применен к функции %select{нестатическому члену-функции|функции со изменчивым числом аргументов|удаленной функции|функции с автоматическим определением|функции constexpr|функции consteval|функции, объявленной с атрибутом 'noreturn'|корутине|функции, определенной с блоком try}0"
-# "'sycl_kernel_entry_point' attribute only applies to functions with a 'void' return type"
-H99CA3F9B2DC2: "'sycl_kernel_entry_point' атрибут применяется только к функциям с возвращаемым типом 'void'"
-# "'sycl_kernel_entry_point' attribute only applies to functions with a non-deduced 'void' return type"
-H14251E8B39CA: "Атрибут 'sycl_kernel_entry_point' применяется только к функциям с явно указанным возвращаемым типом 'void'"
-# "'sycl_kernel_entry_point' kernel name argument conflicts with a previous declaration"
-HFAE6DB6B8BBB: "'sycl_kernel_entry_point' аргумент имени ядра конфликтует с предыдущим объявлением"
-# "'sycl_kernel_entry_point' kernel name argument does not match prior declaration%diff{: $ vs $|}0,1"
-H6714A3237372: "'sycl_kernel_entry_point' аргумент имени ядра не соответствует предыдущему объявлению%diff{: $ vs $|}0,1"
 # "'target_clones' attribute does not match previous declaration"
 HBD2CF88C376B: "'target_clones' атрибут не соответствует предыдущему объявлению"
 # "'target_clones' multiversioning requires a default target"
@@ -2606,6 +2598,8 @@ HEFD41ED402A1: '-code-completion-at=<файл>:<строка>:<столбец> �
 H75DBC0C062A1: '-dealloc переопределяется в категории'
 # '-dependency-file requires at least one -MT or -MQ option'
 HF99E1B6F31F8: '-dependency-file требует хотя бы одну опцию -MT или -MQ'
+# '-emit-final-mlir -simplify-mlir -enable-aa=false'
+HDCF554E10261: '-emit-final-mlir -simplify-mlir -enable-aa=false'
 # '-emit-llvm cannot be used when linking'
 H8745DC614FEB: '-emit-llvm нельзя использовать при связывании'
 # '-fdelayed-template-parsing is deprecated after C++20'
@@ -2736,6 +2730,8 @@ H709A48456EF7: '<входной файл PDB>'
 H126A4B67EBAB: '<входные PDB файлы>'
 # '<input YAML file>'
 H7A7A324B78FC: '<входной YAML-файл>'
+# "<input bitcode file or '-' for stdin>"
+HBCB0C08B7025: "<входной файл биткода или '-' для stdin>"
 # '<input bitcode file>'
 H0498EDBECDA2: '<входной bitcode файл>'
 # '<input bitcode files>'
@@ -3080,6 +3076,8 @@ HB1D166D82990: 'AMDGPU Оптимизации до распределения р
 H8AF72F195656: 'Предварительная загрузка аргументов ядра AMDGPU'
 # 'AMDGPU Preload Kernel Arguments Prolog'
 HA4C7048C1EF3: 'AMDGPU Предзагрузка Аргументов Ядра Пролог'
+# 'AMDGPU Prepare AGPR Alloc'
+H97A799AB9F78: 'AMDGPU Подготовка распределения AGPR'
 # 'AMDGPU Printf lowering'
 H9F0BCA780CE7: 'AMDGPU Printf преобразование'
 # 'AMDGPU Promote Kernel Arguments'
@@ -3768,6 +3766,8 @@ H08E5D5835443: 'Позволяет выполнять раскрутку и сш
 H2478745EEA16: 'Позволяет добавлять дополнительные результаты в private функции для возврата владения возвращаемыми memrefs вызывающему коду. Это позволяет избежать лишних копий буфера в callee.'
 # 'Allows using features specific to Hugo'
 H5D750A78EC0D: 'Разрешает использование функций, специфичных для Hugo'
+# 'Also inject (if missing) and verify MD_prof for `select` instructions'
+H1866EAA4AA5E: 'Также вставлять (если отсутствует) и проверять MD_prof для инструкций `select`'
 # 'Also show functions without any scops'
 H8AA7DD878BF3: 'Также показывать функции без каких-либо scops'
 # 'Also write profiles with all-zero counters. Intended for testing/debugging.'
@@ -3844,6 +3844,8 @@ H117120C6D4F8: 'Аннотировать точки вызова для объя
 H2FA3995AD0E4: 'Добавлять дополнительную отладочную информацию к инструментированию санитайзера для указанных санитайзеров, если поддерживается'
 # 'Annotate table jump instruction to correlate it with the jump table.'
 H49774B77C4AA: 'Аннотируйте инструкцию перехода таблицы, чтобы связать её с таблицей переходов.'
+# 'Annotate trap blocks in debug info with UBSan trap reasons'
+HD400F47B0D0E: 'Аннотировать блоки ловушек в отладочной информации причинами UBSan'
 # 'Any subsection not covered by another option'
 HE0257BE6772D: 'Любой подраздел, не покрытый другой опцией'
 # 'Append function hash to the name of COMDAT function to avoid function hash mismatch due to the preinliner'
@@ -4764,6 +4766,8 @@ H6AAD89B511B3: 'Путь к контекстно-чувствительному 
 H35F4CF635E0B: 'Последовательное размещение Funclets'
 # 'Continue if files are not mapped correctly.'
 H0AB9362D475E: 'Продолжить, если файлы не отображены правильно.'
+# 'Continue with the remaining targets instead of exiting when failing in a candidate'
+HC5FCF2133B59: 'Продолжить с оставшимися целями вместо выхода при сбое в кандидате'
 # 'Control Flow Optimizer'
 H072A594766A3: 'Оптимизатор потока управления'
 # 'Control conversion of memcpy to Tail predicated loops (WLSTP)'
@@ -5066,6 +5070,10 @@ HA9265D7501D4: 'Удаление мёртвых аргументов'
 HDA7D75078335: 'Устранение мертвых аргументов (BUGPOINT USE ONLY; DO NOT USE)'
 # 'Dead Code Elimination'
 HF23F9DE62329: 'Удаление мертвого кода'
+# 'Dead Global Elimination'
+HBE3A0A5A1F67: 'Устранение мёртвых глобальных переменных'
+# 'Dead Store Elimination'
+H66482BD2ED13: 'Устранение мёртвых записей'
 # 'Debug Variable Analysis'
 H4B43DA399B8A: 'Анализ переменных отладки'
 # 'Debug control MBBs that are scheduled'
@@ -5534,6 +5542,8 @@ H9438B3F5F3E7: 'Отключить генерирование метаданны
 H949767942150: 'Отключить экспериментальное расширение проверки границ для C'
 # 'Disable experimental late parsing of attributes'
 HAEA82819E6DD: 'Отключить экспериментальный поздний разбор атрибутов'
+# 'Disable experimental lifetime safety for C++'
+H6A8F4694EAAB: 'Отключить экспериментальную безопасность времени жизни для C++'
 # 'Disable ext(promotable(ld)) -> promoted(ext(ld)) optimization in CodeGenPrepare'
 HFA8DE3453A19: 'Отключить ext(promotable(ld)) -> promoted(ext(ld)) оптимизацию в CodeGenPrepare'
 # 'Disable external API notes support'
@@ -5688,6 +5698,8 @@ HFD9EDE137232: 'Отключить преобразование памяти в 
 H1147057C0FDD: 'Отключить объединение в combines'
 # 'Disable merging of globals'
 H0911384E3022: 'Отключить объединение глобальных'
+# 'Disable metadata propagation fixes discovered through Issue #147390'
+H6B62C43A1C1B: 'Отключить исправления распространения метаданных, обнаруженные через задачу #147390'
 # 'Disable minimum alignment of 1 for arguments passed by value on stack'
 HAF9C1AF67E2F: 'Отключить минимальное выравнивание 1 для аргументов, передаваемых по значению в стеке'
 # 'Disable mitigations for Load Value Injection (LVI)'
@@ -6182,6 +6194,8 @@ H0A0FD94EAF41: 'Запретить компилятору аннотироват
 HC4FB93EDAFBC: 'Не разрешать компилятору объединять обработчики для любых санитайзеров'
 # 'Do not allow compiler to merge handlers for specified sanitizers'
 H14D0727FA9D4: 'Не разрешать компилятору слияние обработчиков для указанных санитайзеров'
+# 'Do not annotate trap blocks in debug info with UBSan trap reasons'
+HDC304C4C4834: 'Не добавлять в информацию отладки причины UBSan-ловушек для блоков-ловушек'
 # 'Do not assume C++ operator new may not return NULL'
 H1F6F59A37FC5: 'Не предполагайте, что C++ оператор new может не возвращать NULL'
 # 'Do not assume that any loop is finite.'
@@ -6240,6 +6254,8 @@ HB04F2AC6377B: 'Не генерировать отладочную информ�
 H0669AFF65C8F: 'Не создавать данные RTTI'
 # "Do not emit a trap instruction for 'unreachable' IR instructions after noreturn calls, even if --trap-unreachable is set."
 HB71318F0BBDA: "Не генерировать инструкцию trap для 'unreachable' в IR, даже если установлено --trap-unreachable, после нерetuрающих вызовов."
+# 'Do not emit code for any OpenMP constructs.'
+HD789867CBA9F: 'Не генерировать код для конструкций OpenMP'
 # 'Do not emit code that uses the red zone.'
 H4923C3F307F8: 'Не генерировать код, использующий red zone.'
 # 'Do not emit code to make initialization of local statics thread safe'
@@ -6954,6 +6970,8 @@ HC2C8736B7263: 'Встроить исходный текст в отладочн
 HECD9878DE365: 'Встроить содержимое всех файлов, прочитанных этой компиляцией, в создаваемый модульный файл.'
 # 'Embed the contents of the specified file into the module file being compiled.'
 H5C7A5481DBF2: 'Встроить содержимое указанного файла в модульный файл, который компилируется.'
+# 'Embedding generation level:'
+H026F7D15C2F3: 'Уровень генерации вложений:'
 # 'Emit  debug info for defined but unused types'
 H4259F2A07B2E: 'Генерировать отладочную информацию для определённых, но не используемых типов'
 # 'Emit (experimental) loops (with sparse.iterate).'
@@ -7012,6 +7030,8 @@ H2B3A6CDD77E1: 'Генерировать таблицы и проверки Cont
 H12EF1A548A1C: 'Генерировать только таблицы Windows Control Flow Guard (без проверок)'
 # 'Emit Windows EH Continuation Guard tables'
 H7CFD101BE344: 'Генерировать таблицы Continuation Guard обработчика исключений Windows'
+# 'Emit a call graph section'
+H72DF45254ECA: 'Генерировать раздел графа вызовов'
 # 'Emit a call to trap function rather than a trap instruction'
 H7926ECB4152F: 'Генерировать вызов функции trap вместо инструкции trap'
 # 'Emit a compilation database fragment to the specified directory'
@@ -7064,8 +7084,6 @@ H252107FF70F1: 'Выводить путь к компилятору и стро�
 H73932760DABC: 'Генерировать полные описания параметров шаблона в предварительных объявлениях'
 # 'Emit data into separate sections'
 HF75AE625B842: 'Генерировать данные в отдельные секции'
-# 'Emit debug info that places array-bounds instrumentation in an inline function called __ubsan_check_array_bounds.'
-HCA08BC9E900F: 'Генерировать отладочную информацию, размещающую инструментацию границ массивов в встроенной функции с именем __ubsan_check_array_bounds.'
 # 'Emit debug line info directives only'
 HE3308044AB2D: 'Выдавать только директивы отладочной информации о строках кода'
 # 'Emit debug line number tables only'
@@ -7240,6 +7258,8 @@ HE6033CE9D615: 'Включить C-SKY asm сжатую команду'
 HCAFDAD7AAC69: 'Включить инструкции CABAC'
 # 'Enable CREL relocation format (ELF only)'
 H0C82A363E7CF: 'Включить формат переносов CREL (только ELF)'
+# 'Enable Coarray features'
+HB258883F97BE: 'Включить функции Coarray'
 # 'Enable CodeView debug information in object files'
 H190F12E62C0D: 'Включить отладочную информацию CodeView в объектных файлах'
 # 'Enable Control Flow Guard with /guard:cf, or only the table with /guard:cf,nochecks. Enable EH Continuation Guard with /guard:ehcont'
@@ -7262,6 +7282,8 @@ H7236F64CF290: 'Включить хук отладчика для отладки
 H2CA5CA1CFDC6: 'Включить обработку асинхронных исключений EH'
 # 'Enable EVL-based induction variable simplify Pass'
 H0167530440BA: 'Включить проход упрощения индукционных переменных на основе EVL'
+# 'Enable FIR alias analysis'
+HCFA5E224E546: 'Включить анализ FIR-алиасов'
 # 'Enable FP math optimizations that assume approx func'
 HA55AFA6BF75B: 'Включить оптимизации вычислений с плавающей точкой, предполагающие использование приближённых функций'
 # 'Enable FP math optimizations that assume no +-Infs'
@@ -7320,8 +7342,8 @@ HDC17AF33380B: 'Включить инструментирование KernelAddr
 HE6892C669196: 'Включить инструментирование KernelHWAddressSanitizer'
 # 'Enable KernelMemorySanitizer instrumentation'
 H98BCB50602AD: 'Включить инструментирование KernelMemorySanitizer'
-# 'Enable Key Instructions, which reduces the jumpiness of optimized code stepping (DWARF only). Requires LLVM built with LLVM_EXPERIMENTAL_KEY_INSTRUCTIONS.'
-H235B8746F9EA: 'Включить ключевые инструкции, которые уменьшают "скачкообразность" пошагового выполнения оптимизированного кода (только DWARF). Требует LLVM, собранный с LLVM_EXPERIMENTAL_KEY_INSTRUCTIONS'
+# 'Enable Key Instructions, which reduces the jumpiness of debug stepping in optimized C/C++ code in some debuggers. DWARF only. Implies -g.'
+H7B2028A281E0: 'Включить ключевые инструкции, которые уменьшают скачкообразность пошаговой отладки в оптимизированном коде C/C++ в некоторых отладчиках. Только DWARF. Подразумевает -g.'
 # 'Enable LSR phi elimination'
 H6F6B88180DCF: 'Включить элиминацию LSR phi'
 # "Enable LTO in 'full' mode"
@@ -7376,8 +7398,6 @@ H275AC31A4E6B: 'Включить инструментирование PGO'
 HF2D40BF85363: 'Включить передачу информации SSP Canary в Trackback на AIX'
 # 'Enable PatchPoint Liveness Analysis Pass'
 HC23201EA3F30: 'Включить PatchPoint Liveness Analysis Pass'
-# 'Enable PostRA load and store clustering in the machine scheduler'
-H7DBDA92CD831: 'Включить группирование load and store после RA в планировщике машинного кода'
 # 'Enable Pre-RA optimizations pass'
 HBF2BE955A63C: 'Включить этапы оптимизации Pre-RA'
 # 'Enable RDF-based optimizations'
@@ -7412,8 +7432,8 @@ H5546DBF9A313: 'Включить нативный путь векторизац�
 H9D4BDB5AD7B9: 'Включить этап отслеживания непрямых переходов X86.'
 # 'Enable a 2nd level loop of loop tiling'
 HCA8FDA365AE9: 'Включить второй уровень цикла loop tiling'
-# 'Enable a specific type of debug output (comma separated list of types)'
-H3151AFA58B61: 'Включить конкретный тип отладочного вывода (список типов, разделённых запятыми)'
+# 'Enable a specific type of debug output (comma separated list of types using the format "type[:level]", where the level is an optional integer. The level can be set to 1, 2, 3, etc. to control the verbosity of the output. Setting a debug-type level to zero acts as an opt-out for this specific debug-type without affecting the others.'
+H7BEB9AE832C1: 'Включить конкретный тип вывода отладочной информации (список типов, разделенных запятыми, в формате "тип[:уровень]", где уровень — необязательное целое число. Уровень можно установить в 1, 2, 3 и т.д., чтобы контролировать подробность вывода. Установка уровня отладочного типа в ноль отключает этот конкретный тип отладки, не влияя на другие.)'
 # 'Enable abort calls when "fast" instruction selection fails to lower an instruction: 0 disable the abort, 1 will abort but for args, calls and terminators, 2 will also abort for argument lowering, and 3 will never fallback to SelectionDAG.'
 H1EC44B72B380: 'Включить вызовы прерывания, когда "fast" выбор инструкций не может преобразовать инструкцию: 0 отключает прерывание, 1 прерывает но для args, calls и terminators, 2 также прерывает для argument lowering, и 3 никогда не переходит к SelectionDAG.'
 # 'Enable abort calls when "global" instruction selection fails to lower/select an instruction'
@@ -7586,6 +7606,8 @@ HB0D34B7D8979: 'Включить усовершенствованный struct-p
 H19BF4377E02E: 'Включить экспериментальное расширение проверки границ для C'
 # 'Enable experimental late parsing of attributes'
 H9BF048F97F63: 'Включить экспериментальный поздний разбор атрибутов'
+# 'Enable experimental lifetime safety for C++'
+HD4B030FED451: 'Включить экспериментальную безопасность времени жизни для C++'
 # 'Enable extended information within the SHT_LLVM_BB_ADDR_MAP that is extracted from PGO related analysis.'
 H90477C1DC52F: 'Включить расширенную информацию в SHT_LLVM_BB_ADDR_MAP, извлеченную из анализа PGO.'
 # 'Enable external API notes support'
@@ -7712,8 +7734,6 @@ H9E8C5D19A202: 'Включить удаление ненужных глобал�
 H1300A9593E8D: 'Включить задачу линкера для создания статической библиотеки.'
 # 'Enable linker relaxation'
 H4AD9A11300BE: 'Включить оптимизацию линкера'
-# 'Enable load and store clustering in the machine scheduler'
-H9A7A3DC7E082: 'Включить кластеризацию load и store в машинном планировщике'
 # 'Enable load store vectorizer'
 H6C9482FFD1BF: 'Включить векторизатор загрузки и хранения'
 # 'Enable logical abbreviations'
@@ -7924,8 +7944,16 @@ H5D3D99EE631D: 'Включить установку lr в качестве пр�
 H29262DC5BE27: 'Включить настройку атрибута сборки FP exceptions для отключения исключений'
 # 'Enable shared library instrumentation with XRay'
 HBB7CC7BAF352: 'Включить инструментирование общей библиотеки с помощью XRay'
+# 'Enable signing and authentication for ObjC class_ro pointers'
+HA2DFCD156A67: 'Включить подпись и аутентификацию для указателей ObjC class_ro'
+# "Enable signing and authentication of Objective-C object's 'SEL' fields"
+HCC6ED585649D: "Включить подпись и аутентификацию полей 'SEL' объектов Objective-C"
+# "Enable signing and authentication of Objective-C object's 'isa' field"
+HDDAC1554FD74: "Включить подпись и аутентификацию поля 'isa' объектов Objective-C"
 # 'Enable signing and authentication of all indirect calls'
 H85AEAA3DF7E2: 'Включить подпись и аутентификацию всех косвенных вызовов'
+# 'Enable signing and authentication of block descriptors'
+HD07D96BA0689: 'Включить подпись и аутентификацию дескрипторов блоков'
 # 'Enable signing and authentication of indirect goto targets'
 H7778174B9D56: 'Включить подпись и аутентификацию целей непрямого goto'
 # 'Enable signing and authentication of return addresses'
@@ -8052,8 +8080,6 @@ HE96DB2508A4B: 'Включить оптимизацию объединения �
 H4E0A173B05AF: 'Включить печать DOT Polly в -O3'
 # 'Enable the Polly DOT printer in -O3 (no BB content)'
 HEAA8FA2DC249: 'Включить печать Polly DOT в -O3 (без содержимого BB)'
-# 'Enable the RISC-V VL Optimizer pass'
-HC773BD141E4D: 'Включить прогоны оптимизации RISC-V VL'
 # 'Enable the VR4300 mulmul bug fix.'
 HF647968864FA: 'Включить исправление ошибки VR4300 mulmul'
 # 'Enable the X86 cmov-to-branch optimization.'
@@ -8662,8 +8688,6 @@ H30E98BA4CBDB: 'Фильтровать бенчмарки перед их ана
 HAE5C92A1E57B: 'Опции фильтрации и сортировки'
 # 'Finalize ISel and expand pseudo-instructions'
 HAC66FC917CAA: 'Завершить ISel и разворачивать псевдоинструкции'
-# 'Finalize machine instruction bundles'
-H54F93CB22051: 'Финализировать пакеты машинных инструкций'
 # 'Find methods that overrides a virtual method.'
 H26E803BD2E38: 'Найти методы, которые переопределяют виртуальный метод.'
 # "Find objects in DIR or based on FILE's path"
@@ -9226,6 +9250,8 @@ H5EECEC688125: 'Сгенерировать документацию атрибу
 H5E3166505291: 'Сгенерировать список написания атрибутов'
 # 'Generate attributes for this dialect'
 HE3FD9C3103CA: 'Создать атрибуты для этого диалекта'
+# 'Generate basic block-level embeddings'
+H48994C28864C: 'Генерировать вложения на уровне базовых блоков'
 # 'Generate bitsplit instructions'
 HE0B4AD43ABB0: 'Генерировать инструкции bitsplit'
 # 'Generate branches with extended addressability, usually via indirect jumps.'
@@ -9306,8 +9332,14 @@ H1A8F89282970: 'Создать файл экспорта для библиоте
 HABD4DCD38172: 'Генерировать инструкции извлечения'
 # 'Generate function to translate named character references to UTF-8 sequences'
 H2212027837CC: 'Создать функцию для преобразования именованных символьных ссылок в последовательности UTF-8'
+# 'Generate function-level embeddings'
+H55DEBCA34EC5: 'Генерировать вложения на уровне функций'
 # 'Generate hot text symbols. Apply this option to a precompiled binary that manually calls into hugify, such that at runtime hugify call will put hot code into 2M pages. This requires relocation.'
 HE07FCEA6613B: 'Создавать символы горячего текста. Применяйте эту опцию к предварительно скомпилированному бинарному файлу, который вручную вызывает hugify, таким образом, что во время выполнения вызов hugify поместит горячий код в страницы размером 2M. Это требует релокации.'
+# 'Generate implicit floating point or vector instructions'
+HD42E3D8993CE: 'Генерировать неявные инструкции с плавающей точкой или векторные инструкции'
+# 'Generate instruction-level embeddings'
+H985C0F842569: 'Генерировать вложения на уровне инструкций'
 # 'Generate instrumented code to collect context sensitive execution counts into <directory>/default.profraw (overridden by LLVM_PROFILE_FILE env var)'
 H10A2DF54F49A: 'Создавать инструментированный код для сбора контекстно-зависимых счетчиков выполнения в <directory>/default.profraw (переопределяется переменной окружения LLVM_PROFILE_FILE)'
 # 'Generate instrumented code to collect context sensitive execution counts into default.profraw (overridden by LLVM_PROFILE_FILE env var)'
@@ -9710,8 +9742,12 @@ HC5A8A1BFD3A5: 'IBM MASS векторная библиотека'
 H91B04B0AEDF0: 'Свойства IBOutletCollection должны быть copy/strong и не assign'
 # 'IEEE 754 denormal numbers'
 HB645808304FA: 'IEEE 754 субнормальные числа'
+# 'IR2Vec - Embedding Generation Tool\nGenerates embeddings for a given LLVM IR and supports triplet generation for vocabulary training and embedding generation.\n\nSee https://llvm.org/docs/CommandGuide/llvm-ir2vec.html for more information.\n'
+H0D3FD2EA193C: 'IR2Vec - Инструмент генерации вложений\nГенерирует вложения для заданного LLVM IR и поддерживает создание триплетов для обучения словаря и генерации вложений.\n\nСм. https://llvm.org/docs/CommandGuide/llvm-ir2vec.html для дополнительной информации.\n'
 # 'IR2Vec Options'
 H353091CB276E: 'Опции IR2Vec'
+# 'IR2Vec Tool Options'
+H7B31ED25D372: 'Опции инструмента IR2Vec'
 # 'IRDL file to register before processing the input'
 H9ADEB68395C9: 'Файл IRDL для регистрации до обработки входных данных'
 # 'IRTranslator LLVM IR -> MI'
@@ -9798,6 +9834,8 @@ H0DECF1F15908: 'Если включено, простое расщепление
 H29F9314FFE86: 'Если включено, инструкция freeze будет добавлена в условие разветвления цикла (loop unswitch), чтобы предотвратить неправильную компиляцию.'
 # 'If present, forces/disables the use of long calls'
 H244BD3DDA186: 'Если задан, включает/отключает использование длинных вызовов'
+# 'If present, stops generating TBAA tags for accesses of local allocations after N accesses in a module'
+HA80BB0A3B8F4: 'Если присутствует, прекращает генерацию меток TBAA для обращений к локальным выделениям памяти после N обращений в модуле'
 # 'If present, stops packetizing after N instructions'
 HC908BB95C55F: 'Если указано, останавливает packetizing после N инструкций'
 # 'If profile count information is used in tail duplication cost model, the gained fall through number from tail duplication should be at least this percent of hot count.'
@@ -9830,6 +9868,8 @@ HB78C3D57EF8C: 'Если задано, неизвестные опции фор�
 HC6C4D32713B0: 'Если указано, IR, выводимый с помощью опций -print-[before|after]{-all}, будет записываться в файлы в этой директории вместо вывода в stderr'
 # 'If stats should be appended to stats-file instead of overwriting it'
 H7B41C07F5D40: 'Если статистику следует добавлять в stats-file вместо его перезаписи'
+# 'If stats should include timers.'
+H09541D9A8495: 'Следует ли включать таймеры в статистику.'
 # 'If the function being instrumented contains more than this number of memory accesses, use callbacks instead of inline checks (-1 means never use callbacks).'
 HD30970E83223: 'Если инструментируемая функция содержит более этого числа обращений к памяти, используйте колбеки вместо встроенных проверок (-1 означает никогда не использовать колбеки).'
 # 'If the function being instrumented requires more than this number of checks and origin stores, use callbacks instead of inline checks (-1 means never use callbacks).'
@@ -9898,6 +9938,8 @@ HDF7F5F41C8A9: 'Игнорировать функции, соответству�
 HABB3F2EDAFC7: 'Игнорировать конфликт вставки и продолжать выполнение для исправления.'
 # 'Ignore possible aliasing of the array bases'
 H64EE4A3BEF1A: 'Игнорировать возможное алиасирование баз массивов'
+# 'Ignore profitability, force interchange (does not work with other options)'
+HEB904092D439: 'Игнорировать выгодность, принудительный обмен (не работает с другими опциями)'
 # 'Ignore redundant instrumentation'
 H4E0E4A3BF250: 'Игнорировать избыточное инструментирование'
 # 'Ignore the definition of the given macro when building and loading modules'
@@ -10200,6 +10242,8 @@ H41E9F3846338: 'Инструментировать вход/выход функ�
 H179F36D1CDA5: 'Встраивать функции с вызовом к __CheckForDebuggerJustMyCode'
 # 'Instrument globals'
 HF9B96A5EACA6: 'Инструментирование глобальных'
+# 'Instrument globals, even those within user-defined sections. Warning: This may break existing code which walks globals via linker-generated symbols, expects certain globals to be contiguous with each other, or makes other assumptions which are invalidated by HWASan instrumentation.'
+H19A2B8EBCA54: 'Инструментальные глобальные переменные, даже находящиеся в пользовательских секциях. Предупреждение: Это может нарушить существующий код, который проходит по глобальным переменным через символы, сгенерированные линкером, ожидает, что определенные глобальные переменные расположены непрерывно друг за другом, или делает другие предположения, которые становятся недействительными из-за инструментальной обработки HWASan.'
 # 'Instrument memintrinsics (memset/memcpy/memmove)'
 HE6033F8FFDF9: 'Инструментировать memintrinsics (memset/memcpy/memmove)'
 # 'Instrument memory accesses'
@@ -10246,6 +10290,8 @@ HD223D51415E6: 'Итерировать до достижения фиксиро�
 H1328F2EA33BA: 'Итерационный вывод: точность сходимости delta; меньшие значения обычно приводят к лучшим результатам за счёт ухудшения времени выполнения'
 # 'Iterative inference: maximum number of update iterations per block'
 H5F6BCC565010: 'Iterative inference: максимальное количество итераций обновления на блок'
+# 'Iteratively apply merging on a node to catch new callers'
+HCD2383E05174: 'Итеративно применять объединение на узле, чтобы обнаружить новых вызывающих'
 # 'JIT the code and run it by invoking the main function'
 HC922A3A5E7D1: 'JIT the code and run it by invoking the main function'
 # 'JITLink Options'
@@ -10390,6 +10436,8 @@ HD066D1FABC77: 'Ленивый анализ информации о значен
 H5201BDD0F5FF: 'Наименьшее BB число большой функции.'
 # 'Leave out unnecessary information when printing MIR'
 HEE7C41A11713: 'Исключать ненужную информацию при выводе MIR'
+# 'Legalize SPIR-V implicit bindings'
+H70D9124B645C: 'Нормализовать неявные привязки SPIR-V'
 # "Legalize the Machine IR a function's Machine IR"
 H082594DE8633: 'Приводить в соответствие Machine IR функции Machine IR'
 # 'Level of field padding for AddressSanitizer'
@@ -10438,6 +10486,8 @@ H538935517F09: 'Ограничить создаваемую отладочную
 HF96C59869298: 'Ограничить точность float до указанного значения'
 # 'Limit maximum recursion depth when calculating costs of speculatively executed instructions'
 H66110CD9CA1F: 'Ограничить максимальную глубину рекурсии при вычислении затрат спекулятивно выполненных инструкций'
+# 'Limit number of blocks a define in a threaded block is allowed to be live in'
+H7E36F561F926: 'Ограничить количество блоков, в которых определение внутри потокового блока может быть активным'
 # 'Limit on instruction search range in frame index elimination'
 HBC1B1C08E702: 'Ограничение диапазона поиска инструкций в удалении индекса фрейма'
 # 'Limit on the cost of instructions that can be repeated due to loop flattening'
@@ -11476,6 +11526,8 @@ H3F90161CF695: 'Имя макроса для определения -- игно�
 HCFEFDA365E00: 'Имя файла с отдельными отладочными данными DWARF для кодирования в объектном файле'
 # 'Namespace.'
 HD451EBBFFEAD: 'Пространство имен.'
+# 'Namespec of libclc OpenCL bitcode library to link'
+H1BDEB17C9E00: 'Пространство имен библиотеки биткода OpenCL libclc для связывания'
 # 'Narrow LSR complex solution using expectation of registers number'
 H13DBBF2C516C: 'Сужение LSR: комплексное решение, использующее ожидание количества регистров'
 # 'Narrow LSR search space by filtering non-optimal formulae with the same ScaledReg and Scale'
@@ -11592,6 +11644,8 @@ H5DDB526BD36F: 'Количество выходных файлов'
 HEC293753B227: 'Количество разделов для параллельной полной генерации кода LTO, только для ld.lld.'
 # 'Number of registers to limit to when printing regmask operands in IR dumps. unlimited = -1'
 H0373C047E939: 'Количество регистров, до которых ограничить при выводе операндов regmask в дампах IR. неограниченно = -1'
+# 'Number of runs for benchmarking'
+HB10A82BB1DC5: 'Количество запусков для тестирования'
 # 'Number of seconds program is allowed to run before it is killed (default is 300s), 0 disables timeout'
 HE6EB2161F536: 'Количество секунд, разрешённых для выполнения программы перед её остановкой (по умолчанию 300с), 0 отключает таймаут'
 # "Number of threads in the 'x' dimension"
@@ -11660,6 +11714,8 @@ HB9A6C5C455E1: 'Смещения измеряются в байтах UTF-8'
 H0151FBB5A950: 'Смещения указаны в юникод-кодовых точках'
 # 'Old namespace.'
 HC6DBF56DB427: 'Старое пространство имен.'
+# 'Omit accesses due to pointer capturing'
+H044FD8077907: 'Опустить обращения из-за захвата указателя'
 # 'Omit all lfences before branch instructions.'
 H64285876BCDE: 'Пропускать все lfences перед инструкциями перехода.'
 # 'Omit all lfences other than the first to be placed in a basic block.'
@@ -11876,16 +11932,16 @@ H226495157F78: "Клауз OpenACC '%1' недопустим в директив
 HC59CAAD94E7A: "Предложение 'bind' OpenACC в объявлении должно связывать то же имя, что и предыдущие предложения 'bind'"
 # "OpenACC 'collapse' clause loop count must be a %select{constant expression|positive integer value, evaluated to %1}0"
 HF187F732137C: "OpenACC 'collapse' параметр количество итераций цикла должно быть %select{константное выражение|положительное целое значение, вычисленное до %1}0"
-# "OpenACC 'device_type' clause on a 'set' construct only permits one architecture"
-HB63E35D8A787: "OpenACC пункт 'device_type' в конструкции 'set' допускает только одну архитектуру"
+# "OpenACC 'device_type' clause on a '%0' construct only permits one architecture"
+HD88AB942A2EE: "Предложение 'device_type' OpenACC для конструкции '%0' допускает только одну архитектуру"
 # "OpenACC 'gang' clause may have at most one %select{unnamed or 'num'|'dim'|'static'}0 argument"
 HC064C4557CFE: "Директива OpenACC 'gang' может иметь не более одного %select{неименованный или 'num'|'dim'|'static'}0 аргумента"
 # "OpenACC 'reduction' composite variable must not have non-scalar field"
 H9A717A5BB65E: "OpenACC 'reduction' составная переменная не может иметь непростое поле"
 # "OpenACC 'reduction' variable must be a composite of scalar types; %1 %select{is not a class or struct|is incomplete|is not an aggregate}0"
 HD35F9CAD567D: "Переменная OpenACC 'reduction' должна быть составным типом скалярных типов; %1 %select{не является классом или структурой|неполный тип|не является агрегатом}0"
-# "OpenACC 'reduction' variable must be of scalar type, sub-array, or a composite of scalar types;%select{| sub-array base}1 type is %0"
-HEC7D1B479B8F: "OpenACC 'reduction' переменная должна быть типа скалярного, подмассива или составного типа из скалярных типов;%select{| подмассив база}1 тип является %0"
+# "OpenACC 'reduction' variable must be of scalar type, aggregate, sub-array, or a composite of scalar types;%select{| sub-array base}1 type is %0"
+HF070A8DABE4C: "Переменная 'reduction' OpenACC должна быть скалярного типа, составного типа, подмассива или комбинации скалярных типов;%select{| базовый тип подмассива}1 имеет тип %0"
 # "OpenACC 'reduction' variable must have the same operator in all nested constructs (%0 vs %1)"
 H28C388119D4E: "Переменная OpenACC 'reduction' должна иметь одинаковый оператор во всех вложенных конструкциях (%0 vs %1)"
 # "OpenACC 'routine' construct must have at least one 'gang', 'seq', 'vector', or 'worker' clause that applies to each 'device_type'"
@@ -12020,6 +12076,8 @@ H73EA61C4E41D: 'Уровень оптимизации 3. Аналогично cl
 HA23F3D2204EA: 'Уровень оптимизации для компиляции NVVM'
 # "Optimization level. [-O0, -O1, -O2, or -O3] (default = '-O2')"
 H8F5A63304993: "Уровень оптимизации. [-O0, -O1, -O2 или -O3] (по умолчанию = '-O2')"
+# 'Optimization pass(es) to disable (comma-separated list)'
+H2FA611ED905D: 'Проход(ы) оптимизации для отключения (список через запятую)'
 # 'Optimization remarks file containing inline remarks to be replayed by cgscc inlining.'
 HEFDDA07D8CA1: 'Файл с замечаниями оптимизации, содержащий встроенные замечания для воспроизведения инлайнингом cgscc.'
 # 'Optimization remarks file containing inline remarks to be replayed by inlining from sample profile loader.'
@@ -12346,6 +12404,8 @@ H194FFD6DEF4E: 'Передайте <arg> плагину <name>'
 H6E93CAC5A2A4: 'Передать <arg> для компиляции устройства CUDA/HIP'
 # 'Pass <arg> to the CUDA/HIP host compilation'
 HBD5864C8EAAC: 'Передайте <arg> в хост-компиляцию для CUDA/HIP'
+# 'Pass <arg> to the ThinLTO distributor process. Can be specified multiple times or with comma-separated values.'
+H3883610906E4: 'Передать <arg> процессу-распределителю ThinLTO. Может быть указано несколько раз или через запятую'
 # 'Pass <arg> to the assembler'
 H260454350861: 'Передать <arg> ассемблеру'
 # 'Pass <arg> to the clang driver'
@@ -12436,6 +12496,8 @@ HEE09636C6E6A: 'Путь к DIA SDK'
 H6108420B0DC9: 'Путь к файлу IR, сгенерированному фронтендом для хоста.'
 # 'Path to the ORC runtime'
 HA6D50B3F5E21: 'Путь к среде выполнения ORC'
+# 'Path to the ThinLTO distributor process. If specified, ThinLTO backend compilations will be distributed by LLD'
+HED23D7F0E037: 'Путь к процессу-распределителю ThinLTO. Если указано, то компиляции бэкенда ThinLTO будут распределяться через LLD'
 # 'Path to the VCToolChain'
 H5C43C23950E7: 'Путь к VCToolChain'
 # 'Path to the Windows SDK'
@@ -13260,6 +13322,8 @@ H97882415014C: 'Обрабатывать области, которые мало
 H83D6F8A6F254: 'Обрабатывать исходные файлы в фиксированном формате'
 # 'Process source files in free form'
 H00F60A25C21E: 'Обрабатывать исходные файлы в свободной форме'
+# 'Process specific function only'
+HB83F576D00F0: 'Обрабатывать только конкретную функцию'
 # 'Process trigraph sequences'
 HE92D60C3DD89: 'Обрабатывать триграфные последовательности'
 # 'Processor register names.'
@@ -13308,6 +13372,10 @@ HA5A6E86B1573: 'Вставка пролога/эпилога и финализа
 H8DCCB244621C: 'Преобразование памяти в регистр'
 # 'Promote all vector constants'
 HC242F7743ACD: 'Преобразование всех векторных констант'
+# 'Promote the target candidate even when the defintion  is not available'
+HD53DBC481A81: 'Повысить кандидата в цели даже если определение недоступно'
+# 'Promote the target candidate only if it is a hot function. Otherwise, warm functions can also be promoted'
+HF997C2049451: 'Повысить кандидата в цели только если это "горячая" функция. В противном случае могут быть повышены и "теплые" функции'
 # 'Propagate attributes in index'
 HA59CB2A030BF: 'Пропагация атрибутов в индексе'
 # 'Propagate labels from condition values of select instructions to results.'
@@ -13930,6 +13998,8 @@ HEEDD34050A74: "Примерно оценивать количество так�
 HE0CCC8143863: 'Округлять размеры секций до их выравнивания'
 # 'Round-trip the IR after parsing and ensure it succeeds'
 HB85D02D3E83D: 'Провести обратный проход IR после разбора и убедиться в успехе'
+# 'Run CSE and canonicalization on MLIR output'
+H0C344046F9CA: 'Выполнить CSE и канонизацию над выходными данными MLIR'
 # 'Run GCN iterative scheduler for ILP scheduling (experimental)'
 H1C7DB026D127: 'Запуск итеративного планировщика GCN для планирования ILP (экспериментальный)'
 # 'Run GCN iterative scheduler for minimal register usage (experimental)'
@@ -14790,6 +14860,8 @@ HD3302520BB6D: 'Показать время фаз llvm-jitlink'
 HB7BC3C6A17C2: 'Отображать время фаз llvm-rtdyld'
 # 'Show verbose output when opt-bisect-limit is set'
 H8536EE8B8C8C: 'Показывать verbose вывод, когда опция opt-bisect-limit задана'
+# 'Show verbose output when opt-disable is set'
+HF5631C408CB4: 'Отображать подробный вывод при установленном opt-disable'
 # 'Show vtable names for shown functions'
 H79407841F063: 'Показать имена vtable для отображаемых функций'
 # 'Shrink Wrap Pass'
@@ -15232,6 +15304,8 @@ H33A61DDF11E4: 'Разделение опций'
 H4A2C55331EC3: 'Разделить все критические ребра во время удаления PHI'
 # 'Split all partitions'
 H2671573A0660: 'Разделить все разделы'
+# 'Split by category. If present, splitting by category is used with the specified categorization type.'
+H816BCFE35D75: 'Разделить по категориям. Если указано, разделение по категориям будет использоваться с указанным типом категоризации.'
 # 'Split critical edges during machine sinking'
 H4AC49C950879: 'Разделить критические ребра во время машинного опускания'
 # 'Split machine functions using profile information'
@@ -15276,6 +15350,8 @@ HE346B2A53C42: 'Начало вывода предупреждений для н
 HE5F5305CC00C: 'Начните pipeline с сбора и завершите его проверкой сохранения отладочной информации.'
 # 'Start the pipeline with debugify and end it with check-debugify'
 H0175081FA86E: 'Начните пайплайн с debugify и завершите его check-debugify'
+# 'Start the pipeline with prof-inject and end it with prof-verify'
+H0E0B6FF901AB: 'Начните конвейер с prof-inject и завершите его с помощью prof-verify'
 # 'Statement-level analysis'
 H08A2201C3BBE: 'Анализ на уровне операторов'
 # 'Static Data Annotator'
@@ -15440,6 +15516,8 @@ H20A34CC2B958: 'SystemZ Длинная Ветка'
 H26F388ADE65D: 'Этап Post Rewrite для SystemZ'
 # 'SystemZ Test Data Class optimization'
 H7C47CE39188C: 'SystemZ Test Data Class оптимизация'
+# 'TU local entity %0 is exposed'
+H93EBA0E5BD38: 'Сущность %0 локального модуля скомпилирована'
 # 'TableGen LSP Language Server'
 H927DAB993B40: 'TableGen LSP Сервер языка'
 # 'Tail Call Elimination'
@@ -16292,6 +16370,8 @@ HAEBC34FD2276: 'Попробуйте равномерно распределят
 H0998E6C983F8: 'Попытаться отобразить циклы `do concurrent` на OpenMP [none|host|device]'
 # 'Try to propagate nonnull argument attributes from callsites to caller functions.'
 H020E4D562B19: 'Попробовать распространить атрибуты аргументов nonnull от точек вызова к вызывающим функциям.'
+# 'Try to replace values with the idempotent instructions for better vectorization.'
+H4B8E8EF62A87: 'Попытайтесь заменить значения идемпотентными инструкциями для лучшей векторизации.'
 # 'Try to simplify all loads.'
 HBDC33CA86746: 'Попробуйте упростить все загрузки.'
 # 'Try to vectorize with non-power-of-2 number of elements.'
@@ -17280,6 +17360,10 @@ HC9E644F8BF87: 'Когда опция -fvisibility-inlines-hidden включен
 H2ECC08973193: 'Когда диагностика выдается для операции, также выводить операцию как прикрепленную заметку'
 # 'When a diagnostic is emitted, also print the stack trace as an attached note'
 H76C424E9438C: 'Когда выводится диагностическое сообщение, также выводить трассировку стека в виде прикрепленной заметки'
+# "When annotating `select` instructions, this value will be used for the first ('true') case."
+HAB40E02AF059: "При аннотировании инструкций `select` это значение будет использоваться для первого ('true') случая."
+# "When annotating `select` instructions, this value will be used for the second ('false') case."
+HFBC3AABDF108: "При аннотировании инструкций `select` это значение будет использоваться для второго ('false') случая."
 # 'When creating a PCH, stop PCH generation after #pragma hdrstop.'
 HD38248648BFF: 'При создании PCH останавливать генерацию PCH после #pragma hdrstop.'
 # 'When dfsan-combine-offset-labels-on-gep and/or dfsan-combine-pointer-labels-on-load are false, this flag can be used to re-enable combining offset and/or pointer taint when loading specific constant global variables (i.e. lookup tables).'
@@ -17296,12 +17380,16 @@ HFD526CCFAF68: 'При dumping debug chunks отображать отдельн�
 HBD90D91A2AFF: 'При выводе записей типов для классов, объединений, перечислений и структур, не пытайтесь разрешать предварительные ссылки'
 # 'When epilogue vectorization is enabled, and a value greater than 1 is specified, forces the given VF for all applicable epilogue loops.'
 H9B19DBFD9697: 'Когда включена векторизация эпилога, и указано значение больше 1, заставляет использовать заданное VF для всех применимых эпилоговых циклов.'
+# 'When generating R_RISCV_ALIGN, insert $alignment-2 bytes of NOPs even in norvc code'
+HDA9FBC21EE4C: 'При генерации R_RISCV_ALIGN вставляйте $alignment-2 байт NOP, даже в norvc-коде'
 # 'When generating a crash reproducer, attempt to generated a reproducer with the smallest pipeline.'
 H527701909117: 'При создании воспроизведения ошибки, попытайтесь сгенерировать воспроизведение с наименьшей цепочкой пайплайна.'
 # 'When generating nested context-sensitive profiles, always generate extra base profile for function with all its context profiles merged into it.'
 H4E82789DA6E1: 'При генерации вложенных контекстно-чувствительных профилей всегда генерировать дополнительный базовый профиль для функции, в которую объединены все её контекстные профили.'
 # 'When merging conditional stores, do so even if the resultant basic blocks are unlikely to be if-converted as a result'
 H33EB082F4E55: 'При объединении условных записей делайте это даже если результирующие базовые блоки вряд ли будут преобразованы в if-конструкции в результате этого объединения'
+# 'When non-empty string is passed each serialized SPIR-V module is saved to an additional file that starts with the given prefix. This is used to generate separate binaries for validation, where `--split-input-file` normally combines all outputs into one. The one combined output (`-o`) is still written. Created files need to be removed manually once processed.'
+HADC89B4A2B37: 'Когда передается непустая строка, каждый сериализованный модуль SPIR-V сохраняется в дополнительный файл, начинающийся с указанного префикса. Это используется для создания отдельных бинарных файлов для проверки, где `--split-input-file` обычно объединяет все выходные данные в один. Один объединенный вывод (`-o`) все еще записывается. Созданные файлы необходимо вручную удалить после обработки.'
 # 'When performing SCEV expansion only if it is cheap to do, this controls the budget that is considered cheap (default = 4)'
 H6E8B9FA2EB34: 'При выполнении расширения SCEV только если это недорого, этот параметр определяет бюджет, который считается недорогим (по умолчанию = 4)'
 # 'When performing memory disambiguation checks at runtime do not generate more than this number of comparisons (default = 8).'
@@ -17314,6 +17402,8 @@ HD8F4D915AAB6: 'При печати ИР для print-[before|after]{-all} дл�
 H58BBC34B4C5E: 'При печати IR для print-ir-[before|after]{-all} всегда печатать верхнеуровневую операцию'
 # 'When printing analysis, include information on every instruction'
 H27AFC0602C62: 'При выводе анализа включать информацию о каждой инструкции'
+# 'When printing analysis, use the heuristic for fixed-size arrays if the default delinearizetion fails.'
+H52478258D81A: 'При выводе анализа используйте эвристику для массивов фиксированного размера, если стандартная делинеаризация не удалась.'
 # 'When printing machine IR, annotate instructions and blocks with SlotIndexes when available'
 H8B62DF7E25E7: 'При печати машинного IR аннотировать инструкции и блоки с помощью SlotIndexes при их наличии'
 # 'When printing the IR after a pass, only print if the IR changed'
@@ -17374,8 +17464,12 @@ H77F1EF844B16: 'Применять ли размещение ext-tsp для эк
 HB03E5614FB01: 'Указывать, следует ли создавать переносимый предкомпилированный заголовок'
 # 'Whether to distribute into a loop that may not be if-convertible by the loop vectorizer'
 HB249A06C5F2F: 'Нужно ли распределять в цикл, который может не быть if-convertible, обрабатываемый цикловекторизатором'
+# 'Whether to emit .sframe unwind sections.'
+H4C29B66E1AEC: 'Выдавать ли разделы .sframe unwind.'
 # 'Whether to emit DWARF EH frame entries.'
 HDDECD32989A5: 'Указать, следует ли создавать записи фреймов DWARF EH.'
+# 'Whether to force use VGPR for Opc and Dest of MFMA. If unspecified, default to compiler heuristics'
+HDB98A7F029B2: 'Принудительно ли использовать VGPR для Opc и Dest инструкции MFMA. Если не указано, используется эвристика компилятора'
 # 'Whether to generate default bounds for arrays.'
 HA8699205DACC: 'Указывать ли генерацию стандартных границ для массивов.'
 # 'Whether to include the lower dimensions extents in the stride.'
@@ -17416,8 +17510,6 @@ HA61656982921: 'Увеличивать под-dword постоянные заг�
 H16C37A921AE2: 'Увеличивать загрузки из константного адресного пространства подслов (dword) в AMDGPULateCodeGenPrepare'
 # "Widen the loop induction variables, if possible, so overflow checks won't reject flattening"
 HF84F6515DE2A: 'Увеличивайте цикловые индукционные переменные, если возможно, чтобы проверки переполнения не отклоняли уплощение'
-# 'Widen uniform 16-bit instructions to 32-bit in AMDGPUCodeGenPrepare'
-H46D2473C38FB: 'Преобразование однородных 16-битных инструкций в 32-битные в AMDGPUCodeGenPrepare'
 # 'Windows exception model'
 H86EB91F51633: 'Модель исключений Windows'
 # 'With -globals, only dump globals whose name matches the given value'
@@ -17848,8 +17940,8 @@ H0F2B276FBFF5: 'аргумент-адрес для атомарной опера
 H77D9C30AD097: 'адрес аргумента операции с атомарными типами должен быть указателем на не-%select{const|constant}0 _Atomic тип (%1 недопустим)'
 # 'address argument to atomic operation must be a pointer to non-const type (%0 invalid)'
 HA961ACF648B8: 'аргумент адреса в атомной операции должен быть указателем на тип, отличный от const (%0 недопустим)'
-# 'address argument to load or store exclusive builtin must be a pointer to 1,2,4 or 8 byte type (%0 invalid)'
-H7473631C7DCE: 'Адрес аргумента для load или store exclusive встроенной функции должен быть указателем на тип размером 1, 2, 4 или 8 байт (%0 недопустим)'
+# 'address argument to load or store exclusive builtin must be a pointer to %select{|,| or }1%select{|1}2%select{|,| or }3%select{|2}4%select{|,| or }5%select{|4}6%select{|,| or }7%select{|8}8 byte type (%0 invalid)'
+H613CF3603CD2: 'Аргумент адреса для встроенной функции load или store exclusive должен быть указателем на %select{|,| или }1%select{|1}2%select{|,| или }3%select{|2}4%select{|,| или }5%select{|4}6%select{|,| или }7%select{|8}8 байтовый тип (%0 неверный)'
 # 'address argument to nontemporal builtin must be a pointer (%0 invalid)'
 H15C0E2A98779: 'аргумент адреса для nontemporal builtin должен быть указателем (%0 недопустим)'
 # 'address argument to nontemporal builtin must be a pointer to integer, float, pointer, or a vector of such types (%0 invalid)'
@@ -18490,10 +18582,8 @@ H51393292A866: 'Атрибут %0 с %1 аргументами требует ш
 HCB37B8A40CF9: 'attribute %q0 не может быть применено к удалённой функции'
 # 'attribute %q0 cannot be applied to member of %q1 class'
 HFBD033ADD565: 'атрибут %q0 не может быть применен к члену класса %q1'
-# "attribute '%0' on function does not match previous declaration"
-HF59632E17268: "атрибут '%0' на функции не соответствует предыдущему объявлению"
-# "attribute '%0' on overriding function does not match base declaration"
-H19F6EB5D2707: "атрибут '%0' в переопределяющей функции не соответствует базовой декларации"
+# "attribute '%0' on overriding function conflicts with base declaration"
+H7966F81365E6: "Атрибут '%0' в переопределяющей функции конфликтует с базовым объявлением"
 # "attribute '%0' should not be added via type conversion"
 HD3474317FB81: "атрибут '%0' не следует добавлять с помощью преобразования типа"
 # "attribute '%select{|target|cpu_specific|cpu_dispatch|target_clones|target_version}0' multiversioned functions do not yet support %select{function templates|virtual functions|deduced return types|constructors|destructors|deleted functions|defaulted functions|constexpr functions|consteval function|lambdas}1"
@@ -20694,6 +20784,8 @@ H22AD60D3A378: 'dereferenced pointer past the end of %select{|подобъект
 H77B30DE9BC36: "разыменование %0; тип был объявлен с 'noderef'"
 # 'dereferencing a __weak pointer is not allowed due to possible null value caused by race condition, assign it to strong variable first'
 H69A87CE8BA55: 'деференцирование __weak указателя запрещено из-за возможного нулевого значения, вызванного race condition, сначала присвойте его сильной переменной'
+# 'dereferencing a null pointer is not allowed in a constant expression'
+H21588D017070: 'Разыменование нулевого указателя не разрешено в константном выражении'
 # "dereferencing expression marked as 'noderef'"
 HB6D67B14D60F: "разыменование выражения, отмеченного как 'noderef'"
 # 'derived class must specify the same code segment as its base classes'
@@ -21316,8 +21408,14 @@ HE76165194C35: 'закрывающий тег'
 H00CF7F723C1C: "вхожу в модуль '%0' из-за этого pragma"
 # 'enum %0 was explicitly specialized here'
 H888313DD02EB: 'enum %0 был явно специализирован здесь'
+# 'enumeration %0 declared with incompatible fixed underlying types (%1 vs. %2)'
+H5AA29EBB0D29: 'Перечисление %0 объявлено с несовместимыми фиксированными базовыми типами (%1 против %2)'
+# 'enumeration %0 has fixed underlying type here'
+H12D7FF9A5081: 'Перечисление %0 имеет фиксированный базовый тип здесь'
 # 'enumeration %0 is incomplete'
 HACD4B99390E7: 'enumeration %0 является неполным'
+# 'enumeration %0 missing fixed underlying type here'
+H3217F5445008: 'Перечисление %0 отсутствует фиксированный базовый тип здесь'
 # 'enumeration cannot be a template'
 H0777CF5091AE: 'Перечисление не может быть шаблоном'
 # 'enumeration previously declared as %select{un|}0scoped'
@@ -21874,6 +21972,8 @@ H4F1921BA3641: "ожидалось push, pop или строковой лите�
 H2D60229D01D0: 'ожидала строка в кавычках после знака равно'
 # "expected reference to one of the parameters of function %0%select{| or 'this'}1"
 HD78611AD5D12: "ожидалась ссылка на один из параметров функции %0%select{| или 'this'}1"
+# "expected reference type argument on 'adjust_args' clause with 'need_device_addr' modifier"
+HE4791647AAE3: "Ожидается аргумент ссылочного типа в предложении 'adjust_args' с модификатором 'need_device_addr'"
 # 'expected selector for Objective-C %select{setter|getter}0'
 HFB2F00048645: 'ожидается селектор для Objective-C %select{сеттер|геттер}0'
 # 'expected selector for Objective-C method'
@@ -22066,8 +22166,8 @@ H2CCBA9D1C7AA: 'объявление export находится внутри ан
 HECEB46AE53AF: 'экспортное объявление находится внутри другого экспортного объявления'
 # 'export declaration can only be used on functions'
 H2A1BE3778EEF: 'объявление export можно использовать только для функций'
-# 'export declaration can only be used within a module purview'
-HA59173758635: 'объявление export может использоваться только внутри пределов модуля'
+# 'export declaration can only be used within a module interface'
+H96DD9FB41744: 'Декларация экспорта может использоваться только в интерфейсе модуля'
 # 'export declaration cannot be empty'
 H571FAB6A011E: 'объявление export не может быть пустым'
 # 'export declaration cannot be used in a private module fragment'
@@ -22416,6 +22516,8 @@ H6DFBB5CF7F53: 'атрибут format не может указывать нея�
 H4D29848904BC: "форматный спецификатор '%0' несовместим с '%1'"
 # 'format specifies type %0 but the argument has %select{type|underlying type}2 %1'
 H2B1918042742: 'формат указывает тип %0, но аргумент имеет %select{тип|основной тип}2 %1'
+# 'format specifies type %0 but the argument has %select{type|underlying type}2 %1, which differs in signedness'
+H5D3E7972CACA: 'Формат задает тип %0, но аргумент имеет %select{тип|базовый тип}2 %1, который отличается по знаку'
 # "format string contains '\\0' within the string body"
 H262604652293: "форматная строка содержит '\\0' внутри тела строки"
 # 'format string is defined here'
@@ -23472,6 +23574,8 @@ H99AB003B5614: 'переменные экземпляра должны имет�
 H396FFF689BB5: 'сгенерирован в ассемблер здесь'
 # 'instantiating fold expression with %0 arguments exceeded expression nesting limit of %1'
 H467EDA4122CE: 'сворачивание выражения с %0 аргументами превысило лимит вложенности выражений %1'
+# "instantiation of %0 triggers reference to TU-local entity %1 from other TU '%2'"
+HA957B9AD6ED9: "Инстанцирование %0 вызывает ссылку на сущность, локальную для TU, %1 из другой TU '%2'"
 # 'instantiation of %q0 is different in different modules'
 H7179BAA1427A: 'инстанциация %q0 различается в разных модулях'
 # "instantiation of '%0' not supported yet"
@@ -24308,6 +24412,8 @@ H90111C7D3334: 'llvm-omp-kernel-replay Параметры'
 HCF4237251086: 'llvm-opt-report опции'
 # 'llvm-reduce options'
 H9B15C3D059EC: 'llvm-reduce параметры'
+# 'load and store exclusive builtins are not available on this architecture'
+H1A343A8A0853: 'Встроенные функции загрузки и хранения исключений недоступны на этой архитектуре'
 # 'load the input file as a Toy source.'
 H8076D5B81C5F: 'загрузить входной файл как исходный код Toy.'
 # 'load the input file as an MLIR file'
@@ -24774,6 +24880,8 @@ H110B9B84BD50: "отсутствует завершающий символ ')'"
 HCB937BA83DD0: 'отсутствует типовой bound %0 для параметра типа %1 в %select{@interface|@class}2'
 # "missing version number in '%0'"
 H5280152B38E3: "отсутствует номер версии в '%0'"
+# 'mixed %0 and %1 offloading compilation is not supported'
+H40286B7C4E3F: 'Смешанная компиляция выгрузки %0 и %1 не поддерживается'
 # 'mixed CUDA and HIP compilation is not supported'
 HDE7D3706C5B5: 'смешанная компиляция CUDA и HIP не поддерживается'
 # "mixing 'target_clones' specifier mechanisms is permitted for GCC compatibility; use a comma separated sequence of string literals, or a string literal containing a comma-separated list of versions"
@@ -25108,6 +25216,8 @@ H183DF472D6DF: 'имя установки не указано: добавьте 
 H41C44394DC27: 'нет известного %select{instance|class}1 метода для селектора %0'
 # "no known method %select{%objcinstance1|%objcclass1}0; cast the message send to the method's return type"
 HD141497E30B9: 'известный метод не найден %select{%objcinstance1|%objcclass1}0; приведите передачу сообщения к возвращаемому типу метода'
+# "no libclc library '%0' found in the clang resource directory"
+H4A66701BC7E0: "Библиотека libclc '%0' не найдена в каталоге ресурсов clang"
 # "no library '%0' found in the default clang lib directory or in LIBRARY_PATH; use '--libomptarget-%1-bc-path' to specify %1 bitcode library"
 H56082C491F7D: 'библиотека «%0» не найдена в стандартной директории clang lib или в LIBRARY_PATH; используйте «--libomptarget-%1-bc-path», чтобы указать биткод-библиотеку %1'
 # 'no macro named %0'
@@ -25434,6 +25544,8 @@ H0FB30CAF71B6: 'не упрощается копирование при возв
 H9930B56495BC: 'недостаточно переменных аргументов в объявлении %0 для размещения sentinel'
 # 'not packing field %0 as it is non-POD for the purposes of layout'
 H7FBA81FDAA18: 'поле %0 не упаковывается, так как оно является non-POD в целях размещения'
+# 'not supported with the multivalue ABI for function pointers with a struct/union as %select{return value|parameter}0'
+H32E846376250: 'Не поддерживается с ABI с несколькими значениями для указателей на функции с struct/union в качестве %select{возвращаемого значения|параметра}0'
 # 'not-yet-instantiated member is declared here'
 HACFD1F41F676: 'здесь объявлен член, который еще не был создан'
 # 'null character ignored'
@@ -25534,6 +25646,10 @@ HF63DAE65A9BA: 'на архитектурах профиля M атрибут %0
 H571A5AC320D2: 'один кластер на opcode'
 # "one of 'for', 'parallel', 'sections' or 'taskgroup' is expected"
 HA318D6E65846: "ожидается один из 'for', 'parallel', 'sections' или 'taskgroup'"
+# 'one output module per kernel'
+HB91927E3703C: 'Один выходной модуль на ядро'
+# 'one output module per translation unit marked with "module-id" attribute'
+H746D6893A8BF: 'Один выходной модуль на единицу трансляции, помеченную атрибутом "module-id"'
 # 'one possibility'
 HF5AE3D1F7A2D: 'один вариант'
 # "only %select{'omp_priv' or 'omp_orig'|'omp_in' or 'omp_out'}0 variables are allowed in %select{initializer|combiner}0 expression"
@@ -25792,6 +25908,8 @@ HE764C7911186: 'переопределение в настоящее время 
 H4E019EDC5E1E: 'игнорирование текущего неподдерживаемого использования floating point exceptions на этом целевом объекте'
 # "overriding deployment version from '%0' to '%1'"
 H3B5CC52823D1: "переопределение версии развертывания с '%0' на '%1'"
+# "overriding function is missing '%0' attribute from base declaration"
+HAD5155354E8B: "Перекрывающая функция отсутствует атрибут '%0' из базового объявления"
 # 'overriding method has mismatched ns_consumed attribute on its parameter'
 H94209C3B1D29: 'переопределяющий метод имеет несоответствующий атрибут ns_consumed на своём параметре'
 # 'overriding method has mismatched ns_returns_%select{not_retained|retained}0 attributes'
@@ -26696,6 +26814,8 @@ H9F7DB4D308D0: 'рекурсивная инстанциация шаблона �
 H70EFB9FBF448: "повторное объявление не может добавить атрибут 'loader_uninitialized'"
 # 'redeclaration has different alignment requirement (%1 vs %0)'
 H2965974DE860: 'повторное объявление имеет разные требования выравнивания (%1 vs %0)'
+# "redeclaration is missing '%0' attribute from previous declaration"
+H27E9E57DF74E: "Переобъявление отсутствует атрибут '%0' из предыдущего объявления"
 # "redeclaration of %0 must %select{not |}1have the 'overloadable' attribute"
 H9C609286F3D1: "повторное объявление %0 должно %select{не |}1иметь атрибут 'overloadable'"
 # 'redeclaration of %0 with a different type%diff{: $ vs $|}1,2'
@@ -26768,10 +26888,10 @@ H2D2C74F27FDF: "reduction type cannot be %select{qualified with 'const', 'volati
 H233496630504: 'переменные свертки не могут быть доступны в явной задаче'
 # "redundant #include of module '%0' appears within %1"
 H3B45950DD3A3: "избыточное включение модуля '%0' через #include встречается внутри %1"
+# 'redundant %0 attribute'
+H40ECC3575546: 'Избыточный атрибут %0'
 # 'redundant %0 availability change; only the last specified change will be used'
 HE2065BD86C26: 'избыточное %0 изменение доступности; только последнее указанное изменение будет использовано'
-# "redundant 'sycl_kernel_entry_point' attribute"
-H89B952CF4093: "избыточный атрибут 'sycl_kernel_entry_point'"
 # "redundant attribute subject matcher sub-rule '%0'; '%1' already matches those declarations"
 HE12FF717092C: "избыточное подправило сопоставителя объекта атрибута '%0'; '%1' уже охватывает эти объявления"
 # 'redundant move in return statement'
@@ -27542,6 +27662,10 @@ HD48DDFF6186B: 'пакеты структурных связываний нес�
 H886FBF76EA85: 'структурирование SPIRV'
 # 'style of printing regions'
 H063C50F12566: 'стиль вывода регионов'
+# "sub-array as a variable %select{in 'use_device' clause|on 'declare' construct}0 is not a valid variable name or array name"
+H470904C69A60: "Подмассив в качестве переменной %select{в предложении 'use_device'|в конструкции 'declare'}0 не является допустимым именем переменной или массива"
+# 'sub-expression %select{|in unary expression|on right hand side of assignment|on left hand side of assignment|on left hand side of compound assignment|on left hand side of assignment}2(%3) must match sub-expression used %select{|in unary expression|on right hand side of assignment|<not possible>|on left hand side of compound assignment|on left hand side of assignment}0(%1) from the first statement'
+HA1952899FB80: 'подвыражение %select{|в унарном выражении|в правой части оператора присваивания|в левой части оператора присваивания|в левой части составного оператора присваивания|в левой части оператора присваивания}2(%3) должно соответствовать подвыражению, использованному %select{|в унарном выражении|в правой части оператора присваивания|<не возможно>|в левой части составного оператора присваивания|в левой части оператора присваивания}0(%1) из первого оператора'
 # 'subcommand'
 H146947FFD26E: 'подкоманда'
 # 'subexpression not valid in a constant expression'
@@ -27696,14 +27820,14 @@ H1D9C8AC0B205: 'не определено'
 H39A2D17F6485: 'шаблон %0 не имеет определения и нет %select{|подходящих }1руководств для вывода аргументов шаблона'
 # 'template argument / label address difference / what did you expect?'
 H4022196FB5B0: 'аргумент шаблона / разница адреса метки / что вы ожидали?'
-# 'template argument does not refer to a class or alias template, or template template parameter'
-H10B27B45B43C: 'аргумент шаблона не ссылается на класс, или шаблон псевдонима, или параметр шаблона шаблона'
+# 'template argument does not refer to a %select{class or alias template|variable template|concept}0, or template template parameter'
+HF0B7E6ECD71D: 'Аргумент шаблона не ссылается на %select{шаблон класса или псевдонима|шаблон переменной|понятие}0 или параметр шаблона шаблона'
 # 'template argument for non-type template parameter is treated as function type %0'
 HF7C463216541: 'аргумент шаблона для нешаблонного параметра типа рассматривается как тип функции %0'
 # 'template argument for non-type template parameter must be an expression'
 HA6F518CB9F6F: 'аргумент шаблона для не являющегося типом параметра шаблона должен быть выражением'
-# 'template argument for template template parameter must be a class template%select{| or type alias template}0'
-H4605CB1853A3: 'аргумент шаблона для параметра шаблона шаблона должен быть классовым шаблоном%select{| или шаблоном псевдонима типа}0'
+# 'template argument for template template parameter must be a %select{class template%select{| or type alias template}1|variable template|concept}0'
+HD5F8BF4E6A42: 'Аргумент шаблона для параметра шаблона шаблона должен быть %select{шаблоном класса%select{| или псевдонимом типа}1|шаблоном переменной|понятием}0'
 # 'template argument for template type parameter must be a type'
 H9FFBB255FD4F: 'аргумент шаблона для параметра типа шаблона должен быть типом'
 # "template argument for template type parameter must be a type; did you forget 'typename'?"
@@ -27712,8 +27836,8 @@ H477EE50BCF4B: "аргумент шаблона для параметра тип
 H0CC2569F4810: "аргумент шаблона для параметра типа шаблона должен быть типом; пропущенный 'typename' — это расширение Microsoft"
 # 'template argument is the type of an unresolved overloaded function'
 H1DDFBAF8CEBB: 'шаблонный аргумент является типом неразрешённой перегруженной функции'
-# 'template argument refers to function template %0, here'
-H59E0A4B6EEC0: 'аргумент шаблона ссылается на шаблон функции %0, здесь'
+# 'template argument refers to a %select{function template|class template|variable template|concept}0 %1, here'
+H26FB06D30BED: 'Аргумент шаблона ссылается на %select{шаблон функции|шаблон класса|шаблон переменной|понятие}0 %1, здесь'
 # 'template argument uses local type %0'
 H8CFAA5F55F9C: 'аргумент шаблона использует локальный тип %0'
 # 'template argument uses unnamed type'
@@ -27808,6 +27932,18 @@ HB4A505AFFDA6: 'десятых долей процентов основной ч
 HD419260C8BE7: "файл расширения тестового модуля '%0' имеет разную версию (%1.%2), чем ожидалось (%3.%4)"
 # 'the #__include_macros directive is only for internal use by -imacros'
 H1FBDC6FD510E: 'директива #__include_macros предназначена только для внутреннего использования с -imacros'
+# 'the %0 attribute cannot be added to a function after the function is defined'
+H7E2F4B1BAFA6: 'Атрибут %0 нельзя добавить к функции после ее определения'
+# "the %0 attribute cannot be applied to a %select{non-static member function|variadic function|deleted function|defaulted function|constexpr function|consteval function|function declared with the 'noreturn' attribute|coroutine|function defined with a function try block}1"
+H9333E93FC66A: "Атрибут %0 не может применяться к %select{нестатической функции-члену|вариативной функции|удаленной функции|функции по умолчанию|constexpr-функции|consteval-функции|функции, объявленной с атрибутом 'noreturn'|корутине|функции, определенной с блоком try функции}1"
+# "the %0 attribute only applies to functions with a 'void' return type"
+HAEDF59D36530: "Атрибут %0 применим только к функциям с возвращаемым типом 'void'"
+# "the %0 attribute only applies to functions with a non-deduced 'void' return type"
+H7A7AD5A6C18F: "Атрибут %0 применим только к функциям с недедуцируемым возвращаемым типом 'void'"
+# 'the %0 kernel name argument conflicts with a previous declaration'
+HBE875B4C5356: 'Аргумент имени ядра %0 конфликтует с предыдущим объявлением'
+# 'the %0 kernel name argument does not match prior declaration%diff{: $ vs $|}1,2'
+H32F8D6B1A505: 'аргумент имени %0 ядра не совпадает с предыдущим объявлением%diff{: $ vs $|}1,2'
 # 'the %0 sub-architecture does not support unaligned accesses'
 H8EEF78B6F581: 'подархитектура %0 не поддерживает неправильно выровненные доступы'
 # 'the %0 type cannot be used to declare a program scope variable'
@@ -28294,10 +28430,8 @@ HC40C2F44A862: 'аргументы шаблона не могут быть пр�
 H9C477E0B6856: 'type-aware %0 требует соответствующего type-aware %select{|размещения }1%2, объявленного в том же диапазоне'
 # 'type aware %0 will not be used for coroutine allocation'
 H5B38A9DE0EAE: 'type-aware %0 не будет использован для выделения корутины'
-# 'type aware allocators are a C++2c extension'
-H55565F6468B1: 'type-aware аллокаторы — расширение C++2c'
-# 'type aware allocators are incompatible with C++ standards before C++2c'
-H25EF1B0FAFC1: 'type-aware аллокаторы несовместимы с стандартами C++ до C++2c'
+# 'type aware allocators are a Clang extension'
+H29DDCAD0C3D2: 'выделители с учетом типа — это расширение Clang'
 # 'type bound %0 for type parameter %1 conflicts with %select{implicit|previous}2 bound %3%select{for type parameter %5|}4'
 H7F10FC1165B9: 'типовой предел %0 для параметра типа %1 конфликтует с %select{неявным|предыдущим}2 ограничением %3%select{для параметра типа %5|}4'
 # 'type bound %0 for type parameter %1 is not an Objective-C pointer type'
@@ -29156,6 +29290,8 @@ HB0299AD4C891: 'использован тип %0 вместо требуемог
 HEF054774D419: 'используется тип %0 там, где требуется арифметический или указательный тип'
 # 'used type %0 where floating point type is not allowed'
 HF095E0FB08EE: 'использован тип %0 там, где не допускается тип с плавающей точкой'
+# 'used type %0 where function pointer is required'
+H2B3A8AEA4470: 'использован тип %0 там, где требуется указатель на функцию'
 # 'used type %0 where integer is required'
 HCD053F3A5F86: 'использован тип %0 там, где требуется целочисленный тип'
 # 'used type %0 where integer or floating point type is required'
@@ -29282,6 +29418,8 @@ H5B3E786190C7: "переменная %0 %select{используется|зах�
 H9C1D29CE922D: 'переменная %0 здесь объявлена'
 # 'variable %0 is uninitialized when %select{used here|captured by block}1'
 HC11F7DAD1A0E: 'переменная %0 не проинициализирована при %select{использовании здесь|захвате блоком}1'
+# 'variable %0 is uninitialized when passed as a const pointer argument here'
+H8B9126CD3C58: 'переменная %0 не инициализирована при передаче как аргумент-константный указатель здесь'
 # 'variable %0 is uninitialized when passed as a const reference argument here'
 H12F79B618200: 'переменная %0 не инициализирована, когда передана как const reference-аргумент здесь'
 # 'variable %0 is uninitialized when used within its own initialization'
@@ -29302,8 +29440,6 @@ HEE231707A80F: 'переменная %0 с flexible array member не может
 HECE6754B3154: 'переменная %0 с типом %1 имеет несовместимый инициализатор типа %2'
 # 'variable %0 with unknown type cannot be given a function type'
 HBD6B0E34602F: 'переменная %0 с неизвестным типом не может иметь функциональный тип'
-# 'variable %select{|in unary expression|on right hand side of assignment|on left hand side of assignment|on left hand side of compound assignment|on left hand side of assignment}2(%3) must match variable used %select{|in unary expression|on right hand side of assignment|<not possible>|on left hand side of compound assignment|on left hand side of assignment}0(%1) from the first statement'
-HA70BF8F524C0: 'переменная %select{|в унарном выражении|в правой части присваивания|на левой стороне присваивания|на левой стороне составного присваивания|на левой стороне присваивания}2(%3) должна соответствовать переменной, используемой %select{|в унарном выражении|в правой части присваивания|<не возможно>|на левой стороне составного присваивания|на левой стороне присваивания}0(%1) из первого утверждения'
 # 'variable already marked as mapped in current construct'
 HA15930719644: 'variable уже отмечена как mapped в текущей конструкции'
 # "variable appearing in '%0' clause of OpenACC 'declare' directive must be in the same scope as the directive"
@@ -29370,10 +29506,14 @@ HD279E72346CE: 'массивы переменной длины в корутин
 H4F34EF5C94E2: 'переменная должна быть целочисленного типа или %select{указатель|итератор с произвольным доступом}0 типа'
 # "variable named 'main' with external linkage has undefined behavior"
 H38BA25ED2BA1: "переменная с именем 'main' с внешней связью имеет неопределенное поведение"
+# "variable of array type %0 referenced in OpenACC '%1' clause does not have constant bounds; initialization will happen after decay to pointer"
+H30B20F3BA279: "переменная массива типа %0, упомянутая в предложении OpenACC '%1', не имеет константных границ; инициализация произойдет после преобразования в указатель"
 # 'variable of non-literal type %1 cannot be defined in a constexpr %select{function|constructor}0 before C++23'
 H5F89C6201D7E: 'переменная типа, не являющегося литеральным, %1 не может быть определена в constexpr %select{функции|конструктора}0 до C++23'
 # "variable of non-reference type %0 can be used only with 'val' modifier, but used with '%1'"
 HFF57CDDBE63D: "переменная, не являющаяся ссылкой, типа %0 может использоваться только с модификатором 'val', но использована с '%1'"
+# "variable of type %0 referenced in OpenACC '%1' clause does not have a %select{default constructor|copy constructor|destructor}2; reference has no effect"
+H2B04F26174D2: "переменная типа %0, упомянутая в предложении OpenACC '%1', не имеет %select{конструктора по умолчанию|конструктора копирования|деструктора}2; ссылка не имеет эффекта"
 # 'variable of type %1 has %select{private|protected}2 destructor'
 H8BC8C9632B1A: 'переменная типа %1 имеет %select{private|protected}2 деструктор'
 # "variable referenced by 'link' clause not in global or namespace scope must be marked 'extern'"

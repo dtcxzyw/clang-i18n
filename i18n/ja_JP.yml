@@ -1336,24 +1336,24 @@ HFA8AACB1DC9D: '%select{読み取り|読み取り|代入|インクリメント|�
 H030F1EA383B2: '%select{読み取り|読み取り|代入|インクリメント|デクリメント|メンバ呼び出し|dynamic_cast|typeid適用|サブオブジェクトの構築|破棄|読み取り}0 %select{そのライフタイム外のオブジェクト|初期化されていないオブジェクト}1は定数式では許可されません'
 # '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of subobject of|destruction of|read of}0 member %1 of union with %select{active member %3|no active member}2 is not allowed in a constant expression'
 HAA36C87281CE: '%select{読み取り|読み取り|代入|インクリメント|デクリメント|メンバ呼び出し|dynamic_cast|typeid適用|構築|破棄|読み取り}0 ユニオンの%select{アクティブメンバ %3があるとき|アクティブメンバがないとき}2メンバ%1は定数式では許可されません'
-# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 %select{temporary|variable}1 whose %plural{8:storage duration|:lifetime}0 has ended'
-H1E2EE7FC7CDC: '%select{読み取り|読み取り|代入|インクリメント|デクリメント|メンバ呼び出し|dynamic_cast|typeid適用|構築|破棄|読み取り}0 %plural{8:ストレージ期間|:ライフタイム}0が終了した%select{一時|変数}1'
-# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 dereferenced null pointer is not allowed in a constant expression'
-H22FE9FDFDD6D: '%select{読み取り|読み取り|代入|インクリメント|デクリメント|メンバ呼び出し|dynamic_cast|typeid適用|構築|破棄|読み取り}0 NULLポインタの参照は定数式では許可されません'
-# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 dereferenced one-past-the-end pointer is not allowed in a constant expression'
-H0D344CA7C10F: '%select{読み取り|読み取り|代入|インクリメント|デクリメント|メンバ呼び出し|dynamic_cast|typeid適用|構築|破棄|読み取り}0 配列末尾の次のポインタ参照は定数式では許可されません'
-# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 element of array without known bound is not allowed in a constant expression'
-H5DD079C28614: '%select{読み取り|読み取り|代入|インクリメント|デクリメント|メンバ呼び出し|dynamic_cast|typeid適用|構築|破棄|読み取り}0 知らない境界の配列要素は定数式では許可されません'
-# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 heap allocated object that has been deleted'
-H0F4326DA1EA9: '%select{読み取り|読み取り|代入|インクリメント|デクリメント|メンバ呼び出し|dynamic_cast|typeid適用|構築|破棄|読み取り}0 削除された動的オブジェクト'
-# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 mutable member %1 is not allowed in a constant expression'
-H08EBC2661AFA: '%select{読み取り|読み取り|代入|インクリメント|デクリメント|メンバ呼び出し|dynamic_cast|typeid適用|構築|破棄|読み取り}0 ムーテーブルメンバ%1は定数式では許可されません'
-# "%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 object '%1' whose value is not known"
-H2547ED9973E0: "%select{読み取り|読み取り|代入|インクリメント|デクリメント|メンバ呼び出し|dynamic_cast|typeid適用|構築|破棄|読み取り}0 値が不明なオブジェクト'%1'"
-# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 temporary is not allowed in a constant expression outside the expression that created the temporary'
-H1A04D5C0C6D4: '%select{読み取り|読み取り|代入|インクリメント|デクリメント|メンバ呼び出し|dynamic_cast|typeid適用|構築|破棄|読み取り}0 生成式の外では一時オブジェクトは定数式では許可されません'
-# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 variable %1 whose value is not known'
-H9168EB67A6E1: '%select{変数の読み込み|変数の読み込み|変数への代入|変数のインクリメント|変数のデクリメント|メンバーコール|dynamic_cast|typeid適用|構築|破棄|変数の読み込み}0 で値が不明な %1'
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 %select{temporary|variable}1 whose %plural{8:storage duration|:lifetime}0 has ended'
+H306E4F51DC7B: '%select{読み込み|読み込み|代入|インクリメント|デクリメント|メンバーコール|dynamic_cast|typeidの適用|構築|破棄|読み込み|読み込み}0 %select{テンポラリ|変数}1 の %plural{8:ストレージ期間|:有効期間}0 が終了している'
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 dereferenced null pointer is not allowed in a constant expression'
+HAE6F19793252: '%select{読み込み|読み込み|代入|インクリメント|デクリメント|メンバーコール|dynamic_cast|typeidの適用|構築|破棄|読み込み|読み込み}0 定数式ではヌルポインタの参照は許可されていません'
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 dereferenced one-past-the-end pointer is not allowed in a constant expression'
+H41D88F91AE19: '%select{読み込み|読み込み|代入|インクリメント|デクリメント|メンバーコール|dynamic_cast|typeidの適用|構築|破棄|読み込み|読み込み}0 定数式では配列末尾の次のポインタの参照は許可されていません'
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 element of array without known bound is not allowed in a constant expression'
+H31A306A5DC41: '%select{読み込み|読み込み|代入|インクリメント|デクリメント|メンバーコール|dynamic_cast|typeidの適用|構築|破棄|読み込み|読み込み}0 既知の境界を持たない配列の要素は定数式では許可されていません'
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 heap allocated object that has been deleted'
+H0E9826DBDEAC: '%select{読み込み|読み込み|代入|インクリメント|デクリメント|メンバーコール|dynamic_cast|typeidの適用|構築|破棄|読み込み|読み込み}0 削除済みのヒープ割り当てオブジェクト'
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 mutable member %1 is not allowed in a constant expression'
+H1A7997C2421D: '%select{読み込み|読み込み|代入|インクリメント|デクリメント|メンバーコール|dynamic_cast|typeidの適用|構築|破棄|読み込み|読み込み}0 定数式ではmutableメンバー%1は許可されていません'
+# "%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 object '%1' whose value is not known"
+H60CA13D949B0: "%select{読み込み|読み込み|代入|インクリメント|デクリメント|メンバーコール|dynamic_cast|typeidの適用|構築|破棄|読み込み|読み込み}0 値が不明な'%1'オブジェクト"
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 temporary is not allowed in a constant expression outside the expression that created the temporary'
+H97FF5E6CE8B9: '%select{読み込み|読み込み|代入|インクリメント|デクリメント|メンバーコール|dynamic_cast|typeidの適用|構築|破棄|読み込み|読み込み}0 テンポラリはテンポラリを作成した式の外では定数式では許可されていません'
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 variable %1 whose value is not known'
+H0CD8843CE69A: '%select{読み込み|読み込み|代入|インクリメント|デクリメント|メンバーコール|dynamic_cast|typeidの適用|構築|破棄|読み込み|読み込み}0 値が不明な変数%1'
 # '%select{reading|writing}1 the value pointed to by %0 requires holding %select{any mutex|any mutex exclusively}1'
 H20B2C79559EA: '%select{読み取り|書き込み}1 %0が指す値を処理するには%select{任意のミューテックス|排他的ミューテックス}1を保持する必要があります'
 # '%select{reading|writing}1 variable %0 requires holding %select{any mutex|any mutex exclusively}1'
@@ -1468,6 +1468,8 @@ H2BC4F8FF7FD4: '%select{識別子でのこの文字の使用|識別子の最初�
 H74FA7B9CE6BC: "%select{型|基底型を持つ列挙体}2 '%0' の値はフォーマット引数として使用しないでください；明示的なキャスト %1 を追加してください"
 # '%select{value|type}0-dependent expression passed as an argument to debug command'
 HF8F02B43BB62: 'デバッグコマンドの引数として%select{値|型}0依存式が渡されました'
+# '%select{variable template|concept}0 template parameter is a C++2c extension'
+H5AFF4B413F4C: '%select{変数テンプレート|コンセプト}0 テンプレートパラメータはC++2c拡張です'
 # '%select{variable|static data member}0 instantiated with function type %1'
 HE6193A7D74C4: '%select{変数|静的データメンバ}0が関数型%1でインスタンス化されました'
 # '%select{variable|variable template|variable template partial specialization|variable template explicit specialization}0 %1 declared with deduced type %2 cannot appear in its own initializer'
@@ -1570,6 +1572,8 @@ HCE0F9341D433: "'#pragma %0' はファイルスコープでしか使用できま
 HD3947EF6D864: "'#pragma %0' はファイルスコープまたは複合ステートメントの開始部でしか使用できません"
 # "'#pragma %0' is not supported on this target - ignored"
 H10F342B08150: "'#pragma %0' はこのターゲットではサポートされていません - 無視されます"
+# "'#pragma %select{push_macro|pop_macro}0' expected a non-empty string"
+HF56A6742DACA: "'#pragma %select{push_macro|pop_macro}0' は空でない文字列が必要です"
 # "'#pragma STDC FENV_ACCESS ON' is illegal when precise is disabled"
 H17CE846EF8B0: "'#pragma STDC FENV_ACCESS ON' はpreciseが無効の場合は使用できません"
 # "'#pragma alloc_text' is applicable only to functions"
@@ -2478,18 +2482,6 @@ H624EF03C7676: "'swift_indirect_result'パラメータは関数の最初のパ�
 H855B85E209CE: "'switch'に'default'ラベルがありません"
 # "'sycl_kernel' attribute only applies to a function template with at least two template parameters"
 H5AFFA7408711: "'sycl_kernel'属性は、少なくとも2つのテンプレートパラメータを持つ関数テンプレートにのみ適用されます"
-# "'sycl_kernel_entry_point' attribute cannot be added to a function after the function is defined"
-H018E12D5A5B2: "'sycl_kernel_entry_point'属性は関数が定義された後に追加できません"
-# "'sycl_kernel_entry_point' attribute cannot be applied to a %select{non-static member function|variadic function|deleted function|defaulted function|constexpr function|consteval function|function declared with the 'noreturn' attribute|coroutine|function defined with a function try block}0"
-H86CAEB999295: "'sycl_kernel_entry_point'属性は%select{非静的メンバ関数|変数引数関数|削除された関数|デフォルトされた関数|constexpr関数|consteval関数|'noreturn'属性で宣言された関数|コルーチン|関数トライブロックで定義された関数}0の関数には適用できません"
-# "'sycl_kernel_entry_point' attribute only applies to functions with a 'void' return type"
-H99CA3F9B2DC2: "'sycl_kernel_entry_point'属性は'return type'が'void'である関数にのみ適用されます"
-# "'sycl_kernel_entry_point' attribute only applies to functions with a non-deduced 'void' return type"
-H14251E8B39CA: "'sycl_kernel_entry_point'属性は'return type'が推論されない'void'である関数にのみ適用されます"
-# "'sycl_kernel_entry_point' kernel name argument conflicts with a previous declaration"
-HFAE6DB6B8BBB: "'sycl_kernel_entry_point'カーネル名引数が以前の宣言と競合しています"
-# "'sycl_kernel_entry_point' kernel name argument does not match prior declaration%diff{: $ vs $|}0,1"
-H6714A3237372: "'sycl_kernel_entry_point'カーネル名引数は以前の宣言と一致しません%diff{: $ と $ が一致しません|}0,1"
 # "'target_clones' attribute does not match previous declaration"
 HBD2CF88C376B: "'target_clones'属性は以前の宣言と一致しません"
 # "'target_clones' multiversioning requires a default target"
@@ -2606,6 +2598,8 @@ HEFD41ED402A1: '-code-completion-at=<ファイル>:<行>:<列>には<行>およ�
 H75DBC0C062A1: '-dealloc はカテゴリで上書きされています'
 # '-dependency-file requires at least one -MT or -MQ option'
 HF99E1B6F31F8: '-dependency-file には -MT または -MQ オプションを少なくとも1つ指定する必要があります'
+# '-emit-final-mlir -simplify-mlir -enable-aa=false'
+HDCF554E10261: '-emit-final-mlir -simplify-mlir -enable-aa=false'
 # '-emit-llvm cannot be used when linking'
 H8745DC614FEB: 'リンキング時は -emit-llvm を使用できません'
 # '-fdelayed-template-parsing is deprecated after C++20'
@@ -2736,6 +2730,8 @@ H709A48456EF7: '<入力 PDB ファイル>'
 H126A4B67EBAB: '<入力 PDB ファイル>'
 # '<input YAML file>'
 H7A7A324B78FC: '<入力 YAML ファイル>'
+# "<input bitcode file or '-' for stdin>"
+HBCB0C08B7025: "<入力ビットコードファイルまたは '-' (標準入力)>"
 # '<input bitcode file>'
 H0498EDBECDA2: '<入力 ビットコード ファイル>'
 # '<input bitcode files>'
@@ -3080,6 +3076,8 @@ HB1D166D82990: 'AMDGPU Pre-RA 最適化'
 H8AF72F195656: 'AMDGPUプリロードカーネル引数'
 # 'AMDGPU Preload Kernel Arguments Prolog'
 HA4C7048C1EF3: 'AMDGPU カーネル引数のプリロード プロローグ'
+# 'AMDGPU Prepare AGPR Alloc'
+H97A799AB9F78: 'AMDGPU AGPRアロケーション準備'
 # 'AMDGPU Printf lowering'
 H9F0BCA780CE7: 'AMDGPU printf の下位変換'
 # 'AMDGPU Promote Kernel Arguments'
@@ -3768,6 +3766,8 @@ H08E5D5835443: 'ループのunroll-and-jammedを許可します。'
 H2478745EEA16: 'private関数に追加の結果を追加し、呼び出し元に返却されたmemrefsの所有権を返却します。これにより呼び出し先での不必要なバッファクローンを回避できます。'
 # 'Allows using features specific to Hugo'
 H5D750A78EC0D: 'Hugo固有の機能を使用可能にします'
+# 'Also inject (if missing) and verify MD_prof for `select` instructions'
+H1866EAA4AA5E: '`select`命令にMD_profを(不足している場合は)注入し検証'
 # 'Also show functions without any scops'
 H8AA7DD878BF3: 'スコープのない関数も表示します'
 # 'Also write profiles with all-zero counters. Intended for testing/debugging.'
@@ -3844,6 +3844,8 @@ H117120C6D4F8: '関数宣言のコールサイトをアノテート'
 H2FA3995AD0E4: 'サポートされている場合、指定されたサニタイザに対してサニタイザインストゥルメンテーションに追加のデバッグ情報を付加します'
 # 'Annotate table jump instruction to correlate it with the jump table.'
 H49774B77C4AA: 'ジャンプテーブルの命令をアノテートし、ジャンプテーブルと関連付けます'
+# 'Annotate trap blocks in debug info with UBSan trap reasons'
+HD400F47B0D0E: 'デバッグ情報のトラップブロックにUBSanトラップ理由を注釈'
 # 'Any subsection not covered by another option'
 HE0257BE6772D: '他のオプションでカバーされていない任意のサブセクション'
 # 'Append function hash to the name of COMDAT function to avoid function hash mismatch due to the preinliner'
@@ -4764,6 +4766,8 @@ H6AAD89B511B3: 'コンテキスト依存のプロファイルファイルのパ�
 H35F4CF635E0B: 'Funcletsを連続的に配置'
 # 'Continue if files are not mapped correctly.'
 H0AB9362D475E: 'ファイルが正しくマッピングされていない場合にも継続する'
+# 'Continue with the remaining targets instead of exiting when failing in a candidate'
+HC5FCF2133B59: 'ターゲット候補の失敗時に終了せず残りのターゲットを続行'
 # 'Control Flow Optimizer'
 H072A594766A3: '制御フロー最適化'
 # 'Control conversion of memcpy to Tail predicated loops (WLSTP)'
@@ -5066,6 +5070,10 @@ HA9265D7501D4: 'Dead引数削除'
 HDA7D75078335: 'Dead引数ハック (BugPoint専用；使用禁止)'
 # 'Dead Code Elimination'
 HF23F9DE62329: 'Deadコード削除'
+# 'Dead Global Elimination'
+HBE3A0A5A1F67: 'デッドグローバル除去'
+# 'Dead Store Elimination'
+H66482BD2ED13: 'デッドストア除去'
 # 'Debug Variable Analysis'
 H4B43DA399B8A: 'Debug変数分析'
 # 'Debug control MBBs that are scheduled'
@@ -5534,6 +5542,8 @@ H9438B3F5F3E7: 'バイナリ分析用のセーフティチェックツールの�
 H949767942150: 'C 言語の実験的な境界安全拡張機能を無効にします'
 # 'Disable experimental late parsing of attributes'
 HAEA82819E6DD: '属性の実験的な遅延解析を無効にします'
+# 'Disable experimental lifetime safety for C++'
+H6A8F4694EAAB: 'C++の実験的ライフタイム安全性を無効化'
 # 'Disable ext(promotable(ld)) -> promoted(ext(ld)) optimization in CodeGenPrepare'
 HFA8DE3453A19: 'CodeGenPrepare における ext(promotable(ld)) -> promoted(ext(ld)) 最適化を無効にします'
 # 'Disable external API notes support'
@@ -5688,6 +5698,8 @@ HFD9EDE137232: 'LICMパスでのメモリプロモーションを無効にする
 H1147057C0FDD: 'コンビンの結合を無効にする'
 # 'Disable merging of globals'
 H0911384E3022: 'グローバル変数の結合を無効にする'
+# 'Disable metadata propagation fixes discovered through Issue #147390'
+H6B62C43A1C1B: 'Issue #147390で発見されたメタデータ伝播修正を無効にする'
 # 'Disable minimum alignment of 1 for arguments passed by value on stack'
 HAF9C1AF67E2F: 'スタック値渡し引数の最小アライメント1を無効にする'
 # 'Disable mitigations for Load Value Injection (LVI)'
@@ -6182,6 +6194,8 @@ H0A0FD94EAF41: 'コンパイラが指定されたサンティサイズャーの�
 HC4FB93EDAFBC: 'どのサンイザラもを対象としたハンドラのマージをコンパイラに許可しない'
 # 'Do not allow compiler to merge handlers for specified sanitizers'
 H14D0727FA9D4: '指定されたサンイザラもを対象としたハンドラのマージをコンパイラに許可しない'
+# 'Do not annotate trap blocks in debug info with UBSan trap reasons'
+HDC304C4C4834: 'デバッグ情報のトラップブロックにUBSanトラップ理由を注釈しない'
 # 'Do not assume C++ operator new may not return NULL'
 H1F6F59A37FC5: 'C++ のオペレータ new が NULL を返さないことを想定しない'
 # 'Do not assume that any loop is finite.'
@@ -6240,6 +6254,8 @@ HB04F2AC6377B: '定義されたが使用されていない型のデバッグ情�
 H0669AFF65C8F: 'RTTI データを生成しない'
 # "Do not emit a trap instruction for 'unreachable' IR instructions after noreturn calls, even if --trap-unreachable is set."
 HB71318F0BBDA: "--trap-unreachableが設定されていても、noreturn呼び出し後の'unreachable' IR命令に対してトラップ命令を生成しない"
+# 'Do not emit code for any OpenMP constructs.'
+HD789867CBA9F: 'OpenMP構成要素のコード生成を行わない'
 # 'Do not emit code that uses the red zone.'
 H4923C3F307F8: 'レッドゾーンを使用するコードを生成しない'
 # 'Do not emit code to make initialization of local statics thread safe'
@@ -6954,6 +6970,8 @@ HC2C8736B7263: 'DWARFデバッグセクションにソーステキストを埋�
 HECD9878DE365: 'このコンパイルによって読み込まれたすべてのファイルの内容を生成されるモジュールファイルに埋め込む'
 # 'Embed the contents of the specified file into the module file being compiled.'
 H5C7A5481DBF2: 'コンパイル中のモジュールファイルに指定されたファイルの内容を埋め込む'
+# 'Embedding generation level:'
+H026F7D15C2F3: '埋め込み生成レベル:'
 # 'Emit  debug info for defined but unused types'
 H4259F2A07B2E: '定義されたが使用されていない型のデバッグ情報を生成する'
 # 'Emit (experimental) loops (with sparse.iterate).'
@@ -7012,6 +7030,8 @@ H2B3A6CDD77E1: 'Windows制御フローガードテーブルとチェックを生
 H12EF1A548A1C: 'Windows Control Flow Guardテーブルのみを生成する（チェックなし）'
 # 'Emit Windows EH Continuation Guard tables'
 H7CFD101BE344: 'Windows EH Continuation Guardテーブルを生成する'
+# 'Emit a call graph section'
+H72DF45254ECA: '呼び出しグラフセクションを出力する'
 # 'Emit a call to trap function rather than a trap instruction'
 H7926ECB4152F: 'トラップ命令ではなく、トラップ関数の呼び出しを生成する'
 # 'Emit a compilation database fragment to the specified directory'
@@ -7064,8 +7084,6 @@ H252107FF70F1: 'CodeView デバッグ情報にコンパイラ パスとコマン
 H73932760DABC: 'テンプレート パラメータの完全な説明を前方宣言に含める'
 # 'Emit data into separate sections'
 HF75AE625B842: 'データを別セクションに出力する'
-# 'Emit debug info that places array-bounds instrumentation in an inline function called __ubsan_check_array_bounds.'
-HCA08BC9E900F: 'インライン関数 __ubsan_check_array_bounds 内に配置するためのarray-bounds instrumentation用デバッグ情報を出力します。'
 # 'Emit debug line info directives only'
 HE3308044AB2D: 'デバッグ行情報ディレクティブのみを出力します'
 # 'Emit debug line number tables only'
@@ -7240,6 +7258,8 @@ HE6033CE9D615: 'C-SKYアセンブリ圧縮命令を有効にする'
 HCAFDAD7AAC69: 'CABAC命令を有効にする'
 # 'Enable CREL relocation format (ELF only)'
 H0C82A363E7CF: 'CREL再配置形式を有効にする（ELFのみ）'
+# 'Enable Coarray features'
+HB258883F97BE: 'Coarray機能を有効にする'
 # 'Enable CodeView debug information in object files'
 H190F12E62C0D: 'オブジェクトファイルでCodeViewデバッグ情報を有効にする'
 # 'Enable Control Flow Guard with /guard:cf, or only the table with /guard:cf,nochecks. Enable EH Continuation Guard with /guard:ehcont'
@@ -7262,6 +7282,8 @@ H7236F64CF290: 'MLIRアクションのデバッグ用デバッグハックを有
 H2CA5CA1CFDC6: 'EH非同期例外を有効化'
 # 'Enable EVL-based induction variable simplify Pass'
 H0167530440BA: 'EVLベースの誘導変数簡略化パスを有効にします。'
+# 'Enable FIR alias analysis'
+HCFA5E224E546: 'FIRエイリアス解析を有効にする'
 # 'Enable FP math optimizations that assume approx func'
 HA55AFA6BF75B: '近似関数を仮定するFP数値最適化を有効化'
 # 'Enable FP math optimizations that assume no +-Infs'
@@ -7320,8 +7342,8 @@ HDC17AF33380B: 'KernelAddressSanitizerのインストゥルメンテーション
 HE6892C669196: 'KernelHWAddressSanitizerのインストゥルメンテーションを有効にする'
 # 'Enable KernelMemorySanitizer instrumentation'
 H98BCB50602AD: 'KernelMemorySanitizerのインストゥルメンテーションを有効にする'
-# 'Enable Key Instructions, which reduces the jumpiness of optimized code stepping (DWARF only). Requires LLVM built with LLVM_EXPERIMENTAL_KEY_INSTRUCTIONS.'
-H235B8746F9EA: 'キーネットワーク命令を有効にします。これは最適化されたコードのステッピング時のジャンプを軽減します(DWARFのみ)。LLVM_EXPERIMENTAL_KEY_INSTRUCTIONSを指定してLLVMをビルドする必要があります。'
+# 'Enable Key Instructions, which reduces the jumpiness of debug stepping in optimized C/C++ code in some debuggers. DWARF only. Implies -g.'
+H7B2028A281E0: 'キーデバッグ命令を有効にします。これにより、最適化されたC/C++コードの一部デバッガーでのステップ実行のジャンプを減少させます。DWARFのみ。-gを含みます。'
 # 'Enable LSR phi elimination'
 H6F6B88180DCF: 'LSR phi除去を有効にする'
 # "Enable LTO in 'full' mode"
@@ -7376,8 +7398,6 @@ H275AC31A4E6B: 'PGOインストルメンテーションを有効化'
 HF2D40BF85363: 'AIXのTrackbackでSSP Canary情報を渡す機能を有効化'
 # 'Enable PatchPoint Liveness Analysis Pass'
 HC23201EA3F30: 'PatchPoint Live分析パスを有効化'
-# 'Enable PostRA load and store clustering in the machine scheduler'
-H7DBDA92CD831: 'マシンスケジューラでPostRAのロードとストアクラスタリングを有効化'
 # 'Enable Pre-RA optimizations pass'
 HBF2BE955A63C: 'Pre-RA最適化パスを有効化'
 # 'Enable RDF-based optimizations'
@@ -7412,8 +7432,8 @@ H5546DBF9A313: '外側ループのベクタライゼーションをサポート�
 H9D4BDB5AD7B9: 'X86の間接分岐トラッキングパスを有効化します。'
 # 'Enable a 2nd level loop of loop tiling'
 HCA8FDA365AE9: 'ループタイルの2段階目のループを有効化します。'
-# 'Enable a specific type of debug output (comma separated list of types)'
-H3151AFA58B61: '特定の種類のデバッグ出力を有効化（タイプのカンマ区切りリスト）'
+# 'Enable a specific type of debug output (comma separated list of types using the format "type[:level]", where the level is an optional integer. The level can be set to 1, 2, 3, etc. to control the verbosity of the output. Setting a debug-type level to zero acts as an opt-out for this specific debug-type without affecting the others.'
+H7BEB9AE832C1: '特定のデバッグ出力タイプを有効にします（"type[:level]"の形式で区切りリスト。levelは省略可能な整数。出力の冗長さを制御できます。デバッグタイプレベルを0に設定すると、他の影響を与えることなくその特定のデバッグタイプを除外します。）'
 # 'Enable abort calls when "fast" instruction selection fails to lower an instruction: 0 disable the abort, 1 will abort but for args, calls and terminators, 2 will also abort for argument lowering, and 3 will never fallback to SelectionDAG.'
 H1EC44B72B380: '「fast」命令選択が命令を低次化できなかった場合、abortコールを有効化します: 0はabortを無効化、1は引数、コール、終端命令に対してabort、2は引数の低次化でもabort、3はSelectionDAGへの後退を決して行わない。'
 # 'Enable abort calls when "global" instruction selection fails to lower/select an instruction'
@@ -7586,6 +7606,8 @@ HB0D34B7D8979: '強化された構造体パス認識型ベースのエイリア�
 H19BF4377E02E: 'C用の実験的境界安全性拡張を有効にする'
 # 'Enable experimental late parsing of attributes'
 H9BF048F97F63: '属性の遅延パースを有効にする（実験的）'
+# 'Enable experimental lifetime safety for C++'
+HD4B030FED451: 'C++の実験的なライフタイムセーフティを有効にする'
 # 'Enable extended information within the SHT_LLVM_BB_ADDR_MAP that is extracted from PGO related analysis.'
 H90477C1DC52F: 'PGO関連分析から抽出されるSHT_LLVM_BB_ADDR_MAP内の拡張情報の出力'
 # 'Enable external API notes support'
@@ -7712,8 +7734,6 @@ H9E8C5D19A202: 'AddressSanitizerでグローバル変数のデッドストリッ
 H1300A9593E8D: 'リンカーのジョブを有効にし、静的ライブラリを出力します'
 # 'Enable linker relaxation'
 H4AD9A11300BE: 'リンカーリラクセーションを有効にします'
-# 'Enable load and store clustering in the machine scheduler'
-H9A7A3DC7E082: 'マシンスケジューラでのロード/ストアクラスタリングを有効にします'
 # 'Enable load store vectorizer'
 H6C9482FFD1BF: 'ロードストアベクタイザを有効にします'
 # 'Enable logical abbreviations'
@@ -7924,8 +7944,16 @@ H5D3D99EE631D: 'テール予測リージョン内の予測子としてlrを設�
 H29262DC5BE27: 'FP例外のビルド属性を例外を使用しないように設定する機能を有効にする'
 # 'Enable shared library instrumentation with XRay'
 HBB7CC7BAF352: 'XRayを使用した共有ライブラリのインストゥルメンテーションを有効にする'
+# 'Enable signing and authentication for ObjC class_ro pointers'
+HA2DFCD156A67: 'ObjCのclass_roポインターの署名と認証を有効にする'
+# "Enable signing and authentication of Objective-C object's 'SEL' fields"
+HCC6ED585649D: "Objective-Cオブジェクトの'SEL'フィールドの署名と認証を有効にする"
+# "Enable signing and authentication of Objective-C object's 'isa' field"
+HDDAC1554FD74: "Objective-Cオブジェクトの'isa'フィールドの署名と認証を有効にする"
 # 'Enable signing and authentication of all indirect calls'
 H85AEAA3DF7E2: 'すべての間接呼び出しの署名と認証を有効にする'
+# 'Enable signing and authentication of block descriptors'
+HD07D96BA0689: 'ブロック記述子の署名と認証を有効にする'
 # 'Enable signing and authentication of indirect goto targets'
 H7778174B9D56: '間接gotoターゲットの署名と認証を有効にする'
 # 'Enable signing and authentication of return addresses'
@@ -8052,8 +8080,6 @@ HE96DB2508A4B: 'OpenMP領域のマージ最適化を有効にする'
 H4E0A173B05AF: '-O3オプティマイゼーションでPolly DOTプリンターを有効にする'
 # 'Enable the Polly DOT printer in -O3 (no BB content)'
 HEAA8FA2DC249: '-O3オプティマイゼーションでPolly DOTプリンターを有効にする（BBの内容なし）'
-# 'Enable the RISC-V VL Optimizer pass'
-HC773BD141E4D: 'RISC-V VLオプティマイザーパスを有効にする'
 # 'Enable the VR4300 mulmul bug fix.'
 HF647968864FA: 'VR4300 mulmul バグ修正を有効にする'
 # 'Enable the X86 cmov-to-branch optimization.'
@@ -8662,8 +8688,6 @@ H30E98BA4CBDB: 'ベンチマークを分析する前にフィルタリングす�
 HAE5C92A1E57B: 'フィルタリングおよびソートオプション'
 # 'Finalize ISel and expand pseudo-instructions'
 HAC66FC917CAA: 'ISelの最終化と疑似命令の展開'
-# 'Finalize machine instruction bundles'
-H54F93CB22051: 'マシン命令のバンドルを最終化'
 # 'Find methods that overrides a virtual method.'
 H26E803BD2E38: '仮想メソッドをオーバーライドするメソッドを検索します。'
 # "Find objects in DIR or based on FILE's path"
@@ -9226,6 +9250,8 @@ H5EECEC688125: '属性ドキュメントを生成する'
 H5E3166505291: '属性のスペル一覧を生成します。'
 # 'Generate attributes for this dialect'
 HE3FD9C3103CA: 'この方言用の属性を生成する'
+# 'Generate basic block-level embeddings'
+H48994C28864C: '基本ブロックレベルの埋め込みを生成する'
 # 'Generate bitsplit instructions'
 HE0B4AD43ABB0: 'ビットスプリット命令を生成する'
 # 'Generate branches with extended addressability, usually via indirect jumps.'
@@ -9306,8 +9332,14 @@ H1A8F89282970: 'オフロード ライブラリのエクスポートファイル
 HABD4DCD38172: '抽出命令を生成'
 # 'Generate function to translate named character references to UTF-8 sequences'
 H2212027837CC: '名前付き文字参照をUTF-8シーケンスに変換する関数を生成'
+# 'Generate function-level embeddings'
+H55DEBCA34EC5: '関数レベルの埋め込みを生成する'
 # 'Generate hot text symbols. Apply this option to a precompiled binary that manually calls into hugify, such that at runtime hugify call will put hot code into 2M pages. This requires relocation.'
 HE07FCEA6613B: 'ホットテキストシンボルを生成。hugifyに手動で呼び出すプリコンパイル済みバイナリにこのオプションを適用すると、実行時にhugifyコールがホットコードを2Mページに配置します。リロケーションが必要です。'
+# 'Generate implicit floating point or vector instructions'
+HD42E3D8993CE: '暗黙の浮動小数点またはベクトル命令を生成する'
+# 'Generate instruction-level embeddings'
+H985C0F842569: '命令レベルの埋め込みを生成する'
 # 'Generate instrumented code to collect context sensitive execution counts into <directory>/default.profraw (overridden by LLVM_PROFILE_FILE env var)'
 H10A2DF54F49A: 'コンテキスト依存の実行カウントを集計するためのインストゥルメンテーションされたコードを生成し、<directory>/default.profraw に格納します（LLVM_PROFILE_FILE環境変数で上書きされます）'
 # 'Generate instrumented code to collect context sensitive execution counts into default.profraw (overridden by LLVM_PROFILE_FILE env var)'
@@ -9710,8 +9742,12 @@ HC5A8A1BFD3A5: 'IBM MASSベクタライブラリ'
 H91B04B0AEDF0: 'IBOutletCollectionプロパティはcopy/strongで、assignにしないでください'
 # 'IEEE 754 denormal numbers'
 HB645808304FA: 'IEEE 754 デノーマル数'
+# 'IR2Vec - Embedding Generation Tool\nGenerates embeddings for a given LLVM IR and supports triplet generation for vocabulary training and embedding generation.\n\nSee https://llvm.org/docs/CommandGuide/llvm-ir2vec.html for more information.\n'
+H0D3FD2EA193C: 'IR2Vec - 埋め込み生成ツール\n指定されたLLVM IRの埋め込みを生成し、語彙トレーニングと埋め込み生成のためのトリプレット生成をサポートします。\n\n詳細は https://llvm.org/docs/CommandGuide/llvm-ir2vec.html を参照してください。\n'
 # 'IR2Vec Options'
 H353091CB276E: 'IR2Vecオプション'
+# 'IR2Vec Tool Options'
+H7B31ED25D372: 'IR2Vecツールオプション'
 # 'IRDL file to register before processing the input'
 H9ADEB68395C9: '入力処理前に登録するIRDLファイル'
 # 'IRTranslator LLVM IR -> MI'
@@ -9798,6 +9834,8 @@ H0DECF1F15908: '有効時は単純ループunswitchingがllvm.experimental.guard
 H29F9314FFE86: '有効にすると、freeze命令がループのunswitch条件に追加され、誤った最適化を防ぎます'
 # 'If present, forces/disables the use of long calls'
 H244BD3DDA186: '指定すると、long callsの使用を強制/無効にします'
+# 'If present, stops generating TBAA tags for accesses of local allocations after N accesses in a module'
+HA80BB0A3B8F4: '存在する場合、モジュール内の$N$アクセス後、ローカルアロケーションのアクセスに対するTBAAタグの生成を停止します。'
 # 'If present, stops packetizing after N instructions'
 HC908BB95C55F: '指定すると、N命令後にpacketizingを停止します'
 # 'If profile count information is used in tail duplication cost model, the gained fall through number from tail duplication should be at least this percent of hot count.'
@@ -9830,6 +9868,8 @@ HB78C3D57EF8C: '設定すると、不明なフォーマットオプションは�
 HC6C4D32713B0: '指定すると、-print-[before|after]{-all} オプションで出力されるIRは、stderrではなくこのディレクトリのファイルにダンプされます'
 # 'If stats should be appended to stats-file instead of overwriting it'
 H7B41C07F5D40: 'stats-fileに統計を追加書き込みする場合（上書きしない）'
+# 'If stats should include timers.'
+H09541D9A8495: '統計にタイマーを含めるかどうか。'
 # 'If the function being instrumented contains more than this number of memory accesses, use callbacks instead of inline checks (-1 means never use callbacks).'
 HD30970E83223: 'instrumentation対象の関数がこの数以上のメモリアクセスを含む場合、インラインチェックの代わりにコールバックを使用します（-1はコールバックを使用しないを意味します）'
 # 'If the function being instrumented requires more than this number of checks and origin stores, use callbacks instead of inline checks (-1 means never use callbacks).'
@@ -9898,6 +9938,8 @@ HDF7F5F41C8A9: '正規表現に一致する関数を無視する。複数の正�
 HABB3F2EDAFC7: 'インサートの競合を無視し、修正を続けながら実行を続ける'
 # 'Ignore possible aliasing of the array bases'
 H64EE4A3BEF1A: '配列ベースのポインタアリasingを無視する'
+# 'Ignore profitability, force interchange (does not work with other options)'
+HEB904092D439: '利益性を無視し、強制的に交換（他のオプションと併用不可）'
 # 'Ignore redundant instrumentation'
 H4E0E4A3BF250: '冗長なインストゥルメンテーションを無視する'
 # 'Ignore the definition of the given macro when building and loading modules'
@@ -10200,6 +10242,8 @@ H41E9F3846338: '関数のエントリ/エグジットにmcount()などの呼び�
 H179F36D1CDA5: '関数に__CheckForDebuggerJustMyCodeの呼び出しを追加する'
 # 'Instrument globals'
 HF9B96A5EACA6: 'グローバル変数をインストゥルメンテーションする'
+# 'Instrument globals, even those within user-defined sections. Warning: This may break existing code which walks globals via linker-generated symbols, expects certain globals to be contiguous with each other, or makes other assumptions which are invalidated by HWASan instrumentation.'
+H19A2B8EBCA54: 'グローバル変数（ユーザー定義セクション内のものも含む）をインストゥルメント。警告: リンカ生成シンボル経由でグローバルを走査し、特定のグローバルが連続配置されることを期待する、またはHWASanインストゥルメンテーションにより無効化される他の仮定を行う既存コードが破壊される可能性があります。'
 # 'Instrument memintrinsics (memset/memcpy/memmove)'
 HE6033F8FFDF9: 'memintrinsics（memset/memcpy/memmove）をインストゥルメンテーションする'
 # 'Instrument memory accesses'
@@ -10246,6 +10290,8 @@ HD223D51415E6: 'レジスタ-レジスタ命令をレジスタ-即値命令に�
 H1328F2EA33BA: '反復推論: デルタ収束精度。より小さな値は通常、実行時間の悪化を伴いますが、より良い結果をもたらします'
 # 'Iterative inference: maximum number of update iterations per block'
 H5F6BCC565010: '反復推論: 各ブロックあたりの更新反復の最大数'
+# 'Iteratively apply merging on a node to catch new callers'
+HCD2383E05174: 'ノードにマージを繰り返し適用して、新しい呼び出し元を検出します。'
 # 'JIT the code and run it by invoking the main function'
 HC922A3A5E7D1: 'コードをJITコンパイルし、main関数を呼び出して実行する'
 # 'JITLink Options'
@@ -10390,6 +10436,8 @@ HD066D1FABC77: 'Lazy バリュー情報解析'
 H5201BDD0F5FF: '巨大関数の最小BB数。'
 # 'Leave out unnecessary information when printing MIR'
 HEE7C41A11713: 'MIR を出力する際不要な情報を省略'
+# 'Legalize SPIR-V implicit bindings'
+H70D9124B645C: 'SPIR-Vの暗黙のバインディングを正規化します。'
 # "Legalize the Machine IR a function's Machine IR"
 H082594DE8633: '関数のマシン IR の合法化'
 # 'Level of field padding for AddressSanitizer'
@@ -10438,6 +10486,8 @@ H538935517F09: 'デバッグバイナリのサイズを削減するため、生�
 HF96C59869298: '指定された値に浮動小数点精度を制限します'
 # 'Limit maximum recursion depth when calculating costs of speculatively executed instructions'
 H66110CD9CA1F: '仮想実行される命令のコスト計算時の最大再帰深さを制限します'
+# 'Limit number of blocks a define in a threaded block is allowed to be live in'
+H7E36F561F926: 'スレッド化されたブロック内で定義が生存可能とするブロック数を制限します。'
 # 'Limit on instruction search range in frame index elimination'
 HBC1B1C08E702: 'フレームインデックス消去における命令検索範囲を制限します'
 # 'Limit on the cost of instructions that can be repeated due to loop flattening'
@@ -11476,6 +11526,8 @@ H3F90161CF695: '定義するマクロ名 -- mlir-src-sharderでは無視され�
 HCFEFDA365E00: 'オブジェクトファイルにエンコードする分割DWARFデバッグ情報ファイル名'
 # 'Namespace.'
 HD451EBBFFEAD: 'ネームスペース。'
+# 'Namespec of libclc OpenCL bitcode library to link'
+H1BDEB17C9E00: 'libclcのOpenCLビットコードライブラリのリンク先名前空間。'
 # 'Narrow LSR complex solution using expectation of registers number'
 H13DBBF2C516C: 'レジスタ数の期待値に基づくLSR複合解の狭義化'
 # 'Narrow LSR search space by filtering non-optimal formulae with the same ScaledReg and Scale'
@@ -11592,6 +11644,8 @@ H5DDB526BD36F: '出力ファイルの数'
 HEC293753B227: 'ld.lldでのみ有効な並列完全LTOコード生成用パーティション数'
 # 'Number of registers to limit to when printing regmask operands in IR dumps. unlimited = -1'
 H0373C047E939: 'IRダンプでレジスタマスクオペランドを表示する際のレジスタ数制限値。無制限 = -1'
+# 'Number of runs for benchmarking'
+HB10A82BB1DC5: 'ベンチマーク用の実行回数。'
 # 'Number of seconds program is allowed to run before it is killed (default is 300s), 0 disables timeout'
 HE6EB2161F536: 'プログラムの実行許可時間（秒単位。デフォルト300秒）。0でタイムアウトを無効化'
 # "Number of threads in the 'x' dimension"
@@ -11660,6 +11714,8 @@ HB9A6C5C455E1: 'オフセットはUTF-8バイトで表されます'
 H0151FBB5A950: 'オフセットはUnicodeコードポイントで表されます'
 # 'Old namespace.'
 HC6DBF56DB427: '古い名前空間'
+# 'Omit accesses due to pointer capturing'
+H044FD8077907: 'ポインタのキャプチャに起因するアクセスを省略します。'
 # 'Omit all lfences before branch instructions.'
 H64285876BCDE: 'ブランチ命令前のすべてのlfencesを省略'
 # 'Omit all lfences other than the first to be placed in a basic block.'
@@ -11876,16 +11932,16 @@ H226495157F78: "OpenACC '%1' 句は '%0' ディレクティブには無効です
 HC59CAAD94E7A: "宣言のOpenACC 'bind'節は、以前の'bind'節と同じ名前にバインドする必要があります"
 # "OpenACC 'collapse' clause loop count must be a %select{constant expression|positive integer value, evaluated to %1}0"
 HF187F732137C: "OpenACC 'collapse' 句のループカウントは%select{定数式|正の整数値（%1に評価される）}0でなければなりません"
-# "OpenACC 'device_type' clause on a 'set' construct only permits one architecture"
-HB63E35D8A787: "OpenACC 'routine'構文は、各'device_type'に対して'gang'、'seq'、'vector'、または'worker'句の少なくとも1つを含む必要があります"
+# "OpenACC 'device_type' clause on a '%0' construct only permits one architecture"
+HD88AB942A2EE: "OpenACCの'%0'構文における'device_type'節はアーキテクチャを1つだけ指定可能です。"
 # "OpenACC 'gang' clause may have at most one %select{unnamed or 'num'|'dim'|'static'}0 argument"
 HC064C4557CFE: "OpenACC 'gang' 句は%select{名前なしまたは'num'|'dim'|'static'}0引数を1つまで指定できます"
 # "OpenACC 'reduction' composite variable must not have non-scalar field"
 H9A717A5BB65E: "OpenACC 'reduction' 複合変数には非スカラフィールドを含めることはできません"
 # "OpenACC 'reduction' variable must be a composite of scalar types; %1 %select{is not a class or struct|is incomplete|is not an aggregate}0"
 HD35F9CAD567D: "OpenACC 'reduction' 変数はスカラ型の複合体でなければなりません;%1 %select{クラスまたは構造体ではありません|未完了型です|集約型ではありません}0"
-# "OpenACC 'reduction' variable must be of scalar type, sub-array, or a composite of scalar types;%select{| sub-array base}1 type is %0"
-HEC7D1B479B8F: "OpenACC 'reduction' 変数はスカラ型、サブ配列、またはスカラ型の複合体でなければなりません;%select{|サブ配列ベース}1の型は%0です"
+# "OpenACC 'reduction' variable must be of scalar type, aggregate, sub-array, or a composite of scalar types;%select{| sub-array base}1 type is %0"
+HF070A8DABE4C: "OpenACCの'reduction'変数はスカラ型、集約型、部分配列、またはスカラ型の複合型でなければなりません。%select{|部分配列ベース}1型は%0です。"
 # "OpenACC 'reduction' variable must have the same operator in all nested constructs (%0 vs %1)"
 H28C388119D4E: "OpenACC 'reduction' 変数はネストしたコンストラクト全体で同一の演算子を使用する必要があります (%0 vs %1)"
 # "OpenACC 'routine' construct must have at least one 'gang', 'seq', 'vector', or 'worker' clause that applies to each 'device_type'"
@@ -12020,6 +12076,8 @@ H73EA61C4E41D: '最適化レベル3。clang -O3と同様です。-passes="defaul
 HA23F3D2204EA: 'NVVMコンパイル用の最適化レベル'
 # "Optimization level. [-O0, -O1, -O2, or -O3] (default = '-O2')"
 H8F5A63304993: "最適化レベル。[-O0, -O1, -O2, or -O3] (デフォルト = '-O2')"
+# 'Optimization pass(es) to disable (comma-separated list)'
+H2FA611ED905D: '無効化する最適化パス（カンマ区切りリスト）'
 # 'Optimization remarks file containing inline remarks to be replayed by cgscc inlining.'
 HEFDDA07D8CA1: 'cgsccインライン処理で再現するインライン注釈を含む最適化注釈ファイル'
 # 'Optimization remarks file containing inline remarks to be replayed by inlining from sample profile loader.'
@@ -12346,6 +12404,8 @@ H194FFD6DEF4E: 'プラグイン <name> に <arg> を渡します'
 H6E93CAC5A2A4: 'CUDA/HIPデバイスコンパイルに <arg> を渡します'
 # 'Pass <arg> to the CUDA/HIP host compilation'
 HBD5864C8EAAC: 'CUDA/HIPホストコンパイルに <arg> を渡します'
+# 'Pass <arg> to the ThinLTO distributor process. Can be specified multiple times or with comma-separated values.'
+H3883610906E4: 'ThinLTOディストリビュータプロセスに<$arg>を渡します。複数回指定またはカンマ区切りで値を指定可能です。'
 # 'Pass <arg> to the assembler'
 H260454350861: 'アセンブラに <arg> を渡します'
 # 'Pass <arg> to the clang driver'
@@ -12436,6 +12496,8 @@ HEE09636C6E6A: 'DIA SDKへのパス'
 H6108420B0DC9: 'フロントエンドによって生成されたホスト用のIRファイルへのパス。'
 # 'Path to the ORC runtime'
 HA6D50B3F5E21: 'ORCランタイムへのパス'
+# 'Path to the ThinLTO distributor process. If specified, ThinLTO backend compilations will be distributed by LLD'
+HED23D7F0E037: 'ThinLTOディストリビュータプロセスへのパス。指定された場合、ThinLTOバックエンドコンパイルはLLDにより分散されます。'
 # 'Path to the VCToolChain'
 H5C43C23950E7: 'VCToolChainへのパス'
 # 'Path to the Windows SDK'
@@ -13260,6 +13322,8 @@ H97882415014C: 'Polly最適化がほとんど利益をもたらさない可能�
 H83D6F8A6F254: '固定形式のソースファイルを処理する'
 # 'Process source files in free form'
 H00F60A25C21E: 'フリーフォームのソースファイルを処理する'
+# 'Process specific function only'
+HB83F576D00F0: '特定の関数のみ処理します。'
 # 'Process trigraph sequences'
 HE92D60C3DD89: 'トリグラフシーケンスを処理する'
 # 'Processor register names.'
@@ -13308,6 +13372,10 @@ HA5A6E86B1573: 'プロローグ/エピローグの挿入とフレームの最終
 H8DCCB244621C: 'メモリをレジスタに昇格'
 # 'Promote all vector constants'
 HC242F7743ACD: 'すべてのベクタ定数を昇格'
+# 'Promote the target candidate even when the defintion  is not available'
+HD53DBC481A81: '定義が利用不可時もターゲット候補を昇格します。'
+# 'Promote the target candidate only if it is a hot function. Otherwise, warm functions can also be promoted'
+HF997C2049451: 'ターゲット候補がホット関数の場合のみ昇格します。そうでない場合、ウォーム関数も昇格可能です。'
 # 'Propagate attributes in index'
 HA59CB2A030BF: 'インデックス内の属性の伝搬'
 # 'Propagate labels from condition values of select instructions to results.'
@@ -13930,6 +13998,8 @@ HEEDD34050A74: "スケジューリング情報を持たないターゲット向�
 HE0CCC8143863: 'セクションアラインメントに合わせてセクションサイズを切り上げ'
 # 'Round-trip the IR after parsing and ensure it succeeds'
 HB85D02D3E83D: 'パース後のIRを再出力し、成功を確認'
+# 'Run CSE and canonicalization on MLIR output'
+H0C344046F9CA: 'MLIR出力に対してCSEおよび正規化を実行します。'
 # 'Run GCN iterative scheduler for ILP scheduling (experimental)'
 H1C7DB026D127: 'ILPスケジューリング用にGCN反復スケジューラを実行（実験的）'
 # 'Run GCN iterative scheduler for minimal register usage (experimental)'
@@ -14790,6 +14860,8 @@ HD3302520BB6D: 'llvm-jitlinkフェーズの時間を表示'
 HB7BC3C6A17C2: 'llvm-rtdyldフェーズの時間を表示'
 # 'Show verbose output when opt-bisect-limit is set'
 H8536EE8B8C8C: 'opt-bisect-limitが設定されている場合、詳細出力を表示'
+# 'Show verbose output when opt-disable is set'
+HF5631C408CB4: 'opt-disable設定時に詳細な出力を表示します。'
 # 'Show vtable names for shown functions'
 H79407841F063: '表示された関数のvtable名を表示'
 # 'Shrink Wrap Pass'
@@ -15232,6 +15304,8 @@ H33A61DDF11E4: '分割オプション'
 H4A2C55331EC3: 'PHI除去時に全クリティカルエッジを分割します'
 # 'Split all partitions'
 H2671573A0660: 'すべてのパーティションを分割する'
+# 'Split by category. If present, splitting by category is used with the specified categorization type.'
+H816BCFE35D75: 'カテゴリごとに分割します。存在する場合、指定された分類タイプでカテゴリ分割を使用します。'
 # 'Split critical edges during machine sinking'
 H4AC49C950879: 'マシン サンキング中にクリティカル エッジを分割する'
 # 'Split machine functions using profile information'
@@ -15276,6 +15350,8 @@ HE346B2A53C42: '未使用のドライバ引数に関する警告を開始'
 HE5F5305CC00C: '収集からパイプラインを開始し、デバッグ情報の保持チェックで終了します'
 # 'Start the pipeline with debugify and end it with check-debugify'
 H0175081FA86E: 'debugifyからパイプラインを開始し、check-debugifyで終了'
+# 'Start the pipeline with prof-inject and end it with prof-verify'
+H0E0B6FF901AB: 'パイプラインをprof-injectで開始し、prof-verifyで終了します。'
 # 'Statement-level analysis'
 H08A2201C3BBE: 'ステートメントレベルの分析'
 # 'Static Data Annotator'
@@ -15440,6 +15516,8 @@ H20A34CC2B958: 'SystemZ 長ブランチ処理'
 H26F388ADE65D: 'SystemZ Post Rewrite パス'
 # 'SystemZ Test Data Class optimization'
 H7C47CE39188C: 'SystemZ テストデータクラス最適化'
+# 'TU local entity %0 is exposed'
+H93EBA0E5BD38: '翻訳単位（TU）ローカルエンティティ%0が公開されています。'
 # 'TableGen LSP Language Server'
 H927DAB993B40: 'TableGen LSP言語サーバー'
 # 'Tail Call Elimination'
@@ -16292,6 +16370,8 @@ HAEBC34FD2276: '複数の同程度にありそうなオプションがある場�
 H0998E6C983F8: "'do concurrent' ループをOpenMPにマッピング（none|host|device）"
 # 'Try to propagate nonnull argument attributes from callsites to caller functions.'
 H020E4D562B19: 'コールサイトから呼び出し元の関数にnonnull引数属性を伝播しようとする。'
+# 'Try to replace values with the idempotent instructions for better vectorization.'
+H4B8E8EF62A87: 'より良いベクトル化のために、値をべき等命令に置き換えようとします。'
 # 'Try to simplify all loads.'
 HBDC33CA86746: 'すべてのロードを単純化しようとする。'
 # 'Try to vectorize with non-power-of-2 number of elements.'
@@ -17280,6 +17360,10 @@ HC9E644F8BF87: '-fvisibility-inlines-hiddenが有効な場合、インラインC
 H2ECC08973193: 'オペレーションで診断が発行された場合、そのオペレーションを添付ノートとして表示'
 # 'When a diagnostic is emitted, also print the stack trace as an attached note'
 H76C424E9438C: '診断が発行された場合、スタックトレースを添付ノートとして表示'
+# "When annotating `select` instructions, this value will be used for the first ('true') case."
+HAB40E02AF059: '`select`命令に注釈を付ける際、この値は最初の（true）ケースで使用されます。'
+# "When annotating `select` instructions, this value will be used for the second ('false') case."
+HFBC3AABDF108: '`select`命令に注釈を付ける際、この値は2番目の（false）ケースで使用されます。'
 # 'When creating a PCH, stop PCH generation after #pragma hdrstop.'
 HD38248648BFF: 'PCHを作成する際、#pragma hdrstop後にPCH生成を停止'
 # 'When dfsan-combine-offset-labels-on-gep and/or dfsan-combine-pointer-labels-on-load are false, this flag can be used to re-enable combining offset and/or pointer taint when loading specific constant global variables (i.e. lookup tables).'
@@ -17296,12 +17380,16 @@ HFD526CCFAF68: 'デバッグチャンクをダンプする際、各チャンク�
 HBD90D91A2AFF: 'クラス、ユニオン、列挙型、構造体の型レコードをダンプする際、前方参照の解決を試みない'
 # 'When epilogue vectorization is enabled, and a value greater than 1 is specified, forces the given VF for all applicable epilogue loops.'
 H9B19DBFD9697: 'エピローグベクトル化が有効で、1より大きいVFが指定された場合、該当するすべてのエピローグループに対して指定されたVFを強制的に適用'
+# 'When generating R_RISCV_ALIGN, insert $alignment-2 bytes of NOPs even in norvc code'
+HDA9FBC21EE4C: 'R_RISCV_ALIGNを生成する際に、norvcコードでも$alignment-2バイトのNOPを挿入します。'
 # 'When generating a crash reproducer, attempt to generated a reproducer with the smallest pipeline.'
 H527701909117: 'クラッシュ再現を作成する際、可能な最小パイプラインを使用した再現を作成しようとします'
 # 'When generating nested context-sensitive profiles, always generate extra base profile for function with all its context profiles merged into it.'
 H4E82789DA6E1: 'ネストしたコンテキスト依存プロファイルを生成する際、関数とそのすべてのコンテキストプロファイルをマージした基本プロファイルを常に生成します'
 # 'When merging conditional stores, do so even if the resultant basic blocks are unlikely to be if-converted as a result'
 H33EB082F4E55: '条件付きストアをマージする際、結果の基本ブロックがその結果if変換されない可能性が高い場合でもマージします'
+# 'When non-empty string is passed each serialized SPIR-V module is saved to an additional file that starts with the given prefix. This is used to generate separate binaries for validation, where `--split-input-file` normally combines all outputs into one. The one combined output (`-o`) is still written. Created files need to be removed manually once processed.'
+HADC89B4A2B37: '空でない文字列が渡された場合、各シリアル化されたSPIR-Vモジュールは指定された接頭辞で始まる追加のファイルに保存されます。これは検証用に個別バイナリを生成するために使用され、`--split-input-file`が通常すべての出力を1つにまとめるのに対します。結合された出力（`-o`）は依然として書き出されます。処理後に作成されたファイルは手動で削除する必要があります。'
 # 'When performing SCEV expansion only if it is cheap to do, this controls the budget that is considered cheap (default = 4)'
 H6E8B9FA2EB34: 'SCEV展開をコストが低い場合のみ行う場合、このオプションで「安価」と判定される予算を制御します（デフォルト = 4）'
 # 'When performing memory disambiguation checks at runtime do not generate more than this number of comparisons (default = 8).'
@@ -17314,6 +17402,8 @@ HD8F4D915AAB6: 'ループパースのprint-[before|after]{-all}でIRを印刷す
 H58BBC34B4C5E: 'print-ir-[before|after]{-all}でIRを印刷する際、常にトップレベルのオペレーションを印刷します'
 # 'When printing analysis, include information on every instruction'
 H27AFC0602C62: '分析情報を印刷する際、すべての命令に関する情報を含める'
+# 'When printing analysis, use the heuristic for fixed-size arrays if the default delinearizetion fails.'
+H52478258D81A: '解析を出力する際に、デフォルトの非線形化が失敗した場合、固定サイズ配列のヒューリスティックを使用します。'
 # 'When printing machine IR, annotate instructions and blocks with SlotIndexes when available'
 H8B62DF7E25E7: 'マシンIRを印刷する際、利用可能な場合SlotIndexesで命令とブロックに注釈を付ける'
 # 'When printing the IR after a pass, only print if the IR changed'
@@ -17374,8 +17464,12 @@ H77F1EF844B16: 'プロファイルなしのインスタンスにext-tsp配置を
 HB03E5614FB01: '再配置可能なプリコンパイルドヘッダを構築するかどうか'
 # 'Whether to distribute into a loop that may not be if-convertible by the loop vectorizer'
 HB249A06C5F2F: 'ループベクター化で必ずしもif-convertibleでないループに展開するかどうか'
+# 'Whether to emit .sframe unwind sections.'
+H4C29B66E1AEC: '.sframe unwindセクションを出力するかどうか。'
 # 'Whether to emit DWARF EH frame entries.'
 HDDECD32989A5: 'DWARF EHフレームエントリを生成するかどうか'
+# 'Whether to force use VGPR for Opc and Dest of MFMA. If unspecified, default to compiler heuristics'
+HDB98A7F029B2: 'MFMAのOpcおよびDestにVGPRを使用することを強制するかどうか。未指定の場合、コンパイラのヒューリスティックに従います。'
 # 'Whether to generate default bounds for arrays.'
 HA8699205DACC: '配列のデフォルト境界を生成するかどうか'
 # 'Whether to include the lower dimensions extents in the stride.'
@@ -17416,8 +17510,6 @@ HA61656982921: 'AMDGPUCodeGenPrepareでサブdword定数アドレス空間ロー
 H16C37A921AE2: 'AMDGPULateCodeGenPrepareでサブdword定数アドレス空間ロードを拡張する'
 # "Widen the loop induction variables, if possible, so overflow checks won't reject flattening"
 HF84F6515DE2A: '必要に応じてループ誘導変数を拡張し、オーバーフロー検査が平坦化を拒否しないようにする'
-# 'Widen uniform 16-bit instructions to 32-bit in AMDGPUCodeGenPrepare'
-H46D2473C38FB: 'AMDGPUCodeGenPrepare で一様な 16 ビット命令を 32 ビットに拡張'
 # 'Windows exception model'
 H86EB91F51633: 'Windows の例外モデル'
 # 'With -globals, only dump globals whose name matches the given value'
@@ -17848,8 +17940,8 @@ H0F2B276FBFF5: '原子演算のアドレス引数は簡易コピー可能型へ�
 H77D9C30AD097: '原子演算のアドレス引数は非-%select{const|定数}0 _Atomic型へのポインタでなければなりません (%1無効)'
 # 'address argument to atomic operation must be a pointer to non-const type (%0 invalid)'
 HA961ACF648B8: '原子演算のアドレス引数は非const型へのポインタでなければなりません (%0無効)'
-# 'address argument to load or store exclusive builtin must be a pointer to 1,2,4 or 8 byte type (%0 invalid)'
-H7473631C7DCE: '排他的読み出し/書き込みビルトインのアドレス引数は1/2/4/8バイト型へのポインタでなければなりません (%0無効)'
+# 'address argument to load or store exclusive builtin must be a pointer to %select{|,| or }1%select{|1}2%select{|,| or }3%select{|2}4%select{|,| or }5%select{|4}6%select{|,| or }7%select{|8}8 byte type (%0 invalid)'
+H613CF3603CD2: '排他ロードまたはストア組み込み関数へのアドレス引数は%select{|、|または}1%select{|1}2%select{|、|または}3%select{|2}4%select{|、|または}5%select{|4}6%select{|、|または}7%select{|8}8バイト型へのポインタでなければなりません（%0は無効）'
 # 'address argument to nontemporal builtin must be a pointer (%0 invalid)'
 H15C0E2A98779: '非テンポラルビルトインのアドレス引数はポインタでなければなりません (%0無効)'
 # 'address argument to nontemporal builtin must be a pointer to integer, float, pointer, or a vector of such types (%0 invalid)'
@@ -18490,10 +18582,8 @@ H51393292A866: '引数 %1 を持つ属性 %0 はシェーダーモデル %2 以�
 HCB37B8A40CF9: '属性 %q0 は削除された関数には適用できません'
 # 'attribute %q0 cannot be applied to member of %q1 class'
 HFBD033ADD565: '属性 %q0 は %q1 クラスのメンバーには適用できません'
-# "attribute '%0' on function does not match previous declaration"
-HF59632E17268: "関数の属性 '%0' は前の宣言と一致しません"
-# "attribute '%0' on overriding function does not match base declaration"
-H19F6EB5D2707: "オーバーライド関数の属性 '%0' は基底宣言と一致しません"
+# "attribute '%0' on overriding function conflicts with base declaration"
+H7966F81365E6: "オーバーライド関数の属性'%0'が基本宣言と競合しています。"
 # "attribute '%0' should not be added via type conversion"
 HD3474317FB81: "属性 '%0' は型変換を通じて追加すべきではありません"
 # "attribute '%select{|target|cpu_specific|cpu_dispatch|target_clones|target_version}0' multiversioned functions do not yet support %select{function templates|virtual functions|deduced return types|constructors|destructors|deleted functions|defaulted functions|constexpr functions|consteval function|lambdas}1"
@@ -20694,6 +20784,8 @@ H22AD60D3A378: 'デリファレンスされたポインタが%select{|サブオ�
 H77B30DE9BC36: "%0 のデリファレンス; 'noderef' 型で宣言されています"
 # 'dereferencing a __weak pointer is not allowed due to possible null value caused by race condition, assign it to strong variable first'
 H69A87CE8BA55: '競合条件により NULL 値が発生する可能性があるため、__weak ポインタのデリファレンスは許可されていません。まず strong 変数に代入してください'
+# 'dereferencing a null pointer is not allowed in a constant expression'
+H21588D017070: '定数式ではnullポインタの参照は許可されていません。'
 # "dereferencing expression marked as 'noderef'"
 HB6D67B14D60F: "'noderef' としてマークされた式をデリファレンスしています"
 # 'derived class must specify the same code segment as its base classes'
@@ -21316,8 +21408,14 @@ HE76165194C35: '終了タグ'
 H00CF7F723C1C: "このpragmaによりモジュール'%0'に移動しました"
 # 'enum %0 was explicitly specialized here'
 H888313DD02EB: 'enum %0は明示的に特殊化されました'
+# 'enumeration %0 declared with incompatible fixed underlying types (%1 vs. %2)'
+H5AA29EBB0D29: '列挙型%0は互換性のない固定基底型（%1 vs. %2）で宣言されています。'
+# 'enumeration %0 has fixed underlying type here'
+H12D7FF9A5081: '列挙型%0はここに固定基底型を持っています。'
 # 'enumeration %0 is incomplete'
 HACD4B99390E7: '列挙型%0は未完了です'
+# 'enumeration %0 missing fixed underlying type here'
+H3217F5445008: '列挙型%0はここに固定基底型がありません。'
 # 'enumeration cannot be a template'
 H0777CF5091AE: '列挙型はテンプレートとして使用できません'
 # 'enumeration previously declared as %select{un|}0scoped'
@@ -21874,6 +21972,8 @@ H4F1921BA3641: "'#pragma %0'のセクション名としてpush、pop、または
 H2D60229D01D0: '等号後の引用符で囲まれた文字列が期待されました'
 # "expected reference to one of the parameters of function %0%select{| or 'this'}1"
 HD78611AD5D12: "関数%0のパラメータのいずれかへの参照が%select{|または'this'}1必要です"
+# "expected reference type argument on 'adjust_args' clause with 'need_device_addr' modifier"
+HE4791647AAE3: "'adjust_args'節に'need_device_addr'修飾子を使用する場合、参照型引数が必要です。"
 # 'expected selector for Objective-C %select{setter|getter}0'
 HFB2F00048645: 'Objective-Cの%select{setter|getter}0メソッドのセレクタが必要です'
 # 'expected selector for Objective-C method'
@@ -22066,8 +22166,8 @@ H2CCBA9D1C7AA: 'エクスポート宣言が匿名名前空間内に出現して�
 HECEB46AE53AF: 'エクスポート宣言が別のエクスポート宣言内に出現しています'
 # 'export declaration can only be used on functions'
 H2A1BE3778EEF: 'エクスポート宣言は関数にのみ使用できます'
-# 'export declaration can only be used within a module purview'
-HA59173758635: 'エクスポート宣言はモジュールの範囲内にのみ使用できます'
+# 'export declaration can only be used within a module interface'
+H96DD9FB41744: 'export宣言はモジュールインターフェース内でのみ使用可能です。'
 # 'export declaration cannot be empty'
 H571FAB6A011E: 'エクスポート宣言は空にできません'
 # 'export declaration cannot be used in a private module fragment'
@@ -22416,6 +22516,8 @@ H6DFBB5CF7F53: 'フォーマット属性はフォーマット文字列として�
 H4D29848904BC: "フォーマット仕様符'%0'は'%1'と互換性ありません"
 # 'format specifies type %0 but the argument has %select{type|underlying type}2 %1'
 H2B1918042742: 'フォーマット指定の%0型ですが、引数は%select{型|基本型}2%1です'
+# 'format specifies type %0 but the argument has %select{type|underlying type}2 %1, which differs in signedness'
+H5D3E7972CACA: 'フォーマットは型%0を指定していますが、引数は%select{型|基底型}2 %1であり、符号の有無が異なります。'
 # "format string contains '\\0' within the string body"
 H262604652293: "フォーマット文字列に文字列本文中に'\\0'が含まれています"
 # 'format string is defined here'
@@ -23472,6 +23574,8 @@ H99AB003B5614: 'インスタンス変数は定数サイズでなければなり�
 H396FFF689BB5: 'ここにインスタンス化されたアセンブリ'
 # 'instantiating fold expression with %0 arguments exceeded expression nesting limit of %1'
 H467EDA4122CE: '%0 個の引数で fold expression をインスタンス化する際に、式のネスト制限 %1 を超えました'
+# "instantiation of %0 triggers reference to TU-local entity %1 from other TU '%2'"
+HA957B9AD6ED9: "%0のインスタンス化が、他の翻訳単位'%2'からのTUローカルエンティティ%1への参照をトリガーします"
 # 'instantiation of %q0 is different in different modules'
 H7179BAA1427A: '異なるモジュール間で%q0のインスタンス化が異なっています'
 # "instantiation of '%0' not supported yet"
@@ -24308,6 +24412,8 @@ H90111C7D3334: 'llvm-omp-kernel-replay オプション'
 HCF4237251086: 'llvm-opt-report オプション'
 # 'llvm-reduce options'
 H9B15C3D059EC: 'llvm-reduce オプション'
+# 'load and store exclusive builtins are not available on this architecture'
+H1A343A8A0853: 'このアーキテクチャではload and store exclusive組み込み関数は利用できません'
 # 'load the input file as a Toy source.'
 H8076D5B81C5F: '入力ファイルをToyソースとして読み込みます。'
 # 'load the input file as an MLIR file'
@@ -24774,6 +24880,8 @@ H110B9B84BD50: "終端の')'文字が見つかりません"
 HCB937BA83DD0: '%select{@interface|@class}2の型パラメータ%1に対する型制限%0が見つかりません'
 # "missing version number in '%0'"
 H5280152B38E3: "'%0'内にバージョン番号がありません"
+# 'mixed %0 and %1 offloading compilation is not supported'
+H40286B7C4E3F: '%0と%1のオフローディングコンパイルの混在はサポートされていません'
 # 'mixed CUDA and HIP compilation is not supported'
 HDE7D3706C5B5: 'CUDAとHIPの混在コンパイルはサポートされていません'
 # "mixing 'target_clones' specifier mechanisms is permitted for GCC compatibility; use a comma separated sequence of string literals, or a string literal containing a comma-separated list of versions"
@@ -25108,6 +25216,8 @@ H183DF472D6DF: 'インストール名が指定されていません: -install_na
 H41C44394DC27: '既知の %select{インスタンス|クラス}1 メソッド %0 がありません'
 # "no known method %select{%objcinstance1|%objcclass1}0; cast the message send to the method's return type"
 HD141497E30B9: 'メソッドの戻り値の型にキャストしてください; %select{%objcinstance1|%objcclass1}0 のメッセージ送信'
+# "no libclc library '%0' found in the clang resource directory"
+H4A66701BC7E0: "clangリソースディレクトリに'%0'のlibclcライブラリが見つかりません"
 # "no library '%0' found in the default clang lib directory or in LIBRARY_PATH; use '--libomptarget-%1-bc-path' to specify %1 bitcode library"
 H56082C491F7D: "デフォルトのclangライブラリディレクトリまたはLIBRARY_PATHにライブラリ '%0' が見つかりません; '--libomptarget-%1-bc-path' を使用して %1 ビットコードライブラリを指定してください"
 # 'no macro named %0'
@@ -25434,6 +25544,8 @@ H0FB30CAF71B6: '戻り値のコピー省略を実施しません'
 H9930B56495BC: '%0宣言にsentinelを収めるのに十分な可変引数がありません'
 # 'not packing field %0 as it is non-POD for the purposes of layout'
 H7FBA81FDAA18: 'レイアウトの目的でPODではないため、フィールド%0はパックされません'
+# 'not supported with the multivalue ABI for function pointers with a struct/union as %select{return value|parameter}0'
+H32E846376250: '構造体/共用体を%select{戻り値|パラメータ}0とする関数ポインタのmultivalue ABIはサポートされていません'
 # 'not-yet-instantiated member is declared here'
 HACFD1F41F676: 'まだインスタンス化されていないメンバーがここに宣言されています'
 # 'null character ignored'
@@ -25534,6 +25646,10 @@ HF63DAE65A9BA: 'Mプロファイルアーキテクチャでは%1を備えてい�
 H571A5AC320D2: '各オペコード1つのクラスタ'
 # "one of 'for', 'parallel', 'sections' or 'taskgroup' is expected"
 HA318D6E65846: "'for'、'parallel'、'sections'、または'taskgroup'のいずれかが期待されます"
+# 'one output module per kernel'
+HB91927E3703C: 'カーネルごとに1つの出力モジュールが必要です'
+# 'one output module per translation unit marked with "module-id" attribute'
+H746D6893A8BF: 'module-id属性を持つ翻訳単位ごとに1つの出力モジュールが必要です'
 # 'one possibility'
 HF5AE3D1F7A2D: '可能性の1つです'
 # "only %select{'omp_priv' or 'omp_orig'|'omp_in' or 'omp_out'}0 variables are allowed in %select{initializer|combiner}0 expression"
@@ -25792,6 +25908,8 @@ HE764C7911186: '現在サポートされていないこのターゲットでの�
 H4E019EDC5E1E: '現在サポートされていないこのターゲットでの浮動小数点例外の使用を上書きしています'
 # "overriding deployment version from '%0' to '%1'"
 H3B5CC52823D1: "ターゲットバージョンを '%0' から '%1' へ変更します"
+# "overriding function is missing '%0' attribute from base declaration"
+HAD5155354E8B: "オーバーライド関数に基本宣言からの'%0'属性が不足しています"
 # 'overriding method has mismatched ns_consumed attribute on its parameter'
 H94209C3B1D29: 'パラメータの ns_consumed 属性が上位メソッドと不一致です'
 # 'overriding method has mismatched ns_returns_%select{not_retained|retained}0 attributes'
@@ -26696,6 +26814,8 @@ H9F7DB4D308D0: '再帰テンプレートインスタンティエーションが�
 H70EFB9FBF448: "再宣言では'loader_uninitialized'属性を追加できません"
 # 'redeclaration has different alignment requirement (%1 vs %0)'
 H2965974DE860: '再宣言のアラインメント要件が異なります（%1 vs %0）'
+# "redeclaration is missing '%0' attribute from previous declaration"
+H27E9E57DF74E: "再宣言に以前の宣言からの'%0'属性が不足しています"
 # "redeclaration of %0 must %select{not |}1have the 'overloadable' attribute"
 H9C609286F3D1: "%0の再宣言は%select{not |}1'overloadable'属性を有する必要があります"
 # 'redeclaration of %0 with a different type%diff{: $ vs $|}1,2'
@@ -26768,10 +26888,10 @@ H2D2C74F27FDF: 'リダクション型は%select{const、volatile、またはrest
 H233496630504: '明示的なタスク内でリダクション変数にアクセスすることはできません'
 # "redundant #include of module '%0' appears within %1"
 H3B45950DD3A3: "%1 内にモジュール '%0' の重複#includeが存在します"
+# 'redundant %0 attribute'
+H40ECC3575546: "'%0'属性は冗長です"
 # 'redundant %0 availability change; only the last specified change will be used'
 HE2065BD86C26: '%0 の使用可能変更の重複；最後に指定された変更のみが使用されます'
-# "redundant 'sycl_kernel_entry_point' attribute"
-H89B952CF4093: "'sycl_kernel_entry_point' 属性の重複です"
 # "redundant attribute subject matcher sub-rule '%0'; '%1' already matches those declarations"
 HE12FF717092C: "冗長な属性サブルール '%0'; '%1' は既にそれらの宣言に一致しています"
 # 'redundant move in return statement'
@@ -27542,6 +27662,10 @@ HD48DDFF6186B: '構造化バインディング・パックはC++2cより前のC+
 H886FBF76EA85: 'SPIRVの構造化'
 # 'style of printing regions'
 H063C50F12566: '領域の出力スタイル'
+# "sub-array as a variable %select{in 'use_device' clause|on 'declare' construct}0 is not a valid variable name or array name"
+H470904C69A60: "変数としてのサブ配列が%select{'use_device'節|'declare'構文}0内にあり、有効な変数名または配列名ではありません"
+# 'sub-expression %select{|in unary expression|on right hand side of assignment|on left hand side of assignment|on left hand side of compound assignment|on left hand side of assignment}2(%3) must match sub-expression used %select{|in unary expression|on right hand side of assignment|<not possible>|on left hand side of compound assignment|on left hand side of assignment}0(%1) from the first statement'
+HA1952899FB80: '部分式 %select{|単項式内|代入の右辺|代入の左辺|複合代入の左辺|代入の左辺}2(%3) は、最初の文で使用された部分式 %select{|単項式内|代入の右辺|<あり得ない>|複合代入の左辺|代入の左辺}0(%1) と一致する必要があります'
 # 'subcommand'
 H146947FFD26E: 'サブコマンド'
 # 'subexpression not valid in a constant expression'
@@ -27696,14 +27820,14 @@ H1D9C8AC0B205: '未定'
 H39A2D17F6485: 'テンプレート %0 には定義がなく、テンプレート引数の推論に%select{|有効な }1推論ガイドもありません'
 # 'template argument / label address difference / what did you expect?'
 H4022196FB5B0: 'テンプレート引数 / ラベルアドレスの差分 / 何を期待しましたか？'
-# 'template argument does not refer to a class or alias template, or template template parameter'
-H10B27B45B43C: 'テンプレート引数はクラスやエイリアステンプレート、またはテンプレートテンプレートパラメータを指しません'
+# 'template argument does not refer to a %select{class or alias template|variable template|concept}0, or template template parameter'
+HF0B7E6ECD71D: 'テンプレート引数が%select{クラスまたはエイリアステンプレート|変数テンプレート|コンセプト}0、またはテンプレートテンプレートパラメータを参照していません'
 # 'template argument for non-type template parameter is treated as function type %0'
 HF7C463216541: '非型テンプレートパラメータのテンプレート引数は関数型%0として扱われます'
 # 'template argument for non-type template parameter must be an expression'
 HA6F518CB9F6F: '非型テンプレートパラメータのテンプレート引数には式を指定する必要があります'
-# 'template argument for template template parameter must be a class template%select{| or type alias template}0'
-H4605CB1853A3: 'テンプレートテンプレートパラメータのテンプレート引数にはクラステンプレート%select{|または型エイリアステンプレート}0を指定する必要があります'
+# 'template argument for template template parameter must be a %select{class template%select{| or type alias template}1|variable template|concept}0'
+HD5F8BF4E6A42: 'テンプレートテンプレートパラメータのテンプレート引数は%select{クラステンプレート%select{|または型エイリアステンプレート}1|変数テンプレート|コンセプト}0でなければなりません'
 # 'template argument for template type parameter must be a type'
 H9FFBB255FD4F: 'テンプレート型パラメータのテンプレート引数には型を指定する必要があります'
 # "template argument for template type parameter must be a type; did you forget 'typename'?"
@@ -27712,8 +27836,8 @@ H477EE50BCF4B: "テンプレート型パラメータのテンプレート引数�
 H0CC2569F4810: "テンプレート型パラメータのテンプレート引数には型を指定する必要があります；'typename' の省略はMicrosoft拡張機能です"
 # 'template argument is the type of an unresolved overloaded function'
 H1DDFBAF8CEBB: 'テンプレート引数は解決できないオーバーロード関数の型です'
-# 'template argument refers to function template %0, here'
-H59E0A4B6EEC0: 'テンプレート引数は関数テンプレート%0を指します'
+# 'template argument refers to a %select{function template|class template|variable template|concept}0 %1, here'
+H26FB06D30BED: 'テンプレート引数が%select{関数テンプレート|クラステンプレート|変数テンプレート|コンセプト}0 %1を参照しています、ここに'
 # 'template argument uses local type %0'
 H8CFAA5F55F9C: 'テンプレート引数は局所型%0を使用しています'
 # 'template argument uses unnamed type'
@@ -27808,6 +27932,18 @@ HB4A505AFFDA6: '基本ブロックがColdかどうかを評価する際の閾値
 HD419260C8BE7: 'テストモジュールファイル拡張子"%0"は予期されたバージョン(%3.%4)とは異なるバージョン(%1.%2)を持っています'
 # 'the #__include_macros directive is only for internal use by -imacros'
 H1FBDC6FD510E: '#__include_macros ディレクティブは、-imacros による内部使用専用です'
+# 'the %0 attribute cannot be added to a function after the function is defined'
+H7E2F4B1BAFA6: '%0属性は関数が定義された後に追加することはできません'
+# "the %0 attribute cannot be applied to a %select{non-static member function|variadic function|deleted function|defaulted function|constexpr function|consteval function|function declared with the 'noreturn' attribute|coroutine|function defined with a function try block}1"
+H9333E93FC66A: "%0属性は%select{非静的メンバ関数|可変長引数関数|削除された関数|既定の関数|constexpr関数|consteval関数|'noreturn'属性で宣言された関数|コルーチン|関数試行ブロックで定義された関数}1には適用できません"
+# "the %0 attribute only applies to functions with a 'void' return type"
+HAEDF59D36530: "%0属性は'void'戻り値型の関数にのみ適用可能です"
+# "the %0 attribute only applies to functions with a non-deduced 'void' return type"
+H7A7AD5A6C18F: "%0属性は非推論可能な'void'戻り値型の関数にのみ適用可能です"
+# 'the %0 kernel name argument conflicts with a previous declaration'
+HBE875B4C5356: '%0カーネル名引数が以前の宣言と矛盾しています'
+# 'the %0 kernel name argument does not match prior declaration%diff{: $ vs $|}1,2'
+H32F8D6B1A505: '%0 カーネル名引数は以前の宣言と一致しません%diff{: $ 対 $|}1,2'
 # 'the %0 sub-architecture does not support unaligned accesses'
 H8EEF78B6F581: '%0 サブアーキテクチャはアラインメントのないアクセスをサポートしていません'
 # 'the %0 type cannot be used to declare a program scope variable'
@@ -28294,10 +28430,8 @@ HC40C2F44A862: '型引数はパラメータ化されていないクラス%0に�
 H9C477E0B6856: '型意識型%0は同じスコープ内で宣言された対応する型意識型%select{|placement }1%2が必要です'
 # 'type aware %0 will not be used for coroutine allocation'
 H5B38A9DE0EAE: '型意識型%0はコルーチンの確保に使用されません'
-# 'type aware allocators are a C++2c extension'
-H55565F6468B1: '型意識型アロケータはC++2cの拡張機能です'
-# 'type aware allocators are incompatible with C++ standards before C++2c'
-H25EF1B0FAFC1: '型意識型アロケータはC++2c以前のC++標準と互換性がありません'
+# 'type aware allocators are a Clang extension'
+H29DDCAD0C3D2: '型認識アロケーターはClangの拡張機能です'
 # 'type bound %0 for type parameter %1 conflicts with %select{implicit|previous}2 bound %3%select{for type parameter %5|}4'
 H7F10FC1165B9: '型パラメータ%1の型制約%0は%select{暗黙の|前の}2制約%3%select{型パラメータ%5に対して|}4と矛盾しています'
 # 'type bound %0 for type parameter %1 is not an Objective-C pointer type'
@@ -29156,6 +29290,8 @@ HB0299AD4C891: '__hlsl_resource_t が必要な場所にタイプ %0 を使用'
 HEF054774D419: '算術型またはポインタ型が必要な場所で型%0を使用しました'
 # 'used type %0 where floating point type is not allowed'
 HF095E0FB08EE: '浮動小数点型が禁止されている場所で型%0を使用しました'
+# 'used type %0 where function pointer is required'
+H2B3A8AEA4470: '関数ポインターが必要な場所で型 %0 が使用されています'
 # 'used type %0 where integer is required'
 HCD053F3A5F86: '整数型が必要な場所で型%0を使用しました'
 # 'used type %0 where integer or floating point type is required'
@@ -29282,6 +29418,8 @@ H5B3E786190C7: "変数 %0 は%select{使用されるとき|キャプチャされ
 H9C1D29CE922D: '変数 %0 はここですでに宣言されています。'
 # 'variable %0 is uninitialized when %select{used here|captured by block}1'
 HC11F7DAD1A0E: '変数 %0 は%select{ここに使用されるとき|ブロックによってキャプチャされるとき}1、初期化されていません。'
+# 'variable %0 is uninitialized when passed as a const pointer argument here'
+H8B9126CD3C58: '変数 %0 はconstポインター引数として渡される際に初期化されていません'
 # 'variable %0 is uninitialized when passed as a const reference argument here'
 H12F79B618200: '変数 %0 はここで定数参照引数として渡される際に初期化されていません。'
 # 'variable %0 is uninitialized when used within its own initialization'
@@ -29302,8 +29440,6 @@ HEE231707A80F: '柔軟配列メンバーを持つ変数 %0 はラムダ式でキ
 HECE6754B3154: '型 %1 の変数 %0 は、互換性のない型 %2 の初期化子を持っています。'
 # 'variable %0 with unknown type cannot be given a function type'
 HBD6B0E34602F: '不明な型の変数 %0 には関数型を付与できません。'
-# 'variable %select{|in unary expression|on right hand side of assignment|on left hand side of assignment|on left hand side of compound assignment|on left hand side of assignment}2(%3) must match variable used %select{|in unary expression|on right hand side of assignment|<not possible>|on left hand side of compound assignment|on left hand side of assignment}0(%1) from the first statement'
-HA70BF8F524C0: '変数%select{|単項式で|代入式の右辺に|代入式の左辺に|複合代入式の左辺に|代入式の左辺に}2(%3)は、最初のステートメントから使用された変数%select{|単項式で|代入式の右辺に|<不可能>|複合代入式の左辺に|代入式の左辺に}0(%1)と一致する必要があります'
 # 'variable already marked as mapped in current construct'
 HA15930719644: '変数は現在の構造体で既にマップ済みとしてマークされています。'
 # "variable appearing in '%0' clause of OpenACC 'declare' directive must be in the same scope as the directive"
@@ -29370,10 +29506,14 @@ HD279E72346CE: 'コルーチン内の変数長配列はサポートされてい�
 H4F34EF5C94E2: '変数は整数または%select{ポインタ|ランダムアクセスイテレータ}0の型でなければなりません'
 # "variable named 'main' with external linkage has undefined behavior"
 H38BA25ED2BA1: "外部リンケージを持つ'main'という名前の変数は未定義の動作を引き起こします"
+# "variable of array type %0 referenced in OpenACC '%1' clause does not have constant bounds; initialization will happen after decay to pointer"
+H30B20F3BA279: "OpenACC '%1' 句で参照された配列型の変数 %0 は定数の範囲を持たないため、ポインターへのdecay後に初期化されます"
 # 'variable of non-literal type %1 cannot be defined in a constexpr %select{function|constructor}0 before C++23'
 H5F89C6201D7E: 'C++23以前では、C++のconstexpr %select{関数|コンストラクタ}0内で非リテラル型%1の変数を定義することはできません'
 # "variable of non-reference type %0 can be used only with 'val' modifier, but used with '%1'"
 HFF57CDDBE63D: "非参照型%0の変数は'val'修飾子のみで使用できますが、'%1'が使用されました"
+# "variable of type %0 referenced in OpenACC '%1' clause does not have a %select{default constructor|copy constructor|destructor}2; reference has no effect"
+H2B04F26174D2: "OpenACC '%1' 句で参照された型 %0 の変数は、%select{デフォルトコンストラクター|コピーコンストラクター|デストラクター}2 がありません。参照は効果を持ちません"
 # 'variable of type %1 has %select{private|protected}2 destructor'
 H8BC8C9632B1A: '型%1の変数には%select{private|protected}2のデストラクタがあります'
 # "variable referenced by 'link' clause not in global or namespace scope must be marked 'extern'"

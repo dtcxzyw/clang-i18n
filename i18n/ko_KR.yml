@@ -1336,24 +1336,24 @@ HFA8AACB1DC9D: '%select{읽기|읽기|대입|증가|감소|<ERROR>|<ERROR>|<ERRO
 H030F1EA383B2: '%select{읽기|읽기|대입|증가|감소|멤버 호출|dynamic_cast|typeid 적용|하위 객체의 생성|소멸|읽기}0 %select{객체의 생명주기가 종료된 후의 객체|초기화되지 않은 객체}1는 상수 표현식에서 허용되지 않습니다'
 # '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of subobject of|destruction of|read of}0 member %1 of union with %select{active member %3|no active member}2 is not allowed in a constant expression'
 HAA36C87281CE: '%select{읽기|읽기|대입|증가|감소|멤버 호출|dynamic_cast|typeid 적용|부분 객체 생성|소멸|읽기}0 멤버 %1의 union의 %select{활성 멤버 %3|활성 멤버 없음}2는 상수 표현식에서 허용되지 않습니다'
-# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 %select{temporary|variable}1 whose %plural{8:storage duration|:lifetime}0 has ended'
-H1E2EE7FC7CDC: '%select{읽기|읽기|에 대한 대입|증가|감소|멤버 호출|dynamic_cast|typeid 적용|생성|소멸|읽기}0 %select{임시 객체|변수}1 의 %plural{8:저장 기간|:생명 주기}0가 종료되었습니다'
-# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 dereferenced null pointer is not allowed in a constant expression'
-H22FE9FDFDD6D: '%select{읽기|읽기|대입|증가|감소|멤버 호출|dynamic_cast의|typeid 적용된|생성|소멸|읽기}0 디레퍼런스된 null 포인터는 상수 표현식에서 허용되지 않습니다'
-# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 dereferenced one-past-the-end pointer is not allowed in a constant expression'
-H0D344CA7C10F: '%select{읽기|읽기|할당|증가|감소|멤버 호출|dynamic_cast 적용|typeid 적용|생성|소멸|읽기}0의 해제된 종료 이후 포인터는 상수 표현식에서 허용되지 않습니다.'
-# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 element of array without known bound is not allowed in a constant expression'
-H5DD079C28614: '%select{읽기|읽기|대입에 대한|증가|감소|의 멤버 호출|의 dynamic_cast|에 적용된 typeid|의 생성|의 소멸|읽기}0 요소에 대한 접근은 상수 표현식에서 허용되지 않습니다.'
-# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 heap allocated object that has been deleted'
-H0F4326DA1EA9: '%select{읽기|읽기|대입|증가|감소|멤버 호출|dynamic_cast의|typeid 적용|생성|파괴|읽기}0 할당된 힙 객체가 삭제된 후 수행된'
-# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 mutable member %1 is not allowed in a constant expression'
-H08EBC2661AFA: '%select{읽기|읽기|대입|증가|감소|멤버 호출|dynamic_cast|typeid 적용|생성|소멸|읽기}0 mutable member %1은 상수 표현식에서 허용되지 않습니다'
-# "%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 object '%1' whose value is not known"
-H2547ED9973E0: "%select{읽기|읽기|대입|증가|감소|멤버 호출|dynamic_cast|typeid 적용|생성|파괴|읽기}0 객체 '%1'의 값이 알려지지 않았습니다"
-# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 temporary is not allowed in a constant expression outside the expression that created the temporary'
-H1A04D5C0C6D4: '%select{읽기|읽기|대입|증가|감소|멤버 호출|dynamic_cast 변환|typeid 적용|생성|파괴|읽기}0 일시적 객체는 상수 표현식에서 일시적 객체를 생성한 표현식 밖에서 허용되지 않습니다'
-# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of}0 variable %1 whose value is not known'
-H9168EB67A6E1: '%select{읽기|읽기|할당|증가|감소|멤버 호출|dynamic_cast|typeid 적용|생성|소멸|읽기}0 변수 %1의 값은 알 수 없음'
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 %select{temporary|variable}1 whose %plural{8:storage duration|:lifetime}0 has ended'
+H306E4F51DC7B: '%select{읽기|읽기|할당|증가|감소|멤버 호출|dynamic_cast|typeid 적용|생성|소멸|읽기|읽기}0 %select{임시 객체|변수}1의 %plural{8:저장 기간|수명}0이(가) 종료되었습니다'
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 dereferenced null pointer is not allowed in a constant expression'
+HAE6F19793252: '%select{읽기|읽기|할당|증가|감소|멤버 호출|dynamic_cast|typeid 적용|생성|소멸|읽기|읽기}0 null 포인터 역참조는 상수 표현식에서 허용되지 않습니다'
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 dereferenced one-past-the-end pointer is not allowed in a constant expression'
+H41D88F91AE19: '%select{읽기|읽기|할당|증가|감소|멤버 호출|dynamic_cast|typeid 적용|생성|소멸|읽기|읽기}0 배열 끝 다음 포인터 역참조는 상수 표현식에서 허용되지 않습니다'
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 element of array without known bound is not allowed in a constant expression'
+H31A306A5DC41: '%select{읽기|읽기|할당|증가|감소|멤버 호출|dynamic_cast|typeid 적용|생성|소멸|읽기|읽기}0 경계를 알 수 없는 배열의 요소는 상수 표현식에서 허용되지 않습니다'
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 heap allocated object that has been deleted'
+H0E9826DBDEAC: '%select{읽기|읽기|할당|증가|감소|멤버 호출|dynamic_cast|typeid 적용|생성|소멸|읽기|읽기}0 삭제된 힙 할당 객체'
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 mutable member %1 is not allowed in a constant expression'
+H1A7997C2421D: '%select{읽기|읽기|할당|증가|감소|멤버 호출|dynamic_cast|typeid 적용|생성|소멸|읽기|읽기}0 변경 가능한 멤버 %1은(는) 상수 표현식에서 허용되지 않습니다'
+# "%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 object '%1' whose value is not known"
+H60CA13D949B0: "%select{읽기|읽기|할당|증가|감소|멤버 호출|dynamic_cast|typeid 적용|생성|소멸|읽기|읽기}0 값(을)를 알 수 없는 객체 '%1'"
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 temporary is not allowed in a constant expression outside the expression that created the temporary'
+H97FF5E6CE8B9: '%select{읽기|읽기|할당|증가|감소|멤버 호출|dynamic_cast|typeid 적용|생성|소멸|읽기|읽기}0 임시 객체는 생성한 표현식 외부의 상수 표현식에서 허용되지 않습니다'
+# '%select{read of|read of|assignment to|increment of|decrement of|member call on|dynamic_cast of|typeid applied to|construction of|destruction of|read of|read of}0 variable %1 whose value is not known'
+H0CD8843CE69A: '%select{읽기|읽기|할당|증가|감소|멤버 호출|dynamic_cast|typeid 적용|생성|소멸|읽기|읽기}0 값(을)를 알 수 없는 변수 %1'
 # '%select{reading|writing}1 the value pointed to by %0 requires holding %select{any mutex|any mutex exclusively}1'
 H20B2C79559EA: '%select{읽기|쓰기}1 %0가 가리키는 값에 접근하려면 %select{어떤 뮤텍스|어떤 뮤텍스를 배타적으로}1 획득해야 합니다'
 # '%select{reading|writing}1 variable %0 requires holding %select{any mutex|any mutex exclusively}1'
@@ -1468,6 +1468,8 @@ H2BC4F8FF7FD4: '%select{이 문자를 식별자에 사용하는 것은|이 문�
 H74FA7B9CE6BC: "%select{타입의 값|밑바닥 타입을 가진 열거 값}2 '%0'은 포맷 인수로 사용되어서는 안 됩니다; 대신 %1로 명시적 캐스팅을 추가해야 합니다"
 # '%select{value|type}0-dependent expression passed as an argument to debug command'
 HF8F02B43BB62: '%select{값|형식}0에 의존적인 표현식이 디버그 명령의 인수로 전달되었습니다'
+# '%select{variable template|concept}0 template parameter is a C++2c extension'
+H5AFF4B413F4C: '%select{변수 템플릿|컨셉}0 템플릿 매개변수는 C++2c 확장 기능입니다'
 # '%select{variable|static data member}0 instantiated with function type %1'
 HE6193A7D74C4: '%select{변수|정적 데이터 멤버}0 함수 유형 %1로 인스턴스화되었습니다'
 # '%select{variable|variable template|variable template partial specialization|variable template explicit specialization}0 %1 declared with deduced type %2 cannot appear in its own initializer'
@@ -1570,6 +1572,8 @@ HCE0F9341D433: "'#pragma %0'는 파일 범위에서만 사용할 수 있습니�
 HD3947EF6D864: "'#pragma %0'는 파일 범위 또는 복합 문의 시작 부분에서만 사용할 수 있습니다"
 # "'#pragma %0' is not supported on this target - ignored"
 H10F342B08150: "'#pragma %0'는 이 타겟에서 지원되지 않습니다 - 무시됩니다"
+# "'#pragma %select{push_macro|pop_macro}0' expected a non-empty string"
+HF56A6742DACA: "'#pragma %select{push_macro|pop_macro}0'은(는) 비어 있지 않은 문자열을 기대합니다"
 # "'#pragma STDC FENV_ACCESS ON' is illegal when precise is disabled"
 H17CE846EF8B0: "'#pragma STDC FENV_ACCESS ON'은 'precise'가 비활성화되었을 때 사용할 수 없습니다"
 # "'#pragma alloc_text' is applicable only to functions"
@@ -2478,18 +2482,6 @@ H624EF03C7676: "'swift_indirect_result' 매개변수는 함수의 첫 번째 매
 H855B85E209CE: "switch에 'default' 레이블이 없습니다"
 # "'sycl_kernel' attribute only applies to a function template with at least two template parameters"
 H5AFFA7408711: "'sycl_kernel' 특성은 최소 두 개의 템플릿 매개변수가 있는 함수 템플릿에만 적용됩니다"
-# "'sycl_kernel_entry_point' attribute cannot be added to a function after the function is defined"
-H018E12D5A5B2: "'sycl_kernel_entry_point' 속성은 함수가 정의된 후에는 추가할 수 없습니다"
-# "'sycl_kernel_entry_point' attribute cannot be applied to a %select{non-static member function|variadic function|deleted function|defaulted function|constexpr function|consteval function|function declared with the 'noreturn' attribute|coroutine|function defined with a function try block}0"
-H86CAEB999295: "'sycl_kernel_entry_point' 속성은 %select{정적 멤버 함수가 아닌 멤버 함수|가변 인자 함수|삭제된 함수|디폴트화된 함수|constexpr 함수|consteval 함수|'noreturn' 속성을 가진 함수|코루틴|함수 try 블록으로 정의된 함수}0에 적용될 수 없습니다."
-# "'sycl_kernel_entry_point' attribute only applies to functions with a 'void' return type"
-H99CA3F9B2DC2: "'sycl_kernel_entry_point' 속성은 리턴 타입이 'void'인 함수에만 적용됩니다"
-# "'sycl_kernel_entry_point' attribute only applies to functions with a non-deduced 'void' return type"
-H14251E8B39CA: "'sycl_kernel_entry_point' 속성은 반환 타입이 추론되지 않은 'void'인 함수에만 적용됩니다"
-# "'sycl_kernel_entry_point' kernel name argument conflicts with a previous declaration"
-HFAE6DB6B8BBB: "'sycl_kernel_entry_point' 커널 이름 인수는 이전 선언과 충돌합니다"
-# "'sycl_kernel_entry_point' kernel name argument does not match prior declaration%diff{: $ vs $|}0,1"
-H6714A3237372: "'sycl_kernel_entry_point' 커널 이름 인수가 이전 선언과 일치하지 않습니다%diff{: $와 $ 비교|}0,1"
 # "'target_clones' attribute does not match previous declaration"
 HBD2CF88C376B: "'target_clones' 속성이 이전 선언과 일치하지 않습니다"
 # "'target_clones' multiversioning requires a default target"
@@ -2606,6 +2598,8 @@ HEFD41ED402A1: '-code-completion-at=<파일>:<줄>:<열>은(는) <줄>과 <열>�
 H75DBC0C062A1: '-dealloc 메소드가 카테고리에서 재정의되고 있습니다.'
 # '-dependency-file requires at least one -MT or -MQ option'
 HF99E1B6F31F8: '-dependency-file는 최소한 하나의 -MT 또는 -MQ 옵션이 필요합니다'
+# '-emit-final-mlir -simplify-mlir -enable-aa=false'
+HDCF554E10261: '-emit-final-mlir -simplify-mlir -enable-aa=false'
 # '-emit-llvm cannot be used when linking'
 H8745DC614FEB: '-emit-llvm는 링킹 시 사용할 수 없습니다.'
 # '-fdelayed-template-parsing is deprecated after C++20'
@@ -2736,6 +2730,8 @@ H709A48456EF7: '입력 PDB 파일'
 H126A4B67EBAB: '<입력 PDB 파일>'
 # '<input YAML file>'
 H7A7A324B78FC: '입력 YAML 파일'
+# "<input bitcode file or '-' for stdin>"
+HBCB0C08B7025: "<입력 비트코드 파일 또는 '-'를 입력으로 사용>"
 # '<input bitcode file>'
 H0498EDBECDA2: '입력 비트코드 파일'
 # '<input bitcode files>'
@@ -3080,6 +3076,8 @@ HB1D166D82990: 'AMDGPU 사전-RA 최적화'
 H8AF72F195656: 'AMDGPU 커널 인수 사전 로드'
 # 'AMDGPU Preload Kernel Arguments Prolog'
 HA4C7048C1EF3: 'AMDGPU 커널 인수 사전 로드 프롤로그'
+# 'AMDGPU Prepare AGPR Alloc'
+H97A799AB9F78: 'AMDGPU Prepare AGPR Alloc'
 # 'AMDGPU Printf lowering'
 H9F0BCA780CE7: 'AMDGPU Printf 하위 변환'
 # 'AMDGPU Promote Kernel Arguments'
@@ -3768,6 +3766,8 @@ H08E5D5835443: '루프를 언롤-앤드-잼할 수 있게 합니다.'
 H2478745EEA16: '비공개 함수에 추가 결과를 추가하여 반환된 memrefs의 소유권을 호출자에게 반환할 수 있습니다. 이렇게 하면 호출된 함수에서 불필요한 버퍼 복사를 피할 수 있습니다.'
 # 'Allows using features specific to Hugo'
 H5D750A78EC0D: 'Hugo에 특화된 기능을 사용할 수 있게 합니다'
+# 'Also inject (if missing) and verify MD_prof for `select` instructions'
+H1866EAA4AA5E: '`select` 명령어에 대해 MD_prof를 (필요시 삽입하고) 검증합니다'
 # 'Also show functions without any scops'
 H8AA7DD878BF3: '또한 어떤 스코프도 없는 함수를 표시합니다'
 # 'Also write profiles with all-zero counters. Intended for testing/debugging.'
@@ -3844,6 +3844,8 @@ H117120C6D4F8: '함수 선언의 호출 위치에 주석을 추가합니다.'
 H2FA3995AD0E4: '지정된 산티나이저에서 지원하는 경우 산티나이저 계측에 추가 디버그 정보 주석 추가'
 # 'Annotate table jump instruction to correlate it with the jump table.'
 H49774B77C4AA: '테이블 점프 명령어에 주석을 달아 점프 테이블과 연관시킵니다.'
+# 'Annotate trap blocks in debug info with UBSan trap reasons'
+HD400F47B0D0E: '디버그 정보에서 UBSan 트랩 이유로 트랩 블록에 주석을 추가합니다'
 # 'Any subsection not covered by another option'
 HE0257BE6772D: '다른 옵션으로 커버되지 않은 하위 섹션'
 # 'Append function hash to the name of COMDAT function to avoid function hash mismatch due to the preinliner'
@@ -4764,6 +4766,8 @@ H6AAD89B511B3: '컨텍스트 감도형 프로파일 파일 경로'
 H35F4CF635E0B: 'Funclets를 연속적으로 레이아웃합니다'
 # 'Continue if files are not mapped correctly.'
 H0AB9362D475E: '파일이 올바르게 매핑되지 않았을 경우 계속합니다.'
+# 'Continue with the remaining targets instead of exiting when failing in a candidate'
+HC5FCF2133B59: '후보 실패 시 종료 대신 나머지 타겟을 계속 진행합니다'
 # 'Control Flow Optimizer'
 H072A594766A3: '제어 흐름 최적화기'
 # 'Control conversion of memcpy to Tail predicated loops (WLSTP)'
@@ -5066,6 +5070,10 @@ HA9265D7501D4: '사용되지 않는 인자 제거'
 HDA7D75078335: '사용되지 않는 인자 해킹 (BUGPOINT 전용; 사용 금지)'
 # 'Dead Code Elimination'
 HF23F9DE62329: '사용되지 않는 코드 제거'
+# 'Dead Global Elimination'
+HBE3A0A5A1F67: 'Dead Global Elimination'
+# 'Dead Store Elimination'
+H66482BD2ED13: 'Dead Store Elimination'
 # 'Debug Variable Analysis'
 H4B43DA399B8A: '디버그 변수 분석'
 # 'Debug control MBBs that are scheduled'
@@ -5534,6 +5542,8 @@ H9438B3F5F3E7: '바이너리 분석 정화 도구용 메타데이터 생성을 �
 H949767942150: 'C에 대한 실험적 경계 안전 확장 기능을 비활성화합니다'
 # 'Disable experimental late parsing of attributes'
 HAEA82819E6DD: '실험적인 속성의 늦은 분석을 비활성화합니다'
+# 'Disable experimental lifetime safety for C++'
+H6A8F4694EAAB: 'C++ 실험적 수명 안전 기능을 비활성화합니다'
 # 'Disable ext(promotable(ld)) -> promoted(ext(ld)) optimization in CodeGenPrepare'
 HFA8DE3453A19: 'CodeGenPrepare에서 ext(promotable(ld)) -> promoted(ext(ld)) 최적화를 비활성화합니다'
 # 'Disable external API notes support'
@@ -5688,6 +5698,8 @@ HFD9EDE137232: 'LICM 패스에서 메모리 프로모션을 비활성화합니�
 H1147057C0FDD: '결합 병합을 비활성화'
 # 'Disable merging of globals'
 H0911384E3022: '글로벌 병합을 비활성화합니다'
+# 'Disable metadata propagation fixes discovered through Issue #147390'
+H6B62C43A1C1B: '문제 #147390을 통해 발견된 메타데이터 전파 수정 비활성화'
 # 'Disable minimum alignment of 1 for arguments passed by value on stack'
 HAF9C1AF67E2F: '스택에 값으로 전달되는 인수에 대한 최소 정렬 1을 비활성화합니다'
 # 'Disable mitigations for Load Value Injection (LVI)'
@@ -6182,6 +6194,8 @@ H0A0FD94EAF41: '컴파일러가 지정된 샌니타이저에 대해 샌니타이
 HC4FB93EDAFBC: '어떤 산타이저에 대한 핸들러를 컴파일러가 병합하도록 허용하지 마십시오'
 # 'Do not allow compiler to merge handlers for specified sanitizers'
 H14D0727FA9D4: '지정된 산타이저 핸들러를 병합하도록 컴파일러를 허용하지 마십시오'
+# 'Do not annotate trap blocks in debug info with UBSan trap reasons'
+HDC304C4C4834: '디버그 정보에 UBSan 트랩 이유로 트랩 블록에 주석을 달지 않음'
 # 'Do not assume C++ operator new may not return NULL'
 H1F6F59A37FC5: 'C++ operator new가 NULL을 반환하지 않을 수 있다는 가정을 하지 마십시오'
 # 'Do not assume that any loop is finite.'
@@ -6240,6 +6254,8 @@ HB04F2AC6377B: '정의되었지만 사용되지 않은 타입에 대한 디버�
 H0669AFF65C8F: 'RTTI 데이터를 생성하지 않습니다'
 # "Do not emit a trap instruction for 'unreachable' IR instructions after noreturn calls, even if --trap-unreachable is set."
 HB71318F0BBDA: "noreturn 호출 이후 'unreachable' IR 지시문에 대해 트랩 명령문을 생성하지 않으며, --trap-unreachable 옵션이 설정되더라도 마찬가지입니다."
+# 'Do not emit code for any OpenMP constructs.'
+HD789867CBA9F: 'OpenMP 구성 요소에 대한 코드를 생성하지 않습니다.'
 # 'Do not emit code that uses the red zone.'
 H4923C3F307F8: '레드 존을 사용하는 코드를 생성하지 마십시오.'
 # 'Do not emit code to make initialization of local statics thread safe'
@@ -6954,6 +6970,8 @@ HC2C8736B7263: 'DWARF 디버그 섹션에 소스 텍스트 내장'
 HECD9878DE365: '이 컴파일에 의해 읽은 모든 파일의 내용을 생성된 모듈 파일에 내장합니다.'
 # 'Embed the contents of the specified file into the module file being compiled.'
 H5C7A5481DBF2: '지정된 파일의 내용을 현재 컴파일 중인 모듈 파일에 내장합니다.'
+# 'Embedding generation level:'
+H026F7D15C2F3: '임베딩 생성 레벨:'
 # 'Emit  debug info for defined but unused types'
 H4259F2A07B2E: '정의되지만 사용되지 않는 타입에 대한 디버그 정보를 생성합니다'
 # 'Emit (experimental) loops (with sparse.iterate).'
@@ -7012,6 +7030,8 @@ H2B3A6CDD77E1: 'Windows 제어 흐름 보호 테이블 및 검사를 생성합�
 H12EF1A548A1C: 'Windows Control Flow Guard 테이블만 생성 (체크 없음)'
 # 'Emit Windows EH Continuation Guard tables'
 H7CFD101BE344: 'Windows EH Continuation Guard 테이블 생성'
+# 'Emit a call graph section'
+H72DF45254ECA: '콜 그래프 섹션 생성'
 # 'Emit a call to trap function rather than a trap instruction'
 H7926ECB4152F: '트랩 명령어 대신 트랩 함수 호출을 삽입'
 # 'Emit a compilation database fragment to the specified directory'
@@ -7064,8 +7084,6 @@ H252107FF70F1: 'CodeView 디버그 정보에 컴파일러 경로 및 명령 줄�
 H73932760DABC: '전방 선언에서 템플릿 매개변수의 완전한 설명을 생성합니다'
 # 'Emit data into separate sections'
 HF75AE625B842: '데이터를 별도의 섹션에 생성'
-# 'Emit debug info that places array-bounds instrumentation in an inline function called __ubsan_check_array_bounds.'
-HCA08BC9E900F: '디버그 정보를 생성하여 배열 경계 감시 장치를 __ubsan_check_array_bounds라는 인라인 함수에 배치합니다.'
 # 'Emit debug line info directives only'
 HE3308044AB2D: '디버그 라인 정보 지시문만 생성합니다'
 # 'Emit debug line number tables only'
@@ -7240,6 +7258,8 @@ HE6033CE9D615: 'C-SKY 어셈블리 압축 명령어 활성화'
 HCAFDAD7AAC69: 'CABAC 명령어를 활성화합니다'
 # 'Enable CREL relocation format (ELF only)'
 H0C82A363E7CF: 'CREL 재정의 형식을 활성화 (ELF 전용)'
+# 'Enable Coarray features'
+HB258883F97BE: 'Coarray 기능 활성화'
 # 'Enable CodeView debug information in object files'
 H190F12E62C0D: '객체 파일에 CodeView 디버그 정보를 사용하도록 합니다'
 # 'Enable Control Flow Guard with /guard:cf, or only the table with /guard:cf,nochecks. Enable EH Continuation Guard with /guard:ehcont'
@@ -7262,6 +7282,8 @@ H7236F64CF290: '디버깅을 위해 MLIR 액션의 디버거 훅을 활성화합
 H2CA5CA1CFDC6: 'EH 비동기 예외 활성화'
 # 'Enable EVL-based induction variable simplify Pass'
 H0167530440BA: 'EVL 기반의 인덕션 변수 단순화 패스를 활성화합니다.'
+# 'Enable FIR alias analysis'
+HCFA5E224E546: 'FIR 별칭 분석 활성화'
 # 'Enable FP math optimizations that assume approx func'
 HA55AFA6BF75B: '부동소수점 계산 최적화를 활성화(근사 함수 가정)'
 # 'Enable FP math optimizations that assume no +-Infs'
@@ -7320,8 +7342,8 @@ HDC17AF33380B: '커널 주소 산사태 인스트루먼테이션 활성화'
 HE6892C669196: 'KernelHWAddressSanitizer 인스트루멘테이션을 활성화합니다'
 # 'Enable KernelMemorySanitizer instrumentation'
 H98BCB50602AD: '커널 메모리 산타이저 기능을 활성화합니다'
-# 'Enable Key Instructions, which reduces the jumpiness of optimized code stepping (DWARF only). Requires LLVM built with LLVM_EXPERIMENTAL_KEY_INSTRUCTIONS.'
-H235B8746F9EA: '최적화된 코드 단계 실행 시 점프 현상을 줄이는 키 명령어를 활성화합니다(DWARF만 해당). LLVM_EXPERIMENTAL_KEY_INSTRUCTIONS 옵션으로 빌드된 LLVM이 필요합니다.'
+# 'Enable Key Instructions, which reduces the jumpiness of debug stepping in optimized C/C++ code in some debuggers. DWARF only. Implies -g.'
+H7B2028A281E0: '디버거에서 최적화된 C/C++ 코드의 디버그 단계 점프 현상을 줄이는 키 명령어 활성화. DWARF 전용. -g 옵션을 암시합니다.'
 # 'Enable LSR phi elimination'
 H6F6B88180DCF: 'LSR phi 제거 활성화'
 # "Enable LTO in 'full' mode"
@@ -7376,8 +7398,6 @@ H275AC31A4E6B: 'PGO 인스트루먼테이션 활성화'
 HF2D40BF85363: 'AIX에서 Trackback에 SSP 캐나리 정보 전달 활성화'
 # 'Enable PatchPoint Liveness Analysis Pass'
 HC23201EA3F30: 'PatchPoint 생존성 분석 패스 활성화'
-# 'Enable PostRA load and store clustering in the machine scheduler'
-H7DBDA92CD831: '머신 스케줄러에서 PostRA 로드 및 스토어 클러스터링을 활성화합니다'
 # 'Enable Pre-RA optimizations pass'
 HBF2BE955A63C: 'Pre-RA 최적화 패스 활성화'
 # 'Enable RDF-based optimizations'
@@ -7412,8 +7432,8 @@ H5546DBF9A313: 'VPlan 네이티브 벡터화 경로를 활성화하고 외부 �
 H9D4BDB5AD7B9: 'X86 간접 분기 추적 패스를 활성화합니다.'
 # 'Enable a 2nd level loop of loop tiling'
 HCA8FDA365AE9: '루프 타일링의 2번째 단계 루프를 활성화합니다'
-# 'Enable a specific type of debug output (comma separated list of types)'
-H3151AFA58B61: '특정 유형의 디버그 출력을 활성화 (유형의 쉼표로 구분된 목록)'
+# 'Enable a specific type of debug output (comma separated list of types using the format "type[:level]", where the level is an optional integer. The level can be set to 1, 2, 3, etc. to control the verbosity of the output. Setting a debug-type level to zero acts as an opt-out for this specific debug-type without affecting the others.'
+H7BEB9AE832C1: '특정 유형의 디버그 출력 활성화 (콤마로 구분된 유형 목록, 형식은 "type[:level]". level은 선택적 정수. level은 1, 2, 3 등으로 설정하여 출력 상세도 조절. 디버그 유형의 level을 0으로 설정하면 해당 유형만 비활성화되며 다른 유형에는 영향을 주지 않음.)'
 # 'Enable abort calls when "fast" instruction selection fails to lower an instruction: 0 disable the abort, 1 will abort but for args, calls and terminators, 2 will also abort for argument lowering, and 3 will never fallback to SelectionDAG.'
 H1EC44B72B380: 'fast instruction selection이 어떤 instruction을 lower하지 못했을 때 abort 호출을 활성화합니다: 0은 abort 비활성화, 1은 args, calls, terminators를 제외한 경우에 abort, 2는 argument lowering시에도 abort, 3은 SelectionDAG로의 fallback 절대로 하지 않음.'
 # 'Enable abort calls when "global" instruction selection fails to lower/select an instruction'
@@ -7586,6 +7606,8 @@ HB0D34B7D8979: '개선된 struct 경로 인식 형 기반 별칭 분석을 활�
 H19BF4377E02E: 'C에 대한 실험적 경계 안전 확장 활성화'
 # 'Enable experimental late parsing of attributes'
 H9BF048F97F63: '실험적 지연 속성 해석을 활성화합니다'
+# 'Enable experimental lifetime safety for C++'
+HD4B030FED451: 'C++ 실험적 라이프타임 안전성 활성화'
 # 'Enable extended information within the SHT_LLVM_BB_ADDR_MAP that is extracted from PGO related analysis.'
 H90477C1DC52F: 'PGO 관련 분석에서 추출된 SHT_LLVM_BB_ADDR_MAP 내의 확장 정보를 활성화합니다.'
 # 'Enable external API notes support'
@@ -7712,8 +7734,6 @@ H9E8C5D19A202: 'AddressSanitizer에서 전역 변수에 대한 링커 사후 정
 H1300A9593E8D: '링커 작업을 사용하여 정적 라이브러리를 생성하도록 활성화합니다.'
 # 'Enable linker relaxation'
 H4AD9A11300BE: '링커 관개를 사용합니다'
-# 'Enable load and store clustering in the machine scheduler'
-H9A7A3DC7E082: '로드 및 스토어 클러스터링을 머신 스케줄러에서 활성화합니다'
 # 'Enable load store vectorizer'
 H6C9482FFD1BF: '로드/스토어 벡터라이저를 활성화합니다'
 # 'Enable logical abbreviations'
@@ -7924,8 +7944,16 @@ H5D3D99EE631D: '테일 예측 영역에서 lr을 예측자로 설정을 활성�
 H29262DC5BE27: 'FP 예외 빌드 속성을 설정하여 예외를 사용하지 않도록 합니다'
 # 'Enable shared library instrumentation with XRay'
 HBB7CC7BAF352: 'XRay로 공유 라이브러리 인스트루먼테이션을 활성화합니다'
+# 'Enable signing and authentication for ObjC class_ro pointers'
+HA2DFCD156A67: 'ObjC 클래스_ro 포인터에 대한 서명 및 인증 활성화'
+# "Enable signing and authentication of Objective-C object's 'SEL' fields"
+HCC6ED585649D: 'Objective-C 객체의 "SEL" 필드 서명 및 인증 활성화'
+# "Enable signing and authentication of Objective-C object's 'isa' field"
+HDDAC1554FD74: 'Objective-C 객체의 "isa" 필드 서명 및 인증 활성화'
 # 'Enable signing and authentication of all indirect calls'
 H85AEAA3DF7E2: '모든 간접 호출의 서명 및 인증을 활성화합니다'
+# 'Enable signing and authentication of block descriptors'
+HD07D96BA0689: '블록 기술자 서명 및 인증 활성화'
 # 'Enable signing and authentication of indirect goto targets'
 H7778174B9D56: '간접 goto 대상의 서명 및 인증 활성화'
 # 'Enable signing and authentication of return addresses'
@@ -8052,8 +8080,6 @@ HE96DB2508A4B: 'OpenMP 영역 병합 최적화를 활성화합니다.'
 H4E0A173B05AF: 'Polly DOT 프린터를 -O3에서 활성화합니다'
 # 'Enable the Polly DOT printer in -O3 (no BB content)'
 HEAA8FA2DC249: '옵션 -O3에서 Polly DOT 프린터를 활성화 (BB 내용 없음)'
-# 'Enable the RISC-V VL Optimizer pass'
-HC773BD141E4D: 'RISC-V VL 최적화 패스를 활성화합니다'
 # 'Enable the VR4300 mulmul bug fix.'
 HF647968864FA: 'VR4300 mulmul 버그 수정을 활성화합니다.'
 # 'Enable the X86 cmov-to-branch optimization.'
@@ -8662,8 +8688,6 @@ H30E98BA4CBDB: '분석하기 전에 벤치마크를 필터링합니다'
 HAE5C92A1E57B: '필터링 및 정렬 옵션'
 # 'Finalize ISel and expand pseudo-instructions'
 HAC66FC917CAA: 'ISel 최종화 및 가상 명령어 확장'
-# 'Finalize machine instruction bundles'
-H54F93CB22051: '머신 명령어 번들 최종화'
 # 'Find methods that overrides a virtual method.'
 H26E803BD2E38: '가상 메서드를 오버라이드하는 메서드를 찾습니다.'
 # "Find objects in DIR or based on FILE's path"
@@ -9226,6 +9250,8 @@ H5EECEC688125: '속성 설명서 생성'
 H5E3166505291: '속성 철자 목록 생성'
 # 'Generate attributes for this dialect'
 HE3FD9C3103CA: '이 방언에 대한 속성 생성'
+# 'Generate basic block-level embeddings'
+H48994C28864C: '기본 블록 수준 임베딩 생성'
 # 'Generate bitsplit instructions'
 HE0B4AD43ABB0: '비트 분할 명령문을 생성합니다.'
 # 'Generate branches with extended addressability, usually via indirect jumps.'
@@ -9306,8 +9332,14 @@ H1A8F89282970: 'Offload 라이브러리용 Export 파일 생성'
 HABD4DCD38172: '추출 명령어 생성'
 # 'Generate function to translate named character references to UTF-8 sequences'
 H2212027837CC: '이름 지정된 문자 참조를 UTF-8 시퀀스로 변환하는 함수 생성'
+# 'Generate function-level embeddings'
+H55DEBCA34EC5: '함수 수준 임베딩 생성'
 # 'Generate hot text symbols. Apply this option to a precompiled binary that manually calls into hugify, such that at runtime hugify call will put hot code into 2M pages. This requires relocation.'
 HE07FCEA6613B: '핫 텍스트 심볼을 생성합니다. 이 옵션을 hugify로 직접 호출하는 미리 컴파일된 이진 파일에 적용해야 합니다. 이렇게 하면 실행 중에 hugify 호출이 2M 페이지에 핫 코드를 할당하게 됩니다. 이는 재배치가 필요합니다.'
+# 'Generate implicit floating point or vector instructions'
+HD42E3D8993CE: '암시적 부동소수점 또는 벡터 명령 생성'
+# 'Generate instruction-level embeddings'
+H985C0F842569: '명령 수준 임베딩 생성'
 # 'Generate instrumented code to collect context sensitive execution counts into <directory>/default.profraw (overridden by LLVM_PROFILE_FILE env var)'
 H10A2DF54F49A: '컨텍스트에 민감한 실행 횟수를 수집하기 위해 측정 코드를 생성하여 <directory>/default.profraw에 저장(LVM_PROFILE_FILE 환경 변수에 의해 재정의됨)'
 # 'Generate instrumented code to collect context sensitive execution counts into default.profraw (overridden by LLVM_PROFILE_FILE env var)'
@@ -9710,8 +9742,12 @@ HC5A8A1BFD3A5: 'IBM MASS 벡터 라이브러리'
 H91B04B0AEDF0: 'IBOutletCollection 프로퍼티는 copy/strong 속성을 가져야 하며, assign으로 지정하지 마십시오'
 # 'IEEE 754 denormal numbers'
 HB645808304FA: 'IEEE 754 비정상 소수'
+# 'IR2Vec - Embedding Generation Tool\nGenerates embeddings for a given LLVM IR and supports triplet generation for vocabulary training and embedding generation.\n\nSee https://llvm.org/docs/CommandGuide/llvm-ir2vec.html for more information.\n'
+H0D3FD2EA193C: 'IR2Vec - 임베딩 생성 도구\n주어진 LLVM IR에 대해 임베딩을 생성하며 어휘 훈련 및 임베딩 생성을 위한 트리플렛 생성을 지원합니다.\n\n자세한 내용은 https://llvm.org/docs/CommandGuide/llvm-ir2vec.html 참조.\n'
 # 'IR2Vec Options'
 H353091CB276E: 'IR2Vec 옵션들'
+# 'IR2Vec Tool Options'
+H7B31ED25D372: 'IR2Vec 도구 옵션'
 # 'IRDL file to register before processing the input'
 H9ADEB68395C9: '입력 처리 전에 등록해야 할 IRDL 파일'
 # 'IRTranslator LLVM IR -> MI'
@@ -9798,6 +9834,8 @@ H0DECF1F15908: '활성화되면 단순 루프 언스위칭은 llvm.experimental.
 H29F9314FFE86: '활성화되면, freeze 명령어가 loop unswitch의 조건에 추가되어 잘못된 컴파일을 방지합니다.'
 # 'If present, forces/disables the use of long calls'
 H244BD3DDA186: '지정되면 long calls의 사용을 강제하거나 비활성화합니다'
+# 'If present, stops generating TBAA tags for accesses of local allocations after N accesses in a module'
+HA80BB0A3B8F4: '존재할 경우 모듈에서 N번의 접근 후 로컬 할당 접근을 위한 TBAA 태그 생성을 중지합니다'
 # 'If present, stops packetizing after N instructions'
 HC908BB95C55F: '지정되면 N 개의 명령문 후 패킷화를 중지합니다'
 # 'If profile count information is used in tail duplication cost model, the gained fall through number from tail duplication should be at least this percent of hot count.'
@@ -9830,6 +9868,8 @@ HB78C3D57EF8C: '이 옵션이 설정되면 알 수 없는 형식 옵션에 대�
 HC6C4D32713B0: '지정되면, -print-[before|after]{-all} 옵션을 사용하여 출력되는 IR은 stderr 대신 이 디렉토리의 파일에 덤프됩니다'
 # 'If stats should be appended to stats-file instead of overwriting it'
 H7B41C07F5D40: '통계를 stats-file에 덮어쓰는 대신 덧붙여 기록할 경우'
+# 'If stats should include timers.'
+H09541D9A8495: '통계에 타이머를 포함할지 여부입니다'
 # 'If the function being instrumented contains more than this number of memory accesses, use callbacks instead of inline checks (-1 means never use callbacks).'
 HD30970E83223: '측정 중인 함수가 이 수보다 많은 메모리 접근을 포함하는 경우 인라인 확인 대신 콜백을 사용합니다. (-1은 콜백을 절대 사용하지 않음을 의미합니다.)'
 # 'If the function being instrumented requires more than this number of checks and origin stores, use callbacks instead of inline checks (-1 means never use callbacks).'
@@ -9898,6 +9938,8 @@ HDF7F5F41C8A9: '정규식과 일치하는 함수를 무시합니다. 여러 개�
 HABB3F2EDAFC7: '삽입 충돌을 무시하고 계속 실행하여 문제를 해결합니다.'
 # 'Ignore possible aliasing of the array bases'
 H64EE4A3BEF1A: '배열 기반의 가능한 별칭 무시'
+# 'Ignore profitability, force interchange (does not work with other options)'
+HEB904092D439: '수익성 무시, 강제 교환(다른 옵션과 함께 작동하지 않음)'
 # 'Ignore redundant instrumentation'
 H4E0E4A3BF250: '중복된 instrumentation 무시'
 # 'Ignore the definition of the given macro when building and loading modules'
@@ -10200,6 +10242,8 @@ H41E9F3846338: '함수 진입/종료에 mcount()와 같은 호출을 통해 측�
 H179F36D1CDA5: '함수에 __CheckForDebuggerJustMyCode 호출을 삽입합니다'
 # 'Instrument globals'
 HF9B96A5EACA6: '전역 변수 기록'
+# 'Instrument globals, even those within user-defined sections. Warning: This may break existing code which walks globals via linker-generated symbols, expects certain globals to be contiguous with each other, or makes other assumptions which are invalidated by HWASan instrumentation.'
+H19A2B8EBCA54: '사용자 정의 섹션 내의 전역 변수까지 계측합니다. 경고: 링커 생성 심볼을 통해 전역 변수를 탐색하거나 특정 전역 변수들이 서로 인접해 있다고 기대하는, 또는 HWASan 계측에 의해 무효화된 다른 가정을 하는 기존 코드가 손상될 수 있습니다.'
 # 'Instrument memintrinsics (memset/memcpy/memmove)'
 HE6033F8FFDF9: 'memintrinsics (memset/memcpy/memmove) 분석 활성화'
 # 'Instrument memory accesses'
@@ -10246,6 +10290,8 @@ HD223D51415E6: 'reg-reg 명령문을 reg-imm로 변환하려고 시도할 때 �
 H1328F2EA33BA: '반복 추론: 델타 수렴 정밀도; 작은 값은 일반적으로 더 나은 결과를 가져오지만 실행 시간이 악화되는 비용을 지불해야 합니다'
 # 'Iterative inference: maximum number of update iterations per block'
 H5F6BCC565010: '반복 추론: 각 블록당 최대 업데이트 반복 횟수'
+# 'Iteratively apply merging on a node to catch new callers'
+HCD2383E05174: '새로운 호출자를 포착하기 위해 노드에 병합을 반복적으로 적용합니다'
 # 'JIT the code and run it by invoking the main function'
 HC922A3A5E7D1: '코드를 JIT 컴파일하고 메인 함수를 호출하여 실행합니다'
 # 'JITLink Options'
@@ -10390,6 +10436,8 @@ HD066D1FABC77: '지연 값 정보 분석'
 H5201BDD0F5FF: '대규모 함수의 최소 BB 수.'
 # 'Leave out unnecessary information when printing MIR'
 HEE7C41A11713: 'MIR 출력 시 불필요한 정보 생략'
+# 'Legalize SPIR-V implicit bindings'
+H70D9124B645C: 'SPIR-V 암시적 바인딩 정규화'
 # "Legalize the Machine IR a function's Machine IR"
 H082594DE8633: 'Machine IR을 함수의 Machine IR로 합법화합니다.'
 # 'Level of field padding for AddressSanitizer'
@@ -10438,6 +10486,8 @@ H538935517F09: '생성된 디버그 정보를 제한하여 디버그 바이너�
 HF96C59869298: '지정된 값으로 부동소수점 정밀도 제한'
 # 'Limit maximum recursion depth when calculating costs of speculatively executed instructions'
 H66110CD9CA1F: '예측 실행 명령어의 비용을 계산할 때 최대 재귀 깊이 제한'
+# 'Limit number of blocks a define in a threaded block is allowed to be live in'
+H7E36F561F926: '스레드 블록 내에서 정의가 라이브 상태일 수 있는 블록 수 제한'
 # 'Limit on instruction search range in frame index elimination'
 HBC1B1C08E702: '프레임 인덱스 제거에서의 명령어 탐색 범위 제한'
 # 'Limit on the cost of instructions that can be repeated due to loop flattening'
@@ -11476,6 +11526,8 @@ H3F90161CF695: '정의할 매크로의 이름 -- mlir-src-sharder에 의해 무�
 HCFEFDA365E00: '객체 파일에 인코딩할 분할 DWARF 디버그 정보 파일의 이름'
 # 'Namespace.'
 HD451EBBFFEAD: '네임스페이스.'
+# 'Namespec of libclc OpenCL bitcode library to link'
+H1BDEB17C9E00: '연결할 libclc OpenCL 비트코드 라이브러리의 네임스페이스'
 # 'Narrow LSR complex solution using expectation of registers number'
 H13DBBF2C516C: '레지스터 수의 기대값을 사용한 LSR 복잡한 해결책 축소'
 # 'Narrow LSR search space by filtering non-optimal formulae with the same ScaledReg and Scale'
@@ -11592,6 +11644,8 @@ H5DDB526BD36F: '출력 파일의 수'
 HEC293753B227: '병렬 완전 LTO 코드 생성에 사용할 파티션 수, ld.lld에만 적용.'
 # 'Number of registers to limit to when printing regmask operands in IR dumps. unlimited = -1'
 H0373C047E939: 'IR 덤프에서 regmask 오퍼랜드를 출력할 때 제한할 레지스터 수입니다. 무제한은 -1입니다.'
+# 'Number of runs for benchmarking'
+HB10A82BB1DC5: '벤치마킹을 위한 실행 횟수'
 # 'Number of seconds program is allowed to run before it is killed (default is 300s), 0 disables timeout'
 HE6EB2161F536: '프로세스가 종료되기 전까지 허용되는 실행 시간(초) (기본값은 300초), 0은 타임아웃을 비활성화합니다'
 # "Number of threads in the 'x' dimension"
@@ -11660,6 +11714,8 @@ HB9A6C5C455E1: '오프셋은 UTF-8 바이트 단위입니다'
 H0151FBB5A950: '오프셋은 유니코드 코드 포인트 단위로 지정됩니다'
 # 'Old namespace.'
 HC6DBF56DB427: '구 네임스페이스입니다.'
+# 'Omit accesses due to pointer capturing'
+H044FD8077907: '포인터 캡처링으로 인한 접근 생략'
 # 'Omit all lfences before branch instructions.'
 H64285876BCDE: '분기 명령어 이전에 모든 lfences를 생략합니다.'
 # 'Omit all lfences other than the first to be placed in a basic block.'
@@ -11876,16 +11932,16 @@ H226495157F78: "OpenACC '%1' 절은 '%0' 지시문에 적용할 수 없습니다
 HC59CAAD94E7A: "OpenACC 'bind' 절은 이전 'bind' 절들과 동일한 이름에 바인딩되어야 합니다"
 # "OpenACC 'collapse' clause loop count must be a %select{constant expression|positive integer value, evaluated to %1}0"
 HF187F732137C: "OpenACC 'collapse' 절의 루프 카운트는 %select{상수 표현식|양의 정수 값, %1로 평가됨}0이어야 합니다"
-# "OpenACC 'device_type' clause on a 'set' construct only permits one architecture"
-HB63E35D8A787: "OpenACC 'set' 구조체에서 'device_type' 절은 단일 아키텍처만 허용합니다."
+# "OpenACC 'device_type' clause on a '%0' construct only permits one architecture"
+HD88AB942A2EE: "OpenACC '%0' 구문의 'device_type' 절은 하나의 아키텍처만 허용합니다"
 # "OpenACC 'gang' clause may have at most one %select{unnamed or 'num'|'dim'|'static'}0 argument"
 HC064C4557CFE: "OpenACC 'gang' 절은 최대 한 개의 %select{미지정 또는 'num'|'dim'|'static'}0 인수를 가질 수 있습니다."
 # "OpenACC 'reduction' composite variable must not have non-scalar field"
 H9A717A5BB65E: "OpenACC 'reduction' 복합 변수는 스칼라가 아닌 필드가 포함되어서는 안 됩니다"
 # "OpenACC 'reduction' variable must be a composite of scalar types; %1 %select{is not a class or struct|is incomplete|is not an aggregate}0"
 HD35F9CAD567D: "OpenACC 'reduction' 변수는 스칼라 타입의 복합체여야 합니다; %1 %select{클래스나 구조체가 아닙니다|완전하지 않습니다|집합体型이 아닙니다}0"
-# "OpenACC 'reduction' variable must be of scalar type, sub-array, or a composite of scalar types;%select{| sub-array base}1 type is %0"
-HEC7D1B479B8F: "OpenACC 'reduction' 변수는 스칼라 형식, 서브 어레이, 또는 스칼라 형식의 복합체여야 합니다;%select{| 서브 어레이 베이스}1 형식은 %0입니다"
+# "OpenACC 'reduction' variable must be of scalar type, aggregate, sub-array, or a composite of scalar types;%select{| sub-array base}1 type is %0"
+HF070A8DABE4C: "OpenACC 'reduction' 변수는 스칼라 타입, 집합체, 부분 배열 또는 스칼라 타입의 복합체여야 합니다;%select{| 부분 배열 기반}1 타입은 %0입니다"
 # "OpenACC 'reduction' variable must have the same operator in all nested constructs (%0 vs %1)"
 H28C388119D4E: "OpenACC 'reduction' 변수는 중첩된 모든 구조体内에서 동일한 연산자를 가져야 합니다 (%0 vs %1)"
 # "OpenACC 'routine' construct must have at least one 'gang', 'seq', 'vector', or 'worker' clause that applies to each 'device_type'"
@@ -12020,6 +12076,8 @@ H73EA61C4E41D: '최적화 레벨 3. clang -O3과 유사합니다. -passes="defau
 HA23F3D2204EA: '최적화 단계 (NVVM 컴파일을 위한)'
 # "Optimization level. [-O0, -O1, -O2, or -O3] (default = '-O2')"
 H8F5A63304993: "최적화 수준. [-O0, -O1, -O2, 또는 -O3] (기본값 = '-O2')"
+# 'Optimization pass(es) to disable (comma-separated list)'
+H2FA611ED905D: '비활성화할 최적화 패스(쉼표로 구분된 목록)'
 # 'Optimization remarks file containing inline remarks to be replayed by cgscc inlining.'
 HEFDDA07D8CA1: 'cgscc 인라인에 의해 재생될 내부 인라인 주석을 포함하는 최적화 주석 파일.'
 # 'Optimization remarks file containing inline remarks to be replayed by inlining from sample profile loader.'
@@ -12346,6 +12404,8 @@ H194FFD6DEF4E: '플러그인 <name>에 인수 <arg> 전달'
 H6E93CAC5A2A4: 'CUDA/HIP 디바이스 컴파일에 인수 <arg>를 전달합니다'
 # 'Pass <arg> to the CUDA/HIP host compilation'
 HBD5864C8EAAC: 'CUDA/HIP 호스트 컴파일에 <arg>를 전달합니다'
+# 'Pass <arg> to the ThinLTO distributor process. Can be specified multiple times or with comma-separated values.'
+H3883610906E4: 'ThinLTO 배포자 프로세스에 <arg> 전달. 여러 번 지정하거나 쉼표로 구분된 값으로 지정할 수 있습니다'
 # 'Pass <arg> to the assembler'
 H260454350861: '어셈블러에 <arg>를 전달합니다'
 # 'Pass <arg> to the clang driver'
@@ -12436,6 +12496,8 @@ HEE09636C6E6A: 'DIA SDK 경로'
 H6108420B0DC9: '프런트엔드가 호스트용으로 생성한 IR 파일의 경로.'
 # 'Path to the ORC runtime'
 HA6D50B3F5E21: 'ORC 런타임의 경로'
+# 'Path to the ThinLTO distributor process. If specified, ThinLTO backend compilations will be distributed by LLD'
+HED23D7F0E037: 'ThinLTO 배포자 프로세스의 경로. 지정된 경우 ThinLTO 백엔드 컴파일이 LLD에 의해 배포됩니다'
 # 'Path to the VCToolChain'
 H5C43C23950E7: 'VCToolChain의 경로'
 # 'Path to the Windows SDK'
@@ -13260,6 +13322,8 @@ H97882415014C: 'Polly 최적화에서 혜택을 받기 어려운 scops를 처리
 H83D6F8A6F254: '고정 형식의 소스 파일 처리'
 # 'Process source files in free form'
 H00F60A25C21E: '프로세스 소스 파일을 free form 형식으로 처리합니다'
+# 'Process specific function only'
+HB83F576D00F0: '특정 함수만 처리'
 # 'Process trigraph sequences'
 HE92D60C3DD89: '삼중문자 시퀀스 처리'
 # 'Processor register names.'
@@ -13308,6 +13372,10 @@ HA5A6E86B1573: '프롤로그/에필로그 삽입 및 프레임 최종화'
 H8DCCB244621C: '메모리를 레지스터로 승격'
 # 'Promote all vector constants'
 HC242F7743ACD: '모든 벡터 상수 확장'
+# 'Promote the target candidate even when the defintion  is not available'
+HD53DBC481A81: '정의가 없을 때도 타겟 후보를 승격'
+# 'Promote the target candidate only if it is a hot function. Otherwise, warm functions can also be promoted'
+HF997C2049451: '타겟 후보가 핫 함수일 때만 승격. 그렇지 않으면 워밍 함수도 승격 가능'
 # 'Propagate attributes in index'
 HA59CB2A030BF: '인덱스 내 속성 전파'
 # 'Propagate labels from condition values of select instructions to results.'
@@ -13930,6 +13998,8 @@ HEEDD34050A74: '이터리너리가 없는 타겟에 대해 장 레이턴시 명�
 HE0CCC8143863: '섹션 크기를 섹션 정렬까지 올림'
 # 'Round-trip the IR after parsing and ensure it succeeds'
 HB85D02D3E83D: '파싱 후 IR을 반복 처리하고 성공 여부를 확인합니다'
+# 'Run CSE and canonicalization on MLIR output'
+H0C344046F9CA: 'MLIR 출력에서 CSE 및 정준화 실행'
 # 'Run GCN iterative scheduler for ILP scheduling (experimental)'
 H1C7DB026D127: '실험용 GCN 반복 스케줄러로 ILP 스케줄링을 수행합니다'
 # 'Run GCN iterative scheduler for minimal register usage (experimental)'
@@ -14790,6 +14860,8 @@ HD3302520BB6D: 'llvm-jitlink 단계의 실행 시간을 표시합니다'
 HB7BC3C6A17C2: 'llvm-rtdyld 단계의 시간 표시'
 # 'Show verbose output when opt-bisect-limit is set'
 H8536EE8B8C8C: 'opt-bisect-limit가 설정되면 상세한 출력을 표시합니다'
+# 'Show verbose output when opt-disable is set'
+HF5631C408CB4: 'opt-disable가 설정된 경우 상세 출력 표시'
 # 'Show vtable names for shown functions'
 H79407841F063: '표시된 함수에 대한 vtable 이름 표시'
 # 'Shrink Wrap Pass'
@@ -15232,6 +15304,8 @@ H33A61DDF11E4: '옵션 분할'
 H4A2C55331EC3: 'PHI 제거 과정에서 모든 중요 엣지 분할'
 # 'Split all partitions'
 H2671573A0660: '모든 파티션 분할'
+# 'Split by category. If present, splitting by category is used with the specified categorization type.'
+H816BCFE35D75: '카테고리별로 분할합니다. 지정된 경우 지정된 분류 유형과 함께 카테고리별로 분할이 사용됩니다.'
 # 'Split critical edges during machine sinking'
 H4AC49C950879: '머신 싱킹 중 중요 엣지 분할'
 # 'Split machine functions using profile information'
@@ -15276,6 +15350,8 @@ HE346B2A53C42: '미사용 드라이버 인수에 대한 경고를 시작합니�
 HE5F5305CC00C: '파이프라인을 수집 단계로 시작하고 디버그 정보 보존 검사를 통해 종료합니다.'
 # 'Start the pipeline with debugify and end it with check-debugify'
 H0175081FA86E: '파이프라인을 debugify로 시작하고 check-debugify로 종료해야 합니다'
+# 'Start the pipeline with prof-inject and end it with prof-verify'
+H0E0B6FF901AB: 'prof-inject로 파이프라인을 시작하고 prof-verify로 종료합니다'
 # 'Statement-level analysis'
 H08A2201C3BBE: '문장 수준 분석'
 # 'Static Data Annotator'
@@ -15440,6 +15516,8 @@ H20A34CC2B958: 'SystemZ 장 구간 분기'
 H26F388ADE65D: 'SystemZ 후 재작성 패스'
 # 'SystemZ Test Data Class optimization'
 H7C47CE39188C: 'SystemZ 테스트 데이터 클래스 최적화'
+# 'TU local entity %0 is exposed'
+H93EBA0E5BD38: '번역 단위(TU) 로컬 엔터티 %0이(가) 노출되었습니다'
 # 'TableGen LSP Language Server'
 H927DAB993B40: 'TableGen LSP 언어 서버'
 # 'Tail Call Elimination'
@@ -16292,6 +16370,8 @@ HAEBC34FD2276: '여러 가능성 있는 옵션이 있을 때 흐름을 균등하
 H0998E6C983F8: 'OpenMP에 `do concurrent` 루프를 매핑하려 시도 [none|host|device]'
 # 'Try to propagate nonnull argument attributes from callsites to caller functions.'
 H020E4D562B19: '호출 지점에서의 nonnull 인자 어트리뷰트를 호출한 함수로 전파하려고 시도합니다.'
+# 'Try to replace values with the idempotent instructions for better vectorization.'
+H4B8E8EF62A87: '벡터화를 개선하기 위해 값을 멱등 명령어로 대체하려고 시도합니다'
 # 'Try to simplify all loads.'
 HBDC33CA86746: '모든 로드를 단순화하려고 시도합니다.'
 # 'Try to vectorize with non-power-of-2 number of elements.'
@@ -17280,6 +17360,10 @@ HC9E644F8BF87: '-fvisibility-inlines-hidden 옵션이 활성화되면, 인라인
 H2ECC08973193: '연산에 대한 진단이 발생하면 해당 연산을 첨부된 참고 메시지로 함께 출력합니다'
 # 'When a diagnostic is emitted, also print the stack trace as an attached note'
 H76C424E9438C: '진단이 발생될 때, 스택 추적을 부착된 참고 메시지로 함께 출력합니다'
+# "When annotating `select` instructions, this value will be used for the first ('true') case."
+HAB40E02AF059: '`select` 명령어에 주석을 추가할 때 첫 번째(`true`) 경우에 이 값을 사용합니다'
+# "When annotating `select` instructions, this value will be used for the second ('false') case."
+HFBC3AABDF108: '`select` 명령어에 주석을 추가할 때 두 번째(`false`) 경우에 이 값을 사용합니다'
 # 'When creating a PCH, stop PCH generation after #pragma hdrstop.'
 HD38248648BFF: 'PCH를 생성할 때, #pragma hdrstop 이후에 PCH 생성을 중지합니다.'
 # 'When dfsan-combine-offset-labels-on-gep and/or dfsan-combine-pointer-labels-on-load are false, this flag can be used to re-enable combining offset and/or pointer taint when loading specific constant global variables (i.e. lookup tables).'
@@ -17296,12 +17380,16 @@ HFD526CCFAF68: '디버그 조각을 덤프할 때 각 조각마다 다른 섹션
 HBD90D91A2AFF: '클래스, 유니온, 열거형, 구조체에 대한 타입 레코드를 덤프할 때, 전방 참조를 해결하려고 시도하지 마세요'
 # 'When epilogue vectorization is enabled, and a value greater than 1 is specified, forces the given VF for all applicable epilogue loops.'
 H9B19DBFD9697: '에필로그 벡터화가 활성화되고 1보다 큰 값이 지정되면, 적용 가능한 모든 에필로그 루프에 지정된 VF를 강제합니다.'
+# 'When generating R_RISCV_ALIGN, insert $alignment-2 bytes of NOPs even in norvc code'
+HDA9FBC21EE4C: 'R_RISCV_ALIGN을 생성할 때 norvc 코드에서도 $alignment-2바이트의 NOP를 삽입합니다'
 # 'When generating a crash reproducer, attempt to generated a reproducer with the smallest pipeline.'
 H527701909117: 'crash 재현 파일을 생성할 때 가장 작은 파이프라인으로 재현 파일을 생성하려고 시도합니다.'
 # 'When generating nested context-sensitive profiles, always generate extra base profile for function with all its context profiles merged into it.'
 H4E82789DA6E1: '중첩된 컨텍스트-감수성 프로파일을 생성할 때는 해당 함수의 모든 컨텍스트 프로파일을 병합한 추가 기본 프로파일을 항상 생성하십시오.'
 # 'When merging conditional stores, do so even if the resultant basic blocks are unlikely to be if-converted as a result'
 H33EB082F4E55: '조건부 저장을 병합할 때, 결과적으로 생성되는 기본 블록들이 if-변환이 불가능하더라도 계속 진행하라'
+# 'When non-empty string is passed each serialized SPIR-V module is saved to an additional file that starts with the given prefix. This is used to generate separate binaries for validation, where `--split-input-file` normally combines all outputs into one. The one combined output (`-o`) is still written. Created files need to be removed manually once processed.'
+HADC89B4A2B37: '비어 있지 않은 문자열을 전달하면 각 직렬화된 SPIR-V 모듈이 주어진 접두사로 시작하는 추가 파일에 저장됩니다. 이 기능은 검증을 위한 별도 바이너리를 생성할 때 사용되며, `--split-input-file`은 일반적으로 모든 출력을 하나로 결합합니다. 하나의 결합된 출력(`-o`)은 여전히 작성됩니다. 생성된 파일은 처리 후 수동으로 삭제해야 합니다'
 # 'When performing SCEV expansion only if it is cheap to do, this controls the budget that is considered cheap (default = 4)'
 H6E8B9FA2EB34: 'SCEV 확장을 수행할 때 수행 비용이 적을 경우에만 수행할 때, 이 옵션이 "저렴하다"고 간주되는 예산을 제어합니다 (기본값 = 4)'
 # 'When performing memory disambiguation checks at runtime do not generate more than this number of comparisons (default = 8).'
@@ -17314,6 +17402,8 @@ HD8F4D915AAB6: 'print-[before|after]{-all} 루프 패스에 대한 IR을 출력�
 H58BBC34B4C5E: 'IR을 출력할 때 print-ir-[before|after]{-all} 옵션을 사용할 때는 항상 최상위 레벨 오퍼레이션을 출력합니다'
 # 'When printing analysis, include information on every instruction'
 H27AFC0602C62: '분석을 출력할 때 모든 명령에 대한 정보를 포함합니다'
+# 'When printing analysis, use the heuristic for fixed-size arrays if the default delinearizetion fails.'
+H52478258D81A: '분석을 출력할 때 기본 델리네라이제이션이 실패하면 고정 크기 배열에 대한 휴리스틱을 사용합니다'
 # 'When printing machine IR, annotate instructions and blocks with SlotIndexes when available'
 H8B62DF7E25E7: '머신 IR을 출력할 때 SlotIndexes가 사용 가능한 경우 인스트럭션과 블록에 주석을 추가합니다'
 # 'When printing the IR after a pass, only print if the IR changed'
@@ -17374,8 +17464,12 @@ H77F1EF844B16: '프로파일이 없는 인스턴스에 ext-tsp 배치를 적용�
 HB03E5614FB01: '재배치 가능한 사전 컴파일 헤더를 생성할지 여부'
 # 'Whether to distribute into a loop that may not be if-convertible by the loop vectorizer'
 HB249A06C5F2F: '루프 벡터라이저에 의해 if-convertible이 될 수 없는 루프에 분할할지 여부'
+# 'Whether to emit .sframe unwind sections.'
+H4C29B66E1AEC: '.sframe 언와인드 섹션을 출력할지 여부입니다'
 # 'Whether to emit DWARF EH frame entries.'
 HDDECD32989A5: 'DWARF EH 프레임 항목을 생성할지 여부'
+# 'Whether to force use VGPR for Opc and Dest of MFMA. If unspecified, default to compiler heuristics'
+HDB98A7F029B2: 'MFMA의 Opc 및 Dest에 VGPR을 강제 사용할지 여부입니다. 미지정 시 컴파일러 휴리스틱을 따릅니다'
 # 'Whether to generate default bounds for arrays.'
 HA8699205DACC: '배열에 대한 기본 경계를 생성할지 여부.'
 # 'Whether to include the lower dimensions extents in the stride.'
@@ -17416,8 +17510,6 @@ HA61656982921: 'AMDGPUCodeGenPrepare에서 서브-드워드 상수 주소 공간
 H16C37A921AE2: 'AMDGPULateCodeGenPrepare에서 하위 dword 상수 주소 공간 로드를 확장합니다'
 # "Widen the loop induction variables, if possible, so overflow checks won't reject flattening"
 HF84F6515DE2A: '가능한 경우 루프 인덕션 변수를 확장하여 오버플로 검사가 평탄화를 거부하지 않도록 합니다'
-# 'Widen uniform 16-bit instructions to 32-bit in AMDGPUCodeGenPrepare'
-H46D2473C38FB: 'AMDGPUCodeGenPrepare에서 균일한 16비트 명령어를 32비트로 확장합니다'
 # 'Windows exception model'
 H86EB91F51633: 'Windows exception 모델'
 # 'With -globals, only dump globals whose name matches the given value'
@@ -17848,8 +17940,8 @@ H0F2B276FBFF5: '원자 연산의 주소 인수는 trivially-copyable 타입 포�
 H77D9C30AD097: '원자 연산의 주소 인수는 비-%select{const|constant}0 _Atomic 형식 포인터여야 합니다 (%1 유효하지 않음)'
 # 'address argument to atomic operation must be a pointer to non-const type (%0 invalid)'
 HA961ACF648B8: '원자 연산의 주소 인수는 const가 아닌 타입의 포인터여야 합니다. (%0이 유효하지 않음)'
-# 'address argument to load or store exclusive builtin must be a pointer to 1,2,4 or 8 byte type (%0 invalid)'
-H7473631C7DCE: '배타적 내장 함수 로드 또는 스토어의 주소 인수는 1, 2, 4 또는 8 바이트 형식의 포인터여야 합니다 (%0 무효)'
+# 'address argument to load or store exclusive builtin must be a pointer to %select{|,| or }1%select{|1}2%select{|,| or }3%select{|2}4%select{|,| or }5%select{|4}6%select{|,| or }7%select{|8}8 byte type (%0 invalid)'
+H613CF3603CD2: '로드 또는 스토어 전용 내장 함수의 주소 인수는 %select{|,| 또는 }1%select{|1}2%select{|,| 또는 }3%select{|2}4%select{|,| 또는 }5%select{|4}6%select{|,| 또는 }7%select{|8}바이트 형식에 대한 포인터여야 합니다 (%0은 유효하지 않음)'
 # 'address argument to nontemporal builtin must be a pointer (%0 invalid)'
 H15C0E2A98779: 'nontemporal 내장 함수의 address 인수는 포인터여야 합니다. (%0 유효하지 않음)'
 # 'address argument to nontemporal builtin must be a pointer to integer, float, pointer, or a vector of such types (%0 invalid)'
@@ -18490,10 +18582,8 @@ H51393292A866: '특성 %0은 %1 인수를 사용하며, 쉐이더 모델 %2 이�
 HCB37B8A40CF9: '특성 %q0는 삭제된 함수에 적용할 수 없습니다'
 # 'attribute %q0 cannot be applied to member of %q1 class'
 HFBD033ADD565: '특성 %q0는 %q1 클래스의 멤버에 적용할 수 없습니다'
-# "attribute '%0' on function does not match previous declaration"
-HF59632E17268: "함수에 지정된 속성 '%0'이 이전 선언과 일치하지 않습니다."
-# "attribute '%0' on overriding function does not match base declaration"
-H19F6EB5D2707: "오버라이딩 함수의 attribute '%0'은 기반 선언과 일치하지 않습니다"
+# "attribute '%0' on overriding function conflicts with base declaration"
+H7966F81365E6: '오버라이딩된 함수에 선언된 `%0` 속성이 기본 선언과 충돌됩니다'
 # "attribute '%0' should not be added via type conversion"
 HD3474317FB81: "속성 '%0'는 타입 변환을 통해 추가되어서는 안 됩니다"
 # "attribute '%select{|target|cpu_specific|cpu_dispatch|target_clones|target_version}0' multiversioned functions do not yet support %select{function templates|virtual functions|deduced return types|constructors|destructors|deleted functions|defaulted functions|constexpr functions|consteval function|lambdas}1"
@@ -20694,6 +20784,8 @@ H22AD60D3A378: '포인터가 %select{|부분 객체의 }0%select{일시적|%2}1�
 H77B30DE9BC36: "%0 참조 해제 중; 'noderef' 형식으로 선언되었습니다."
 # 'dereferencing a __weak pointer is not allowed due to possible null value caused by race condition, assign it to strong variable first'
 H69A87CE8BA55: '레이스 조건으로 인해 발생할 수 있는 null 값 때문에 __weak 포인터의 해제는 허용되지 않습니다. 먼저 강한 변수에 할당해야 합니다.'
+# 'dereferencing a null pointer is not allowed in a constant expression'
+H21588D017070: '상수 표현식에서 널 포인터를 역참조하는 것은 허용되지 않습니다'
 # "dereferencing expression marked as 'noderef'"
 HB6D67B14D60F: 'noderef로 표시된 표현식을 참조했습니다.'
 # 'derived class must specify the same code segment as its base classes'
@@ -21316,8 +21408,14 @@ HE76165194C35: '종료 태그'
 H00CF7F723C1C: "이 pragma로 인해 '%0' 모듈에 진입합니다"
 # 'enum %0 was explicitly specialized here'
 H888313DD02EB: 'enum %0는 여기서 명시적으로 특수화되었습니다'
+# 'enumeration %0 declared with incompatible fixed underlying types (%1 vs. %2)'
+H5AA29EBB0D29: '%0 열거형이 호환되지 않는 고정 기반 형식(%1 대신 %2)으로 선언되었습니다'
+# 'enumeration %0 has fixed underlying type here'
+H12D7FF9A5081: '여기서 %0 열거형에 고정 기반 형식이 있습니다'
 # 'enumeration %0 is incomplete'
 HACD4B99390E7: '열거형 %0는 완전하지 않습니다'
+# 'enumeration %0 missing fixed underlying type here'
+H3217F5445008: '여기서 %0 열거형에 고정 기반 형식이 없습니다'
 # 'enumeration cannot be a template'
 H0777CF5091AE: '열거형은 템플릿일 수 없습니다'
 # 'enumeration previously declared as %select{un|}0scoped'
@@ -21874,6 +21972,8 @@ H4F1921BA3641: "'#pragma %0'의 섹션 이름에 push, pop 또는 문자열 리�
 H2D60229D01D0: '등호 (=) 뒤에 쌍따옴표로 감싸인 문자열이 예상됩니다'
 # "expected reference to one of the parameters of function %0%select{| or 'this'}1"
 HD78611AD5D12: "함수 %0%select{| 또는 'this'}1의 매개변수 중 하나에 대한 참조가 필요합니다"
+# "expected reference type argument on 'adjust_args' clause with 'need_device_addr' modifier"
+HE4791647AAE3: "'adjust_args' 절에서 'need_device_addr' 수정자를 사용하는 경우 참조 형식 인수가 필요합니다"
 # 'expected selector for Objective-C %select{setter|getter}0'
 HFB2F00048645: 'Objective-C에 대한 %select{setter|getter}0 선택자를 기대했습니다'
 # 'expected selector for Objective-C method'
@@ -22066,8 +22166,8 @@ H2CCBA9D1C7AA: 'export 선언이 익명 네임스페이스 내에 나타납니�
 HECEB46AE53AF: 'export 선언이 다른 export 선언 내부에 위치했습니다'
 # 'export declaration can only be used on functions'
 H2A1BE3778EEF: 'export 선언은 함수에만 사용할 수 있습니다'
-# 'export declaration can only be used within a module purview'
-HA59173758635: 'export 선언은 모듈의 범위 내에서만 사용할 수 있습니다'
+# 'export declaration can only be used within a module interface'
+H96DD9FB41744: 'export 선언은 모듈 인터페이스 내에서만 사용할 수 있습니다'
 # 'export declaration cannot be empty'
 H571FAB6A011E: 'export 선언은 비어 있을 수 없습니다'
 # 'export declaration cannot be used in a private module fragment'
@@ -22416,6 +22516,8 @@ H6DFBB5CF7F53: '포맷 속성은 포맷 문자열로 암시적 this 인수를 �
 H4D29848904BC: "포맷 지정자 '%0'는 '%1'과 호환되지 않습니다"
 # 'format specifies type %0 but the argument has %select{type|underlying type}2 %1'
 H2B1918042742: '포맷 지정문이 %0 형식을 요구하지만, 인수는 %select{형식|기초 형식}2 %1을 가집니다'
+# 'format specifies type %0 but the argument has %select{type|underlying type}2 %1, which differs in signedness'
+H5D3E7972CACA: '형식 지정자가 %0 형식을 지정하지만 인수는 %select{형식|기반 형식}2 %1을(를) 가지며, 부호 유무가 다릅니다'
 # "format string contains '\\0' within the string body"
 H262604652293: "포맷 문자열은 문자열 본문 내에 '\\0'을 포함할 수 없습니다"
 # 'format string is defined here'
@@ -23472,6 +23574,8 @@ H99AB003B5614: '인스턴스 변수는 상수 크기를 가져야 합니다'
 H396FFF689BB5: '여기에서 어셈블리로 인스턴스화되었습니다'
 # 'instantiating fold expression with %0 arguments exceeded expression nesting limit of %1'
 H467EDA4122CE: '폴드 표현식을 인스턴스화하는 중 %0 인수를 사용하여 표현식 중첩 제한 %1을 초과했습니다'
+# "instantiation of %0 triggers reference to TU-local entity %1 from other TU '%2'"
+HA957B9AD6ED9: "%0 인스턴스화가 다른 TU '%2'에서 TU-로컬 엔터티 %1을(를) 참조합니다"
 # 'instantiation of %q0 is different in different modules'
 H7179BAA1427A: '다른 모듈에서 %q0의 인스턴스화가 서로 다릅니다'
 # "instantiation of '%0' not supported yet"
@@ -24308,6 +24412,8 @@ H90111C7D3334: 'llvm-omp-kernel-replay 옵션'
 HCF4237251086: 'llvm-opt-report 옵션'
 # 'llvm-reduce options'
 H9B15C3D059EC: 'llvm-reduce 옵션'
+# 'load and store exclusive builtins are not available on this architecture'
+H1A343A8A0853: '이 아키텍처에서는 로드 및 저장 배타적 내장 함수를 사용할 수 없습니다'
 # 'load the input file as a Toy source.'
 H8076D5B81C5F: '입력 파일을 Toy 소스로 로드합니다.'
 # 'load the input file as an MLIR file'
@@ -24774,6 +24880,8 @@ H110B9B84BD50: "종료하는 ')' 문자가 누락되었습니다."
 HCB937BA83DD0: '타입 매개변수 %1에 대한 %0의 타입 경계가 %select{@interface|@class}2에 누락되었습니다'
 # "missing version number in '%0'"
 H5280152B38E3: "'%0' 내 버전 번호가 누락되었습니다"
+# 'mixed %0 and %1 offloading compilation is not supported'
+H40286B7C4E3F: '%0 및 %1 오프로딩 컴파일 혼합은 지원되지 않습니다'
 # 'mixed CUDA and HIP compilation is not supported'
 HDE7D3706C5B5: '혼합된 CUDA와 HIP 컴파일은 지원되지 않습니다'
 # "mixing 'target_clones' specifier mechanisms is permitted for GCC compatibility; use a comma separated sequence of string literals, or a string literal containing a comma-separated list of versions"
@@ -25108,6 +25216,8 @@ H183DF472D6DF: '설치 이름이 지정되지 않았습니다: -install_name <pa
 H41C44394DC27: '선택자 %0에 대한 알려진 %select{인스턴스|클래스}1 메서드가 없습니다'
 # "no known method %select{%objcinstance1|%objcclass1}0; cast the message send to the method's return type"
 HD141497E30B9: '알 수 없는 메서드 %select{%objcinstance1|%objcclass1}0; 메서드의 반환 형식으로 메시지 전송을 캐스팅하세요'
+# "no libclc library '%0' found in the clang resource directory"
+H4A66701BC7E0: "clang 리소스 디렉터리에서 libclc 라이브러리 '%0'을(를) 찾을 수 없습니다"
 # "no library '%0' found in the default clang lib directory or in LIBRARY_PATH; use '--libomptarget-%1-bc-path' to specify %1 bitcode library"
 H56082C491F7D: "기본 clang 라이브러리 디렉토리나 LIBRARY_PATH에서 라이브러리 '%0'를 찾을 수 없습니다; %1 비트코드 라이브러리를 지정하려면 '--libomptarget-%1-bc-path' 옵션을 사용하세요"
 # 'no macro named %0'
@@ -25434,6 +25544,8 @@ H0FB30CAF71B6: '리턴 시 복사 생략하지 않음'
 H9930B56495BC: '시네일을 맞추기에 %0 선언에 변수 인자가 충분하지 않습니다'
 # 'not packing field %0 as it is non-POD for the purposes of layout'
 H7FBA81FDAA18: '레이아웃을 위한 목적으로 non-POD이기 때문에 필드 %0을(를) 패킹하지 않습니다.'
+# 'not supported with the multivalue ABI for function pointers with a struct/union as %select{return value|parameter}0'
+H32E846376250: '구조체/공용체가 %select{반환 값|매개변수}0인 함수 포인터에 대해 멀티밸류 ABI는 지원되지 않습니다'
 # 'not-yet-instantiated member is declared here'
 HACFD1F41F676: '이 멤버는 아직 인스턴스화되지 않았습니다'
 # 'null character ignored'
@@ -25534,6 +25646,10 @@ HF63DAE65A9BA: 'M-profile 아키텍처에서 %0 속성은 %1이 누락된 타겟
 H571A5AC320D2: '각 opcode당 하나의 클러스터'
 # "one of 'for', 'parallel', 'sections' or 'taskgroup' is expected"
 HA318D6E65846: "다음 중 하나가 필요합니다: 'for', 'parallel', 'sections' 또는 'taskgroup'"
+# 'one output module per kernel'
+HB91927E3703C: '커널당 하나의 출력 모듈'
+# 'one output module per translation unit marked with "module-id" attribute'
+H746D6893A8BF: '모듈-ID 속성이 지정된 번역 단위당 하나의 출력 모듈'
 # 'one possibility'
 HF5AE3D1F7A2D: '가능성 중 하나'
 # "only %select{'omp_priv' or 'omp_orig'|'omp_in' or 'omp_out'}0 variables are allowed in %select{initializer|combiner}0 expression"
@@ -25792,6 +25908,8 @@ HE764C7911186: '현재 지원되지 않는 반올림 모드를 이 타겟에서 
 H4E019EDC5E1E: '이 타겟에서 현재 지원되지 않는 부동소수점 예외 사용을 재정의 중입니다'
 # "overriding deployment version from '%0' to '%1'"
 H3B5CC52823D1: "배포 버전을 '%0'에서 '%1'로 재정의"
+# "overriding function is missing '%0' attribute from base declaration"
+HAD5155354E8B: "재정의된 함수에서 기본 선언의 '%0' 속성이 누락되었습니다"
 # 'overriding method has mismatched ns_consumed attribute on its parameter'
 H94209C3B1D29: '오버라이딩 메서드의 매개변수에 적용된 ns_consumed 속성이 일치하지 않습니다'
 # 'overriding method has mismatched ns_returns_%select{not_retained|retained}0 attributes'
@@ -26696,6 +26814,8 @@ H9F7DB4D308D0: '재귀 템플릿 인스턴스화가 최대 깊이 %0를 초과�
 H70EFB9FBF448: "재선언에서는 'loader_uninitialized' 속성을 추가할 수 없습니다"
 # 'redeclaration has different alignment requirement (%1 vs %0)'
 H2965974DE860: '재선언은 다른 정렬 요구사항을 가지고 있습니다 (%1 vs %0)'
+# "redeclaration is missing '%0' attribute from previous declaration"
+H27E9E57DF74E: "재선언에서 이전 선언의 '%0' 속성이 누락되었습니다"
 # "redeclaration of %0 must %select{not |}1have the 'overloadable' attribute"
 H9C609286F3D1: "%0의 재선언은 %select{가져서는 안 되며 |}1'overloadable' 속성을 가져야 합니다"
 # 'redeclaration of %0 with a different type%diff{: $ vs $|}1,2'
@@ -26768,10 +26888,10 @@ H2D2C74F27FDF: '리덕션 형식은 %select{const, volatile 또는 restrict로 �
 H233496630504: '감소 변수는 명시적인 작업에서 참조할 수 없습니다'
 # "redundant #include of module '%0' appears within %1"
 H3B45950DD3A3: "모듈 '%0'의 중복된 #include가 %1 내부에 있습니다"
+# 'redundant %0 attribute'
+H40ECC3575546: '중복된 %0 속성'
 # 'redundant %0 availability change; only the last specified change will be used'
 HE2065BD86C26: '사용 가능한 %0 변경이 중복되었습니다; 지정된 변경 중 마지막 변경만 사용됩니다'
-# "redundant 'sycl_kernel_entry_point' attribute"
-H89B952CF4093: "중복된 'sycl_kernel_entry_point' 속성"
 # "redundant attribute subject matcher sub-rule '%0'; '%1' already matches those declarations"
 HE12FF717092C: "중복된 속성 주체 매처 하위 규칙 '%0'; '%1'은 이미 해당 선언들을 일치시킵니다"
 # 'redundant move in return statement'
@@ -27542,6 +27662,10 @@ HD48DDFF6186B: '구조화된 바인딩 팩은 C++2c 이전의 C++ 표준과 호�
 H886FBF76EA85: 'SPIRV 구조화'
 # 'style of printing regions'
 H063C50F12566: '프린팅 영역의 스타일'
+# "sub-array as a variable %select{in 'use_device' clause|on 'declare' construct}0 is not a valid variable name or array name"
+H470904C69A60: "변수로 사용되는 하위 배열이 %select{'use_device' 절|'declare' 구문}0에서 유효한 변수 이름 또는 배열 이름이 아닙니다"
+# 'sub-expression %select{|in unary expression|on right hand side of assignment|on left hand side of assignment|on left hand side of compound assignment|on left hand side of assignment}2(%3) must match sub-expression used %select{|in unary expression|on right hand side of assignment|<not possible>|on left hand side of compound assignment|on left hand side of assignment}0(%1) from the first statement'
+HA1952899FB80: '부표현식 %select{|단항 표현식에서|대입 연산의 우변|대입 연산의 좌변|복합 대입 연산의 좌변|대입 연산의 좌변}2(%3)은(는) 첫 번째 문장의 %select{|단항 표현식에서|대입 연산의 우변|<불가능>|복합 대입 연산의 좌변|대입 연산의 좌변}0(%1) 부표현식과 일치해야 합니다'
 # 'subcommand'
 H146947FFD26E: '서브 명령어'
 # 'subexpression not valid in a constant expression'
@@ -27696,14 +27820,14 @@ H1D9C8AC0B205: '처리 예정'
 H39A2D17F6485: 'template %0에 정의가 없고, %select{|사용 가능한 }1추론 가이드도 없어 템플릿 인수 추론이 불가능합니다'
 # 'template argument / label address difference / what did you expect?'
 H4022196FB5B0: '템플릿 인수 / 레이블 주소 차이 / 예상한 것을 말해주세요?'
-# 'template argument does not refer to a class or alias template, or template template parameter'
-H10B27B45B43C: '템플릿 인수는 클래스, 별칭 템플릿, 또는 템플릿 템플릿 매개변수를 참조하지 않습니다'
+# 'template argument does not refer to a %select{class or alias template|variable template|concept}0, or template template parameter'
+HF0B7E6ECD71D: '템플릿 인수가 %select{클래스 또는 별칭 템플릿|변수 템플릿|컨셉트}0 또는 템플릿 템플릿 매개변수를 참조하지 않습니다'
 # 'template argument for non-type template parameter is treated as function type %0'
 HF7C463216541: '비유형 템플릿 매개변수의 템플릿 인자는 함수 유형 %0으로 간주됩니다'
 # 'template argument for non-type template parameter must be an expression'
 HA6F518CB9F6F: '비유형 템플릿 매개변수의 템플릿 인수는 반드시 표현식이어야 합니다'
-# 'template argument for template template parameter must be a class template%select{| or type alias template}0'
-H4605CB1853A3: '템플릿 템플릿 매개변수에 대한 템플릿 인수는 클래스 템플릿%select{| 또는 타입 별칭 템플릿}0이어야 합니다'
+# 'template argument for template template parameter must be a %select{class template%select{| or type alias template}1|variable template|concept}0'
+HD5F8BF4E6A42: '템플릿 템플릿 매개변수의 템플릿 인수는 %select{클래스 템플릿%select{| 또는 타입 별칭 템플릿}1|변수 템플릿|컨셉트}0이어야 합니다'
 # 'template argument for template type parameter must be a type'
 H9FFBB255FD4F: '템플릿 형식 매개변수에 대한 템플릿 인수는 형식이어야 합니다.'
 # "template argument for template type parameter must be a type; did you forget 'typename'?"
@@ -27712,8 +27836,8 @@ H477EE50BCF4B: '템플릿 유형 매개변수에 대한 템플릿 인수는 유�
 H0CC2569F4810: "템플릿 형식 매개변수에 대한 템플릿 인수는 형식이어야 합니다; 생략된 'typename'은 Microsoft의 확장 기능입니다"
 # 'template argument is the type of an unresolved overloaded function'
 H1DDFBAF8CEBB: '템플릿 인자는 해결되지 않은 오버로드된 함수의 유형입니다'
-# 'template argument refers to function template %0, here'
-H59E0A4B6EEC0: '템플릿 인수는 여기에서 함수 템플릿 %0를 참조합니다'
+# 'template argument refers to a %select{function template|class template|variable template|concept}0 %1, here'
+H26FB06D30BED: '템플릿 인수가 여기서 %select{함수 템플릿|클래스 템플릿|변수 템플릿|컨셉트}0 %1을(를) 참조합니다'
 # 'template argument uses local type %0'
 H8CFAA5F55F9C: '템플릿 인수에 지역 형식 %0가 사용되었습니다'
 # 'template argument uses unnamed type'
@@ -27808,6 +27932,18 @@ HB4A505AFFDA6: '메인 엔트리 빈도의 퍼센트의 10분의 1을 임계값�
 HD419260C8BE7: "테스트 모듈 파일 확장자 '%0'의 버전 (%1.%2)은 예상된 (%3.%4)과 다릅니다."
 # 'the #__include_macros directive is only for internal use by -imacros'
 H1FBDC6FD510E: '__include_macros 디렉티브는 내부적으로 -imacros에 의해 사용될 목적으로만 존재합니다'
+# 'the %0 attribute cannot be added to a function after the function is defined'
+H7E2F4B1BAFA6: '%0 속성은 함수가 정의된 후에는 함수에 추가할 수 없습니다'
+# "the %0 attribute cannot be applied to a %select{non-static member function|variadic function|deleted function|defaulted function|constexpr function|consteval function|function declared with the 'noreturn' attribute|coroutine|function defined with a function try block}1"
+H9333E93FC66A: '%0 속성은 %select{비정적 멤버 함수|가변 인자 함수|삭제된 함수|기본 생성된 함수|constexpr 함수|consteval 함수|noreturn 속성으로 선언된 함수|코루틴|함수 try 블록으로 정의된 함수}1에 적용할 수 없습니다'
+# "the %0 attribute only applies to functions with a 'void' return type"
+HAEDF59D36530: '%0 속성은 void 반환 타입을 가진 함수에만 적용됩니다'
+# "the %0 attribute only applies to functions with a non-deduced 'void' return type"
+H7A7AD5A6C18F: '%0 속성은 추론되지 않은 void 반환 타입을 가진 함수에만 적용됩니다'
+# 'the %0 kernel name argument conflicts with a previous declaration'
+HBE875B4C5356: '%0 커널 이름 인수가 이전 선언과 충돌합니다'
+# 'the %0 kernel name argument does not match prior declaration%diff{: $ vs $|}1,2'
+H32F8D6B1A505: '선언된 %0 커널 이름 인수가 이전 선언과 일치하지 않습니다%diff{: $ 대 $|}1,2'
 # 'the %0 sub-architecture does not support unaligned accesses'
 H8EEF78B6F581: '서브 아키텍처 %0는 비정렬 액세스를 지원하지 않습니다'
 # 'the %0 type cannot be used to declare a program scope variable'
@@ -28294,10 +28430,8 @@ HC40C2F44A862: '형식 인수는 매개변수화되지 않은 클래스 %0에 �
 H9C477E0B6856: '유형 인식 %0는 같은 범위에서 선언된 일치하는 유형 인식 %select{|배치 }1%2가 필요합니다'
 # 'type aware %0 will not be used for coroutine allocation'
 H5B38A9DE0EAE: '유형 인식 %0는 코루틴 할당에 사용되지 않습니다'
-# 'type aware allocators are a C++2c extension'
-H55565F6468B1: '유형 인식 할당자는 C++2c 확장 기능입니다'
-# 'type aware allocators are incompatible with C++ standards before C++2c'
-H25EF1B0FAFC1: 'C++2c 이전 표준과는 타입 인식 할당자를 호환할 수 없습니다.'
+# 'type aware allocators are a Clang extension'
+H29DDCAD0C3D2: '타입 인식 할당자는 Clang 확장입니다.'
 # 'type bound %0 for type parameter %1 conflicts with %select{implicit|previous}2 bound %3%select{for type parameter %5|}4'
 H7F10FC1165B9: '타입 매개변수 %1에 대한 타입 경계 %0이 %select{암시적|이전}2 경계 %3%select{타입 매개변수 %5에 대한|}4와 충돌합니다'
 # 'type bound %0 for type parameter %1 is not an Objective-C pointer type'
@@ -29156,6 +29290,8 @@ HB0299AD4C891: '사용된 타입 %0는 __hlsl_resource_t가 필요한 위치에�
 HEF054774D419: '산술 형식 또는 포인터 형식이 필요한 위치에서 %0 형식이 사용되었습니다'
 # 'used type %0 where floating point type is not allowed'
 HF095E0FB08EE: '부동 소수점 타입이 허용되지 않는 위치에서 %0 타입을 사용했습니다'
+# 'used type %0 where function pointer is required'
+H2B3A8AEA4470: '함수 포인터가 필요한 곳에 %0 타입이 사용되었습니다.'
 # 'used type %0 where integer is required'
 HCD053F3A5F86: '정수형이 필요함에도 불구하고 %0 형을 사용했습니다'
 # 'used type %0 where integer or floating point type is required'
@@ -29282,6 +29418,8 @@ H5B3E786190C7: "변수 %0는 %select{사용됨|포착됨}1 초기화되지 않�
 H9C1D29CE922D: '변수 %0는 여기서 선언되었습니다'
 # 'variable %0 is uninitialized when %select{used here|captured by block}1'
 HC11F7DAD1A0E: '변수 %0는 %select{여기에서 사용될 때|블록에 캡처될 때}1 초기화되지 않았습니다'
+# 'variable %0 is uninitialized when passed as a const pointer argument here'
+H8B9126CD3C58: '변수 %0이(가) 여기서 const 포인터 인수로 전달될 때 초기화되지 않았습니다.'
 # 'variable %0 is uninitialized when passed as a const reference argument here'
 H12F79B618200: '변수 %0는 여기서 const 참조 인수로 전달될 때 초기화되지 않았습니다'
 # 'variable %0 is uninitialized when used within its own initialization'
@@ -29302,8 +29440,6 @@ HEE231707A80F: '%0 변수는 유연한 배열 멤버를 가지므로 람다 표�
 HECE6754B3154: '변수 %0의 유형 %1은 초기화자 유형 %2와 호환되지 않습니다.'
 # 'variable %0 with unknown type cannot be given a function type'
 HBD6B0E34602F: '알 수 없는 형식을 가진 변수 %0에는 함수 형식을 지정할 수 없습니다'
-# 'variable %select{|in unary expression|on right hand side of assignment|on left hand side of assignment|on left hand side of compound assignment|on left hand side of assignment}2(%3) must match variable used %select{|in unary expression|on right hand side of assignment|<not possible>|on left hand side of compound assignment|on left hand side of assignment}0(%1) from the first statement'
-HA70BF8F524C0: '변수 %3 (%select{|단항 표현식 내|할당 오른쪽 표현식|할당 왼쪽 표현식|복합 할당 왼쪽 표현식|할당 왼쪽 표현식}2)은 첫 번째 문에서 사용된 변수 %1 (%select{|단항 표현식 내|할당 오른쪽 표현식|<불가능>|복합 할당 왼쪽 표현식|할당 왼쪽 표현식}0)과 일치해야 합니다'
 # 'variable already marked as mapped in current construct'
 HA15930719644: '변수는 이미 현재 구조에서 매핑 되어 있음'
 # "variable appearing in '%0' clause of OpenACC 'declare' directive must be in the same scope as the directive"
@@ -29370,10 +29506,14 @@ HD279E72346CE: '코루틴 안의 가변 길이 배열은 지원되지 않습니�
 H4F34EF5C94E2: '변수는 정수형 또는 %select{포인터|임의 접근 반복자}0 형이어야 합니다'
 # "variable named 'main' with external linkage has undefined behavior"
 H38BA25ED2BA1: "변수 이름이 'main'인 외부 링크지정 변수는 정의되지 않은 동작을 가집니다"
+# "variable of array type %0 referenced in OpenACC '%1' clause does not have constant bounds; initialization will happen after decay to pointer"
+H30B20F3BA279: "OpenACC '%1' 절에서 참조된 배열 형식 %0 변수는 상수 경계를 갖지 않습니다; 포인터로 감소된 후에 초기화가 발생할 것입니다."
 # 'variable of non-literal type %1 cannot be defined in a constexpr %select{function|constructor}0 before C++23'
 H5F89C6201D7E: '리터럴 형식이 아닌 형식의 변수 %1은 C++23 이전에는 constexpr %select{함수|생성자}0 내에서 정의할 수 없습니다'
 # "variable of non-reference type %0 can be used only with 'val' modifier, but used with '%1'"
 HFF57CDDBE63D: "참조 형식이 아닌 %0 형식의 변수는 'val' 수정자만 사용할 수 있지만 '%1' 수정자로 사용되었습니다"
+# "variable of type %0 referenced in OpenACC '%1' clause does not have a %select{default constructor|copy constructor|destructor}2; reference has no effect"
+H2B04F26174D2: "OpenACC '%1' 절에서 참조된 %0 형식 변수는 %select{기본 생성자|복사 생성자|소멸자}2를 갖지 않습니다; 참조는 효과가 없습니다."
 # 'variable of type %1 has %select{private|protected}2 destructor'
 H8BC8C9632B1A: '타입 %1의 변수가 %select{private|protected}2 소멸자를 가집니다'
 # "variable referenced by 'link' clause not in global or namespace scope must be marked 'extern'"
