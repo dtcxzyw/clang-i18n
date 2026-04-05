@@ -321,10 +321,19 @@ namespace opt {
 INTERCEPTOR_ATTRIBUTE
 void OptTable::printHelp(raw_ostream &OS, const char *Usage, const char *Title,
                          bool ShowHidden, bool ShowAllAliases,
-                         Visibility VisibilityMask) const {
+                         Visibility VisibilityMask
+#if LLVM_VERSION_MAJOR >= 22
+                         ,
+                         StringRef SubCommand
+#endif
+) const {
   ReplaceStream Wrapper{OS};
   return internalPrintHelp(
-      Wrapper, Usage, Title, ShowHidden, ShowAllAliases,
+      Wrapper, Usage, Title,
+#if LLVM_VERSION_MAJOR >= 22
+      SubCommand,
+#endif
+      ShowHidden, ShowAllAliases,
       [VisibilityMask](const Info &CandidateInfo) -> bool {
         return (CandidateInfo.Visibility & VisibilityMask) == 0;
       }
@@ -343,7 +352,11 @@ void OptTable::printHelp(raw_ostream &OS, const char *Usage, const char *Title,
   bool ShowHidden = !(FlagsToExclude & HelpHidden);
   FlagsToExclude &= ~HelpHidden;
   return internalPrintHelp(
-      Wrapper, Usage, Title, ShowHidden, ShowAllAliases,
+      Wrapper, Usage, Title,
+#if LLVM_VERSION_MAJOR >= 22
+      /*SubCommand=*/{},
+#endif
+      ShowHidden, ShowAllAliases,
       [FlagsToInclude, FlagsToExclude](const Info &CandidateInfo) {
         if (FlagsToInclude && !(CandidateInfo.Flags & FlagsToInclude))
           return true;
@@ -351,7 +364,7 @@ void OptTable::printHelp(raw_ostream &OS, const char *Usage, const char *Title,
           return true;
         return false;
       }
-#if LLVM_VERSION_MAJOR > 18
+#if LLVM_VERSION_MAJOR >= 19
       ,
       Visibility(0)
 #endif
@@ -388,18 +401,25 @@ void EnablePrettyStackTrace() {
 namespace cl {
 INTERCEPTOR_ATTRIBUTE bool
 ParseCommandLineOptions(int argc, const char *const *argv, StringRef Overview,
-                        raw_ostream *Errs, const char *EnvVar,
-                        bool LongOptionsUseDoubleDash) {
+                        raw_ostream *Errs,
+#if LLVM_VERSION_MAJOR >= 23
+                        vfs::FileSystem *VFS,
+#endif
+                        const char *EnvVar, bool LongOptionsUseDoubleDash) {
   static auto RealFunc = getRealFuncAddr(&ParseCommandLineOptions);
   char Buffer[sizeof(raw_fd_ostream)];
   void *OS = &outs();
   std::memcpy(Buffer, OS, sizeof(Buffer));
   new (OS) ReplaceOutStream;
-  auto Exit = llvm::make_scope_exit([&] {
+  llvm::scope_exit Exit([&] {
     std::destroy_at(&outs());
     std::memcpy(OS, Buffer, sizeof(Buffer));
   });
-  return RealFunc(argc, argv, Overview, Errs, EnvVar, LongOptionsUseDoubleDash);
+  return RealFunc(argc, argv, Overview, Errs,
+#if LLVM_VERSION_MAJOR >= 23
+                  VFS,
+#endif
+                  EnvVar, LongOptionsUseDoubleDash);
 }
 } // namespace cl
 
