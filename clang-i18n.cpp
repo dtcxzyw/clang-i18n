@@ -402,7 +402,7 @@ namespace cl {
 INTERCEPTOR_ATTRIBUTE bool
 ParseCommandLineOptions(int argc, const char *const *argv, StringRef Overview,
                         raw_ostream *Errs,
-#if LLVM_VERSION_MAJOR >= 23
+#if LLVM_VERSION_MAJOR >= 22
                         vfs::FileSystem *VFS,
 #endif
                         const char *EnvVar, bool LongOptionsUseDoubleDash) {
@@ -411,7 +411,7 @@ ParseCommandLineOptions(int argc, const char *const *argv, StringRef Overview,
   void *OS = &outs();
   std::memcpy(Buffer, OS, sizeof(Buffer));
   new (OS) ReplaceOutStream;
-#if LLVM_VERSION_MAJOR >= 23
+#if LLVM_VERSION_MAJOR >= 22
   llvm::scope_exit Exit([&] {
 #else
   auto Exit = llvm::make_scope_exit([&] {
@@ -420,7 +420,7 @@ ParseCommandLineOptions(int argc, const char *const *argv, StringRef Overview,
     std::memcpy(OS, Buffer, sizeof(Buffer));
   });
   return RealFunc(argc, argv, Overview, Errs,
-#if LLVM_VERSION_MAJOR >= 23
+#if LLVM_VERSION_MAJOR >= 22
                   VFS,
 #endif
                   EnvVar, LongOptionsUseDoubleDash);
