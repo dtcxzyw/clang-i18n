@@ -131,6 +131,7 @@ def chat(prompt):
             messages=[{"role": "user", "content": prompt}],
             timeout=300,
             stream=True,
+            extra_body={"enable_thinking": False},
         )
         is_thinking = False
         for chunk in completion:
