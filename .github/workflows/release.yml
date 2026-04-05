@@ -15,7 +15,7 @@ jobs:
 
     steps:
     - name: Download artifacts
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v8
       with:
         merge-multiple: true
         pattern: artifacts-${{ github.run_id }}-*
