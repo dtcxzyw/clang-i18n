@@ -12,6 +12,9 @@ jobs:
     needs: build
     permissions:
       contents: write
+      id-token: write
+      attestations: write
+      artifact-metadata: write
 
     steps:
     - name: Download artifacts
@@ -23,6 +26,10 @@ jobs:
 
     - name: Display structure of downloaded files
       run: ls -R artifacts
+
+    - uses: actions/attest@v4
+      with:
+        subject-path: artifacts/lib*
 
     - name: Release
       uses: softprops/action-gh-release@v2
