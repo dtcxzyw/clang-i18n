@@ -411,7 +411,11 @@ ParseCommandLineOptions(int argc, const char *const *argv, StringRef Overview,
   void *OS = &outs();
   std::memcpy(Buffer, OS, sizeof(Buffer));
   new (OS) ReplaceOutStream;
+#if LLVM_VERSION_MAJOR >= 23
   llvm::scope_exit Exit([&] {
+#else
+  auto Exit = llvm::make_scope_exit([&] {
+#endif
     std::destroy_at(&outs());
     std::memcpy(OS, Buffer, sizeof(Buffer));
   });
