@@ -334,8 +334,12 @@ void OptTable::printHelp(raw_ostream &OS, const char *Usage, const char *Title,
       SubCommand,
 #endif
       ShowHidden, ShowAllAliases,
-      [VisibilityMask](const Info &CandidateInfo) -> bool {
+      [this, VisibilityMask](const Info &CandidateInfo) -> bool {
+#if LLVM_VERSION_MAJOR >= 24
+        return (getExtra(CandidateInfo).Visibility & VisibilityMask) == 0;
+#else
         return (CandidateInfo.Visibility & VisibilityMask) == 0;
+#endif
       }
 #if LLVM_VERSION_MAJOR > 18
       ,
@@ -357,10 +361,15 @@ void OptTable::printHelp(raw_ostream &OS, const char *Usage, const char *Title,
       /*SubCommand=*/{},
 #endif
       ShowHidden, ShowAllAliases,
-      [FlagsToInclude, FlagsToExclude](const Info &CandidateInfo) {
-        if (FlagsToInclude && !(CandidateInfo.Flags & FlagsToInclude))
+      [this, FlagsToInclude, FlagsToExclude](const Info &CandidateInfo) {
+#if LLVM_VERSION_MAJOR >= 24
+        unsigned Flags = getExtra(CandidateInfo).Flags;
+#else
+        unsigned Flags = CandidateInfo.Flags;
+#endif
+        if (FlagsToInclude && !(Flags & FlagsToInclude))
           return true;
-        if (CandidateInfo.Flags & FlagsToExclude)
+        if (Flags & FlagsToExclude)
           return true;
         return false;
       }
@@ -405,7 +414,12 @@ ParseCommandLineOptions(int argc, const char *const *argv, StringRef Overview,
 #if LLVM_VERSION_MAJOR >= 22
                         vfs::FileSystem *VFS,
 #endif
-                        const char *EnvVar, bool LongOptionsUseDoubleDash) {
+                        const char *EnvVar
+#if LLVM_VERSION_MAJOR < 24
+                        ,
+                        bool LongOptionsUseDoubleDash
+#endif
+) {
   static auto RealFunc = getRealFuncAddr(&ParseCommandLineOptions);
   char Buffer[sizeof(raw_fd_ostream)];
   void *OS = &outs();
@@ -423,7 +437,12 @@ ParseCommandLineOptions(int argc, const char *const *argv, StringRef Overview,
 #if LLVM_VERSION_MAJOR >= 22
                   VFS,
 #endif
-                  EnvVar, LongOptionsUseDoubleDash);
+                  EnvVar
+#if LLVM_VERSION_MAJOR < 24
+                  ,
+                  LongOptionsUseDoubleDash
+#endif
+  );
 }
 } // namespace cl
 
