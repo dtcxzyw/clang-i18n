@@ -43,6 +43,7 @@ jobs:
             os: ubuntu-26.04
             distro: resolute
             repo: llvm-toolchain-resolute
+            extra_packages: libmlir-24-dev
 
     steps:
     - name: Checkout code
@@ -58,7 +59,21 @@ jobs:
         sudo ln -s /usr/lib/llvm-${{ matrix.version }}/lib /usr/lib/lib
         sudo ln -s /usr/lib/llvm-${{ matrix.version }}/include /usr/lib/include
         sudo apt-get update
-        sudo apt-get install ninja-build clang-${{ matrix.version }} llvm-${{ matrix.version }}-dev libclang-${{ matrix.version }}-dev
+        sudo apt-get install ninja-build clang-${{ matrix.version }} llvm-${{ matrix.version }}-dev libclang-${{ matrix.version }}-dev ${{ matrix.extra_packages || '' }}
+
+    - name: Work around incomplete LLVM APT packages
+      run: |
+        sudo python3 - <<'EOF'
+        import glob, os, re
+
+        prefix = "/usr/lib/llvm-${{ matrix.version }}"
+        for path in glob.glob(f"{prefix}/lib/cmake/*/*Targets*.cmake"):
+            text = open(path).read().replace("${_IMPORT_PREFIX}", prefix)
+            for lib in sorted(set(re.findall(r'"([^"]+\.a)"', text))):
+                if lib.startswith(prefix) and not os.path.exists(lib):
+                    print(f"Creating placeholder for {lib}")
+                    open(lib, "w").close()
+        EOF
 
     - name: Build clang-i18n
       run: |
