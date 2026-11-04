@@ -8,11 +8,41 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        version: [18, 19, 20, 21, 22, 23]
+        include:
+          # LLVM 18-20 are only packaged for Ubuntu 24.04 (noble).
+          - version: 18
+            os: ubuntu-24.04
+            distro: noble
+            repo: llvm-toolchain-noble-18
+          - version: 19
+            os: ubuntu-24.04
+            distro: noble
+            repo: llvm-toolchain-noble-19
+          - version: 20
+            os: ubuntu-24.04
+            distro: noble
+            repo: llvm-toolchain-noble-20
+          - version: 21
+            os: ubuntu-26.04
+            distro: resolute
+            repo: llvm-toolchain-resolute-21
+          - version: 22
+            os: ubuntu-26.04
+            distro: resolute
+            repo: llvm-toolchain-resolute-22
+          - version: 23
+            os: ubuntu-26.04
+            distro: resolute
+            repo: llvm-toolchain-resolute-23
+          # The development version lives in the unversioned repository.
+          - version: 24
+            os: ubuntu-26.04
+            distro: resolute
+            repo: llvm-toolchain-resolute
 
     steps:
     - name: Checkout code
@@ -20,12 +50,10 @@ jobs:
 
     - name: Install dependencies (Linux)
       run: |
-        wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
-        sudo add-apt-repository "deb http://apt.llvm.org/noble/ llvm-toolchain-noble main"
-        sudo add-apt-repository "deb http://apt.llvm.org/noble/ llvm-toolchain-noble-19 main"
-        sudo add-apt-repository "deb http://apt.llvm.org/noble/ llvm-toolchain-noble-20 main"
-        sudo add-apt-repository "deb http://apt.llvm.org/noble/ llvm-toolchain-noble-21 main"
-        sudo add-apt-repository "deb http://apt.llvm.org/noble/ llvm-toolchain-noble-22 main"
+        sudo mkdir -p /etc/apt/keyrings
+        curl -fsSL https://apt.llvm.org/llvm-snapshot.gpg.key | sudo gpg --dearmor --batch --yes -o /etc/apt/keyrings/llvm-snapshot.gpg
+        sudo chmod 644 /etc/apt/keyrings/llvm-snapshot.gpg
+        echo "deb [signed-by=/etc/apt/keyrings/llvm-snapshot.gpg] https://apt.llvm.org/${{ matrix.distro }}/ ${{ matrix.repo }} main" | sudo tee /etc/apt/sources.list.d/llvm.list
         # Workaround for issue https://github.com/llvm/llvm-project/issues/133861
         sudo ln -s /usr/lib/llvm-${{ matrix.version }}/lib /usr/lib/lib
         sudo ln -s /usr/lib/llvm-${{ matrix.version }}/include /usr/lib/include
