@@ -43,6 +43,7 @@ jobs:
             os: ubuntu-26.04
             distro: resolute
             repo: llvm-toolchain-resolute
+            extra_packages: libmlir-24-dev
 
     steps:
     - name: Checkout code
@@ -55,7 +56,7 @@ jobs:
         sudo chmod 644 /etc/apt/keyrings/llvm-snapshot.gpg
         echo "deb [signed-by=/etc/apt/keyrings/llvm-snapshot.gpg] https://apt.llvm.org/${{ matrix.distro }}/ ${{ matrix.repo }} main" | sudo tee /etc/apt/sources.list.d/llvm.list
         sudo apt-get update
-        sudo apt-get install ninja-build clang-${{ matrix.version }} llvm-${{ matrix.version }}-dev libclang-${{ matrix.version }}-dev
+        sudo apt-get install ninja-build clang-${{ matrix.version }} llvm-${{ matrix.version }}-dev libclang-${{ matrix.version }}-dev ${{ matrix.extra_packages || '' }}
 
     - name: Build clang-i18n
       run: |
