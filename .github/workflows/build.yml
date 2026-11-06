@@ -58,6 +58,21 @@ jobs:
         sudo apt-get update
         sudo apt-get install ninja-build clang-${{ matrix.version }} llvm-${{ matrix.version }}-dev libclang-${{ matrix.version }}-dev ${{ matrix.extra_packages || '' }}
 
+    - name: Work around incomplete MLIR APT packages
+      run: |
+        sudo python3 - <<'EOF'
+        import glob, os, re
+
+        prefix = "/usr/lib/llvm-${{ matrix.version }}"
+        for path in glob.glob(f"{prefix}/lib/cmake/*/*Targets*.cmake"):
+            text = open(path).read().replace("${_IMPORT_PREFIX}", prefix)
+            for ref in sorted(set(re.findall(r'"([^"]+)"', text))):
+                if ref.startswith(f"{prefix}/bin/") and not os.path.exists(ref):
+                    print(f"Creating placeholder for {ref}")
+                    os.makedirs(os.path.dirname(ref), exist_ok=True)
+                    open(ref, "w").close()
+        EOF
+
     - name: Build clang-i18n
       run: |
         mkdir build && cd build
