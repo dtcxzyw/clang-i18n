@@ -43,7 +43,6 @@ jobs:
             os: ubuntu-26.04
             distro: resolute
             repo: llvm-toolchain-resolute
-            extra_packages: libmlir-24-dev
 
     steps:
     - name: Checkout code
@@ -55,28 +54,8 @@ jobs:
         curl -fsSL https://apt.llvm.org/llvm-snapshot.gpg.key | sudo gpg --dearmor --batch --yes -o /etc/apt/keyrings/llvm-snapshot.gpg
         sudo chmod 644 /etc/apt/keyrings/llvm-snapshot.gpg
         echo "deb [signed-by=/etc/apt/keyrings/llvm-snapshot.gpg] https://apt.llvm.org/${{ matrix.distro }}/ ${{ matrix.repo }} main" | sudo tee /etc/apt/sources.list.d/llvm.list
-        # Workaround for issue https://github.com/llvm/llvm-project/issues/133861
-        sudo ln -s /usr/lib/llvm-${{ matrix.version }}/lib /usr/lib/lib
-        sudo ln -s /usr/lib/llvm-${{ matrix.version }}/include /usr/lib/include
         sudo apt-get update
-        sudo apt-get install ninja-build clang-${{ matrix.version }} llvm-${{ matrix.version }}-dev libclang-${{ matrix.version }}-dev ${{ matrix.extra_packages || '' }}
-
-    - name: Work around incomplete LLVM/MLIR APT packages
-      run: |
-        sudo python3 - <<'EOF'
-        import glob, os, re
-
-        prefix = "/usr/lib/llvm-${{ matrix.version }}"
-        for path in glob.glob(f"{prefix}/lib/cmake/*/*Targets*.cmake"):
-            text = open(path).read().replace("${_IMPORT_PREFIX}", prefix)
-            for ref in sorted(set(re.findall(r'"([^"]+)"', text))):
-                is_lib = ref.startswith(f"{prefix}/lib/") and "." in os.path.basename(ref)
-                is_tool = ref.startswith(f"{prefix}/bin/")
-                if (is_lib or is_tool) and not os.path.exists(ref):
-                    print(f"Creating placeholder for {ref}")
-                    os.makedirs(os.path.dirname(ref), exist_ok=True)
-                    open(ref, "w").close()
-        EOF
+        sudo apt-get install ninja-build clang-${{ matrix.version }} llvm-${{ matrix.version }}-dev libclang-${{ matrix.version }}-dev
 
     - name: Build clang-i18n
       run: |
