@@ -1,0 +1,29 @@
+name: Test Nightly LLVM
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-nightly-llvm:
+    runs-on: ubuntu-26.04
+
+    steps:
+    - name: Install dependencies (Linux)
+      run: |
+        sudo mkdir -p /etc/apt/keyrings
+        curl -fsSL https://apt.llvm.org/llvm-snapshot.gpg.key | sudo gpg --dearmor --batch --yes -o /etc/apt/keyrings/llvm-snapshot.gpg
+        sudo chmod 644 /etc/apt/keyrings/llvm-snapshot.gpg
+        echo "deb [signed-by=/etc/apt/keyrings/llvm-snapshot.gpg] https://apt.llvm.org/resolute/ llvm-toolchain-resolute main" | sudo tee /etc/apt/sources.list.d/llvm.list
+        sudo apt-get update
+        sudo apt-get install ninja-build clang-24 llvm-24-dev libclang-24-dev libmlir-24-dev
+
+    - name: Test find_package with nightly LLVM
+      run: |
+        workdir=$(mktemp -d)
+        cat > "$workdir/CMakeLists.txt" <<'EOF'
+        cmake_minimum_required(VERSION 3.12)
+        project(test-nightly-llvm)
+        find_package(LLVM REQUIRED CONFIG)
+        find_package(Clang REQUIRED CONFIG)
+        EOF
+        cmake -G Ninja -S "$workdir" -B "$workdir/build" -DLLVM_DIR=/usr/lib/llvm-24/lib/cmake/llvm -DClang_DIR=/usr/lib/llvm-24/lib/cmake/clang
